@@ -27,8 +27,7 @@
 - Shall follow responsive design philosophies.
 - Shall follow security principles for data including those in databases and APIs.
 
-
-Shall be hosted on the cosc360.ok.ubc.ca server
+#### Shall be hosted on the <ins>cosc360.ok.ubc.ca</ins> server
 
 # Team Members
   - Jason Ramos - 52627569
