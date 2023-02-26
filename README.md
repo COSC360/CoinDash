@@ -29,9 +29,15 @@
 
 #### Shall be hosted on the <ins>cosc360.ok.ubc.ca</ins> server
 
+# Important Links
+
+- [Figma Design Document](https://www.figma.com/proto/OON9Efmn4f3xy8eTf62Xz0/COSC-360?page-id=0%3A1&node-id=0%3A1&viewport=-2805%2C141%2C0.23&scaling=min-zoom&starting-point-node-id=14%3A689)
+- [Figma Prototype](https://www.figma.com/file/OON9Efmn4f3xy8eTf62Xz0/COSC-360?node-id=0%3A1&t=S4cOOSOziCK0uLYT-1)
+
+
 # Team Members
-  - Jason Ramos - 52627569
-  - Suyash Aminbhavi - 83864363
+- Jason Ramos - 52627569
+- Suyash Aminbhavi - 83864363
 
 
 
