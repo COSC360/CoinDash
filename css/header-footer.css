@@ -1,0 +1,42 @@
+header {
+    width: calc(100vw - 4em);
+    height: fit-content;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1em;
+    padding: 2em;
+    background-color: var(--White-1);
+    font-weight: 500;
+}
+
+nav {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0);
+    display: flex;
+    gap: 5em;
+}
+
+nav a {
+    font-size: 1.25em;
+    text-decoration: none;
+    color: var(--Black-1);
+    white-space: nowrap;
+}
+
+.settings {
+    gap: 1em;
+}
+
+main {
+    margin-top: 6em;
+}
+
+footer {
+    background-color: aquamarine;
+}
