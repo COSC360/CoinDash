@@ -1,0 +1,258 @@
+html{
+  position: relative;
+  background: #FFFFFF;
+}
+
+@font-face {
+  font-family: "Helvetic Now Display";
+  src: url(../font/HelveticaNowDisplay-Regular.woff);
+}
+
+/* @font-face {
+  font-family: "HelveticNowDisplayExtraBold";
+  src: url(../font/HelveticaNowDisplay-ExtraBold.woff);
+} */
+
+.container{
+  position: absolute;
+  width:auto;
+  left: 5em;
+  top: 6em;
+}
+
+.secondaryContainer{
+  position: relative;
+  top: 3em;
+  width:auto;
+}
+
+.RegisterForm{
+  position: absolute;
+  margin-left: 42.5em;
+}
+
+.LoginForm{
+  position: relative;
+  margin-left: 1em;
+}
+
+
+#displayHome{
+  /* Home / */
+  position: relative;
+  width: 45em;
+  height: 1em;
+
+  font-family: 'Helvetic Now Display';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1em;
+  line-height: 0.75em;
+  /* or 50% */
+
+  display: flex;
+  align-items: center;
+  text-align: justify;
+
+  /* Grey-1 */
+  color: #646464;
+}
+
+#displaySignInText{
+  /* Sign In */
+  position: relative;
+  width: 9em;
+  height: 1em;
+  padding-top: 0.1em;
+
+  font-family: 'Helvetica Now Display';
+  font-style: normal;
+  font-weight: 800;
+  font-size: 3em;
+  line-height: 1em;
+  /* or 100% */
+
+  display: flex;
+  align-items: center;
+
+  /* Black-1 */
+
+  color: #050505;
+}
+
+#displayIntroduction{
+  position: relative;
+  width: 20em;
+  height: 3.5em;
+  padding-top: 1em;
+
+  font-family: 'Helvetica Now Display';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.25em;
+  line-height: 1.3em;
+  /* or 125% */
+
+
+  /* Grey-1 */
+
+  color: #646464;
+}
+
+#DescriptionFooterText{
+  position: relative;
+  height: 0.5em;
+  width: 14em;
+  
+  font-family: 'Helvetica Now Display';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 0.5em;
+  line-height:1em ;
+  /* or 188% */
+
+  display: flex;
+  align-items: center;
+
+  /* Black-3 */
+
+  color: #1B1B1B;
+}
+
+#or{
+  position: relative;
+  height: 13px;
+  
+  font-family: 'Helvetica Now Display';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 30px;
+  /* or 188% */
+
+  display: flex;
+  align-items: center;
+
+  /* Black-3 */
+
+  color: #646464;
+}
+
+.displayCards {
+position: relative;
+top : 8em;
+z-index: -1;
+}
+
+.dashboardCard{
+  position: relative;
+  margin: 1em;
+  border-radius: 1em;
+  width: 27em;
+  height: 15em;
+  top: 21em;
+  left: 5em;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15)), url(.jpg);
+  background-image: url("../card.png");
+  background-size: 27em 15em;
+  border-radius: 0.5em;
+}
+
+label{
+  margin-bottom: 1em;
+  font-family: 'Helvetica Now Display';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1em;
+  line-height: 1em;
+  /* or 100% */
+
+
+  /* Black-1 */
+
+  color: #050505;
+}
+
+input {
+  border: none;
+  width: 40em;
+  border-bottom: 2px solid rgb(0, 0, 0);
+}
+
+
+.fieldRegister{
+  position: relative;
+  
+  width: 20em;
+  border: none;
+  border-bottom: 2px solid rgb(0, 0, 0);
+}
+
+.submissionLoginButton{
+  display: grid;
+  grid-template-columns: 26em 1em;
+}
+
+.submissionRegisterButton{
+  display: grid;
+  padding-top: 1em;
+  grid-template-columns: 29em 1em;
+}
+
+input[type=reset] {
+  display: flex;
+  border: none;
+  background: none;
+
+}
+
+input[type=submit] {
+  border-radius: 0.2em;
+  color: white;
+  width: 14em;
+  background: black;
+
+}
+
+input[type=submit]:hover {
+  border-radius: 0.2em;
+  color: white;
+  width: 14em;
+  background: rgb(75, 75, 75);
+
+}
+
+.field{
+  margin-bottom: 1em;
+}
+
+a:link, a:active, a:hover, a:visited{
+  text-decoration: none;
+  color: #1B1B1B;
+}
+
+td{
+  padding: 0.75em;
+}
+
+select{
+  padding: 4px;
+  width: 20.5em;
+  border-radius: 5px;
+}
+
+#usernameEmptyError{
+  position: absolute;
+  opacity: 0;
+  visibility: hidden;
+  right: 1em;
+  color: rgb(255, 0, 0);
+}
+
+#passwordEmptyError{
+  position: absolute;
+  opacity: 0;
+  visibility: hidden;
+  right: 1em;
+  color: rgb(255, 0, 0);
+}
