@@ -24,7 +24,7 @@ function retrieveAllCoins($con){
     if ($rows = $results -> fetch_all(MYSQL_ASSOC)){
         echo $rows;
         // mysqli_stmt_close();
-        return $rows;
+        return $rows["symbol"]; 
     } else {
         // mysqli_stmt_close();
         return false;
