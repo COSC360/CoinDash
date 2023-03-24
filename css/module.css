@@ -1,10 +1,11 @@
 .panel {
-    margin: 5em auto;
+    margin: 0 auto;
     padding: 0 7em;
     max-width: 1720px;
 }
 
 .block {
+    margin: 5em 0;
     position: relative;
     display: flex;
     flex: 1 1 0;
@@ -27,10 +28,11 @@
 }
 
 .module-settings-btn {
+    cursor: pointer;
     width: 1.2em;
     height: 2em;
     position: absolute;
-    top: -0.35em;
+    top: -0.5em;
     left: -0.625em;
     display: flex;
     align-items: center;
@@ -56,8 +58,9 @@
 }
 
 .api-details .icon-overlay{
-    width: 2.5em;
-    height: 2.5em;
+    max-width: 2.5em;
+    max-height: 2.5em;
+    aspect-ratio: 1;
 }
 
 .api-category {
@@ -251,22 +254,22 @@ select {
 
 .right-border-highlight::after {
     content: "";
-    width: 6px;
+    width: 4px;
     height: 100%;
     position: absolute;
     top: 0;
-    right: -3px;
+    right: -2px;
     background-color: var(--Highlight);
     z-index: 1;
 }
 
 .left-border-highlight::before {
     content: "";
-    width: 6px;
+    width: 4px;
     height: 100%;
     position: absolute;
     top: 0;
-    left: -3px;
+    left: -2px;
     background-color: var(--Highlight);
     z-index: 1;
 }

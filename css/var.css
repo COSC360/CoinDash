@@ -35,3 +35,7 @@
 .fit-width {
     width: fit-content;
 }
+
+.hidden {
+    display: none;
+}

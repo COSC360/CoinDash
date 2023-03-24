@@ -16,29 +16,44 @@
 
 <body>
     <header class="container">
-        <div class="logo">
-            LOGO HERE
-        </div>
-        <nav>
-            <a href="#">Search</a>
-            <a href="#">My Dashboard</a>
-            <a href="#">Community</a>
-            <a href="#">Help</a>
-        </nav>
-        <div class="settings container">
-            <div class="horizontal-container fit-width">
-                <p>English-US</p>
-                <img src="images/canada-flag.png">
-                <img src="svgs/arrow-down.svg">
+        <div class="fill-container">
+            <div class="left">
+                <p class="logo">
+                    LOGO HERE
+                </p>
             </div>
-            <div class="horizontal-container fit-width">
-                <p>Hi, Jason</p>
-                <img src="images/profile-picture.png">
-                <img src="svgs/arrow-down.svg">
+            <div class="middle">
+                <nav>
+                    <a href="#">Search</a>
+                    <a href="#">My Dashboard</a>
+                    <a href="#">Community</a>
+                    <a href="#">Help</a>
+                </nav>
+            </div>
+            <div class="right settings">
+                <div class="horizontal-container fit-width">
+                    <p>English-US</p>
+                    <img src="images/canada-flag.png">
+                    <img src="svgs/arrow-down.svg">
+                </div>
+                <div class="horizontal-container fit-width">
+                    <p>Hi, Jason</p>
+                    <img src="images/profile-picture.png">
+                    <img src="svgs/arrow-down.svg">
+                </div>
             </div>
         </div>
     </header>
     <main>
+        <article class="panel page-title">
+            <h2>Home / Jason /</h2>
+            <div class="title">
+                <h1>Jason's Dashboard</h1>
+                <div class="container">
+                    <img src="svgs/edit.svg">
+                </div>
+            </div>
+        </article>
         <article>
             <div class="block panel">
                 <div  class="module small" id="module-1"> 
@@ -1111,7 +1126,25 @@
         </article>
     </main>
     <footer>
-        Footer
+        <a id="view-edit-btn" class="icon-overlay" href="#">
+            <img src="svgs/view.svg">
+        </a>
+        <div class="fill-container">
+            <div class="left">
+                <p>Aminbhavi Suyash & Jason Ramos</p>
+            </div>
+            <div class="middle">
+                <nav>
+                    <a href="#">My Dashboard</a>
+                    <a href="#">Community</a>
+                    <a href="#">Help</a>
+                </nav>  
+            </div>
+            <div class="right">
+                <p href="#">© COSC 360 Group, Inc</p>
+                <p href="#">Back To Top</p>
+            </div>
+        </div>
     </footer>
     <script src="js/modules.js"></script>
 </body>

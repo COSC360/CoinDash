@@ -1,29 +1,54 @@
 header {
-    width: calc(100vw - 4em);
+    width: 100%;
     height: fit-content;
     position: fixed;
     top: 0;
     left: 0;
     z-index: 10;
+}
+
+header .fill-container, footer .fill-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-size: 1em;
-    padding: 2em;
+    gap: 1.25em;
+    padding: 1.2em;
     background-color: var(--White-1);
     font-weight: 500;
 }
 
-nav {
-    position: absolute;
-    left: 50%;
-    transform: translate(-50%, 0);
+header .fill-container {
+    font-size: 1.1em;
+    width: 100%;
+}
+footer .fill-container {
+    font-size: 1em;
+}
+
+.left, .middle, .right {
     display: flex;
-    gap: 5em;
+    flex: 1 1 0;
+    gap: 2em;
+}
+.left {
+    justify-self: flex-start;
+}
+.middle {
+    justify-content: center;
+}
+.right {
+    justify-content: flex-end;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin: 0 auto;
 }
 
 nav a {
-    font-size: 1.25em;
     text-decoration: none;
     color: var(--Black-1);
     white-space: nowrap;
@@ -34,9 +59,17 @@ nav a {
 }
 
 main {
-    margin-top: 6em;
+    margin-top: 6.5em;
 }
 
 footer {
     background-color: aquamarine;
+}
+
+#view-edit-btn {
+    position: fixed;
+    bottom: 2em;
+    right: 2em;
+    width: 3em;
+    height: 3em;
 }
