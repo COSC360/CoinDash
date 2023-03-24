@@ -1,92 +1,158 @@
 <?php
+session_start();
+include 'DBconnection.php';
 
+    $statusMsg = '';
 
+    if ($con->connect_error) {
+        die("Connection failed: " . $con->connect_error);
+    }else{
+        if(!empty($_FILES["img"]["name"])) { 
+            $username= $_POST['username'];
+            $email = $_POST['email'];
+            $password = $_POST['password'];
+            $verifyPassword = $_POST['verifyPassword'];
+            $selectedOption = $_POST['selectionMenu'];
+            $fileName = basename($_FILES["img"]["name"]);
+            $fileType = pathinfo($fileName, PATHINFO_EXTENSION);
+            $userType = "user";
+
+            // Allow certain file formats 
+            $allowTypes = array('jpg','png','jpeg');
+            
+            //Check if data already exists 
+            $stmt = $con->prepare("SELECT * FROM `user_auth` WHERE  `Email` = ? && `Password` = ? || `Username` = ? && `Password` = ? ");
+            $stmt->bind_param("ssss", $email,$password,$username,$password); 
+            $stmt->execute();
+            $resultSet = $stmt->get_result(); // get the mysqli result
+            $result = $resultSet->fetch_assoc();
+
+            if(in_array($fileType, $allowTypes)){ 
+                $image = $_FILES['img']['tmp_name']; 
+                $imgContent = addslashes(file_get_contents($image));
+
+                if($email == "" || $username == "" || $password == "" || $verifyPassword == ""){
+                    $statusMsg = 'Please enter all the required details !';
+                }elseif($password != $verifyPassword){
+                    $statusMsg = 'Passwords do not match !';
+                }elseif($result != null){
+                    $statusMsg = 'User already exists !';
+                }else{
+                    // Insert image content into database   
+                    $stmt = $con->prepare("INSERT INTO `user_auth` (`Username`, `Email`, `Password`,`comingFrom`,`profilePicture`,`userType`) VALUES (?,?,?,?,?,?)");
+                    $stmt->bind_param("ssssss",$username,$email,$password,$selectedOption,$imgContent,$userType); 
+                    $stmt->execute();
+                    header('location:signIn.php');
+                    $stmt->close();
+                    $con->close();
+                }
+            }else{ 
+                $statusMsg = 'Sorry, only JPG, JPEG & PNG files are allowed to upload.'; 
+            } 
+        }
+    }
 ?>
+
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="font/helvetica-now-display/stylesheet.css">
-  <link rel="stylesheet" href="css/var.css">
-  <link rel="stylesheet" href="css/reset.css">
-  <link rel="stylesheet" href="css/dashboard.css">
-  <link rel="stylesheet" href="css/header-footer.css">
-  <link rel="stylesheet" href="css/module.css">
-  <link rel="stylesheet" href="css/userEntry.css">
-  <script src="js/signUp.js"></script>
-
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <title>360 Project</title>
+<meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project 360</title>
+    <link rel="stylesheet" href="font/helvetica-now-display/stylesheet.css">
+    <link rel="stylesheet" href="css/var.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/header-footer.css">
+    <link rel="stylesheet" href="css/module.css">
+    <link rel="stylesheet" href="css/userAuth.css">
+    <script src="js/signIn.js"></script>
+    <script src="js/signUp.js"></script>
 </head>
-<body>
-<?php  
-echo "<div class=\"container\">
-    <div class = \"displayText\">
-      <p id = \"displayHome\">Home /</p>
-      <h1 id = \"displaySignInText\">Sign Up</h1>
-      <p id = \"displayIntroduction\">Lorem ipsum dolor sit amet consectetur. Erat facilisi varius est cursus. Neque sagittis mi non purus semper lacus mauris magnis.</p>
-      <div class=\"secondaryContainer\">
-        <div class=\"row\">
-            <p class = \"col-3\" id = \"DescriptionFooterText\"><a href=\"http://localhost/project-JasonR24/signIn.php\">Already Have An Account?</a></p>
-            <p class = \"col-1\" id = \"or\">or</p>
-            <p class = \"col-3\" id = \"DescriptionFooterText\">Explore Dashboards?</p>
 
+<body>
+    <div class="main-container">
+        <header class="header-container">
+            <div class="logo">
+                <img src="images/sitelogo.png">
+            </div>
+            <nav>
+                <a href="http://cosc360.ok.ubc.ca/suyash06/cosc360-Project/community.php">Community</a>
+                <a href="http://cosc360.ok.ubc.ca/suyash06/cosc360-Project/help.php">Help</a>
+            </nav>
+            <div class="settings container">
+                <div class="horizontal-container fit-width" style="margin-right: 2em;">
+                    <p>English-US</p>
+                    <img src="images/canada-flag.png">
+                    <img src="svgs/arrow-down.svg">
+                </div>
+                <div class="horizontal-container fit-width">
+                    <p>Sign In / Sign Up</p>
+
+                </div>
+            </div>
+        </header>
+        <div class = "auth-container">
+            <div class="register-info">
+                <h1>Home/</h1>
+                <h2>Sign Up</h2>
+                <p>Lorem ipsum dolor sit amet consectetur. Erat facilisi varius est cursus. Neque sagittis mi non purus semper lacus mauris magnis.</p>
+                <div class="info-footer">
+                    <p><a href="http://cosc360.ok.ubc.ca/suyash06/cosc360-Project/signIn.php">Already Have An Account?</a></p>
+                    <p>or</p>
+                    <p><a href="http://cosc360.ok.ubc.ca/suyash06/cosc360-Project/community.php">Explore Dashboards?</a></p>
+                </div>
+            </div>  
+            <div class="register-box">
+                <form name = "RegisterForm" enctype="multipart/form-data" action= "" onsubmit="return validateRegisterForm()" method="POST" required>
+                            <div class="item-1">
+                                <label>Username <span style="color: red;">*</span></label><br>                   
+                                <input type = "text" name = "username" placeholder="What Should We Call You?">
+                            </div>
+                            <div class="item-2">
+                                <label>Email <span style="color: red;">*</span></label><br>
+                                <input type = "email" name = "email" placeholder="What's Your Email?">
+                            </div>
+                            <div class="item-3">
+                                <label>Password <span style="color: red;">*</span></label><br>                                   
+                                <input type = "password" name = "password" placeholder="What’s Your Password?">
+                            </div>
+                            <div class="item-4">
+                                <label>Verify Password <span style="color: red;">*</span></label><br>
+                                <input type = "password" name = "verifyPassword" placeholder="Confirm Password?">
+                            </div>
+                            <div class="item-5">
+                                <label>Coming From</label><br>
+                                <select name="selectionMenu">
+                                    <option value="Google"  selected="selected">Google</option>
+                                    <option value="Friend">Friend</option>
+                                    <option value="Social Media">Social Media</option>
+                                </select>
+                            </div>
+                            <div class="item-6">
+                                <label>Profile Photo <span style="color: red;">*</span></label><br>
+                                <!-- <button id="upload-file-btn" onclick= "document.getElementById('getFile').click()">Upload File <img src="svgs/arrow-right-short.svg"></button>
+                                <input type='file' id="getFile" style="display:none"> -->
+                                <input type="file" name="img" accept="image/*">
+                            </div>
+                            <div class="item-7">
+                                <input type="reset" value="Reset Form">
+                            </div>
+                            <div class = "item-8">
+                                <input type="submit" value="Get Started !">
+                            </div>                    
+                </form>
+            </div>
         </div>
-      </div>
-    </div>
-    <form  name = \"RegisterForm\" class=\"RegisterForm\" onsubmit=\"return validateRegisterForm()\">
-    <table>
-        <tr>
-            <td>
-                <label>Username</label><br>
-                <p id = \"usernameEmptyError\">Required <img src=\"svgs/warning-circle.svg\"></p>
-                <input type = \"text\" name = \"username\" placeholder=\"What Can We Call You?\" class = \"fieldRegister\" onkeydown=\"UsernameErrorClearFunction()\">
-            </td>
-            <td>
-                <label>Email</label><br>
-                <input type = \"email\" name = \"email\" placeholder=\"What's Your Email?\" class = \"fieldRegister\" onkeydown=\"EmailErrorClearFunction()\">
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <label>Password</label><br>
-                <p id = \"passwordEmptyError\">Required <img src=\"svgs/warning-circle.svg\"></p>
-                <input type = \"password\" name = \"password\" placeholder=\"What's Your Password?\" class = \"fieldRegister\" onkeydown=\"PasswordErrorClearFunction()\">
-            </td>
-            <td>
-                <label>Verify Password</label><br>
-                <input type = \"password\" name = \"verifyPassword\" placeholder=\"Confirm Password?\" class = \"fieldRegister\" onkeydown=\"VerifyPasswordErrorClearFunction()\">
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <label>Coming From</label><br>
-                <select id=\"selectionMenu\">
-                    <option value=\"Google\">Google</option>
-                    <option value=\"Friend\">Friend</option>
-                    <option value=\"Social Media\">Social Media</option>
-                </select>
-            </td>
-            <td>
-                <label>Profile Photo</label><br>
-                <input type=\"file\" id=\"img\" name=\"img\" accept=\"image/*\"  class = \"fieldRegister\">
-            </td>
-        </tr>
-    </table>
-    <div class=\"submissionRegisterButton\">
-        <input type=\"reset\" value=\"Reset Form\">
-        <input type=\"submit\" value=\"Get Started !\">
-      </div>
-    </form>
-   
-  </div>
-  <div class = \"displayCards\">
-      <img class=\"dashboardCard\">
-      <img class=\"dashboardCard\">
-      <img class=\"dashboardCard\">
-  </div>
-  </div>";
-?>
+        <div class = "register-display-card-container">  
+            <a href = "http://cosc360.ok.ubc.ca/suyash06/cosc360-Project/dashboard.php"><img class="dashboardCard"></a>
+            <a href = "http://cosc360.ok.ubc.ca/suyash06/cosc360-Project/dashboard.php"><img class="dashboardCard"></a>
+            <a href = "http://cosc360.ok.ubc.ca/suyash06/cosc360-Project/dashboard.php"><img class="dashboardCard"></a>
+        </div>
+        </div>
+    </div>   
 </body>
+
 </html>
