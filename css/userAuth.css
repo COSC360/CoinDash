@@ -1,0 +1,346 @@
+@keyframes rainbow-animation {
+  to {
+      background-position: 4500vh;
+  }
+}
+
+.header-container {
+    width: calc(100vw - 4em);
+    height: fit-content;
+    position: relative;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1em;
+    padding: 2em;
+    background-color: var(--White-1);
+    font-weight: 500;
+}
+
+.header-container .logo img{
+  position: relative;
+  width: 50px;
+  height: 50px;
+}
+
+.auth-container{
+  width: calc(100vw - 4em);
+  height: fit-content;
+  position: relative;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  display: flex;
+  justify-content: space-between;
+  font-size: 1em;
+  padding: 2em;
+  background-color: var(--White-1);
+}
+
+.login-info{
+  width: fit-content;
+}
+
+.login-info h1{
+    font-size: 1.25em;
+    color: #646464;
+}
+
+.login-info h2{
+    font-weight: 800;
+    font-size: 4em;
+    /* background: -webkit-linear-gradient(#039dda,#025fac,#0019f7);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; */
+    background-image: 
+    linear-gradient(to right, rgb(0, 195, 255),rgb(0, 140, 255),rgb(0, 110, 255),rgb(0, 119, 255),rgb(0, 204, 255),rgb(0, 162, 255)); 
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;  
+    animation: rainbow-animation 80s linear infinite;
+}
+
+
+.login-info p{
+    width: 65%;
+    margin-top: 1.5em;
+    font-size: 1.25em;
+    font-weight: 400;
+    color: #646464;
+}
+
+.login-info .info-footer{
+  display: grid;
+  grid-template-columns: 14em 3em 10em;
+}
+
+.login-info .info-footer p{
+  white-space: nowrap;
+  font-size: 1em;
+  font-weight: 500;
+  color: #050505;
+}
+
+.login-box{
+  height: fit-content;
+  width: fit-content;
+  display: grid;
+  white-space:nowrap;
+}
+
+
+.display-card-container{
+  width: calc(100vw - 4em);
+  height: fit-content;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2em;
+}
+/* .login-display-card-container{
+  position: relative;
+  width: calc(100vw - 4em);
+  height: fit-content;
+  white-space:nowrap;
+  overflow-x:auto;
+  padding-top: 6.2em;
+  padding-left: 4em;
+}
+
+.register-display-card-container{
+  position: relative;
+  width: calc(100vw - 4em);
+  height: fit-content;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  column-gap: 50px;
+  padding: 2em;
+  padding-bottom: 0; */
+/* } */
+
+.display-card-grid{
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+}
+
+.dashboardCard{
+}
+
+  * {
+    scrollbar-width: auto;
+    scrollbar-color: #000000 #ffffff;
+  }
+
+  /* Chrome, Edge, and Safari */
+  *::-webkit-scrollbar {
+    width: 17px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: #ffffff;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: #000000;
+    border-radius: 19px;
+    border: 2px solid #ffffff;
+  }
+
+.login-box form{
+  display: grid;
+  width: 100%;
+  grid-template-columns: 20em;
+}  
+
+.login-box form .item-1,.item-2,.item-3{
+  grid-column-start: 1;
+}
+
+.login-box form .item-4{
+  width: fit-content;
+  grid-column-start: 2;
+}
+
+.login-box input {
+    margin-top: 1em;
+    margin-bottom: 1em;
+    border: none;
+    width: 170%;
+    font-size: 1em;
+    border-bottom: 2px solid rgb(0, 0, 0);
+  }
+
+.login-box input[type=reset] {
+    display: flex;
+    border: none;
+    background: none;
+    font-size: 1em;
+  }
+  
+.login-box input[type=submit] {
+    float: right;
+    border-radius: 0.5em;
+    text-align: center;
+    padding: 0.5em 7.5em 0.5em 5em;
+    color: white;
+    width: 60%;
+    background: black;
+  
+  }
+
+.login-box input[type=submit]:hover {
+    background: rgb(75, 75, 75);
+  }
+
+.login-box input[type=reset]:hover {
+    color: rgb(75, 75, 75);
+  }
+
+.login-box label{
+    font-weight: 500;
+    font-size: 1.15em;
+    color: #050505;
+  }
+
+  a:link, a:active, a:visited{
+    text-decoration: none;
+    color: #050505;
+  }
+
+  a:hover{
+    text-decoration: none;
+    color: #15a1ff; 
+  }
+
+
+  /* Sign Up Page*/
+
+.register-box{
+    float: right;
+    position: relative;
+    height: fit-content;
+    width: fit-content;
+    display: grid;
+    white-space:nowrap;
+    
+}
+
+.register-box input {
+  margin-top: 1em;
+  margin-bottom: 1em;
+  border: none;
+  width: 100%;
+  font-size: 1em;
+  border-bottom: 2px solid rgb(0, 0, 0);
+}
+
+.register-box input[type=reset] {
+  display: flex;
+  border: none;
+  background: none;
+  font-size: 1em;
+  width: fit-content;
+}
+
+.register-box input[type=submit] {
+  border-radius: 0.5em;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  color: white;
+  width: 40%;
+  background: black;
+}
+
+.register-box input[type=submit]:hover {
+  background: rgb(75, 75, 75);
+}
+
+.register-box input[type=reset]:hover {
+  color: rgb(75, 75, 75);
+}
+
+.register-box label{
+  font-weight: 500;
+  font-size: 1em;
+  color: #050505;
+}
+
+
+
+.register-box form{
+  display: grid;
+  grid-template-columns: 20em 20em;
+  column-gap: 3em;
+}
+
+.item-8 input{ 
+  float: right;
+}
+
+select{
+  margin-top: 1em;
+  padding: 5px;
+  width: 100%;
+  height: 2.25em;
+  border-radius: 5px;
+}
+
+.register-box .submission-box{
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.register-box form .item-1,.item-3,.item-5, .item-7{
+  grid-column-start: 1;
+}
+
+.register-box form .item-2,.item-4,.item-6, .item-8{
+  grid-column-start: 2;
+}
+
+.register-info{
+  width: fit-content;
+}
+
+.register-info h1{
+  font-size: 1.25em;
+  color: #646464;
+}
+
+.register-info h2{
+  font-weight: 800;
+  font-size: 4em;
+  color: #050505;
+  /* background: -webkit-linear-gradient(#039dda,#025fac,#0019f7);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; */
+  background-image: 
+  linear-gradient(to right, rgb(0, 195, 255),rgb(0, 140, 255),rgb(0, 110, 255),rgb(0, 119, 255),rgb(0, 204, 255),rgb(0, 162, 255)); 
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;  
+  animation: rainbow-animation 80s linear infinite;
+}
+
+.register-info p{
+  width: 65%;
+  margin-top: 1.5em;
+  font-size: 1.25em;
+  font-weight: 400;
+  color: #646464;
+}
+
+.register-info .info-footer{
+  display: grid;
+  grid-template-columns: 14em 3em 10em;
+}
+
+.register-info .info-footer p{
+  white-space: nowrap;
+  font-size: 1em;
+  font-weight: 500;
+  color: #050505;
+}
