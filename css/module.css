@@ -5,9 +5,15 @@
 }
 
 .block {
-    flex: 1 1 0;
+    position: relative;
     display: flex;
-    gap: 1.25em;
+    flex: 1 1 0;
+}
+
+.horizontal-block {
+    flex-direction: row;
+    padding: 1.25em;
+    column-gap: 1.25em;
 }
 
 .column {
@@ -15,8 +21,23 @@
 }
 
 .module {
+    padding: 0 0.625em;
     flex: 1 1 0;
+    position: relative;
 }
+
+.module-settings-btn {
+    width: 1.2em;
+    height: 2em;
+    position: absolute;
+    top: -0.35em;
+    left: -0.625em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.1em;
+}
+
 
 .module-header{
     display: grid;
@@ -228,3 +249,24 @@ select {
     font-size: 1.5em;
 }
 
+.right-border-highlight::after {
+    content: "";
+    width: 6px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: -3px;
+    background-color: var(--Highlight);
+    z-index: 1;
+}
+
+.left-border-highlight::before {
+    content: "";
+    width: 6px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: -3px;
+    background-color: var(--Highlight);
+    z-index: 1;
+}

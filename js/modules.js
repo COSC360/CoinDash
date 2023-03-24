@@ -1,0 +1,72 @@
+var module_settings_btns = document.querySelectorAll(".module-settings-btn");
+var modules = document.querySelectorAll(".module");
+
+module_settings_btns.forEach(btn => {
+    
+    // Grab connectedModule to be moved
+    btn.addEventListener("dragstart", (e) => {
+        e.dataTransfer.setData("draggedModule", btn.parentNode.id); 
+        e.dataTransfer.setDragImage(btn.parentNode, 0, 0);
+    })
+})
+
+modules.forEach(module => {
+    var dragCounter = 0;
+    module.addEventListener("dragenter", (e) => {
+        e.stopPropagation();
+        e.preventDefault();
+        var moduleDroppedOnBounds = module.getBoundingClientRect();
+
+        var rightDist = moduleDroppedOnBounds.right - e.clientX;
+        var leftDist = e.clientX - moduleDroppedOnBounds.left;
+
+
+        // Determine which side to to highlight based on proximity to left/right
+        if (leftDist < rightDist){
+            module.classList.remove("right-border-highlight");
+            module.classList.add("left-border-highlight");
+        } else {
+            module.classList.remove("left-border-highlight");
+            module.classList.add("right-border-highlight");
+        }
+        dragCounter++;
+    })
+
+    module.addEventListener("dragleave", (e) => {
+        e.stopPropagation();
+        e.preventDefault();
+        dragCounter--;
+        if (dragCounter === 0){
+            module.classList.remove("right-border-highlight");
+            module.classList.remove("left-border-highlight");
+        }
+    })
+
+    module.addEventListener("drop", (e) => {
+        e.preventDefault();
+        dragCounter = 0;
+        var moduleToBeDroppedId = e.dataTransfer.getData("draggedModule");
+        var moduleToBeDropped = document.getElementById(moduleToBeDroppedId)
+        var moduleContainer = module.parentNode; 
+
+        // Retrieves placement of module placed relative to its parent container
+        var index = Array.prototype.indexOf.call(moduleContainer.children, module);
+
+        var moduleDroppedOnBounds = module.getBoundingClientRect();
+        var leftDist = e.clientX - moduleDroppedOnBounds.left;
+        var rightDist = moduleDroppedOnBounds.right - e.clientX;
+
+        // Determine which side to place module based on proximity to left/right
+        module.classList.remove("right-border-highlight");
+        module.classList.remove("left-border-highlight");
+        if (leftDist < rightDist){
+            moduleContainer.insertBefore(moduleToBeDropped, moduleContainer.children[index]);
+        } else {
+            moduleContainer.insertBefore(moduleToBeDropped, moduleContainer.children[index].nextSibling);
+        }
+    })
+
+    module.addEventListener("dragover", (e) => {
+        e.preventDefault();
+    })
+})
