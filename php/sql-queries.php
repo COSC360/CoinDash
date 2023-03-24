@@ -20,9 +20,9 @@ function retrieveAllCoins($con){
 
     $results = mysqli_stmt_get_result($stmt);
 
-    if ($row = $results -> fetch_all(MYSQL_ASSOC)){
+    if ($rows = $results -> fetch_all(MYSQL_ASSOC)){
         // mysqli_stmt_close();
-        return $row;
+        return $rows;
     } else {
         // mysqli_stmt_close();
         return false;
@@ -55,9 +55,9 @@ function retrieveCoinsByCategory($con, $fiat, $category, $sort, $sortDirection, 
 
     $results = mysqli_stmt_get_result($stmt);
 
-    if ($row = $results -> fetch_all(MYSQL_ASSOC)){
+    if ($rows = $results -> fetch_all(MYSQL_ASSOC)){
         // mysqli_stmt_close();
-        return $row;
+        return $rows;
     } else {
         // mysqli_stmt_close();
         return false;
