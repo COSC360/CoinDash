@@ -10,8 +10,9 @@ if ($con->connect_error) {
     
     /* Fetch all of the remaining rows in the result set */
     print("Fetch all of the remaining rows in the result set:\n");
-    $result = $stmt->fetch_all(MYSQL_ASSOC);
+    $result = $stmt->fetchAll();
     print_r($result);
+    echo "Works !";
 }
 
 // $curl = curl_init();
