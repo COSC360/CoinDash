@@ -31,7 +31,7 @@ function generateHeader(){
                 </div>
             </div>
         </header>
-    "
+    ";
 }
 
 ?>
