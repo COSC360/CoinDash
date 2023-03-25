@@ -1,3 +1,5 @@
+let usernameError = document.getElementById("usernameError");
+let passwordError = document.getElementById("passwordError");
 function addErrorMessage($id, $msg){
     var errorMsg = document.createTextNode($msg);
     if($id = $usernameError){
@@ -10,8 +12,6 @@ function addErrorMessage($id, $msg){
 function validateLoginForm() {
     let usernameOrEmail = document.forms["LoginForm"]["user-email"].value;
     let password = document.forms["LoginForm"]["password"].value;
-    let usernameError = document.getElementById("usernameError");
-    let passwordError = document.getElementById("passwordError");
     // var errorFlag = false;
     var passReg = /^[a-zA-Z]\w{8,16}$/;
     
