@@ -32,24 +32,19 @@ include 'DBconnection.php';
             $result = $resultSet->fetch_assoc();
 
             if(in_array($fileType, $allowTypes)){ 
-                // $image = $_FILES['img']['tmp_name']; 
-                // $imgContent = addslashes(file_get_contents($image));
-                $image_base64 = base64_encode(file_get_contents($_FILES['img']['tmp_name']) );
-                $image = 'data:image/'.$fileType.';base64,'.$fileType;
+                $image = $_FILES['img']['tmp_name']; 
+                $imgContent = addslashes(file_get_contents($image));
 
                 if($email == "" || $username == "" || $password == "" || $verifyPassword == ""){
                     $statusMsg = 'Please enter all the required details !';
-                    echo "<script>window.alert(".$statusMsg.");</script>";
                 }elseif($password != $verifyPassword){
                     $statusMsg = 'Passwords do not match !';
-                    echo "<script>window.alert(".$statusMsg.");</script>";
                 }elseif($result != null){
                     $statusMsg = 'User already exists !';
-                    echo "<script>window.alert(".$statusMsg.");</script>";
                 }else{
                     // Insert image content into database   
                     $stmt = $con->prepare("INSERT INTO `user_auth` (`Username`, `Email`, `Password`,`comingFrom`,`profilePicture`,`userType`) VALUES (?,?,?,?,?,?)");
-                    $stmt->bind_param("ssssss",$username,$email,$password,$selectedOption,$image,$userType); 
+                    $stmt->bind_param("ssssss",$username,$email,$password,$selectedOption,$imgContent,$userType); 
                     $stmt->execute();
                     header('location:signIn.php');
                     $stmt->close();
@@ -145,7 +140,7 @@ include 'DBconnection.php';
                                 <label>Profile Photo <span style="color: red;">*</span></label><br>
                                 <!-- <button id="upload-file-btn" onclick= "document.getElementById('getFile').click()">Upload File <img src="svgs/arrow-right-short.svg"></button>
                                 <input type='file' id="getFile" style="display:none"> -->
-                                <input type="file" name="img" id ="img" accept="image/*">
+                                <input type="file" name="img" accept="image/*">
                             </div>
                             <div class="item-7">
                                 <input type="reset" value="Reset Form">
