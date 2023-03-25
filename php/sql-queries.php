@@ -167,6 +167,7 @@ function retrieveDashboard($con, $userId){
     $moduleStmt = mysqli_stmt_init($con);
     if (!mysqli_stmt_prepare($moduleStmt, $moduleSql)){
         // TODO:
+        echo "<script>console.log('Failure');</script>";
         // header("location: REPLACE LATER");
         exit();
     }
