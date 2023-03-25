@@ -204,25 +204,6 @@
     font-size: 1.15em;
     color: #050505;
   }
-  .input-control {
-    display: flex;
-    flex-direction: column;
-}
-
-  .input-control.success input {
-      border-color: #09c372;
-  }
-
-  .input-control.error input {
-      border-color: #ff3860;
-  }
-
-  .input-control .error {
-      color: #ff3860;
-      font-size: 9px;
-      height: 13px;
-  }
- 
 
 
   a:link, a:active, a:visited{
