@@ -5,15 +5,16 @@ include "DBconnection.php";
 if ($con->connect_error) {
     die("Connection failed: " . $con->connect_error);
 }else{
-    $stmt = $con->prepare("SELECT * FROM coin ORDER BY category ASC");
+    $stmt = $con->prepare("SELECT * FROM coin");
     $stmt->execute();
     $resultSet = $stmt->get_result(); // get the mysqli result
     $result = $resultSet->fetch_all(MYSQLI_ASSOC);
     foreach ($result as $field) {
+        // echo "Id: ".$field['Id']."\n";
         $curl = curl_init();
-
+        
         curl_setopt_array($curl, [
-            CURLOPT_URL => "https://coingecko.p.rapidapi.com/coins/".$field['Id']."?localization=false&tickers=false&market_data=true&community_data=false&developer_data=false&sparkline=false",
+            CURLOPT_URL => "https://coingecko.p.rapidapi.com/coins/".trim($field['Id'])."?localization=false&tickers=false&market_data=true&community_data=false&developer_data=false&sparkline=false",
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_FOLLOWLOCATION => true,
             CURLOPT_ENCODING => "",
@@ -23,7 +24,7 @@ if ($con->connect_error) {
             CURLOPT_CUSTOMREQUEST => "GET",
             CURLOPT_HTTPHEADER => [
                 "X-RapidAPI-Host: coingecko.p.rapidapi.com",
-                "X-RapidAPI-Key: a1cb3fec1emsh2a110a5809545d3p1e18a9jsn6d2c1e7dedd7"
+                "X-RapidAPI-Key: acc5ef0728msha8eb6b12a17ba4fp16bac1jsnc1cafc01b039"
             ],
         ]);
 
@@ -35,7 +36,7 @@ if ($con->connect_error) {
             echo "cURL Error #:" . $err;
         } else {
             $json = json_decode($response, true);
-            echo "symbol: ".$json['symbol'];
+            echo "symbol: ".$json['symbol']."<br>";
         }
 
     }
