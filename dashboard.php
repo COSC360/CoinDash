@@ -105,10 +105,10 @@
                                     "<div class=\"product-card\">
                                         <div class=\"icon-container\">
                                             <a class=\"icon-overlay\" href=\"#\">
-                                                <i class=\"fa-light fa-location-arrow\"></i>
+                                                <img src=\"svgs/goto.svg\">
                                             </a>
                                             <a class=\"icon-overlay\" href=\"#\">
-                                                <i class=\"fa-light fa-bookmark\"></i>
+                                                <img src=\"svgs/bookmark.svg\">
                                             </a>
                                         </div>
                                             <div class=\"product-image-mask\">
@@ -131,10 +131,10 @@
                                     <div class=\"module-footer\">
                                     <div class=\"prev\">
                                         <img class=\"prev-icon\" src=\"svgs/arrow-left-long.svg\">
-                                        <i class=\"fa-light fa-arrow-left-long\"></i>
+                                        <p>Previous</p>
                                     </div>
                                     <div class=\"next\">
-                                        <i class=\"fa-light fa-arrow-left-long fa-rotate-180\"></i>
+                                        <p>Next</p>
                                         <img class=\"next-icon\" src=\"svgs/arrow-right-long.svg\">
                                     </div>
                                 </div>

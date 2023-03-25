@@ -39,3 +39,7 @@
 .hidden {
     display: none;
 }
+
+i {
+    color: var(--Black-1);
+}
