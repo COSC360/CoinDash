@@ -22,18 +22,18 @@ window.onload = function validateLoginForm() {
         usernameError.style.transition = "visibility 0s linear 0s, opacity 300ms";  
 
     }else if(password ==""){
+        $msg = "Password cannot be empty !"
+        addErrorMessage($passwordError, $msg);
         passwordError .style.opacity = "1";
         passwordError.style.visibility = "visible";
-        passwordError .style.transition = "visibility 0s linear 0s, opacity 300ms";
-        $msg = "Password cannot be empty !"
-        addErrorMessage($passwordError, $msg);  
+        passwordError .style.transition = "visibility 0s linear 0s, opacity 300ms";  
 
     }else if(usernameOrEmail ==""){
+        $msg = "Username/Email cannot be empty !"
+        addErrorMessage($usernameError, $msg);
         usernameError.style.opacity = "1";
         usernameError.style.visibility = "visible";
         usernameError.style.transition = "visibility 0s linear 0s, opacity 300ms";  
-        $msg = "Username/Email cannot be empty !"
-        addErrorMessage($usernameError, $msg);
 
     }else if(! passReg.test($password)){
         $msg = "Please enter a valid password !"
