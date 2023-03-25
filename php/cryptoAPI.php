@@ -6,7 +6,7 @@ if ($con->connect_error) {
     die("Connection failed: " . $con->connect_error);
 }else{
     for($i=0; $i <)
-    $stmt = $con->prepare("SELECT * FROM coin LIMIT 10 OFFSET 0");
+    $stmt = $con->prepare("SELECT * FROM coin LIMIT 3 OFFSET 0");
     $stmt->execute();
     $resultSet = $stmt->get_result(); // get the mysqli result
     $result = $resultSet->fetch_all(MYSQLI_ASSOC);
