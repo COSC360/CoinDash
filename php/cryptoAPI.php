@@ -36,7 +36,7 @@ if ($con->connect_error) {
         if ($err) {
             echo "cURL Error #:" . $err;
         } else {
-            echo $response;
+            echo $response['symbol'];
         }
     }
 }
