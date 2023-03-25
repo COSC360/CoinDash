@@ -82,12 +82,10 @@ function createCoinCategory($con, $coinId, $coinCategory){
 
 function uploadDashboard($con, $userId, $dashboardObject){
 
-    echo "<script>console.log('Hello')</script>";
     $dashboardSql = "INSERT INTO dashboard (user_id) VALUES (?);";
     $blockSql = "INSERT INTO block (dashboard_id) VALUES (?);";
     $moduleSql = "INSERT INTO module (block_id, dashboard_id, category, fiat, spot) VALUES (?, ?, ?, ?, ?);";
     
-    echo "<script>console.log('Hello')</script>";
     $dashboardStmt = mysqli_stmt_init($con);
     mysqli_stmt_bind_param($dashboardStmt, "s", $userId);
 
@@ -95,7 +93,7 @@ function uploadDashboard($con, $userId, $dashboardObject){
         mysqli_stmt_execute($dashboardStmt); 
 
         $dashboardObject = json_decode($dashboardObject);
-        print_r($dashboardObject);
+        print_r($dashboardObject["blocks"]);
     } catch (Exception $e){
         echo $e;
     }
