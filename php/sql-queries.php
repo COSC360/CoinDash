@@ -98,11 +98,12 @@ function uploadDashboard($con, $userId, $dashboardObject){
         foreach($blocks as $block){
             $modules = $block -> modules;
 
-            // foreach($modules as $module){
-            //     echo $module["category"];
-            //     echo $module["fiat"];
-            //     echo $module["sort"];
-            // }
+            foreach($modules as $module){
+                print_r($module);
+                // echo $module["category"];
+                // echo $module["fiat"];
+                // echo $module["sort"];
+            }
         }
     } catch (Exception $e){
         echo $e;
