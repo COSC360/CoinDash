@@ -80,6 +80,7 @@ function createCoinCategory($con, $coinId, $coinCategory){
 
 function uploadDashboard($con, $userId, $dashboardObject){
 
+    deleteDashboard($con, $userId);
     $dashboardSql = "INSERT INTO dashboard (user_id) VALUES (?);";
     $blockSql = "INSERT INTO block (dashboard_id) VALUES (?);";
     $moduleSql = "INSERT INTO module (block_id, dashboard_id, category, fiat, sort) VALUES (?, ?, ?, ?, ?);";
@@ -94,7 +95,7 @@ function uploadDashboard($con, $userId, $dashboardObject){
             // header("location: REPLACE LATER");
             exit();
         }
-        echo $userId;
+
         mysqli_stmt_bind_param($dashboardStmt, "i", $userId);
         mysqli_stmt_execute($dashboardStmt); 
         mysqli_stmt_close($dashboardStmt);
