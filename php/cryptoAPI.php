@@ -61,7 +61,7 @@ if ($con->connect_error) {
                     // $updateStmt->execute();
                     // echo "Update success !";
 
-                    // $categoryResultSet = $json['categories'];
+                    $categoryResultSet = $json['categories'];
                     // foreach($categoryResultSet as $category){
                     //     $insertStmt = $con->prepare("INSERT INTO coinCategory(coin,category) VALUES (?,?)");
                     //     $insertStmt->bind_param("ss",$field['Id'],$category);
@@ -69,7 +69,7 @@ if ($con->connect_error) {
                     // }   
                     // echo "Insert success !";
 
-                    $selectStmt = $con->prepare("SELECT * FROM category");
+                    $selectStmt = $con->prepare("SELECT `name` FROM category");
                     $selectStmt->execute();
                     $SelectResultSet = $selectStmt->get_result(); // get the mysqli result
                     $selectRS = $SelectResultSet->fetch_all(MYSQLI_ASSOC);
