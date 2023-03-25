@@ -80,9 +80,9 @@
                                 <div class=\"module-header\">
                                     <div class=\"api-details\">
                                         <div class=\"api-category\">".$dashboardModules[$currentCount]["category"]."</div>
-                                        <div class=\"icon-overlay\" href=\"#\">
-                                            <i class=\"fa-solid fa-location-arrow\"></i>
-                                        </div>
+                                        <a class=\"icon-overlay\" href=\"#\">
+                                            <img src=\"svgs/goto.svg\">
+                                        </a>
                                     </div>
                                     <div class=\"dropdowns\">
                                         <select class=\"dropdown fiat\">";
@@ -104,12 +104,12 @@
                                     echo 
                                     "<div class=\"product-card\">
                                         <div class=\"icon-container\">
-                                            <div class=\"icon-overlay\" href=\"#\">
+                                            <a class=\"icon-overlay\" href=\"#\">
                                                 <img src=\"svgs/goto.svg\">
-                                            </div>
-                                            <div class=\"icon-overlay\" href=\"#\">
+                                            </a>
+                                            <a class=\"icon-overlay\" href=\"#\">
                                                 <img src=\"svgs/bookmark.svg\">
-                                            </div>
+                                            </a>
                                         </div>
                                             <div class=\"product-image-mask\">
                                             <div class=\"product-image\" style=\"background-image: url(".$coin["img_url"].");\"></div>
@@ -154,12 +154,12 @@
         </article>
     </main>
     <footer>
-        <div id="view-edit-btn" class="icon-overlay" href="#">
-            <i class="fa-thin fa-eye fa-xl" style="color: #FFFFFF"></i>
+        <a id="view-edit-btn" class="icon-overlay" href="#">
+            <img src="svgs/view.svg">
         </div>
-        <div id="save-edit-btn" class="icon-overlay" href="#">
-            <i class="fa-thin fa-floppy-disk fa-xl" style="color: #FFFFFF"></i>
-        </div>
+        <a id="save-edit-btn" class="icon-overlay" href="#">
+            <img src="svgs/save.svg">
+        </a>
         <div class="fill-container">
             <div class="left">
                 <p>Aminbhavi Suyash & Jason Ramos</p>
