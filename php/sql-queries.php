@@ -72,8 +72,6 @@ function createCoinCategory($con,$coinId,$coinCategory){
     if ($con->connect_error) {
         die("Connection failed: " . $con->connect_error);
     }else{
-        $createStmt = $con->prepare("CREATE TABLE coinCategory(coin VARCHAR(225) NOT NULL, category VARCHAR(255) NOT NULL,PRIMARY KEY(coin), PRIMARY KEY(category))");
-        $createStmt->execute();
         $insertStmt = $con->prepare("INSERT INTO `coinCategory` (`coin`, `category`) VALUES (?,?)");
         $insertStmt->bind_param("ss", $coinId,$coinCategory); 
         $insertStmt->execute();
