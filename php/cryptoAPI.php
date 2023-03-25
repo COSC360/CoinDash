@@ -6,7 +6,6 @@ if ($con->connect_error) {
     die("Connection failed: " . $con->connect_error);
 }else{
     $stmt = $con->prepare("SELECT * FROM coin");
-    // $stmt->bind_param("i", $i);
     $stmt->execute();
     $resultSet = $stmt->get_result(); // get the mysqli result
     $result = $resultSet->fetch_all(MYSQLI_ASSOC);
@@ -40,6 +39,8 @@ if ($con->connect_error) {
                     die("Connection failed: " . $con->connect_error);
                 }else{
                     $json = json_decode($response,true);
+
+                    print_r($json);
                     $desc = $json['description']['en'];
                     $img_url = $json['image']['large'];
                     $usd = $json['market_data']['current_price']['usd'];
