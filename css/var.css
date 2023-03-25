@@ -16,7 +16,11 @@
     --Highlight: #46e9ff;
 }
 
-a:hover, i:hover {
+a:hover, a:focus, a:active, a:visited, a:link{
+    text-decoration: none;
+}
+
+.fa:hover {
     text-decoration: none;
 }
 
