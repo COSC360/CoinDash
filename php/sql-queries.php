@@ -94,10 +94,10 @@ function uploadDashboard($con, $userId, $dashboardObject){
     try {
         mysqli_stmt_execute($dashboardStmt); 
 
-        $dashboardObject = json_decode($dashboardObject);
-        echo "<script>console.log('".$dashboardObject."')</script>";
+        // $dashboardObject = json_decode($dashboardObject);
+        // echo "<script>console.log('".$dashboardObject."')</script>";
     } catch (Exception $e){
-
+        echo $e;
     }
 }
 
