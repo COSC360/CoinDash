@@ -85,26 +85,28 @@ function uploadDashboard($con, $userId, $dashboardObject){
     $dashboardSql = "INSERT INTO dashboard (user_id) VALUES (?);";
     $blockSql = "INSERT INTO block (dashboard_id) VALUES (?);";
     $moduleSql = "INSERT INTO module (block_id, dashboard_id, category, fiat, spot) VALUES (?, ?, ?, ?, ?);";
-    
-    $dashboardStmt = mysqli_stmt_init($con);
-    mysqli_stmt_bind_param($dashboardStmt, "s", $userId);
 
     try {
+        $dashboardStmt = mysqli_stmt_init($con);
+        mysqli_stmt_bind_param($dashboardStmt, "s", $userId);
         mysqli_stmt_execute($dashboardStmt); 
 
         $dashboardObject = json_decode($dashboardObject);
         $blocks = $dashboardObject -> blocks;
 
         foreach($blocks as $block){
+            $blockStmt = mysqli_stmt_init($con);
+            mysqli_stmt_bind_param($blockStmt, "s", $userId);
+            mysqli_stmt_execute($blockStmt); 
+
             $modules = $block -> modules;
 
             foreach($modules as $module){
                 $category = $module -> category;
                 $fiat = $module -> fiat;
                 $sort = $module -> sort;
-                echo $category;
-                echo $fiat;
-                echo $sort;
+
+
             }
         }
     } catch (Exception $e){
