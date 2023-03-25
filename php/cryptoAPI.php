@@ -9,7 +9,7 @@ if ($con->connect_error) {
 }else{
     $stmt = $con->prepare("SELECT * FROM coin");
     echo "It works 1";
-    // $stmt->bind_param("i", $i);
+    $stmt->bind_param("i", $i);
     $stmt->execute();
     $resultSet = $stmt->get_result(); // get the mysqli result
     $result = $resultSet->fetch_all(MYSQLI_ASSOC);
