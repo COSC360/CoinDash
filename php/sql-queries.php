@@ -175,11 +175,9 @@ function retrieveDashboard($con, $userId){
     mysqli_stmt_execute($moduleStmt);
 
     $result = mysqli_stmt_get_result($moduleStmt);
-    print_r($result);
+    
     if ($rows = $result -> fetch_all(MYSQLI_ASSOC)){
         // mysqli_stmt_close();
-        echo "<script>console.log('hi');</script>";
-        print_r($rows);
         return $rows; 
     } else {
         // mysqli_stmt_close();

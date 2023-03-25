@@ -57,6 +57,17 @@
             </div>
         </article>
         <article id="dashboard">
+            <?php 
+                include "php/modules.php";
+
+                $dashboardModules = retrieveDashboard($con, 1);
+
+                print_r($dashboardModules);
+            ?>
+
+
+
+
             <div class="block panel">
                 <div class="module small" id="module-1"> 
                     <div class="module-header">
