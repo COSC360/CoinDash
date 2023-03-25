@@ -1,5 +1,3 @@
-var dashboardDom = document.getElementById("dashboard");
-
 function buildDashboard(dashboardDom){
     var blocks = [];
 
@@ -29,7 +27,6 @@ function buildModule(moduleDom){
     var fiat = fiatDom.options[fiatDom.selectedIndex].value;
     var sortDom = document.querySelector("#" + domId + " .sort"); 
     var sort = sortDom.options[sortDom.selectedIndex].value;
-
     return new Module(category, fiat, sort);
 }
 
@@ -53,4 +50,5 @@ class Module {
     }
 }
 
-console.log(buildDashboard(dashboardDom));
+
+export default buildDashboard;

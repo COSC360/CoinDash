@@ -10,8 +10,10 @@
     <link rel="stylesheet" href="css/dashboard.css">
     <link rel="stylesheet" href="css/header-footer.css">
     <link rel="stylesheet" href="css/module.css">
-    <script src="js/dashboard.js"></script>
     <script src="https://kit.fontawesome.com/e6e0351429.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="js/jquery-3.1.1.min.js"></script>
+    <script src="js/dashboard.js"></script>
 </head>
 
 <body>
