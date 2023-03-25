@@ -68,7 +68,7 @@ if ($con->connect_error) {
                     // }   
                     // echo "Insert success !";
 
-                    $selectStmt = $con->prepare("SELECT `name` FROM category");
+                    $selectStmt = $con->prepare("SELECT * FROM category");
                     $selectStmt->execute();
                     $resultSet = $stmt->get_result(); // get the mysqli result
                     $selectRS = $resultSet->fetch_all(MYSQLI_ASSOC);
