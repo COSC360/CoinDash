@@ -154,6 +154,7 @@
         </article>
     </main>
     <footer>
+        <i class="fa-light fa-bookmark"></i>
         <div id="view-edit-btn" class="icon-overlay" href="#">
             <i class="fa-solid fa-eye"></i>
         </div>
