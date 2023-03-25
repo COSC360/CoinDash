@@ -3,15 +3,15 @@ session_start();
 
 $email= $_POST['email'];
 $password = $_POST['password'];
-
-if ($con->connect_error) {
-    die("Connection failed: " . $con->connect_error);
-}else{
-    $stmt = $con->prepare("UPDATE user_auth SET Email = ? WHERE Id = ?");
-    $stmt->bind_param("si", $email,$_SESSION["Id"]); 
-    $stmt->execute();
-    echo "Update Executed !";
-}
+$pfp = $_SESSION['pfp'];
+// if ($con->connect_error) {
+//     die("Connection failed: " . $con->connect_error);
+// }else{
+//     $stmt = $con->prepare("UPDATE user_auth SET Email = ? WHERE Id = ?");
+//     $stmt->bind_param("si", $email,$_SESSION["Id"]); 
+//     $stmt->execute();
+//     echo "Update Executed !";
+// }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -61,7 +61,7 @@ if ($con->connect_error) {
             <div class="user-account-box">
                 <div class="profile-box">
                     <div id="centered">Upload<br>Photo</div>
-                    <?php echo '<img src="data:image/jpeg;base64,'. base64_encode($_SESSION["pfp"]) .'" />';?>
+                    <?php echo '<img src="data:image/*;base64,'. base64_encode($pfp) .'" />';?>
                     <h1>Username</p>
                     <h2><?php echo $_SESSION["user"] ;?></h2>
                 </div>
