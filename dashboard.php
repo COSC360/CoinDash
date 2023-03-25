@@ -64,13 +64,13 @@
                 $dashboardModules = retrieveDashboard($con, 1);
                 $moduleCount = sizeof($dashboardModules);
                 $currentCount = 0;
-                $previousBlock = 0;
+                $previousBlock = $dashboardModules[$currentCount]["block_id"];
 
                 while ($currentCount < $moduleCount){
                     echo "<div class=\"block panel\">";
                     echo $currentCount;
                     while ($currentCount < $moduleCount){
-                        if ($previousBlock != $dashboardModules[$currentCount]["block_id"] && $currentCount == 0){
+                        if ($previousBlock != $dashboardModules[$currentCount]["block_id"]){
                             $previousBlock = $dashboardModules[$currentCount]["block_id"];
                             break;
                         }
@@ -128,7 +128,6 @@
                     echo "</div>";
                     
                 }
-                print_r($dashboardModules);
             ?>
         </article>
     </main>
