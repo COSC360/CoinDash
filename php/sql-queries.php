@@ -171,7 +171,7 @@ function retrieveDashboard($con, $userId){
         exit();
     }
 
-    mysqli_stmt_bind_param($moduleStmt, "s", $userId);
+    mysqli_stmt_bind_param($moduleStmt, "i", $userId);
     $result = mysqli_stmt_get_result($moduleStmt);
     print_r($result);
     if ($rows = $result -> fetch_all(MYSQLI_ASSOC)){
