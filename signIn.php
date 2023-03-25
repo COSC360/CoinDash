@@ -1,5 +1,10 @@
 <?php
 session_start();
+error_reporting(E_ALL);
+init_set('display_errors','1');
+include_once('ValidationResult.class.php');
+
+
 include 'DBconnection.php';
     $userOremail= $_GET['user-email'];
     $password = $_GET['password'];
@@ -82,12 +87,12 @@ include 'DBconnection.php';
                 <form name = "LoginForm" id ="LoginForm" action= "" onsubmit="return validateLoginForm()" method="GET" required>
                     <div class="item-1">
                         <label>Username or Email</label><br>     
-                        <p id = "usernameEmptyError">Username cannot be empty <img src="svgs/warning-circle.svg"></p>
+                        <p id = "usernameError"></p>
                         <input type = "text" name = "user-email" id= "user-email" placeholder="What’s Your Registered Username or Email?" onkeydown="UsernameErrorClearFunction()">
                     </div>
                     <div class="item-2">
                         <label>Password</label><br>
-                        <p id = "passwordEmptyError">Password cannot be empty <img src="svgs/warning-circle.svg"></p>
+                        <p id = "passwordError"></p>
                         <input type = "password" name = "password" id= "password" placeholder="What’s Your Password?" onkeydown="PasswordErrorClearFunction()">
                         
                     </div>
@@ -96,7 +101,7 @@ include 'DBconnection.php';
                         
                     </div>
                     <div class="item-4">
-                        <input type="submit" value="Login">
+                        <input type="submit" value="Login" id = "submit">
                     </div>
                 </form>
             </div>
