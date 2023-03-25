@@ -3,6 +3,7 @@ var dashboardDom = document.getElementById("dashboard");
 function buildDashboard(dashboardDom){
     var blocks = [];
 
+    console.log(dashboardDom);
     dashboardDom.children.forEach(child => {
         blocks.push(buildBlock(child));
     })
