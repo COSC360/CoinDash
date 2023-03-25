@@ -171,8 +171,8 @@
 
 .login-box p{
   position: absolute;
-  opacity: 0;
-  visibility: hidden;
+  /* opacity: 0;
+  visibility: hidden; */
   right: 1em;
   color: rgb(255, 0, 0);
 }
