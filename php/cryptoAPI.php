@@ -11,7 +11,7 @@ if ($con->connect_error) {
     $resultSet = $stmt->get_result(); // get the mysqli result
     $result = $resultSet->fetch_all(MYSQLI_ASSOC);
     foreach ($result as $field) {
-        echo $field['Id'];
+    
         $curl = curl_init();
         
         curl_setopt_array($curl, [
@@ -75,7 +75,7 @@ if ($con->connect_error) {
 
                     $arrDiff = array_diff($categoryResultSet, $selectRS);
 
-                    print_r($arrDiff);
+                    echo $arrDiff;
 
 
                     // if($selectRS != null){
