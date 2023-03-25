@@ -196,7 +196,7 @@ select {
     transition: 0.3s;
     text-decoration: none;
     color: var(--White-3);
-    scale: 1;
+    transform: scale(1);
 }
 
 .icon-overlay:hover{
@@ -204,7 +204,7 @@ select {
 }
 
 .icon-overlay:hover img{
-    scale: 0.9;
+    transform: scale(0.9);
 }
 
 .product-info-container {
