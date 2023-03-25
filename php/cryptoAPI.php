@@ -10,7 +10,7 @@ if ($con->connect_error) {
     $resultSet = $stmt->get_result(); // get the mysqli result
     $result = $resultSet->fetch_all(MYSQLI_ASSOC);
     foreach ($result as $field) {
-        echo "Id: ".$field['Id']."\n";
+        // echo "Id: ".$field['Id']."\n";
         $curl = curl_init();
         
         curl_setopt_array($curl, [
@@ -32,12 +32,12 @@ if ($con->connect_error) {
         $err = curl_error($curl);
         curl_close($curl);
 
-        // if ($err) {
-        //     echo "cURL Error #:" . $err;
-        // } else {
-        //     $json = json_decode($response, true);
-        //     echo "symbol: ".$json['symbol']." ";
-        // }
+        if ($err) {
+            echo "cURL Error #:" . $err;
+        } else {
+            $json = json_decode($response, true);
+            echo $json;
+        }
 
     }
 }
