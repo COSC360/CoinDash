@@ -82,7 +82,7 @@ function uploadDashboard($con, $userId, $dashboardObject){
 
     $dashboardSql = "INSERT INTO dashboard (user_id) VALUES (?);";
     $blockSql = "INSERT INTO block (dashboard_id) VALUES (?);";
-    $moduleSql = "INSERT INTO module (block_id, dashboard_id, category, fiat, spot) VALUES (?, ?, ?, ?, ?);";
+    $moduleSql = "INSERT INTO module (block_id, dashboard_id, category, fiat, sort) VALUES (?, ?, ?, ?, ?);";
 
     try {
         $dashboardObject = json_decode($dashboardObject);
@@ -100,7 +100,7 @@ function uploadDashboard($con, $userId, $dashboardObject){
         mysqli_stmt_execute($dashboardStmt); 
 
         $dashboardId = mysqli_insert_id($con);
-        mysqli_stmt_close($dashboardStmt);
+
         foreach($blocks as $block){
 
             $modules = $block -> modules;
@@ -116,7 +116,6 @@ function uploadDashboard($con, $userId, $dashboardObject){
             echo "Inserting Block";
 
             $blockId = mysqli_insert_id($con);
-            echo $blockId;
             
             foreach($modules as $module){
                 $category = $module -> category;
@@ -124,8 +123,13 @@ function uploadDashboard($con, $userId, $dashboardObject){
                 $sort = $module -> sort;
 
                 $moduleStmt = mysqli_stmt_init($con);
-                mysqli_stmt_bind_param($moduleStmt, "s", $userId);
-                mysqli_stmt_execute($blockStmt); 
+                if (!mysqli_stmt_prepare($moduleStmt, $moduleSql)){
+                    // TODO:
+                    // header("location: REPLACE LATER");
+                    exit();
+                }
+                mysqli_stmt_bind_param($moduleStmt, "iisss", $blockId, $dashboardId, $category, $fiat, $sort);
+                mysqli_stmt_execute($moduleStmt); 
             }
         }
     } catch (Exception $e){
