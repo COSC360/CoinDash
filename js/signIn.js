@@ -7,9 +7,10 @@ var passReg = /^[a-zA-Z]\w{8,16}$/;
 window.onload = function addErrorMessage($id, $msg){
     var errorMsg = document.createTextNode($msg);
     if($id = $usernameError){
-        usernameError.appendChild(errorMsg);
+        usernameError.innerText = $msg;
     }else if($id = $passwordError){
-        passwordError.appendChild(errorMsg); 
+        // passwordError.appendChild(errorMsg);
+        passwordError.innerText = $msg; 
     }
 }
 window.onload = function validateLoginForm() {
