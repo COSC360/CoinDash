@@ -34,7 +34,7 @@ include 'DBconnection.php';
             if(in_array($fileType, $allowTypes)){ 
                 // $image = $_FILES['img']['tmp_name']; 
                 // $imgContent = addslashes(file_get_contents($image));
-                $image_base64 = base64_encode(file_get_contents($_FILES['schita']['tmp_name']) );
+                $image_base64 = base64_encode(file_get_contents($_FILES['img']['tmp_name']) );
                 $image = 'data:image/'.$imageFileType.';base64,'.$image_base64;
 
                 if($email == "" || $username == "" || $password == "" || $verifyPassword == ""){
