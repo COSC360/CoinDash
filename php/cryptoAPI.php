@@ -6,7 +6,7 @@ if ($con->connect_error) {
     die("Connection failed: " . $con->connect_error);
 }else{
     $stmt = $con->prepare("SELECT * FROM coin");
-    $stmt->bind_param("i", $i);
+    // $stmt->bind_param("i", $i);
     $stmt->execute();
     $resultSet = $stmt->get_result(); // get the mysqli result
     $result = $resultSet->fetch_all(MYSQLI_ASSOC);
@@ -68,14 +68,14 @@ if ($con->connect_error) {
                     // }   
                     // echo "Insert success !";
 
-                    $selectStmt = $con->prepare("SELECT * FROM category");
-                    $selectStmt->execute();
-                    $resultSet = $stmt->get_result(); // get the mysqli result
-                    $selectRS = $resultSet->fetch_all(MYSQLI_ASSOC);
+                    // $selectStmt = $con->prepare("SELECT * FROM category");
+                    // $selectStmt->execute();
+                    // $resultSet = $stmt->get_result(); // get the mysqli result
+                    // $selectRS = $resultSet->fetch_all(MYSQLI_ASSOC);
                     // echo "it works !";
                     // $arrDiff = array_diff($categoryResultSet, $selectRS);
 
-                    echo $selectRS;
+                    // echo $selectRS;
 
 
                     // if($selectRS != null){
