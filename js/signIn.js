@@ -14,6 +14,7 @@ function validateLoginForm() {
     let passwordError = document.getElementById("passwordError");
     // var errorFlag = false;
     var passReg = /^[a-zA-Z]\w{8,16}$/;
+    
     if (usernameOrEmail == "" && password =="") {
         usernameError.style.opacity = "1";
         usernameError.style.visibility = "visible";
@@ -24,7 +25,7 @@ function validateLoginForm() {
         return false;  
 
     }else if(password ==""){
-        $msg = "Password cannot be empty !"
+        $msg = "Password empty"
         addErrorMessage($passwordError, $msg);
         passwordError.style.opacity = "1";
         passwordError.style.visibility = "visible";
@@ -32,7 +33,7 @@ function validateLoginForm() {
         return false;  
 
     }else if(usernameOrEmail ==""){
-        $msg = "Username/Email cannot be empty !"
+        $msg = "Username/Email empty"
         addErrorMessage($usernameError, $msg);
         usernameError.style.opacity = "1";
         usernameError.style.visibility = "visible";
@@ -40,7 +41,7 @@ function validateLoginForm() {
         return false;  
 
     }else if(!passReg.test($password)){
-        $msg = "Please enter a valid password !"
+        $msg = "invalid password"
         addErrorMessage($passwordError, $msg);
         return false;
     }
