@@ -11,6 +11,7 @@ if ($con->connect_error) {
     $resultSet = $stmt->get_result(); // get the mysqli result
     $result = $resultSet->fetch_all(MYSQLI_ASSOC);
     foreach ($result as $field) {
+        echo $field['Id'];
         $curl = curl_init();
         
         curl_setopt_array($curl, [
@@ -67,21 +68,25 @@ if ($con->connect_error) {
                     }   
                     echo "Insert success !";
 
-                    // $selectStmt = $con->prepare("SELECT `name` FROM category");
-                    // $selectStmt->execute();
-                    // $resultSet = $stmt->get_result(); // get the mysqli result
-                    // $selectRS = $resultSet->fetch_all(MYSQLI_ASSOC);
-                    // if($selectRS != null){
-                    //     foreach($categoryResultSet as $category){
-                    //         foreach($selectRS as $coinCategory){
-                    //             if($category != $coinCategory){
-                    //                 $insertCategoryStmt = $con->prepare("INSERT INTO category(`name`) VALUES (?)");
-                    //                 $insertCategoryStmt->bind_param("s",$category);
-                    //                 $insertCategoryStmt->execute();
-                    //             }
-                    //         }
-                    //     }
-                    // }
+                    $selectStmt = $con->prepare("SELECT `name` FROM category");
+                    $selectStmt->execute();
+                    $resultSet = $stmt->get_result(); // get the mysqli result
+                    $selectRS = $resultSet->fetch_all(MYSQLI_ASSOC);
+                    if($selectRS != null){
+                        foreach($categoryResultSet as $category){
+                            foreach($selectRS as $coinCategory){
+                                if($category != $coinCategory){
+                                    $insertCategoryStmt = $con->prepare("INSERT INTO category(`name`) VALUES (?)");
+                                    $insertCategoryStmt->bind_param("s",$category);
+                                    $insertCategoryStmt->execute();
+                                }
+                            }
+                        }
+                    }else{
+                        $insertCategoryStmt = $con->prepare("INSERT INTO category(`name`) VALUES (?)");
+                        $insertCategoryStmt->bind_param("s",$category);
+                        $insertCategoryStmt->execute();                     
+                    }
                 }
             }
         }
