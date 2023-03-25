@@ -20,6 +20,10 @@ a {
     text-decoration: none;
 }
 
+i {
+    text-decoration: none;
+}
+
 .container {
     display: flex;
 }
