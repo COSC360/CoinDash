@@ -91,11 +91,12 @@ function uploadDashboard($con, $userId, $dashboardObject){
         $dashboardStmt = mysqli_stmt_init($con);
         if (!mysqli_stmt_prepare($dashboardStmt, $dashboardSql)){
             // TODO:
+            echo "Fail";
             // header("location: REPLACE LATER");
             exit();
         }
-        $t = 4;
-        mysqli_stmt_bind_param($dashboardStmt, "i", $t);
+
+        mysqli_stmt_bind_param($dashboardStmt, "i", $userId);
         mysqli_stmt_execute($dashboardStmt); 
 
         $dashboardId = mysqli_insert_id($con);
