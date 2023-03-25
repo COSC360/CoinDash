@@ -26,7 +26,12 @@ function buildModule(moduleDom){
     var domId = moduleDom.id;
     var category = document.querySelector("#" + domId + " .api-category").innerText;
     var fiatDom = document.querySelector("#" + domId + " .fiat");
-    // var fiat = fiatDom.options[fiatDom.selectedIndex].value;
+    var options = fiatDom.options;
+    console.log(options);
+    var index = fiatDom.selectedIndex;
+    console.log(index);
+    var fiat = fiatDom.options[fiatDom.selectedIndex].value;
+    console.log(fiat);
     var sortDom = document.querySelector("#" + domId + " .sort"); 
     // var sort = sortDom.options[sortDom.selectedIndex].value;
 
