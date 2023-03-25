@@ -56,18 +56,18 @@ if ($con->connect_error) {
                     $price_change_200d = $json['market_data']['price_change_percentage_200d']; 
                     $price_change_1yr = $json['market_data']['price_change_percentage_1yr'];
                      
-                    $updateStmt = $con->prepare("UPDATE coin SET `description` = ?,img_url = ?, usd = ?,cad = ?,eur = ?,php = ?,jpy = ?,price_change_24h = ?,price_change_7d = ?,price_change_14d = ?,price_change_30d = ?,price_change_60d = ?,price_change_200d = ?,price_change_1yr = ? WHERE Id = ?");
-                    $updateStmt->bind_param("ssdddddddddddss",$desc, $img_url, $usd, $cad, $eur, $php, $jpy, $price_change_24h, $price_change_7d, $price_change_14d, $price_change_30d, $price_change_60d, $price_change_200d, $price_change_1yr, $field['Id']); 
-                    $updateStmt->execute();
-                    echo "Update success !";
+                    // $updateStmt = $con->prepare("UPDATE coin SET `description` = ?,img_url = ?, usd = ?,cad = ?,eur = ?,php = ?,jpy = ?,price_change_24h = ?,price_change_7d = ?,price_change_14d = ?,price_change_30d = ?,price_change_60d = ?,price_change_200d = ?,price_change_1yr = ? WHERE Id = ?");
+                    // $updateStmt->bind_param("ssdddddddddddss",$desc, $img_url, $usd, $cad, $eur, $php, $jpy, $price_change_24h, $price_change_7d, $price_change_14d, $price_change_30d, $price_change_60d, $price_change_200d, $price_change_1yr, $field['Id']); 
+                    // $updateStmt->execute();
+                    // echo "Update success !";
 
-                    $categoryResultSet = $json['categories'];
-                    foreach($categoryResultSet as $category){
-                        $insertStmt = $con->prepare("INSERT INTO coinCategory(coin,category) VALUES (?,?)");
-                        $insertStmt->bind_param("ss",$field['Id'],$category);
-                        $insertStmt->execute();
-                    }   
-                    echo "Insert success !";
+                    // $categoryResultSet = $json['categories'];
+                    // foreach($categoryResultSet as $category){
+                    //     $insertStmt = $con->prepare("INSERT INTO coinCategory(coin,category) VALUES (?,?)");
+                    //     $insertStmt->bind_param("ss",$field['Id'],$category);
+                    //     $insertStmt->execute();
+                    // }   
+                    // echo "Insert success !";
 
                     $selectStmt = $con->prepare("SELECT * FROM category");
                     $selectStmt->execute();
