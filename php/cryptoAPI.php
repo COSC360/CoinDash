@@ -84,7 +84,6 @@ if ($con->connect_error) {
                     }
                 }
             }
-            sleep(10);
         }
 
     }
