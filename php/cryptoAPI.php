@@ -8,7 +8,6 @@ if ($con->connect_error) {
     die("Connection failed: " . $con->connect_error);
 }else{
     $stmt = $con->prepare("SELECT * FROM coin");
-    echo "It works 1";
     $stmt->bind_param("i", $i);
     $stmt->execute();
     $resultSet = $stmt->get_result(); // get the mysqli result
@@ -70,12 +69,12 @@ if ($con->connect_error) {
                     //     $insertStmt->execute();
                     // }   
                     // echo "Insert success !";
-                    echo "It works 3";
+                    
                     // $selectStmt = $con->prepare("SELECT `name` FROM category");
                     // $selectStmt->execute();
                     // $resultSet = $stmt->get_result(); 
                     // $selectRS = $resultSet->fetch_all(MYSQLI_ASSOC);
-                    echo "It works 2";
+                    
                     // $arrDiff = array_diff($categoryResultSet, $selectRS);
 
                     // print_r($selectRS);
