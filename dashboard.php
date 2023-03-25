@@ -63,10 +63,8 @@
                 $dashboardModules = retrieveDashboard($con, 1);
 
                 print_r($dashboardModules);
+                echo "SADhasf";
             ?>
-
-
-
 
             <div class="block panel">
                 <div class="module small" id="module-1"> 
@@ -98,7 +96,7 @@
                         </div>
                     </div>
                     <div class="module-gallery">
-                    <?php
+                        <?php
                             include "php/modules.php";
                             $fiat = "usd"; // TODO
 
