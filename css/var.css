@@ -16,11 +16,7 @@
     --Highlight: #46e9ff;
 }
 
-a {
-    text-decoration: none;
-}
-
-i {
+a:hover, i:hover {
     text-decoration: none;
 }
 
