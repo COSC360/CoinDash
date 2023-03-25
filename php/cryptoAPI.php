@@ -73,8 +73,12 @@ if ($con->connect_error) {
                     $selectRS = $SelectResultSet->fetch_all(MYSQLI_ASSOC);
         
                     $arrDiff = array_diff($categoryResultSet, $selectRS);
-                    
+                    print_r($json['categories']);
+                    echo " ";
+                    print_r($selectRS);
+                    echo " ";
                     print_r($arrDiff);
+                    echo " ";
                     // foreach($arrDiff as $newCategory){
                     //     $insertCategoryStmt = $con->prepare("INSERT INTO category(`name`) VALUES (?)");
                     //     $insertCategoryStmt->bind_param("s",$newCategory);
