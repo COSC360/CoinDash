@@ -5,7 +5,7 @@ include "DBconnection.php";
 if ($con->connect_error) {
     die("Connection failed: " . $con->connect_error);
 }else{
-    $stmt = $dbh->prepare("SELECT * FROM coin");
+    $stmt = $con->prepare("SELECT * FROM coin");
     $stmt->execute();
     
     /* Fetch all of the remaining rows in the result set */
