@@ -150,27 +150,21 @@ function deleteDashboard($con, $userId){
     $dashboardStmt = mysqli_stmt_init($con);
     $blockStmt = mysqli_stmt_init($con);
     $moduleStmt = mysqli_stmt_init($con);
-
+    echo "1";
     if (!mysqli_stmt_prepare($dashboardStmt, $dashboardSql) || !mysqli_stmt_prepare($blockStmt, $blockSql) || !mysqli_stmt_prepare($moduleStmt, $moduleSql)){
         // TODO:
         // header("location: REPLACE LATER");
         exit();
     }
-
+    echo "2";
     // Set parameters for prepared statement
     mysqli_stmt_bind_param($dashboardStmt, "s", $userId);
     mysqli_stmt_bind_param($blockStmt, "s", $userId);
     mysqli_stmt_bind_param($moduleStmt, "s", $userId);
-
-    try {
-        // Delete in reverse order to maintain constraints
-        mysqli_stmt_execute($moduleStmt);
-        mysqli_stmt_execute($blockStmt);
-        mysqli_stmt_execute($dashboardStmt);
-        return true;
-    } catch (Exception $e){
-        return false;
-    }
+    echo "3";
+    mysqli_stmt_execute($moduleStmt);
+    mysqli_stmt_execute($blockStmt);
+    mysqli_stmt_execute($dashboardStmt);
 }
 
 function retrieveDashboard(){
