@@ -30,7 +30,7 @@ include 'DBconnection.php';
     $_SESSION["user"] = $_GET['user-email'];
     $_SESSION["email"] = $result['Email'];
     $_SESSION["Id"] = $result['Id'];
-    // $_SESSION["pfp"] = $result['profilePicture'];
+    $_SESSION["pfp"] = $result['profilePicture'];
 ?>
 <!DOCTYPE html>
 <html>
