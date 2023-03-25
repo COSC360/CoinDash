@@ -82,11 +82,12 @@ include 'DBconnection.php';
                 <form name = "LoginForm" id ="LoginForm" action= "" onsubmit="return validateLoginForm()" method="GET" required>
                     <div class="item-1">
                         <label>Username or Email</label><br>     
+                        <p id = "usernameEmptyError">Username cannot be empty <img src="../svgs/warning-circle.svg"></p>
                         <input type = "text" name = "user-email" id= "user-email" placeholder="What’s Your Registered Username or Email?">
-
                     </div>
                     <div class="item-2">
                         <label>Password</label><br>
+                        <p id = "passwordEmptyError">Password cannot be empty <img src="../svgs/warning-circle.svg"></p>
                         <input type = "password" name = "password" id= "password" placeholder="What’s Your Password?">
                         
                     </div>

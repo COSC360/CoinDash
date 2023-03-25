@@ -217,6 +217,22 @@
   }
 
 
+  #usernameEmptyError{
+    position: absolute;
+    opacity: 0;
+    visibility: hidden;
+    right: 1em;
+    color: rgb(255, 0, 0);
+  }
+  
+  #passwordEmptyError{
+    position: absolute;
+    opacity: 0;
+    visibility: hidden;
+    right: 1em;
+    color: rgb(255, 0, 0);
+  }
+
   /* Sign Up Page*/
 
 .register-box{

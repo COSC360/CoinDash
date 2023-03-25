@@ -1,51 +1,38 @@
-// function validateLoginForm() {
-//     const form = document.getElementById('LoginForm');
-//     const userOremail= document.getElementById('user-email');
-//     const password = document.getElementById('password');  
+function validateLoginForm() {
+    let user = document.forms["LoginForm"]["user-email"].value;
+    let pass = document.forms["LoginForm"]["password"].value;
 
-//     form.addEventListener('submit', e => {
-//         e.preventDefault();
+    form.addEventListener('submit', e => {
+        e.preventDefault();
+        validateInputs();
+    });    
     
-//         validateInputs();
-//     });
+    const validateInputs = () => {
+        const userOremail = user.value.trim();
+        const password = pass.value.trim();
     
-//     const setError = (element, message) => {
-//         const inputControl = element.parentElement;
-//         const errorDisplay = inputControl.querySelector('.error');
+        if (userOremail == "" && password =="") {
+            document.getElementById("usernameEmptyError").style.opacity = "1";
+            document.getElementById("usernameEmptyError").style.visibility = "visible";
+            document.getElementById("usernameEmptyError").style.transition = "visibility 0s linear 0s, opacity 300ms";
+            document.getElementById("passwordEmptyError").style.opacity = "1";
+            document.getElementById("passwordEmptyError").style.visibility = "visible";
+            document.getElementById("passwordEmptyError").style.transition = "visibility 0s linear 0s, opacity 300ms";
+          return false;
+        }else if(password ==""){
+            document.getElementById("passwordEmptyError").style.opacity = "1";
+            document.getElementById("passwordEmptyError").style.visibility = "visible";
+            document.getElementById("passwordEmptyError").style.transition = "visibility 0s linear 0s, opacity 300ms";
+            return false;        
+        }
+        else if(userOremail ==""){
+            document.getElementById("usernameEmptyError").style.opacity = "1";
+            document.getElementById("usernameEmptyError").style.visibility = "visible";
+            document.getElementById("usernameEmptyError").style.transition = "visibility 0s linear 0s, opacity 300ms";
+            return false;        
+        }
+      }
+
     
-//         errorDisplay.innerText = message;
-//         inputControl.classList.add('error');
-//         inputControl.classList.remove('success')
-//     }
+    };
     
-//     const setSuccess = element => {
-//         const inputControl = element.parentElement;
-//         const errorDisplay = inputControl.querySelector('.error');
-    
-//         errorDisplay.innerText = '';
-//         inputControl.classList.add('success');
-//         inputControl.classList.remove('error');
-//     };
-    
-    
-//     const validateInputs = () => {
-//         const userOremail = username.value.trim();
-//         const passwordValue = password.value.trim();
-    
-//         if(usernameValue === '') {
-//             setError(username, 'Username is required');
-//         } else {
-//             setSuccess(username);
-//         }
-    
-//         if(passwordValue === '') {
-//             setError(password, 'Password is required');
-//         } else if (passwordValue.length < 8 ) {
-//             setError(password, 'Password must be at least 8 character.')
-//         } else {
-//             setSuccess(password);
-//         }
-    
-//     };
-    
-// }
