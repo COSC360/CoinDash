@@ -77,15 +77,11 @@ if ($con->connect_error) {
                     }      
                     $arrDiff = array_diff($categoryResultSet,$newSelectRS);
 
-                    print_r($arrDiff);
-
-                    // echo " ";
-                    // print_r($arrDiff);
-                    // foreach($arrDiff as $newCategory){
-                    //     $insertCategoryStmt = $con->prepare("INSERT INTO category(`name`) VALUES (?)");
-                    //     $insertCategoryStmt->bind_param("s",$newCategory);
-                    //     $insertCategoryStmt->execute();
-                    // }     
+                    foreach($arrDiff as $newCategory){
+                        $insertCategoryStmt = $con->prepare("INSERT INTO category(`name`) VALUES (?)");
+                        $insertCategoryStmt->bind_param("s",$newCategory);
+                        $insertCategoryStmt->execute();
+                    }     
                 }
             }
         }
