@@ -32,9 +32,9 @@ function retrieveAllCoins($con){
 
 }
 
-function retrieveCoinsByCategory($con, $fiat, $category, $sort, $sortDirection, $perPage, $page){
+function retrieveCoinsByCategory($con, $fiat, $category, $sort, $perPage, $page){
     $sql = "SELECT symbol, img, ?, price_Change_24h, price_change_7d, price_change_14d, price_change_30d, price_change_60d, price_change_200d, price_change_1yr "
-        + "FROM coin WHERE id IN (SELECT coin FROM categoryCoin WHERE category = ?) ORDER BY ? ? LIMIT ? OFFSET ?";
+        + "FROM coin WHERE id IN (SELECT coin FROM categoryCoin WHERE category = ?) ORDER BY ? LIMIT ? OFFSET ?";
     $stmt = mysqli_stmt_init($con);
 
     if (!mysqli_stmt_prepare($stmt, $sql)){
@@ -51,7 +51,7 @@ function retrieveCoinsByCategory($con, $fiat, $category, $sort, $sortDirection, 
     $offset = ($page - 1) * $perPage;
 
     // Set parameters for prepared statement
-    mysqli_stmt_bind_param($stmt, "ssssii", $fiat, $category, $sort, $sortDirection, $perPage, $offset);
+    mysqli_stmt_bind_param($stmt, "ssssii", $fiat, $category, $sort, $perPage, $offset);
 
     // Execute prepared statement
     mysqli_stmt_execute($stmt);

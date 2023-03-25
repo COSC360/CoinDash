@@ -54,7 +54,7 @@
                 </div>
             </div>
         </article>
-        <article>
+        <article id="dashboard">
             <div class="block panel">
                 <div  class="module small" id="module-1"> 
                     <div class="module-header">
@@ -66,7 +66,7 @@
                             </a>
                         </div>
                         <div class="dropdowns">
-                            <select class="dropdown">
+                            <select class="dropdown fiat">
                                 <option>Deals Only</option>
                                 <option>Deals Only</option>
                                 <option>Deals Only</option>
@@ -74,7 +74,7 @@
                                 <option>Deals Only</option>
                                 <option>Deals Only</option>
                             </select>
-                            <select class="dropdown">
+                            <select class="dropdown sort">
                                 <option>Deals Only</option>
                                 <option>Deals Only</option>
                                 <option>Deals Only</option>
@@ -1049,5 +1049,6 @@
         </div>
     </footer>
     <script src="js/modules.js"></script>
+    <script src="js/parser.js"></script>
 </body>
 </html>
