@@ -88,10 +88,9 @@
                     </div>
                     <div class="module-gallery">
                     <?php
-                            echo "<script>console.log('hello2')</script>";
                             include "php/modules.php";
                             $fiat = "usd"; // TODO
-                            echo "<script>console.log('hello')</script>";
+
                             $coins = retrieveAllCoins($con);
                             // $coins = retrieveAllCoins($con);
                             foreach($coins as $coin){
@@ -1052,6 +1051,6 @@
         </div>
     </footer>
     <script src="js/modules.js"></script>
-    <!-- <script src="js/uploadDashboard.js"></script> -->
+    <script src="js/uploadDashboard.js"></script>
 </body>
 </html>
