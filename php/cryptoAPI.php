@@ -1,4 +1,6 @@
 <?php
+error_reporting(E_ALL);
+in_set('display_errors', '1');
 session_start();
 include "DBconnection.php";
 
@@ -70,7 +72,7 @@ if ($con->connect_error) {
 
                     $selectStmt = $con->prepare("SELECT `name` FROM category");
                     $selectStmt->execute();
-                    $resultSet = $stmt->get_result(); // get the mysqli result
+                    $resultSet = $stmt->get_result(); 
                     $selectRS = $resultSet->fetch_all(MYSQLI_ASSOC);
                     // echo "it works !";
                     // $arrDiff = array_diff($categoryResultSet, $selectRS);
