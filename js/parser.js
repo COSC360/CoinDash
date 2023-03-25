@@ -4,6 +4,7 @@ function buildDashboard(dashboardDom){
     var blocks = [];
 
     console.log(dashboardDom);
+    console.log(dashboardDom.children);
     dashboardDom.children.forEach(child => {
         blocks.push(buildBlock(child));
     })
