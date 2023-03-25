@@ -32,8 +32,10 @@ include 'DBconnection.php';
             $result = $resultSet->fetch_assoc();
 
             if(in_array($fileType, $allowTypes)){ 
-                $image = $_FILES['img']['tmp_name']; 
-                $imgContent = addslashes(file_get_contents($image));
+                // $image = $_FILES['img']['tmp_name']; 
+                // $imgContent = addslashes(file_get_contents($image));
+                $image_base64 = base64_encode(file_get_contents($_FILES['schita']['tmp_name']) );
+                $image = 'data:image/'.$imageFileType.';base64,'.$image_base64;
 
                 if($email == "" || $username == "" || $password == "" || $verifyPassword == ""){
                     $statusMsg = 'Please enter all the required details !';
@@ -44,7 +46,7 @@ include 'DBconnection.php';
                 }else{
                     // Insert image content into database   
                     $stmt = $con->prepare("INSERT INTO `user_auth` (`Username`, `Email`, `Password`,`comingFrom`,`profilePicture`,`userType`) VALUES (?,?,?,?,?,?)");
-                    $stmt->bind_param("ssssss",$username,$email,$password,$selectedOption,$imgContent,$userType); 
+                    $stmt->bind_param("ssssss",$username,$email,$password,$selectedOption,$image,$userType); 
                     $stmt->execute();
                     header('location:signIn.php');
                     $stmt->close();
