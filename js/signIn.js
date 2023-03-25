@@ -25,9 +25,9 @@ window.onload = function validateLoginForm() {
     }else if(password ==""){
         $msg = "Password cannot be empty !"
         addErrorMessage($passwordError, $msg);
-        passwordError .style.opacity = "1";
+        passwordError.style.opacity = "1";
         passwordError.style.visibility = "visible";
-        passwordError .style.transition = "visibility 0s linear 0s, opacity 300ms";  
+        passwordError.style.transition = "visibility 0s linear 0s, opacity 300ms";  
 
     }else if(usernameOrEmail ==""){
         $msg = "Username/Email cannot be empty !"
