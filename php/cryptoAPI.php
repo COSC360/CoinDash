@@ -37,7 +37,7 @@ if ($con->connect_error) {
             echo "cURL Error #:" . $err;
         } else {
             $json = json_decode($response, true);
-            echo "<script>console.log(".$json['symbol'].");</script>";
+            echo "<script>console.log(".$json.");</script>";
         }
 
     }
