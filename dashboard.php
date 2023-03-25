@@ -66,6 +66,7 @@
                 $moduleCount = sizeof($dashboardModules);
                 $currentCount = 0;
                 $previousBlock = $dashboardModules[$currentCount]["block_id"];
+                $fiat = "usd";
 
                 while ($currentCount < $moduleCount){
                     echo "<div class=\"block panel\">";
@@ -115,7 +116,7 @@
                                             <div class=\"product-image\" style=\"background-image: url(".$coin["img_url"].");\"></div>
                                         </div><div class=\"product-info-container\">
                                             <h3>Lorem ipsum dolor sit amet consectetur. Erat facilisi Lorem ipsum dolor</h3>
-                                            <strong class=\"product-price\">".formatNumber($coin[$fiat])."$  ".number_format($coin["price_change_24h"])."%</strong>
+                                            <strong class=\"product-price\">".formatNumber($coin[$fiat])."$  ".number_format($coin["price_change_24h"], 2, '.', '')."%</strong>
                                             <div class=\"price-trend-container\">
                                                 <p>7D: ".number_format($coin["price_change_7d"], 2, '.', '')."%</p>
                                                 <p>14D: ".number_format($coin["price_change_14d"], 2, '.', '')."%</p>
