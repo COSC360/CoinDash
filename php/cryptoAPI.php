@@ -75,7 +75,7 @@ if ($con->connect_error) {
 
                     $arrDiff = array_diff($categoryResultSet, $selectRS);
 
-                    echo $arrDiff;
+                    print_r($selectRS);
 
 
                     // if($selectRS != null){
