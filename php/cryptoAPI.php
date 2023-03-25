@@ -5,13 +5,12 @@ include "DBconnection.php";
 if ($con->connect_error) {
     die("Connection failed: " . $con->connect_error);
 }else{
-    $stmt = $con->prepare("SELECT * FROM coin");
+    $stmt = $con->prepare("SELECT * FROM coin LIMIT 10");
     $stmt->bind_param("i", $i);
     $stmt->execute();
     $resultSet = $stmt->get_result(); // get the mysqli result
     $result = $resultSet->fetch_all(MYSQLI_ASSOC);
     foreach ($result as $field) {
-    
         $curl = curl_init();
         
         curl_setopt_array($curl, [
@@ -33,7 +32,6 @@ if ($con->connect_error) {
         $err = curl_error($curl);
         
         curl_close($curl);
-
             if ($err) {
                 echo "cURL Error #:" . $err;
             } else {
@@ -68,9 +66,26 @@ if ($con->connect_error) {
                         $insertStmt->execute();
                     }   
                     echo "Insert success !";
+
+                    $selectStmt = $con->prepare("SELECT `name` FROM category");
+                    $selectStmt->execute();
+                    $resultSet = $stmt->get_result(); // get the mysqli result
+                    $selectRS = $resultSet->fetch_all(MYSQLI_ASSOC);
+                    if($selectRS != null){
+                        foreach($categoryResultSet as $category){
+                            foreach($selectRS as $coinCategory){
+                                if($category != $coinCategory){
+                                    $insertCategoryStmt = $con->prepare("INSERT INTO category(`name`) VALUES (?)");
+                                    $insertCategoryStmt->bind_param("s",$category);
+                                    $insertCategoryStmt->execute();
+                                }
+                            }
+                        }
+                    }
                 }
             }
         }
+        sleep(30);
     }
 
 ?>
