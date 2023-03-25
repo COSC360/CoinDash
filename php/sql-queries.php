@@ -90,6 +90,12 @@ function uploadDashboard($con, $userId, $dashboardObject){
 
         echo "<script>console.log('Inserting');</script>";
         $dashboardStmt = mysqli_stmt_init($con);
+        if (!mysqli_stmt_prepare($dashboardStmt, $dashboardSql)){
+            // TODO:
+            // header("location: REPLACE LATER");
+            exit();
+        }
+
         mysqli_stmt_bind_param($dashboardStmt, "i", $userId);
         mysqli_stmt_execute($dashboardStmt); 
 
