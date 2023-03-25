@@ -40,9 +40,7 @@ if ($con->connect_error) {
                     die("Connection failed: " . $con->connect_error);
                 }else{
                     // $json = json_decode($response,true);
-                    foreach($response as $item) {
-                        print("symbol: ".$item['symbol']."</br>");
-                    }
+                    print("symbol: ".$response['symbol']."</br>");
                     // foreach($json as $item) {
                     //     $img_url = $item['image']['large'];
                     //     $usd = $item['market_data']['current_price']['usd'];
