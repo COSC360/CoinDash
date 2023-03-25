@@ -35,7 +35,7 @@ include 'DBconnection.php';
                 // $image = $_FILES['img']['tmp_name']; 
                 // $imgContent = addslashes(file_get_contents($image));
                 $image_base64 = base64_encode(file_get_contents($_FILES['img']['tmp_name']) );
-                $image = 'data:image/*'.$fileType.';base64,'.$fileType;
+                $image = 'data:image/'.$fileType.';base64,'.$fileType;
 
                 if($email == "" || $username == "" || $password == "" || $verifyPassword == ""){
                     $statusMsg = 'Please enter all the required details !';
@@ -45,8 +45,8 @@ include 'DBconnection.php';
                     $statusMsg = 'User already exists !';
                 }else{
                     // Insert image content into database   
-                    $stmt = $con->prepare("INSERT INTO `user_auth` (`Username`, `Email`, `Password`,`comingFrom`,`profilePicture`,`userType`) VALUES (?,?,?,?,?,?)");
-                    $stmt->bind_param("ssssbs",$username,$email,$password,$selectedOption,$image,$userType); 
+                    $stmt = $con->prepare("INSERT INTO `user_auth` (`Username`, `Email`, `Password`,`comingFrom`,`profilePicture`,`userType`) VALUES (?,?,?,?,'".$image."',?)");
+                    $stmt->bind_param("sssss",$username,$email,$password,$selectedOption,$userType); 
                     $stmt->execute();
                     header('location:signIn.php');
                     $stmt->close();
