@@ -5,7 +5,7 @@ include "DBconnection.php";
 if ($con->connect_error) {
     die("Connection failed: " . $con->connect_error);
 }else{
-    $stmt = $con->prepare("SELECT * FROM coin LIMIT 2");
+    $stmt = $con->prepare("SELECT * FROM coin");
     $stmt->bind_param("i", $i);
     $stmt->execute();
     $resultSet = $stmt->get_result(); // get the mysqli result
@@ -15,7 +15,7 @@ if ($con->connect_error) {
         $curl = curl_init();
         
         curl_setopt_array($curl, [
-            CURLOPT_URL => "https://coingecko.p.rapidapi.com/coins/bitcoin?localization=false&market_data=true",
+            CURLOPT_URL => "https://coingecko.p.rapidapi.com/coins/".$field['Id']."?localization=false&market_data=true",
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_FOLLOWLOCATION => true,
             CURLOPT_ENCODING => "",
@@ -41,34 +41,33 @@ if ($con->connect_error) {
                     die("Connection failed: " . $con->connect_error);
                 }else{
                     $json = json_decode($response,true);
-                    $result = $json['categories'];
-                    foreach($result as $category){
-                        print($category);
-                    }
-                    // $desc = $json['image']['large'];
-                    // $img_url = $json['image']['large'];
-                    // $usd = $json['market_data']['current_price']['usd'];
-                    // $cad = $json['market_data']['current_price']['cad'];
-                    // $eur = $json['market_data']['current_price']['eur'];
-                    // $php = $json['market_data']['current_price']['php'];
-                    // $jpy = $json['market_data']['current_price']['jpy'];
-                    // $price_change_24h = $json['market_data']['price_change_percentage_24h'];
-                    // $price_change_7d = $json['market_data']['price_change_percentage_7d']; 
-                    // $price_change_14d = $json['market_data']['price_change_percentage_14d']; 
-                    // $price_change_30d = $json['market_data']['price_change_percentage_30d']; 
-                    // $price_change_60d = $json['market_data']['price_change_percentage_60d']; 
-                    // $price_change_200d = $json['market_data']['price_change_percentage_200d']; 
-                    // $price_change_1yr = $json['market_data']['price_change_percentage_1yr'];
+                    $desc = $json['description']['en'];
+                    $img_url = $json['image']['large'];
+                    $usd = $json['market_data']['current_price']['usd'];
+                    $cad = $json['market_data']['current_price']['cad'];
+                    $eur = $json['market_data']['current_price']['eur'];
+                    $php = $json['market_data']['current_price']['php'];
+                    $jpy = $json['market_data']['current_price']['jpy'];
+                    $price_change_24h = $json['market_data']['price_change_percentage_24h'];
+                    $price_change_7d = $json['market_data']['price_change_percentage_7d']; 
+                    $price_change_14d = $json['market_data']['price_change_percentage_14d']; 
+                    $price_change_30d = $json['market_data']['price_change_percentage_30d']; 
+                    $price_change_60d = $json['market_data']['price_change_percentage_60d']; 
+                    $price_change_200d = $json['market_data']['price_change_percentage_200d']; 
+                    $price_change_1yr = $json['market_data']['price_change_percentage_1yr'];
                      
-                    // $updateStmt = $con->prepare("UPDATE coin SET `description` = ?,img_url = ?, usd = ?,cad = ?,eur = ?,php = ?,jpy = ?,price_change_24h = ?,price_change_7d = ?,price_change_14d = ?,price_change_30d = ?,price_change_60d = ?,price_change_200d = ?,price_change_1yr = ? WHERE Id = ?");
-                    // $updateStmt->bind_param("ssdddddddddddss",$desc, $img_url, $usd, $cad, $eur, $php, $jpy, $price_change_24h, $price_change_7d, $price_change_14d, $price_change_30d, $price_change_60d, $price_change_200d, $price_change_1yr, $field['Id']); 
-                    // $updateStmt->execute();
-                    // echo "Update success !";
+                    $updateStmt = $con->prepare("UPDATE coin SET `description` = ?,img_url = ?, usd = ?,cad = ?,eur = ?,php = ?,jpy = ?,price_change_24h = ?,price_change_7d = ?,price_change_14d = ?,price_change_30d = ?,price_change_60d = ?,price_change_200d = ?,price_change_1yr = ? WHERE Id = ?");
+                    $updateStmt->bind_param("ssdddddddddddss",$desc, $img_url, $usd, $cad, $eur, $php, $jpy, $price_change_24h, $price_change_7d, $price_change_14d, $price_change_30d, $price_change_60d, $price_change_200d, $price_change_1yr, $field['Id']); 
+                    $updateStmt->execute();
+                    echo "Update success !";
 
-                    // $updateStmt = $con->prepare("INSERT INTO coinCategory(coin,category) VALUES (?,?)");
-                    // $updateStmt->bind_param("sdddddddddddss",$field['Id']); 
-                    // $updateStmt->execute();
-                    // echo "Insert success !";
+                    $categoryResultSet = $json['categories'];
+                    foreach($categoryResultSet as $category){
+                        $insertStmt = $con->prepare("INSERT INTO coinCategory(coin,category) VALUES (?,?)");
+                        $insertStmt->bind_param("ss",$field['Id'],$category);
+                        $insertStmt->execute();
+                    }   
+                    echo "Insert success !";
                 }
             }
         }
