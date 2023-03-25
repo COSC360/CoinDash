@@ -177,7 +177,7 @@
             </div>
         </div>
     </footer>
-    <script src="js/modules.js"></script>
+    <script type="module" src="js/modules.js"></script>
     <!-- <script type="module" src="js/uploadDashboard.js"></script> -->
 </body>
 </html>
