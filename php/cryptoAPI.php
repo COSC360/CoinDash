@@ -77,7 +77,7 @@ if ($con->connect_error) {
                     // print_r($json['categories']);
                     // echo "\n";
                     foreach($selectRS as $field){
-                        echo $field."<br>";
+                        print_r($field)."<br>";
                     }
                     // echo " ";
                     // print_r($arrDiff);
