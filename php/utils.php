@@ -1,9 +1,8 @@
 <?php
 
 function formatNumber($num){
-    echo "<script>console.log('".$num."');</script>";
     $str = strval($num);
-    echo "<script>console.log('".$str."');</script>";
+    echo "<script>console.log('".substr($str, 6)."');</script>";
     return substr($str, 6);
 }
 
