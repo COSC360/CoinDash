@@ -85,14 +85,11 @@
                                         </a>
                                     </div>
                                     <div class=\"dropdowns\">
-                                        <select class=\"dropdown fiat\">
-                                            <option selected>Deals Only</option>
-                                            <option>Deals Only</option>
-                                            <option>Deals Only</option>
-                                            <option>Deals Only</option>
-                                            <option>Deals Only</option>
-                                            <option>Deals Only</option>
-                                        </select>
+                                        <select class=\"dropdown fiat\">";
+                                            for ($i = 0; $i < sizeof($fiats); $i++){
+                                                echo "<option value=".$fiats[$i]." ".($fiats[$i] == $dashboardModules[$currentCount]["fiat"] ? 'selected' : '').">".$fiatLabels[$i]."</option>";
+                                            }
+                        echo           "</select>
                                         <select class=\"dropdown sort\">
                                             <option selected>Deals Only</option>
                                             <option>Deals Only</option>
