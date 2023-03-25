@@ -71,17 +71,14 @@ if ($con->connect_error) {
                     $selectStmt->execute();
                     $SelectResultSet = $selectStmt->get_result(); // get the mysqli result
                     $selectRS = $SelectResultSet->fetch_all(MYSQLI_ASSOC);
-        
-                    $arrDiff = array_diff($selectRS,$categoryResultSet);
-                    // $arrDiff = array_diff($categoryResultSet,$selectRS);
-                    // print_r($json['categories']);
-                    // echo "\n";
                     $newSelectRS = array();
                     foreach($selectRS as $field){
                         array_push($newSelectRS,$field['name']);
-                    }
+                    }      
+                    $arrDiff = array_diff($categoryResultSet,$newSelectRS);
 
-                    print_r($newSelectRS);
+                    print_r($arrDiff);
+
                     // echo " ";
                     // print_r($arrDiff);
                     // foreach($arrDiff as $newCategory){
