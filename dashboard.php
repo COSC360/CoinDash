@@ -88,9 +88,10 @@
                     </div>
                     <div class="module-gallery">
                     <?php
+                            echo "<script>console.log('hello2')</script>";
                             include "php/modules.php";
                             $fiat = "usd"; // TODO
-                            echo "ASD";
+                            echo "<script>console.log('hello')</script>";
                             $coins = retrieveAllCoins($con);
                             // $coins = retrieveAllCoins($con);
                             foreach($coins as $coin){
