@@ -6,7 +6,7 @@ if ($con->connect_error) {
     die("Connection failed: " . $con->connect_error);
 }else{
     
-    $stmt = $con->prepare("SELECT * FROM coin LIMIT 3 OFFSET 0");
+    $stmt = $con->prepare("SELECT * FROM coin LIMIT 20 OFFSET 0");
     $stmt->execute();
     $resultSet = $stmt->get_result(); // get the mysqli result
     $result = $resultSet->fetch_all(MYSQLI_ASSOC);
@@ -37,7 +37,7 @@ if ($con->connect_error) {
             echo "cURL Error #:" . $err;
         } else {
             $json = json_decode($response, true);
-            echo "<script>console.log('".$json['symbol']."');</script>";
+            echo $json['symbol'];
         }
 
     }
