@@ -189,7 +189,7 @@ select {
     transition: background-color 0.3s, width 0.3s, height 0.3s;
 }
 
-.icon-overlay img {
+.icon-overlay i {
     width: 40%;
     aspect-ratio: 1;
     transition: 0.3s;
