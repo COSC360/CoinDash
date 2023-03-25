@@ -154,6 +154,8 @@
         </article>
     </main>
     <footer>
+        <i class="fa-solid fa-eye"></i>
+        <i class="fa-solid fa-floppy-disk"></i>
         <a id="view-edit-btn" class="icon-overlay" href="#">
             <i class="fa-solid fa-eye"></i>
         </a>
