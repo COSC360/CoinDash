@@ -41,7 +41,7 @@ if ($con->connect_error) {
                 }else{
                     $json = json_decode($response);
                     foreach($json as $item) {
-                        print($item['image']['large']);
+                        print_r($item['image']['large']);
                     }
                     // foreach($json as $item) {
                     //     $img_url = $item['image']['large'];
