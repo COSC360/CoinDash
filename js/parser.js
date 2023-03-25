@@ -3,9 +3,8 @@ var dashboardDom = document.getElementById("dashboard");
 function buildDashboard(dashboardDom){
     var blocks = [];
 
-    console.log(dashboardDom);
-    console.log(dashboardDom.childNode);
-    dashboardDom.childNode.forEach(child => {
+    var children = Array.from(dashboardDom.children);
+    children.forEach(child => {
         blocks.push(buildBlock(child));
     })
 
@@ -15,7 +14,8 @@ function buildDashboard(dashboardDom){
 function buildBlock(blockDom) {
     var modules = []
 
-    blockDom.childNode.forEach(child => {
+    var children = Array.from(blockDom.children);
+    children.forEach(child => {
         modules.push(buildModule(child))
     });
 
