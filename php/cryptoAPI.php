@@ -15,7 +15,7 @@ if ($con->connect_error) {
         $curl = curl_init();
         
         curl_setopt_array($curl, [
-            CURLOPT_URL => "https://coingecko.p.rapidapi.com/coins/".$field['Id']."?localization=false&tickers=false&market_data=true&community_data=false&developer_data=false&sparkline=false",
+            CURLOPT_URL => "https://coingecko.p.rapidapi.com/coins/".$field['Id']."?localization=false&market_data=true",
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_FOLLOWLOCATION => true,
             CURLOPT_ENCODING => "",
@@ -28,10 +28,11 @@ if ($con->connect_error) {
                 "X-RapidAPI-Key: acc5ef0728msha8eb6b12a17ba4fp16bac1jsnc1cafc01b039"
             ],
         ]);
-
-            $response = curl_exec($curl);
-            $err = curl_error($curl);
-            curl_close($curl);
+        
+        $response = curl_exec($curl);
+        $err = curl_error($curl);
+        
+        curl_close($curl);
 
             if ($err) {
                 echo "cURL Error #:" . $err;
@@ -40,9 +41,7 @@ if ($con->connect_error) {
                     die("Connection failed: " . $con->connect_error);
                 }else{
                     $json = json_decode($response,true);
-                    foreach($json as $item) {
-                        print_r($item['image']);
-                    }
+                    print("symbol: ".$json['symbol']."</br>");
                     // foreach($json as $item) {
                     //     $img_url = $item['image']['large'];
                     //     $usd = $item['market_data']['current_price']['usd'];
