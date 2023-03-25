@@ -10,7 +10,9 @@ if ($con->connect_error) {
     $resultSet = $stmt->get_result(); // get the mysqli result
     $result = $resultSet->fetch_all(MYSQLI_ASSOC);
 
-    print(mysql_fetch_lengths($result));
+    foreach ($result as $field) {
+        echo $publisher['name'] . '<br>';
+    }
 }
 
 // $curl = curl_init();
