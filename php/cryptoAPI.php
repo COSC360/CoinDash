@@ -24,7 +24,7 @@ if ($con->connect_error) {
             CURLOPT_CUSTOMREQUEST => "GET",
             CURLOPT_HTTPHEADER => [
                 "X-RapidAPI-Host: coingecko.p.rapidapi.com",
-                "X-RapidAPI-Key: a1cb3fec1emsh2a110a5809545d3p1e18a9jsn6d2c1e7dedd7"
+                "X-RapidAPI-Key: acc5ef0728msha8eb6b12a17ba4fp16bac1jsnc1cafc01b039"
             ],
         ]);
 
@@ -36,7 +36,7 @@ if ($con->connect_error) {
             echo "cURL Error #:" . $err;
         } else {
             $json = json_decode($response, true);
-            echo $response;
+            print_r($json);
         }
 
     }
