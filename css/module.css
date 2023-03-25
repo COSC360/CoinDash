@@ -193,6 +193,7 @@ select {
     width: 40%;
     aspect-ratio: 1;
     transition: 0.3s;
+    text-decoration: none;
 }
 
 .icon-overlay:hover{
