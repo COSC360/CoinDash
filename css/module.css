@@ -83,6 +83,7 @@ select {
 }
 
 .dropdown {
+    width: 20px;
     font-size: 1.1em;
     flex-grow: 1;
     border: 1px solid var(--Grey-1);
