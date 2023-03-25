@@ -93,7 +93,7 @@ function uploadDashboard($con, $userId, $dashboardObject){
         mysqli_stmt_execute($dashboardStmt); 
 
         $dashboardObject = json_decode($dashboardObject);
-        print_r($dashboardObject["blocks"]);
+        print_r($dashboardObject);
     } catch (Exception $e){
         echo $e;
     }
