@@ -5,16 +5,16 @@ include "DBconnection.php";
 if ($con->connect_error) {
     die("Connection failed: " . $con->connect_error);
 }else{
-    $stmt = $con->prepare("SELECT Id FROM coin");
+    $stmt = $con->prepare("SELECT * FROM coin");
     $stmt->execute();
     $resultSet = $stmt->get_result(); // get the mysqli result
     $result = $resultSet->fetch_all(MYSQLI_ASSOC);
-    foreach ($result as $field) {
+    // foreach ($result as $field) {
     
         $curl = curl_init();
         
         curl_setopt_array($curl, [
-            CURLOPT_URL => "https://coingecko.p.rapidapi.com/coins/".$field['Id']."?localization=false&market_data=true",
+            CURLOPT_URL => "https://coingecko.p.rapidapi.com/coins/ethereum?localization=false&market_data=true",
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_FOLLOWLOCATION => true,
             CURLOPT_ENCODING => "",
@@ -83,6 +83,6 @@ if ($con->connect_error) {
             }
         }
 
-    }
+    // }
 
 ?>
