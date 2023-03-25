@@ -169,6 +169,13 @@
   position: relative;
 }
 
+.login-box p{
+  position: absolute;
+  opacity: 0;
+  visibility: hidden;
+  right: 1em;
+  color: rgb(255, 0, 0);
+}
 
 .login-box input {
     margin-top: 1em;
@@ -354,10 +361,4 @@ select{
   color: #050505;
 }
 
-.login-box p{
-  position: absolute;
-  opacity: 0;
-  visibility: hidden;
-  right: 1em;
-  color: rgb(255, 0, 0);
-}
+
