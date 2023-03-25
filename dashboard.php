@@ -89,9 +89,8 @@
                             include "/php/modules.php";
 
                             // $coins = retrieveAllCoins($con);
-
+                            print_r($data);
                             foreach($data as $coin){
-                                print_r($coin);
                                 echo 
                                 "<div class=\"product-card\">
                                     <div class=\"icon-container\">
@@ -139,7 +138,7 @@
                             </div>
                         </div>
                     </div>
-                                        <div class="module-footer">
+                        <div class="module-footer">
                         <div class="prev">
                             <img class="prev-icon" src="svgs/arrow-left-long.svg">
                             <p>Previous</p>
