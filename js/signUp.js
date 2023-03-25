@@ -14,7 +14,7 @@ let imageUploadError = document.getElementById("imageUploadError");
 window.onload = document.getElementById
 window.onload = function validateRegisterForm() {
     if(empty(username)){
-        window.alert("Fill in the username !")
+        alert("Fill in the username !")
     }
 }
 
