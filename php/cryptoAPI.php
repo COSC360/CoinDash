@@ -10,7 +10,7 @@ if ($con->connect_error) {
     
     /* Fetch all of the remaining rows in the result set */
     print("Fetch all of the remaining rows in the result set:\n");
-    $result = $stmt->fetchAll();
+    $result = $stmt->fetch_all(MYSQL_ASSOC);
     print_r($result);
 }
 
