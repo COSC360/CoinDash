@@ -16,6 +16,13 @@
     --Highlight: #46e9ff;
 }
 
+a:hover, a:focus, a:active, a:visited, a:link{
+    text-decoration: none;
+}
+i:hover, i:focus, i:active, i:visited, i:link{
+    text-decoration: none;
+}
+
 .container {
     display: flex;
 }
@@ -38,4 +45,8 @@
 
 .hidden {
     display: none;
+}
+
+i {
+    color: var(--Black-1);
 }
