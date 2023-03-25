@@ -88,9 +88,9 @@
                         <?php
                             include "/php/modules.php";
 
-                            $coins = retrieveAllCoins($con);
+                            // $coins = retrieveAllCoins($con);
 
-                            foreach($coins as $coin){
+                            foreach($data as $coin){
                                 print_r($coin);
                                 echo 
                                 "<div class=\"product-card\">
