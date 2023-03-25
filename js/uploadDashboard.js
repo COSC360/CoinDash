@@ -7,7 +7,7 @@ var uploadDashboard = function(){
     $.ajax({
         url: "./php/uploadDashboard.php",
         type: "POST",
-        data: {userId: 0, dashboardJSON: JSON.stringify(dashboardObj)},
+        data: {userId: 1, dashboardJSON: JSON.stringify(dashboardObj)},
         success: function(response) {
             console.log(response);
         }
