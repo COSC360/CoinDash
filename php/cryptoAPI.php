@@ -11,7 +11,7 @@ if ($con->connect_error) {
     $result = $resultSet->fetch_all(MYSQLI_ASSOC);
 
     foreach ($result as $field) {
-        echo $result['Id'];
+        echo $field['Id'];
     }
 }
 
