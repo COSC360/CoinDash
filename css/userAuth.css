@@ -169,6 +169,21 @@
   position: relative;
 }
 
+.login-box form #usernameEmptyError{
+  position: absolute;
+  opacity: 0;
+  visibility: hidden;
+  right: 1em;
+  color: rgb(255, 0, 0);
+}
+.login-box form #passwordEmptyError{
+  position: absolute;
+  opacity: 0;
+  visibility: hidden;
+  right: 1em;
+  color: rgb(255, 0, 0);
+}
+
 .login-box input {
     margin-top: 1em;
     margin-bottom: 1em;
@@ -222,21 +237,7 @@
   }
 
 
-  #usernameEmptyError{
-    position: absolute;
-    opacity: 0;
-    visibility: hidden;
-    right: 1em;
-    color: rgb(255, 0, 0);
-  }
-  
-  #passwordEmptyError{
-    position: absolute;
-    opacity: 0;
-    visibility: hidden;
-    right: 1em;
-    color: rgb(255, 0, 0);
-  }
+
 
   /* Sign Up Page*/
 
