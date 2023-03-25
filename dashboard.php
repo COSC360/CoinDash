@@ -70,7 +70,6 @@
 
                 while ($currentCount < $moduleCount){
                     echo "<div class=\"block panel\">";
-                    echo $currentCount;
                     while ($currentCount < $moduleCount){
                         if ($previousBlock != $dashboardModules[$currentCount]["block_id"]){
                             $previousBlock = $dashboardModules[$currentCount]["block_id"];
@@ -81,7 +80,7 @@
                                 <div class=\"module-header\">
                                     <div class=\"api-details\">
                                         <img class=\"api-logo-image\" src=\"images/amazon-logo-1.png\"></img>
-                                        <div class=\"api-category\">/Top Products 1</div>
+                                        <div class=\"api-category\">Top Products 1</div>
                                         <a class=\"icon-overlay\" href=\"#\">
                                             <img src=\"svgs/goto.svg\">
                                         </a>
@@ -115,8 +114,8 @@
                                             <div class=\"product-image-mask\">
                                             <div class=\"product-image\" style=\"background-image: url(".$coin["img_url"].");\"></div>
                                         </div><div class=\"product-info-container\">
-                                            <h3>Lorem ipsum dolor sit amet consectetur. Erat facilisi Lorem ipsum dolor</h3>
-                                            <strong class=\"product-price\">".formatNumber($coin[$fiat])."$  ".number_format($coin["price_change_24h"], 2, '.', '')."%</strong>
+                                            <h3>".$coin["symbol"]."</h3>
+                                            <strong class=\"product-price\">".number_format($coin[$fiat], 4, '.', '')."$  ".number_format($coin["price_change_24h"], 2, '.', '')."%</strong>
                                             <div class=\"price-trend-container\">
                                                 <p>7D: ".number_format($coin["price_change_7d"], 2, '.', '')."%</p>
                                                 <p>14D: ".number_format($coin["price_change_14d"], 2, '.', '')."%</p>
