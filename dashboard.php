@@ -80,7 +80,7 @@
                                 <div class=\"module-header\">
                                     <div class=\"api-details\">
                                         <img class=\"api-logo-image\" src=\"images/amazon-logo-1.png\"></img>
-                                        <div class=\"api-category\">Top Products 1</div>
+                                        <div class=\"api-category\">".$dashboardModules[$currentCount]["category"]."</div>
                                         <a class=\"icon-overlay\" href=\"#\">
                                             <img src=\"svgs/goto.svg\">
                                         </a>
