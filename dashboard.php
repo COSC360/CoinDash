@@ -79,10 +79,9 @@
                             <div class=\"module small\" id=\"module-1\"> 
                                 <div class=\"module-header\">
                                     <div class=\"api-details\">
-                                        <img class=\"api-logo-image\" src=\"images/amazon-logo-1.png\"></img>
                                         <div class=\"api-category\">".$dashboardModules[$currentCount]["category"]."</div>
                                         <a class=\"icon-overlay\" href=\"#\">
-                                            <img src=\"svgs/goto.svg\">
+                                            <i class=\"fa-solid fa-location-arrow\"></i>
                                         </a>
                                     </div>
                                     <div class=\"dropdowns\">
@@ -99,16 +98,17 @@
                                     </div>
                                 </div>
                                 <div class=\"module-gallery\">";
+
                                 $coins = retrieveAllCoins($con);
                                 foreach($coins as $coin){
                                     echo 
                                     "<div class=\"product-card\">
                                         <div class=\"icon-container\">
                                             <a class=\"icon-overlay\" href=\"#\">
-                                                <img src=\"svgs/goto.svg\">
+                                                <i class=\"fa-light fa-location-arrow\"></i>
                                             </a>
                                             <a class=\"icon-overlay\" href=\"#\">
-                                                <img src=\"svgs/bookmark.svg\">
+                                                <i class=\"fa-light fa-bookmark\"></i>
                                             </a>
                                         </div>
                                             <div class=\"product-image-mask\">
@@ -131,10 +131,10 @@
                                     <div class=\"module-footer\">
                                     <div class=\"prev\">
                                         <img class=\"prev-icon\" src=\"svgs/arrow-left-long.svg\">
-                                        <p>Previous</p>
+                                        <i class=\"fa-light fa-arrow-left-long\"></i>
                                     </div>
                                     <div class=\"next\">
-                                        <p>Next</p>
+                                        <i class=\"fa-light fa-arrow-left-long fa-rotate-180\"></i>
                                         <img class=\"next-icon\" src=\"svgs/arrow-right-long.svg\">
                                     </div>
                                 </div>
@@ -155,7 +155,10 @@
     </main>
     <footer>
         <a id="view-edit-btn" class="icon-overlay" href="#">
-            <img src="svgs/view.svg">
+            <i class="fa-solid fa-eye"></i>
+        </a>
+        <a id="save-edit-btn" class="icon-overlay" href="#">
+            <i class="fa-solid fa-floppy-disk"></i>
         </a>
         <div class="fill-container">
             <div class="left">
