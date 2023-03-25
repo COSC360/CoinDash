@@ -8,7 +8,6 @@ function retrieveAllCoins($con){
     if (!mysqli_stmt_prepare($stmt, $sql)){
         // TODO:
         // header("location: REPLACE LATER");
-        echo "Error 1";
         exit();
     }
 
