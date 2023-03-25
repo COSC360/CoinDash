@@ -72,13 +72,18 @@ if ($con->connect_error) {
                     $SelectResultSet = $selectStmt->get_result(); // get the mysqli result
                     $selectRS = $SelectResultSet->fetch_all(MYSQLI_ASSOC);
         
-                    $arrDiff = array_diff($categoryResultSet, $selectRS);
+                    $arrDiff = array_diff($selectRS,$categoryResultSet);
+                    // $arrDiff = array_diff($categoryResultSet,$selectRS);
                     // print_r($json['categories']);
                     // echo "\n";
-                    print_r($selectRS);
-                    echo " ";
-                    // print_r($arrDiff);
+                    $newSelectRS = array();
+                    foreach($selectRS as $field){
+                        array_push($newSelectRS,$field['name']);
+                    }
+
+                    print_r($newSelectRS);
                     // echo " ";
+                    // print_r($arrDiff);
                     // foreach($arrDiff as $newCategory){
                     //     $insertCategoryStmt = $con->prepare("INSERT INTO category(`name`) VALUES (?)");
                     //     $insertCategoryStmt->bind_param("s",$newCategory);
