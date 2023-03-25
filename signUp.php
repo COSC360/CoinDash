@@ -83,8 +83,8 @@ include 'DBconnection.php';
                 <img src="images/sitelogo.png">
             </div>
             <nav>
-                <a href="http://cosc360.ok.ubc.ca/suyash06/cosc360-Project/community.php">Community</a>
-                <a href="http://cosc360.ok.ubc.ca/suyash06/cosc360-Project/help.php">Help</a>
+                <a href="https://cosc360.ok.ubc.ca/suyash06/project-JasonR24/community.php">Community</a>
+                <a href="https://cosc360.ok.ubc.ca/suyash06/project-JasonR24/help.php">Help</a>
             </nav>
             <div class="settings container">
                 <div class="horizontal-container fit-width" style="margin-right: 2em;">
@@ -104,9 +104,9 @@ include 'DBconnection.php';
                 <h2>Sign Up</h2>
                 <p>Lorem ipsum dolor sit amet consectetur. Erat facilisi varius est cursus. Neque sagittis mi non purus semper lacus mauris magnis.</p>
                 <div class="info-footer">
-                    <p><a href="http://cosc360.ok.ubc.ca/suyash06/cosc360-Project/signIn.php">Already Have An Account?</a></p>
+                    <p><a href="https://cosc360.ok.ubc.ca/suyash06/project-JasonR24/signIn.php">Already Have An Account?</a></p>
                     <p>or</p>
-                    <p><a href="http://cosc360.ok.ubc.ca/suyash06/cosc360-Project/community.php">Explore Dashboards?</a></p>
+                    <p><a href="https://cosc360.ok.ubc.ca/suyash06/project-JasonR24/community.php">Explore Dashboards?</a></p>
                 </div>
             </div>  
             <div class="register-box">
@@ -151,9 +151,9 @@ include 'DBconnection.php';
             </div>
         </div>
         <div class = "register-display-card-container">  
+            <!-- <a href = "http://cosc360.ok.ubc.ca/suyash06/cosc360-Project/dashboard.php"><img class="dashboardCard"></a>
             <a href = "http://cosc360.ok.ubc.ca/suyash06/cosc360-Project/dashboard.php"><img class="dashboardCard"></a>
-            <a href = "http://cosc360.ok.ubc.ca/suyash06/cosc360-Project/dashboard.php"><img class="dashboardCard"></a>
-            <a href = "http://cosc360.ok.ubc.ca/suyash06/cosc360-Project/dashboard.php"><img class="dashboardCard"></a>
+            <a href = "http://cosc360.ok.ubc.ca/suyash06/cosc360-Project/dashboard.php"><img class="dashboardCard"></a> -->
         </div>
         </div>
     </div>   
