@@ -10,7 +10,7 @@ if ($con->connect_error) {
     $stmt->execute();
     $resultSet = $stmt->get_result(); // get the mysqli result
     $result = $resultSet->fetch_all(MYSQLI_ASSOC);
-    foreach ($result as $field) {
+    // foreach ($result as $field) {
     
         $curl = curl_init();
         
@@ -97,6 +97,6 @@ if ($con->connect_error) {
             }
         }
 
-    }
+    // }
 
 ?>
