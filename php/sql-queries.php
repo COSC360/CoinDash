@@ -96,7 +96,7 @@ function uploadDashboard($con, $userId, $dashboardObject){
         $blocks = $dashboardObject -> blocks;
 
         foreach($blocks as $block){
-            // $modules = $block -> modules;
+            $modules = $block -> modules;
 
             // foreach($modules as $module){
             //     echo $module["category"];
