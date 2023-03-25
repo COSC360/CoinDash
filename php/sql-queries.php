@@ -88,27 +88,43 @@ function uploadDashboard($con, $userId, $dashboardObject){
         $dashboardObject = json_decode($dashboardObject);
         $blocks = $dashboardObject -> blocks;
 
+        echo "<script>console.log('Inserting');</script>";
         $dashboardStmt = mysqli_stmt_init($con);
-        mysqli_stmt_bind_param($dashboardStmt, "s", $userId);
+        if (!mysqli_stmt_prepare($dashboardStmt, $dashboardSql)){
+            // TODO:
+            // header("location: REPLACE LATER");
+            exit();
+        }
+
+        mysqli_stmt_bind_param($dashboardStmt, "i", $userId);
         mysqli_stmt_execute($dashboardStmt); 
 
-        // foreach($blocks as $block){
-            
-        //     $modules = $block -> modules;
-        //     $blockStmt = mysqli_stmt_init($con);
-        //     mysqli_stmt_bind_param($blockStmt, "s", $userId);
-        //     mysqli_stmt_execute($blockStmt); 
+        $dashboardId = mysqli_insert_id($con);
+        foreach($blocks as $block){
 
-        //     foreach($modules as $module){
-        //         $category = $module -> category;
-        //         $fiat = $module -> fiat;
-        //         $sort = $module -> sort;
+            $modules = $block -> modules;
+            $blockStmt = mysqli_stmt_init($con);
+            if (!mysqli_stmt_prepare($blockStmt, $blockSql)){
+                // TODO:
+                // header("location: REPLACE LATER");
+                exit();
+            }
 
-        //         $moduleStmt = mysqli_stmt_init($con);
-        //         mysqli_stmt_bind_param($moduleStmt, "s", $userId);
-        //         mysqli_stmt_execute($blockStmt); 
-        //     }
-        // }
+            mysqli_stmt_bind_param($blockStmt, "s", $dashboardId);
+            mysqli_stmt_execute($blockStmt); 
+
+            $blockId = mysqli_insert_id($con);
+
+            foreach($modules as $module){
+                $category = $module -> category;
+                $fiat = $module -> fiat;
+                $sort = $module -> sort;
+
+                $moduleStmt = mysqli_stmt_init($con);
+                mysqli_stmt_bind_param($moduleStmt, "s", $userId);
+                mysqli_stmt_execute($blockStmt); 
+            }
+        }
     } catch (Exception $e){
         echo $e;
     }
