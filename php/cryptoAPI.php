@@ -62,10 +62,10 @@ if ($con->connect_error) {
 
                     // $categoryResultSet = $json['categories'];
                     // foreach($categoryResultSet as $category){
-                    //     $insertStmt = $con->prepare("INSERT INTO coinCategory(coin,category) VALUES (?,?)");
-                    //     $insertStmt->bind_param("ss",$field['Id'],$category);
-                    //     $insertStmt->execute();
-                    // }   
+                    //     $insertStmt = $con->prepare("INSERT INTO coinCategory(coin,category) VALUES (?,?)"); 
+                    //     $insertStmt->bind_param("ss",$field['Id'],$category); 
+                    //     $insertStmt->execute(); 
+                    // } 
                     // echo "Insert success !";
 
                     // $selectStmt = $con->prepare("SELECT * FROM category");
