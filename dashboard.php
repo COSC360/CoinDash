@@ -87,9 +87,11 @@
                     <div class="module-gallery">
                     <?php
                             include "php/modules.php";
-
+                            $fiat = "usd"; // TODO
+                            
+                            $coins = retrieveAllCoins($con);
                             // $coins = retrieveAllCoins($con);
-                            foreach($data as $coin){
+                            foreach($coins as $coin){
                                 echo 
                                 "<div class=\"product-card\">
                                     <div class=\"icon-container\">
@@ -101,10 +103,10 @@
                                         </a>
                                     </div>
                                         <div class=\"product-image-mask\">
-                                        <div class=\"product-image\" style=\"background-image: url(".$coin["img"].");\"></div>
+                                        <div class=\"product-image\" style=\"background-image: url(".$coin["img_url"].");\"></div>
                                     </div><div class=\"product-info-container\">
                                         <h3>Lorem ipsum dolor sit amet consectetur. Erat facilisi Lorem ipsum dolor</h3>
-                                        <strong class=\"product-price\">".$coin["current_price"]." ".$coin["price_change_24h"]."</strong>
+                                        <strong class=\"product-price\">".$coin[$fiat]." ".$coin["price_change_24h"]."</strong>
                                         <div class=\"price-trend-container\">
                                             <p>7D: ".$coin["price_change_7d"]."</p>
                                             <p>14D: ".$coin["price_change_14d"]."</p>

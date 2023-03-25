@@ -6,6 +6,4 @@ if (mysqli_connect_errno()){
     die(mysqli_connect_errno());
 }
 
-$data = retrieveAllCoins($con);
-
 ?>
