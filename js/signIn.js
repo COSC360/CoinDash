@@ -1,5 +1,5 @@
-let usernameError = document.getElementById("usernameError");
-let passwordError = document.getElementById("passwordError");
+const usernameError = document.getElementById("usernameError");
+const passwordError = document.getElementById("passwordError");
 function addErrorMessage($id, $msg){
     var errorMsg = document.createTextNode($msg);
     if($id = $usernameError){
