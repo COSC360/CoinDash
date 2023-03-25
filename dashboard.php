@@ -69,6 +69,7 @@
                 while ($currentCount < $moduleCount){
                     echo "<div class=\"block panel\">";
                     echo $currentCount;
+                    $currentCount++;
                     // while ($currentCount < $moduleCount){
                     //     if ($previousBlock != $dashboardModules[$currentCount]["block_id"] || $currentCount == 0){
                     //         $previousBlock = $dashboardModules[$currentCount]["block_id"];
