@@ -30,13 +30,12 @@ if ($con->connect_error) {
 
         $response = curl_exec($curl);
         $err = curl_error($curl);
-        $result = json_decode(curl_exec($ch));
         curl_close($curl);
 
         if ($err) {
             echo "cURL Error #:" . $err;
         } else {
-            echo $result;
+            echo $response;
         }
         // Closing curl
 
