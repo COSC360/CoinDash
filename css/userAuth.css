@@ -173,8 +173,8 @@
   position: fixed;
   margin-top: 0.5em;
   right: 2.5em;
-  /* opacity: 0;
-  visibility: hidden; */
+  opacity: 0;
+  visibility: hidden;
   color: rgb(255, 0, 0);
   z-index: 10;
 }
