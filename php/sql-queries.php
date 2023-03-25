@@ -162,18 +162,19 @@ function deleteDashboard($con, $userId){
 }
 
 function retrieveDashboard($con, $userId){
-    $moduleSql = "SELECT block_id, category, fiat, sort FROM dashboard WHERE user_id = ?;";
-    echo "1";
+    $moduleSql = "SELECT block_id, category, fiat, sort FROM module WHERE user_id = ?;";
+    echo "<script>console.log('hi');</script>";
     $moduleStmt = mysqli_stmt_init($con);
     if (!mysqli_stmt_prepare($moduleStmt, $moduleSql)){
         // TODO:
+        echo "<script>console.log('Failure');</script>";
         // header("location: REPLACE LATER");
         exit();
     }
-    echo "1";
+    echo "<script>console.log('hi');</script>";
     mysqli_stmt_bind_param($moduleStmt, "s", $userId);
     $result = mysqli_stmt_get_result($moduleStmt);
-    echo "1";
+    echo "<script>console.log('hi');</script>";
     if ($rows = $result -> fetch_all(MYSQLI_ASSOC)){
         // mysqli_stmt_close();
         print_r($rows);
