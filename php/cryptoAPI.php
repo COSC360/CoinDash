@@ -5,7 +5,7 @@ include "DBconnection.php";
 if ($con->connect_error) {
     die("Connection failed: " . $con->connect_error);
 }else{
-    for($i=0; $i < 100; $i + 10){
+    for($i=0; $i < 100; $i + 9){
     $stmt = $con->prepare("SELECT * FROM coin LIMIT 10 OFFSET ?");
     $stmt->bind_param("i", $i);
     $stmt->execute();
