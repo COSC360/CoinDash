@@ -155,10 +155,10 @@
     </main>
     <footer>
         <div id="view-edit-btn" class="icon-overlay" href="#">
-            <i class="fa-light fa-eye fa-2xl" style="color: #FFFFFF"></i>
+            <i class="fa-thin fa-eye fa-xl" style="color: #FFFFFF"></i>
         </div>
         <div id="save-edit-btn" class="icon-overlay" href="#">
-            <i class="fa-light fa-floppy-disk fa-2xl" style="color: #FFFFFF"></i>
+            <i class="fa-thin fa-floppy-disk fa-xl" style="color: #FFFFFF"></i>
         </div>
         <div class="fill-container">
             <div class="left">
