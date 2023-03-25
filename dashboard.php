@@ -51,7 +51,7 @@
             <h2>Home / Jason /</h2>
             <div class="title">
                 <h1>Jason's Dashboard</h1>
-                <div class="container">
+                <div class="container edit-ui">
                     <img src="svgs/edit.svg">
                 </div>
             </div>
@@ -138,7 +138,7 @@
                                         <img class=\"next-icon\" src=\"svgs/arrow-right-long.svg\">
                                     </div>
                                 </div>
-                                <div draggable=\"true\" class=\"module-settings-btn\">
+                                <div draggable=\"true\" class=\"module-settings-btn edit-ui\">
                                     <i class=\"fa-solid fa-ellipsis-vertical fa-lg\"></i>
                                     <i class=\"fa-solid fa-ellipsis-vertical fa-lg\"></i>
                                 </div>

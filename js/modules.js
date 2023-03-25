@@ -1,5 +1,7 @@
 var module_settings_btns = document.querySelectorAll(".module-settings-btn");
 var modules = document.querySelectorAll(".module");
+var editElements = document.querySelectorAll(".edit-ui");
+var toggleEditBtn = document.getElementById("save-edit-btn");
 
 module_settings_btns.forEach(btn => {
     
@@ -68,5 +70,13 @@ modules.forEach(module => {
 
     module.addEventListener("dragover", (e) => {
         e.preventDefault();
+    })
+})
+
+toggleEditBtn.addEventListener("click", (e) => {
+    console.log("Removing");
+    console.log(editElements);
+    editElements.forEach(element => {
+        element.classList.add("hide");
     })
 })
