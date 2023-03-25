@@ -1,9 +1,9 @@
 import { buildDashboard } from "./parser.js";
-console.log("1");
+
 var dashboardDom = document.getElementById("dashboard");
 var dashboardObj = buildDashboard(dashboardDom);
-console.log("2");
-var test = function(){
+
+var uploadDashboard = function(){
     $.ajax({
         url: "./php/uploadDashboard.php",
         type: "POST",
@@ -13,6 +13,5 @@ var test = function(){
         }
     })
 }
-console.log("3");
-test();
-console.log("4");
+
+uploadDashboard();
