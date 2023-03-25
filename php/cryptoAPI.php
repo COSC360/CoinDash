@@ -5,17 +5,19 @@ include "DBconnection.php";
 if ($con->connect_error) {
     die("Connection failed: " . $con->connect_error);
 }else{
-    $stmt = $con->prepare("SELECT * FROM coin");
-    $stmt->bind_param("i", $i);
-    $stmt->execute();
-    $resultSet = $stmt->get_result(); // get the mysqli result
-    $result = $resultSet->fetch_all(MYSQLI_ASSOC);
+    // $stmt = $con->prepare("SELECT * FROM coin");
+    // $stmt->bind_param("i", $i);
+    // $stmt->execute();
+    // $resultSet = $stmt->get_result(); // get the mysqli result
+    // $result = $resultSet->fetch_all(MYSQLI_ASSOC);
+
+    $result = array('augur','burger-swap','cocos-bcx','dodo','illuvium','inter-milan-fan-token','juventus-fan-token','magic','marblex','mask-network','merit-circle','mobox','napoli-fan-token','og-fan-token','reef','render-token','santos-fc-fan-token','the-sandbox','volt-inu-2','yield-guild-games');
     foreach ($result as $field) {
     
         $curl = curl_init();
         
         curl_setopt_array($curl, [
-            CURLOPT_URL => "https://coingecko.p.rapidapi.com/coins/".$field['Id']."?localization=false&market_data=true",
+            CURLOPT_URL => "https://coingecko.p.rapidapi.com/coins/".$field."?localization=false&market_data=true",
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_FOLLOWLOCATION => true,
             CURLOPT_ENCODING => "",
