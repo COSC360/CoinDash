@@ -25,8 +25,10 @@ function buildBlock(blockDom) {
 function buildModule(moduleDom){
     var domId = moduleDom.id;
     var category = document.querySelector("#" + domId + " .api-category").innerText;
-    var fiat = document.querySelector("#" + domId + " .fiat");
-    var sort = document.querySelector("#" + domId + " .sort"); 
+    var fiatDom = document.querySelector("#" + domId + " .fiat");
+    var fiat = fiatDom.options[fiatDom.selectedIndex].value;
+    var sortDom = document.querySelector("#" + domId + " .sort"); 
+    var sort = sortDom.options[sortDom.selectedIndex].value;
 
     return new Module(category, fiat, sort);
 }
