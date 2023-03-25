@@ -112,9 +112,10 @@ function uploadDashboard($con, $userId, $dashboardObject){
 
             mysqli_stmt_bind_param($blockStmt, "s", $dashboardId);
             mysqli_stmt_execute($blockStmt); 
+            echo "Inserting Block";
 
             $blockId = mysqli_insert_id($con);
-
+            
             foreach($modules as $module){
                 $category = $module -> category;
                 $fiat = $module -> fiat;
