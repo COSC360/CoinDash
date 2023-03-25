@@ -75,6 +75,7 @@ modules.forEach(module => {
 
 console.log("Hello");
 console.log(toggleEditBtn);
+toggleEditBtn.onclick = "alert('blah')"; 
 toggleEditBtn.addEventListener("click", (e) => {
     e.preventDefault();
     console.log("Removing");
