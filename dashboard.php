@@ -19,8 +19,10 @@
 <body>
     <?php
         include "php/header.php";
-        include "php/header.php";
-        include "php/header.php";
+
+        generateHeader();
+        generateHeader();
+        generateHeader();
     ?>
     <main>
         <article class="panel page-title">
