@@ -39,17 +39,17 @@ include 'DBconnection.php';
 
                 if($email == "" || $username == "" || $password == "" || $verifyPassword == ""){
                     $statusMsg = 'Please enter all the required details !';
-                    echo "<script>window.alert(".$statusMsg .")</script>";
+                    
                 }elseif($password != $verifyPassword){
                     $statusMsg = 'Passwords do not match !';
-                    echo "<script>window.alert(".$statusMsg .")</script>";
+                    
                 }elseif($result != null){
                     $statusMsg = 'User already exists !';
-                    echo "<script>window.alert(".$statusMsg .")</script>";
+                   
                 }else{
                     // Insert image content into database   
                     $stmt = $con->prepare("INSERT INTO `user_auth` (`Username`, `Email`, `Password`,`comingFrom`,`profilePicture`,`userType`) VALUES (?,?,?,?,?,?)");
-                    $stmt->bind_param("ssssss",$username,$email,$password,$selectedOption,$image,$userType); 
+                    $stmt->bind_param("ssssbs",$username,$email,$password,$selectedOption,$image,$userType); 
                     $stmt->execute();
                     header('location:signIn.php');
                     $stmt->close();
@@ -115,7 +115,7 @@ include 'DBconnection.php';
                 </div>
             </div>  
             <div class="register-box">
-                <form name = "RegisterForm" enctype="multipart/form-data" action= "" onsubmit="return validateRegisterForm()" method="POST" required>
+                <form name = "RegisterForm" id="RegisterForm" enctype="multipart/form-data" action= "" onsubmit="return validateRegisterForm()" method="POST" required>
                             <div class="item-1">
                                 <label>Username <span style="color: red;">*</span></label><br>
                                 <p id = "usernameError"><i class="fa-solid fa-circle-exclamation"></i></p>                   
@@ -126,16 +126,19 @@ include 'DBconnection.php';
                                 <input type = "email" name = "email" placeholder="What's Your Email?">
                             </div>
                             <div class="item-3">
-                                <label>Password <span style="color: red;">*</span></label><br>                                   
+                                <label>Password <span style="color: red;">*</span></label><br>
+                                <p id = "passwordError"><i class="fa-solid fa-circle-exclamation"></i></p>                                   
                                 <input type = "password" name = "password" placeholder="What’s Your Password?">
                             </div>
                             <div class="item-4">
                                 <label>Verify Password <span style="color: red;">*</span></label><br>
+                                <p id = "verifyPasswordError"><i class="fa-solid fa-circle-exclamation"></i></p>
                                 <input type = "password" name = "verifyPassword" placeholder="Confirm Password?">
                             </div>
                             <div class="item-5">
                                 <label>Coming From</label><br>
-                                <select name="selectionMenu">
+                                <p id = "selectionError"><i class="fa-solid fa-circle-exclamation"></i></p>
+                                <select name="selectionMenu" id="selectionMenu">
                                     <option value="Google"  selected="selected">Google</option>
                                     <option value="Friend">Friend</option>
                                     <option value="Social Media">Social Media</option>
@@ -145,6 +148,7 @@ include 'DBconnection.php';
                                 <label>Profile Photo <span style="color: red;">*</span></label><br>
                                 <!-- <button id="upload-file-btn" onclick= "document.getElementById('getFile').click()">Upload File <img src="svgs/arrow-right-short.svg"></button>
                                 <input type='file' id="getFile" style="display:none"> -->
+                                <p id = "imageUploadError"><i class="fa-solid fa-circle-exclamation"></i></p>
                                 <input type="file" name="img" accept="image/*">
                             </div>
                             <div class="item-7">
