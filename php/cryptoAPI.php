@@ -10,11 +10,11 @@ if ($con->connect_error) {
     $resultSet = $stmt->get_result(); // get the mysqli result
     $result = $resultSet->fetch_all(MYSQLI_ASSOC);
     foreach ($result as $field) {
-        echo "Id: ".$field['Id']." ";
+        echo "Id: ".$field['Id']."\n";
         $curl = curl_init();
         
         curl_setopt_array($curl, [
-            CURLOPT_URL => "https://coingecko.p.rapidapi.com/coins/".$field['Id']."?localization=false&tickers=false&market_data=true&community_data=false&developer_data=false&sparkline=false",
+            CURLOPT_URL => "https://coingecko.p.rapidapi.com/coins/".trim($field['Id'])."?localization=false&tickers=false&market_data=true&community_data=false&developer_data=false&sparkline=false",
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_FOLLOWLOCATION => true,
             CURLOPT_ENCODING => "",
@@ -32,12 +32,12 @@ if ($con->connect_error) {
         $err = curl_error($curl);
         curl_close($curl);
 
-        if ($err) {
-            echo "cURL Error #:" . $err;
-        } else {
-            $json = json_decode($response, true);
-            echo "symbol: ".$json['symbol']." ";
-        }
+        // if ($err) {
+        //     echo "cURL Error #:" . $err;
+        // } else {
+        //     $json = json_decode($response, true);
+        //     echo "symbol: ".$json['symbol']." ";
+        // }
 
     }
 }
