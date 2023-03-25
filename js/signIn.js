@@ -1,5 +1,4 @@
-const usernameError = document.getElementById("usernameError");
-const passwordError = document.getElementById("passwordError");
+
 function addErrorMessage($id, $msg){
     var errorMsg = document.createTextNode($msg);
     if($id = $usernameError){
@@ -12,6 +11,8 @@ function addErrorMessage($id, $msg){
 function validateLoginForm() {
     let usernameOrEmail = document.forms["LoginForm"]["user-email"].value;
     let password = document.forms["LoginForm"]["password"].value;
+    let usernameError = document.getElementById("usernameError");
+    let passwordError = document.getElementById("passwordError");
     // var errorFlag = false;
     var passReg = /^[a-zA-Z]\w{8,16}$/;
     
@@ -48,11 +49,13 @@ function validateLoginForm() {
   }
 
 function UsernameErrorClearFunction(){
+        let usernameError = document.getElementById("usernameError");
         usernameError.style.opacity = "0";
         usernameError.style.visibility = "hidden";
 }
 
 function PasswordErrorClearFunction(){
+        let passwordError = document.getElementById("passwordError");
         passwordError.style.opacity = "0";
         passwordError.style.visibility = "hidden";
 }
