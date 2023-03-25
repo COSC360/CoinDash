@@ -155,7 +155,7 @@
     </main>
     <footer>
         <div id="view-edit-btn" class="icon-overlay" href="#">
-            <i class="fa-light fa-eye fa-xl" style="color: #FFFFFF"></i>
+            <i class="fa-light fa-eye fa-xl"></i>
         </div>
         <div id="save-edit-btn" class="icon-overlay" href="#">
             <i class="fa-light fa-floppy-disk fa-xl" style="color: #FFFFFF"></i>
