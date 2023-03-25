@@ -76,7 +76,7 @@
                             break;
                         }
                         echo "
-                            <div class=\"module small\" id=\"module-1\"> 
+                            <div class=\"module small\" id=\"module-".$dashboardModules[$currentCount]["module_id"]."\"> 
                                 <div class=\"module-header\">
                                     <div class=\"api-details\">
                                         <div class=\"api-category\">".$dashboardModules[$currentCount]["category"]."</div>
