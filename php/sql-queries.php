@@ -110,7 +110,7 @@ function uploadDashboard($con, $userId, $dashboardObject){
                 exit();
             }
 
-            mysqli_stmt_bind_param($blockStmt, "s", $dashboardId);
+            mysqli_stmt_bind_param($blockStmt, "i", $dashboardId);
             mysqli_stmt_execute($blockStmt); 
             echo "Inserting Block";
 
