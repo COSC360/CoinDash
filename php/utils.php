@@ -1,9 +1,11 @@
 <?php
 
 function formatNumber($num){
-    $str = strval($num);
-    echo "<script>console.log('".substr($str, 6)."');</script>";
-    return substr($str, 6);
+    if ($num >= 1){
+        return number_format($num, 2, '.', '');
+    } else {
+        return $num;
+    }
 }
 
 ?>
