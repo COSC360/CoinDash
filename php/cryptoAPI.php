@@ -5,11 +5,12 @@ include "DBconnection.php";
 if ($con->connect_error) {
     die("Connection failed: " . $con->connect_error);
 }else{
-    $result = mysql_query("SELECT * FROM coin");
+    $stmt = $con->prepare("SELECT * FROM coin");
+    $stmt->execute();
+    $resultSet = $stmt->get_result(); // get the mysqli result
+    $result = $resultSet->fetch_assoc();
 
-    while ($row = mysql_fetch_assoc($result)) {
-        print_r($row);
-    }
+    print_r($result);
 }
 
 // $curl = curl_init();
