@@ -189,8 +189,9 @@ select {
     transition: background-color 0.3s, width 0.3s, height 0.3s;
 }
 
-.icon-overlay i, .icon-overlay img {
+.icon-overlay img {
     width: 40%;
+    height: 40%;
     aspect-ratio: 1;
     transition: 0.3s;
     text-decoration: none;
@@ -203,6 +204,7 @@ select {
 
 .icon-overlay:hover img{
     width: 35%;
+    height: 35%;
 }
 
 .product-info-container {
