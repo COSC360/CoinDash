@@ -16,13 +16,13 @@
         <div class="right settings">
             <div class="horizontal-container fit-width">
                 <p>English-US</p>
-                <img src="images/canada-flag.png">
-                <img src="svgs/arrow-down.svg">
+                <img src="../images/canada-flag.png">
+                <img src="../svgs/arrow-down.svg">
             </div>
             <div class="horizontal-container fit-width">
                 <p>Hi, Jason</p>
-                <img src="images/profile-picture.png">
-                <img src="svgs/arrow-down.svg">
+                <img src="../images/profile-picture.png">
+                <img src="../svgs/arrow-down.svg">
             </div>
         </div>
     </div>
