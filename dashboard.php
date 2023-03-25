@@ -20,9 +20,9 @@
     <?php
         include "php/header.php";
 
-        generateHeader();
-        generateHeader();
-        generateHeader();
+        echo generateHeader();
+        echo generateHeader();
+        echo generateHeader();
     ?>
     <main>
         <article class="panel page-title">

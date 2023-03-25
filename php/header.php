@@ -1,7 +1,8 @@
 <?php
 
 function generateHeader(){
-    echo "
+
+    return "
         <header class=\"container\">
             <div class=\"fill-container\">
                 <div class=\"left\">
