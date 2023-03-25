@@ -89,7 +89,7 @@ function uploadDashboard($con, $userId, $dashboardObject){
         $blocks = $dashboardObject -> blocks;
 
         $dashboardStmt = mysqli_stmt_init($con);
-        mysqli_stmt_bind_param($dashboardStmt, "s", $userId);
+        mysqli_stmt_bind_param($dashboardStmt, "i", $userId);
         mysqli_stmt_execute($dashboardStmt); 
 
         // foreach($blocks as $block){
