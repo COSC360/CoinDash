@@ -42,23 +42,23 @@ if ($con->connect_error) {
                 }else{
                     $json = json_decode($response,true);
                     print("Image: ".$json['image']."</br>");
-                        $img_url = $item['image']['large'];
-                        $usd = $item['market_data']['current_price']['usd'];
-                        $cad = $item['market_data']['current_price']['cad'];
-                        $eur = $item['market_data']['current_price']['eur'];
-                        $php = $item['market_data']['current_price']['php'];
-                        $jpy = $item['market_data']['current_price']['jpy'];
-                        $price_change_24h = $item['market_data']['price_change_percentage_24h'];
-                        $price_change_7d = $item['market_data']['price_change_percentage_7d'] 
-                        $price_change_14d = $item['market_data']['price_change_percentage_14d'] 
-                        $price_change_30d = $item['market_data']['price_change_percentage_30d'] 
-                        $price_change_60d = $item['market_data']['price_change_percentage_60d'] 
-                        $price_change_200d = $item['market_data']['price_change_percentage_200d'] 
-                        $price_change_1yr = $item['market_data']['price_change_percentage_1yr'] 
-                    $insertStmt = $con->prepare("INSERT INTO `coin` (`img_url`, `usd`,`cad`,`eur`,`php`,`jpy`,`price_change_24h`,`price_change_7d`,`price_change_14d`,`price_change_30d`,`price_change_60d`,`price_change_200d`,`price_change_1yr`) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?) WHERE `Id` = ?");
-                    $insertStmt->bind_param("sdddddddddddds", $img_url,$usd, $cad,$eur,$php,$jpy,$price_change_24h,$price_change_7d,$price_change_14d,$price_change_30d,$price_change_60d,$price_change_200d,$price_change_1yr,$field['Id']); 
-                    $insertStmt->execute();
-                
+                        // $img_url = $item['image']['large'];
+                    //     $usd = $item['market_data']['current_price']['usd'];
+                    //     $cad = $item['market_data']['current_price']['cad'];
+                    //     $eur = $item['market_data']['current_price']['eur'];
+                    //     $php = $item['market_data']['current_price']['php'];
+                    //     $jpy = $item['market_data']['current_price']['jpy'];
+                    //     $price_change_24h = $item['market_data']['price_change_percentage_24h'];
+                    //     $price_change_7d = $item['market_data']['price_change_percentage_7d'] 
+                    //     $price_change_14d = $item['market_data']['price_change_percentage_14d'] 
+                    //     $price_change_30d = $item['market_data']['price_change_percentage_30d'] 
+                    //     $price_change_60d = $item['market_data']['price_change_percentage_60d'] 
+                    //     $price_change_200d = $item['market_data']['price_change_percentage_200d'] 
+                    //     $price_change_1yr = $item['market_data']['price_change_percentage_1yr'] 
+                    // $insertStmt = $con->prepare("INSERT INTO `coin` (`img_url`, `usd`,`cad`,`eur`,`php`,`jpy`,`price_change_24h`,`price_change_7d`,`price_change_14d`,`price_change_30d`,`price_change_60d`,`price_change_200d`,`price_change_1yr`) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?) WHERE `Id` = ?");
+                    // $insertStmt->bind_param("sdddddddddddds", $img_url,$usd, $cad,$eur,$php,$jpy,$price_change_24h,$price_change_7d,$price_change_14d,$price_change_30d,$price_change_60d,$price_change_200d,$price_change_1yr,$field['Id']); 
+                    // $insertStmt->execute();
+                }
             }
         }
     }
