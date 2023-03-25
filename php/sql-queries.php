@@ -150,9 +150,20 @@ function deleteDashboard($con, $userId){
     $blockStmt = mysqli_stmt_init($con);
     $moduleStmt = mysqli_stmt_init($con);
     echo "1";
-    if (!mysqli_stmt_prepare($dashboardStmt, $dashboardSql) || !mysqli_stmt_prepare($blockStmt, $blockSql) || !mysqli_stmt_prepare($moduleStmt, $moduleSql)){
+    if (!mysqli_stmt_prepare($dashboardStmt, $dashboardSql)){
         // TODO:
-        echo "Failure";
+        // header("location: REPLACE LATER");
+        exit();
+    }
+    echo "1";
+    if (!mysqli_stmt_prepare($blockStmt, $blockSql)){
+        // TODO:
+        // header("location: REPLACE LATER");
+        exit();
+    }
+    echo "1";
+    if (!mysqli_stmt_prepare($moduleStmt, $moduleSql)){
+        // TODO:
         // header("location: REPLACE LATER");
         exit();
     }
