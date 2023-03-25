@@ -1,10 +1,4 @@
 <footer>
-    <div id="view-edit-btn" class="icon-overlay" href="#">
-        <img src="svgs/view.svg">
-    </div>
-    <div id="save-edit-btn" class="icon-overlay edit-ui" href="#">
-        <img src="svgs/save.svg">
-    </div>
     <div class="fill-container">
         <div class="left">
             <p>Aminbhavi Suyash & Jason Ramos</p>

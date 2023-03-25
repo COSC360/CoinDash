@@ -31,7 +31,6 @@
             </div>
         </article>
         <article id="dashboard">
-
             <?php 
                 include "php/modules.php";
                 include "php/utils.php";
@@ -128,6 +127,7 @@
         </article>
     </main>
     <?php
+        include "php/edit.php";
         include "php/footer.php";
     ?>
     <script type="module" src="js/modules.js"></script>
