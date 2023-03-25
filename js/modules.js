@@ -76,6 +76,6 @@ modules.forEach(module => {
 toggleEditBtn.addEventListener("click", (e) => {
     e.preventDefault();
     editElements.forEach(element => {
-        element.style.display = "none";
+        element.classList.add("hide");
     })
 })
