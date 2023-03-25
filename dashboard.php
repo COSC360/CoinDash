@@ -68,62 +68,62 @@
 
                 while ($currentCount < $moduleCount){
                     echo "<div class=\"block panel\">";
-                        
-                    while ($currentCount < $moduleCount){
-                        if ($previousBlock != $dashboardModules[$currentCount]["block_id"] || $currentCount == 0){
-                            $previousBlock = $dashboardModules[$currentCount]["block_id"];
-                            break;
-                        }
-                        echo "
-                            <div class=\"module small\" id=\"module-1\"> 
-                                <div class=\"module-header\">
-                                    <div class=\"api-details\">
-                                        <img class=\"api-logo-image\" src=\"images/amazon-logo-1.png\"></img>
-                                        <div class=\"api-category\">/Top Products 1</div>
-                                        <a class=\"icon-overlay\" href=\"#\">
-                                            <img src=\"svgs/goto.svg\">
-                                        </a>
-                                    </div>
-                                    <div class=\"dropdowns\">
-                                        <select class=\"dropdown fiat\">
-                                            <option selected>Deals Only</option>
-                                            <option>Deals Only</option>
-                                            <option>Deals Only</option>
-                                            <option>Deals Only</option>
-                                            <option>Deals Only</option>
-                                            <option>Deals Only</option>
-                                        </select>
-                                        <select class=\"dropdown sort\">
-                                            <option selected>Deals Only</option>
-                                            <option>Deals Only</option>
-                                            <option>Deals Only</option>
-                                            <option>Deals Only</option>
-                                            <option>Deals Only</option>
-                                            <option>Deals Only</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class=\"module-gallery\">
+                    echo $currentCount;
+                    // while ($currentCount < $moduleCount){
+                    //     if ($previousBlock != $dashboardModules[$currentCount]["block_id"] || $currentCount == 0){
+                    //         $previousBlock = $dashboardModules[$currentCount]["block_id"];
+                    //         break;
+                    //     }
+                    //     echo "
+                    //         <div class=\"module small\" id=\"module-1\"> 
+                    //             <div class=\"module-header\">
+                    //                 <div class=\"api-details\">
+                    //                     <img class=\"api-logo-image\" src=\"images/amazon-logo-1.png\"></img>
+                    //                     <div class=\"api-category\">/Top Products 1</div>
+                    //                     <a class=\"icon-overlay\" href=\"#\">
+                    //                         <img src=\"svgs/goto.svg\">
+                    //                     </a>
+                    //                 </div>
+                    //                 <div class=\"dropdowns\">
+                    //                     <select class=\"dropdown fiat\">
+                    //                         <option selected>Deals Only</option>
+                    //                         <option>Deals Only</option>
+                    //                         <option>Deals Only</option>
+                    //                         <option>Deals Only</option>
+                    //                         <option>Deals Only</option>
+                    //                         <option>Deals Only</option>
+                    //                     </select>
+                    //                     <select class=\"dropdown sort\">
+                    //                         <option selected>Deals Only</option>
+                    //                         <option>Deals Only</option>
+                    //                         <option>Deals Only</option>
+                    //                         <option>Deals Only</option>
+                    //                         <option>Deals Only</option>
+                    //                         <option>Deals Only</option>
+                    //                     </select>
+                    //                 </div>
+                    //             </div>
+                    //             <div class=\"module-gallery\">
                                     
-                                </div>
-                                    <div class=\"module-footer\">
-                                    <div class=\"prev\">
-                                        <img class=\"prev-icon\" src=\"svgs/arrow-left-long.svg\">
-                                        <p>Previous</p>
-                                    </div>
-                                    <div class=\"next\">
-                                        <p>Next</p>
-                                        <img class=\"next-icon\" src=\"svgs/arrow-right-long.svg\">
-                                    </div>
-                                </div>
-                                <div draggable=\"true\" class=\"module-settings-btn\">
-                                    <i class=\"fa-solid fa-ellipsis-vertical fa-lg\"></i>
-                                    <i class=\"fa-solid fa-ellipsis-vertical fa-lg\"></i>
-                                </div>
-                            </div>
-                        ";
-                        $currentCount = $currentCount + 1;
-                    }
+                    //             </div>
+                    //                 <div class=\"module-footer\">
+                    //                 <div class=\"prev\">
+                    //                     <img class=\"prev-icon\" src=\"svgs/arrow-left-long.svg\">
+                    //                     <p>Previous</p>
+                    //                 </div>
+                    //                 <div class=\"next\">
+                    //                     <p>Next</p>
+                    //                     <img class=\"next-icon\" src=\"svgs/arrow-right-long.svg\">
+                    //                 </div>
+                    //             </div>
+                    //             <div draggable=\"true\" class=\"module-settings-btn\">
+                    //                 <i class=\"fa-solid fa-ellipsis-vertical fa-lg\"></i>
+                    //                 <i class=\"fa-solid fa-ellipsis-vertical fa-lg\"></i>
+                    //             </div>
+                    //         </div>
+                    //     ";
+                    //     $currentCount = $currentCount + 1;
+                    // }
 
                     echo "</div>";
                     
