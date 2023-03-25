@@ -16,6 +16,10 @@
     --Highlight: #46e9ff;
 }
 
+a {
+    text-decoration: none;
+}
+
 .container {
     display: flex;
 }
