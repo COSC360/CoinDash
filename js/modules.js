@@ -1,7 +1,10 @@
+import { uploadDashboard } from "./uploadDashboard.js";
+
 var module_settings_btns = document.querySelectorAll(".module-settings-btn");
 var modules = document.querySelectorAll(".module");
 var editElements = document.querySelectorAll(".edit-ui");
 var toggleEditBtn = document.getElementById("view-edit-btn");
+var saveEditBtn = document.getElementById("save-edit-btn");
 
 module_settings_btns.forEach(btn => {
     
@@ -83,4 +86,9 @@ toggleEditBtn.addEventListener("click", (e) => {
         }
 
     })
+})
+
+saveEditBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+    uploadDashboard(1);
 })
