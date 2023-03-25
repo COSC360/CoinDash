@@ -91,14 +91,14 @@ function uploadDashboard($con, $userId, $dashboardObject){
     $dashboardStmt = mysqli_stmt_init($con);
     mysqli_stmt_bind_param($dashboardStmt, "s", $userId);
 
-    // try {
-    //     mysqli_stmt_execute($dashboardStmt);
+    try {
+        mysqli_stmt_execute($dashboardStmt); 
 
-    //     $dashboardObject = json_decode($dashboardObject);
-    //     echo "<script>console.log('".$dashboardObject."')</script>";
-    // } catch (Exception $e){
+        $dashboardObject = json_decode($dashboardObject);
+        echo "<script>console.log('".$dashboardObject."')</script>";
+    } catch (Exception $e){
 
-    // }
+    }
 }
 
 function deleteDashboard($con, $userId){
