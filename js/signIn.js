@@ -2,6 +2,7 @@
 function addErrorMessage(id, msg){
     let usernameError = document.getElementById("usernameError");
     let passwordError = document.getElementById("passwordError");
+
     var errorMsg = document.createTextNode(msg);
     if(id = usernameError){
         usernameError.appendChild(errorMsg);
@@ -29,7 +30,7 @@ function validateLoginForm() {
 
     }else if(password ==""){
         $msg = "Password empty"
-        addErrorMessage($passwordError, $msg);
+        addErrorMessage(passwordError, msg);
         passwordError.style.opacity = "1";
         passwordError.style.visibility = "visible";
         passwordError.style.transition = "visibility 0s linear 0s, opacity 300ms";
@@ -37,15 +38,15 @@ function validateLoginForm() {
 
     }else if(usernameOrEmail ==""){
         $msg = "Username/Email empty"
-        addErrorMessage($usernameError, $msg);
+        addErrorMessage(usernameError, msg);
         usernameError.style.opacity = "1";
         usernameError.style.visibility = "visible";
         usernameError.style.transition = "visibility 0s linear 0s, opacity 300ms";
         return false;  
 
     }else if(!passReg.test(password)){
-        msg = "invalid password"
-        addErrorMessage(passwordError, msg);
+        // msg = "invalid password"
+        // addErrorMessage(passwordError, msg);
         return false;
     }
   }
