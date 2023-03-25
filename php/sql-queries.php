@@ -170,7 +170,7 @@ function retrieveDashboard($con, $userId){
         // header("location: REPLACE LATER");
         exit();
     }
-
+    echo "<script>console.log('".$userId."');</script>";
     mysqli_stmt_bind_param($moduleStmt, "i", $userId);
     $result = mysqli_stmt_get_result($moduleStmt);
     print_r($result);
