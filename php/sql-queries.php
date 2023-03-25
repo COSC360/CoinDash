@@ -80,57 +80,57 @@ function createCoinCategory($con, $coinId, $coinCategory){
     }
 }
 
-function uploadDashboard($con, $userId, $dashboardObject){
+// function uploadDashboard($con, $userId, $dashboardObject){
 
-    $dashboardSql = "INSERT INTO dashboard (user_id) VALUES (?);";
-    $blockSql = "INSERT INTO block (dashboard_id) VALUES (?);";
-    $moduleSql = "INSERT INTO module (block_id, dashboard_id, category, fiat, spot) VALUES (?, ?, ?, ?, ?);";
+//     $dashboardSql = "INSERT INTO dashboard (user_id) VALUES (?);";
+//     $blockSql = "INSERT INTO block (dashboard_id) VALUES (?);";
+//     $moduleSql = "INSERT INTO module (block_id, dashboard_id, category, fiat, spot) VALUES (?, ?, ?, ?, ?);";
 
-    $dashboardStmt = mysqli_stmt_init($con);
-    mysqli_stmt_bind_param($dashboardStmt, "s", $userId);
+//     $dashboardStmt = mysqli_stmt_init($con);
+//     mysqli_stmt_bind_param($dashboardStmt, "s", $userId);
 
-    try {
-        mysqli_stmt_execute($dashboardStmt);
+//     try {
+//         mysqli_stmt_execute($dashboardStmt);
 
-        $dashboardObject = json_decode($dashboardObject);
-        echo "<script>console.log('".$dashboardObject."')</script>";
-    }
+//         $dashboardObject = json_decode($dashboardObject);
+//         echo "<script>console.log('".$dashboardObject."')</script>";
+//     }
 
-}
+// }
 
-function deleteDashboard($con, $userId){
-    $dashboardSql = "DELETE FROM dashboard WHERE user_id = ?;";
-    $blockSql = "DELETE FROM block WHERE user_id = ?;";
-    $moduleSql = "DELETE FROM module WHERE user_id = ?;";
+// function deleteDashboard($con, $userId){
+//     $dashboardSql = "DELETE FROM dashboard WHERE user_id = ?;";
+//     $blockSql = "DELETE FROM block WHERE user_id = ?;";
+//     $moduleSql = "DELETE FROM module WHERE user_id = ?;";
 
-    $dashboardStmt = mysqli_stmt_init($con);
-    $blockStmt = mysqli_stmt_init($con);
-    $moduleStmt = mysqli_stmt_init($con);
+//     $dashboardStmt = mysqli_stmt_init($con);
+//     $blockStmt = mysqli_stmt_init($con);
+//     $moduleStmt = mysqli_stmt_init($con);
 
-    if (!mysqli_stmt_prepare($dashboardStmt, $dashboardSql) || !mysqli_stmt_prepare($blockStmt, $blockSql) || !mysqli_stmt_prepare($moduleStmt, $moduleSql)){
-        // TODO:
-        // header("location: REPLACE LATER");
-        exit();
-    }
+//     if (!mysqli_stmt_prepare($dashboardStmt, $dashboardSql) || !mysqli_stmt_prepare($blockStmt, $blockSql) || !mysqli_stmt_prepare($moduleStmt, $moduleSql)){
+//         // TODO:
+//         // header("location: REPLACE LATER");
+//         exit();
+//     }
 
-    // Set parameters for prepared statement
-    mysqli_stmt_bind_param($dashboardStmt, "s", $userId);
-    mysqli_stmt_bind_param($blockStmt, "s", $userId);
-    mysqli_stmt_bind_param($moduleStmt, "s", $userId);
+//     // Set parameters for prepared statement
+//     mysqli_stmt_bind_param($dashboardStmt, "s", $userId);
+//     mysqli_stmt_bind_param($blockStmt, "s", $userId);
+//     mysqli_stmt_bind_param($moduleStmt, "s", $userId);
 
-    try {
-        // Delete in reverse order to maintain constraints
-        mysqli_stmt_execute($moduleStmt);
-        mysqli_stmt_execute($blockStmt);
-        mysqli_stmt_execute($dashboardStmt);
-        return true;
-    } catch (Exception $e){
-        return false;
-    }
-}
+//     try {
+//         // Delete in reverse order to maintain constraints
+//         mysqli_stmt_execute($moduleStmt);
+//         mysqli_stmt_execute($blockStmt);
+//         mysqli_stmt_execute($dashboardStmt);
+//         return true;
+//     } catch (Exception $e){
+//         return false;
+//     }
+// }
 
-function retrieveDashboard(){
+// function retrieveDashboard(){
 
-}
+// }
 
 ?>
