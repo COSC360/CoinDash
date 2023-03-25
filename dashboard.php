@@ -90,7 +90,7 @@
                     <?php
                             include "php/modules.php";
                             $fiat = "usd"; // TODO
-                            
+                            echo "ASD";
                             $coins = retrieveAllCoins($con);
                             // $coins = retrieveAllCoins($con);
                             foreach($coins as $coin){
