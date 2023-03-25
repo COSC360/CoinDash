@@ -24,7 +24,7 @@ function buildBlock(blockDom) {
 
 function buildModule(moduleDom){
     var domId = moduleDom.id;
-    var category = document.querySelector("#" + domId + " .api-category");
+    var category = document.querySelector("#" + domId + " .api-category").innerText;
     var fiat = document.querySelector("#" + domId + " .fiat");
     var sort = document.querySelector("#" + domId + " .sort"); 
 
