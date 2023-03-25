@@ -60,6 +60,7 @@
 
             <?php 
                 include "php/modules.php";
+                include "php/utils.php";
 
                 $dashboardModules = retrieveDashboard($con, 1);
                 $moduleCount = sizeof($dashboardModules);
@@ -116,12 +117,12 @@
                                             <h3>Lorem ipsum dolor sit amet consectetur. Erat facilisi Lorem ipsum dolor</h3>
                                             <strong class=\"product-price\">".$coin[$fiat]."$ ".$coin["price_change_24h"]."</strong>
                                             <div class=\"price-trend-container\">
-                                                <p>7D: ".$coin["price_change_7d"]."</p>
-                                                <p>14D: ".$coin["price_change_14d"]."</p>
-                                                <p>30D: ".$coin["price_change_30d"]."</p>
-                                                <p>60D: ".$coin["price_change_60d"]."</p>
-                                                <p>200D: ".$coin["price_change_200d"]."</p>
-                                                <p>1Y: ".$coin["price_change_1yr"]."</p>
+                                                <p>7D: ".formatNumber($coin["price_change_7d"])."</p>
+                                                <p>14D: ".formatNumber($coin["price_change_14d"])."</p>
+                                                <p>30D: ".formatNumber($coin["price_change_30d"])."</p>
+                                                <p>60D: ".formatNumber($coin["price_change_60d"])."</p>
+                                                <p>200D: ".formatNumber($coin["price_change_200d"])."</p>
+                                                <p>1Y: ".formatNumber($coin["price_change_1yr"])."</p>
                                             </div>
                                         </div>
                                     </div>";
