@@ -1,4 +1,4 @@
-import "./parser.js"
+const { buildDashboard } = require("./parser.js");
 console.log("1");
 var dashboardDom = document.getElementById("dashboard");
 var dashboardObj = buildDashboard(dashboardDom);
