@@ -41,7 +41,7 @@ if ($con->connect_error) {
                 }else{
                     $json = json_decode($response,true);
                     foreach($json as $item) {
-                        echo $item['market_data']['current_price']['usd'];
+                        print($item['image']);
                     }
                     // foreach($json as $item) {
                     //     $img_url = $item['image']['large'];
