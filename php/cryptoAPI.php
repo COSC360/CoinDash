@@ -36,9 +36,8 @@ if ($con->connect_error) {
         if ($err) {
             echo "cURL Error #:" . $err;
         } else {
-            foreach($response as $output){
-                echo $output['symbol'];
-            }
+            $json = json_decode($response, true);
+            echo $json['symbol'];
         }
     }
 }
