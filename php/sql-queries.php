@@ -8,14 +8,8 @@ function retrieveAllCoins($con){
     if (!mysqli_stmt_prepare($stmt, $sql)){
         // TODO:
         // header("location: REPLACE LATER");
-        echo "Error 1";
         exit();
     }
-
-    // Reject if parameters are invalid
-    // if (!isset($category) || !isset($fiat) || !isset($sort) || !isset($sortDirection)){
-    //     exit();
-    // }
 
     // Execute prepared statement
     mysqli_stmt_execute($stmt);
@@ -78,7 +72,7 @@ function createCoinCategory($con, $coinId, $coinCategory){
     }
 }
 
-function uploadDashboard($con, $userId, $dashboardObject){
+function uploadDashboard($con, $userId, $dashboardJSON){
 
     deleteDashboard($con, $userId);
     $dashboardSql = "INSERT INTO dashboard (user_id) VALUES (?);";
@@ -86,7 +80,7 @@ function uploadDashboard($con, $userId, $dashboardObject){
     $moduleSql = "INSERT INTO module (block_id, dashboard_id, user_id, category, fiat, sort) VALUES (?, ?, ?, ?, ?, ?);";
 
     try {
-        $dashboardObject = json_decode($dashboardObject);
+        $dashboardObject = json_decode($dashboardJSON);
         $blocks = $dashboardObject -> blocks;
 
         $dashboardStmt = mysqli_stmt_init($con);
@@ -167,8 +161,27 @@ function deleteDashboard($con, $userId){
     mysqli_stmt_execute($dashboardStmt);
 }
 
-function retrieveDashboard(){
+function retrieveDashboard($con, $userId){
+    $moduleSql = "SELECT block_id, category, fiat, sort FROM dashboard WHERE user_id = ?;";
 
+    $moduleStmt = mysqli_stmt_init($con);
+    if (!mysqli_stmt_prepare($moduleStmt, $moduleSql)){
+        // TODO:
+        // header("location: REPLACE LATER");
+        exit();
+    }
+
+    mysqli_stmt_bind_param($moduleStmt, "s", $userId);
+    $result = mysqli_stmt_get_result($moduleStmt);
+
+    if ($rows = $result -> fetch_all(MYSQLI_ASSOC)){
+        // mysqli_stmt_close();
+        print_r($rows);
+        return $rows; 
+    } else {
+        // mysqli_stmt_close();
+        return false;
+    }
 }
 
 ?>

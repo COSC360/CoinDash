@@ -6,4 +6,6 @@ if (mysqli_connect_errno()){
     die(mysqli_connect_errno());
 }
 
+$data = retrieveDashboard($con, 1);
+
 ?>
