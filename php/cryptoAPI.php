@@ -5,7 +5,7 @@ include "DBconnection.php";
 if ($con->connect_error) {
     die("Connection failed: " . $con->connect_error);
 }else{
-    $stmt = $con->prepare("SELECT * FROM coin");
+    $stmt = $con->prepare("SELECT * FROM coin LIMIT 2");
     $stmt->bind_param("i", $i);
     $stmt->execute();
     $resultSet = $stmt->get_result(); // get the mysqli result
@@ -41,7 +41,10 @@ if ($con->connect_error) {
                     die("Connection failed: " . $con->connect_error);
                 }else{
                     $json = json_decode($response,true);
-                    print_r($json['categories'][0]);
+                    $result = $json['categories'];
+                    foreach($result as $category){
+                        print($category);
+                    }
                     // $desc = $json['image']['large'];
                     // $img_url = $json['image']['large'];
                     // $usd = $json['market_data']['current_price']['usd'];
