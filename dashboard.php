@@ -80,9 +80,9 @@
                                 <div class=\"module-header\">
                                     <div class=\"api-details\">
                                         <div class=\"api-category\">".$dashboardModules[$currentCount]["category"]."</div>
-                                        <a class=\"icon-overlay\" href=\"#\">
+                                        <div class=\"icon-overlay\" href=\"#\">
                                             <i class=\"fa-solid fa-location-arrow\"></i>
-                                        </a>
+                                        </div>
                                     </div>
                                     <div class=\"dropdowns\">
                                         <select class=\"dropdown fiat\">";
@@ -104,12 +104,12 @@
                                     echo 
                                     "<div class=\"product-card\">
                                         <div class=\"icon-container\">
-                                            <a class=\"icon-overlay\" href=\"#\">
-                                                <img src=\"svgs/goto.svg\">
-                                            </a>
-                                            <a class=\"icon-overlay\" href=\"#\">
-                                                <img src=\"svgs/bookmark.svg\">
-                                            </a>
+                                            <div class=\"icon-overlay\" href=\"#\">
+                                                <i class=\"fa-light fa-location-arrow\"></i>
+                                            </div>
+                                            <div class=\"icon-overlay\" href=\"#\">
+                                                <i class=\"fa-light fa-bookmark\"></i>
+                                            </div>
                                         </div>
                                             <div class=\"product-image-mask\">
                                             <div class=\"product-image\" style=\"background-image: url(".$coin["img_url"].");\"></div>
@@ -131,10 +131,10 @@
                                     <div class=\"module-footer\">
                                     <div class=\"prev\">
                                         <img class=\"prev-icon\" src=\"svgs/arrow-left-long.svg\">
-                                        <p>Previous</p>
+                                        <i class=\"fa-light fa-arrow-left-long\"></i>
                                     </div>
                                     <div class=\"next\">
-                                        <p>Next</p>
+                                        <i class=\"fa-light fa-arrow-left-long fa-rotate-180\"></i>
                                         <img class=\"next-icon\" src=\"svgs/arrow-right-long.svg\">
                                     </div>
                                 </div>
@@ -154,17 +154,12 @@
         </article>
     </main>
     <footer>
-        <a href="#">
-
-        <i class="fa-solid fa-eye"></i>
-            </a>
-        <i class="fa-solid fa-floppy-disk"></i>
-        <a id="view-edit-btn" class="icon-overlay" href="#">
+        <div id="view-edit-btn" class="icon-overlay" href="#">
             <i class="fa-solid fa-eye"></i>
-        </a>
-        <a id="save-edit-btn" class="icon-overlay" href="#">
+        </div>
+        <div id="save-edit-btn" class="icon-overlay" href="#">
             <i class="fa-solid fa-floppy-disk"></i>
-        </a>
+        </div>
         <div class="fill-container">
             <div class="left">
                 <p>Aminbhavi Suyash & Jason Ramos</p>
