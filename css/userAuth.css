@@ -170,11 +170,11 @@
 }
 
 .login-box p{
-  position: fixed;
-  margin-top: 0.5em;
-  right: 2.5em;
-  /* opacity: 0;
-  visibility: hidden; */
+  position: absolute;
+  margin-top: 0.75em;
+  left: 33em;
+  opacity: 0;
+  visibility: hidden;
   color: rgb(255, 0, 0);
   z-index: 10;
 }
@@ -231,7 +231,23 @@
     color: #15a1ff; 
   }
 
+  .box-footer{
+    display: grid;
+    grid-template-columns: 20em 20em;
+  }
 
+  .box-footer input[type = reset]{
+    white-space: nowrap;
+  }
+
+  .box-footer p{
+    white-space: nowrap;
+    color: #050505;
+  }
+
+  .box-footer input[type = submit]{
+    white-space: nowrap;
+  }
 
 
   /* Sign Up Page*/

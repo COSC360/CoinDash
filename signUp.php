@@ -137,7 +137,6 @@ include 'DBconnection.php';
                             </div>
                             <div class="item-5">
                                 <label>Coming From</label><br>
-                                <p id = "selectionError"><i class="fa-solid fa-circle-exclamation"></i></p>
                                 <select name="selectionMenu" id="selectionMenu">
                                     <option value="Google"  selected="selected">Google</option>
                                     <option value="Friend">Friend</option>

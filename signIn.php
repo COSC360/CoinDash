@@ -99,7 +99,11 @@ include 'DBconnection.php';
                     </div>
                     <div class="item-3">
                         <input type="reset" value="Reset Form">
-                        
+                        <!-- <div class="box-footer"> -->
+                            <!-- <input type="reset" value="Reset Form">
+                            <a href="https://cosc360.ok.ubc.ca/suyash06/project-JasonR24/reset-password.php"><p>Forgot Password?</p></a>
+                            <input type="submit" value="Login" id = "submit"> -->
+                        <!-- </div> -->
                     </div>
                     <div class="item-4">
                         <input type="submit" value="Login" id = "submit">
