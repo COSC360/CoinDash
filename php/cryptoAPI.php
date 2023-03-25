@@ -5,8 +5,7 @@ include "DBconnection.php";
 if ($con->connect_error) {
     die("Connection failed: " . $con->connect_error);
 }else{
-    for($i=0; $i < 100; $i + 9){
-    $stmt = $con->prepare("SELECT * FROM coin LIMIT 10 OFFSET ?");
+    $stmt = $con->prepare("SELECT * FROM coin LIMIT 10 OFFSET 0");
     $stmt->bind_param("i", $i);
     $stmt->execute();
     $resultSet = $stmt->get_result(); // get the mysqli result
@@ -63,6 +62,5 @@ if ($con->connect_error) {
             }
         }
     }
-  }
 
 ?>
