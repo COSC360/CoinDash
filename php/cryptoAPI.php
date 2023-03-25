@@ -40,7 +40,6 @@ if ($con->connect_error) {
                     die("Connection failed: " . $con->connect_error);
                 }else{
                     $json = json_decode($response);
-                    print_r($json);
                     foreach($json as $item) {
                         print($item['image']['large']);
                     }
