@@ -5,14 +5,14 @@ include "DBconnection.php";
 if ($con->connect_error) {
     die("Connection failed: " . $con->connect_error);
 }else{
-    $stmt = $con->prepare("SELECT * FROM coin");
-    $stmt->execute();
+    $sql = "SELECT * FROM `coin`";
+    $result = mysqli_query($con, $sql);
     
-    /* Fetch all of the remaining rows in the result set */
-    print("Fetch all of the remaining rows in the result set:\n");
-    $result = $stmt->fetchAll();
-    print_r($result);
-    echo "Works !";
+    // Fetch all
+    mysqli_fetch_all($result, MYSQLI_ASSOC);
+    
+    // Free result set
+    mysqli_free_result($result);
 }
 
 // $curl = curl_init();
