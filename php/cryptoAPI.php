@@ -39,9 +39,9 @@ if ($con->connect_error) {
                 if ($con->connect_error) {
                     die("Connection failed: " . $con->connect_error);
                 }else{
-                    $json = json_decode($response,true);
-                    foreach($json as $item) {
-                        print($item['symbol']);
+                    // $json = json_decode($response,true);
+                    foreach($response as $item) {
+                        print("symbol: ".$item['symbol']."</br>");
                     }
                     // foreach($json as $item) {
                     //     $img_url = $item['image']['large'];
