@@ -75,8 +75,9 @@ footer {
 }
 
 #save-edit-btn {
+    color: var(--White-1);
     position: fixed;
-    bottom: 5em;
+    bottom: 6em;
     right: 2em;
     width: 3em;
     height: 3em;
