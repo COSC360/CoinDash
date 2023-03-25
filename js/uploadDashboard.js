@@ -5,7 +5,7 @@ var dashboardObj = buildDashboard(dashboardDom);
 console.log("2");
 var test = function(){
     $.ajax({
-        url: "../php/uploadDashboard.php",
+        url: "/php/uploadDashboard.php",
         type: "POST",
         data: {userId: 0, dashboardJSON: JSON.stringify(dashboardObj)},
         success: function(response) {
