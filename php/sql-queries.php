@@ -88,12 +88,13 @@ function uploadDashboard($con, $userId, $dashboardObject){
         $dashboardObject = json_decode($dashboardObject);
         $blocks = $dashboardObject -> blocks;
 
+        echo "<script>console.log('Inserting');</script>";
         $dashboardStmt = mysqli_stmt_init($con);
         mysqli_stmt_bind_param($dashboardStmt, "i", $userId);
         mysqli_stmt_execute($dashboardStmt); 
 
         // foreach($blocks as $block){
-            
+
         //     $modules = $block -> modules;
         //     $blockStmt = mysqli_stmt_init($con);
         //     mysqli_stmt_bind_param($blockStmt, "s", $userId);
