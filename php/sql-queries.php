@@ -146,8 +146,8 @@ function deleteDashboard($con, $userId){
     $blockSql = "DELETE FROM block WHERE user_id = ?;";
     $moduleSql = "DELETE FROM module WHERE user_id = ?;";
 
-    $dashboardStmt = mysqli_stmt_init($con);
     $blockStmt = mysqli_stmt_init($con);
+    $dashboardStmt = mysqli_stmt_init($con);
     $moduleStmt = mysqli_stmt_init($con);
     echo "1";
     if (!mysqli_stmt_prepare($blockStmt, $blockSql)){
