@@ -130,7 +130,7 @@ function uploadDashboard($con, $userId, $dashboardObject){
                     // header("location: REPLACE LATER");
                     exit();
                 }
-                mysqli_stmt_bind_param($moduleStmt, "iisss", $blockId, $dashboardId, $userId, $category, $fiat, $sort);
+                mysqli_stmt_bind_param($moduleStmt, "iiisss", $blockId, $dashboardId, $userId, $category, $fiat, $sort);
                 mysqli_stmt_execute($moduleStmt); 
                 mysqli_stmt_close($moduleStmt);
             }
