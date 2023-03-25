@@ -73,6 +73,8 @@ modules.forEach(module => {
     })
 })
 
+console.log("Hello");
+console.log(toggleEditBtn);
 toggleEditBtn.addEventListener("click", (e) => {
     console.log("Removing");
     console.log(editElements);
