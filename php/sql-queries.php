@@ -100,6 +100,7 @@ function uploadDashboard($con, $userId, $dashboardObject){
         mysqli_stmt_execute($dashboardStmt); 
 
         $dashboardId = mysqli_insert_id($con);
+        mysqli_stmt_close($dashboardStmt);
         foreach($blocks as $block){
 
             $modules = $block -> modules;
