@@ -169,20 +169,6 @@
   position: relative;
 }
 
-.item-1 #usernameEmptyError{
-  position: absolute;
-  opacity: 0;
-  visibility: hidden;
-  right: 1em;
-  color: rgb(255, 0, 0);
-}
-.item-2 #passwordEmptyError{
-  position: absolute;
-  opacity: 0;
-  visibility: hidden;
-  right: 1em;
-  color: rgb(255, 0, 0);
-}
 
 .login-box input {
     margin-top: 1em;
@@ -366,4 +352,19 @@ select{
   font-size: 1em;
   font-weight: 500;
   color: #050505;
+}
+
+#usernameEmptyError{
+  position: absolute;
+  opacity: 0;
+  visibility: hidden;
+  right: 1em;
+  color: rgb(255, 0, 0);
+}
+#passwordEmptyError{
+  position: absolute;
+  opacity: 0;
+  visibility: hidden;
+  right: 1em;
+  color: rgb(255, 0, 0);
 }
