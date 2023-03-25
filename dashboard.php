@@ -57,6 +57,7 @@
             </div>
         </article>
         <article id="dashboard">
+
             <?php 
                 include "php/modules.php";
 
@@ -64,9 +65,6 @@
 
                 print_r($dashboardModules);
             ?>
-
-
-
 
             <div class="block panel">
                 <div class="module small" id="module-1"> 
@@ -98,40 +96,7 @@
                         </div>
                     </div>
                     <div class="module-gallery">
-                    <?php
-                            include "php/modules.php";
-                            $fiat = "usd"; // TODO
-
-                            $coins = retrieveAllCoins($con);
-                            // $coins = retrieveAllCoins($con);
-                            foreach($coins as $coin){
-                                echo 
-                                "<div class=\"product-card\">
-                                    <div class=\"icon-container\">
-                                        <a class=\"icon-overlay\" href=\"#\">
-                                            <img src=\"svgs/goto.svg\">
-                                        </a>
-                                        <a class=\"icon-overlay\" href=\"#\">
-                                            <img src=\"svgs/bookmark.svg\">
-                                        </a>
-                                    </div>
-                                        <div class=\"product-image-mask\">
-                                        <div class=\"product-image\" style=\"background-image: url(".$coin["img_url"].");\"></div>
-                                    </div><div class=\"product-info-container\">
-                                        <h3>Lorem ipsum dolor sit amet consectetur. Erat facilisi Lorem ipsum dolor</h3>
-                                        <strong class=\"product-price\">".$coin[$fiat]."$ ".$coin["price_change_24h"]."</strong>
-                                        <div class=\"price-trend-container\">
-                                            <p>7D: ".$coin["price_change_7d"]."</p>
-                                            <p>14D: ".$coin["price_change_14d"]."</p>
-                                            <p>30D: ".$coin["price_change_30d"]."</p>
-                                            <p>60D: ".$coin["price_change_60d"]."</p>
-                                            <p>200D: ".$coin["price_change_200d"]."</p>
-                                            <p>1Y: ".$coin["price_change_1yr"]."</p>
-                                        </div>
-                                    </div>
-                                </div>";
-                            }
-                        ?>
+                        
                     </div>
                         <div class="module-footer">
                         <div class="prev">
