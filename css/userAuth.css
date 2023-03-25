@@ -171,6 +171,7 @@
 
 .login-box p{
   position: fixed;
+  top: 1em;
   right: 2.5em;
   /* opacity: 0;
   visibility: hidden; */
