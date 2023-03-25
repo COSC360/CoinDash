@@ -19,6 +19,8 @@
 <body>
     <?php
         include "php/header.php";
+        include "php/header.php";
+        include "php/header.php";
     ?>
     <main>
         <article class="panel page-title">
