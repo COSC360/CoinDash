@@ -10,7 +10,7 @@ if ($con->connect_error) {
     $resultSet = $stmt->get_result(); // get the mysqli result
     $result = $resultSet->fetch_all(MYSQLI_ASSOC);
 
-    print_r($resul['Id']);
+    print_r($result['Id']);
 }
 
 // $curl = curl_init();
