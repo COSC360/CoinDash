@@ -83,6 +83,7 @@ select {
 }
 
 .dropdown {
+    width: 0;
     font-size: 1.1em;
     flex-grow: 1;
     border: 1px solid var(--Grey-1);
@@ -99,9 +100,6 @@ select {
     background-image: url(../svgs/arrow-up.svg);
 }
 
-.dropdown option {
-    width: fit-content;
-}
 
 .module-gallery {
     width: 100%;
