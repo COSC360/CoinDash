@@ -14,13 +14,13 @@ window.onload = function addErrorMessage($id, $msg){
     }
 }
 window.onload = function validateLoginForm() {
-    if (usernameError == "" && password =="") {
+    if (usernameOrEmail == "" && password =="") {
         usernameError.style.opacity = "1";
         usernameError.style.visibility = "visible";
         usernameError.style.transition = "visibility 0s linear 0s, opacity 300ms";
-        usernameError.style.opacity = "1";
-        usernameError.style.visibility = "visible";
-        usernameError.style.transition = "visibility 0s linear 0s, opacity 300ms";  
+        passwordError.style.opacity = "1";
+        passwordError.style.visibility = "visible";
+        passwordError.style.transition = "visibility 0s linear 0s, opacity 300ms";  
 
     }else if(password ==""){
         $msg = "Password cannot be empty !"
