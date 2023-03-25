@@ -4,7 +4,7 @@ let usernameError = document.getElementById("usernameError");
 let passwordError = document.getElementById("passwordError");
 // var errorFlag = false;
 var passReg = /^[a-zA-Z]\w{8,16}$/;
-window.onload = function addErrorMessage($id, $msg){
+function addErrorMessage($id, $msg){
     var errorMsg = document.createTextNode($msg);
     if($id = $usernameError){
         usernameError.appendChild(errorMsg);
@@ -12,7 +12,7 @@ window.onload = function addErrorMessage($id, $msg){
         passwordError.appendChild(errorMsg); 
     }
 }
-window.onload = function validateLoginForm() {
+function validateLoginForm() {
     if (usernameError == "" && password =="") {
         usernameError.style.opacity = "1";
         usernameError.style.visibility = "visible";
@@ -41,12 +41,12 @@ window.onload = function validateLoginForm() {
     }
   }
 
-  window.onload = function UsernameErrorClearFunction(){
+function UsernameErrorClearFunction(){
         usernameError.style.opacity = "0";
         usernameError.style.visibility = "hidden";
 }
 
-window.onload = function PasswordErrorClearFunction(){
+function PasswordErrorClearFunction(){
         passwordError.style.opacity = "0";
         passwordError.style.visibility = "hidden";
 }
