@@ -169,14 +169,14 @@
   position: relative;
 }
 
-.login-box form #usernameEmptyError{
+.item-1 #usernameEmptyError{
   position: absolute;
   opacity: 0;
   visibility: hidden;
   right: 1em;
   color: rgb(255, 0, 0);
 }
-.login-box form #passwordEmptyError{
+.item-2 #passwordEmptyError{
   position: absolute;
   opacity: 0;
   visibility: hidden;
