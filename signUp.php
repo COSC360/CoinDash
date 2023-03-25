@@ -18,7 +18,7 @@ include 'DBconnection.php';
             $verifyPassword = $_POST['verifyPassword'];
             $selectedOption = $_POST['selectionMenu'];
             $fileName = basename($_FILES["img"]["name"]);
-            $fileType = strtolower(pathinfo($fileName, PATHINFO_EXTENSION));
+            $fileType = pathinfo($fileName, PATHINFO_EXTENSION);
             $userType = "user";
 
             // Allow certain file formats 
