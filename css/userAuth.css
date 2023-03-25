@@ -155,7 +155,7 @@
   grid-template-columns: 20em;
 }  
 
-.login-box form #item-1,#item-2,.item-3{
+.login-box form .item-1,.item-2,.item-3{
   grid-column-start: 1;
 }
 
