@@ -19,7 +19,6 @@ include 'DBconnection.php';
             }elseif($result['userType'] == 'user'){
                 header('location:account.php');
             }
-            
         }
     }
 
