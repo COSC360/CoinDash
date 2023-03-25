@@ -1,8 +1,8 @@
 <?php
 session_start();
-error_reporting(E_ALL);
-init_set('display_errors','1');
-include_once('ValidationResult.class.php');
+// error_reporting(E_ALL);
+// init_set('display_errors','1');
+// include_once('ValidationResult.class.php');
 
 include 'DBconnection.php';
 
