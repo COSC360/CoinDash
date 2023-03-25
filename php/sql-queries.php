@@ -91,13 +91,13 @@ function uploadDashboard($con, $userId, $dashboardObject){
         $dashboardStmt = mysqli_stmt_init($con);
         if (!mysqli_stmt_prepare($dashboardStmt, $dashboardSql)){
             // TODO:
-            echo "Fail";
             // header("location: REPLACE LATER");
             exit();
         }
         echo $userId;
         mysqli_stmt_bind_param($dashboardStmt, "i", $userId);
         mysqli_stmt_execute($dashboardStmt); 
+        mysqli_stmt_close($dashboardStmt);
 
         $dashboardId = mysqli_insert_id($con);
 
@@ -113,9 +113,10 @@ function uploadDashboard($con, $userId, $dashboardObject){
 
             mysqli_stmt_bind_param($blockStmt, "i", $dashboardId);
             mysqli_stmt_execute($blockStmt); 
-            echo "Inserting Block";
+            mysqli_stmt_close($blockStmt);
 
             $blockId = mysqli_insert_id($con);
+            
             
             foreach($modules as $module){
                 $category = $module -> category;
@@ -130,9 +131,11 @@ function uploadDashboard($con, $userId, $dashboardObject){
                 }
                 mysqli_stmt_bind_param($moduleStmt, "iisss", $blockId, $dashboardId, $category, $fiat, $sort);
                 mysqli_stmt_execute($moduleStmt); 
+                mysqli_stmt_close($moduleStmt);
             }
         }
     } catch (Exception $e){
+        // TODO:
         echo "Failed";
         echo $e;
     }
