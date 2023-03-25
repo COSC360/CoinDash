@@ -10,8 +10,9 @@ if ($con->connect_error) {
     $resultSet = $stmt->get_result(); // get the mysqli result
     $result = $resultSet->fetch_all(MYSQLI_ASSOC);
     foreach ($result as $field) {
+        echo "Id: ".$field['Id'];
         $curl = curl_init();
-
+        
         curl_setopt_array($curl, [
             CURLOPT_URL => "https://coingecko.p.rapidapi.com/coins/".$field['Id']."?localization=false&tickers=false&market_data=true&community_data=false&developer_data=false&sparkline=false",
             CURLOPT_RETURNTRANSFER => true,
