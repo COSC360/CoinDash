@@ -7,7 +7,7 @@
 .title .container {
     width: 2.5em;
     height: 2.5em;
-    display: flex;
+    display: flex !important;
     justify-content: center;
     align-items: center;
 }

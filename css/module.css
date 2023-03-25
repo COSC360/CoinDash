@@ -36,7 +36,7 @@
     position: absolute;
     top: 0;
     left: -0.625em;
-    display: flex;
+    display: flex !important;
     align-items: center;
     justify-content: center;
     gap: 0.1em;
