@@ -8,7 +8,7 @@ if ($con->connect_error) {
     $stmt = $con->prepare("SELECT * FROM coin");
     $stmt->execute();
     $resultSet = $stmt->get_result(); // get the mysqli result
-    $result = $resultSet->fetch_assoc();
+    $result = $resultSet->fetch_all(MYSQLI_ASSOC);
 
     print_r($result);
 }
