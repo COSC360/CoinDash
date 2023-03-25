@@ -112,7 +112,8 @@ include 'DBconnection.php';
             <div class="register-box">
                 <form name = "RegisterForm" enctype="multipart/form-data" action= "" onsubmit="return validateRegisterForm()" method="POST" required>
                             <div class="item-1">
-                                <label>Username <span style="color: red;">*</span></label><br>                   
+                                <label>Username <span style="color: red;">*</span></label><br>
+                                <p id = "usernameError"><i class="fa-solid fa-circle-exclamation"></i></p>                   
                                 <input type = "text" name = "username" placeholder="What Should We Call You?">
                             </div>
                             <div class="item-2">
