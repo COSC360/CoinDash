@@ -187,6 +187,7 @@ select {
     width: 2em;
     height: 2em;
     transition: background-color 0.3s, width 0.3s, height 0.3s;
+    width: 1000px;
 }
 
 .icon-overlay img {
