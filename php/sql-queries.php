@@ -1,4 +1,5 @@
 <?php
+session_start();
 function retrieveAllCoins($con){
     $sql = "SELECT * FROM coin;";
 
@@ -30,6 +31,7 @@ function retrieveAllCoins($con){
     }
 
 }
+
 function retrieveCoinsByCategory($con, $fiat, $category, $sort, $sortDirection, $perPage, $page){
     $sql = "SELECT symbol, img, ?, price_Change_24h, price_change_7d, price_change_14d, price_change_30d, price_change_60d, price_change_200d, price_change_1yr "
         + "FROM coin WHERE id IN (SELECT coin FROM categoryCoin WHERE category = ?) ORDER BY ? ? LIMIT ? OFFSET ?";
@@ -66,4 +68,15 @@ function retrieveCoinsByCategory($con, $fiat, $category, $sort, $sortDirection, 
 
 }
 
+function createCoinCategory($con,$coinId,$coinCategory){
+    if ($con->connect_error) {
+        die("Connection failed: " . $con->connect_error);
+    }else{
+        $createStmt = $con->prepare("CREATE TABLE coinCategory(coin VARCHAR(225) NOT NULL, category VARCHAR(255) NOT NULL,PRIMARY KEY(coin), PRIMARY KEY(category))");
+        $createStmt->execute();
+        $insertStmt = $con->prepare("INSERT INTO `coinCategory` (`coin`, `category`) VALUES (?,?)");
+        $insertStmt->bind_param("ss", $coinId,$coinCategory); 
+        $insertStmt->execute();
+        }
+}
 ?>
