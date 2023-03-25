@@ -62,15 +62,6 @@ function retrieveCoinsByCategory($con, $fiat, $category, $sort, $perPage, $page)
 
 }
 
-function createCoinCategory($con, $coinId, $coinCategory){
-    if ($con->connect_error) {
-        die("Connection failed: " . $con->connect_error);
-    }else{
-        $insertStmt = $con->prepare("INSERT INTO `coinCategory` (`coin`, `category`) VALUES (?,?)");
-        $insertStmt->bind_param("ss", $coinId,$coinCategory); 
-        $insertStmt->execute();
-    }
-}
 
 function uploadDashboard($con, $userId, $dashboardJSON){
 
