@@ -114,7 +114,7 @@
                                             <div class=\"product-image-mask\">
                                             <div class=\"product-image\" style=\"background-image: url(".$coin["img_url"].");\"></div>
                                         </div><div class=\"product-info-container\">
-                                            <h3>".$coin["symbol"]."</h3>
+                                            <h3>".$coin["name"]."</h3>
                                             <strong class=\"product-price\">".number_format($coin[$fiat], 4, '.', '')."$  ".number_format($coin["price_change_24h"], 2, '.', '')."%</strong>
                                             <div class=\"price-trend-container\">
                                                 <p>7D: ".number_format($coin["price_change_7d"], 2, '.', '')."%</p>
