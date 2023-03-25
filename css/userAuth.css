@@ -155,7 +155,7 @@
   grid-template-columns: 20em;
 }  
 
-.login-box form .item-1,.item-2,.item-3{
+.login-box form #item-1,#item-2,.item-3{
   grid-column-start: 1;
 }
 
@@ -204,6 +204,23 @@
     font-size: 1.15em;
     color: #050505;
   }
+
+
+  .input-control.success input {
+      border-color: #09c372;
+  }
+
+  .input-control.error input {
+      border-color: #ff3860;
+  }
+
+  .input-control .error {
+      color: #ff3860;
+      font-size: 9px;
+      height: 13px;
+  }
+ 
+
 
   a:link, a:active, a:visited{
     text-decoration: none;

@@ -80,18 +80,20 @@ include 'DBconnection.php';
             </div>  
             <div class="login-box">
                 <form name = "LoginForm" id ="LoginForm" action= "" onsubmit="return validateLoginForm()" method="GET" required>
-                    <div class="item-1">
+                    <div id="item-1" class="input-control">
                         <label>Username or Email</label><br>     
-                        <input type = "text" name = "user-email" placeholder="What’s Your Registered Username or Email?">
+                        <input type = "text" name = "user-email" id= "user-email" placeholder="What’s Your Registered Username or Email?">
+                        <div class="error"></div>
                     </div>
-                    <div class="item-2">
+                    <div id="item-2" class="input-control">
                         <label>Password</label><br>
-                        <input type = "password" name = "password" placeholder="What’s Your Password?">
+                        <input type = "password" name = "password" id= "password" placeholder="What’s Your Password?">
+                        <div class="error"></div>
                     </div>
-                    <div class="item-3">
+                    <div id="item-3">
                         <input type="reset" value="Reset Form">
                     </div>
-                    <div class="item-4">
+                    <div id="item-4">
                         <input type="submit" value="Login">
                     </div>
                 </form>
