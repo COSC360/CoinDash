@@ -1,7 +1,7 @@
 <?php
 echo "<script>console.log('Hello')</script>";
-// include "DBconnection.php";
-// include "sql-queries.php";
+include "DBconnection.php";
+include "sql-queries.php";
 
 // echo "<script>console.log('Hello')</script>";
 // $userId = $_POST["userId"];
