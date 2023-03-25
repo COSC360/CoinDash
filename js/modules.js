@@ -74,6 +74,8 @@ modules.forEach(module => {
 })
 
 toggleEditBtn.addEventListener("click", (e) => {
+    console.log("Removing");
+    console.log(editElements);
     editElements.forEach(element => {
         element.classList.add("hide");
     })
