@@ -8,6 +8,7 @@ function retrieveAllCoins($con){
     if (!mysqli_stmt_prepare($stmt, $sql)){
         // TODO:
         // header("location: REPLACE LATER");
+        echo "Error 1";
         exit();
     }
 
@@ -81,8 +82,8 @@ function uploadDashboard($con, $userId, $dashboardObject){
 
     deleteDashboard($con, $userId);
     $dashboardSql = "INSERT INTO dashboard (user_id) VALUES (?);";
-    $blockSql = "INSERT INTO block (dashboard_id) VALUES (?);";
-    $moduleSql = "INSERT INTO module (block_id, dashboard_id, category, fiat, sort) VALUES (?, ?, ?, ?, ?);";
+    $blockSql = "INSERT INTO block (dashboard_id, user_id) VALUES (?, ?);";
+    $moduleSql = "INSERT INTO module (block_id, dashboard_id, user_id, category, fiat, sort) VALUES (?, ?, ?, ?, ?, ?);";
 
     try {
         $dashboardObject = json_decode($dashboardObject);
@@ -111,7 +112,7 @@ function uploadDashboard($con, $userId, $dashboardObject){
                 exit();
             }
 
-            mysqli_stmt_bind_param($blockStmt, "i", $dashboardId);
+            mysqli_stmt_bind_param($blockStmt, "ii", $dashboardId, $userId);
             mysqli_stmt_execute($blockStmt); 
             mysqli_stmt_close($blockStmt);
 
@@ -129,7 +130,7 @@ function uploadDashboard($con, $userId, $dashboardObject){
                     // header("location: REPLACE LATER");
                     exit();
                 }
-                mysqli_stmt_bind_param($moduleStmt, "iisss", $blockId, $dashboardId, $category, $fiat, $sort);
+                mysqli_stmt_bind_param($moduleStmt, "iisss", $blockId, $dashboardId, $userId, $category, $fiat, $sort);
                 mysqli_stmt_execute($moduleStmt); 
                 mysqli_stmt_close($moduleStmt);
             }
@@ -144,42 +145,26 @@ function uploadDashboard($con, $userId, $dashboardObject){
 function deleteDashboard($con, $userId){
     $dashboardSql = "DELETE FROM dashboard WHERE user_id = ?;";
     $blockSql = "DELETE FROM block WHERE user_id = ?;";
-    // $moduleSql = "DELETE FROM module WHERE user_id = ?;";
+    $moduleSql = "DELETE FROM module WHERE user_id = ?;";
 
     $dashboardStmt = mysqli_stmt_init($con);
-    // $moduleStmt = mysqli_stmt_init($con);
+    $blockStmt = mysqli_stmt_init($con);
+    $moduleStmt = mysqli_stmt_init($con);
 
-    if (!mysqli_stmt_prepare($dashboardStmt, $dashboardSql)){
+    if (!mysqli_stmt_prepare($dashboardStmt, $dashboardSql) || !mysqli_stmt_prepare($blockStmt, $blockSql) || !mysqli_stmt_prepare($moduleStmt, $moduleSql)){
         // TODO:
         // header("location: REPLACE LATER");
         exit();
     }
-
-    // if (!mysqli_stmt_prepare($moduleStmt, $moduleSql)){
-    //     // TODO:
-    //     // header("location: REPLACE LATER");
-    //     exit();
-    // }
 
     // Set parameters for prepared statement
     mysqli_stmt_bind_param($dashboardStmt, "s", $userId);
-    // mysqli_stmt_bind_param($moduleStmt, "s", $userId);
-
-    // mysqli_stmt_execute($moduleStmt);
-
-    mysqli_stmt_execute($dashboardStmt);
-
-
-    mysqli_stmt_close($dashboardStmt);
-    $blockStmt = mysqli_stmt_init($con);
-    
-    if (!mysqli_stmt_prepare($blockStmt, $blockSql)){
-        // TODO:
-        // header("location: REPLACE LATER");
-        exit();
-    }
     mysqli_stmt_bind_param($blockStmt, "s", $userId);
+    mysqli_stmt_bind_param($moduleStmt, "s", $userId);
+
+    mysqli_stmt_execute($moduleStmt);
     mysqli_stmt_execute($blockStmt);
+    mysqli_stmt_execute($dashboardStmt);
 }
 
 function retrieveDashboard(){
