@@ -39,7 +39,7 @@ if ($con->connect_error) {
                 if ($con->connect_error) {
                     die("Connection failed: " . $con->connect_error);
                 }else{
-                    $json = json_decode($response);
+                    $json = json_decode($response,true);
                     foreach($json as $item) {
                         echo $item['market_data']['current_price']['usd'];
                     }
