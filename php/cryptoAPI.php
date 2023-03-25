@@ -54,9 +54,9 @@ if ($con->connect_error) {
                     $price_change_60d = $json['market_data']['price_change_percentage_60d']; 
                     $price_change_200d = $json['market_data']['price_change_percentage_200d']; 
                     $price_change_1yr = $json['market_data']['price_change_percentage_1yr'];
-                    $Id = $field['Id']; 
-                    $insertStmt = $con->prepare("INSERT INTO coin (img_url, usd,cad,eur,php,jpy,price_change_24h,price_change_7d,price_change_14d,price_change_30d,price_change_60d,price_change_200d,price_change_1yr) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?) WHERE Id = ?");
-                    $insertStmt->bind_param("ssssssssssssss", $img_url,$usd, $cad,$eur,$php,$jpy,$price_change_24h,$price_change_7d,$price_change_14d,$price_change_30d,$price_change_60d,$price_change_200d,$price_change_1yr,$Id); 
+                     
+                    $insertStmt = $con->prepare("INSERT INTO coin (img_url, usd,cad,eur,php,jpy,price_change_24h,price_change_7d,price_change_14d,price_change_30d,price_change_60d,price_change_200d,price_change_1yr) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)");
+                    $insertStmt->bind_param("sssssssssssss", $img_url,$usd, $cad,$eur,$php,$jpy,$price_change_24h,$price_change_7d,$price_change_14d,$price_change_30d,$price_change_60d,$price_change_200d,$price_change_1yr); 
                     $insertStmt->execute();
                     echo "Insertion success !";
                 }
