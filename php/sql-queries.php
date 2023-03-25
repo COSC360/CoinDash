@@ -115,6 +115,7 @@ function uploadDashboard($con, $userId, $dashboardObject){
             echo "Inserting Block";
 
             $blockId = mysqli_insert_id($con);
+            echo $blockId;
             
             foreach($modules as $module){
                 $category = $module -> category;
