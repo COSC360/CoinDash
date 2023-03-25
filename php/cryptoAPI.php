@@ -5,7 +5,7 @@ include "DBconnection.php";
 if ($con->connect_error) {
     die("Connection failed: " . $con->connect_error);
 }else{
-    $stmt = $con->prepare("SELECT * FROM coin LIMIT 10");
+    $stmt = $con->prepare("SELECT * FROM coin");
     $stmt->bind_param("i", $i);
     $stmt->execute();
     $resultSet = $stmt->get_result(); // get the mysqli result
@@ -67,21 +67,21 @@ if ($con->connect_error) {
                     }   
                     echo "Insert success !";
 
-                    $selectStmt = $con->prepare("SELECT `name` FROM category");
-                    $selectStmt->execute();
-                    $resultSet = $stmt->get_result(); // get the mysqli result
-                    $selectRS = $resultSet->fetch_all(MYSQLI_ASSOC);
-                    if($selectRS != null){
-                        foreach($categoryResultSet as $category){
-                            foreach($selectRS as $coinCategory){
-                                if($category != $coinCategory){
-                                    $insertCategoryStmt = $con->prepare("INSERT INTO category(`name`) VALUES (?)");
-                                    $insertCategoryStmt->bind_param("s",$category);
-                                    $insertCategoryStmt->execute();
-                                }
-                            }
-                        }
-                    }
+                    // $selectStmt = $con->prepare("SELECT `name` FROM category");
+                    // $selectStmt->execute();
+                    // $resultSet = $stmt->get_result(); // get the mysqli result
+                    // $selectRS = $resultSet->fetch_all(MYSQLI_ASSOC);
+                    // if($selectRS != null){
+                    //     foreach($categoryResultSet as $category){
+                    //         foreach($selectRS as $coinCategory){
+                    //             if($category != $coinCategory){
+                    //                 $insertCategoryStmt = $con->prepare("INSERT INTO category(`name`) VALUES (?)");
+                    //                 $insertCategoryStmt->bind_param("s",$category);
+                    //                 $insertCategoryStmt->execute();
+                    //             }
+                    //         }
+                    //     }
+                    // }
                 }
             }
         }
