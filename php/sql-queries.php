@@ -99,23 +99,32 @@ function uploadDashboard($con, $userId, $dashboardObject){
         mysqli_stmt_bind_param($dashboardStmt, "i", $userId);
         mysqli_stmt_execute($dashboardStmt); 
 
-        // foreach($blocks as $block){
+        $dashboardId = mysqli_insert_id($con);
+        foreach($blocks as $block){
 
-        //     $modules = $block -> modules;
-        //     $blockStmt = mysqli_stmt_init($con);
-        //     mysqli_stmt_bind_param($blockStmt, "s", $userId);
-        //     mysqli_stmt_execute($blockStmt); 
+            $modules = $block -> modules;
+            $blockStmt = mysqli_stmt_init($con);
+            if (!mysqli_stmt_prepare($blockStmt, $blockSql)){
+                // TODO:
+                // header("location: REPLACE LATER");
+                exit();
+            }
 
-        //     foreach($modules as $module){
-        //         $category = $module -> category;
-        //         $fiat = $module -> fiat;
-        //         $sort = $module -> sort;
+            mysqli_stmt_bind_param($blockStmt, "s", $dashboardId);
+            mysqli_stmt_execute($blockStmt); 
 
-        //         $moduleStmt = mysqli_stmt_init($con);
-        //         mysqli_stmt_bind_param($moduleStmt, "s", $userId);
-        //         mysqli_stmt_execute($blockStmt); 
-        //     }
-        // }
+            $blockId = mysqli_insert_id($con);
+
+            foreach($modules as $module){
+                $category = $module -> category;
+                $fiat = $module -> fiat;
+                $sort = $module -> sort;
+
+                $moduleStmt = mysqli_stmt_init($con);
+                mysqli_stmt_bind_param($moduleStmt, "s", $userId);
+                mysqli_stmt_execute($blockStmt); 
+            }
+        }
     } catch (Exception $e){
         echo $e;
     }
