@@ -154,12 +154,12 @@
         </article>
     </main>
     <footer>
-        <a id="view-edit-btn" class="icon-overlay" href="#">
+        <div id="view-edit-btn" class="icon-overlay" href="#">
             <img src="svgs/view.svg">
         </div>
-        <a id="save-edit-btn" class="icon-overlay" href="#">
+        <div id="save-edit-btn" class="icon-overlay" href="#">
             <img src="svgs/save.svg">
-        </a>
+        </div>
         <div class="fill-container">
             <div class="left">
                 <p>Aminbhavi Suyash & Jason Ramos</p>
