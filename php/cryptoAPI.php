@@ -74,9 +74,9 @@ if ($con->connect_error) {
         
                     $arrDiff = array_diff($selectRS,$categoryResultSet);
                     // $arrDiff = array_diff($categoryResultSet,$selectRS);
-                    print_r($json['categories']);
+                    // print_r($json['categories']);
                     // echo "\n";
-                    // print_r($selectRS);
+                    print_r($selectRS['name']);
                     // echo " ";
                     // print_r($arrDiff);
                     // foreach($arrDiff as $newCategory){
