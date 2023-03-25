@@ -1,5 +1,3 @@
-var dashboardDom = document.getElementById("dashboard");
-
 function buildDashboard(dashboardDom){
     var blocks = [];
 
@@ -24,10 +22,11 @@ function buildBlock(blockDom) {
 
 function buildModule(moduleDom){
     var domId = moduleDom.id;
-    var category = document.querySelector("#" + domId + " .api-category");
-    var fiat = document.querySelector("#" + domId + " .fiat");
-    var sort = document.querySelector("#" + domId + " .sort"); 
-
+    var category = document.querySelector("#" + domId + " .api-category").innerText;
+    var fiatDom = document.querySelector("#" + domId + " .fiat");
+    var fiat = fiatDom.options[fiatDom.selectedIndex].value;
+    var sortDom = document.querySelector("#" + domId + " .sort"); 
+    var sort = sortDom.options[sortDom.selectedIndex].value;
     return new Module(category, fiat, sort);
 }
 
@@ -51,4 +50,5 @@ class Module {
     }
 }
 
-console.log(buildDashboard(dashboardDom));
+
+export { buildDashboard };

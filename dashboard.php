@@ -10,8 +10,10 @@
     <link rel="stylesheet" href="css/dashboard.css">
     <link rel="stylesheet" href="css/header-footer.css">
     <link rel="stylesheet" href="css/module.css">
-    <script src="js/dashboard.js"></script>
     <script src="https://kit.fontawesome.com/e6e0351429.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="js/jquery-3.1.1.min.js"></script>
+    <script src="js/dashboard.js"></script>
 </head>
 
 <body>
@@ -56,7 +58,7 @@
         </article>
         <article id="dashboard">
             <div class="block panel">
-                <div  class="module small" id="module-1"> 
+                <div class="module small" id="module-1"> 
                     <div class="module-header">
                         <div class="api-details">
                             <img class="api-logo-image" src="images/amazon-logo-1.png"></img>
@@ -88,7 +90,7 @@
                     <?php
                             include "php/modules.php";
                             $fiat = "usd"; // TODO
-                            
+
                             $coins = retrieveAllCoins($con);
                             // $coins = retrieveAllCoins($con);
                             foreach($coins as $coin){
@@ -147,7 +149,7 @@
                             </a>
                         </div>
                         <div class="dropdowns">
-                            <select class="dropdown">
+                            <select class="dropdown fiat">
                                  <option selected>Deals Only</option>
                                 <option>Deals Only</option>
                                 <option>Deals Only</option>
@@ -155,7 +157,7 @@
                                 <option>Deals Only</option>
                                 <option>Deals Only</option>
                             </select>
-                            <select class="dropdown">
+                            <select class="dropdown sort">
                                  <option selected>Deals Only</option>
                                 <option>Deals Only</option>
                                 <option>Deals Only</option>
@@ -324,7 +326,7 @@
                             </a>
                         </div>
                         <div class="dropdowns">
-                            <select class="dropdown">
+                            <select class="dropdown fiat">
                                  <option selected>Deals Only</option>
                                 <option>Deals Only</option>
                                 <option>Deals Only</option>
@@ -332,7 +334,7 @@
                                 <option>Deals Only</option>
                                 <option>Deals Only</option>
                             </select>
-                            <select class="dropdown">
+                            <select class="dropdown sort">
                                  <option selected>Deals Only</option>
                                 <option>Deals Only</option>
                                 <option>Deals Only</option>
@@ -501,7 +503,7 @@
                             </a>
                         </div>
                         <div class="dropdowns">
-                            <select class="dropdown">
+                            <select class="dropdown fiat">
                                  <option selected>Deals Only</option>
                                 <option>Deals Only</option>
                                 <option>Deals Only</option>
@@ -509,7 +511,7 @@
                                 <option>Deals Only</option>
                                 <option>Deals Only</option>
                             </select>
-                            <select class="dropdown">
+                            <select class="dropdown sort">
                                  <option selected>Deals Only</option>
                                 <option>Deals Only</option>
                                 <option>Deals Only</option>
@@ -680,7 +682,7 @@
                             </a>
                         </div>
                         <div class="dropdowns">
-                            <select class="dropdown">
+                            <select class="dropdown fiat">
                                  <option selected>Deals Only</option>
                                 <option>Deals Only</option>
                                 <option>Deals Only</option>
@@ -688,7 +690,7 @@
                                 <option>Deals Only</option>
                                 <option>Deals Only</option>
                             </select>
-                            <select class="dropdown">
+                            <select class="dropdown sort">
                                  <option selected>Deals Only</option>
                                 <option>Deals Only</option>
                                 <option>Deals Only</option>
@@ -857,7 +859,7 @@
                             </a>
                         </div>
                         <div class="dropdowns">
-                            <select class="dropdown">
+                            <select class="dropdown fiat">
                                  <option selected>Deals Only</option>
                                 <option>Deals Only</option>
                                 <option>Deals Only</option>
@@ -865,7 +867,7 @@
                                 <option>Deals Only</option>
                                 <option>Deals Only</option>
                             </select>
-                            <select class="dropdown">
+                            <select class="dropdown sort">
                                  <option selected>Deals Only</option>
                                 <option>Deals Only</option>
                                 <option>Deals Only</option>
@@ -1049,6 +1051,6 @@
         </div>
     </footer>
     <script src="js/modules.js"></script>
-    <script src="js/parser.js"></script>
+    <script type="module" src="js/uploadDashboard.js"></script>
 </body>
 </html>
