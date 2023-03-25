@@ -1,7 +1,7 @@
 var module_settings_btns = document.querySelectorAll(".module-settings-btn");
 var modules = document.querySelectorAll(".module");
 var editElements = document.querySelectorAll(".edit-ui");
-var toggleEditBtn = document.getElementById("save-edit-btn");
+var toggleEditBtn = document.getElementById("view-edit-btn");
 
 module_settings_btns.forEach(btn => {
     
@@ -73,9 +73,7 @@ modules.forEach(module => {
     })
 })
 
-console.log("Hello");
 console.log(toggleEditBtn);
-toggleEditBtn.onclick = "alert('blah')"; 
 toggleEditBtn.addEventListener("click", (e) => {
     e.preventDefault();
     console.log("Removing");

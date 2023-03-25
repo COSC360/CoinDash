@@ -281,3 +281,7 @@ select {
     background-color: var(--Highlight);
     z-index: 1;
 }
+
+.hide {
+    display: none;
+}
