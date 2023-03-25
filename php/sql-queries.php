@@ -93,7 +93,17 @@ function uploadDashboard($con, $userId, $dashboardObject){
         mysqli_stmt_execute($dashboardStmt); 
 
         $dashboardObject = json_decode($dashboardObject);
-        print_r($dashboardObject -> blocks);
+        $blocks = $dashboardObject -> blocks;
+
+        foreach($blocks as $block){
+            $modules = $block -> modules;
+
+            foreach($modules as $module){
+                echo $module["category"];
+                echo $module["fiat"];
+                echo $module["sort"];
+            }
+        }
     } catch (Exception $e){
         echo $e;
     }
