@@ -85,7 +85,7 @@
                         </div>
                     </div>
                     <div class="module-gallery">
-                        <?php
+                    <?php
                             include "php/modules.php";
 
                             // $coins = retrieveAllCoins($con);
@@ -116,27 +116,6 @@
                                 </div>";
                             }
                         ?>
-                            <div class="icon-container">
-                                <a class="icon-overlay" href="#">
-                                    <img src="svgs/goto.svg">
-                                </a>
-                                <a class="icon-overlay" href="#">
-                                    <img src="svgs/bookmark.svg">
-                                </a>
-                            </div>
-                                                        <div class="product-image-mask">
-                                <div class="product-image" style="background-image: url(https://images.unsplash.com/photo-1542291026-7eec264c27ff?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80);"></div>
-                            </div><div class="product-info-container">
-                                <h3>Lorem ipsum dolor sit amet consectetur. Erat facilisi Lorem ipsum dolor</h3>
-                                <strong class="product-price">79.99$ -4.24%</strong>
-                                <div class="price-trend-container">
-                                    <p>7D: 84.99$</p>
-                                    <p>30D: 94.99$</p>
-                                    <p>60D: 94.99$</p>
-                                    <p>120D: 99.99$</p>
-                                </div>
-                            </div>
-                        </div>
                     </div>
                         <div class="module-footer">
                         <div class="prev">
@@ -317,7 +296,7 @@
                             </div>
                         </div>
                     </div>
-                                        <div class="module-footer">
+                    <div class="module-footer">
                         <div class="prev">
                             <img class="prev-icon" src="svgs/arrow-left-long.svg">
                             <p>Previous</p>
@@ -328,8 +307,8 @@
                         </div>
                     </div>
                     <div draggable="true" class="module-settings-btn">
-                                            <i class="fa-solid fa-ellipsis-vertical fa-lg"></i>
-                    <i class="fa-solid fa-ellipsis-vertical fa-lg"></i>
+                        <i class="fa-solid fa-ellipsis-vertical fa-lg"></i>
+                        <i class="fa-solid fa-ellipsis-vertical fa-lg"></i>
                     </div>
                 </div>
                 <div  class="module small" id="module-3"> 
