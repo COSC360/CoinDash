@@ -24,9 +24,9 @@ function buildBlock(blockDom) {
 
 function buildModule(moduleDom){
     var domId = moduleDom.id;
-    var category = document.querySelector("#" + domId + " .api-category");
-    var fiat = document.querySelector("#" + domId + " .fiat");
-    var sort = document.querySelector("#" + domId + " .sort"); 
+    var category = document.querySelector("#" + domId + " .api-category").textContent;
+    var fiat = document.querySelector("#" + domId + " .fiat").value;
+    var sort = document.querySelector("#" + domId + " .sort").value; 
 
     return new Module(category, fiat, sort);
 }

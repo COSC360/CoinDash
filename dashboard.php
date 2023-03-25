@@ -67,7 +67,7 @@
                         </div>
                         <div class="dropdowns">
                             <select class="dropdown fiat">
-                                <option>Deals Only</option>
+                                 <option selected>Deals Only</option>
                                 <option>Deals Only</option>
                                 <option>Deals Only</option>
                                 <option>Deals Only</option>
@@ -75,7 +75,7 @@
                                 <option>Deals Only</option>
                             </select>
                             <select class="dropdown sort">
-                                <option>Deals Only</option>
+                                 <option selected>Deals Only</option>
                                 <option>Deals Only</option>
                                 <option>Deals Only</option>
                                 <option>Deals Only</option>
@@ -106,7 +106,7 @@
                                         <div class=\"product-image\" style=\"background-image: url(".$coin["img_url"].");\"></div>
                                     </div><div class=\"product-info-container\">
                                         <h3>Lorem ipsum dolor sit amet consectetur. Erat facilisi Lorem ipsum dolor</h3>
-                                        <strong class=\"product-price\">".$coin[$fiat]." ".$coin["price_change_24h"]."</strong>
+                                        <strong class=\"product-price\">".$coin[$fiat]."$ ".$coin["price_change_24h"]."</strong>
                                         <div class=\"price-trend-container\">
                                             <p>7D: ".$coin["price_change_7d"]."</p>
                                             <p>14D: ".$coin["price_change_14d"]."</p>
@@ -148,7 +148,7 @@
                         </div>
                         <div class="dropdowns">
                             <select class="dropdown">
-                                <option>Deals Only</option>
+                                 <option selected>Deals Only</option>
                                 <option>Deals Only</option>
                                 <option>Deals Only</option>
                                 <option>Deals Only</option>
@@ -156,7 +156,7 @@
                                 <option>Deals Only</option>
                             </select>
                             <select class="dropdown">
-                                <option>Deals Only</option>
+                                 <option selected>Deals Only</option>
                                 <option>Deals Only</option>
                                 <option>Deals Only</option>
                                 <option>Deals Only</option>
@@ -325,7 +325,7 @@
                         </div>
                         <div class="dropdowns">
                             <select class="dropdown">
-                                <option>Deals Only</option>
+                                 <option selected>Deals Only</option>
                                 <option>Deals Only</option>
                                 <option>Deals Only</option>
                                 <option>Deals Only</option>
@@ -333,7 +333,7 @@
                                 <option>Deals Only</option>
                             </select>
                             <select class="dropdown">
-                                <option>Deals Only</option>
+                                 <option selected>Deals Only</option>
                                 <option>Deals Only</option>
                                 <option>Deals Only</option>
                                 <option>Deals Only</option>
@@ -502,7 +502,7 @@
                         </div>
                         <div class="dropdowns">
                             <select class="dropdown">
-                                <option>Deals Only</option>
+                                 <option selected>Deals Only</option>
                                 <option>Deals Only</option>
                                 <option>Deals Only</option>
                                 <option>Deals Only</option>
@@ -510,7 +510,7 @@
                                 <option>Deals Only</option>
                             </select>
                             <select class="dropdown">
-                                <option>Deals Only</option>
+                                 <option selected>Deals Only</option>
                                 <option>Deals Only</option>
                                 <option>Deals Only</option>
                                 <option>Deals Only</option>
@@ -681,7 +681,7 @@
                         </div>
                         <div class="dropdowns">
                             <select class="dropdown">
-                                <option>Deals Only</option>
+                                 <option selected>Deals Only</option>
                                 <option>Deals Only</option>
                                 <option>Deals Only</option>
                                 <option>Deals Only</option>
@@ -689,7 +689,7 @@
                                 <option>Deals Only</option>
                             </select>
                             <select class="dropdown">
-                                <option>Deals Only</option>
+                                 <option selected>Deals Only</option>
                                 <option>Deals Only</option>
                                 <option>Deals Only</option>
                                 <option>Deals Only</option>
@@ -858,7 +858,7 @@
                         </div>
                         <div class="dropdowns">
                             <select class="dropdown">
-                                <option>Deals Only</option>
+                                 <option selected>Deals Only</option>
                                 <option>Deals Only</option>
                                 <option>Deals Only</option>
                                 <option>Deals Only</option>
@@ -866,7 +866,7 @@
                                 <option>Deals Only</option>
                             </select>
                             <select class="dropdown">
-                                <option>Deals Only</option>
+                                 <option selected>Deals Only</option>
                                 <option>Deals Only</option>
                                 <option>Deals Only</option>
                                 <option>Deals Only</option>
