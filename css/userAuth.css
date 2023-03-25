@@ -170,9 +170,8 @@
 }
 
 .login-box p{
-  position: absolute;
-  display: flex;
-  float: right;
+  position: fixed;
+  left: 2em;
   /* opacity: 0;
   visibility: hidden; */
   color: rgb(255, 0, 0);
