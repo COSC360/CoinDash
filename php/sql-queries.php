@@ -21,11 +21,8 @@ function retrieveAllCoins($con){
     mysqli_stmt_execute($stmt);
 
     $result = mysqli_stmt_get_result($stmt);
-    print_r($result);
 
     if ($rows = $result -> fetch_all(MYSQLI_ASSOC)){
-        mysqli_free_result($result);
-        print_r($rows);
         // mysqli_stmt_close();
         return $rows; 
     } else {
