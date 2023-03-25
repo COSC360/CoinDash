@@ -80,9 +80,10 @@ function createCoinCategory($con, $coinId, $coinCategory){
 
 function uploadDashboard($con, $userId, $dashboardObject){
 
+    deleteDashboard($con, $userId);
     $dashboardSql = "INSERT INTO dashboard (user_id) VALUES (?);";
-    $blockSql = "INSERT INTO block (dashboard_id) VALUES (?);";
-    $moduleSql = "INSERT INTO module (block_id, dashboard_id, category, fiat, spot) VALUES (?, ?, ?, ?, ?);";
+    $blockSql = "INSERT INTO block (dashboard_id, user_id) VALUES (?, ?);";
+    $moduleSql = "INSERT INTO module (block_id, dashboard_id, user_id, category, fiat, sort) VALUES (?, ?, ?, ?, ?, ?);";
 
     try {
         $dashboardObject = json_decode($dashboardObject);
@@ -97,12 +98,10 @@ function uploadDashboard($con, $userId, $dashboardObject){
 
         mysqli_stmt_bind_param($dashboardStmt, "i", $userId);
         mysqli_stmt_execute($dashboardStmt); 
-        $userId = 2;
-        mysqli_stmt_execute($dashboardStmt); 
-        $userId = 4;
-        mysqli_stmt_execute($dashboardStmt); 
+        mysqli_stmt_close($dashboardStmt);
 
         $dashboardId = mysqli_insert_id($con);
+
         foreach($blocks as $block){
 
             $modules = $block -> modules;
@@ -113,12 +112,12 @@ function uploadDashboard($con, $userId, $dashboardObject){
                 exit();
             }
 
-            mysqli_stmt_bind_param($blockStmt, "i", $dashboardId);
+            mysqli_stmt_bind_param($blockStmt, "ii", $dashboardId, $userId);
             mysqli_stmt_execute($blockStmt); 
-            echo "Inserting Block";
+            mysqli_stmt_close($blockStmt);
 
             $blockId = mysqli_insert_id($con);
-            echo $blockId;
+            
             
             foreach($modules as $module){
                 $category = $module -> category;
@@ -126,11 +125,19 @@ function uploadDashboard($con, $userId, $dashboardObject){
                 $sort = $module -> sort;
 
                 $moduleStmt = mysqli_stmt_init($con);
-                mysqli_stmt_bind_param($moduleStmt, "s", $userId);
-                mysqli_stmt_execute($blockStmt); 
+                if (!mysqli_stmt_prepare($moduleStmt, $moduleSql)){
+                    // TODO:
+                    // header("location: REPLACE LATER");
+                    exit();
+                }
+                mysqli_stmt_bind_param($moduleStmt, "iiisss", $blockId, $dashboardId, $userId, $category, $fiat, $sort);
+                mysqli_stmt_execute($moduleStmt); 
+                mysqli_stmt_close($moduleStmt);
             }
         }
     } catch (Exception $e){
+        // TODO:
+        echo "Failed";
         echo $e;
     }
 }
@@ -155,15 +162,9 @@ function deleteDashboard($con, $userId){
     mysqli_stmt_bind_param($blockStmt, "s", $userId);
     mysqli_stmt_bind_param($moduleStmt, "s", $userId);
 
-    try {
-        // Delete in reverse order to maintain constraints
-        mysqli_stmt_execute($moduleStmt);
-        mysqli_stmt_execute($blockStmt);
-        mysqli_stmt_execute($dashboardStmt);
-        return true;
-    } catch (Exception $e){
-        return false;
-    }
+    mysqli_stmt_execute($moduleStmt);
+    mysqli_stmt_execute($blockStmt);
+    mysqli_stmt_execute($dashboardStmt);
 }
 
 function retrieveDashboard(){
