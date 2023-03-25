@@ -1,11 +1,13 @@
 
-function addErrorMessage($id, $msg){
-    var errorMsg = document.createTextNode($msg);
-    if($id = $usernameError){
-        usernameError.innerText = $msg;
-    }else if($id = $passwordError){
-        // passwordError.appendChild(errorMsg);
-        passwordError.innerText = $msg; 
+function addErrorMessage(id, msg){
+    let usernameError = document.getElementById("usernameError");
+    let passwordError = document.getElementById("passwordError");
+    var errorMsg = document.createTextNode(msg);
+    if(id = usernameError){
+        usernameError.appendChild(errorMsg);
+    }else if(id = passwordError){
+        passwordError.appendChild(errorMsg);
+        
     }
 }
 function validateLoginForm() {
@@ -41,9 +43,9 @@ function validateLoginForm() {
         usernameError.style.transition = "visibility 0s linear 0s, opacity 300ms";
         return false;  
 
-    }else if(!passReg.test($password)){
-        $msg = "invalid password"
-        addErrorMessage($passwordError, $msg);
+    }else if(!passReg.test(password)){
+        msg = "invalid password"
+        addErrorMessage(passwordError, msg);
         return false;
     }
   }
