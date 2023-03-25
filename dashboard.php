@@ -90,7 +90,6 @@
 
                             // $coins = retrieveAllCoins($con);
                             foreach($data as $coin){
-                                print_r($coin);
                                 echo 
                                 "<div class=\"product-card\">
                                     <div class=\"icon-container\">
