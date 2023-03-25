@@ -3,8 +3,8 @@ function validateLoginForm() {
     const password = document.querySelector('form[name=LoginForm] input[name= pasword]');
 
     if(empty(userOremail)){
-        userOremail.append("Required Username !");
+        userOremail.appendChild("Required Username !");
     }elseif(empty(password)){
-        password.append("Required Password");
+        password.appendChild("Required Password");
     }
 }
