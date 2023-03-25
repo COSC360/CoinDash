@@ -72,10 +72,10 @@ if ($con->connect_error) {
                     $selectStmt->execute();
                     $resultSet = $stmt->get_result(); // get the mysqli result
                     $selectRS = $resultSet->fetch_all(MYSQLI_ASSOC);
+                    echo "it works !";
+                    // $arrDiff = array_diff($categoryResultSet, $selectRS);
 
-                    $arrDiff = array_diff($categoryResultSet, $selectRS);
-
-                    print_r($selectRS);
+                    // print_r($selectRS);
 
 
                     // if($selectRS != null){
