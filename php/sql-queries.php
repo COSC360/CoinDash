@@ -97,10 +97,6 @@ function uploadDashboard($con, $userId, $dashboardObject){
 
         mysqli_stmt_bind_param($dashboardStmt, "i", $userId);
         mysqli_stmt_execute($dashboardStmt); 
-        $userId = 2;
-        mysqli_stmt_execute($dashboardStmt); 
-        $userId = 4;
-        mysqli_stmt_execute($dashboardStmt); 
 
         $dashboardId = mysqli_insert_id($con);
         foreach($blocks as $block){
@@ -131,6 +127,7 @@ function uploadDashboard($con, $userId, $dashboardObject){
             }
         }
     } catch (Exception $e){
+        echo "Failed";
         echo $e;
     }
 }
