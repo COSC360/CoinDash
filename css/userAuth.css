@@ -204,7 +204,10 @@
     font-size: 1.15em;
     color: #050505;
   }
-
+  .input-control {
+    display: flex;
+    flex-direction: column;
+}
 
   .input-control.success input {
       border-color: #09c372;
