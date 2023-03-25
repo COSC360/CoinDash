@@ -11,7 +11,7 @@ if ($con->connect_error) {
     $result = $resultSet->fetch_all(MYSQLI_ASSOC);
     $i = 0;
     foreach ($result as $field) {
-        echo "Count: ".$i."Id: ".$field." ."; 
+        echo "Count: ".$i."Id: ".$field['Id']."<br>"; 
         $i++;
         // $curl = curl_init();
 
