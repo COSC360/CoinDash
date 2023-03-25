@@ -1,9 +1,10 @@
 import { buildDashboard } from "./parser.js";
 
 var dashboardDom = document.getElementById("dashboard");
-var dashboardObj = buildDashboard(dashboardDom);
 
 var uploadDashboard = function(userId){
+
+    var dashboardObj = buildDashboard(dashboardDom);
     $.ajax({
         url: "./php/uploadDashboard.php",
         type: "POST",
