@@ -86,7 +86,7 @@
                     </div>
                     <div class="module-gallery">
                         <?php
-                            include "/php/modules.php";
+                            include "php/modules.php";
 
                             // $coins = retrieveAllCoins($con);
                             print_r($data);
