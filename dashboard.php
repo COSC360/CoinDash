@@ -56,7 +56,7 @@
         </article>
         <article id="dashboard">
             <div class="block panel">
-                <div  class="module small" id="module-1"> 
+                <div class="module small" id="module-1"> 
                     <div class="module-header">
                         <div class="api-details">
                             <img class="api-logo-image" src="images/amazon-logo-1.png"></img>
@@ -147,7 +147,7 @@
                             </a>
                         </div>
                         <div class="dropdowns">
-                            <select class="dropdown">
+                            <select class="dropdown fiat">
                                  <option selected>Deals Only</option>
                                 <option>Deals Only</option>
                                 <option>Deals Only</option>
@@ -155,7 +155,7 @@
                                 <option>Deals Only</option>
                                 <option>Deals Only</option>
                             </select>
-                            <select class="dropdown">
+                            <select class="dropdown sort">
                                  <option selected>Deals Only</option>
                                 <option>Deals Only</option>
                                 <option>Deals Only</option>
@@ -324,7 +324,7 @@
                             </a>
                         </div>
                         <div class="dropdowns">
-                            <select class="dropdown">
+                            <select class="dropdown fiat">
                                  <option selected>Deals Only</option>
                                 <option>Deals Only</option>
                                 <option>Deals Only</option>
@@ -332,7 +332,7 @@
                                 <option>Deals Only</option>
                                 <option>Deals Only</option>
                             </select>
-                            <select class="dropdown">
+                            <select class="dropdown sort">
                                  <option selected>Deals Only</option>
                                 <option>Deals Only</option>
                                 <option>Deals Only</option>
@@ -501,7 +501,7 @@
                             </a>
                         </div>
                         <div class="dropdowns">
-                            <select class="dropdown">
+                            <select class="dropdown fiat">
                                  <option selected>Deals Only</option>
                                 <option>Deals Only</option>
                                 <option>Deals Only</option>
@@ -509,7 +509,7 @@
                                 <option>Deals Only</option>
                                 <option>Deals Only</option>
                             </select>
-                            <select class="dropdown">
+                            <select class="dropdown sort">
                                  <option selected>Deals Only</option>
                                 <option>Deals Only</option>
                                 <option>Deals Only</option>
@@ -680,7 +680,7 @@
                             </a>
                         </div>
                         <div class="dropdowns">
-                            <select class="dropdown">
+                            <select class="dropdown fiat">
                                  <option selected>Deals Only</option>
                                 <option>Deals Only</option>
                                 <option>Deals Only</option>
@@ -688,7 +688,7 @@
                                 <option>Deals Only</option>
                                 <option>Deals Only</option>
                             </select>
-                            <select class="dropdown">
+                            <select class="dropdown sort">
                                  <option selected>Deals Only</option>
                                 <option>Deals Only</option>
                                 <option>Deals Only</option>
@@ -857,7 +857,7 @@
                             </a>
                         </div>
                         <div class="dropdowns">
-                            <select class="dropdown">
+                            <select class="dropdown fiat">
                                  <option selected>Deals Only</option>
                                 <option>Deals Only</option>
                                 <option>Deals Only</option>
@@ -865,7 +865,7 @@
                                 <option>Deals Only</option>
                                 <option>Deals Only</option>
                             </select>
-                            <select class="dropdown">
+                            <select class="dropdown sort">
                                  <option selected>Deals Only</option>
                                 <option>Deals Only</option>
                                 <option>Deals Only</option>
