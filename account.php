@@ -61,7 +61,7 @@ echo "Image: ".$_SESSION["pfp"];
             <div class="user-account-box">
                 <div class="profile-box">
                     <div id="centered">Upload<br>Photo</div>
-                    <?php echo '<img src="data:image/*;base64,'.base64_encode($_SESSION['pfp']).'" />';?>
+                    <img src="pagetodisplaytheimage.php"/>
                     <h1>Username</p>
                     <h2><?php echo $_SESSION["user"] ;?></h2>
                 </div>
