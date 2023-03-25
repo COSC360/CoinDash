@@ -1,7 +1,7 @@
 <?php
 
 function formatNumber($num){
-    $str = (string)$num;
+    $str = strval($num);
     return substr($str, 6);
 }
 
