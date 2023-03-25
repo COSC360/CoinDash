@@ -19,8 +19,7 @@
 a:hover, a:focus, a:active, a:visited, a:link{
     text-decoration: none;
 }
-
-.fa:hover {
+i:hover, i:focus, i:active, i:visited, i:link{
     text-decoration: none;
 }
 
