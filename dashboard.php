@@ -1051,6 +1051,6 @@
         </div>
     </footer>
     <script src="js/modules.js"></script>
-    <script src="js/uploadDashboard.js"></script>
+    <script type="module" src="js/uploadDashboard.js"></script>
 </body>
 </html>
