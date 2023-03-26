@@ -52,7 +52,7 @@ function retrieveCoinsByCategory($con, $fiat, $category, $sort, $perPage, $page)
     $offset = ($page - 1) * $perPage;
 
     // Set parameters for prepared statement
-    mysqli_stmt_bind_param($stmt, "ssii", $category, $sort, $perPage, $offset);
+    mysqli_stmt_bind_param($stmt, "sii", $category, $perPage, $offset);
     
     // Execute prepared statement
     mysqli_stmt_execute($stmt);
