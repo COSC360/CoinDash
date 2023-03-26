@@ -49,6 +49,7 @@
                             break;
                         }
                         $dashboardJSON = json_encode($dashboardModules[$currentCount]);
+                        $dashboardJSON = str_replace('"', '\"', $dashboardJSON);
                         echo $dashboardJSON;
                         echo "
                             <div class=\"module small\" id=\"module-".$dashboardModules[$currentCount]["id"]."\"> 
