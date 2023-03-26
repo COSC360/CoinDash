@@ -4,14 +4,14 @@ session_start();
 $email= $_POST['email'];
 $password = $_POST['password'];
 
-if ($con->connect_error) {
-    die("Connection failed: " . $con->connect_error);
-}else{
-    $stmt = $con->prepare("UPDATE user_auth SET Email = ? WHERE Id = ?");
-    $stmt->bind_param("si", $email,$_SESSION['Id']); 
-    $stmt->execute();
-    // header('location:dashboard.php');
-}
+// if ($con->connect_error) {
+//     die("Connection failed: " . $con->connect_error);
+// }else{
+//     $stmt = $con->prepare("UPDATE user_auth SET Email = ? WHERE Id = ?");
+//     $stmt->bind_param("si", $email,$_SESSION['Id']); 
+//     $stmt->execute();
+//     // header('location:dashboard.php');
+// }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -21,13 +21,13 @@ if ($con->connect_error) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Account Settings</title>
     <link rel="stylesheet" href="font/helvetica-now-display/stylesheet.css">
-    <link rel="stylesheet" href="css/var.css">
-    <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/dashboard.css">
-    <link rel="stylesheet" href="css/header-footer.css">
-    <link rel="stylesheet" href="css/module.css">
-    <link rel="stylesheet" href="css/userAuth.css">
-    <link rel="stylesheet" href="css/account.css">
+    <link rel="stylesheet" href="../css/var.css">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/dashboard.css">
+    <link rel="stylesheet" href="../css/header-footer.css">
+    <link rel="stylesheet" href="../css/module.css">
+    <link rel="stylesheet" href="../css/userAuth.css">
+    <link rel="stylesheet" href="../css/account.css">
     <script src="js/signIn.js"></script>
     <script src="js/signUp.js"></script>
     <script src="js/account.js"></script>
