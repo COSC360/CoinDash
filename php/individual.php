@@ -30,7 +30,14 @@
                 <p class="review-content">Lorem ipsum dolor sit amet consectetur. Arcu ornare quam sit lectus integer. Diam integer consequat sapien commodo velit. Sed lectus habitasse in bibendum justo turpis. Ultricies fames in nisl faucibus amet dignissim. Integer ipsum molestie a a vel. </p>
             </div>
             <i class="fa-regular fa-comment-dots fa-lg comment-btn"></i>
-            <input type="text" class="comment-input">
+            <form class="comment-form">
+                <p>
+                    <input type="text" name="text" class="comment-input">
+                </p>
+                <p>
+                    <button type="submit">Reply</button>
+                </p>
+            </form>
             <div class="child-comments">
                 <div class="comment" id="comment-2">
                     <div class="main-comment">
@@ -41,7 +48,14 @@
                         <p class="review-content">Lorem ipsum dolor sit amet consectetur. Arcu ornare quam sit lectus integer. Diam integer consequat sapien commodo velit. Sed lectus habitasse in bibendum justo turpis. Ultricies fames in nisl faucibus amet dignissim. Integer ipsum molestie a a vel. </p>
                     </div>
                     <i class="fa-regular fa-comment-dots fa-lg comment-btn"></i>
-                    <input type="text" class="comment-input">
+                    <form class="comment-form">
+                        <p>
+                            <input type="text" name="text" class="comment-input">
+                        </p>
+                        <p>
+                            <button type="submit">Reply</button>
+                        </p>
+                    </form>
                     <div class="child-comments">
                     </div>
 
@@ -58,9 +72,9 @@
                 <p class="review-content">Lorem ipsum dolor sit amet consectetur. Arcu ornare quam sit lectus integer. Diam integer consequat sapien commodo velit. Sed lectus habitasse in bibendum justo turpis. Ultricies fames in nisl faucibus amet dignissim. Integer ipsum molestie a a vel. </p>
             </div>
             <i class="fa-regular fa-comment-dots fa-xl comment-btn"></i>
-            <form action="post">
+            <form class="comment-form">
                 <p>
-                    <input type="text" class="comment-input">
+                    <input type="text" name="text" class="comment-input">
                 </p>
                 <p>
                     <button type="submit">Reply</button>
@@ -73,7 +87,7 @@
     <?php
         include "footer.php"
     ?>
-
+    <script src="../js/comment.js"></script>
 </body>
 
 </html>
