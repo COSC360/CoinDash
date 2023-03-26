@@ -1,67 +1,3 @@
-<?php
-session_start();
-// error_reporting(E_ALL);
-// init_set('display_errors','1');
-// include_once('ValidationResult.class.php');
-
-include 'DBconnection.php';
-
-    $statusMsg = '';
-
-    if ($con->connect_error) {
-        die("Connection failed: " . $con->connect_error);
-    }else{
-        if(!empty($_FILES["img"]["name"])) { 
-            $username= $_POST['username'];
-            $email = $_POST['email'];
-            $password = $_POST['password'];
-            $verifyPassword = $_POST['verifyPassword'];
-            $selectedOption = $_POST['selectionMenu'];
-            $fileName = basename($_FILES["img"]["name"]);
-            $fileType = pathinfo($fileName, PATHINFO_EXTENSION);
-            $userType = "user";
-
-            // Allow certain file formats 
-            $allowTypes = array('jpg','png','jpeg');
-            
-            //Check if data already exists 
-            $stmt = $con->prepare("SELECT * FROM `user_auth` WHERE  `Email` = ? && `Password` = ? || `Username` = ? && `Password` = ? ");
-            $stmt->bind_param("ssss", $email,$password,$username,$password); 
-            $stmt->execute();
-            $resultSet = $stmt->get_result(); // get the mysqli result
-            $result = $resultSet->fetch_assoc();
-
-            if(in_array($fileType, $allowTypes)){ 
-                // $image = $_FILES['img']['tmp_name']; 
-                // $imgContent = addslashes(file_get_contents($image));
-                $image_base64 = base64_encode(file_get_contents($_FILES['img']['tmp_name']) );
-                $image = 'data:image/'.$imageFileType.';base64,'.$image_base64;
-
-                if($email == "" || $username == "" || $password == "" || $verifyPassword == ""){
-                    $statusMsg = 'Please enter all the required details !';
-                    
-                }elseif($password != $verifyPassword){
-                    $statusMsg = 'Passwords do not match !';
-                    
-                }elseif($result != null){
-                    $statusMsg = 'User already exists !';
-                   
-                }else{
-                    // Insert image content into database   
-                    $stmt = $con->prepare("INSERT INTO `user_auth` (`Username`, `Email`, `Password`,`comingFrom`,`profilePicture`,`userType`) VALUES (?,?,?,?,?,?)");
-                    $stmt->bind_param("ssssbs",$username,$email,$password,$selectedOption,$image,$userType); 
-                    $stmt->execute();
-                    header('location: signIn.php');
-                    $stmt->close();
-                    $con->close();
-                }
-            }else{ 
-                $statusMsg = 'Sorry, only JPG, JPEG & PNG files are allowed to upload.'; 
-            } 
-        }
-    }
-?>
-
 <!DOCTYPE html>
 <html>
 
@@ -83,7 +19,76 @@ include 'DBconnection.php';
 </head>
 
 <body>
-    <?php include 'header.php';?>
+    <?php
+        session_start();
+        // error_reporting(E_ALL);
+        // init_set('display_errors','1');
+        // include_once('ValidationResult.class.php');
+
+        include 'DBconnection.php';
+
+            $statusMsg = '';
+
+            if ($con->connect_error) {
+                die("Connection failed: " . $con->connect_error);
+            }else{
+                if(!empty($_FILES["img"]["name"])) { 
+                    $username= $_POST['username'];
+                    $email = $_POST['email'];
+                    $password = $_POST['password'];
+                    $verifyPassword = $_POST['verifyPassword'];
+                    $selectedOption = $_POST['selectionMenu'];
+                    $fileName = basename($_FILES["img"]["name"]);
+                    $fileType = pathinfo($fileName, PATHINFO_EXTENSION);
+                    $userType = "user";
+
+                    // Allow certain file formats 
+                    $allowTypes = array('jpg','png','jpeg');
+                    
+                    //Check if data already exists 
+                    $stmt = $con->prepare("SELECT * FROM `user_auth` WHERE  `Email` = ? || `Username` = ?");
+                    $stmt->bind_param("ss", $email,$username); 
+                    $stmt->execute();
+                    $resultSet = $stmt->get_result(); // get the mysqli result
+                    $result = $resultSet->fetch_assoc();
+
+                    if(in_array($fileType, $allowTypes)){ 
+                        // $image = $_FILES['img']['tmp_name']; 
+                        // $imgContent = addslashes(file_get_contents($image));
+                        $image_base64 = base64_encode(file_get_contents($_FILES['img']['tmp_name']) );
+                        $image = 'data:image/'.$imageFileType.';base64,'.$image_base64;
+
+                        // if($email == "" || $username == "" || $password == "" || $verifyPassword == ""){
+                        //     $statusMsg = 'Please enter all the required details !';
+                        //     echo "<script>window.alert(\"".$statusMsg."\")</script>";
+                            
+                        // }
+                        if($password != $verifyPassword){
+                            $statusMsg = 'Passwords do not match !';
+                            echo "<script>window.alert(\"".$statusMsg."\")</script>";
+                            
+                        }
+                        if($result != null){
+                            $statusMsg = 'User already exists !';
+                            echo "<script>window.alert(\"".$statusMsg."\")</script>";
+
+                        
+                        }else{
+                            // Insert image content into database   
+                            $stmt = $con->prepare("INSERT INTO `user_auth` (`Username`, `Email`, `Password`,`comingFrom`,`profilePicture`,`userType`) VALUES (?,?,?,?,?,?)");
+                            $stmt->bind_param("ssssss",$username,$email,$password,$selectedOption,$image,$userType); 
+                            $stmt->execute();
+                            header('location: signIn.php');
+                            $stmt->close();
+                            $con->close();
+                        }
+                    }else{ 
+                        $statusMsg = 'Sorry, only JPG, JPEG & PNG files are allowed to upload.'; 
+                    } 
+                }
+            }
+?>
+<?php include 'header.php';?>
     <main>
         <div class = "auth-container">
             <div class="register-info">
@@ -101,22 +106,22 @@ include 'DBconnection.php';
                             <div class="item-1">
                                 <label>Username <span style="color: red;">*</span></label><br>
                                 <p id = "usernameError"><i class="fa-solid fa-circle-exclamation"></i></p>                   
-                                <input type = "text" name = "username" placeholder="What Should We Call You?">
+                                <input type = "text" name = "username"  id = "username" placeholder="What Should We Call You?"  onkeydown="UsernameErrorClearFunction()">
                             </div>
                             <div class="item-2">
                                 <label>Email <span style="color: red;">*</span></label><br>
                                 <p id = "emailError"><i class="fa-solid fa-circle-exclamation"></i></p>
-                                <input type = "email" name = "email" placeholder="What's Your Email?">
+                                <input type = "email" name = "email"  id = "email" placeholder="What's Your Email?" onkeydown="EmailErrorClearFunction()">
                             </div>
                             <div class="item-3">
                                 <label>Password <span style="color: red;">*</span></label><br>
                                 <p id = "passwordError"><i class="fa-solid fa-circle-exclamation"></i></p>                                   
-                                <input type = "password" name = "password" placeholder="What’s Your Password?">
+                                <input type = "password" name = "password"  id = "password" placeholder="What’s Your Password?" onkeydown="PasswordErrorClearFunction()">
                             </div>
                             <div class="item-4">
                                 <label>Verify Password <span style="color: red;">*</span></label><br>
                                 <p id = "verifyPasswordError"><i class="fa-solid fa-circle-exclamation"></i></p>
-                                <input type = "password" name = "verifyPassword" placeholder="Confirm Password?">
+                                <input type = "password" name = "verifyPassword"  id = "verifyPassword" placeholder="Confirm Password?" onkeydown="VerifyPasswordErrorClearFunction()">
                             </div>
                             <div class="item-5">
                                 <label>Coming From</label><br>
@@ -131,10 +136,10 @@ include 'DBconnection.php';
                                 <!-- <button id="upload-file-btn" onclick= "document.getElementById('getFile').click()">Upload File <img src="svgs/arrow-right-short.svg"></button>
                                 <input type='file' id="getFile" style="display:none"> -->
                                 <p id = "imageUploadError"><i class="fa-solid fa-circle-exclamation"></i></p>
-                                <input type="file" name="img" accept="image/*">
+                                <input type="file" name="img"  id="img" accept="image/*" onkeydown="ImageUploadErrorClearFunction()">
                             </div>
                             <div class="item-7">
-                                <input type="reset" value="Reset Form">
+                                <input type="reset" value="Reset Form"  onclick="ErrorClearFunction()">
                             </div>
                             <div class = "item-8">
                                 <input type="submit" value="Get Started !">

@@ -39,7 +39,7 @@ if ($con->connect_error) {
                     die("Connection failed: " . $con->connect_error);
                 }else{
                     $json = json_decode($response,true);
-                    if($json['status'] ==null){
+            
                         $desc = $json['description']['en'];
                         $img_url = $json['image']['large'];
                         $usd = $json['market_data']['current_price']['usd'];
@@ -93,9 +93,9 @@ if ($con->connect_error) {
                         }
                     }     
                 }
+                // sleep(30);
             }
-            // sleep(30);
+            
         }
-    }
 
 ?>

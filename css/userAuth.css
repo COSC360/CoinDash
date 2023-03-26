@@ -34,6 +34,7 @@
   left: 0;
   z-index: 10;
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   font-size: 1em;
   padding: 2em;
@@ -169,7 +170,7 @@
   position: relative;
 }
 
-.login-box p{
+/* .login-box p{
   position: absolute;
   margin-top: 0.5em;
   left: 33em;
@@ -177,11 +178,27 @@
   visibility: hidden;
   color: rgb(255, 0, 0);
   z-index: 10;
+} */
+
+
+.login-box .item-1, .item-2, .item-3{
+  position: relative;
 }
+.login-box p{
+  position:absolute;
+  margin-top: 1em;
+  left: 32.5em;
+  opacity: 0;
+  visibility: hidden;
+  color: rgb(255, 0, 0);
+  z-index: 10;
+}
+
 
 .login-box i{
   color: rgb(255, 0, 0);
 }
+
 
 .login-box input {
     margin-top: 1em;
@@ -300,20 +317,27 @@
   color: rgb(75, 75, 75);
 }
 
+
 .register-box label{
   font-weight: 500;
   font-size: 1em;
   color: #050505;
 }
-
+.register-box .item-1, .item-2, .item-3{
+  position: relative;
+}
 .register-box p{
-  position: absolute;
-  margin-top: 0.5em;
-  left: 30em;
-  /* opacity: 0;
-  visibility: hidden; */
+  position:absolute;
+  margin-top: 1em;
+  right: 0.25em;
+  opacity: 0;
+  visibility: hidden;
   color: rgb(255, 0, 0);
   z-index: 10;
+}
+
+.register-box i{
+  color: rgb(255, 0, 0);
 }
 
 .register-box form{
