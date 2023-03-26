@@ -23,7 +23,7 @@ function retrieveComment($con, $coinId){
         exit();
     }
 
-    mysqli_stmt_bind_param($commentStmt, "i", $coinId);
+    mysqli_stmt_bind_param($commentStmt, "s", $coinId);
     mysqli_stmt_execute($commentStmt);
     echo "DASd";
     $result = mysqli_stmt_get_result($commentStmt);
