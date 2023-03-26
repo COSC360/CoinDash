@@ -34,7 +34,6 @@ function validateLoginForm() {
         return false;
         // $msg = "Password empty"
         // addErrorMessage(passwordError, msg);  
-
     }
     if(usernameOrEmail ==""){
         usernameError.style.opacity = "1";
@@ -43,8 +42,13 @@ function validateLoginForm() {
         return false;
         // $msg = "Username/Email empty"
         // addErrorMessage(usernameError, msg);
-
+    }else if(!passReg.test(password)){
+        passwordError.style.opacity = "1";
+        passwordError.style.visibility = "visible";
+        passwordError.style.transition = "visibility 0s linear 0s, opacity 300ms";
+        return false;
     }
+
     if(!passReg.test(password)){        
         passwordError.style.opacity = "1";
         passwordError.style.visibility = "visible";
