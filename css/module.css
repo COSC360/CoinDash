@@ -283,7 +283,7 @@ select {
     width: 20em;
     height: fit-content;
     position: fixed !important;
-    top: 0;
+    top: 200px;
     right: 0;
     border: solid 1px var(--Grey-1);
     border-radius: 10px;
@@ -310,16 +310,18 @@ select {
 }
 
 .modal form select {
-    display: inline-block;
+    display: block;
 }
 
 .modal #modal-confirm-btn {
+    width: 100%;
     background-color: var(--Black-1);
     padding: 0.5em 0;
     color: var(--White-1)
 }
 
 .modal #modal-cancel-btn {
+    width: 100%;
     color: var(--Grey-1);
     background-color: transparent;
 }
