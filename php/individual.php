@@ -87,7 +87,7 @@
     <?php
         include "footer.php"
     ?>
-
+    <script src="../js/comment.js"></script>
 </body>
 
 </html>
