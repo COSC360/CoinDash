@@ -5,13 +5,18 @@ var modules = document.querySelectorAll(".module");
 var editElements = document.querySelectorAll(".edit-ui");
 var toggleEditBtn = document.getElementById("view-edit-btn");
 var saveEditBtn = document.getElementById("save-edit-btn");
+var moduleModal = document.getElementById("module-modal");
 
 module_settings_btns.forEach(btn => {
-    
     // Grab connectedModule to be moved
     btn.addEventListener("dragstart", (e) => {
         e.dataTransfer.setData("draggedModule", btn.parentNode.id); 
         e.dataTransfer.setDragImage(btn.parentNode, 0, 0);
+    })
+
+    btn.addEventListener("click", (e) => {
+        moduleModal.clientX = "100px";
+        moduleModal.clientY = "100px";
     })
 })
 

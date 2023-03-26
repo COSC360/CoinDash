@@ -325,6 +325,7 @@ select {
 }
 
 .modal #modal-confirm-btn {
+    font-size: 1.2em;
     width: 100%;
     background-color: var(--Black-1);
     padding: 0.5em 0;
@@ -333,6 +334,7 @@ select {
 }
 
 .modal #modal-cancel-btn {
+    font-size: 1.2em;
     width: 100%;
     color: var(--Grey-1);
     background-color: transparent;
