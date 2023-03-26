@@ -29,8 +29,6 @@ function validateLoginForm() {
     }
     
     if(password ==""){
-        msg = "Password empty";
-        addErrorMessage(passwordError, msg);
         passwordError.style.opacity = "1";
         passwordError.style.visibility = "visible";
         passwordError.style.transition = "visibility 0s linear 0s, opacity 300ms";
@@ -40,8 +38,6 @@ function validateLoginForm() {
         usernameError.style.opacity = "1";
         usernameError.style.visibility = "visible";
         usernameError.style.transition = "visibility 0s linear 0s, opacity 300ms";
-        msg = "Username/Email empty";
-        addErrorMessage(usernameError, msg);
         return false;
     }
 
