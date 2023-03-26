@@ -1,5 +1,4 @@
 <?php
-$current_session_id = session_id();
 session_start();
 
 $email= $_POST['email'];
