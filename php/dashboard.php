@@ -32,6 +32,7 @@
         </article>
         <article id="dashboard">
             <?php 
+                include "retrieveModules.php";
                 include "modules.php";
                 include "utils.php";
 
