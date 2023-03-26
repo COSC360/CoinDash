@@ -45,11 +45,10 @@ window.onload = function validateLoginForm() {
         // addErrorMessage(usernameError, msg);
 
     }
-    if(!passReg.test(password)){
-        console.log(passwordError.style.opacity);
-        // passwordError.style.opacity = "1";
-        // passwordError.style.visibility = "visible";
-        // passwordError.style.transition = "visibility 0s linear 0s, opacity 300ms";
+    if(!passReg.test(password)){        
+        usernameError.style.opacity = "1";
+        usernameError.style.visibility = "visible";
+        usernameError.style.transition = "visibility 0s linear 0s, opacity 300ms";
         return false;
     }
 
