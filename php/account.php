@@ -11,6 +11,12 @@ $password = $_POST['password'];
 //     $stmt->execute();
 //     // header('location:dashboard.php');
 // }
+
+if($_SESSION['Id'] == null){
+    header('location:sigIn.php');
+}else{
+    continue;
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
