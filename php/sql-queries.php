@@ -37,19 +37,14 @@ function retrieveCoinsByCategory($con, $fiat, $category, $sort, $perPage, $page)
         exit();
     }
 
-    // Reject if parameters are invalid
-    // if (!isset($category) || !isset($fiat) || !isset($sort) || !isset($sortDirection)){
-    //     exit();
-    // }
-
     $offset = ($page - 1) * $perPage;
-
+    echo "Hello";
     // Set parameters for prepared statement
     mysqli_stmt_bind_param($stmt, "ssssii", $fiat, $category, $sort, $perPage, $offset);
-
+    echo "Hello";
     // Execute prepared statement
     mysqli_stmt_execute($stmt);
-
+    echo "Hello";
     $results = mysqli_stmt_get_result($stmt);
 
     if ($rows = $results -> fetch_all(MYSQL_ASSOC)){
