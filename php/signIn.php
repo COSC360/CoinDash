@@ -61,7 +61,7 @@
 <?php include 'header.php';?>
 <main>  
     <div class="main">
-        <div class = "panel">
+        <div class = "panel login-container">
             <div class="login-info">
                 <h1>Home/</h1>
                 <h2>Sign In</h2>

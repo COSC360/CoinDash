@@ -18,8 +18,9 @@
   padding: 2em;
   background-color: var(--White-1);
 } */
-.panel{
-  gap: 3em;
+.login-container{
+  display: flex;
+  
 }
 .login-info{
   width: fit-content;
