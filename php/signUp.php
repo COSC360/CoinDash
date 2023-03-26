@@ -66,6 +66,10 @@
                             $statusMsg = 'Passwords do not match !';
                             echo "<script>window.alert(\"".$statusMsg."\")</script>";
                             
+                        }elseif(!passRe){
+                            $statusMsg = 'Passwords do not match !';
+                            echo "<script>window.alert(\"".$statusMsg."\")</script>";
+                            
                         }elseif($result != null){
                             $statusMsg = 'User already exists !';
                             echo "<script>window.alert(\"".$statusMsg."\")</script>";

@@ -16,7 +16,8 @@ function validateLoginForm() {
     let usernameError = document.getElementById("usernameError");
     let passwordError = document.getElementById("passwordError");
     // var errorFlag = false;
-    var passReg = /^[a-zA-Z]\w{7,16}$/;
+    var passReg = /^[a-zA-Z]\w{8,16}$/;
+    var emailReg = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
 
     if (usernameOrEmail == "" && password =="") {
         usernameError.style.opacity = "1";
