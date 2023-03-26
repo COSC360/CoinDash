@@ -1,4 +1,6 @@
-
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html>
 
@@ -23,9 +25,21 @@
     ?>
     <main>
         <article class="panel page-title">
-            <h2>Home / Jason /</h2>
+            <?php
+                if($SESSION['user'] != null){
+                    echo "<h2>Home / ".$SESSION['user']." /</h2>";
+                }else{
+                    echo "<h2>Home / Guest</h2>";
+                }
+            ?>
             <div class="title">
-                <h1>Jason's Dashboard</h1>
+                <?php
+                    if($SESSION['user'] != null){
+                        echo "<h1>".$SESSION['user']."'s Dashboard</h1>";
+                    }else{
+                        echo "<h1>Guest's Dashboard</h1>";
+                    }
+                ?>
                 <div class="container edit-ui">
                     <img src="../svgs/edit.svg">
                 </div>
