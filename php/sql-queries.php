@@ -28,7 +28,7 @@ function retrieveAllCoins($con){
 
 function retrieveCoinsByCategory($con, $fiat, $category, $sort, $perPage, $page){
     echo("<script>console.log('PHP: HI');</script>");
-    $sql = "SELECT symbol, img_url, ?, price_Change_24h, price_change_7d, price_change_14d, price_change_30d, price_change_60d, price_change_200d, price_change_1yr "
+    $sql = "SELECT symbol, img_url, ?, price_change_24h, price_change_7d, price_change_14d, price_change_30d, price_change_60d, price_change_200d, price_change_1yr "
         + "FROM coin WHERE id IN (SELECT coin FROM categoryCoin WHERE category = ?) LIMIT ? OFFSET ?";
     $stmt = mysqli_stmt_init($con);
 
