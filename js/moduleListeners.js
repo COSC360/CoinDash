@@ -33,7 +33,7 @@ function setModuleHTML(fiat, category, sort, target){
         success: function(response) {
             var coinData = JSON.parse(response);
             let newModule = "";
-
+            console.log(coinData);
             coinData.forEach((coin) => {
                 newModule += `
                     <div class="product-card">
