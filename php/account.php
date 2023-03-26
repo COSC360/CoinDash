@@ -3,17 +3,6 @@ session_start();
 
 $email= $_POST['email'];
 $password = $_POST['password'];
-if ($con->connect_error) {
-    die("Connection failed: " . $con->connect_error);
-}else{
-    $stmt = $con->prepare("SELECT `profilePicture` FROM `user_auth` WHERE  Id = ?");
-    $stmt->bind_param("i", $_SESSION["Id"]); 
-    $stmt->execute();
-    $resultSet = $stmt->get_result(); // get the mysqli result
-    $result = $resultSet->fetch_assoc();
-}
-
-$_SESSION["pfp"] = $result['profilePicture'];
 // if ($con->connect_error) {
 //     die("Connection failed: " . $con->connect_error);
 // }else{
@@ -71,7 +60,6 @@ $_SESSION["pfp"] = $result['profilePicture'];
             <div class="user-account-box">
                 <div class="profile-box">
                     <div id="centered">Upload<br>Photo</div>
-                    <?php echo '<img src="data:image/*;base64,'.base64_encode($_SESSION["pfp"]).'" />';?>
                     <h1>Username</p>
                     <h2><?php echo $_SESSION["user"] ;?></h2>
                 </div>
