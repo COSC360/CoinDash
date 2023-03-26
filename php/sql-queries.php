@@ -30,16 +30,16 @@ function retrieveCoinsByCategory($con, $fiat, $category, $sort, $perPage, $page)
     $validSortValues = array("price_change_24h", "price_change_24h DESC", "price_change_7d", "price_change_7d DESC", "price_change_14d", "price_change_14d DESC",
                 "price_change_30d", "price_change_30d DESC", "price_change_60d", "price_change_60d DESC",
                 "price_change_200d", "price_change_200d DESC", "price_change_1yr", "price_change_1yr DESC");
-                echo "<script>console.log('hi')</script>";
+
     if (!in_array($sort, $validSortValues)){
         // TODO:
         // header("location: REPLACE LATER");
         exit();
     }
-    echo "<script>console.log('hi')</script>";
+
     $sql = "SELECT * FROM coin WHERE id IN (SELECT coin FROM coinCategory WHERE category = ?) ORDER BY ".$sort." LIMIT ? OFFSET ?;";
     //ORDER BY ? LIMIT ? OFFSET ?;
-    echo "<script>console.log('hi')</script>";
+
     //WHERE id IN (SELECT coin_id FROM categoryCoin WHERE category = ?) LIMIT ? OFFSET ?
     $stmt = mysqli_stmt_init($con);
     
