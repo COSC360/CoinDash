@@ -42,6 +42,7 @@ confirmModalBtn.addEventListener('click', (e) => {
     console.log(moduleObj.fiat);
     console.log(moduleObj.category);
     console.log(moduleObj.sort);
+    console.log(e.target);
     setModuleHTML(moduleObj.fiat, moduleObj.category, moduleObj.sort, moduleGallery);
 })
 
