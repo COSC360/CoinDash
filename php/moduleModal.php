@@ -1,6 +1,7 @@
 <div class="modal">
     <?php
         include "utils.php";
+        include "DBConnection.php";
         include "sql-queries.php";
     ?>
     <form>
