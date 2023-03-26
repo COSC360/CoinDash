@@ -39,7 +39,9 @@ confirmModalBtn.addEventListener('click', (e) => {
     e.preventDefault();
     var moduleObj = buildModule(currentModule);
     var moduleGallery = document.querySelector("#" + currentModule.id + " .module-gallery");
-
+    console.log(moduleObj.fiat);
+    console.log(moduleObj.category);
+    console.log(moduleObj.sort);
     setModuleHTML(moduleObj.fiat, moduleObj.category, moduleObj.sort, moduleGallery);
 })
 
