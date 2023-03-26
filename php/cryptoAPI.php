@@ -5,7 +5,7 @@ include "DBconnection.php";
 if ($con->connect_error) {
     die("Connection failed: " . $con->connect_error);
 }else{
-    $stmt = $con->prepare("SELECT * FROM coin");
+    $stmt = $con->prepare("SELECT * FROM coin LIMIT 10");
     $stmt->execute();
     $resultSet = $stmt->get_result(); // get the mysqli result
     $result = $resultSet->fetch_all(MYSQLI_ASSOC);
