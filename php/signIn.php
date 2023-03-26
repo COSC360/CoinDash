@@ -28,11 +28,14 @@
 
     include 'DBconnection.php';
     $statusMsg = '';
-        $userOremail= $_GET['user-email'];
-        $password = $_GET['password'];
-        if ($con->connect_error) {
-            die("Connection failed: " . $con->connect_error);
-        }else{
+
+    if ($con->connect_error) {
+        die("Connection failed: " . $con->connect_error);
+    }else{
+        if($_SERVER["REQUEST_METHOD"] == "GET"){
+            $userOremail= $_GET['user-email'];
+            $password = $_GET['password'];
+
             $stmt = $con->prepare("SELECT * FROM `user_auth` WHERE  `Email` = ? && `Password` = ? || `Username` = ? && `Password` = ? ");
             $stmt->bind_param("ssss", $userOremail,$password,$userOremail,$password); 
             $stmt->execute();
@@ -47,21 +50,27 @@
                     header('location:account.php');
                 }
             }
+
             if($result == null && $userOremail != "" && $password != ""){
                 $statusMsg = 'User does not exist !';
                 echo "<script>window.alert(\"".$statusMsg."\")</script>";
             }
-        }
+       
 
-        $_SESSION["user"] = $_GET['user-email'];
-        $_SESSION["email"] = $result['Email'];
-        $_SESSION["Id"] = $result['Id'];
-        $_SESSION["pfp"] = $result['profilePicture'];
+            $_SESSION["user"] = $result['Username'];
+            $_SESSION["email"] = $result['Email'];
+            $_SESSION["Id"] = $result['Id'];
+            $_SESSION["pfp"] = $result['profilePicture'];
+        }else{
+            echo"<script>window.alert(\"Invalid Request Type\")</script>";
+        }
+    }
+        
     ?>
 <?php include 'header.php';?>
 <main>  
     <div class="main">
-        <div class = "auth-container">
+        <div class = "panel auth-container">
             <div class="login-info">
                 <h1>Home/</h1>
                 <h2>Sign In</h2>

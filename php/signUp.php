@@ -32,7 +32,7 @@
             if ($con->connect_error) {
                 die("Connection failed: " . $con->connect_error);
             }else{
-                if(!empty($_FILES["img"]["name"])) { 
+                if($_SERVER["REQUEST_METHOD"] == "POST") { 
                     $username= $_POST['username'];
                     $email = $_POST['email'];
                     $password = $_POST['password'];
@@ -85,12 +85,14 @@
                     }else{ 
                         $statusMsg = 'Sorry, only JPG, JPEG & PNG files are allowed to upload.'; 
                     } 
+                }else{
+                    echo"<script>window.alert(\"Invalid Request Type !\")</script>";
                 }
             }
 ?>
 <?php include 'header.php';?>
     <main>
-        <div class = "auth-container">
+        <div class = "panel auth-container">
             <div class="register-info">
                 <h1>Home/</h1>
                 <h2>Sign Up</h2>
@@ -106,7 +108,7 @@
                             <div class="item-1">
                                 <label>Username <span style="color: red;">*</span></label><br>
                                 <p id = "usernameError"><i class="fa-solid fa-circle-exclamation"></i></p>                   
-                                <input type = "text" name = "username"  id = "username" placeholder="What Should We Call You?"  onkeydown="UsernameErrorClearFunction()">
+                                <input type = "text" name = "username"  id = "username" placeholder="What Should We Call You?"  onkeydown="UsernameErrorClearFunction()" value="">
                             </div>
                             <div class="item-2">
                                 <label>Email <span style="color: red;">*</span></label><br>
