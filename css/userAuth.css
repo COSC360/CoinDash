@@ -310,8 +310,8 @@
   position: absolute;
   margin-top: 0.5em;
   left: 30em;
-  /* opacity: 0;
-  visibility: hidden; */
+  opacity: 0;
+  visibility: hidden;
   color: rgb(255, 0, 0);
   z-index: 10;
 }
