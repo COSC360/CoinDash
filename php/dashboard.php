@@ -32,9 +32,9 @@
         </article>
         <article id="dashboard">
             <?php 
-                include "moduleModal.php";
                 include "modules.php";
                 include "utils.php";
+                include "moduleModal.php";
 
                 $dashboardModules = retrieveDashboard($con, 1);
                 $moduleCount = sizeof($dashboardModules);
