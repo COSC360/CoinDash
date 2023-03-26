@@ -102,7 +102,6 @@ include 'DBconnection.php';
                 <a href = "http://localhost/project360/dashboard.php"><img class="dashboardCard"></a> -->
             </div>            
         </div>
-        <?php include 'footer.php';?>
     </div>
 
 </body>
