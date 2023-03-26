@@ -75,6 +75,7 @@ function retrievePossibleCategories($con){
     echo "<script>console.log('hi')</script>";
     if (!mysqli_stmt_prepare($stmt, $sql)){
         // TODO:
+        echo "<script>console.log('hasdasdi')</script>";
         // header("location: REPLACE LATER");
         exit();
     }
