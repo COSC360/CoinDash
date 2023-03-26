@@ -21,7 +21,7 @@
     <article class="panel bordered-section reviews">
         <h2>Comments</h2>
         <hr class="medium-spacing">
-        <div class="comment">
+        <div class="comment" id="comment-1">
             <div class="main-comment">
                 <div class="comment-header">
                     <img src="../images/profile-picture.png" class="profile-picture">
@@ -29,8 +29,10 @@
                 </div>
                 <p class="review-content">Lorem ipsum dolor sit amet consectetur. Arcu ornare quam sit lectus integer. Diam integer consequat sapien commodo velit. Sed lectus habitasse in bibendum justo turpis. Ultricies fames in nisl faucibus amet dignissim. Integer ipsum molestie a a vel. </p>
             </div>
+            <i class="fa-regular fa-comment-dots fa-lg"></i>
+            <input type="text" class="comment-input">
             <div class="child-comments">
-                <div class="comment">
+                <div class="comment" id="comment-2">
                     <div class="main-comment">
                         <div class="comment-header">
                             <img src="../images/profile-picture.png" class="profile-picture">
@@ -38,13 +40,16 @@
                         </div>
                         <p class="review-content">Lorem ipsum dolor sit amet consectetur. Arcu ornare quam sit lectus integer. Diam integer consequat sapien commodo velit. Sed lectus habitasse in bibendum justo turpis. Ultricies fames in nisl faucibus amet dignissim. Integer ipsum molestie a a vel. </p>
                     </div>
+                    <i class="fa-regular fa-comment-dots fa-lg"></i>
+                    <input type="text" class="comment-input">
                     <div class="child-comments">
                     </div>
+
                 </div>
             </div>
         </div>
         <hr class="medium-spacing">
-        <div class="comment">
+        <div class="comment" id="comment-3">
             <div class="main-comment">
                 <div class="comment-header">
                     <img src="../images/profile-picture.png" class="profile-picture">
@@ -52,6 +57,8 @@
                 </div>
                 <p class="review-content">Lorem ipsum dolor sit amet consectetur. Arcu ornare quam sit lectus integer. Diam integer consequat sapien commodo velit. Sed lectus habitasse in bibendum justo turpis. Ultricies fames in nisl faucibus amet dignissim. Integer ipsum molestie a a vel. </p>
             </div>
+            <i class="fa-regular fa-comment-dots fa-lg"></i>
+            <input type="text" class="comment-input">
             <div class="child-comments">
             </div>
         </div>
