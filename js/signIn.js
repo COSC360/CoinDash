@@ -61,3 +61,12 @@ function PasswordErrorClearFunction(){
         passwordError.style.visibility = "hidden";
 }
 
+function ErrorClearFunction(){
+    let passwordError = document.getElementById("passwordError");
+    let usernameError = document.getElementById("usernameError");
+    passwordError.style.opacity = "0";
+    passwordError.style.visibility = "hidden";
+    usernameError.style.opacity = "0";
+    usernameError.style.visibility = "hidden";
+}
+

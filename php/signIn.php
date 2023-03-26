@@ -81,7 +81,7 @@ include 'DBconnection.php';
                         
                     </div>
                     <div class="item-3">
-                        <input type="reset" value="Reset Form">
+                        <input type="reset" value="Reset Form" onclick="ErrorClearFunction()">
                         <!-- <div class="box-footer"> -->
                             <!-- <input type="reset" value="Reset Form">
                             <a href="https://cosc360.ok.ubc.ca/suyash06/project-JasonR24/reset-password.php"><p>Forgot Password?</p></a>
