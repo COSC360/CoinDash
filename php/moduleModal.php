@@ -15,6 +15,7 @@
             </select>
             <select name="fiat" class="dropdown">
                 <?php
+                    echo "<script>console.log('hi')</script>";
                     $categories = retrievePossibleCategories($con);
                     foreach($categories as $category){
                         echo "<option>".$category."</option>";

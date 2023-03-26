@@ -68,6 +68,7 @@ function retrieveCoinsByCategory($con, $fiat, $category, $sort, $perPage, $page)
 }
 
 function retrievePossibleCategories($con){
+    echo "<script>console.log('hi')</script>";
     $sql = "SELECT DISTINCT category FROM coinCategory;";
 
     $stmt = mysqli_stmt_init($con);
@@ -77,12 +78,12 @@ function retrievePossibleCategories($con){
         // header("location: REPLACE LATER");
         exit();
     }
-
+    echo "<script>console.log('hi')</script>";
     // Execute prepared statement
     mysqli_stmt_execute($stmt);
 
     $result = mysqli_stmt_get_result($stmt);
-
+    echo "<script>console.log('hi')</script>";
     if ($rows = $result -> fetch_all(MYSQLI_ASSOC)){
         // mysqli_stmt_close();
         return $rows; 
