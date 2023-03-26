@@ -13,7 +13,7 @@ $password = $_POST['password'];
 // }
 
 if($_SESSION['Id'] == null){
-    header('location:sigIn.php');
+    header('location:signIn.php');
 }
 ?>
 <!DOCTYPE html>
