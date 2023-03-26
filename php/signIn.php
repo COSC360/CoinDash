@@ -47,7 +47,7 @@
                     header('location:account.php');
                 }
             }
-            if($result == null){
+            if($result == null && $userOremail != "" && $password != ""){
                 $statusMsg = 'User does not exist !';
                 echo "<script>window.alert(\"".$statusMsg."\")</script>";
             }
