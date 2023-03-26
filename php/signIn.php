@@ -6,12 +6,8 @@ session_start();
 
 
 include 'DBconnection.php';
-    $userOremail= "$_GET['user-email']";
+    $userOremail= $_GET['user-email'];
     $password = $_GET['password'];
-
-   
-
-
     if ($con->connect_error) {
         die("Connection failed: " . $con->connect_error);
     }else{
@@ -63,7 +59,6 @@ include 'DBconnection.php';
         <div class = "auth-container">
             <div class="login-info">
                 <h1>Home/</h1>
-                <?php echo '<img src="data:image/*;base64,'.base64_encode($_SESSION["pfp"]).'" />';?>
                 <h2>Sign In</h2>
                 <p>Lorem ipsum dolor sit amet consectetur. Erat facilisi varius est cursus. Neque sagittis mi non purus semper lacus mauris magnis.</p>
                 <div class="info-footer">
@@ -73,7 +68,6 @@ include 'DBconnection.php';
                 </div>
             </div>  
             <div class="login-box">
-                
                 <form name = "LoginForm" id ="LoginForm" action= "" onsubmit="return validateLoginForm()" method="GET" required>
                     <div class="item-1">
                         <label>Username or Email</label><br>     
@@ -110,6 +104,7 @@ include 'DBconnection.php';
             </div>            
         </div>
 </main>
+
 </body>
 
 </html>
