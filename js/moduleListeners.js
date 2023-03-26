@@ -14,7 +14,12 @@ fiatSelects.forEach(fiatSelect => {
             type: "POST",
             data: {fiat: newFiat, category: moduleObj.category, sort: moduleObj.sort},
             success: function(response) {
-                console.log(response);
+                var coinData = JSON.parse(response);
+                let newModule = "";
+
+                coinData.forEach((coin) => {
+                    console.log(coin);
+                })
             }
         })
     })
