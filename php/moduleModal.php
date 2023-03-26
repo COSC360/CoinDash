@@ -1,4 +1,5 @@
 <div class="modal">
+
     <form>
         <i class="fa-solid fa-xmark" id="modal-close-btn"></i>
         <h3>Module Settings</h3>
@@ -10,10 +11,12 @@
                 <option>Test</option>
             </select>
             <select name="fiat" class="dropdown">
-                <option>Test</option>
-                <option>Test</option>
-                <option>Test</option>
-                <option>Test</option>
+                <?php
+                    $categories = retrievePossibleCategories($con);
+                    foreach($categories as $category){
+                        echo "<option>".$category["category"]."</option>";
+                    }
+                ?>
             </select>
             <select name="sort" class="dropdown">
                 <option>Test</option>
