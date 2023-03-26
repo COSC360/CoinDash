@@ -83,9 +83,9 @@ function validateLoginForm() {
     }
 
     if(!passReg.test(password)){
-        emailError.style.opacity = "1";
-        emailError.style.visibility = "visible";
-        emailError.style.transition = "visibility 0s linear 0s, opacity 300ms";
+        passwordError.style.opacity = "1";
+        passwordError.style.visibility = "visible";
+        passwordError.style.transition = "visibility 0s linear 0s, opacity 300ms";
         return false;
     }
 
