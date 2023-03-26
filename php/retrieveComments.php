@@ -4,8 +4,6 @@
     echo $coinId;
     $comments = retrieveComment($con, $coinId);
 
-    print_r($comments);
-
     $output = "";
 
     foreach($comments as $comment) {

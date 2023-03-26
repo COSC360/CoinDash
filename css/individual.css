@@ -95,3 +95,9 @@
     font-size: 1.4em;
     width: fit-content;
 }
+
+.reviews {
+    margin-top: 2.5em;
+    border: solid 1px var(--Grey-1);
+    padding: 2.5em;
+}
