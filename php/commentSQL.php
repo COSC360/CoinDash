@@ -9,7 +9,7 @@ function uploadComment($con, $userId, $coinId, $text, $parentId = null){
         exit();
     }
     echo "Hello";
-    mysqli_stmt_bind_param($commentStmt, "i", $userId, $coinId, $text, $parentId);
+    mysqli_stmt_bind_param($commentStmt, "iiis", $coinId, $parentId, $userId, $text);
     mysqli_stmt_execute($commentStmt);
     mysqli_stmt_close($commentStmt);
     echo "Hello";
