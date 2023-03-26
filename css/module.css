@@ -280,7 +280,8 @@ select {
 }
 
 .modal {
-    width: 20em;
+    z-index: 10;
+    width: 16em;
     height: fit-content;
     position: fixed !important;
     top: 200px;
@@ -325,7 +326,7 @@ select {
     background-color: var(--Black-1);
     padding: 0.5em 0;
     color: var(--White-1);
-    border-radius: 10px;
+    border-radius: 5px;
 }
 
 .modal #modal-cancel-btn {
