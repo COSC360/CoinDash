@@ -39,6 +39,11 @@
             $resultSet = $stmt->get_result(); // get the mysqli result
             $result = $resultSet->fetch_assoc();
 
+            if($userOremail == "" || $password == ""){
+                $statusMsg = 'Please enter all the required details !';
+                echo "<script>window.alert(\"".$statusMsg."\")</script>";
+                
+            }
             if($result != null){
                 if($result['userType'] == 'admin'){
                     header('location:admin.php');
