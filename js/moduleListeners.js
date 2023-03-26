@@ -43,7 +43,7 @@ fiatSelects.forEach(fiatSelect => {
                                     <p>1Y: ${coin.price_change_1yr.toFixed(2)}%</p>
                                 </div>
                             </div>
-                        </div>"
+                        </div>
                         `;
                 })
 
