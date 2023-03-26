@@ -39,15 +39,15 @@ include 'DBconnection.php';
 
                 if($email == "" || $username == "" || $password == "" || $verifyPassword == ""){
                     $statusMsg = 'Please enter all the required details !';
-                    echo $statusMsg;
+                    echo "<script>window.alert(".$statusMsg.")</script>"
                     
                 }elseif($password != $verifyPassword){
                     $statusMsg = 'Passwords do not match !';
-                    echo $statusMsg;
+                    echo "<script>window.alert(".$statusMsg.")</script>"
                     
                 }elseif($result != null){
                     $statusMsg = 'User already exists !';
-                    echo $statusMsg;
+                    echo "<script>window.alert(".$statusMsg.")</script>"
 
                    
                 }else{
