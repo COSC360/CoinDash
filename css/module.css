@@ -283,8 +283,7 @@ select {
     z-index: 10;
     width: 20em;
     height: fit-content;
-    position: fixed !important;
-    top: 200px;
+    top: 0;
     right: 0;
     border: solid 1px var(--Grey-1);
     border-radius: 10px;
