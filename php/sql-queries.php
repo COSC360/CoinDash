@@ -67,6 +67,35 @@ function retrieveCoinsByCategory($con, $fiat, $category, $sort, $perPage, $page)
     }
 }
 
+function retrieveCoinById($con, $coinId){
+    $sql = "SELECT * FROM coin WHERE id = ?";
+    //ORDER BY ? LIMIT ? OFFSET ?;
+
+    //WHERE id IN (SELECT coin_id FROM categoryCoin WHERE category = ?) LIMIT ? OFFSET ?
+    $stmt = mysqli_stmt_init($con);
+    
+    if (!mysqli_stmt_prepare($stmt, $sql)){
+        // TODO:
+        // header("location: REPLACE LATER");
+        exit();
+    }
+
+    // Set parameters for prepared statement
+    mysqli_stmt_bind_param($stmt, "i", $coinId);
+    
+    // Execute prepared statement
+    mysqli_stmt_execute($stmt);
+    
+    $results = mysqli_stmt_get_result($stmt);
+    if ($rows = $results -> fetch_all(MYSQLI_ASSOC)){
+        // mysqli_stmt_close();
+        return $rows;
+    } else {
+        // mysqli_stmt_close();
+        return false;
+    }
+}
+
 function retrievePossibleCategories($con){
 
     $sql = "SELECT DISTINCT category FROM coinCategory;";
@@ -93,6 +122,7 @@ function retrievePossibleCategories($con){
         return false;
     }
 }
+
 function uploadDashboard($con, $userId, $dashboardJSON){
 
     deleteDashboard($con, $userId);
