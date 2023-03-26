@@ -331,6 +331,7 @@ select {
     padding: 0.5em 0;
     color: var(--White-1);
     border-radius: 5px;
+    cursor: pointer;
 }
 
 .modal #modal-cancel-btn {
@@ -339,6 +340,7 @@ select {
     color: var(--Grey-1);
     background-color: transparent;
     border: none;
+    cursor: pointer;
 }
 
 .modal #modal-close-btn {
@@ -351,4 +353,5 @@ select {
     display: flex;
     align-items: center;
     justify-content: center;
+    cursor: pointer;
 }

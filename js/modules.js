@@ -1,4 +1,5 @@
 import { uploadDashboard } from "./uploadDashboard.js";
+import { setModuleHTML } from "./moduleListeners.js";
 
 var module_settings_btns = document.querySelectorAll(".module-settings-btn");
 var modules = document.querySelectorAll(".module");
@@ -9,6 +10,7 @@ var moduleModal = document.getElementById("module-modal");
 var closeModalBtn = document.getElementById("modal-close-btn");
 var cancelModalBtn = document.getElementById("modal-cancel-btn");
 var confirmModalBtn = document.getElementById("modal-confirm-btn");
+var currentModule = null;
 
 closeModalBtn.addEventListener("click", (e) => {
     moduleModal.classList.add("hide");
@@ -28,7 +30,15 @@ module_settings_btns.forEach(btn => {
     btn.addEventListener("click", (e) => {
         btn.parentNode.appendChild(moduleModal);
         moduleModal.classList.remove("hide");
+        currentModule = btn.parentNode;
     })
+})
+
+confirmModalBtn.addEventListener('click', (e) => {
+    var moduleObj = buildModule(currentModule);
+    var moduleGallery = document.querySelector("#" + currentModule.id + " .module-gallery");
+
+    setModuleHTML(moduleObj.fiat, moduleObj.category, moduleObj.sort, moduleGallery);
 })
 
 modules.forEach(module => {
