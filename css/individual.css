@@ -18,3 +18,9 @@
 .child-comments {
     margin-left: 3em;
 }
+
+.profile-picture {
+    aspect-ratio: 1;
+    width: 1em;
+    height: 1em;
+}

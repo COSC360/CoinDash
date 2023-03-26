@@ -24,7 +24,7 @@
         <div class="comment">
             <div class="main-comment">
                 <div class="comment-header">
-                    <img src="../images/profile-picture.png">
+                    <img src="../images/profile-picture.png" class="profile-picture">
                     <h4 class="user-name">Jason Ramos</p>
                 </div>
                 <p class="review-content">Lorem ipsum dolor sit amet consectetur. Arcu ornare quam sit lectus integer. Diam integer consequat sapien commodo velit. Sed lectus habitasse in bibendum justo turpis. Ultricies fames in nisl faucibus amet dignissim. Integer ipsum molestie a a vel. </p>
@@ -33,7 +33,7 @@
                 <div class="comment">
                     <div class="main-comment">
                         <div class="comment-header">
-                            <img src="../images/profile-picture.png">
+                            <img src="../images/profile-picture.png" class="profile-picture">
                             <h4 class="user-name">Jason Ramos</p>
                         </div>
                         <p class="review-content">Lorem ipsum dolor sit amet consectetur. Arcu ornare quam sit lectus integer. Diam integer consequat sapien commodo velit. Sed lectus habitasse in bibendum justo turpis. Ultricies fames in nisl faucibus amet dignissim. Integer ipsum molestie a a vel. </p>
@@ -47,7 +47,7 @@
         <div class="comment">
             <div class="main-comment">
                 <div class="comment-header">
-                    <img src="../images/profile-picture.png">
+                    <img src="../images/profile-picture.png" class="profile-picture">
                     <h4 class="user-name">Jason Ramos</p>
                 </div>
                 <p class="review-content">Lorem ipsum dolor sit amet consectetur. Arcu ornare quam sit lectus integer. Diam integer consequat sapien commodo velit. Sed lectus habitasse in bibendum justo turpis. Ultricies fames in nisl faucibus amet dignissim. Integer ipsum molestie a a vel. </p>
