@@ -6,7 +6,7 @@ console.log(fiatSelects);
 
 fiatSelects.forEach(fiatSelect => {
     fiatSelect.addEventListener('change', (e) => {
-        var newFiat = this.value;
+        var newFiat = fiatSelect.value;
         console.log(newFiat);
     })
 });
