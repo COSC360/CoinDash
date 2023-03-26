@@ -28,7 +28,7 @@ function retrieveAllCoins($con){
 
 function retrieveCoinsByCategory($con, $fiat, $category, $sort, $perPage, $page){
     
-    $sql = "SELECT symbol, name, img_url, ?, price_change_24H, price_change_7D, price_change_14D, price_change_30D, price_change_60D, price_change_200D, price_change_1yr FROM coin 
+    $sql = "SELECT symbol, name, img_url, ".$fiat.", price_change_24H, price_change_7D, price_change_14D, price_change_30D, price_change_60D, price_change_200D, price_change_1yr FROM coin 
            WHERE id IN (SELECT coin FROM coinCategory WHERE category = ?) ORDER BY ? LIMIT ? OFFSET ?;";
     //ORDER BY ? LIMIT ? OFFSET ?;
 
@@ -44,7 +44,7 @@ function retrieveCoinsByCategory($con, $fiat, $category, $sort, $perPage, $page)
     $offset = ($page - 1) * $perPage;
 
     // Set parameters for prepared statement
-    mysqli_stmt_bind_param($stmt, "sssii", $fiat, $category, $sort, $perPage, $offset);
+    mysqli_stmt_bind_param($stmt, "ssii", $category, $sort, $perPage, $offset);
     
     // Execute prepared statement
     mysqli_stmt_execute($stmt);
