@@ -1,10 +1,10 @@
 
 
-function validateLoginForm(){
-    var formElement = document.forms["LoginForm"];
-    formElement.onsubmit = function (e) { e.preventDefault(); FormCheck(); }
-    // formElement.onchange = function (e) { resetElement(e); }
-}
+// function validateLoginForm(){
+//     var formElement = document.forms["LoginForm"];
+//     formElement.onsubmit = function (e) { e.preventDefault(); FormCheck(); }
+//     // formElement.onchange = function (e) { resetElement(e); }
+// }
 
 // function addErrorMessage(id, msg){
 //     let usernameError = document.getElementById("usernameError");
@@ -17,7 +17,7 @@ function validateLoginForm(){
 //         passwordError.appendChild(errorMsg);
 //     }
 // }
-function FormCheck() {
+function validateLoginForm() {
     let usernameOrEmail = document.forms["LoginForm"]["user-email"].value;
     let password = document.forms["LoginForm"]["password"].value;
     let usernameError = document.getElementById("usernameError");
@@ -53,10 +53,11 @@ function FormCheck() {
         passwordError.style.transition = "visibility 0s linear 0s, opacity 300ms";
         // msg = "invalid password"
         // addErrorMessage(passwordError, msg);
-        
-    }else{
-        document.forms["LoginForm"].submit();
     }
+    
+    // }else{
+    //     document.forms["LoginForm"].submit();
+    // }
 
 
   }
