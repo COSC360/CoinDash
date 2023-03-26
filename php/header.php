@@ -20,9 +20,7 @@
                 <img src="../svgs/arrow-down.svg">
             </div>
             <div class="horizontal-container fit-width">
-                <p>Hi, Jason</p>
-                <img src="../images/profile-picture.png">
-                <img src="../svgs/arrow-down.svg">
+                <p>About Us</p>
             </div>
         </div>
     </div>
