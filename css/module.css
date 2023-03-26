@@ -304,12 +304,15 @@ select {
     border: none;
     display: flex;
     flex-direction: column;
-    gap: 0.5em;
+    gap: 1em;
 }
 
 .modal form fieldset {
     border: none;
     padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
 }
 
 .modal form select {
