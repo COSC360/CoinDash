@@ -108,18 +108,37 @@ function validateRegisterForm() {
 
   }
 
-// function UsernameErrorClearFunction(){
-//         let usernameError = document.getElementById("usernameError");
-//         usernameError.style.opacity = "0";
-//         usernameError.style.visibility = "hidden";
+function UsernameErrorClearFunction(){
+        let usernameError = document.getElementById("usernameError");
+        usernameError.style.opacity = "0";
+        usernameError.style.visibility = "hidden";
         
-// }
+}
 
-// function PasswordErrorClearFunction(){
-//         let passwordError = document.getElementById("passwordError");
-//         passwordError.style.opacity = "0";
-//         passwordError.style.visibility = "hidden";
-// }
+function PasswordErrorClearFunction(){
+        let passwordError = document.getElementById("passwordError");
+        passwordError.style.opacity = "0";
+        passwordError.style.visibility = "hidden";
+}
+
+function EmailErrorClearFunction(){
+    let usernameError = document.getElementById("emailError");
+    usernameError.style.opacity = "0";
+    usernameError.style.visibility = "hidden";
+    
+}
+
+function VerifyPasswordErrorClearFunction(){
+    let passwordError = document.getElementById("verifyPasswordError");
+    passwordError.style.opacity = "0";
+    passwordError.style.visibility = "hidden";
+}
+
+function ImageUploadErrorClearFunction(){
+    let passwordError = document.getElementById("imageUploadError");
+    passwordError.style.opacity = "0";
+    passwordError.style.visibility = "hidden";
+}
 
 function ErrorClearFunction(){
     let usernameError = document.getElementById("usernameError");

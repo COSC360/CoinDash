@@ -101,22 +101,22 @@ include 'DBconnection.php';
                             <div class="item-1">
                                 <label>Username <span style="color: red;">*</span></label><br>
                                 <p id = "usernameError"><i class="fa-solid fa-circle-exclamation"></i></p>                   
-                                <input type = "text" name = "username"  id = "username" placeholder="What Should We Call You?">
+                                <input type = "text" name = "username"  id = "username" placeholder="What Should We Call You?"  onkeydown="UsernameErrorClearFunction()">
                             </div>
                             <div class="item-2">
                                 <label>Email <span style="color: red;">*</span></label><br>
                                 <p id = "emailError"><i class="fa-solid fa-circle-exclamation"></i></p>
-                                <input type = "email" name = "email"  id = "email" placeholder="What's Your Email?">
+                                <input type = "email" name = "email"  id = "email" placeholder="What's Your Email?" onkeydown="EmailErrorClearFunction()">
                             </div>
                             <div class="item-3">
                                 <label>Password <span style="color: red;">*</span></label><br>
                                 <p id = "passwordError"><i class="fa-solid fa-circle-exclamation"></i></p>                                   
-                                <input type = "password" name = "password"  id = "password" placeholder="What’s Your Password?">
+                                <input type = "password" name = "password"  id = "password" placeholder="What’s Your Password?" onkeydown="PasswordErrorClearFunction()">
                             </div>
                             <div class="item-4">
                                 <label>Verify Password <span style="color: red;">*</span></label><br>
                                 <p id = "verifyPasswordError"><i class="fa-solid fa-circle-exclamation"></i></p>
-                                <input type = "password" name = "verifyPassword"  id = "verifyPassword" placeholder="Confirm Password?">
+                                <input type = "password" name = "verifyPassword"  id = "verifyPassword" placeholder="Confirm Password?" onkeydown="VerifyPasswordErrorClearFunction()">
                             </div>
                             <div class="item-5">
                                 <label>Coming From</label><br>
@@ -131,10 +131,10 @@ include 'DBconnection.php';
                                 <!-- <button id="upload-file-btn" onclick= "document.getElementById('getFile').click()">Upload File <img src="svgs/arrow-right-short.svg"></button>
                                 <input type='file' id="getFile" style="display:none"> -->
                                 <p id = "imageUploadError"><i class="fa-solid fa-circle-exclamation"></i></p>
-                                <input type="file" name="img"  id="img" accept="image/*">
+                                <input type="file" name="img"  id="img" accept="image/*" onkeydown="ImageUploadErrorClearFunction()">
                             </div>
                             <div class="item-7">
-                                <input type="reset" value="Reset Form">
+                                <input type="reset" value="Reset Form"  onclick="ErrorClearFunction()">
                             </div>
                             <div class = "item-8">
                                 <input type="submit" value="Get Started !">
