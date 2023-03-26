@@ -1,6 +1,6 @@
 
 
-function validateForm(){
+function validateLoginForm(){
     var formElement = document.forms["LoginForm"];
     formElement.onsubmit = function (e) { e.preventDefault(); FormCheck(); }
     // formElement.onchange = function (e) { resetElement(e); }
