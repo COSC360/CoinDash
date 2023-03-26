@@ -47,15 +47,13 @@ function retrieveCoinsByCategory($con, $fiat, $category, $sort, $perPage, $page)
 
     $results = mysqli_stmt_get_result($stmt);
 
-    if ($rows = $results -> fetch_all(MYSQL_ASSOC)){
+    if ($rows = $results -> fetch_all(MYSQLI_ASSOC)){
         // mysqli_stmt_close();
         return $rows;
     } else {
-        echo "Hello";
         // mysqli_stmt_close();
         return false;
     }
-
 }
 
 
