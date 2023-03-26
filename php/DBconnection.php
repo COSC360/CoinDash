@@ -8,4 +8,8 @@ $dbName     = "db_83864363";
 // Create database connection  
 $con = new mysqli($dbHost, $dbUsername, $dbPassword, $dbName);  
   
+if (mysqli_connect_errno()){
+    die(mysqli_connect_errno());
+}
+
 ?>
