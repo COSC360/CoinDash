@@ -4,16 +4,16 @@
 <head>
     <meta charset="utf-8" />
     <title>Main Dashboard</title>
-    <link rel="stylesheet" href="font/helvetica-now-display/stylesheet.css">
-    <link rel="stylesheet" href="css/var.css">
-    <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/dashboard.css">
-    <link rel="stylesheet" href="css/header-footer.css">
-    <link rel="stylesheet" href="css/module.css">
+    <link rel="stylesheet" href="../font/helvetica-now-display/stylesheet.css">
+    <link rel="stylesheet" href="../css/var.css">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/dashboard.css">
+    <link rel="stylesheet" href="../css/header-footer.css">
+    <link rel="stylesheet" href="../css/module.css">
     <script src="https://kit.fontawesome.com/e6e0351429.js" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script src="js/jquery-3.1.1.min.js"></script>
-    <script src="js/dashboard.js"></script>
+    <script src="../js/jquery-3.1.1.min.js"></script>
+    <script src="../js/dashboard.js"></script>
 </head>
 
 <body>
@@ -130,7 +130,7 @@
         include "php/edit.php";
         include "php/footer.php";
     ?>
-    <script type="module" src="js/modules.js"></script>
+    <script type="module" src="../js/modules.js"></script>
     <!-- <script type="module" src="js/uploadDashboard.js"></script> -->
 </body>
 </html>
