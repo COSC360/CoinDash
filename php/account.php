@@ -1,4 +1,5 @@
 <?php
+$current_session_id = session_id();
 session_start();
 
 $email= $_POST['email'];
@@ -32,26 +33,8 @@ $password = $_POST['password'];
     <script src="js/account.js"></script>
 </head>
 <body>
-<div class="main-container">
-        <header class="header-container">
-            <div class="logo">
-                <img src="images/sitelogo.png" style="float: left;">
-            </div>
-            <nav>
-                <a href="#">Community</a>
-                <a href="#">Help</a>
-            </nav>
-            <div class="settings container">
-                <div class="horizontal-container fit-width" style="margin-right: 2em;">
-                    <p>English-US</p>
-                    <img src="images/canada-flag.png">
-                    <img src="svgs/arrow-down.svg">
-                </div>
-                <div class="horizontal-container fit-width">
-                    <p>Sign In / Sign Up</p>
-                </div>
-            </div>
-        </header>
+<?php include 'account-header.php';?>
+    <div class="main-container">
         <div class = "user-account-container">
             <div class="user-account-info">
                 <h2>Account Settings</h2>
