@@ -3,11 +3,11 @@
     include "sql-queries.php";
 
     $coinId = $_GET["coinId"];
-
+    echo "Hello";
     $coin = retrieveCoinById($con, $coin);
-
+    print_r($coin);
     $coin = $coin[0];
-
+    
     print_r($coin);
     // echo "
     // <div class=\"product-card\">
