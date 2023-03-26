@@ -1,6 +1,6 @@
 
 
-function validateLoginForm() {
+window.onload = function validateLoginForm() {
     let username = document.getElementById("username");
     let password = document.getElementById("password");
     let email = document.getElementById("email");
@@ -144,5 +144,4 @@ function ErrorClearFunction(){
     imageUploadError.style.visibility = "hidden";
 }
 
-window.onload = validateLoginForm();
 
