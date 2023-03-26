@@ -56,7 +56,7 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent; */
     background-image: 
-    linear-gradient(to right, rgb(69, 71, 71),rgb(57, 57, 58),rgb(41, 41, 41),rgb(35, 36, 36),rrgb(29, 29, 29)rgb(27, 27, 27)); 
+    linear-gradient(to right, rgb(0, 195, 255),rgb(0, 140, 255),rgb(0, 110, 255),rgb(0, 119, 255),rgb(0, 204, 255),rgb(0, 162, 255)); 
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;  
     animation: rainbow-animation 80s linear infinite;
@@ -171,10 +171,10 @@
 
 .login-box p{
   position: absolute;
-  margin-top: 0.75em;
+  margin-top: 0.5em;
   left: 33em;
-  opacity: 0;
-  visibility: hidden;
+  /* opacity: 0;
+  visibility: hidden; */
   color: rgb(255, 0, 0);
   z-index: 10;
 }
@@ -361,7 +361,7 @@ select{
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent; */
   background-image: 
-  linear-gradient(to right, rgb(69, 71, 71),rgb(57, 57, 58),rgb(41, 41, 41),rgb(35, 36, 36),rrgb(29, 29, 29)rgb(27, 27, 27)); 
+  linear-gradient(to right, rgb(0, 195, 255),rgb(0, 140, 255),rgb(0, 110, 255),rgb(0, 119, 255),rgb(0, 204, 255),rgb(0, 162, 255)); 
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;  
   animation: rainbow-animation 80s linear infinite;
