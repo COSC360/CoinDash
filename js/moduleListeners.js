@@ -32,6 +32,7 @@ function setModuleHTML(fiat, category, sort, target){
     $.ajax({
         url: "./retrieveModuleItems.php",
         type: "POST",
+        async: true,
         data: {fiat: fiat, category: category, sort: sort},
         success: function(response) {
             var coinData = JSON.parse(response);
