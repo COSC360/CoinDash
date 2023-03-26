@@ -49,9 +49,9 @@ include 'DBconnection.php';
                 }else{
                     // Insert image content into database   
                     $stmt = $con->prepare("INSERT INTO `user_auth` (`Username`, `Email`, `Password`,`comingFrom`,`profilePicture`,`userType`) VALUES (?,?,?,?,?,?)");
-                    $stmt->bind_param("ssssss",$username,$email,$password,$selectedOption,$image,$userType); 
+                    $stmt->bind_param("ssssbs",$username,$email,$password,$selectedOption,$image,$userType); 
                     $stmt->execute();
-                    header('location:signIn.php');
+                    header('location: /php/signIn.php');
                     $stmt->close();
                     $con->close();
                 }
@@ -147,7 +147,6 @@ include 'DBconnection.php';
         </div>
         </div>
     </main>
-
 </body>
 
 </html>
