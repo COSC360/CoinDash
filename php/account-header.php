@@ -22,7 +22,7 @@ session_start();
                 <a href="../php/logout.php"><p>Logout</p></a>
             </div>
             <div class="horizontal-container fit-width">
-                <p>Hi, <?php echo $_SESSION['Id']?></p>
+                <p>Hi, <?php echo $_SESSION['user']?></p>
                 <img src="../images/profile-picture.png">
                 <img src="../svgs/arrow-down.svg">
             </div>
