@@ -40,7 +40,7 @@ include 'DBconnection.php';
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Project 360</title>
-    <link rel="stylesheet" href="font/helvetica-now-display/stylesheet.css">
+    <link rel="stylesheet" href="../font/helvetica-now-display/stylesheet.css">
     <link rel="stylesheet" href="../css/var.css">
     <link rel="stylesheet" href="../css/reset.css">
     <link rel="stylesheet" href="../css/dashboard.css">
@@ -81,7 +81,7 @@ include 'DBconnection.php';
                         
                     </div>
                     <div class="item-3">
-                        <input type="reset" value="Reset Form">
+                        <input type="reset" value="Reset Form" onclick="ErrorClearFunction()">
                         <!-- <div class="box-footer"> -->
                             <!-- <input type="reset" value="Reset Form">
                             <a href="https://cosc360.ok.ubc.ca/suyash06/project-JasonR24/reset-password.php"><p>Forgot Password?</p></a>

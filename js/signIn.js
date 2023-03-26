@@ -27,22 +27,25 @@ function validateLoginForm() {
         return false;  
 
     }else if(password ==""){
-        $msg = "Password empty"
-        addErrorMessage(passwordError, msg);
         passwordError.style.opacity = "1";
         passwordError.style.visibility = "visible";
         passwordError.style.transition = "visibility 0s linear 0s, opacity 300ms";
+        // $msg = "Password empty"
+        // addErrorMessage(passwordError, msg);
         return false;  
 
     }else if(usernameOrEmail ==""){
-        $msg = "Username/Email empty"
-        addErrorMessage(usernameError, msg);
         usernameError.style.opacity = "1";
         usernameError.style.visibility = "visible";
         usernameError.style.transition = "visibility 0s linear 0s, opacity 300ms";
+        // $msg = "Username/Email empty"
+        // addErrorMessage(usernameError, msg);
         return false;  
 
     }else if(!passReg.test(password)){
+        passwordError.style.opacity = "1";
+        passwordError.style.visibility = "visible";
+        passwordError.style.transition = "visibility 0s linear 0s, opacity 300ms";
         // msg = "invalid password"
         // addErrorMessage(passwordError, msg);
         return false;
@@ -59,5 +62,14 @@ function PasswordErrorClearFunction(){
         let passwordError = document.getElementById("passwordError");
         passwordError.style.opacity = "0";
         passwordError.style.visibility = "hidden";
+}
+
+function ErrorClearFunction(){
+    let passwordError = document.getElementById("passwordError");
+    let usernameError = document.getElementById("usernameError");
+    passwordError.style.opacity = "0";
+    passwordError.style.visibility = "hidden";
+    usernameError.style.opacity = "0";
+    usernameError.style.visibility = "hidden";
 }
 

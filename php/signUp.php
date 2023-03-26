@@ -70,7 +70,7 @@ include 'DBconnection.php';
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Project 360</title>
-    <link rel="stylesheet" href="font/helvetica-now-display/stylesheet.css">
+    <link rel="stylesheet" href="../font/helvetica-now-display/stylesheet.css">
     <link rel="stylesheet" href="../css/var.css">
     <link rel="stylesheet" href="../css/reset.css">
     <link rel="stylesheet" href="../css/dashboard.css">
@@ -118,7 +118,7 @@ include 'DBconnection.php';
                                 <input type = "password" name = "verifyPassword" placeholder="Confirm Password?">
                             </div>
                             <div class="item-5">
-                                <label  style="margin-bottom:0.5em">Coming From</label><br>
+                                <label>Coming From</label><br>
                                 <select name="selectionMenu" id="selectionMenu">
                                     <option value="Google"  selected="selected">Google</option>
                                     <option value="Friend">Friend</option>
