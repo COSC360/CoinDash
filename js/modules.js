@@ -38,15 +38,11 @@ module_settings_btns.forEach(btn => {
 
 confirmModalBtn.addEventListener('click', (e) => {
     e.preventDefault();
-    var moduleObj = buildModule(currentModule);
     var moduleGallery = document.querySelector("#" + currentModule.id + " .module-gallery");
-    console.log(moduleObj.fiat);
-    console.log(moduleObj.category);
-    console.log(moduleObj.sort);
-    console.log(moduleForm);
-    console.log(moduleForm["fiat"]);
-    console.log(moduleForm.fiat);
-    setModuleHTML(moduleObj.fiat, moduleObj.category, moduleObj.sort, moduleGallery);
+    var fiat = moduleForm.fiat.value;
+    var category = moduleForm.category.value;
+    var sort = moduleForm.sort.value;
+    setModuleHTML(fiat, category, sort, moduleGallery);
 })
 
 modules.forEach(module => {
