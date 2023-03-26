@@ -6,6 +6,17 @@ var editElements = document.querySelectorAll(".edit-ui");
 var toggleEditBtn = document.getElementById("view-edit-btn");
 var saveEditBtn = document.getElementById("save-edit-btn");
 var moduleModal = document.getElementById("module-modal");
+var closeModalBtn = document.getElementById("modal-close-btn");
+var cancelModalBtn = document.getElementById("modal-cancel-btn");
+var confirmModalBtn = document.getElementById("modal-confirm-btn");
+
+closeModalBtn.addEventListener("click", (e) => {
+    moduleModal.classList.add("hide");
+})
+
+cancelModalBtn.addEventListener("click", (e) => {
+    moduleModal.classList.add("hide");
+})
 
 module_settings_btns.forEach(btn => {
     // Grab connectedModule to be moved
@@ -16,10 +27,7 @@ module_settings_btns.forEach(btn => {
 
     btn.addEventListener("click", (e) => {
         btn.parentNode.appendChild(moduleModal);
-        // var btnRect = btn.getBoundingClientRect();
         moduleModal.classList.remove("hide");
-        // moduleModal.style.left = (btnRect.left + 20) + "px";
-        // moduleModal.style.top = btnRect.top + "px";
     })
 })
 

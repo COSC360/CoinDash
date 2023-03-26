@@ -334,7 +334,7 @@ select {
 }
 
 .modal #modal-cancel-btn {
-    font-size: 1.2em;
+    font-size: 1em;
     width: 100%;
     color: var(--Grey-1);
     background-color: transparent;
