@@ -2,7 +2,7 @@
     <div class="fill-container">
         <div class="left">
             <p class="logo">
-                <img src="../images/sitelogo.png" style = "position:relative; height:40px; width: 40px">
+                <img src="../images/sitelogo.png" style = "position:relative; height:40px; width: 40px; margin-left: 0.5em">
             </p>
         </div>
         <div class="middle">
