@@ -17,7 +17,7 @@ module_settings_btns.forEach(btn => {
     btn.addEventListener("click", (e) => {
         btn.parentNode.appendChild(moduleModal);
         // var btnRect = btn.getBoundingClientRect();
-        // moduleModal.classList.remove("hide");
+        moduleModal.classList.remove("hide");
         // moduleModal.style.left = (btnRect.left + 20) + "px";
         // moduleModal.style.top = btnRect.top + "px";
     })
