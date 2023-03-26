@@ -20,7 +20,7 @@
     ?>
     <article class="panel bordered-section reviews">
         <h2>Comments</h2>
-        <hr>
+        <hr class="medium-spacing">
         <div class="comment">
             <div class="main-comment">
                 <div class="comment-header">
@@ -43,7 +43,7 @@
                 </div>
             </div>
         </div>
-        <hr>
+        <hr class="medium-spacing">
         <div class="comment">
             <div class="main-comment">
                 <div class="comment-header">
@@ -52,7 +52,6 @@
                 </div>
                 <p class="review-content">Lorem ipsum dolor sit amet consectetur. Arcu ornare quam sit lectus integer. Diam integer consequat sapien commodo velit. Sed lectus habitasse in bibendum justo turpis. Ultricies fames in nisl faucibus amet dignissim. Integer ipsum molestie a a vel. </p>
             </div>
-            <p class="review-content">Lorem ipsum dolor sit amet consectetur. Arcu ornare quam sit lectus integer. Diam integer consequat sapien commodo velit. Sed lectus habitasse in bibendum justo turpis. Ultricies fames in nisl faucibus amet dignissim. Integer ipsum molestie a a vel. </p>
             <div class="child-comments">
             </div>
         </div>
