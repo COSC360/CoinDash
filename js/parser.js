@@ -1,5 +1,4 @@
 function buildDashboard(dashboardDom){
-    console.log(dashboardDom);
     var blocks = [];
 
     var children = Array.from(dashboardDom.children);
@@ -13,7 +12,6 @@ function buildDashboard(dashboardDom){
 }
 
 function buildBlock(blockDom) {
-    console.log(blockDom);
     var modules = []
 
     var children = Array.from(blockDom.children);
@@ -31,6 +29,9 @@ function buildModule(moduleDom){
     var fiat = fiatDom.options[fiatDom.selectedIndex].value;
     var sortDom = document.querySelector("#" + domId + " .sort"); 
     var sort = sortDom.options[sortDom.selectedIndex].value;
+    console.log(category);
+    console.log(fiat);
+    console.log(sort);
     return new Module(category, fiat, sort);
 }
 
