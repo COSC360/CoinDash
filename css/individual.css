@@ -47,6 +47,18 @@
     margin-top: 0.75em;
 }
 
+.full-card .product-card {
+    display: flex;
+}
+
+.full-card .product-image-mask {
+    flex-grow: 1;
+}
+
+.full-card .product-info-container {
+    flex-grow: 3;
+}
+
 /* .full-card .product-card {
     display: flex;
     justify-content: space-between;
