@@ -1,3 +1,7 @@
+<?php
+session_start();
+
+?>
 <header class="container">
     <div class="fill-container">
         <div class="left">
@@ -21,6 +25,8 @@
             </div>
             <div class="horizontal-container fit-width">
                 <p>Hi, <?php echo $_SESSION['user']?></p>
+                <img src="../images/profile-picture.png">
+                <img src="../svgs/arrow-down.svg">
             </div>
         </div>
     </div>

@@ -18,7 +18,7 @@
 
 <body>
     <?php
-        include "header.php";
+        include "dashboard-header.php";
     ?>
     <main>
         <article class="panel page-title">
