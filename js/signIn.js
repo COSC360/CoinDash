@@ -1,15 +1,15 @@
 
-// function addErrorMessage(id, msg){
-//     let usernameError = document.getElementById("usernameError");
-//     let passwordError = document.getElementById("passwordError");
+function addErrorMessage(id, msg){
+    let usernameError = document.getElementById("usernameError");
+    let passwordError = document.getElementById("passwordError");
     
-//     var errorMsg = document.createTextNode(msg);
-//     if(id = usernameError){
-//         usernameError.appendChild(errorMsg);
-//     }else if(id = passwordError){
-//         passwordError.appendChild(errorMsg);
-//     }
-// }
+    var errorMsg = document.createTextNode(msg);
+    if(id = usernameError){
+        usernameError.appendChild(errorMsg);
+    }else if(id = passwordError){
+        passwordError.appendChild(errorMsg);
+    }
+}
 function validateLoginForm() {
     let usernameOrEmail = document.forms["LoginForm"]['user-email'].value;
     let password = document.forms["LoginForm"]['password'].value;
@@ -32,17 +32,17 @@ function validateLoginForm() {
         passwordError.style.opacity = "1";
         passwordError.style.visibility = "visible";
         passwordError.style.transition = "visibility 0s linear 0s, opacity 300ms";
-        return false;
-        // $msg = "Password empty"
-        // addErrorMessage(passwordError, msg);  
+        msg = "Password empty"
+        addErrorMessage(passwordError, msg);
+        return false;  
     }
     if(usernameOrEmail ==""){
         usernameError.style.opacity = "1";
         usernameError.style.visibility = "visible";
         usernameError.style.transition = "visibility 0s linear 0s, opacity 300ms";
+        msg = "Username/Email empty"
+        addErrorMessage(usernameError, msg);
         return false;
-        // $msg = "Username/Email empty"
-        // addErrorMessage(usernameError, msg);
     }
 
     if(!passReg.test(password)){        
@@ -57,8 +57,6 @@ function validateLoginForm() {
         passwordError.style.visibility = "visible";
         passwordError.style.transition = "visibility 0s linear 0s, opacity 300ms";
         return false;
-        // $msg = "Username/Email empty"
-        // addErrorMessage(usernameError, msg);
     }
 
 
@@ -67,8 +65,6 @@ function validateLoginForm() {
         usernameError.style.visibility = "visible";
         usernameError.style.transition = "visibility 0s linear 0s, opacity 300ms";
         return false;
-        // $msg = "Username/Email empty"
-        // addErrorMessage(usernameError, msg);
     }
   }
 
