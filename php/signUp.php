@@ -90,7 +90,7 @@
 ?>
 <?php include 'header.php';?>
     <main>
-        <div class = "auth-container">
+        <div class = "panel auth-container">
             <div class="register-info">
                 <h1>Home/</h1>
                 <h2>Sign Up</h2>

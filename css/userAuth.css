@@ -18,7 +18,7 @@
   padding: 2em;
   background-color: var(--White-1);
 } */
-.login-container{
+.auth-container{
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -365,7 +365,7 @@ select{
 }
 
 .register-info{
-  width: fit-content;
+  max-width: 40em;
 }
 
 .register-info h1{
@@ -388,7 +388,7 @@ select{
 }
 
 .register-info p{
-  width: 65%;
+  width: fit-content;
   margin-top: 1.5em;
   font-size: 1.25em;
   font-weight: 400;
