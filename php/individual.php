@@ -58,9 +58,14 @@
                 <p class="review-content">Lorem ipsum dolor sit amet consectetur. Arcu ornare quam sit lectus integer. Diam integer consequat sapien commodo velit. Sed lectus habitasse in bibendum justo turpis. Ultricies fames in nisl faucibus amet dignissim. Integer ipsum molestie a a vel. </p>
             </div>
             <i class="fa-regular fa-comment-dots fa-xl comment-btn"></i>
-            <p>
-                <input type="text" class="comment-input">
-            </p>
+            <form action="post">
+                <p>
+                    <input type="text" class="comment-input">
+                </p>
+                <p>
+                    <button type="submit">Reply</button>
+                </p>
+            </form>
             <div class="child-comments">
             </div>
         </div>
