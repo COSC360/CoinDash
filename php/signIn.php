@@ -1,37 +1,3 @@
-<?php
-session_start();
-// error_reporting(E_ALL);
-// init_set('display_errors','1');
-// include_once('ValidationResult.class.php');
-
-
-include 'DBconnection.php';
-    $userOremail= $_GET['user-email'];
-    $password = $_GET['password'];
-    if ($con->connect_error) {
-        die("Connection failed: " . $con->connect_error);
-    }else{
-        $stmt = $con->prepare("SELECT * FROM `user_auth` WHERE  `Email` = ? && `Password` = ? || `Username` = ? && `Password` = ? ");
-        $stmt->bind_param("ssss", $userOremail,$password,$userOremail,$password); 
-        $stmt->execute();
-        $resultSet = $stmt->get_result(); // get the mysqli result
-        $result = $resultSet->fetch_assoc();
-
-        if($result != null){
-            if($result['userType'] == 'admin'){
-                header('location:admin.php');
-
-            }elseif($result['userType'] == 'user'){
-                header('location:account.php');
-            }
-        }
-    }
-
-    $_SESSION["user"] = $_GET['user-email'];
-    $_SESSION["email"] = $result['Email'];
-    $_SESSION["Id"] = $result['Id'];
-    $_SESSION["pfp"] = $result['profilePicture'];
-?>
 <!DOCTYPE html>
 <html>
 
@@ -53,6 +19,44 @@ include 'DBconnection.php';
 </head>
 
 <body>
+<?php
+    session_start();
+    // error_reporting(E_ALL);
+    // init_set('display_errors','1');
+    // include_once('ValidationResult.class.php');
+
+
+    include 'DBconnection.php';
+    $statusMsg = '';
+        $userOremail= $_GET['user-email'];
+        $password = $_GET['password'];
+        if ($con->connect_error) {
+            die("Connection failed: " . $con->connect_error);
+        }else{
+            $stmt = $con->prepare("SELECT * FROM `user_auth` WHERE  `Email` = ? && `Password` = ? || `Username` = ? && `Password` = ? ");
+            $stmt->bind_param("ssss", $userOremail,$password,$userOremail,$password); 
+            $stmt->execute();
+            $resultSet = $stmt->get_result(); // get the mysqli result
+            $result = $resultSet->fetch_assoc();
+
+            if($result != null){
+                if($result['userType'] == 'admin'){
+                    header('location:admin.php');
+
+                }elseif($result['userType'] == 'user'){
+                    header('location:account.php');
+                }
+            }else if($result == null){
+                $statusMsg = 'User does not exist !';
+                echo "<script>window.alert(\"".$statusMsg."\")</script>";
+            }
+        }
+
+        $_SESSION["user"] = $_GET['user-email'];
+        $_SESSION["email"] = $result['Email'];
+        $_SESSION["Id"] = $result['Id'];
+        $_SESSION["pfp"] = $result['profilePicture'];
+    ?>
 <?php include 'header.php';?>
 <main>  
     <div class="main">
