@@ -33,6 +33,7 @@
         <article id="dashboard">
             <?php 
                 // include "retrieveModuleItems.php";
+                include "moduleModal.php";
                 include "modules.php";
                 include "utils.php";
 
@@ -60,7 +61,7 @@
                                     <div class=\"dropdowns\">
                                         <select class=\"dropdown fiat\">";
                                             for ($i = 0; $i < sizeof($fiats); $i++){
-                                                echo "<option value=".$fiats[$i]." ".($fiats[$i] == $dashboardModules[$currentCount]["fiat"] ? 'selected' : '').">".$fiatLabels[$i]."</option>";
+                                                echo "<option value=\"".$fiats[$i]."\" ".($fiats[$i] == $dashboardModules[$currentCount]["fiat"] ? 'selected' : '').">".$fiatLabels[$i]."</option>";
                                             }
                         echo           "</select>
                                         <select class=\"dropdown sort\">";
