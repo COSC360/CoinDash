@@ -77,8 +77,9 @@
 }
 
 .full-card .price-trend-container {
-    grid-template-columns: repeat(auto-fit, minmax(13.5em, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(12em, 1fr));
 }
+
 .full-card .price-trend-container p {
     font-size: 1.4em;
 }
@@ -91,6 +92,12 @@
 }
 
 .current-price-container strong {
-    font-size: 1.2em;
+    font-size: 1.4em;
     width: fit-content;
+}
+
+.reviews {
+    margin-top: 2.5em;
+    border: solid 1px var(--Grey-1);
+    padding: 2.5em;
 }
