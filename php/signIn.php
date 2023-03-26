@@ -54,25 +54,7 @@ include 'DBconnection.php';
 
 <body>
     <div class="main-container">
-        <header class="header-container">
-            <div class="logo">
-                <img src="images/sitelogo.png" style="float: left;">
-            </div>
-            <nav>
-                <a href="https://cosc360.ok.ubc.ca/suyash06/project-JasonR24/community.php">Community</a>
-                <a href="https://cosc360.ok.ubc.ca/suyash06/project-JasonR24/help.php">Help</a>
-            </nav>
-            <div class="settings container">
-                <div class="horizontal-container fit-width" style="margin-right: 2em;">
-                    <p>English-US</p>
-                    <img src="images/canada-flag.png">
-                    <img src="svgs/arrow-down.svg">
-                </div>
-                <div class="horizontal-container fit-width">
-                    <p>Sign In / Sign Up</p>
-                </div>
-            </div>
-        </header>
+        <?php include 'header.php';?>
         <div class = "auth-container">
             <div class="login-info">
                 <h1>Home/</h1>
@@ -121,6 +103,7 @@ include 'DBconnection.php';
             </div>            
         </div>
     </div>
+    <?php include 'footer.php';?>
 </body>
 
 </html>
