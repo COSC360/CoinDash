@@ -54,26 +54,29 @@ function validateLoginForm() {
 
   }
 
-function UsernameErrorClearFunction(){
-        let usernameError = document.getElementById("usernameError");
-        usernameError.style.opacity = "0";
-        usernameError.style.visibility = "hidden";
+// function UsernameErrorClearFunction(){
+//         let usernameError = document.getElementById("usernameError");
+//         usernameError.style.opacity = "0";
+//         usernameError.style.visibility = "hidden";
         
-}
+// }
 
-function PasswordErrorClearFunction(){
-        let passwordError = document.getElementById("passwordError");
-        passwordError.style.opacity = "0";
-        passwordError.style.visibility = "hidden";
-}
+// function PasswordErrorClearFunction(){
+//         let passwordError = document.getElementById("passwordError");
+//         passwordError.style.opacity = "0";
+//         passwordError.style.visibility = "hidden";
+// }
 
 function ErrorClearFunction(){
-    let passwordError = document.getElementById("passwordError");
     let usernameError = document.getElementById("usernameError");
+    let passwordError = document.getElementById("passwordError");
+
     passwordError.style.opacity = "0";
     passwordError.style.visibility = "hidden";
+
     usernameError.style.opacity = "0";
     usernameError.style.visibility = "hidden";
+
 }
 
 window.onload = validateLoginForm();
