@@ -1,4 +1,5 @@
 function buildDashboard(dashboardDom){
+    console.log(dashboardDom);
     var blocks = [];
 
     var children = Array.from(dashboardDom.children);
@@ -10,6 +11,7 @@ function buildDashboard(dashboardDom){
 }
 
 function buildBlock(blockDom) {
+    console.log(blockDom);
     var modules = []
 
     var children = Array.from(blockDom.children);
@@ -22,7 +24,6 @@ function buildBlock(blockDom) {
 
 function buildModule(moduleDom){
     var domId = moduleDom.id;
-    console.log(moduleDom);
     var category = document.querySelector("#" + domId + " .api-category").innerText;
     var fiatDom = document.querySelector("#" + domId + " .fiat");
     var fiat = fiatDom.options[fiatDom.selectedIndex].value;
