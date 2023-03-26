@@ -127,7 +127,6 @@ select {
 
 .product-card {
     min-width: 12em;
-    max-width: 20em;
     height: calc(100%-1px);
     overflow: hidden;
     border: 1px solid var(--White-3);
