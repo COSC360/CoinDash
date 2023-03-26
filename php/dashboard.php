@@ -32,7 +32,8 @@
         </article>
         <article id="dashboard">
             <?php 
-                // include "retrieveModuleItems.php";
+                include "DBConnection.php";
+                include "sql-queries.php";
                 include "moduleModal.php";
                 include "modules.php";
                 include "utils.php";
