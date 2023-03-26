@@ -54,6 +54,8 @@
 }
 
 .full-card .product-image-mask {
+    aspect-ratio: 1;
+    height: fit-content;
     width: 0;
     flex-grow: 1;
     position: relative;
@@ -76,13 +78,13 @@
 
 .full-card .price-trend-container p {
     font-size: 1.4em;
-    grid-template-columns: repeat(auto-fit, minmax(9em, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(13.5em, 1fr));
 }
 
 .current-price-container {
     display: flex;
     flex-wrap: wrap;
-    gap: 1em;
+    gap: 2.5em;
 }
 
 .current-price-container strong {
