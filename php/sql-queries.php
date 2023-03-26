@@ -68,7 +68,7 @@ function retrieveCoinsByCategory($con, $fiat, $category, $sort, $perPage, $page)
 }
 
 function retrieveCoinById($con, $coinId){
-    $sql = "SELECT * FROM coin WHERE id = ?";
+    $sql = "SELECT * FROM coin WHERE Id = ?";
     //ORDER BY ? LIMIT ? OFFSET ?;
     echo "Hello";
     //WHERE id IN (SELECT coin_id FROM categoryCoin WHERE category = ?) LIMIT ? OFFSET ?
