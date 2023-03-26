@@ -1,5 +1,5 @@
 <div class="modal hide" id="module-modal">
-    <form>
+    <form id="module-form">
         <i class="fa-solid fa-xmark fa-xl" id="modal-close-btn"></i>
         <h3>Module Settings</h3>
         <fieldset>
