@@ -13,8 +13,8 @@ function uploadComment($con, $userId, $coinId, $text, $parentId = null){
     mysqli_stmt_close($commentStmt);
 }
 
-function retrieveComment($con, $coinId, $parentId = null){
-    $commentSql = "SELECT * FROM comment c JOIN user_auth u ON c.user_id = u.id WHERE coin_id = ? AND parent_comment = ?";
+function retrieveComment($con, $coinId){
+    $commentSql = "SELECT * FROM comment c JOIN user_auth u ON c.user_id = u.id WHERE coin_id = ?";
 
     $commentStmt = mysqli_stmt_init($con);
     if (!mysqli_stmt_prepare($commentStmt, $commentSql)){
@@ -22,8 +22,8 @@ function retrieveComment($con, $coinId, $parentId = null){
         // header("location: REPLACE LATER");
         exit();
     }
-
-    mysqli_stmt_bind_param($commentStmt, "ii", $coinId, $parentId);
+    
+    mysqli_stmt_bind_param($commentStmt, "i", $coinId);
     mysqli_stmt_execute($commentStmt);
 
     $result = mysqli_stmt_get_result($commentStmt);
