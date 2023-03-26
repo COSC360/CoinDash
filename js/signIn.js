@@ -17,7 +17,7 @@ function validateLoginForm() {
     let passwordError = document.getElementById("passwordError");
     // var errorFlag = false;
     var passReg = /^[a-zA-Z]\w{8,16}$/;
-    
+
     if (usernameOrEmail == "" && password =="") {
         usernameError.style.opacity = "1";
         usernameError.style.visibility = "visible";
