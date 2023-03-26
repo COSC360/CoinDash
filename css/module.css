@@ -280,8 +280,11 @@ select {
 }
 
 .modal {
+    max-width: 15em;
+    height: fit-content;
     position: fixed;
     border: solid 1px var(--White-1);
+    border-radius: 10px;
     display: flex;
     flex-direction: column;
     align-items: center;
