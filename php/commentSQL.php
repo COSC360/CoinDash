@@ -27,7 +27,7 @@ function retrieveComment($con, $coinId){
     mysqli_stmt_execute($commentStmt);
     echo "DASd";
     $result = mysqli_stmt_get_result($commentStmt);
-
+    print_r($result);
     if ($rows = $result -> fetch_all(MYSQLI_ASSOC)){
         // mysqli_stmt_close();
         return $rows; 
