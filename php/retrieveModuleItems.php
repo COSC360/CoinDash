@@ -14,5 +14,5 @@ $sort = $_POST["sort"];
 // $coins = retrieveCoinsByCategory($con, $fiat, $category, $sort, 10, 1);
 $coins = retrieveAllCoins($con);
 
-return $coins;
+echo json_encode($coins);
 ?>
