@@ -4,7 +4,7 @@
 
     $coinId = $_GET["coinId"];
     echo $coinId;
-    $coin = retrieveCoinById($con, $coin);
+    $coin = retrieveCoinById($con, $coinId);
     print_r($coin);
     $coin = $coin[0];
     
