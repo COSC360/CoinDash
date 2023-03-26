@@ -35,7 +35,8 @@ function setModuleHTML(fiat, category, sort, target){
             let newModule = "";
             
             coinData.forEach((coin) => {
-                console.log(coin.price_change_24h);
+                console.log(fiat);
+                console.log(coin);
                 newModule += `
                     <div class="product-card">
                         <div class="icon-container">
