@@ -307,9 +307,9 @@
 }
 
 .register-box p{
-  position: relative;
+  position: absolute;
   margin-top: 0.5em;
-  right: 2.5em;
+  left: 30em;
   /* opacity: 0;
   visibility: hidden; */
   color: rgb(255, 0, 0);
