@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="../css/reset.css">
     <link rel="stylesheet" href="../css/header-footer.css">
     <link rel="stylesheet" href="../css/individual.css">
+    <link rel="stylesheet" href="../css/module.css">
     <script src="https://kit.fontawesome.com/e6e0351429.js" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="../js/jquery-3.1.1.min.js"></script>
@@ -16,8 +17,15 @@
 
 <body>
     <?php
-        include "header.php"
+        include "header.php";
+        include "DBconnection.php";
+        include "sql-queries.php";
     ?>
+    <article class="panel full-card">
+        <?php
+            include "fullCoin.php";
+        ?>
+    </article>
     <article class="panel bordered-section reviews">
         <h2>Comments</h2>
         <hr class="medium-spacing">

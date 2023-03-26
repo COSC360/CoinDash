@@ -1,4 +1,8 @@
 
+.full-card {
+    margin-top: 10em;
+}
+
 .bordered-section {
     border: 1px var(--White-1) solid;
     padding: 2em;
