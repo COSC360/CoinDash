@@ -6,17 +6,17 @@ function validateLoginForm(){
     // formElement.onchange = function (e) { resetElement(e); }
 }
 
-function addErrorMessage(id, msg){
-    let usernameError = document.getElementById("usernameError");
-    let passwordError = document.getElementById("passwordError");
+// function addErrorMessage(id, msg){
+//     let usernameError = document.getElementById("usernameError");
+//     let passwordError = document.getElementById("passwordError");
     
-    var errorMsg = document.createTextNode(msg);
-    if(id = usernameError){
-        usernameError.appendChild(errorMsg);
-    }else if(id = passwordError){
-        passwordError.appendChild(errorMsg);
-    }
-}
+//     var errorMsg = document.createTextNode(msg);
+//     if(id = usernameError){
+//         usernameError.appendChild(errorMsg);
+//     }else if(id = passwordError){
+//         passwordError.appendChild(errorMsg);
+//     }
+// }
 function FormCheck() {
     let usernameOrEmail = document.forms["LoginForm"]["user-email"].value;
     let password = document.forms["LoginForm"]["password"].value;
@@ -31,16 +31,14 @@ function FormCheck() {
         usernameError.style.transition = "visibility 0s linear 0s, opacity 300ms";
         passwordError.style.opacity = "1";
         passwordError.style.visibility = "visible";
-        passwordError.style.transition = "visibility 0s linear 0s, opacity 300ms";
-        return false;  
+        passwordError.style.transition = "visibility 0s linear 0s, opacity 300ms";  
 
     }else if(password ==""){
         passwordError.style.opacity = "1";
         passwordError.style.visibility = "visible";
         passwordError.style.transition = "visibility 0s linear 0s, opacity 300ms";
         // $msg = "Password empty"
-        // addErrorMessage(passwordError, msg);
-        return false;  
+        // addErrorMessage(passwordError, msg);  
 
     }else if(usernameOrEmail ==""){
         usernameError.style.opacity = "1";
@@ -48,7 +46,6 @@ function FormCheck() {
         usernameError.style.transition = "visibility 0s linear 0s, opacity 300ms";
         // $msg = "Username/Email empty"
         // addErrorMessage(usernameError, msg);
-        return false; 
 
     }else if(!passReg.test(password)){
         passwordError.style.opacity = "1";
@@ -56,7 +53,7 @@ function FormCheck() {
         passwordError.style.transition = "visibility 0s linear 0s, opacity 300ms";
         // msg = "invalid password"
         // addErrorMessage(passwordError, msg);
-        return false;
+        
     }else{
         document.forms["LoginForm"].submit();
     }
