@@ -14,7 +14,5 @@ $sort = $_POST["sort"];
 // $coins = retrieveCoinsByCategory($con, $fiat, $category, $sort, 10, 1);
 $coins = retrieveAllCoins($con);
 
-print_r($coins);
-
 return $coins;
 ?>
