@@ -97,7 +97,13 @@
 }
 
 .reviews {
+    border-radius: 10px;
     margin-top: 2.5em;
     border: solid 1px var(--Grey-1);
     padding: 2.5em;
+}
+
+.reviews h2 {
+    font-size: 1.6em;
+    margin-bottom: 0.8em;
 }
