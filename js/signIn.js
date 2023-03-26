@@ -43,6 +43,9 @@ function validateLoginForm() {
         return false;  
 
     }else if(!passReg.test(password)){
+        passwordError.style.opacity = "1";
+        passwordError.style.visibility = "visible";
+        passwordError.style.transition = "visibility 0s linear 0s, opacity 300ms";
         // msg = "invalid password"
         // addErrorMessage(passwordError, msg);
         return false;
