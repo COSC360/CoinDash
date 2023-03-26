@@ -52,6 +52,8 @@
 }
 
 .full-card .product-image-mask {
+    width: 0;
+    height: 0;
     flex-grow: 1;
 }
 
