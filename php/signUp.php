@@ -70,7 +70,7 @@ include 'DBconnection.php';
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Project 360</title>
-    <link rel="stylesheet" href="font/helvetica-now-display/stylesheet.css">
+    <link rel="stylesheet" href="../font/helvetica-now-display/stylesheet.css">
     <link rel="stylesheet" href="../css/var.css">
     <link rel="stylesheet" href="../css/reset.css">
     <link rel="stylesheet" href="../css/dashboard.css">
