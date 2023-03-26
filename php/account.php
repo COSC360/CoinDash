@@ -70,14 +70,14 @@ $password = $_POST['password'];
                         <label>Email</label><br>    
                         <div class="input-container">
                             <input type = "text" id="email" name = "email" value = "<?php echo $_SESSION["email"] ;?>">
-                            <button class="editField" onclick="editField()"><img src="svgs/editField.svg"></button>
+                            <button class="editField" onclick="editField()"><img src="../svgs/editField.svg"></button>
                         </div> 
                     </div>
                     <div class="item-2">
                         <label>Password</label><br>
                         <div class="input-container">
                             <input type = "password" id="password" name = "password">
-                            <button class="editField" onclick="editField()"><img src="svgs/editField.svg"></button>
+                            <button class="editField" onclick="editField()"><img src="../svgs/editField.svg"></button>
                         </div>
                     </div>
                     <div class="item-3">
