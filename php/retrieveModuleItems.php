@@ -10,7 +10,7 @@ if (mysqli_connect_errno()){
 $fiat = $_POST["fiat"];
 $category = $_POST["category"];
 $sort = $_POST["sort"];
-
+print_r("SADD");
 $coins = retrieveCoinsByCategory($con, $fiat, $category, $sort, 10, 1);
 // $coins = retrieveAllCoins($con);
 
