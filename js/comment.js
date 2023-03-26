@@ -14,7 +14,7 @@ commentForms.forEach(form => {
         }
         var coinId = "bitcoin";
         var text = form["text"].value;
-
+        console.log("Clicked and setting AJAX");
         $.ajax({
             url: "../php/comment.php",
             type: "POST",

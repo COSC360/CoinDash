@@ -10,5 +10,4 @@
     $userId = 1;
     
     uploadComment($con, $userId, $coinId, $text, $parentId);
-
 ?>
