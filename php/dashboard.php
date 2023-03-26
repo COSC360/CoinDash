@@ -26,7 +26,7 @@
             <div class="title">
                 <h1>Jason's Dashboard</h1>
                 <div class="container edit-ui">
-                    <img src="svgs/edit.svg">
+                    <img src="../svgs/edit.svg">
                 </div>
             </div>
         </article>
@@ -54,7 +54,7 @@
                                     <div class=\"api-details\">
                                         <div class=\"api-category\">".$dashboardModules[$currentCount]["category"]."</div>
                                         <a class=\"icon-overlay\" href=\"#\">
-                                            <img src=\"svgs/goto.svg\">
+                                            <img src=\"../svgs/goto.svg\">
                                         </a>
                                     </div>
                                     <div class=\"dropdowns\">
@@ -78,10 +78,10 @@
                                     "<div class=\"product-card\">
                                         <div class=\"icon-container\">
                                             <a class=\"icon-overlay\" href=\"#\">
-                                                <img src=\"svgs/goto.svg\">
+                                                <img src=\"../svgs/goto.svg\">
                                             </a>
                                             <a class=\"icon-overlay\" href=\"#\">
-                                                <img src=\"svgs/bookmark.svg\">
+                                                <img src=\"../svgs/bookmark.svg\">
                                             </a>
                                         </div>
                                             <div class=\"product-image-mask\">
@@ -103,12 +103,12 @@
                         echo    "</div>
                                     <div class=\"module-footer\">
                                     <div class=\"prev\">
-                                        <img class=\"prev-icon\" src=\"svgs/arrow-left-long.svg\">
+                                        <img class=\"prev-icon\" src=\"../svgs/arrow-left-long.svg\">
                                         <p>Previous</p>
                                     </div>
                                     <div class=\"next\">
                                         <p>Next</p>
-                                        <img class=\"next-icon\" src=\"svgs/arrow-right-long.svg\">
+                                        <img class=\"next-icon\" src=\"../svgs/arrow-right-long.svg\">
                                     </div>
                                 </div>
                                 <div draggable=\"true\" class=\"module-settings-btn edit-ui\">
