@@ -28,7 +28,7 @@
 
     include 'DBconnection.php';
     $statusMsg = '';
-        if(isset($_GET['user-email']) && isset($_GET['password'])){
+        if($_SERVER["REQUEST_METHOD"] == "GET"){
             $userOremail= $_GET['user-email'];
             $password = $_GET['password'];
             if ($con->connect_error) {
@@ -59,7 +59,7 @@
             $_SESSION["Id"] = $result['Id'];
             $_SESSION["pfp"] = $result['profilePicture'];
         }else{
-            echo"<script>window.alert(\"Data was not set to the GET variables !\")</script>";
+            echo"<script>window.alert(\"Invalid Request Type\")</script>";
         }
     ?>
 <?php include 'header.php';?>

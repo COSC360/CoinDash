@@ -32,7 +32,7 @@
             if ($con->connect_error) {
                 die("Connection failed: " . $con->connect_error);
             }else{(
-                if(isset($_POST['username']) && isset($_POST['email']) && isset($_POST['password']) && isset($_POST['verifyPassword']))) { 
+                if($_SERVER["REQUEST_METHOD"] == "POST")) { 
                     $username= $_POST['username'];
                     $email = $_POST['email'];
                     $password = $_POST['password'];
@@ -86,7 +86,7 @@
                         $statusMsg = 'Sorry, only JPG, JPEG & PNG files are allowed to upload.'; 
                     } 
                 }else{
-                    echo"<script>window.alert(\"Data was not set to the POST variables !\")</script>";
+                    echo"<script>window.alert(\"Invalid Request Type !\")</script>";
                 }
             }
 ?>
