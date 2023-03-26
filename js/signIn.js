@@ -1,7 +1,15 @@
+
+
+function validateLoginForm(){
+    var formElement = document.forms["LoginForm"];
+    formElement.onsubmit = function (e) { e.preventDefault(); FormCheck(); }
+    // formElement.onchange = function (e) { resetElement(e); }
+}
+
 function addErrorMessage(id, msg){
     let usernameError = document.getElementById("usernameError");
     let passwordError = document.getElementById("passwordError");
-
+    
     var errorMsg = document.createTextNode(msg);
     if(id = usernameError){
         usernameError.appendChild(errorMsg);
@@ -9,7 +17,8 @@ function addErrorMessage(id, msg){
         passwordError.appendChild(errorMsg);
     }
 }
-function validateLoginForm() {
+function FormCheck() {
+    var submitForm = true;
     let usernameOrEmail = document.forms["LoginForm"]["user-email"].value;
     let password = document.forms["LoginForm"]["password"].value;
     let usernameError = document.getElementById("usernameError");
@@ -24,7 +33,7 @@ function validateLoginForm() {
         passwordError.style.opacity = "1";
         passwordError.style.visibility = "visible";
         passwordError.style.transition = "visibility 0s linear 0s, opacity 300ms";
-        return false;  
+        submitForm == false;  
 
     }else if(password ==""){
         passwordError.style.opacity = "1";
@@ -32,7 +41,7 @@ function validateLoginForm() {
         passwordError.style.transition = "visibility 0s linear 0s, opacity 300ms";
         // $msg = "Password empty"
         // addErrorMessage(passwordError, msg);
-        return false;  
+        submitForm == false;  
 
     }else if(usernameOrEmail ==""){
         usernameError.style.opacity = "1";
@@ -40,7 +49,7 @@ function validateLoginForm() {
         usernameError.style.transition = "visibility 0s linear 0s, opacity 300ms";
         // $msg = "Username/Email empty"
         // addErrorMessage(usernameError, msg);
-        return false;  
+        submitForm == false;  
 
     }else if(!passReg.test(password)){
         passwordError.style.opacity = "1";
@@ -48,7 +57,13 @@ function validateLoginForm() {
         passwordError.style.transition = "visibility 0s linear 0s, opacity 300ms";
         // msg = "invalid password"
         // addErrorMessage(passwordError, msg);
-        return false;
+        submitForm == false;
+    }else{
+        submitForm == true;
+    }
+
+    if (submitForm == true) {
+        document.forms["LoginForm"].submit();
     }
   }
 
