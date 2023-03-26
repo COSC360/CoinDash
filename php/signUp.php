@@ -104,6 +104,7 @@ include 'DBconnection.php';
                             </div>
                             <div class="item-2">
                                 <label>Email <span style="color: red;">*</span></label><br>
+                                <p id = "emailError"><i class="fa-solid fa-circle-exclamation"></i></p>
                                 <input type = "email" name = "email" placeholder="What's Your Email?">
                             </div>
                             <div class="item-3">
