@@ -59,7 +59,7 @@
             $_SESSION["Id"] = $result['Id'];
             $_SESSION["pfp"] = $result['profilePicture'];
         }else{
-            echo echo "<script>window.alert(\"Data was not set to the GET variables !\")</script>";
+            echo"<script>window.alert(\"Data was not set to the GET variables !\")</script>";
         }
     ?>
 <?php include 'header.php';?>

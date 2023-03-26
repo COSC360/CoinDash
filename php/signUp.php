@@ -86,7 +86,7 @@
                         $statusMsg = 'Sorry, only JPG, JPEG & PNG files are allowed to upload.'; 
                     } 
                 }else{
-                    echo echo "<script>window.alert(\"Data was not set to the POST variables !\")</script>";
+                    echo"<script>window.alert(\"Data was not set to the POST variables !\")</script>";
                 }
             }
 ?>
