@@ -1,7 +1,7 @@
 <div class="modal">
-    <i class="fa-solid fa-xmark" id="modal-close-btn"></i>
-    <h3>Module Settings</h3>
     <form>
+        <i class="fa-solid fa-xmark" id="modal-close-btn"></i>
+        <h3>Module Settings</h3>
         <fieldset>
             <select name="category" class="dropdown">
                 <option>Test</option>
