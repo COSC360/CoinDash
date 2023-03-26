@@ -8,6 +8,7 @@ fiatSelects.forEach(fiatSelect => {
         var newFiat = fiatSelect.value;
         var module = fiatSelect.parentNode.parentNode.parentNode;
         var moduleObj = buildModule(module);
+        var moduleGallery = document.querySelector("#" + module.id + " .module-gallery");
 
         $.ajax({
             url: "./retrieveModuleItems.php",
@@ -19,7 +20,7 @@ fiatSelects.forEach(fiatSelect => {
 
                 coinData.forEach((coin) => {
                     newModule += `
-                        "<div class="product-card">
+                        <div class="product-card">
                             <div class="icon-container">
                                 <a class="icon-overlay" href="#">
                                     <img src="../svgs/goto.svg">
@@ -31,7 +32,7 @@ fiatSelects.forEach(fiatSelect => {
                                 <div class="product-image-mask">
                                 <div class="product-image" style="background-image: url(${coin.img_url});"></div>
                             </div><div class="product-info-container">
-                                <h3>${coin.name}</h3>
+                                <h3>${coin.name}WRSAFOASFIOAJMSF</h3>
                                 <strong class="product-price">${coin[newFiat].toFixed(4)}$ ${coin.price_change_24h.toFixed(2)}%</strong>
                                 <div class="price-trend-container">
                                     <p>7D: ${coin.price_change_7d.toFixed(2)}%</p>
@@ -42,11 +43,30 @@ fiatSelects.forEach(fiatSelect => {
                                     <p>1Y: ${coin.price_change_1yr.toFixed(2)}%</p>
                                 </div>
                             </div>
-                        </div>";
+                        </div>"
                         `;
                 })
 
-                console.log(newModule);
+                newModule += `
+                    </div>
+                        <div class=\"module-footer\">
+                            <div class=\"prev\">
+                                <img class=\"prev-icon\" src=\"../svgs/arrow-left-long.svg\">
+                                <p>Previous</p>
+                            </div>
+                            <div class=\"next\">
+                                <p>Next</p>
+                                <img class=\"next-icon\" src=\"../svgs/arrow-right-long.svg\">
+                            </div>
+                        </div>
+                        <div draggable=\"true\" class=\"module-settings-btn edit-ui\">
+                            <i class=\"fa-solid fa-ellipsis-vertical fa-lg\"></i>
+                            <i class=\"fa-solid fa-ellipsis-vertical fa-lg\"></i>
+                        </div>
+                    </div>
+                
+                `
+                moduleGallery.innerHTML = newModule;
             }
         })
     })
