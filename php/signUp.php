@@ -31,8 +31,8 @@
 
             if ($con->connect_error) {
                 die("Connection failed: " . $con->connect_error);
-            }else{(
-                if($_SERVER["REQUEST_METHOD"] == "POST")) { 
+            }else{
+                if($_SERVER["REQUEST_METHOD"] == "POST") { 
                     $username= $_POST['username'];
                     $email = $_POST['email'];
                     $password = $_POST['password'];

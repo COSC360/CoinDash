@@ -28,31 +28,32 @@
 
     include 'DBconnection.php';
     $statusMsg = '';
+
+    if ($con->connect_error) {
+        die("Connection failed: " . $con->connect_error);
+    }else{
         if($_SERVER["REQUEST_METHOD"] == "GET"){
             $userOremail= $_GET['user-email'];
             $password = $_GET['password'];
-            if ($con->connect_error) {
-                die("Connection failed: " . $con->connect_error);
-            }else{
-                $stmt = $con->prepare("SELECT * FROM `user_auth` WHERE  `Email` = ? && `Password` = ? || `Username` = ? && `Password` = ? ");
-                $stmt->bind_param("ssss", $userOremail,$password,$userOremail,$password); 
-                $stmt->execute();
-                $resultSet = $stmt->get_result(); // get the mysqli result
-                $result = $resultSet->fetch_assoc();
+            $stmt = $con->prepare("SELECT * FROM `user_auth` WHERE  `Email` = ? && `Password` = ? || `Username` = ? && `Password` = ? ");
+            $stmt->bind_param("ssss", $userOremail,$password,$userOremail,$password); 
+            $stmt->execute();
+            $resultSet = $stmt->get_result(); // get the mysqli result
+            $result = $resultSet->fetch_assoc();
 
-                if($result != null){
-                    if($result['userType'] == 'admin'){
-                        header('location:admin.php');
+            if($result != null){
+                if($result['userType'] == 'admin'){
+                    header('location:admin.php');
 
-                    }elseif($result['userType'] == 'user'){
-                        header('location:account.php');
-                    }
-                }
-                if($result == null && $userOremail != "" && $password != ""){
-                    $statusMsg = 'User does not exist !';
-                    echo "<script>window.alert(\"".$statusMsg."\")</script>";
+                }elseif($result['userType'] == 'user'){
+                    header('location:account.php');
                 }
             }
+            if($result == null && $userOremail != "" && $password != ""){
+                $statusMsg = 'User does not exist !';
+                echo "<script>window.alert(\"".$statusMsg."\")</script>";
+            }
+       
 
             $_SESSION["user"] = $_GET['user-email'];
             $_SESSION["email"] = $result['Email'];
@@ -61,6 +62,8 @@
         }else{
             echo"<script>window.alert(\"Invalid Request Type\")</script>";
         }
+    }
+        
     ?>
 <?php include 'header.php';?>
 <main>  
