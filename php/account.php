@@ -49,7 +49,7 @@ if($_SESSION['Id'] == null){
                     <?php
                     echo "<script>
                     document.addEventListener(\"DOMContentLoaded\", () =>{
-                    const pfpDataURL = localStorage.getItem(".$_SESSION['Id'].");         
+                    const pfpDataURL = localStorage.getItem(\"".$_SESSION['Id']."\");         
                         if(pfpDataURL){
                             document.querySelector(\"pfp\").setAttribute(\"src\",pfpDataURL);
                         }
