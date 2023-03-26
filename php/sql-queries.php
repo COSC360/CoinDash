@@ -87,6 +87,7 @@ function retrieveCoinById($con, $coinId){
     mysqli_stmt_execute($stmt);
     
     $results = mysqli_stmt_get_result($stmt);
+    print_r($results);
     if ($rows = $results -> fetch_all(MYSQLI_ASSOC)){
         print_r($rows);
         // mysqli_stmt_close();
