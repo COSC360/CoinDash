@@ -46,3 +46,19 @@
 .comment-btn {
     margin-top: 0.75em;
 }
+
+.full-card .product-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+.full-card .product-card .product-image-mask {
+    flex-grow: 1;
+}
+
+.full-card .product-card .product-info-container {
+    flex-grow: 5;
+}
+

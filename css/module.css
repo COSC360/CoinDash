@@ -172,34 +172,7 @@ select {
     z-index: 1;
     border-radius: 100%;
 }
-.icon-overlay {
-    background-color: var(--Black-Overlay);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 100%;
-    width: 2em;
-    height: 2em;
-    transition: background-color 0.3s, width 0.3s, height 0.3s;
-}
 
-.icon-overlay img {
-    width: 40%;
-    height: 40%;
-    aspect-ratio: 1;
-    transition: 0.3s;
-    text-decoration: none;
-    color: var(--White-3);
-    transform: scale(1);
-}
-
-.icon-overlay:hover{
-    background-color: var(--Black-1);
-}
-
-.icon-overlay:hover img{
-    transform: scale(0.9);
-}
 
 .product-info-container {
     display: flex;
