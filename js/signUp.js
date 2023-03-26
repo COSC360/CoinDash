@@ -1,11 +1,11 @@
 
 
 window.onload = function validateRegisterForm() {
-    let username = document.getElementById("username");
-    let password = document.getElementById("password");
-    let email = document.getElementById("email");
-    let verifyPassword = document.getElementById("verifyPassword");
-    let image = document.getElementById('img');
+    let username = document.forms["RegisterForm"]['username'].value;
+    let password = document.forms["RegisterForm"]['password'].value;
+    let email = document.forms["RegisterForm"]['email'].value;
+    let verifyPassword = document.forms["RegisterForm"]['verifyPassword'].value;
+    let image = document.forms["RegisterForm"]['img'].value;
     let usernameError = document.getElementById("usernameError");
     let passwordError = document.getElementById("passwordError");
     let emailError = document.getElementById("emailError");
