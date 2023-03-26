@@ -4,7 +4,9 @@ function buildDashboard(dashboardDom){
 
     var children = Array.from(dashboardDom.children);
     children.forEach(child => {
-        blocks.push(buildBlock(child));
+        if (child.classList.contains("block")){
+            blocks.push(buildBlock(child));
+        }
     })
 
     return new Dashboard(blocks);
