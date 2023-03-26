@@ -29,11 +29,11 @@ function validateLoginForm() {
     }
     
     if(password ==""){
+        msg = "Password empty";
+        addErrorMessage(passwordError, msg);
         passwordError.style.opacity = "1";
         passwordError.style.visibility = "visible";
         passwordError.style.transition = "visibility 0s linear 0s, opacity 300ms";
-        // msg = "Password empty";
-        // addErrorMessage(passwordError, msg);
         return false;  
     }
     if(usernameOrEmail ==""){
