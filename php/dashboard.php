@@ -57,12 +57,12 @@
                                         </a>    
                                     </div>
                                     <div class=\"dropdowns\">
-                                        <select class=\"dropdown fiat\" onchange=changeFiat(".json_encode($dashboardModules[$currentCount]).")>";
+                                        <select class=\"dropdown fiat\" onchange=changeFiat(2)>";
                                             for ($i = 0; $i < sizeof($fiats); $i++){
                                                 echo "<option value=".$fiats[$i]." ".($fiats[$i] == $dashboardModules[$currentCount]["fiat"] ? 'selected' : '').">".$fiatLabels[$i]."</option>";
                                             }
                         echo           "</select>
-                                        <select class=\"dropdown sort\" onchange=changeSort(".json_encode($dashboardModules[$currentCount]).")>";
+                                        <select class=\"dropdown sort\" onchange=changeSort(2)>";
                                             for ($i = 0; $i < sizeof($sortValues); $i++){
                                                 echo "<option value=".$sortValues[$i]." ".($sortValues[$i] == $dashboardModules[$currentCount]["sort"] ? 'selected' : '').">".$sortLabels[$i]."</option>";
                                             }
