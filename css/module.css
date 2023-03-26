@@ -278,3 +278,40 @@ select {
 .hide {
     display: none !important;
 }
+
+.modal {
+    position: fixed;
+    border: solid 1px var(--White-1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5em;
+    padding: 1em;
+    position: relative;
+}
+
+.modal h3 {
+    font-size: 1.2em;
+    font-weight: 700;
+}
+
+.modal #modal-confirm-btn {
+    background-color: var(--Black-1);
+    padding: 0.5em 0;
+    color: var(--White-1)
+}
+
+.modal #modal-cancel-btn {
+    color: var(--Grey-1);
+    background-color: transparent;
+}
+
+.modal #modal-close-btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 1em;
+    height: 1em;
+    aspect-ratio: 1;
+}

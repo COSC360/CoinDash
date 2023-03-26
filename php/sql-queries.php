@@ -67,7 +67,9 @@ function retrieveCoinsByCategory($con, $fiat, $category, $sort, $perPage, $page)
     }
 }
 
-
+function retrievePossibleCategories($con){
+    
+}
 function uploadDashboard($con, $userId, $dashboardJSON){
 
     deleteDashboard($con, $userId);
