@@ -281,7 +281,7 @@ select {
 
 .modal {
     z-index: 10;
-    width: 16em;
+    width: 20em;
     height: fit-content;
     position: fixed !important;
     top: 200px;
@@ -292,7 +292,8 @@ select {
     align-items: center;
     justify-content: center;
     position: relative;
-    padding: 1.5em;
+    padding: 2.5em;
+    background-color: var(--White-1);
 }
 
 .modal h3 {
