@@ -1,7 +1,6 @@
 //.json_encode($dashboardModules[$currentCount]).
 
-function changeFiat(e, dashboardJSON){
-    console.log(e);
+function changeFiat(dashboardJSON){
     console.log(dashboardJSON);
 }
 
