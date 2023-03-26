@@ -9,7 +9,7 @@ include 'DBconnection.php';
     $userOremail= "$_GET['user-email']";
     $password = $_GET['password'];
 
-    $statusMsg = '';
+   
 
 
     if ($con->connect_error) {
@@ -28,8 +28,6 @@ include 'DBconnection.php';
             }elseif($result['userType'] == 'user'){
                 header('location:account.php');
             }
-        }else{
-            $statusMsg = 'User does not exist !';
         }
     }
 
