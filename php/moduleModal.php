@@ -13,13 +13,15 @@
             <select name="fiat" class="dropdown">
                 <?php
                     $categories = retrievePossibleCategories($con);
-                    print_r($categories);
-                    echo $categories;
                     foreach($categories as $category){
                         echo "<option>".$category."</option>";
                     }
                 ?>
             </select>
+            <?php
+                        print_r($categories);
+                        echo $categories;
+            ?>
             <select name="sort" class="dropdown">
                 <option>Test</option>
                 <option>Test</option>
