@@ -12,9 +12,15 @@
 }
 
 .main-comment {
-    max-width: 12em;
+    max-width: 20em;
 }
 
 .child-comments {
     margin-left: 3em;
+}
+
+.profile-picture {
+    aspect-ratio: 1;
+    width: 1em;
+    height: 1em;
 }

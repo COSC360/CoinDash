@@ -54,3 +54,7 @@ i {
     padding: 0 7em;
     max-width: 1720px;
 }
+
+.medium-spacing {
+    margin: 1em 0;
+}   
