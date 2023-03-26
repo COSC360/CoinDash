@@ -14,7 +14,6 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="../js/jquery-3.1.1.min.js"></script>
     <script src="../js/dashboard.js"></script>
-    <script src="../js/moduleListeners.js"></script>
 </head>
 
 <body>
@@ -129,6 +128,7 @@
         include "footer.php";
     ?>
     <script type="module" src="../js/modules.js"></script>
+    <script src="../js/moduleListeners.js"></script>
     <!-- <script type="module" src="js/uploadDashboard.js"></script> -->
 </body>
 </html>
