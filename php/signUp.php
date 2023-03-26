@@ -146,7 +146,10 @@ include 'DBconnection.php';
             <a href = "http://cosc360.ok.ubc.ca/suyash06/cosc360-Project/dashboard.php"><img class="dashboardCard"></a> -->
         </div>
         </div>
-    </main>   
+    </main>
+    <?php
+        include "footer.php";
+    ?>   
 </body>
 
 </html>
