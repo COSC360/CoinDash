@@ -42,7 +42,7 @@ function retrieveCoinsByCategory($con, $fiat, $category, $sort, $perPage, $page)
 
     // Set parameters for prepared statement
     mysqli_stmt_bind_param($stmt, "ssii", $fiat, $category, $perPage, $offset);
-
+    echo("<script>console.log('PHP: HI');</script>");
     // Execute prepared statement
     mysqli_stmt_execute($stmt);
 
