@@ -14,6 +14,7 @@
                 <?php
                     $categories = retrievePossibleCategories($con);
                     print_r($categories);
+                    echo $categories;
                     foreach($categories as $category){
                         echo "<option>".$category."</option>";
                     }
