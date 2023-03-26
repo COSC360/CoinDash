@@ -106,8 +106,7 @@
   grid-template-columns: auto auto auto auto;
 }
 
-.dashboardCard{
-}
+
 
   * {
     scrollbar-width: auto;
@@ -186,6 +185,7 @@
     width: 170%;
     font-size: 1em;
     border-bottom: 2px solid rgb(0, 0, 0);
+    cursor: pointer;
   }
 
 .login-box input[type=reset] {
@@ -193,6 +193,7 @@
     border: none;
     background: none;
     font-size: 1em;
+  
   }
   
 .login-box input[type=submit] {
@@ -208,10 +209,12 @@
 
 .login-box input[type=submit]:hover {
     background: rgb(75, 75, 75);
+  
   }
 
 .login-box input[type=reset]:hover {
     color: rgb(75, 75, 75);
+    
   }
 
 .login-box label{
@@ -269,6 +272,7 @@
   width: 100%;
   font-size: 1em;
   border-bottom: 2px solid rgb(0, 0, 0);
+  cursor: pointer;
 }
 
 .register-box input[type=reset] {
@@ -277,6 +281,7 @@
   background: none;
   font-size: 1em;
   width: fit-content;
+  cursor: pointer;
 }
 
 .register-box input[type=submit] {
@@ -286,14 +291,17 @@
   color: white;
   width: 40%;
   background: black;
+  cursor: pointer;
 }
 
 .register-box input[type=submit]:hover {
   background: rgb(75, 75, 75);
+  cursor: pointer;
 }
 
 .register-box input[type=reset]:hover {
   color: rgb(75, 75, 75);
+  cursor: pointer;
 }
 
 
