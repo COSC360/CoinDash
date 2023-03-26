@@ -16,7 +16,7 @@ session_start();
         reader.readAsDataURL(this.files[0])
     });
 
-    document..addEventListener("DOMContentLoaded", () =>{
+    document.addEventListener("DOMContentLoaded", () =>{
         const pfpDataURL = localStorage.getItem($_SESSION['Id']);
 
         if(pfpDataURL){
