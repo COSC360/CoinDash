@@ -35,6 +35,7 @@ module_settings_btns.forEach(btn => {
 })
 
 confirmModalBtn.addEventListener('click', (e) => {
+    e.preventDefault();
     var moduleObj = buildModule(currentModule);
     var moduleGallery = document.querySelector("#" + currentModule.id + " .module-gallery");
 
