@@ -296,6 +296,11 @@ select {
     font-weight: 700;
 }
 
+.modal form {
+    display: flex;
+    flex-direction: column;
+}
+
 .modal #modal-confirm-btn {
     background-color: var(--Black-1);
     padding: 0.5em 0;
