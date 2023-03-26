@@ -100,7 +100,7 @@ select {
     width: 100%;
     display: grid;
     gap: 1.25em;
-    grid-template-columns: repeat(auto-fit, minmax(4em, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(12em, 1fr));
     overflow: hidden;
 }
 
@@ -125,7 +125,7 @@ select {
 } */
 
 .product-card {
-    min-width: 4em;
+    min-width: 12em;
     height: calc(100%-1px);
     overflow: hidden;
     border: 1px solid var(--White-3);
