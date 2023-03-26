@@ -20,7 +20,7 @@ fiatSelects.forEach(fiatSelect => {
 
                 coinData.forEach((coin) => {
                     newModule += `
-                        "<div class="product-card">
+                        <div class="product-card">
                             <div class="icon-container">
                                 <a class="icon-overlay" href="#">
                                     <img src="../svgs/goto.svg">
@@ -43,7 +43,7 @@ fiatSelects.forEach(fiatSelect => {
                                     <p>1Y: ${coin.price_change_1yr.toFixed(2)}%</p>
                                 </div>
                             </div>
-                        </div>";
+                        </div>"
                         `;
                 })
 
