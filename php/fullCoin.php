@@ -3,9 +3,7 @@
     include "sql-queries.php";
 
     $coinId = $_GET["coinId"];
-    echo $coinId;
     $coin = retrieveCoinById($con, $coinId);
-    print_r($coin);
     $coin = $coin[0];
     
     print_r($coin);
