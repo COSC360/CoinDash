@@ -26,7 +26,7 @@ include 'DBconnection.php';
             
             //Check if data already exists 
             $stmt = $con->prepare("SELECT * FROM `user_auth` WHERE  `Email` = ? || `Username` = ?");
-            $stmt->bind_param("ssss", $email,$password,$username,$password); 
+            $stmt->bind_param("ss", $email,$username); 
             $stmt->execute();
             $resultSet = $stmt->get_result(); // get the mysqli result
             $result = $resultSet->fetch_assoc();
