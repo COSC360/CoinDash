@@ -1,6 +1,6 @@
 
 
-window.onload = function validateLoginForm() {
+window.onload = function validateRegisterForm() {
     let username = document.getElementById("username");
     let password = document.getElementById("password");
     let email = document.getElementById("email");
@@ -83,9 +83,9 @@ window.onload = function validateLoginForm() {
     }
 
     if(!passReg.test(password)){
-        // passwordError.style.opacity = "1";
-        // passwordError.style.visibility = "visible";
-        // passwordError.style.transition = "visibility 0s linear 0s, opacity 300ms";
+        passwordError.style.opacity = "1";
+        passwordError.style.visibility = "visible";
+        passwordError.style.transition = "visibility 0s linear 0s, opacity 300ms";
         return false;
     }
 
