@@ -51,6 +51,7 @@ confirmModalBtn.addEventListener('click', (e) => {
     fiatElement.value = fiat;
     sortElement.value = sort;
     setModuleHTML(fiat, category, sort, moduleGallery);
+    moduleModal.classList.remove("hide");
 })
 
 modules.forEach(module => {
