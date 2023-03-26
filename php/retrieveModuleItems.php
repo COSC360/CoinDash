@@ -11,6 +11,10 @@ $fiat = $_POST["fiat"];
 $category = $_POST["category"];
 $sort = $_POST["sort"];
 
+// $fiat = "usd";
+// $category = "Ethereum Ecosystem";
+// $sort = "price_change_24h";
+
 $coins = retrieveCoinsByCategory($con, $fiat, $category, $sort, 12, 1);
 
 echo json_encode($coins);

@@ -26,6 +26,7 @@ sortSelects.forEach(sortSelect => {
 })
 
 function setModuleHTML(fiat, category, sort, target){
+    console.log(fiat, category, sort);
     $.ajax({
         url: "./retrieveModuleItems.php",
         type: "POST",
@@ -63,25 +64,6 @@ function setModuleHTML(fiat, category, sort, target){
                     `;
             })
 
-            newModule += `
-                </div>
-                    <div class=\"module-footer\">
-                        <div class=\"prev\">
-                            <img class=\"prev-icon\" src=\"../svgs/arrow-left-long.svg\">
-                            <p>Previous</p>
-                        </div>
-                        <div class=\"next\">
-                            <p>Next</p>
-                            <img class=\"next-icon\" src=\"../svgs/arrow-right-long.svg\">
-                        </div>
-                    </div>
-                    <div draggable=\"true\" class=\"module-settings-btn edit-ui\">
-                        <i class=\"fa-solid fa-ellipsis-vertical fa-lg\"></i>
-                        <i class=\"fa-solid fa-ellipsis-vertical fa-lg\"></i>
-                    </div>
-                </div>
-            
-            `
             target.innerHTML = newModule;
         }
     })
