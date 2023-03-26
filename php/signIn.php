@@ -6,8 +6,8 @@ session_start();
 
 
 include 'DBconnection.php';
-    $userOremail= "test";
-    $password = "test";
+    $userOremail= "$_GET['user-email']";
+    $password = $_GET['password'];
 
     $statusMsg = '';
 
