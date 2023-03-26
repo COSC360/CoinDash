@@ -18,7 +18,7 @@
 
 <body>
     <?php
-        include "php/header.php";
+        include "header.php";
     ?>
     <main>
         <article class="panel page-title">
@@ -32,8 +32,8 @@
         </article>
         <article id="dashboard">
             <?php 
-                include "php/modules.php";
-                include "php/utils.php";
+                include "modules.php";
+                include "utils.php";
 
                 $dashboardModules = retrieveDashboard($con, 1);
                 $moduleCount = sizeof($dashboardModules);
@@ -121,14 +121,13 @@
                     }
 
                     echo "</div>";
-                    
                 }
             ?>
         </article>
     </main>
     <?php
-        include "php/edit.php";
-        include "php/footer.php";
+        include "edit.php";
+        include "footer.php";
     ?>
     <script type="module" src="../js/modules.js"></script>
     <!-- <script type="module" src="js/uploadDashboard.js"></script> -->
