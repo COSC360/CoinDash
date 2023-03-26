@@ -51,6 +51,7 @@ function retrieveCoinsByCategory($con, $fiat, $category, $sort, $perPage, $page)
         // mysqli_stmt_close();
         return $rows;
     } else {
+        echo "Hello";
         // mysqli_stmt_close();
         return false;
     }
