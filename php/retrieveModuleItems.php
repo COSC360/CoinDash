@@ -7,12 +7,9 @@ if (mysqli_connect_errno()){
     die(mysqli_connect_errno());
 }
 
-// $fiat = $_POST["fiat"];
-// $category = $_POST["category"];
-// $sort = $_POST["sort"];
-$fiat = "usd";
+$fiat = $_POST["fiat"];
 $category = "Ethereum Ecosystem";
-$sort = "price_change_24hr";
+$sort = $_POST["sort"];
 
 $coins = retrieveCoinsByCategory($con, $fiat, $category, $sort, 12, 1);
 
