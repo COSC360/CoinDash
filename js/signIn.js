@@ -1,11 +1,4 @@
 
-
-function validateLoginForm(){
-    var formElement = document.forms["LoginForm"];
-    formElement.onsubmit = function (e) { e.preventDefault(); FormCheck(); }
-    // formElement.onchange = function (e) { resetElement(e); }
-}
-
 // function addErrorMessage(id, msg){
 //     let usernameError = document.getElementById("usernameError");
 //     let passwordError = document.getElementById("passwordError");
@@ -17,7 +10,7 @@ function validateLoginForm(){
 //         passwordError.appendChild(errorMsg);
 //     }
 // }
-function FormCheck() {
+function validateLoginForm() {
     let usernameOrEmail = document.forms["LoginForm"]["user-email"].value;
     let password = document.forms["LoginForm"]["password"].value;
     let usernameError = document.getElementById("usernameError");
