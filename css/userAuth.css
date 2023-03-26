@@ -179,9 +179,6 @@
   z-index: 10;
 } */
 
-.login-box i{
-  color: rgb(255, 0, 0);
-}
 
 .login-box .item-1, .item-2, .item-3{
   position: relative;
@@ -195,6 +192,12 @@
   color: rgb(255, 0, 0);
   z-index: 10;
 }
+
+
+.login-box i{
+  color: rgb(255, 0, 0);
+}
+
 
 .login-box input {
     margin-top: 1em;
@@ -313,9 +316,6 @@
   color: rgb(75, 75, 75);
 }
 
-.register-box i{
-  color: rgb(255, 0, 0);
-}
 
 .register-box label{
   font-weight: 500;
@@ -335,7 +335,9 @@
   z-index: 10;
 }
 
-
+.register-box i{
+  color: rgb(255, 0, 0);
+}
 
 .register-box form{
   display: grid;
