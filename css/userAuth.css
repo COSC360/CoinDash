@@ -4,7 +4,7 @@
   }
 }
 
-.auth-container{
+/* .auth-container{
   width: calc(100vw - 4em);
   height: fit-content;
   position: relative;
@@ -17,8 +17,10 @@
   font-size: 1em;
   padding: 2em;
   background-color: var(--White-1);
+} */
+.panel{
+  gap: 3em;
 }
-
 .login-info{
   width: fit-content;
 }
