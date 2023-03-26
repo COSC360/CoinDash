@@ -1,11 +1,4 @@
 
-
-function validateLoginForm(){
-    var formElement = document.forms["LoginForm"];
-    formElement.onsubmit = function (e) { e.preventDefault(); FormCheck(); }
-    // formElement.onchange = function (e) { resetElement(e); }
-}
-
 // function addErrorMessage(id, msg){
 //     let usernameError = document.getElementById("usernameError");
 //     let passwordError = document.getElementById("passwordError");
@@ -17,7 +10,7 @@ function validateLoginForm(){
 //         passwordError.appendChild(errorMsg);
 //     }
 // }
-function FormCheck() {
+function validateLoginForm() {
     let usernameOrEmail = document.forms["LoginForm"]["user-email"].value;
     let password = document.forms["LoginForm"]["password"].value;
     let usernameError = document.getElementById("usernameError");
@@ -31,33 +24,33 @@ function FormCheck() {
         usernameError.style.transition = "visibility 0s linear 0s, opacity 300ms";
         passwordError.style.opacity = "1";
         passwordError.style.visibility = "visible";
-        passwordError.style.transition = "visibility 0s linear 0s, opacity 300ms";  
-
-    }else if(password ==""){
+        passwordError.style.transition = "visibility 0s linear 0s, opacity 300ms";
+        return false;  
+    }
+    if(password ==""){
         passwordError.style.opacity = "1";
         passwordError.style.visibility = "visible";
         passwordError.style.transition = "visibility 0s linear 0s, opacity 300ms";
+        return false;
         // $msg = "Password empty"
         // addErrorMessage(passwordError, msg);  
 
-    }else if(usernameOrEmail ==""){
+    }
+    if(usernameOrEmail ==""){
         usernameError.style.opacity = "1";
         usernameError.style.visibility = "visible";
         usernameError.style.transition = "visibility 0s linear 0s, opacity 300ms";
+        return false;
         // $msg = "Username/Email empty"
         // addErrorMessage(usernameError, msg);
 
-    }else if(!passReg.test(password)){
+    }
+    if(!passReg.test(password)){
         passwordError.style.opacity = "1";
         passwordError.style.visibility = "visible";
         passwordError.style.transition = "visibility 0s linear 0s, opacity 300ms";
-        // msg = "invalid password"
-        // addErrorMessage(passwordError, msg);
-        
-    }else{
-        document.forms["LoginForm"].submit();
+        return false;
     }
-
 
   }
 
@@ -83,3 +76,4 @@ function ErrorClearFunction(){
     usernameError.style.visibility = "hidden";
 }
 
+window.onload = validateLoginForm();
