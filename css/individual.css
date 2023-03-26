@@ -1,0 +1,12 @@
+.comment-header {
+    display: flex;
+    gap: 1em;
+}
+
+.main-comment {
+    max-width: 12em;
+}
+
+.child-comments {
+    margin-left: 3em;
+}
