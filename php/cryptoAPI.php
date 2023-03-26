@@ -71,16 +71,24 @@ if ($con->connect_error) {
                     $selectStmt->execute();
                     $SelectResultSet = $selectStmt->get_result(); // get the mysqli result
                     $selectRS = $SelectResultSet->fetch_all(MYSQLI_ASSOC);
-                    $newSelectRS = array();
-                    foreach($selectRS as $field){
-                        array_push($newSelectRS,$field['name']);
-                    }      
-                    $arrDiff = array_diff($categoryResultSet,$newSelectRS);
+                    if($selectRS != null){
+                        $newSelectRS = array();
+                        foreach($selectRS as $field){
+                            array_push($newSelectRS,$field['name']);
+                        }      
+                        $arrDiff = array_diff($categoryResultSet,$newSelectRS);
 
-                    foreach($arrDiff as $newCategory){
-                        $insertCategoryStmt = $con->prepare("INSERT INTO category(`name`) VALUES (?)");
-                        $insertCategoryStmt->bind_param("s",$newCategory);
-                        $insertCategoryStmt->execute();
+                        foreach($arrDiff as $newCategory){
+                            $insertCategoryStmt = $con->prepare("INSERT INTO category(`name`) VALUES (?)");
+                            $insertCategoryStmt->bind_param("s",$newCategory);
+                            $insertCategoryStmt->execute();
+                        }
+                    }else{
+                        foreach($categoryResultSet as $category){
+                            $insertCategoryStmt = $con->prepare("INSERT INTO category(`name`) VALUES (?)");
+                            $insertCategoryStmt->bind_param("s",$category);
+                            $insertStmt->execute(); 
+                        }                    
                     }     
                 }
             }
