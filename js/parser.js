@@ -51,4 +51,4 @@ class Module {
 }
 
 
-export { buildDashboard };
+export { buildDashboard, buildModule };
