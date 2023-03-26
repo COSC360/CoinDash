@@ -8,6 +8,6 @@
     $text = $_POST["text"];
 
     $userId = 1;
-    
+    echo "Hello";
     uploadComment($con, $userId, $coinId, $text, $parentId);
 ?>
