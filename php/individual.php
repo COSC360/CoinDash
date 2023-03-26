@@ -39,11 +39,9 @@
                         <p class="review-content">Lorem ipsum dolor sit amet consectetur. Arcu ornare quam sit lectus integer. Diam integer consequat sapien commodo velit. Sed lectus habitasse in bibendum justo turpis. Ultricies fames in nisl faucibus amet dignissim. Integer ipsum molestie a a vel. </p>
                     </div>
                     <div class="child-comments">
-
-
-                    <div>
+                    </div>
                 </div>
-            <div>
+            </div>
         </div>
         <hr>
         <div class="comment">
@@ -53,7 +51,7 @@
             </div>
             <p class="review-content">Lorem ipsum dolor sit amet consectetur. Arcu ornare quam sit lectus integer. Diam integer consequat sapien commodo velit. Sed lectus habitasse in bibendum justo turpis. Ultricies fames in nisl faucibus amet dignissim. Integer ipsum molestie a a vel. </p>
             <div class="child-comments">
-            <div>
+            </div>
         </div>
     </article>
     <?php
