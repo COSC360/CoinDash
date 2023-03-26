@@ -53,7 +53,7 @@ include 'DBconnection.php';
 </head>
 
 <body>
-    <?php include 'header.php';?>
+<main>  
     <div class="main">
         <div class = "auth-container">
             <div class="login-info">
@@ -102,7 +102,7 @@ include 'DBconnection.php';
                 <a href = "http://localhost/project360/dashboard.php"><img class="dashboardCard"></a> -->
             </div>            
         </div>
-    </div>
+</main>
 
 </body>
 
