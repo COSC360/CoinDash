@@ -27,7 +27,7 @@ function retrieveAllCoins($con){
 }
 
 function retrieveCoinsByCategory($con, $fiat, $category, $sort, $perPage, $page){
-    print_r("SAD");
+    echo("<script>console.log('PHP: HI');</script>");
     $sql = "SELECT symbol, img_url, ?, price_Change_24h, price_change_7d, price_change_14d, price_change_30d, price_change_60d, price_change_200d, price_change_1yr "
         + "FROM coin WHERE id IN (SELECT coin FROM categoryCoin WHERE category = ?) LIMIT ? OFFSET ?";
     $stmt = mysqli_stmt_init($con);
@@ -37,7 +37,7 @@ function retrieveCoinsByCategory($con, $fiat, $category, $sort, $perPage, $page)
         // header("location: REPLACE LATER");
         exit();
     }
-
+    echo("<script>console.log('PHP: HI');</script>");
     $offset = ($page - 1) * $perPage;
 
     // Set parameters for prepared statement
@@ -45,7 +45,7 @@ function retrieveCoinsByCategory($con, $fiat, $category, $sort, $perPage, $page)
     echo("<script>console.log('PHP: HI');</script>");
     // Execute prepared statement
     mysqli_stmt_execute($stmt);
-
+    echo("<script>console.log('PHP: HI');</script>");
     $results = mysqli_stmt_get_result($stmt);
     print_r($results);
     if ($rows = $results -> fetch_all(MYSQLI_ASSOC)){
