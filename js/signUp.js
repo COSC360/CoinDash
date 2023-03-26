@@ -1,6 +1,6 @@
 
 
-window.onload = function validateRegisterForm() {
+function validateRegisterForm() {
     let username = document.forms["RegisterForm"]['username'].value;
     let password = document.forms["RegisterForm"]['password'].value;
     let email = document.forms["RegisterForm"]['email'].value;
