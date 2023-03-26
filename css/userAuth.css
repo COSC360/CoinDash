@@ -171,12 +171,16 @@
 
 .login-box p{
   position: absolute;
-  margin-top: 0.75em;
+  margin-top: 0.5em;
   left: 33em;
   opacity: 0;
   visibility: hidden;
   color: rgb(255, 0, 0);
   z-index: 10;
+}
+
+.login-box i{
+  color: rgb(255, 0, 0);
 }
 
 .login-box input {
