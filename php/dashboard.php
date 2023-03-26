@@ -89,7 +89,7 @@
                                             <div class=\"product-image\" style=\"background-image: url(".$coin["img_url"].");\"></div>
                                         </div><div class=\"product-info-container\">
                                             <h3>".$coin["name"]."</h3>
-                                            <strong class=\"product-price\">".number_format($coin[$dashboardModules[$currentCount]["fiat"]], 4, '.', '')."$  ".number_format($coin["price_change_24h"], 2, '.', '')."%</strong>
+                                            <strong class=\"product-price\">".number_format($coin[$dashboardModules[$currentCount]["fiat"]], 4, '.', '')." ".strtoupper($dashboardModules[$currentCount]["fiat"])." ".number_format($coin["price_change_24h"], 2, '.', '')."%</strong>
                                             <div class=\"price-trend-container\">
                                                 <p>7D: ".number_format($coin["price_change_7d"], 2, '.', '')."%</p>
                                                 <p>14D: ".number_format($coin["price_change_14d"], 2, '.', '')."%</p>
