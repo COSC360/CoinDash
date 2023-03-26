@@ -20,12 +20,10 @@ $currentUser = $_SESSION['Id'];
         </div>
         <div class="right settings">
             <div class="horizontal-container fit-width">
-                <p>English-US</p>
-                <img src="../images/canada-flag.png">
-                <img src="../svgs/arrow-down.svg">
+                <a href="../php/logout.php"><p>Logout</p></a>
             </div>
             <div class="horizontal-container fit-width">
-                <p>Hi</p>
+                <p>Hi, <?php $_SESSION['Id']?></p>
                 <img src="../images/profile-picture.png">
                 <img src="../svgs/arrow-down.svg">
             </div>
