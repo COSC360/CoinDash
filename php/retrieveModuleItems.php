@@ -13,7 +13,7 @@ if (mysqli_connect_errno()){
 $fiat = "usd";
 $category = "Ethereum Ecosystem";
 $sort = "price_change_24h";
-
+echo "<script>console.log('hi')</script>";
 $coins = retrieveCoinsByCategory($con, $fiat, $category, $sort, 12, 1);
 
 echo json_encode($coins);
