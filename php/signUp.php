@@ -80,6 +80,7 @@ include 'DBconnection.php';
     <script src="https://kit.fontawesome.com/e6e0351429.js" crossorigin="anonymous"></script>
     <script src="../js/signIn.js"></script>
     <script src="../js/signUp.js"></script>
+    <script src="../js/testing.js"></script>
 </head>
 
 <body>
