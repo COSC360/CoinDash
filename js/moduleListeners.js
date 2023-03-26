@@ -1,13 +1,24 @@
-//.json_encode($dashboardModules[$currentCount]).
+import {buildModule} from "./parser.js";
 
 var fiatSelects = document.querySelectorAll(".fiat");
 var sortSelects = document.querySelectorAll(".sort");
-console.log(fiatSelects);
 
 fiatSelects.forEach(fiatSelect => {
     fiatSelect.addEventListener('change', (e) => {
         var newFiat = fiatSelect.value;
-        console.log(newFiat);
+        var module = fiatSelect.parentNode.parentNode.parentNode;
+        console.log(fiatSelect.parentNode);
+        console.log(fiatSelect.parentNode.parentNode);
+        var moduleObj = buildModule(module);
+
+        $.ajax({
+            url: "./retrieveModuleItems.php",
+            type: "POST",
+            data: {fiat: newFiat, category: moduleObj.category, sort: moduleObj.sort},
+            success: function(response) {
+                console.log(response);
+            }
+        })
     })
 });
 

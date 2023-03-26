@@ -14,4 +14,5 @@ $sortLabels = array( "7D: High To Low", "7D: Low To High", "14D: High To Low", "
 $sortValues = array( "price_change_7d", "price_change_7d DESC", "price_change_14d", "price_change_14d DESC",
                 "price_change_30", "price_change_30 DESC", "price_change_60d", "price_change_60d DESC",
                 "price_change_200", "price_change_200 DESC", "price_change_1yr", "price_change_1yr DESC");
+
 ?>
