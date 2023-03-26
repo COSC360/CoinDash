@@ -27,11 +27,13 @@
         ?>
     </article>
 
-    <article class="panel reviews">
-        <h2>Comments</h2>
-        <?php
-            include "retrieveComments.php";
-        ?>
+    <article class="panel">
+        <div class="review">
+            <h2>Comments</h2>
+            <?php
+                include "retrieveComments.php";
+            ?>
+        </div>
     </article>
     <?php
         include "footer.php"
