@@ -31,12 +31,14 @@ function validateLoginForm() {
         usernameError.style.transition = "visibility 0s linear 0s, opacity 300ms";
         passwordError.style.opacity = "1";
         passwordError.style.visibility = "visible";
-        passwordError.style.transition = "visibility 0s linear 0s, opacity 300ms";  
+        passwordError.style.transition = "visibility 0s linear 0s, opacity 300ms";
+        return false;  
 
     }else if(password ==""){
         passwordError.style.opacity = "1";
         passwordError.style.visibility = "visible";
         passwordError.style.transition = "visibility 0s linear 0s, opacity 300ms";
+        return false;
         // $msg = "Password empty"
         // addErrorMessage(passwordError, msg);  
 
@@ -44,6 +46,7 @@ function validateLoginForm() {
         usernameError.style.opacity = "1";
         usernameError.style.visibility = "visible";
         usernameError.style.transition = "visibility 0s linear 0s, opacity 300ms";
+        return false;
         // $msg = "Username/Email empty"
         // addErrorMessage(usernameError, msg);
 
@@ -51,10 +54,11 @@ function validateLoginForm() {
         passwordError.style.opacity = "1";
         passwordError.style.visibility = "visible";
         passwordError.style.transition = "visibility 0s linear 0s, opacity 300ms";
+        return false;
         // msg = "invalid password"
         // addErrorMessage(passwordError, msg);
     }
-    
+
     // }else{
     //     document.forms["LoginForm"].submit();
     // }
