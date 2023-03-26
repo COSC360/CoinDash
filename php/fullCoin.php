@@ -18,7 +18,13 @@
         </div>
         <div class=\"product-info-container\">
             <h3>".$coin["name"]."</h3>
-            <strong class=\"product-price\">".number_format($coin["usd"], 4, '.', '')." ".strtoupper("usd")." ".number_format($coin["price_change_24h"], 2, '.', '')."%</strong>
+            <div class=\"current-price-container\">
+                <strong class=\"product-price\">".number_format($coin["usd"], 4, '.', '')." USD ".number_format($coin["price_change_24h"], 2, '.', '')."%</strong>
+                <strong class=\"product-price\">".number_format($coin["cad"], 4, '.', '')." CAD ".number_format($coin["price_change_24h"], 2, '.', '')."%</strong>
+                <strong class=\"product-price\">".number_format($coin["eur"], 4, '.', '')." EUR ".number_format($coin["price_change_24h"], 2, '.', '')."%</strong>
+                <strong class=\"product-price\">".number_format($coin["php"], 4, '.', '')." PHP ".number_format($coin["price_change_24h"], 2, '.', '')."%</strong>
+                <strong class=\"product-price\">".number_format($coin["jpy"], 4, '.', '')." JPY ".number_format($coin["price_change_24h"], 2, '.', '')."%</strong>
+            </div>
             <div class=\"price-trend-container\">
                 <p>7D: ".number_format($coin["price_change_7d"], 2, '.', '')."%</p>
                 <p>14D: ".number_format($coin["price_change_14d"], 2, '.', '')."%</p>
