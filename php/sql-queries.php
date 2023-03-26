@@ -72,7 +72,7 @@ function retrievePossibleCategories($con){
     $sql = "SELECT DISTINCT category FROM coinCategory;";
 
     $stmt = mysqli_stmt_init($con);
-
+    echo "<script>console.log('hi')</script>";
     if (!mysqli_stmt_prepare($stmt, $sql)){
         // TODO:
         // header("location: REPLACE LATER");
