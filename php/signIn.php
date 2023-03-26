@@ -46,7 +46,8 @@
                 }elseif($result['userType'] == 'user'){
                     header('location:account.php');
                 }
-            }else if($result == null){
+            }
+            if($result == null){
                 $statusMsg = 'User does not exist !';
                 echo "<script>window.alert(\"".$statusMsg."\")</script>";
             }
