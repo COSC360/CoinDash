@@ -32,7 +32,6 @@
             if ($con->connect_error) {
                 die("Connection failed: " . $con->connect_error);
             }else{
-                
                     $username= $_POST['username'];
                     $email = $_POST['email'];
                     $password = $_POST['password'];
@@ -84,7 +83,9 @@
                         }
                     }else{ 
                         $statusMsg = 'Sorry, only JPG, JPEG & PNG files are allowed to upload.'; 
-                    } 
+                    }
+                    
+                    $_SESSION['obj_image_session'] = file_get_contents($_FILES['img']['tmp_name']);
                
             }
 ?>
@@ -138,7 +139,7 @@
                                 <p id = "imageUploadError"><i class="fa-solid fa-circle-exclamation"></i></p>
                                 <input type="file" name="img"  id="img" accept="image/*" onkeydown="ImageUploadErrorClearFunction()">
                             </div>
-                            <?php include 'pfpHandler.php'?>
+                            <?php include 'load-image.php';?>      
                             <div class="item-7">
                                 <input type="reset" value="Reset Form"  onclick="ErrorClearFunction()">
                             </div>
