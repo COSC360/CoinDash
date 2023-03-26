@@ -67,10 +67,16 @@
     flex-grow: 2;
     border: solid 1px var(--Grey-1);
     border-radius: 10px;
+    gap: 2em;
+}
+
+.full-card .product-info-container h3 {
+    font-size: 2.5em;
 }
 
 .full-card .price-trend-container p {
     font-size: 1.4em;
+    grid-template-columns: repeat(auto-fit, minmax(9em, 1fr));
 }
 
 .current-price-container {
@@ -80,5 +86,6 @@
 }
 
 .current-price-container strong {
+    font-size: 1.2em;
     width: fit-content;
 }
