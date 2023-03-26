@@ -32,7 +32,7 @@ function validateLoginForm() {
         passwordError.style.opacity = "1";
         passwordError.style.visibility = "visible";
         passwordError.style.transition = "visibility 0s linear 0s, opacity 300ms";
-        msg = "Password empty"
+        msg = "Password empty";
         addErrorMessage(passwordError, msg);
         return false;  
     }
@@ -40,7 +40,7 @@ function validateLoginForm() {
         usernameError.style.opacity = "1";
         usernameError.style.visibility = "visible";
         usernameError.style.transition = "visibility 0s linear 0s, opacity 300ms";
-        msg = "Username/Email empty"
+        msg = "Username/Email empty";
         addErrorMessage(usernameError, msg);
         return false;
     }
