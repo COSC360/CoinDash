@@ -1,6 +1,6 @@
 <div class="modal hide" id="module-modal">
     <form>
-        <i class="fa-solid fa-xmark" id="modal-close-btn"></i>
+        <i class="fa-solid fa-xmark fa-xl" id="modal-close-btn"></i>
         <h3>Module Settings</h3>
         <fieldset>
             <select name="category" class="dropdown">
