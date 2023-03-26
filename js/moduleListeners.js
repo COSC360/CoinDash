@@ -6,7 +6,7 @@ var sortSelects = document.querySelectorAll(".sort");
 fiatSelects.forEach(fiatSelect => {
     fiatSelect.addEventListener('change', (e) => {
         var newFiat = fiatSelect.value;
-        var moduleId = fiatSelect.parentNode.parentNode.parentNode.id;
+        var module = fiatSelect.parentNode.parentNode.parentNode;
         console.log(fiatSelect.parentNode);
         console.log(fiatSelect.parentNode.parentNode);
         console.log(moduleId)
