@@ -6,11 +6,6 @@
     echo "
     <div class=\"product-card\">
         <div class=\"product-image-mask\">
-            // <div class=\"icon-container\">
-            //     <a class=\"icon-overlay\" href=\"#\">
-            //         <img src=\"../svgs/bookmark.svg\">
-            //     </a>
-            // </div>
             <div class=\"product-image\" style=\"background-image: url(".$coin["img_url"].");\"></div>
         </div>
         <div class=\"product-info-container\">
