@@ -54,7 +54,7 @@ include 'DBconnection.php';
 
 <body>
     <div class="main-container">
-        <?php include 'footer.php';?>
+        <?php include 'header.php';?>
         <div class = "auth-container">
             <div class="login-info">
                 <h1>Home/</h1>
