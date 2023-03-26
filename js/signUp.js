@@ -1,10 +1,10 @@
 
 
 function validateLoginForm() {
-    let username = document.forms["RegiserForm"]["username"].value;
-    let password = document.forms["RegiserForm"]["email"].value;
-    let email = document.forms["RegiserForm"]["password"].value;
-    let verifyPassword = document.forms["RegiserForm"]["password"].value;
+    let username = documen.getElementById("username");
+    let password = documen.getElementById("password");
+    let email = documen.getElementById("email");
+    let verifyPassword = documen.getElementById("verifyPassword");
     let image = document.getElementById('img');
     let usernameError = document.getElementById("usernameError");
     let passwordError = document.getElementById("passwordError");
