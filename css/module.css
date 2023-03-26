@@ -282,8 +282,8 @@ select {
 .modal {
     max-width: 15em;
     height: fit-content;
-    position: fixed;
-    border: solid 1px var(--White-1);
+    position: fixed !important;
+    border: solid 1px var(--Grey-1);
     border-radius: 10px;
     display: flex;
     flex-direction: column;
@@ -302,6 +302,8 @@ select {
 .modal form {
     display: flex;
     flex-direction: column;
+    width: 100%;
+    height: 100%;
 }
 
 .modal #modal-confirm-btn {
