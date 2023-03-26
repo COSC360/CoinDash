@@ -48,8 +48,8 @@ include 'DBconnection.php';
     <link rel="stylesheet" href="../css/module.css">
     <link rel="stylesheet" href="../css/userAuth.css">
     <script src="https://kit.fontawesome.com/e6e0351429.js" crossorigin="anonymous"></script>
-    <script src="js/signIn.js"></script>
-    <script src="js/signUp.js"></script>
+    <script src="../js/signIn.js"></script>
+    <script src="../js/signUp.js"></script>
 </head>
 
 <body>
@@ -61,9 +61,9 @@ include 'DBconnection.php';
                 <h2>Sign In</h2>
                 <p>Lorem ipsum dolor sit amet consectetur. Erat facilisi varius est cursus. Neque sagittis mi non purus semper lacus mauris magnis.</p>
                 <div class="info-footer">
-                    <p><a href="https://cosc360.ok.ubc.ca/suyash06/project-JasonR24/signUp.php">Don’t Have An Account?</a></p>
+                    <p><a href="https://cosc360.ok.ubc.ca/suyash06/project-JasonR24/php/signUp.php">Don’t Have An Account?</a></p>
                     <p>or</p>
-                    <p><a href="https://cosc360.ok.ubc.ca/suyash06/project-JasonR24/community.php">Explore Dashboards?</a></p>
+                    <p><a href="https://cosc360.ok.ubc.ca/suyash06/project-JasonR24/php/community.php">Explore Dashboards?</a></p>
                 </div>
             </div>  
             <div class="login-box">

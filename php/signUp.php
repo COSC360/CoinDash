@@ -71,14 +71,14 @@ include 'DBconnection.php';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Project 360</title>
     <link rel="stylesheet" href="font/helvetica-now-display/stylesheet.css">
-    <link rel="stylesheet" href="css/var.css">
-    <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/dashboard.css">
-    <link rel="stylesheet" href="css/header-footer.css">
-    <link rel="stylesheet" href="css/module.css">
-    <link rel="stylesheet" href="css/userAuth.css">
-    <script src="js/signIn.js"></script>
-    <script src="js/signUp.js"></script>
+    <link rel="stylesheet" href="../css/var.css">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/dashboard.css">
+    <link rel="stylesheet" href="../css/header-footer.css">
+    <link rel="stylesheet" href="../css/module.css">
+    <link rel="stylesheet" href="../css/userAuth.css">
+    <script src="../js/signIn.js"></script>
+    <script src="../js/signUp.js"></script>
 </head>
 
 <body>
@@ -88,8 +88,8 @@ include 'DBconnection.php';
                 <img src="images/sitelogo.png">
             </div>
             <nav>
-                <a href="https://cosc360.ok.ubc.ca/suyash06/project-JasonR24/community.php">Community</a>
-                <a href="https://cosc360.ok.ubc.ca/suyash06/project-JasonR24/help.php">Help</a>
+                <a href="https://cosc360.ok.ubc.ca/suyash06/project-JasonR24/php/community.php">Community</a>
+                <a href="https://cosc360.ok.ubc.ca/suyash06/project-JasonR24/php/help.php">Help</a>
             </nav>
             <div class="settings container">
                 <div class="horizontal-container fit-width" style="margin-right: 2em;">
@@ -109,9 +109,9 @@ include 'DBconnection.php';
                 <h2>Sign Up</h2>
                 <p>Lorem ipsum dolor sit amet consectetur. Erat facilisi varius est cursus. Neque sagittis mi non purus semper lacus mauris magnis.</p>
                 <div class="info-footer">
-                    <p><a href="https://cosc360.ok.ubc.ca/suyash06/project-JasonR24/signIn.php">Already Have An Account?</a></p>
+                    <p><a href="https://cosc360.ok.ubc.ca/suyash06/project-JasonR24/php/signIn.php">Already Have An Account?</a></p>
                     <p>or</p>
-                    <p><a href="https://cosc360.ok.ubc.ca/suyash06/project-JasonR24/community.php">Explore Dashboards?</a></p>
+                    <p><a href="https://cosc360.ok.ubc.ca/suyash06/project-JasonR24/php/community.php">Explore Dashboards?</a></p>
                 </div>
             </div>  
             <div class="register-box">
