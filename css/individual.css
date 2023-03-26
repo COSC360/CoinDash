@@ -48,17 +48,24 @@
 }
 
 .full-card .product-card {
+    border: none;
     display: flex;
+    gap: 1.5em;
 }
 
 .full-card .product-image-mask {
     width: 0;
-    height: 0;
     flex-grow: 1;
+    position: relative;
+    border: solid 1px var(--Grey-1);
+    border-radius: 10px;
 }
 
 .full-card .product-info-container {
-    flex-grow: 3;
+    width: 0;
+    flex-grow: 2;
+    border: solid 1px var(--Grey-1);
+    border-radius: 10px;
 }
 
 /* .full-card .product-card {
