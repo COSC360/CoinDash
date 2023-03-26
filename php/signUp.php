@@ -58,19 +58,17 @@
                         $image_base64 = base64_encode(file_get_contents($_FILES['img']['tmp_name']) );
                         $image = 'data:image/'.$imageFileType.';base64,'.$image_base64;
 
-                        if($email == "" || $username == "" || $password == "" || $verifyPassword == ""){
-                            $statusMsg = 'Please enter all the required details !';
-                            echo "<script>window.alert(\"".$statusMsg."\")</script>";
+                        // if($email == "" || $username == "" || $password == "" || $verifyPassword == ""){
+                        //     $statusMsg = 'Please enter all the required details !';
+                        //     echo "<script>window.alert(\"".$statusMsg."\")</script>";
                             
-                        }elseif($password != $verifyPassword){
+                        // }
+                        if($password != $verifyPassword){
                             $statusMsg = 'Passwords do not match !';
                             echo "<script>window.alert(\"".$statusMsg."\")</script>";
                             
-                        }elseif(!passRe){
-                            $statusMsg = 'Passwords do not match !';
-                            echo "<script>window.alert(\"".$statusMsg."\")</script>";
-                            
-                        }elseif($result != null){
+                        }
+                        if($result != null){
                             $statusMsg = 'User already exists !';
                             echo "<script>window.alert(\"".$statusMsg."\")</script>";
 
