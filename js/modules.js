@@ -42,6 +42,7 @@ confirmModalBtn.addEventListener('click', (e) => {
     var fiatElement = document.getElementById("#" + currentModule.id + " .fiat");
     var sortElement = document.getElementById("#" + currentModule.id + " .sort");
     var moduleGallery = document.querySelector("#" + currentModule.id + " .module-gallery");
+    console.log(currentModule.id);
 
     console.log(categoryElement);
     console.log(fiatElement);
