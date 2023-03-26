@@ -12,7 +12,7 @@ session_start();
         <div class="middle">
             <nav>
                 <a href="#">Search</a>
-                <a href="#">My Dashboard</a>
+                <a href="https://cosc360.ok.ubc.ca/suyash06/project-JasonR24/php/dashboard.php">My Dashboard</a>
                 <a href="#">Community</a>
                 <a href="#">Help</a>
             </nav>
