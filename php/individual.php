@@ -29,7 +29,7 @@
                 </div>
                 <p class="review-content">Lorem ipsum dolor sit amet consectetur. Arcu ornare quam sit lectus integer. Diam integer consequat sapien commodo velit. Sed lectus habitasse in bibendum justo turpis. Ultricies fames in nisl faucibus amet dignissim. Integer ipsum molestie a a vel. </p>
             </div>
-            <i class="fa-regular fa-comment-dots fa-lg"></i>
+            <i class="fa-regular fa-comment-dots fa-lg" class="comment-btn"></i>
             <input type="text" class="comment-input">
             <div class="child-comments">
                 <div class="comment" id="comment-2">
@@ -40,7 +40,7 @@
                         </div>
                         <p class="review-content">Lorem ipsum dolor sit amet consectetur. Arcu ornare quam sit lectus integer. Diam integer consequat sapien commodo velit. Sed lectus habitasse in bibendum justo turpis. Ultricies fames in nisl faucibus amet dignissim. Integer ipsum molestie a a vel. </p>
                     </div>
-                    <i class="fa-regular fa-comment-dots fa-lg"></i>
+                    <i class="fa-regular fa-comment-dots fa-lg" class="comment-btn"></i>
                     <input type="text" class="comment-input">
                     <div class="child-comments">
                     </div>
@@ -57,8 +57,10 @@
                 </div>
                 <p class="review-content">Lorem ipsum dolor sit amet consectetur. Arcu ornare quam sit lectus integer. Diam integer consequat sapien commodo velit. Sed lectus habitasse in bibendum justo turpis. Ultricies fames in nisl faucibus amet dignissim. Integer ipsum molestie a a vel. </p>
             </div>
-            <i class="fa-regular fa-comment-dots fa-lg"></i>
-            <input type="text" class="comment-input">
+            <i class="fa-regular fa-comment-dots fa-xl" class="comment-btn"></i>
+            <p>
+                <input type="text" class="comment-input">
+            </p>
             <div class="child-comments">
             </div>
         </div>

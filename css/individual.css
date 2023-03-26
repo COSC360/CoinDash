@@ -32,3 +32,13 @@
     width: 2.5em;
     height: 2.5em;
 }
+
+.comment-input {
+    margin-top: 0.75em;
+    max-width: 20em;
+    height: 8em;
+}
+
+.comment-btn {
+    margin-top: 0.75em;
+}
