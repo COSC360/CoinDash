@@ -49,8 +49,9 @@
                             break;
                         }
                         $dashboardJSON = json_encode($dashboardModules[$currentCount]);
-                        $dashboardJSON = str_replace('"', '\"', $dashboardJSON);
                         echo $dashboardJSON;
+
+
                         echo "
                             <div class=\"module small\" id=\"module-".$dashboardModules[$currentCount]["id"]."\"> 
                                 <div class=\"module-header\">
@@ -61,7 +62,7 @@
                                         </a>    
                                     </div>
                                     <div class=\"dropdowns\">
-                                        <select class=\"dropdown fiat\" onchange=\"changeFiat('\"{hi}\"')\">";
+                                        <select class=\"dropdown fiat\" onchange=\"{(e) => changeFiat(e, ".$dashboardModules[$currentCount]["block_id"].")}\">";
                                             for ($i = 0; $i < sizeof($fiats); $i++){
                                                 echo "<option value=".$fiats[$i]." ".($fiats[$i] == $dashboardModules[$currentCount]["fiat"] ? 'selected' : '').">".$fiatLabels[$i]."</option>";
                                             }
