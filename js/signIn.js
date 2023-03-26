@@ -18,7 +18,6 @@ function addErrorMessage(id, msg){
     }
 }
 function FormCheck() {
-    var submitForm = false;
     let usernameOrEmail = document.forms["LoginForm"]["user-email"].value;
     let password = document.forms["LoginForm"]["password"].value;
     let usernameError = document.getElementById("usernameError");
@@ -33,7 +32,7 @@ function FormCheck() {
         passwordError.style.opacity = "1";
         passwordError.style.visibility = "visible";
         passwordError.style.transition = "visibility 0s linear 0s, opacity 300ms";
-        submitForm == false;  
+        return false;  
 
     }else if(password ==""){
         passwordError.style.opacity = "1";
@@ -41,7 +40,7 @@ function FormCheck() {
         passwordError.style.transition = "visibility 0s linear 0s, opacity 300ms";
         // $msg = "Password empty"
         // addErrorMessage(passwordError, msg);
-        submitForm == false;  
+        return false;  
 
     }else if(usernameOrEmail ==""){
         usernameError.style.opacity = "1";
@@ -49,7 +48,7 @@ function FormCheck() {
         usernameError.style.transition = "visibility 0s linear 0s, opacity 300ms";
         // $msg = "Username/Email empty"
         // addErrorMessage(usernameError, msg);
-        submitForm == false;  
+        return false; 
 
     }else if(!passReg.test(password)){
         passwordError.style.opacity = "1";
@@ -57,20 +56,19 @@ function FormCheck() {
         passwordError.style.transition = "visibility 0s linear 0s, opacity 300ms";
         // msg = "invalid password"
         // addErrorMessage(passwordError, msg);
-        submitForm == false;
+        return false;
     }else{
-        submitForm == true;
-    }
-
-    if (submitForm == true) {
         document.forms["LoginForm"].submit();
     }
+
+
   }
 
 function UsernameErrorClearFunction(){
         let usernameError = document.getElementById("usernameError");
         usernameError.style.opacity = "0";
         usernameError.style.visibility = "hidden";
+        
 }
 
 function PasswordErrorClearFunction(){
