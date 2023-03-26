@@ -8,15 +8,9 @@ function uploadComment($con, $userId, $coinId, $text, $parentId = null){
         // header("location: REPLACE LATER");
         exit();
     }
-    echo "Hello";
-    echo $coinId;
-    echo $parentId;
-    echo $userId;
-    echo $text;
     mysqli_stmt_bind_param($commentStmt, "iiis", $coinId, $parentId, $userId, $text);
     mysqli_stmt_execute($commentStmt);
     mysqli_stmt_close($commentStmt);
-    echo "Hello";
 }
 
 function retrieveComment($con, $coinId, $parentId = null){
