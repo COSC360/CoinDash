@@ -82,8 +82,8 @@ include 'DBconnection.php';
 </head>
 
 <body>
+    <?php include 'header.php';?>
     <div class="main-container">
-        <?php include 'header.php';?>
         <div class = "auth-container">
             <div class="register-info">
                 <h1>Home/</h1>
