@@ -14,14 +14,10 @@
                 <?php
                     $categories = retrievePossibleCategories($con);
                     foreach($categories as $category){
-                        echo "<option>".$category."</option>";
+                        echo "<option>".$category["category"]."</option>";
                     }
                 ?>
             </select>
-            <?php
-                        print_r($categories);
-                        echo $categories;
-            ?>
             <select name="sort" class="dropdown">
                 <option>Test</option>
                 <option>Test</option>
