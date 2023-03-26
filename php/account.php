@@ -46,7 +46,7 @@ if($_SESSION['Id'] == null){
             <div class="user-account-box">
                 <div class="profile-box">
                     <!-- <div id="centered">Upload<br>Photo</div> -->
-                    <?php include 'upload-image.php';?>
+                    <?php include 'display-image.php';?>
                     <img src="" id = "pfp"> 
                     <h1>Username</p>
                     <h2><?php echo $_SESSION["user"] ;?></h2>
