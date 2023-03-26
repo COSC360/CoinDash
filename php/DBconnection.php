@@ -6,9 +6,11 @@ $dbPassword = "83864363";
 $dbName     = "db_83864363";  
   
 // Create database connection  
-$con = new mysqli($dbHost, $dbUsername, $dbPassword, $dbName);  
+$con = new mysqli($dbHost, $dbUsername, $dbPassword, $dbName);
+
+$error = mysqli_connect_error();
   
-if (mysqli_connect_errno()){
+if ($error != null){
     die(mysqli_connect_errno());
 }
 

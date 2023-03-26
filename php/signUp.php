@@ -32,7 +32,7 @@
             if ($con->connect_error) {
                 die("Connection failed: " . $con->connect_error);
             }else{
-                if($_SERVER["REQUEST_METHOD"] == "POST") { 
+                
                     $username= $_POST['username'];
                     $email = $_POST['email'];
                     $password = $_POST['password'];
@@ -85,9 +85,7 @@
                     }else{ 
                         $statusMsg = 'Sorry, only JPG, JPEG & PNG files are allowed to upload.'; 
                     } 
-                }else{
-                    echo"<script>window.alert(\"Invalid Request Type !\")</script>";
-                }
+               
             }
 ?>
 <?php include 'header.php';?>
