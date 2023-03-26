@@ -9,13 +9,12 @@ fiatSelects.forEach(fiatSelect => {
         var module = fiatSelect.parentNode.parentNode.parentNode;
         console.log(fiatSelect.parentNode);
         console.log(fiatSelect.parentNode.parentNode);
-        console.log(moduleId)
-        var module = buildModule(moduleId);
+        var moduleObj = buildModule(module);
 
         $.ajax({
             url: "./retrieveModuleItems.php",
             type: "POST",
-            data: {fiat: newFiat, category: module.category, sort: module.sort},
+            data: {fiat: newFiat, category: moduleObj.category, sort: moduleObj.sort},
             success: function(response) {
                 console.log(response);
             }
