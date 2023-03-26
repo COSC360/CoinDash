@@ -38,10 +38,18 @@ module_settings_btns.forEach(btn => {
 
 confirmModalBtn.addEventListener('click', (e) => {
     e.preventDefault();
+    var categoryElement = document.getElementById("#" + currentModule.id + " .api-category");
+    var fiatElement = document.getElementById("#" + currentModule.id + " .fiat");
+    var sortElement = document.getElementById("#" + currentModule.id + " .sort");
     var moduleGallery = document.querySelector("#" + currentModule.id + " .module-gallery");
+
     var fiat = moduleForm.fiat.value;
     var category = moduleForm.category.value;
     var sort = moduleForm.sort.value;
+
+    categoryElement.innerHTML = category;
+    fiatElement.value = fiat;
+    sortElement.value = sort;
     setModuleHTML(fiat, category, sort, moduleGallery);
 })
 
