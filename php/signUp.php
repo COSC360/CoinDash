@@ -31,8 +31,8 @@
 
             if ($con->connect_error) {
                 die("Connection failed: " . $con->connect_error);
-            }else{
-                if(!empty($_FILES["img"]["name"])) { 
+            }else{(
+                if(isset($_POST['username']) && isset($_POST['email']) && isset($_POST['password']) && isset($_POST['verifyPassword']))) { 
                     $username= $_POST['username'];
                     $email = $_POST['email'];
                     $password = $_POST['password'];
@@ -85,6 +85,8 @@
                     }else{ 
                         $statusMsg = 'Sorry, only JPG, JPEG & PNG files are allowed to upload.'; 
                     } 
+                }else{
+                    echo echo "<script>window.alert(\"Data was not set to the POST variables !\")</script>";
                 }
             }
 ?>
@@ -106,7 +108,7 @@
                             <div class="item-1">
                                 <label>Username <span style="color: red;">*</span></label><br>
                                 <p id = "usernameError"><i class="fa-solid fa-circle-exclamation"></i></p>                   
-                                <input type = "text" name = "username"  id = "username" placeholder="What Should We Call You?"  onkeydown="UsernameErrorClearFunction()">
+                                <input type = "text" name = "username"  id = "username" placeholder="What Should We Call You?"  onkeydown="UsernameErrorClearFunction()" value="">
                             </div>
                             <div class="item-2">
                                 <label>Email <span style="color: red;">*</span></label><br>

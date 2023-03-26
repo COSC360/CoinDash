@@ -28,35 +28,39 @@
 
     include 'DBconnection.php';
     $statusMsg = '';
-        $userOremail= $_GET['user-email'];
-        $password = $_GET['password'];
-        if ($con->connect_error) {
-            die("Connection failed: " . $con->connect_error);
-        }else{
-            $stmt = $con->prepare("SELECT * FROM `user_auth` WHERE  `Email` = ? && `Password` = ? || `Username` = ? && `Password` = ? ");
-            $stmt->bind_param("ssss", $userOremail,$password,$userOremail,$password); 
-            $stmt->execute();
-            $resultSet = $stmt->get_result(); // get the mysqli result
-            $result = $resultSet->fetch_assoc();
+        if(isset($_GET['user-email']) && isset($_GET['password'])){
+            $userOremail= $_GET['user-email'];
+            $password = $_GET['password'];
+            if ($con->connect_error) {
+                die("Connection failed: " . $con->connect_error);
+            }else{
+                $stmt = $con->prepare("SELECT * FROM `user_auth` WHERE  `Email` = ? && `Password` = ? || `Username` = ? && `Password` = ? ");
+                $stmt->bind_param("ssss", $userOremail,$password,$userOremail,$password); 
+                $stmt->execute();
+                $resultSet = $stmt->get_result(); // get the mysqli result
+                $result = $resultSet->fetch_assoc();
 
-            if($result != null){
-                if($result['userType'] == 'admin'){
-                    header('location:admin.php');
+                if($result != null){
+                    if($result['userType'] == 'admin'){
+                        header('location:admin.php');
 
-                }elseif($result['userType'] == 'user'){
-                    header('location:account.php');
+                    }elseif($result['userType'] == 'user'){
+                        header('location:account.php');
+                    }
+                }
+                if($result == null && $userOremail != "" && $password != ""){
+                    $statusMsg = 'User does not exist !';
+                    echo "<script>window.alert(\"".$statusMsg."\")</script>";
                 }
             }
-            if($result == null && $userOremail != "" && $password != ""){
-                $statusMsg = 'User does not exist !';
-                echo "<script>window.alert(\"".$statusMsg."\")</script>";
-            }
-        }
 
-        $_SESSION["user"] = $_GET['user-email'];
-        $_SESSION["email"] = $result['Email'];
-        $_SESSION["Id"] = $result['Id'];
-        $_SESSION["pfp"] = $result['profilePicture'];
+            $_SESSION["user"] = $_GET['user-email'];
+            $_SESSION["email"] = $result['Email'];
+            $_SESSION["Id"] = $result['Id'];
+            $_SESSION["pfp"] = $result['profilePicture'];
+        }else{
+            echo echo "<script>window.alert(\"Data was not set to the GET variables !\")</script>";
+        }
     ?>
 <?php include 'header.php';?>
 <main>  
