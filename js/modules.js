@@ -20,8 +20,8 @@ module_settings_btns.forEach(btn => {
         console.log(btnRect.top);
         console.log(btnRect.left);
         moduleModal.classList.remove("hide");
-        moduleModal.clientX = "100px";
-        moduleModal.clientY = "100px";
+        moduleModal.style.left = btnRect.left + "px";
+        moduleModal.style.top = btnRect.top + "px";
     })
 })
 
