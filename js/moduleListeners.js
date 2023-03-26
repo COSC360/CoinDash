@@ -7,8 +7,6 @@ fiatSelects.forEach(fiatSelect => {
     fiatSelect.addEventListener('change', (e) => {
         var newFiat = fiatSelect.value;
         var module = fiatSelect.parentNode.parentNode.parentNode;
-        console.log(fiatSelect.parentNode);
-        console.log(fiatSelect.parentNode.parentNode);
         var moduleObj = buildModule(module);
 
         $.ajax({
