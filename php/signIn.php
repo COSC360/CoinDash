@@ -6,8 +6,12 @@ session_start();
 
 
 include 'DBconnection.php';
-    $userOremail= $_GET['user-email'];
-    $password = $_GET['password'];
+    $userOremail= "test";
+    $password = "test";
+
+    $statusMsg = '';
+
+
     if ($con->connect_error) {
         die("Connection failed: " . $con->connect_error);
     }else{
@@ -24,13 +28,15 @@ include 'DBconnection.php';
             }elseif($result['userType'] == 'user'){
                 header('location:account.php');
             }
+        }else{
+            $statusMsg = 'User does not exist !';
         }
     }
 
     $_SESSION["user"] = $_GET['user-email'];
     $_SESSION["email"] = $result['Email'];
     $_SESSION["Id"] = $result['Id'];
-    // $_SESSION["pfp"] = $result['profilePicture'];
+    $_SESSION["pfp"] = $result['profilePicture'];
 ?>
 <!DOCTYPE html>
 <html>
@@ -59,6 +65,7 @@ include 'DBconnection.php';
         <div class = "auth-container">
             <div class="login-info">
                 <h1>Home/</h1>
+                <?php echo '<img src="data:image/*;base64,'.base64_encode($_SESSION["pfp"]).'" />';?>
                 <h2>Sign In</h2>
                 <p>Lorem ipsum dolor sit amet consectetur. Erat facilisi varius est cursus. Neque sagittis mi non purus semper lacus mauris magnis.</p>
                 <div class="info-footer">
@@ -68,6 +75,7 @@ include 'DBconnection.php';
                 </div>
             </div>  
             <div class="login-box">
+                
                 <form name = "LoginForm" id ="LoginForm" action= "" onsubmit="return validateLoginForm()" method="GET" required>
                     <div class="item-1">
                         <label>Username or Email</label><br>     
