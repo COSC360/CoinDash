@@ -124,7 +124,6 @@ select {
     grid-template-columns: repeat(auto-fit, minmax(25.5em, 1fr));
 } */
 
-
 .product-card {
     min-width: 12em;
     height: calc(100%-1px);

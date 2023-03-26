@@ -22,6 +22,7 @@ function buildBlock(blockDom) {
 
 function buildModule(moduleDom){
     var domId = moduleDom.id;
+    console.log(moduleDom);
     var category = document.querySelector("#" + domId + " .api-category").innerText;
     var fiatDom = document.querySelector("#" + domId + " .fiat");
     var fiat = fiatDom.options[fiatDom.selectedIndex].value;
