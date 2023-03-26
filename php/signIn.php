@@ -50,14 +50,14 @@
                     header('location:account.php');
                 }
             }
-            
+
             if($result == null && $userOremail != "" && $password != ""){
                 $statusMsg = 'User does not exist !';
                 echo "<script>window.alert(\"".$statusMsg."\")</script>";
             }
        
 
-            $_SESSION["user"] = $_GET['user-email'];
+            $_SESSION["user"] = $result['Username'];
             $_SESSION["email"] = $result['Email'];
             $_SESSION["Id"] = $result['Id'];
             $_SESSION["pfp"] = $result['profilePicture'];
