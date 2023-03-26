@@ -104,6 +104,7 @@ include 'DBconnection.php';
                             </div>
                             <div class="item-2">
                                 <label>Email <span style="color: red;">*</span></label><br>
+                                <p id = "emailError"><i class="fa-solid fa-circle-exclamation"></i></p>
                                 <input type = "email" name = "email" placeholder="What's Your Email?">
                             </div>
                             <div class="item-3">
@@ -117,7 +118,7 @@ include 'DBconnection.php';
                                 <input type = "password" name = "verifyPassword" placeholder="Confirm Password?">
                             </div>
                             <div class="item-5">
-                                <label>Coming From</label><br>
+                                <label style="margin-bottom:0.5em">Coming From</label><br>
                                 <select name="selectionMenu" id="selectionMenu">
                                     <option value="Google"  selected="selected">Google</option>
                                     <option value="Friend">Friend</option>
