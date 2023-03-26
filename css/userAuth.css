@@ -12,7 +12,7 @@
   left: 0;
   z-index: 10;
   display: flex;
-  /* flex-wrap: wrap; */
+  flex-direction: column;
   flex : 1 1 0;
   justify-content: space-between;
   font-size: 1em;
@@ -21,7 +21,6 @@
 }
 
 .login-info{
-  flex : 1 1 0;
   width: fit-content;
 }
 
@@ -65,7 +64,6 @@
 }
 
 .login-box{
-  flex : 1 1 0;
   height: fit-content;
   width: fit-content;
   display: grid;
