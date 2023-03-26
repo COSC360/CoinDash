@@ -6,24 +6,21 @@
     echo "
     <div class=\"product-card\">
         <div class=\"product-image-mask\">
-            <div class=\"icon-container\">
-                <a class=\"icon-overlay\" href=\"#\">
-                    <img src=\"../svgs/goto.svg\">
-                </a>
-                <a class=\"icon-overlay\" href=\"#\">
-                    <img src=\"../svgs/bookmark.svg\">
-                </a>
-            </div>
+            // <div class=\"icon-container\">
+            //     <a class=\"icon-overlay\" href=\"#\">
+            //         <img src=\"../svgs/bookmark.svg\">
+            //     </a>
+            // </div>
             <div class=\"product-image\" style=\"background-image: url(".$coin["img_url"].");\"></div>
         </div>
         <div class=\"product-info-container\">
             <h3>".$coin["name"]."</h3>
             <div class=\"current-price-container\">
-                <strong class=\"product-price\">".number_format($coin["usd"], 4, '.', '')." USD ".number_format($coin["price_change_24h"], 2, '.', '')."%</strong>
-                <strong class=\"product-price\">".number_format($coin["cad"], 4, '.', '')." CAD ".number_format($coin["price_change_24h"], 2, '.', '')."%</strong>
-                <strong class=\"product-price\">".number_format($coin["eur"], 4, '.', '')." EUR ".number_format($coin["price_change_24h"], 2, '.', '')."%</strong>
-                <strong class=\"product-price\">".number_format($coin["php"], 4, '.', '')." PHP ".number_format($coin["price_change_24h"], 2, '.', '')."%</strong>
-                <strong class=\"product-price\">".number_format($coin["jpy"], 4, '.', '')." JPY ".number_format($coin["price_change_24h"], 2, '.', '')."%</strong>
+                <strong class=\"product-price\">".number_format($coin["usd"], 4, '.', '')." USD</strong>
+                <strong class=\"product-price\">".number_format($coin["cad"], 4, '.', '')." CAD</strong>
+                <strong class=\"product-price\">".number_format($coin["eur"], 4, '.', '')." EUR</strong>
+                <strong class=\"product-price\">".number_format($coin["php"], 4, '.', '')." PHP</strong>
+                <strong class=\"product-price\">".number_format($coin["jpy"], 4, '.', '')." JPY</strong>
             </div>
             <div class=\"price-trend-container\">
                 <p>7D: ".number_format($coin["price_change_7d"], 2, '.', '')."%</p>
