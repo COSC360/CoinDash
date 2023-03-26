@@ -92,3 +92,13 @@ saveEditBtn.addEventListener("click", (e) => {
     e.preventDefault();
     uploadDashboard(1);
 })
+
+
+
+function changeFiat(dashboardJSON){
+    console.log(dashboardJSON);
+}
+
+function changeSort(dashboardJSON){
+    console.log(dashboardJSON);
+}

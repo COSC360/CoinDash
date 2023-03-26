@@ -39,7 +39,6 @@
                 $moduleCount = sizeof($dashboardModules);
                 $currentCount = 0;
                 $previousBlock = $dashboardModules[$currentCount]["block_id"];
-                $fiat = "usd";
 
                 while ($currentCount < $moduleCount){
                     echo "<div class=\"block panel\">";
@@ -55,15 +54,15 @@
                                         <div class=\"api-category\">".$dashboardModules[$currentCount]["category"]."</div>
                                         <a class=\"icon-overlay\" href=\"#\">
                                             <img src=\"../svgs/goto.svg\">
-                                        </a>
+                                        </a>    
                                     </div>
                                     <div class=\"dropdowns\">
-                                        <select class=\"dropdown fiat\">";
+                                        <select class=\"dropdown fiat\" onchange=changeFiat(".json_encode($dashboardModules[$currentCount]).")>";
                                             for ($i = 0; $i < sizeof($fiats); $i++){
                                                 echo "<option value=".$fiats[$i]." ".($fiats[$i] == $dashboardModules[$currentCount]["fiat"] ? 'selected' : '').">".$fiatLabels[$i]."</option>";
                                             }
                         echo           "</select>
-                                        <select class=\"dropdown sort\">";
+                                        <select class=\"dropdown sort\" onchange=changeSort(".json_encode($dashboardModules[$currentCount]).")>";
                                             for ($i = 0; $i < sizeof($sortValues); $i++){
                                                 echo "<option value=".$sortValues[$i]." ".($sortValues[$i] == $dashboardModules[$currentCount]["sort"] ? 'selected' : '').">".$sortLabels[$i]."</option>";
                                             }
@@ -88,7 +87,7 @@
                                             <div class=\"product-image\" style=\"background-image: url(".$coin["img_url"].");\"></div>
                                         </div><div class=\"product-info-container\">
                                             <h3>".$coin["name"]."</h3>
-                                            <strong class=\"product-price\">".number_format($coin[$fiat], 4, '.', '')."$  ".number_format($coin["price_change_24h"], 2, '.', '')."%</strong>
+                                            <strong class=\"product-price\">".number_format($coin[$dashboardModules[$currentCount]["fiat"]], 4, '.', '')."$  ".number_format($coin["price_change_24h"], 2, '.', '')."%</strong>
                                             <div class=\"price-trend-container\">
                                                 <p>7D: ".number_format($coin["price_change_7d"], 2, '.', '')."%</p>
                                                 <p>14D: ".number_format($coin["price_change_14d"], 2, '.', '')."%</p>
@@ -119,7 +118,6 @@
                         ";
                         $currentCount++;
                     }
-
                     echo "</div>";
                 }
             ?>
