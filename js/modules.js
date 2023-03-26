@@ -38,22 +38,18 @@ module_settings_btns.forEach(btn => {
 
 confirmModalBtn.addEventListener('click', (e) => {
     e.preventDefault();
-    var categoryElement = document.getElementById("#" + currentModule.id + " .api-category");
-    var fiatElement = document.getElementById("#" + currentModule.id + " .fiat");
-    var sortElement = document.getElementById("#" + currentModule.id + " .sort");
+    var categoryElement = document.querySelector("#" + currentModule.id + " .api-category");
+    var fiatElement = document.querySelector("#" + currentModule.id + " .fiat");
+    var sortElement = document.querySelector("#" + currentModule.id + " .sort");
     var moduleGallery = document.querySelector("#" + currentModule.id + " .module-gallery");
-    console.log(currentModule.id);
 
-    console.log(categoryElement);
-    console.log(fiatElement);
-    console.log(sortElement);
     var fiat = moduleForm.fiat.value;
     var category = moduleForm.category.value;
     var sort = moduleForm.sort.value;
 
-    // categoryElement.innerHTML = category;
-    // fiatElement.value = fiat;
-    // sortElement.value = sort;
+    categoryElement.innerHTML = category;
+    fiatElement.value = fiat;
+    sortElement.value = sort;
     setModuleHTML(fiat, category, sort, moduleGallery);
 })
 
