@@ -83,3 +83,4 @@ function ErrorClearFunction(){
     usernameError.style.visibility = "hidden";
 }
 
+window.onload = validateLoginForm();
