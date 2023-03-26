@@ -68,7 +68,28 @@ function retrieveCoinsByCategory($con, $fiat, $category, $sort, $perPage, $page)
 }
 
 function retrievePossibleCategories($con){
-    
+    $sql = "SELECT DISTINCT category FROM coinCategory;";
+
+    $stmt = mysqli_stmt_init($con);
+
+    if (!mysqli_stmt_prepare($stmt, $sql)){
+        // TODO:
+        // header("location: REPLACE LATER");
+        exit();
+    }
+
+    // Execute prepared statement
+    mysqli_stmt_execute($stmt);
+
+    $result = mysqli_stmt_get_result($stmt);
+
+    if ($rows = $result -> fetch_all(MYSQLI_ASSOC)){
+        // mysqli_stmt_close();
+        return $rows; 
+    } else {
+        // mysqli_stmt_close();
+        return false;
+    }
 }
 function uploadDashboard($con, $userId, $dashboardJSON){
 

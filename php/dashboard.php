@@ -33,6 +33,7 @@
         <article id="dashboard">
             <?php 
                 // include "retrieveModuleItems.php";
+                include "utils.php";
                 include "moduleModal.php";
                 include "modules.php";
                 include "utils.php";
