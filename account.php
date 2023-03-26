@@ -10,7 +10,7 @@ if ($con->connect_error) {
     $stmt = $con->prepare("UPDATE user_auth SET Email = ? WHERE Id = ?");
     $stmt->bind_param("si", $email,$_SESSION["Id"]); 
     $stmt->execute();
-    echo "Update Executed !";
+    header('location:dashboard.php');
 }
 ?>
 <!DOCTYPE html>
