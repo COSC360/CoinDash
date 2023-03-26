@@ -65,6 +65,7 @@
                         echo           "</select>
                                         <select class=\"dropdown sort\">";
                                             for ($i = 0; $i < sizeof($sortValues); $i++){
+                                                echo $sortValues[$i];
                                                 echo "<option value=".$sortValues[$i]." ".($sortValues[$i] == $dashboardModules[$currentCount]["sort"] ? 'selected' : '').">".$sortLabels[$i]."</option>";
                                             }
                         echo           "</select>
