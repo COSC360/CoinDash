@@ -62,14 +62,14 @@ function validateLoginForm() {
     }
 
 
-    // if(usernameOrEmail =="" && passReg.test(password)){
-    //     usernameError.style.opacity = "1";
-    //     usernameError.style.visibility = "visible";
-    //     usernameError.style.transition = "visibility 0s linear 0s, opacity 300ms";
-    //     return false;
-    //     // $msg = "Username/Email empty"
-    //     // addErrorMessage(usernameError, msg);
-    // }
+    if(usernameOrEmail =="" && passReg.test(password)){
+        usernameError.style.opacity = "1";
+        usernameError.style.visibility = "visible";
+        usernameError.style.transition = "visibility 0s linear 0s, opacity 300ms";
+        return false;
+        // $msg = "Username/Email empty"
+        // addErrorMessage(usernameError, msg);
+    }
   }
 
 function UsernameErrorClearFunction(){
