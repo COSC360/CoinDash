@@ -87,7 +87,7 @@ if ($con->connect_error) {
                         foreach($categoryResultSet as $category){
                             $insertCategoryStmt = $con->prepare("INSERT INTO category(`name`) VALUES (?)");
                             $insertCategoryStmt->bind_param("s",$category);
-                            $insertStmt->execute(); 
+                            $insertCategoryStmt->execute(); 
                         }                    
                     }     
                 }
