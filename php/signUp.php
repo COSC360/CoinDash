@@ -60,15 +60,15 @@
 
                         if($email == "" || $username == "" || $password == "" || $verifyPassword == ""){
                             $statusMsg = 'Please enter all the required details !';
-                            echo "<script>console.log(".$statusMsg.");</script>";
+                            echo "<script>console.log("".$statusMsg."");</script>";
                             
                         }elseif($password != $verifyPassword){
                             $statusMsg = 'Passwords do not match !';
-                            echo "<script>console.log(".$statusMsg.");</script>";
+                            echo "<script>console.log("".$statusMsg."");</script>";
                             
                         }elseif($result != null){
                             $statusMsg = 'User already exists !';
-                            echo "<script>console.log(".$statusMsg.");</script>";
+                            echo "<script>console.log("".$statusMsg."");</script>";
 
                         
                         }else{
