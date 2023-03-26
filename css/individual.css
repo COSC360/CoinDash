@@ -9,6 +9,8 @@
 .comment-header {
     display: flex;
     gap: 1em;
+    justify-content: flex-start;
+    align-items: center;
 }
 
 .main-comment {
@@ -21,6 +23,6 @@
 
 .profile-picture {
     aspect-ratio: 1;
-    width: 1em;
-    height: 1em;
+    width: 2.5em;
+    height: 2.5em;
 }
