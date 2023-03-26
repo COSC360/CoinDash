@@ -27,9 +27,9 @@ function retrieveAllCoins($con){
 }
 
 function retrieveCoinsByCategory($con, $fiat, $category, $sort, $perPage, $page){
-    $validSortValues = array("price_change_24h", "price_change_24h DESC", "price_change_7d", "price_change_7d DESC", "price_change_14d", "price_change_14d DESC",
-                "price_change_30d", "price_change_30d DESC", "price_change_60d", "price_change_60d DESC",
-                "price_change_200d", "price_change_200d DESC", "price_change_1yr", "price_change_1yr DESC");
+    $validSortValues = array("price_change_24h DESC", "price_change_24h", "price_change_7d DESC", "price_change_7d", "price_change_14d DESC", "price_change_14d",
+                    "price_change_30d DESC", "price_change_30d", "price_change_60d DESC", "price_change_60d",
+                    "price_change_200d DESC", "price_change_200d", "price_change_1yr DESC", "price_change_1yr");
 
     if (!in_array($sort, $validSortValues)){
         // TODO:
