@@ -1,12 +1,8 @@
 <?php
-    include "DBconnection.php";
-    include "sql-queries.php";
-
     $coinId = $_GET["coinId"];
     $coin = retrieveCoinById($con, $coinId);
     $coin = $coin[0];
     
-    print_r($coin);
     echo "
     <div class=\"product-card\">
         <div class=\"icon-container\">

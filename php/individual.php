@@ -16,8 +16,15 @@
 
 <body>
     <?php
-        include "header.php"
+        include "header.php";
+        include "DBconnection.php";
+        include "sql-queries.php";
     ?>
+    <article class="panel full-card">
+        <?php
+            include "fullCoin.php";
+        ?>
+    </article>
     <article class="panel bordered-section reviews">
         <h2>Comments</h2>
         <hr class="medium-spacing">
