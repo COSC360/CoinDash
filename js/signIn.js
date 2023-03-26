@@ -10,7 +10,7 @@
 //         passwordError.appendChild(errorMsg);
 //     }
 // }
-function validateLoginForm() {
+window.onload = function validateLoginForm() {
     let usernameOrEmail = document.getElementById("user-email");
     let password = document.getElementById("password");
     let usernameError = document.getElementById("usernameError");
@@ -79,5 +79,3 @@ function ErrorClearFunction(){
     usernameError.style.visibility = "hidden";
 
 }
-
-window.onload = validateLoginForm();
