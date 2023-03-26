@@ -24,9 +24,15 @@ session_start();
                 <img src="../svgs/arrow-down.svg">
             </div>
             <div class="horizontal-container fit-width">
-                <p>Hi, <?php echo $_SESSION['user']?></p>
-                <img src="../images/profile-picture.png">
-                <img src="../svgs/arrow-down.svg">
+            <?php
+                if($_SESSION['user'] != null){
+                    echo  "<p>Hi, ".$_SESSION['user']."</p>";
+                    echo  "<img src=\"../images/profile-picture.png\">";
+                    echo  "<img src=\"../svgs/arrow-down.svg\">";
+                }else{
+                    echo  "Sign In / Sign Up";       
+                }
+            ?>
             </div>
         </div>
     </div>
