@@ -16,6 +16,8 @@ module_settings_btns.forEach(btn => {
 
     btn.addEventListener("click", (e) => {
         console.log("Open Modal");
+        console.log(btn.clientX);
+        console.log(btn.clientY);
         moduleModal.classList.remove("hide");
         moduleModal.clientX = "100px";
         moduleModal.clientY = "100px";
