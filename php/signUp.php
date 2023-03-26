@@ -39,15 +39,16 @@ include 'DBconnection.php';
 
                 if($email == "" || $username == "" || $password == "" || $verifyPassword == ""){
                     $statusMsg = 'Please enter all the required details !';
-                    echo "<script>window.alert(".$statusMsg.")</script>";
+                    echo $statusMsg;
                     
                 }elseif($password != $verifyPassword){
                     $statusMsg = 'Passwords do not match !';
-                    echo "<script>window.alert(".$statusMsg.")</script>";
+                    echo $statusMsg;
                     
                 }elseif($result != null){
                     $statusMsg = 'User already exists !';
-                    echo "<script>window.alert(".$statusMsg.")</script>";
+                    echo $statusMsg;
+
                    
                 }else{
                     // Insert image content into database   
