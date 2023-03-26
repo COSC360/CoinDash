@@ -138,7 +138,7 @@
                                 <p id = "imageUploadError"><i class="fa-solid fa-circle-exclamation"></i></p>
                                 <input type="file" name="img"  id="img" accept="image/*" onkeydown="ImageUploadErrorClearFunction()">
                             </div>
-                            <?php include 'pfpHandler.php';?>
+                            <?php include 'pfpHandler.php'?>
                             <div class="item-7">
                                 <input type="reset" value="Reset Form"  onclick="ErrorClearFunction()">
                             </div>
