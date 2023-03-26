@@ -35,6 +35,7 @@
         if($_SERVER["REQUEST_METHOD"] == "GET"){
             $userOremail= $_GET['user-email'];
             $password = $_GET['password'];
+
             $stmt = $con->prepare("SELECT * FROM `user_auth` WHERE  `Email` = ? && `Password` = ? || `Username` = ? && `Password` = ? ");
             $stmt->bind_param("ssss", $userOremail,$password,$userOremail,$password); 
             $stmt->execute();
@@ -49,6 +50,7 @@
                     header('location:account.php');
                 }
             }
+            
             if($result == null && $userOremail != "" && $password != ""){
                 $statusMsg = 'User does not exist !';
                 echo "<script>window.alert(\"".$statusMsg."\")</script>";
