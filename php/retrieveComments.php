@@ -1,5 +1,6 @@
 <?php
     include "commentSQL.php";
+    echo "Working";
     $comments = retrieveComment($con, $coinId);
 
     print_r($comments);
