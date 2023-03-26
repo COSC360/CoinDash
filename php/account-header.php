@@ -1,7 +1,6 @@
 <?php
 session_start();
 
-$currentUser = $_SESSION['Id'];
 ?>
 <header class="container">
     <div class="fill-container">
@@ -23,7 +22,7 @@ $currentUser = $_SESSION['Id'];
                 <a href="../php/logout.php"><p>Logout</p></a>
             </div>
             <div class="horizontal-container fit-width">
-                <p>Hi, <?php echo $_SESSION['$currentUser']?></p>
+                <p>Hi, <?php echo $_SESSION['Id']?></p>
                 <img src="../images/profile-picture.png">
                 <img src="../svgs/arrow-down.svg">
             </div>
