@@ -1,5 +1,6 @@
 import { uploadDashboard } from "./uploadDashboard.js";
 import { setModuleHTML } from "./moduleListeners.js";
+import { buildModule } from "./parser.js";
 
 var module_settings_btns = document.querySelectorAll(".module-settings-btn");
 var modules = document.querySelectorAll(".module");
