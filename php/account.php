@@ -34,7 +34,7 @@ $password = $_POST['password'];
 </head>
 <body>
 <?php include 'account-header.php';?>
-    <div class="main-container">
+    <main>
         <div class = "user-account-container">
             <div class="user-account-info">
                 <h2>Account Settings</h2>
@@ -70,6 +70,6 @@ $password = $_POST['password'];
                 </form>
             </div>
         </div>
-    </div>
+    <main>
 </body>
 </html>
