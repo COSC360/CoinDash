@@ -87,7 +87,10 @@ session_start();
                                 </div>
                                 <div class=\"module-gallery\">";
 
-                                $coins = retrieveAllCoins($con);
+                                $coins = retrieveCoinsByCategory($con, $dashboardModules[$currentCount]["fiat"], 
+                                                                        $dashboardModules[$currentCount]["category"], 
+                                                                        $dashboardModules[$currentCount]["sort"],
+                                                                        12, 1);
                                 foreach($coins as $coin){
                                     echo 
                                     "<div class=\"product-card\">
