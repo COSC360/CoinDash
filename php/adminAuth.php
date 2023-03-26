@@ -1,5 +1,4 @@
-<!-- <?php
-?> -->
+<!-- 
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -26,4 +25,4 @@
         </div>
     </main>
 </body>
-</html>
+</html> -->
