@@ -46,7 +46,16 @@ if($_SESSION['Id'] == null){
             <div class="user-account-box">
                 <div class="profile-box">
                     <!-- <div id="centered">Upload<br>Photo</div> -->
-    
+                    <?php
+                    echo "<script>
+                    document.addEventListener(\"DOMContentLoaded\", () =>{
+                    const pfpDataURL = localStorage.getItem(".$_SESSION['Id'].");         
+                        if(pfpDataURL){
+                            document.querySelector(\"pfp\").setAttribute(\"src\",pfpDataURL);
+                        }
+                    });
+                    </script>";
+                    ?>
                     <img src="" id = "pfp"> 
                     <h1>Username</p>
                     <h2><?php echo $_SESSION["user"] ;?></h2>
