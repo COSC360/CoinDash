@@ -1,5 +1,6 @@
 import { uploadDashboard } from "./uploadDashboard.js";
 import { setModuleHTML } from "./moduleListeners.js";
+import { buildModule } from "./parser.js";
 
 var module_settings_btns = document.querySelectorAll(".module-settings-btn");
 var modules = document.querySelectorAll(".module");
@@ -7,6 +8,7 @@ var editElements = document.querySelectorAll(".edit-ui");
 var toggleEditBtn = document.getElementById("view-edit-btn");
 var saveEditBtn = document.getElementById("save-edit-btn");
 var moduleModal = document.getElementById("module-modal");
+var moduleForm = document.getElementById("module-form");
 var closeModalBtn = document.getElementById("modal-close-btn");
 var cancelModalBtn = document.getElementById("modal-cancel-btn");
 var confirmModalBtn = document.getElementById("modal-confirm-btn");
@@ -38,7 +40,12 @@ confirmModalBtn.addEventListener('click', (e) => {
     e.preventDefault();
     var moduleObj = buildModule(currentModule);
     var moduleGallery = document.querySelector("#" + currentModule.id + " .module-gallery");
-
+    console.log(moduleObj.fiat);
+    console.log(moduleObj.category);
+    console.log(moduleObj.sort);
+    console.log(moduleForm);
+    console.log(moduleForm["fiat"]);
+    console.log(moduleForm.fiat);
     setModuleHTML(moduleObj.fiat, moduleObj.category, moduleObj.sort, moduleGallery);
 })
 
