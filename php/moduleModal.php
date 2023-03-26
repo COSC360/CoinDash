@@ -5,12 +5,6 @@
         <h3>Module Settings</h3>
         <fieldset>
             <select name="category" class="dropdown">
-                <option>Test</option>
-                <option>Test</option>
-                <option>Test</option>
-                <option>Test</option>
-            </select>
-            <select name="fiat" class="dropdown">
                 <?php
                     $categories = retrievePossibleCategories($con);
                     foreach($categories as $category){
@@ -18,11 +12,19 @@
                     }
                 ?>
             </select>
+            <select name="fiat" class="dropdown">
+                <?php
+                    for ($i = 0; $i < sizeof($fiats); $i++){
+                        echo "<option value=\"".$fiats[$i]."\">".$fiatLabels[$i]."</option>";
+                    }
+                ?>
+            </select>
             <select name="sort" class="dropdown">
-                <option>Test</option>
-                <option>Test</option>
-                <option>Test</option>
-                <option>Test</option>
+                <?php
+                    for ($i = 0; $i < sizeof($sortValues); $i++){
+                        echo "<option value=\"".$sortValues[$i]."\">".$sortLabels[$i]."</option>";
+                    }
+                ?>
             </select>
             <p>
                 <button type="submit" id="modal-confirm-btn">Update Module</button>
