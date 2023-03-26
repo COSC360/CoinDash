@@ -26,7 +26,9 @@ sortSelects.forEach(sortSelect => {
 })
 
 function setModuleHTML(fiat, category, sort, target){
-
+    console.log(fiat);
+    console.log(category);
+    console.log(sort);
     $.ajax({
         url: "./retrieveModuleItems.php",
         type: "POST",
