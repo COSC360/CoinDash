@@ -62,7 +62,7 @@
                                         </a>    
                                     </div>
                                     <div class=\"dropdowns\">
-                                        <select class=\"dropdown fiat\" onchange={(e) => changeFiat(e, ".$dashboardModules[$currentCount]["block_id"].")}>";
+                                        <select class=\"dropdown fiat\" onchange=changeFiat(2)}>";
                                             for ($i = 0; $i < sizeof($fiats); $i++){
                                                 echo "<option value=".$fiats[$i]." ".($fiats[$i] == $dashboardModules[$currentCount]["fiat"] ? 'selected' : '').">".$fiatLabels[$i]."</option>";
                                             }
