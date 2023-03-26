@@ -20,7 +20,7 @@
                 <img src="../svgs/arrow-down.svg">
             </div>
             <div class="horizontal-container fit-width">
-                <p>Hi, <?php echo $_SESSION['user']?></p>
+                <p>About Us</p>
             </div>
         </div>
     </div>
