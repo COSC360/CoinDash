@@ -18,7 +18,7 @@ function addErrorMessage(id, msg){
     }
 }
 function FormCheck() {
-    var submitForm = true;
+    var submitForm = false;
     let usernameOrEmail = document.forms["LoginForm"]["user-email"].value;
     let password = document.forms["LoginForm"]["password"].value;
     let usernameError = document.getElementById("usernameError");
