@@ -70,7 +70,7 @@ function retrieveCoinsByCategory($con, $fiat, $category, $sort, $perPage, $page)
 function retrieveCoinById($con, $coinId){
     $sql = "SELECT * FROM coin WHERE id = ?";
     //ORDER BY ? LIMIT ? OFFSET ?;
-
+    echo "Hello";
     //WHERE id IN (SELECT coin_id FROM categoryCoin WHERE category = ?) LIMIT ? OFFSET ?
     $stmt = mysqli_stmt_init($con);
     
@@ -79,10 +79,10 @@ function retrieveCoinById($con, $coinId){
         // header("location: REPLACE LATER");
         exit();
     }
-
+    echo "Hello";
     // Set parameters for prepared statement
     mysqli_stmt_bind_param($stmt, "i", $coinId);
-    
+    echo "Hello";
     // Execute prepared statement
     mysqli_stmt_execute($stmt);
     
