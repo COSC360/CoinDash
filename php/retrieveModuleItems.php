@@ -10,6 +10,7 @@ if (mysqli_connect_errno()){
 // $fiat = $_POST["fiat"];
 // $category = $_POST["category"];
 // $sort = $_POST["sort"];
+echo "<script>console.log('hi')</script>";
 $fiat = "usd";
 $category = "Ethereum Ecosystem";
 $sort = "price_change_24h";
