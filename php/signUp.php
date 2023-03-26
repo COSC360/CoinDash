@@ -83,26 +83,7 @@ include 'DBconnection.php';
 
 <body>
     <div class="main-container">
-        <header class="header-container">
-            <div class="logo">
-                <img src="images/sitelogo.png">
-            </div>
-            <nav>
-                <a href="https://cosc360.ok.ubc.ca/suyash06/project-JasonR24/php/community.php">Community</a>
-                <a href="https://cosc360.ok.ubc.ca/suyash06/project-JasonR24/php/help.php">Help</a>
-            </nav>
-            <div class="settings container">
-                <div class="horizontal-container fit-width" style="margin-right: 2em;">
-                    <p>English-US</p>
-                    <img src="images/canada-flag.png">
-                    <img src="svgs/arrow-down.svg">
-                </div>
-                <div class="horizontal-container fit-width">
-                    <p>Sign In / Sign Up</p>
-
-                </div>
-            </div>
-        </header>
+        <?php include 'header.php';?>
         <div class = "auth-container">
             <div class="register-info">
                 <h1>Home/</h1>
