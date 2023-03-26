@@ -36,7 +36,7 @@ function retrieveCoinsByCategory($con, $fiat, $category, $sort, $perPage, $page)
         // header("location: REPLACE LATER");
         exit();
     }
-    $test = "price_change_24h";
+    $test = "price_change_24h DESC";
     $sql = "SELECT * FROM coin WHERE id IN (SELECT coin FROM coinCategory WHERE category = ?) ORDER BY ".$test." LIMIT ? OFFSET ?;";
     //ORDER BY ? LIMIT ? OFFSET ?;
 
