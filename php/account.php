@@ -14,8 +14,6 @@ $password = $_POST['password'];
 
 if($_SESSION['Id'] == null){
     header('location:sigIn.php');
-}else{
-    continue;
 }
 ?>
 <!DOCTYPE html>
