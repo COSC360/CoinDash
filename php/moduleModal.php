@@ -1,9 +1,5 @@
 <div class="modal">
-    <?php
-        include "utils.php";
-        include "DBConnection.php";
-        include "sql-queries.php";
-    ?>
+
     <form>
         <i class="fa-solid fa-xmark" id="modal-close-btn"></i>
         <h3>Module Settings</h3>
@@ -15,13 +11,7 @@
                 <option>Test</option>
             </select>
             <select name="fiat" class="dropdown">
-                <?php
-                    echo "<script>console.log('hi')</script>";
-                    $categories = retrievePossibleCategories($con);
-                    foreach($categories as $category){
-                        echo "<option>".$category."</option>";
-                    }
-                ?>
+    
             </select>
             <select name="sort" class="dropdown">
                 <option>Test</option>
