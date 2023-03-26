@@ -11,8 +11,8 @@
 //     }
 // }
 function validateLoginForm() {
-    let usernameOrEmail = document.forms["LoginForm"]["user-email"].value;
-    let password = document.forms["LoginForm"]["password"].value;
+    let usernameOrEmail = document.getElementById("user-email");
+    let password = document.getElementById("password");
     let usernameError = document.getElementById("usernameError");
     let passwordError = document.getElementById("passwordError");
     // var errorFlag = false;
