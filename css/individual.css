@@ -47,7 +47,7 @@
     margin-top: 0.75em;
 }
 
-.full-card .product-card {
+/* .full-card .product-card {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -92,4 +92,4 @@
 
 .price-trend-container p {
     white-space: nowrap;
-}
+} */
