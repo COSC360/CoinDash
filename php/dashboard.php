@@ -32,8 +32,6 @@
         </article>
         <article id="dashboard">
             <?php 
-                include "DBConnection.php";
-                include "sql-queries.php";
                 include "moduleModal.php";
                 include "modules.php";
                 include "utils.php";
