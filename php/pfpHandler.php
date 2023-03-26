@@ -10,14 +10,14 @@ session_start();
         const reader = new FileReader();
 
         reader.addEventListener("load", ()=>{
-            localStorage.setItem($_SESSION['Id'], reader.result);
+            localStorage.setItem("<?php echo $_SESSION['Id']?>", reader.result);
         })
 
         reader.readAsDataURL(this.files[0])
     });
 
     document.addEventListener("DOMContentLoaded", () =>{
-        const pfpDataURL = localStorage.getItem($_SESSION['Id']);
+        const pfpDataURL = localStorage.getItem("<?php echo $_SESSION['Id']?>");
 
         if(pfpDataURL){
             document.querySelector("pfp").setAttribute("src",pfpDataURL);
