@@ -25,7 +25,7 @@ include 'DBconnection.php';
             $allowTypes = array('jpg','png','jpeg');
             
             //Check if data already exists 
-            $stmt = $con->prepare("SELECT * FROM `user_auth` WHERE  `Email` = ? && `Password` = ? || `Username` = ? && `Password` = ? ");
+            $stmt = $con->prepare("SELECT * FROM `user_auth` WHERE  `Email` = ? || `Username` = ?");
             $stmt->bind_param("ssss", $email,$password,$username,$password); 
             $stmt->execute();
             $resultSet = $stmt->get_result(); // get the mysqli result
@@ -52,7 +52,7 @@ include 'DBconnection.php';
                 }else{
                     // Insert image content into database   
                     $stmt = $con->prepare("INSERT INTO `user_auth` (`Username`, `Email`, `Password`,`comingFrom`,`profilePicture`,`userType`) VALUES (?,?,?,?,?,?)");
-                    $stmt->bind_param("ssssbs",$username,$email,$password,$selectedOption,$image,$userType); 
+                    $stmt->bind_param("ssssss",$username,$email,$password,$selectedOption,$image,$userType); 
                     $stmt->execute();
                     header('location: signIn.php');
                     $stmt->close();
