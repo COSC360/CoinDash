@@ -55,7 +55,6 @@ modules.forEach(module => {
         var rightDist = moduleDroppedOnBounds.right - e.clientX;
         var leftDist = e.clientX - moduleDroppedOnBounds.left;
 
-
         // Determine which side to to highlight based on proximity to left/right
         if (leftDist < rightDist){
             module.classList.remove("right-border-highlight");
