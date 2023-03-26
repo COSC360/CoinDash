@@ -8,7 +8,6 @@ function addErrorMessage(id, msg){
         usernameError.appendChild(errorMsg);
     }else if(id = passwordError){
         passwordError.appendChild(errorMsg);
-        
     }
 }
 function validateLoginForm() {
