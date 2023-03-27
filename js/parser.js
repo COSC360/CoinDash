@@ -29,9 +29,6 @@ function buildModule(moduleDom){
     var fiat = fiatDom.options[fiatDom.selectedIndex].value;
     var sortDom = document.querySelector("#" + domId + " .sort"); 
     var sort = sortDom.options[sortDom.selectedIndex].value;
-    console.log(category);
-    console.log(fiat);
-    console.log(sort);
     return new Module(category, fiat, sort);
 }
 
