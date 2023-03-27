@@ -116,17 +116,19 @@ modules.forEach(module => {
     })
 })
 
-toggleEditBtn.addEventListener("click", (e) => {
-    e.preventDefault();
-    editElements.forEach(element => {
-        if (element.classList.contains("hide")){
-            element.classList.remove("hide");
-        } else {
-            element.classList.add("hide");
-        }
-
+if (toggleEditBtn != null){
+    toggleEditBtn.addEventListener("click", (e) => {
+        e.preventDefault();
+        editElements.forEach(element => {
+            if (element.classList.contains("hide")){
+                element.classList.remove("hide");
+            } else {
+                element.classList.add("hide");
+            }
+    
+        })
     })
-})
+}
 
 saveEditBtn.addEventListener("click", (e) => {
     e.preventDefault();
