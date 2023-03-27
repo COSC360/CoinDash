@@ -1,3 +1,7 @@
+<?php
+session_set_cookie_params(0);
+session_start();
+?>
 <!DOCTYPE html>
 <html>
 
@@ -19,7 +23,6 @@
 
 <body>
 <?php
-    session_start();
     // error_reporting(E_ALL);
     // init_set('display_errors','1');
     // include_once('ValidationResult.class.php');

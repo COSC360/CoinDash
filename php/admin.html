@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-    <meta charset="utf-8" />
-    <title>Main Dashboard</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../font/helvetica-now-display/stylesheet.css">
     <link rel="stylesheet" href="../css/var.css">
     <link rel="stylesheet" href="../css/reset.css">
@@ -13,40 +13,15 @@
     <script src="https://kit.fontawesome.com/e6e0351429.js" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="../js/jquery-3.1.1.min.js"></script>
+    <title>Document</title>
 </head>
-
 <body>
-    <?php
-        include "dashboard-header.php";
-        include "DBconnection.php";
-        include "sql-queries.php";
-    ?>
-    <article class="panel full-card">
-        <?php
-            include "fullCoin.php";
-        ?>
-    </article>
-
     <article class="panel">
         <div class="reviews">
             <h2>Comments</h2>
-            <form class="comment-form">
-                <p>
-                    <input type="text" name="text" class="comment-input">
-                </p>
-                <p>
-                    <button type="submit">Reply</button>
-                </p>
-            </form>
             <div id="comment-area">
             </div>
         </div>
     </article>
-    <?php
-        include "footer.php"
-    ?>
-    <script src="../js/comment.js"></script>
-    <script src="../js/updateComments.js"></script>
 </body>
-
 </html>

@@ -1,4 +1,5 @@
 <?php
+session_set_cookie_params(0);
 session_start();
 
 ?>
@@ -23,7 +24,7 @@ session_start();
             </div>
             <div class="horizontal-container fit-width">
                 <p>Hi, <?php echo $_SESSION['user']?></p>
-                <img src="../images/profile-picture.png">
+                <img src="<?php echo $_SESSION['pfp']?>" style="width: 40px;height:40px;">
                 <img src="../svgs/arrow-down.svg">
             </div>
         </div>
