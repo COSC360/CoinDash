@@ -1,4 +1,4 @@
-import { getURLParams } from "./utils";
+
 
 var commentArea = document.getElementById("comment-area");
 
