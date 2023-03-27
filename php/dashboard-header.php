@@ -11,11 +11,14 @@ session_start();
             </p>
         </div>
         <div class="middle">
+            <form id="search-modal" class="hide">
+                <input type="text" name="like" placeholder="What are you looking for?">
+            </form>
             <nav>
-                <a href="#">Search</a>
+                <a id="search">Search</a>
                 <a href="https://cosc360.ok.ubc.ca/suyash06/project-JasonR24/php/dashboard.php">My Dashboard</a>
-                <a href="#">Community</a>
-                <a href="#">Help</a>
+                <!-- <a href="#">Community</a>
+                <a href="#">Help</a> -->
             </nav>
         </div>
         <div class="right settings">
@@ -38,3 +41,4 @@ session_start();
         </div>
     </div>
 </header>
+<script src="../js/search.js"></script>
