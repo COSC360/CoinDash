@@ -19,7 +19,7 @@ window.addEventListener("load", () => {
 
 function updateData(coinId){
     $.ajax({
-        url: "comment.php",
+        url: "retrieveComments.php",
         type: "POST",
         async: true,
         data: {coinId: coinId},
