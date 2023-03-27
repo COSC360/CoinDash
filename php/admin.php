@@ -36,7 +36,7 @@
             $resultSetselectUserByCommentstmt = $selectUserByCommentstmt->get_result(); // get the mysqli result
             $resultselectUserByComment = $resultSetselectUserByCommentstmt->fetch_all(MYSQLI_ASSOC);
             $_SESSION["postId"] = $resultselectUserByComment[0]['id'];
-            // $_SESSION["commentText"] = $_POST['commentText'];
+            $_SESSION["commentText"] = $_POST['commentText'];
         }
 
 
@@ -101,7 +101,7 @@
                 <p>User Username : <?php echo $resultselectUserByComment[0]['Username']?></p>
                 <p>User Email : <?php echo $resultselectUserByComment[0]['Email']?></p>
                 <p>User Status : <?php echo $resultselectUserByComment[0]['status']?></p>
-                    <form action="updateUser.php" method ="POST">
+                    <form action="" method ="POST">
                         <input type="text" name ="commentText" id="commentText" value="<?php echo $resultselectUserByComment[0]['text']?>">
                         <input type="submit" name="submit" value="change">
                     </form>
