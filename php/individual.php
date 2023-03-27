@@ -2,13 +2,6 @@
 <?php
 session_set_cookie_params(0);
 session_start();
-
-if($_SESSION['Id'] == null){
-    echo "Hello";
-    echo "<script type='text/javascript'>alert('You must be a registered user to access this page!');</script>";
-    sleep(3);
-    // header('location: signIn.php');
-}
 ?>
 
 <!DOCTYPE html>
@@ -56,7 +49,12 @@ if($_SESSION['Id'] == null){
         </div>
     </article>
     <?php
-        include "footer.php"
+        include "footer.php";
+        if($_SESSION['Id'] == null){
+            echo "<script type='text/javascript'>alert('You must be a registered user to access this page!');</script>";
+            sleep(3);
+            header('location: signIn.php');
+        }
     ?>
     <script type="module" src="../js/uploadComment.js"></script>
     <script type="module" src="../js/updateComments.js"></script>
