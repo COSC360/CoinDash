@@ -15,7 +15,6 @@ function uploadComment($con, $userId, $coinId, $text){
 
 function retrieveComment($con, $coinId){
     $commentSql = "SELECT * FROM comment c JOIN user_auth u ON c.user_id = u.id WHERE coin_id = ?";
-
     $commentStmt = mysqli_stmt_init($con);
     if (!mysqli_stmt_prepare($commentStmt, $commentSql)){
         // TODO:
