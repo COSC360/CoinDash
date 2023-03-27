@@ -22,7 +22,7 @@ function retrieveComment($con, $coinId){
         // header("location: REPLACE LATER");
         exit();
     }
-
+    
     mysqli_stmt_bind_param($commentStmt, "s", $coinId);
     mysqli_stmt_execute($commentStmt);
 

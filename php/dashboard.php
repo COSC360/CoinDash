@@ -47,9 +47,9 @@ session_start();
                         echo "<h1>Guest's Dashboard</h1>";
                     }
                 ?>
-                <div class="container edit-ui">
+                <!-- <div class="container edit-ui">
                     <img src="../svgs/edit.svg">
-                </div>
+                </div> -->
             </div>
         </article>
         <article id="dashboard">
