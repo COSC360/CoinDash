@@ -42,7 +42,7 @@ function setModuleHTML(fiat, category, sort, target){
                 newModule += `
                     <div class="product-card">
                         <div class="icon-container">
-                            <a class="icon-overlay" href="#">
+                            <a class="icon-overlay" onclick=navigateToIndividualPage("${coin.id}")>
                                 <img src="../svgs/goto.svg">
                             </a>
                             <a class="icon-overlay" href="#">
