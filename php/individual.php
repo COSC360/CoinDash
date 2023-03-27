@@ -31,9 +31,6 @@
         <div class="reviews">
             <h2>Comments</h2>
             <div id="comment-area">
-                <?php
-                    include "retrieveComments.php";
-                ?>
             </div>
         </div>
     </article>

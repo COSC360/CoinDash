@@ -1,4 +1,5 @@
 <?php
+    include "DBconnection.php";
     include "commentSQL.php";
 
     $comments = retrieveComment($con, $coinId);
