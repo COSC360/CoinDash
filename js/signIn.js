@@ -26,7 +26,7 @@ function validateLoginForm() {
         passwordError.style.opacity = "1";
         passwordError.style.visibility = "visible";
         passwordError.style.transition = "visibility 0s linear 0s, opacity 300ms";
-        window.alert("Username and Password cannot be empty !");
+        console.log("Username and Password cannot be empty !");
         return false;  
     }
     
