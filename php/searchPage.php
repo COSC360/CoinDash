@@ -43,6 +43,7 @@ session_start();
                 echo "<div class=\"module-gallery\">";
                 include "DBconnection.php";
                 include "sql-queries.php";
+                $like = isset($_GET["like"]) ? $_GET["like"] : "";
                 $coins = retrieveCoinByLike($con, "d");
 
                 foreach($coins as $coin){
