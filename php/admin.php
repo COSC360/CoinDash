@@ -37,7 +37,7 @@
             print_r();
         }else{
             $error = "No data sent!";
-            echo "<script>console.log(".$error.")</script>";          
+            echo "<script>console.log(\"".$error."\")</script>";          
         }
     }
 
