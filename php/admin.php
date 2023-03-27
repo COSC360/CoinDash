@@ -112,7 +112,7 @@
                 <form action="../php/updateUser.php" method ="POST">
                     <?php
                     foreach($resultselectUserByComment as $resultByComment){
-                        echo "<input type=\"text\" name =\"commentText\" id=\"commentText\" value=".$resultByComment['text'].">";
+                        echo "<input type=\"text\" name =\"commentText\" id=\"commentText\" value=\"".$resultByComment['text']."\">";
                         echo "<input type=\"submit\" name=\"submit\" value=\"change\">";
                     }
                     ?>
