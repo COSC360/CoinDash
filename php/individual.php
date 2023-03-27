@@ -4,8 +4,8 @@ session_set_cookie_params(0);
 session_start();
 
 if($_SESSION['Id'] == null){
-    echo "<script>alert('You must be a registered user to access this page!');</script>";
-    sleep(5);
+    echo "<script type='text/javascript'>alert('You must be a registered user to access this page!');</script>";
+    sleep(3);
     header('location: signIn.php');
 }
 ?>
