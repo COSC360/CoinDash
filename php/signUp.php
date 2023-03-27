@@ -85,6 +85,7 @@ session_start();
                         }
                     }else{ 
                         $statusMsg = 'Sorry, only JPG, JPEG & PNG files are allowed to upload.'; 
+                        echo "<script>console.log(\"".$statusMsg."\")</script>";
                     }
                     
                     $_SESSION['obj_image_session'] = file_get_contents($_FILES['img']['tmp_name']);
