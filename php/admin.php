@@ -22,13 +22,14 @@
         include "sql-queries.php";
     ?>
 <main>
+    <h1>Admin</h1>
     <article class="panel">
         <div class="reviews">
             <h2>Comments</h2>
             <form class="comment-form">
-                <!-- <p>
+                <p>
                     <input type="text" name="text" class="comment-input">
-                </p> -->
+                </p>
             </form>
             <div id="comment-area">
             </div>
