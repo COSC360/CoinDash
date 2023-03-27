@@ -8,7 +8,7 @@
     $resultSetcmmt = $cmmtstmt->get_result(); // get the mysqli result
     $resultcmmt = $resultSetcmmt->fetch_assoc();
 
-    $SESSION['comment'] = $resultcmmt['text'];
+    $_SESSION['comment'] = $resultcmmt['text'];
 ?>
 <!DOCTYPE html>
 <html lang="en">
