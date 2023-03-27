@@ -86,8 +86,5 @@ session_start();
     <?php
         include "footer.php";
     ?>
-    <script type="module" src="../js/modules.js"></script>
-    <script type="module" src="../js/moduleListeners.js"></script>
-    <!-- <script type="module" src="js/uploadDashboard.js"></script> -->
 </body>
 </html>
