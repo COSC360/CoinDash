@@ -42,8 +42,9 @@ footer .fill-container {
 
 nav {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
+    gap: 1.5em;
     width: 100%;
     margin: 0 auto;
 }
