@@ -79,7 +79,8 @@ session_start();
                         }else{
                             // Insert image content into database   
                             $stmt = $con->prepare("INSERT INTO `user_auth` (`Username`, `Email`, `Password`,`comingFrom`,`profilePicture`,`userType`,`status`) VALUES (?,?,?,?,?,?,?)");
-                            $stmt->bind_param("sssssss",$username,$email,$password,$selectedOption,$image,$userType,$userStatus); 
+                            $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+                            $stmt->bind_param("sssssss",$username,$email,$hashedPassword,$selectedOption,$image,$userType,$userStatus); 
                             $stmt->execute();
                             header('location: signIn.php');
                             $stmt->close();
