@@ -23,7 +23,7 @@ commentForms.forEach(form => {
         $.ajax({
             url: "uploadComment.php",
             type: "POST",
-            data: {coinId: coinId, parentId: parentId, text: text},
+            data: {coinId: coinId, text: text},
             success: function(response) {
                 console.log("Upload Successful");
             }
