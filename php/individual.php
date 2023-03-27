@@ -35,7 +35,7 @@
                     <textarea name="text" class="comment-input"></textarea>
                 </p>
                 <p>
-                    <button type="submit">Reply</button>
+                    <button type="submit" class="comment-btn">Reply</button>
                 </p>
             </form>
             <div id="comment-area">

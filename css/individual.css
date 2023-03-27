@@ -108,7 +108,7 @@
     margin-top: 2.5em;
     border: solid 1px var(--Grey-1);
     padding: 1em;
-    max-height: 16em;
+    max-height: 24em;
     overflow-y: scroll;
 }
 
