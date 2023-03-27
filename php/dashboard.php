@@ -122,8 +122,8 @@ session_start();
                                         </div>
                                     </div>";
                                 }
-                        // echo    "</div>
-                        //             <div class=\"module-footer\">
+                         echo "</div>";
+                        //          <div class=\"module-footer\">
                         //             <div class=\"prev\">
                         //                 <img class=\"prev-icon\" src=\"../svgs/arrow-left-long.svg\">
                         //                 <p>Previous</p>
