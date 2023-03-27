@@ -45,8 +45,8 @@
     <?php
         include "footer.php"
     ?>
-    <script src="../js/uploadComment.js"></script>
-    <script src="../js/updateComments.js"></script>
+    <script type="module" src="../js/uploadComment.js"></script>
+    <script type="module" src="../js/updateComments.js"></script>
 </body>
 
 </html>
