@@ -61,7 +61,7 @@
             margin-bottom: 2em;
         }
         
-        input{
+        #commentText{
             width: 118em;
         }
     </style>    
@@ -98,7 +98,7 @@
                 <p>User Username : <?php echo $resultselectUserByComment[0]['Username']?></p>
                 <p>User Email : <?php echo $resultselectUserByComment[0]['Email']?></p>
                 <p>User Status : <?php echo $resultselectUserByComment['status']?></p>
-                <input type="text" value="<?php echo $resultselectUserByComment[0]['text']?>">
+                <input type="text" id="commentText" value="<?php echo $resultselectUserByComment[0]['text']?>">
                 <input type="submit" name="submit" value="change">
             </div>
         </form>
