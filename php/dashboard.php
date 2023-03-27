@@ -70,9 +70,6 @@ session_start();
                                 <div class=\"module-header\">
                                     <div class=\"api-details\">
                                         <div class=\"api-category\">".$dashboardModules[$currentCount]["category"]."</div>
-                                        <a class=\"icon-overlay\" href=\"#\">
-                                            <img src=\"../svgs/goto.svg\">
-                                        </a>    
                                     </div>
                                     <div class=\"dropdowns\">
                                         <select class=\"dropdown fiat\">";
