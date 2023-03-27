@@ -18,7 +18,12 @@ session_start();
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="../js/jquery-3.1.1.min.js"></script>
     <script src="../js/dashboard.js"></script>
-    <script src="../js/utils.js"></script>
+
+    <script>
+        function navigateToIndividualPage(coinId){
+            document.location.href = `individual.php?coinId=${coinId}`
+        }
+    </script>
 </head>
 
 <body>
@@ -94,6 +99,7 @@ session_start();
                                                                         $dashboardModules[$currentCount]["sort"],
                                                                         12, 1);
                                 foreach($coins as $coin){
+                                    print_r($coin);
                                     echo 
                                     "<div class=\"product-card\">
                                         <div class=\"icon-container\">
