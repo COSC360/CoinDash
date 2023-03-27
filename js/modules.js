@@ -161,6 +161,7 @@ sortSelects.forEach(sortSelect => {
     })
 })
 
+// Generates module HTML based on fiat, category, sort. Places HTML at target location
 function setModuleHTML(fiat, category, sort, target){
     $.ajax({
         url: "./retrieveModuleItems.php",
