@@ -1,7 +1,6 @@
 <?php
-session_set_cookie_params(0);
-session_start();
-
+    session_set_cookie_params(0);
+    session_start();
 ?>
 <header class="container">
     <div class="fill-container">
