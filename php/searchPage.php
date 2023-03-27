@@ -37,14 +37,14 @@ session_start();
                 <h1>Search</h1>
             </div>
         </article>
-        <article id="dashboard">
+        <article id="dashboard panel">
             <?php 
 
                 echo "<div class=\"module-gallery\">";
                 include "DBconnection.php";
                 include "sql-queries.php";
                 $coins = retrieveCoinByLike($con, "d");
-                print_r($coins);
+
                 foreach($coins as $coin){
                     echo 
                     "<div class=\"product-card\">
