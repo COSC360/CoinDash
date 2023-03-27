@@ -1,3 +1,5 @@
+// Utility classes to construct dashboard to save and retrieve from database
+
 function buildDashboard(dashboardDom){
     var blocks = [];
 

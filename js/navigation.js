@@ -1,3 +1,4 @@
+
 function navigateToIndividualPage(coinId){
     document.location.href = `individual.php?coinId=${coinId}`
 }

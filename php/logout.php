@@ -2,5 +2,5 @@
 session_start();
 session_destroy();
 
-header('location:signIn.php');
+header('location: signIn.php');
 ?>

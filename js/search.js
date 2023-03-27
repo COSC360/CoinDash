@@ -1,3 +1,4 @@
+// Attaches listeners to search components
 var searchBtn = document.getElementById("search");
 var searchModal = document.getElementById("search-modal");
 
