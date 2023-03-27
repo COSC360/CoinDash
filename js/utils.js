@@ -13,8 +13,4 @@ function getURLParams(){
     return map
 }
 
-function navigateToIndividualPage(coinId){
-    document.location.href = `individual.php?coinId=${coinId}`
-}
-
 export { getURLParams };
