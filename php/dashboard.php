@@ -122,23 +122,23 @@ session_start();
                                         </div>
                                     </div>";
                                 }
-                        echo    "</div>
-                                    <div class=\"module-footer\">
-                                    <div class=\"prev\">
-                                        <img class=\"prev-icon\" src=\"../svgs/arrow-left-long.svg\">
-                                        <p>Previous</p>
-                                    </div>
-                                    <div class=\"next\">
-                                        <p>Next</p>
-                                        <img class=\"next-icon\" src=\"../svgs/arrow-right-long.svg\">
-                                    </div>
-                                </div>
-                                <div draggable=\"true\" class=\"module-settings-btn edit-ui\">
-                                    <i class=\"fa-solid fa-ellipsis-vertical fa-lg\"></i>
-                                    <i class=\"fa-solid fa-ellipsis-vertical fa-lg\"></i>
-                                </div>
-                            </div>
-                        ";
+                        // echo    "</div>
+                        //             <div class=\"module-footer\">
+                        //             <div class=\"prev\">
+                        //                 <img class=\"prev-icon\" src=\"../svgs/arrow-left-long.svg\">
+                        //                 <p>Previous</p>
+                        //             </div>
+                        //             <div class=\"next\">
+                        //                 <p>Next</p>
+                        //                 <img class=\"next-icon\" src=\"../svgs/arrow-right-long.svg\">
+                        //             </div>
+                        //         </div>
+                        //         <div draggable=\"true\" class=\"module-settings-btn edit-ui\">
+                        //             <i class=\"fa-solid fa-ellipsis-vertical fa-lg\"></i>
+                        //             <i class=\"fa-solid fa-ellipsis-vertical fa-lg\"></i>
+                        //         </div>
+                        // ";
+                        echo "</div>";
                         $currentCount++;
                     }
                     echo "</div>";
