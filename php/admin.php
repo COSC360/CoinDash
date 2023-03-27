@@ -14,7 +14,7 @@
             $selectUserByNamestmt->execute();
             $resultSetselectUserByNamestmt = $selectUserByNamestmt->get_result(); // get the mysqli result
             $resultselectUserByName = $resultSetselectUserByNamestmt->fetch_assoc();
-            echo $resultselectUserByName['Id'];
+            echo $resultselectUserByName['Username'];
         }
 
         if(isset($_POST['searchByEmail'])){
