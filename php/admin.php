@@ -1,7 +1,7 @@
 <?php
     session_start();
     include "DBconnection.php";
-    
+
     if ($con->connect_error) {
         die("Connection failed: " . $con->connect_error);
     }else{
@@ -9,7 +9,6 @@
         if(isset($_POST['searchByName'])){
             $searchByName = $_POST['searchByName'];
             //Search user by name
-            if($searchByName)
             $selectUserByNamestmt = $con->prepare("SELECT * FROM user_auth WHERE `name` = ?");
             $selectUserByNamestmt->bind_param("s", $searchByName); 
             $selectUserByNamestmt->execute();
