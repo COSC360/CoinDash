@@ -6,7 +6,6 @@
     if ($con->connect_error) {
         die("Connection failed: " . $con->connect_error);
     }else{
-
         if(isset($_POST['searchByName'])){
             $searchByName = $_POST['searchByName'];
             //Search user by name
@@ -37,7 +36,7 @@
             $resultSetselectUserByCommentstmt = $selectUserByCommentstmt->get_result(); // get the mysqli result
             $resultselectUserByComment = $resultSetselectUserByCommentstmt->fetch_all(MYSQLI_ASSOC);
             $_SESSION["postId"] = $resultselectUserByComment[0]['id'];
-            $_SESSION["commentText"] = $resultselectUserByComment[0]['text'];
+            $_SESSION["commentText"] = $_POST['commentText'];
         }
 
 
@@ -102,12 +101,11 @@
                 <p>User Username : <?php echo $resultselectUserByComment[0]['Username']?></p>
                 <p>User Email : <?php echo $resultselectUserByComment[0]['Email']?></p>
                 <p>User Status : <?php echo $resultselectUserByComment[0]['status']?></p>
-                <?php
-                    echo "<form action=\"../php/updateUser.php\" method =\"POST\">
-                            <input type=\"text\" name =\"commentText\" id=\"commentText\" value=\"".$resultselectUserByComment[0]['text']."\">
-                            <input type=\"submit\" name=\"submit\" value=\"change\">
-                        </form>";
-                ?>
+                    <form action="" method ="POST">
+                        <input type="text" name ="commentText" id="commentText" value="<?php echo $resultselectUserByComment[0]['text']?>">
+                        <input type="submit" name="submit" value="change">
+                    </form>
+                
             </div>
         </form>
     </article>
