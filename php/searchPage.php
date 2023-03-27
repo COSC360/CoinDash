@@ -45,11 +45,11 @@ session_start();
                 include "sql-queries.php";
                 $like = isset($_GET["like"]) ? $_GET["like"] : "";
                 $coins = retrieveCoinByLike($con, $like);
-
+                echo sizeof($coins);
                 if (sizeof($coins) == 0){
                     echo "<p>Oh no! Cannot find any coins!</p>";
                 }
-                
+
                 foreach($coins as $coin){
                     echo 
                     "<div class=\"product-card\">
