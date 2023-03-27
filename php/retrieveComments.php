@@ -2,6 +2,7 @@
     include "DBconnection.php";
     include "commentSQL.php";
 
+    $coinId = $_POST["coinId"];
     $comments = retrieveComment($con, $coinId);
 
     $output = "";
