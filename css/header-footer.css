@@ -55,7 +55,7 @@ nav a {
     white-space: nowrap;
 }
 
-nav a:hover {
+a:hover {
     color: var(--Highlight);
 }
 

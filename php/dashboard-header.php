@@ -35,7 +35,7 @@
             <?php
                 if ($_SESSION["user"] != null){
                     echo "<div class=\"horizontal-container fit-width\">
-                            <a href=\"../php/logout.php\"><p>Logout</p></a>
+                            <a href=\"../php/logout.php\">Logout</a>
                         </div>";
                 }
             ?>
