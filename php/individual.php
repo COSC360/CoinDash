@@ -4,7 +4,7 @@ session_set_cookie_params(0);
 session_start();
 
 if($_SESSION['Id'] == null){
-    echo "<script>alert('$message');</script>";
+    header('location: signIn.php?errmsg=You must be registered to view that page!');
 }
 ?>
 
