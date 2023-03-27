@@ -54,7 +54,7 @@ session_start();
                 include "moduleModal.php";
 
                 // Row 1 reserved for guest dashboard
-                $userId = isset($_SESSION["Id"]) ? $_SESSION["Id"] : 1;
+                $userId = isset($_SESSION["Id"]) ? $_SESSION["Id"] : 0;
                 $dashboardModules = retrieveDashboard($con, $userId);
                 $moduleCount = sizeof($dashboardModules);
                 $currentCount = 0;
