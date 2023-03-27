@@ -4,7 +4,7 @@ session_start();
 ?>
 
 
-<script>
+<!-- <script>
     const imageFile = document.getElementById('img');
 
     imageFile.addEventListener('change', () =>{
@@ -17,4 +17,4 @@ session_start();
             $_SESSION['pfp'] = url;
         });   
     });
-</script>
+</script> -->
