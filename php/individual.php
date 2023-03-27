@@ -30,15 +30,18 @@
     <article class="panel">
         <div class="reviews">
             <h2>Comments</h2>
-            <?php
-                include "retrieveComments.php";
-            ?>
+            <div id="comment-area">
+                <?php
+                    include "retrieveComments.php";
+                ?>
+            </div>
         </div>
     </article>
     <?php
         include "footer.php"
     ?>
     <script src="../js/comment.js"></script>
+    <script src="../js/updateComments.js"></script>
 </body>
 
 </html>
