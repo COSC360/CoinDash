@@ -24,14 +24,8 @@ function updateData(coinId){
         async: true,
         data: {coinId: coinId},
         success: function(response) {
-            console.log("Data");
-            console.log(response);
-            if (response.error == ''){
-                commentArea.innerHTML = response;
-                console.log("Updated Data");
-            }
-
-
+            commentArea.innerHTML = response;
+            setTimeout(updateData(coinId), 1000)
         }
     })
 }
