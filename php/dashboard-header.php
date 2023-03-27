@@ -11,11 +11,13 @@ session_start();
             </p>
         </div>
         <div class="middle">
-            <form id="search-modal" class="hide">
-                <input type="text" name="like" placeholder="What are you looking for?">
-            </form>
             <nav>
-                <a id="search">Search</a>
+                <a href="#" id="search">
+                    Search
+                    <form id="search-modal" class="hide">
+                        <input type="text" name="like" placeholder="What are you looking for?">
+                    </form>
+                </a>
                 <a href="https://cosc360.ok.ubc.ca/suyash06/project-JasonR24/php/dashboard.php">My Dashboard</a>
                 <!-- <a href="#">Community</a>
                 <a href="#">Help</a> -->
