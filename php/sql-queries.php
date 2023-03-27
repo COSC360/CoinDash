@@ -98,24 +98,24 @@ function retrieveCoinById($con, $coinId){
 }
 
 function retrieveCoinByLike($con, $like){
-    echo $like;
+    
     $sql = "SELECT * FROM coin WHERE Id LIKE ?";
 
     $stmt = mysqli_stmt_init($con);
-    echo $like;
+    
     if (!mysqli_stmt_prepare($stmt, $sql)){
         // TODO:
         // header("location: REPLACE LATER");
         exit();
     }
-    echo $like;
+    
     $likePattern = "%".$like."%";
     // Set parameters for prepared statement
     mysqli_stmt_bind_param($stmt, "s", $likePattern);
 
     // Execute prepared statement
     mysqli_stmt_execute($stmt);
-    echo $like;
+    
     $results = mysqli_stmt_get_result($stmt);
 
     if ($rows = $results -> fetch_all(MYSQLI_ASSOC)){
