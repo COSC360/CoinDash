@@ -41,3 +41,4 @@ session_start();
         </div>
     </div>
 </header>
+<script src="../js/search.js"></script>
