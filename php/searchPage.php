@@ -34,7 +34,9 @@ session_start();
         <article class="panel page-title">
             <h2>Home</h2>
             <div class="title">
-                <h1>Search</h1>
+                <?php
+                    echo "<h1>Search".(isset($_GET["like"]) ? "\"".$_GET["like"]."\"" : "All")."</h1>";
+                ?>
             </div>
         </article>
         <article id="dashboard">
