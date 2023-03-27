@@ -40,7 +40,7 @@ session_start();
         <article id="dashboard">
             <div class="panel">
             <?php 
-                echo "<div class=\"module-gallery\">";
+                echo "<div class=\"module-gallery top-spacing\">";
                 include "DBconnection.php";
                 include "sql-queries.php";
                 $like = isset($_GET["like"]) ? $_GET["like"] : "";

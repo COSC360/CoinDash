@@ -88,3 +88,7 @@ i {
 .icon-overlay:hover img{
     transform: scale(0.9);
 }
+
+.top-spacing {
+    margin-top: 2em;
+}
