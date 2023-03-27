@@ -63,7 +63,6 @@
     ?> 
 <main>    
     <article class="panel">
-        <h1>Admin</h1>
         <form action="" method="POST">
             Name: <input type="text" name ="searchByName" id="searchByName"><input type="submit" name="submit" value="search">
             <div class="reviews">
@@ -72,14 +71,16 @@
                 <p>User Username : <?php echo $resultselectUserByName['Username']?></p>
                 <p>User Email : <?php echo $resultselectUserByName['Email']?></p>
             </div>
-            Email: <input type="text" name ="searchByEmail" id="searchByEmail"><input type="submit" name="submit" value="search">
+
+            <span style="margin-top: 2em">Email: <input type="text" name ="searchByEmail" id="searchByEmail"><input type="submit" name="submit" value="search"></span>
             <div class="reviews">
                 <h2>User Information</h2>
                 <p>User Id : <?php echo $resultselectUserByEmail['Id']?></p>
                 <p>User Username : <?php echo $resultselectUserByEmail['Username']?></p>
                 <p>User Email : <?php echo $resultselectUserByEmail['Email']?></p>
             </div>
-            Post ID: <input type="text" name ="searchByCommentId" id="searchByCommentId"><input type="submit" name="submit" value="search">
+
+            <span style="margin-top: 2em">Post ID: <input type="text" name ="searchByCommentId" id="searchByCommentId"><input type="submit" name="submit" value="search"></span>
             <div class="reviews">
                 <h2>User Information</h2>
                 <p>User Id : <?php echo $resultselectUserByComment[0]['Id']?></p>
