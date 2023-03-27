@@ -1,14 +1,18 @@
 <?php
     session_start();
+    $searchId = $_POST['searchId'];
+    
+    if ($con->connect_error) {
+        die("Connection failed: " . $con->connect_error);
+    }else{
+        $cmmtstmt = $con->prepare("SELECT * FROM `comment` WHERE  `user_id` = ?");
+        $cmmtstmt->bind_param("i", $searchId); 
+        $cmmtstmt->execute();
+        $resultSetcmmt = $cmmtstmt->get_result(); // get the mysqli result
+        $resultcmmt = $resultSetcmmt->fetch_assoc();
+        $_SESSION['comment'] = $resultcmmt['text'];
+    }
 
-    // $searchId = $_POST['searchId'];
-    // $cmmtstmt = $con->prepare("SELECT * FROM `comment` WHERE  `user_id` = ?");
-    // $cmmtstmt->bind_param("i", $searchId); 
-    // $cmmtstmt->execute();
-    // $resultSetcmmt = $cmmtstmt->get_result(); // get the mysqli result
-    // $resultcmmt = $resultSetcmmt->fetch_assoc();
-
-    // $_SESSION['comment'] = $resultcmmt['text'];
 ?>
 <!DOCTYPE html>
 <html lang="en">
