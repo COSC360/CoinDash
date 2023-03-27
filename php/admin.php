@@ -60,6 +60,10 @@
         .divider{
             margin-bottom: 2em;
         }
+        
+        input{
+            width: 118em;
+        }
     </style>    
 </head>
 <body>
@@ -75,6 +79,7 @@
                 <p>User Id : <?php echo $resultselectUserByName['Id']?></p>
                 <p>User Username : <?php echo $resultselectUserByName['Username']?></p>
                 <p>User Email : <?php echo $resultselectUserByName['Email']?></p>
+                <p>User Status : <?php echo $resultselectUserByName['status']?></p>
             </div>
 
             Search by Email: <input type="text" name ="searchByEmail" id="searchByEmail"><input type="submit" name="submit" value="search">
@@ -83,6 +88,7 @@
                 <p>User Id : <?php echo $resultselectUserByEmail['Id']?></p>
                 <p>User Username : <?php echo $resultselectUserByEmail['Username']?></p>
                 <p>User Email : <?php echo $resultselectUserByEmail['Email']?></p>
+                <p>User Status : <?php echo $resultselectUserByEmail['status']?></p>
             </div>
 
             Search by Post ID: <input type="text" name ="searchByCommentId" id="searchByCommentId"><input type="submit" name="submit" value="search">
@@ -91,7 +97,9 @@
                 <p>User Id : <?php echo $resultselectUserByComment[0]['Id']?></p>
                 <p>User Username : <?php echo $resultselectUserByComment[0]['Username']?></p>
                 <p>User Email : <?php echo $resultselectUserByComment[0]['Email']?></p>
+                <p>User Status : <?php echo $resultselectUserByComment['status']?></p>
                 <input type="text" value="<?php echo $resultselectUserByComment[0]['text']?>">
+                <input type="submit" name="submit" value="change">
             </div>
         </form>
     </article>
