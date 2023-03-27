@@ -42,9 +42,6 @@ function setModuleHTML(fiat, category, sort, target){
                             <a class="icon-overlay" onclick=navigateToIndividualPage("${coin.Id}")>
                                 <img src="../svgs/goto.svg">
                             </a>
-                            <a class="icon-overlay" href="#">
-                                <img src="../svgs/bookmark.svg">
-                            </a>
                         </div>
                             <div class="product-image-mask">
                             <div class="product-image" style="background-image: url(${coin.img_url});"></div>
