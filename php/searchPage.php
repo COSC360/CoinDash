@@ -18,12 +18,7 @@ session_start();
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="../js/jquery-3.1.1.min.js"></script>
     <script src="../js/dashboard.js"></script>
-
-    <script>
-        function navigateToIndividualPage(coinId){
-            document.location.href = `individual.php?coinId=${coinId}`
-        }
-    </script>
+    <script src="../js/navigation.js"></script>
 </head>
 
 <body>

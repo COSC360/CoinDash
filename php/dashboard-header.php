@@ -39,7 +39,7 @@
                     echo  "<img src=".$_SESSION['pfp']." style=\"width: 40px;height:40px;\">";
                     echo  "<img src=\"../svgs/arrow-down.svg\">";
                 }else{
-                    echo  "Sign In / Sign Up";       
+                    echo  "<a href=\"#\" onclick=navigateToSignIn()>Sign In</a>/<a href=\"#\" onclick=navigateToSignUp()>Sign Up</a>";
                 }
             ?>
             </div>
