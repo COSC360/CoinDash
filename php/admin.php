@@ -37,6 +37,7 @@
             $resultSetselectUserByCommentstmt = $selectUserByCommentstmt->get_result(); // get the mysqli result
             $resultselectUserByComment = $resultSetselectUserByCommentstmt->fetch_all(MYSQLI_ASSOC);
             $_SESSION["postId"] = $resultselectUserByComment[0]['id'];
+            $_SESSION["commentText"] = $resultselectUserByComment[0]['text'];
         }
 
 
