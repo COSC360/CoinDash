@@ -13,7 +13,7 @@
         $resultSetcmmt = $cmmtstmt->get_result(); // get the mysqli result
         $resultcmmt = $resultSetcmmt->fetch_assoc();
         
-        echo "<script>console.log(".$resultcmmt.")</script>"
+        echo "<script>console.log(".$resultcmmt.")</script>";
         // $_SESSION['comment'] = $resultcmmt['text'];
     }
 
