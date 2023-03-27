@@ -14,3 +14,8 @@ function navigateToSignUp(){
 function navigateToAccount(){
     document.location.href = `account.php`
 }
+
+function topFunction(){
+    document.body.scrollTop = 0; // For Safari
+    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+}

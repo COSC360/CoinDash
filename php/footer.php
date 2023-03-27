@@ -5,14 +5,12 @@
         </div>
         <div class="middle">
             <nav>
-                <a href="#">My Dashboard</a>
-                <a href="#">Community</a>
-                <a href="#">Help</a>
+                <a href="https://cosc360.ok.ubc.ca/suyash06/project-JasonR24/php/dashboard.php">My Dashboard</a>
             </nav>  
         </div>
         <div class="right">
             <p href="#">© COSC 360 Group, Inc</p>
-            <p href="#">Back To Top</p>
+            <p href="#" onclick=topFunction()>Back To Top</p>
         </div>
     </div>
 </footer>
