@@ -33,7 +33,7 @@
                 <img src="../svgs/arrow-down.svg">
             </div> -->
             <?php
-                if ($_SESSION != null){
+                if ($_SESSION["user"] != null){
                     echo "<div class=\"horizontal-container fit-width\">
                             <a href=\"../php/logout.php\"><p>Logout</p></a>
                         </div>";

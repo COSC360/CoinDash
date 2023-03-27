@@ -41,7 +41,7 @@ if($_SESSION['Id'] == null){
     <script src="js/account.js"></script>
 </head>
 <body>
-<?php include 'account-header.php';?>
+<?php include 'dashboard-header.php';?>
     <main>
         <div class = "user-account-container">
             <div class="user-account-info">
