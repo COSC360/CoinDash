@@ -93,6 +93,10 @@ i {
     margin-top: 2em;
 }
 
-.relative {
+.relative-container {
     position: relative;
+}
+
+.absolute-container {
+    position: absolute;
 }
