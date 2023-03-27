@@ -1,9 +1,8 @@
 <?php
-    include "DBconnection.php";
-    include "sql-queries.php";
     session_start();
-    $searchId = $_POST['searchId'];
+    include "DBconnection.php";
 
+    $searchId = $_POST['searchId'];
     if ($con->connect_error) {
         die("Connection failed: " . $con->connect_error);
     }else{
