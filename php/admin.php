@@ -69,15 +69,15 @@
 <main>    
     <article class="panel">
         <form action="" method="POST">
-            Name: <input type="text" name ="searchByName" id="searchByName"><input type="submit" name="submit" value="search">
-            <div class="reviews">
+            Search by Name: <input type="text" name ="searchByName" id="searchByName"><input type="submit" name="submit" value="search">
+            <div class="reviews divider">
                 <h2>User Information</h2>
                 <p>User Id : <?php echo $resultselectUserByName['Id']?></p>
                 <p>User Username : <?php echo $resultselectUserByName['Username']?></p>
                 <p>User Email : <?php echo $resultselectUserByName['Email']?></p>
             </div>
 
-            Email: <input type="text" name ="searchByEmail" id="searchByEmail"><input type="submit" name="submit" value="search">
+            Search by Email: <input type="text" name ="searchByEmail" id="searchByEmail"><input type="submit" name="submit" value="search">
             <div class="reviews divider">
                 <h2>User Information</h2>
                 <p>User Id : <?php echo $resultselectUserByEmail['Id']?></p>
@@ -85,8 +85,8 @@
                 <p>User Email : <?php echo $resultselectUserByEmail['Email']?></p>
             </div>
 
-            Post ID: <input type="text" name ="searchByCommentId" id="searchByCommentId"><input type="submit" name="submit" value="search">
-            <div class="reviews divider">
+            Search by Post ID: <input type="text" name ="searchByCommentId" id="searchByCommentId"><input type="submit" name="submit" value="search">
+            <div class="reviews">
                 <h2>User Information</h2>
                 <p>User Id : <?php echo $resultselectUserByComment[0]['Id']?></p>
                 <p>User Username : <?php echo $resultselectUserByComment[0]['Username']?></p>
