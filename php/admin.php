@@ -63,9 +63,9 @@
     <article class="panel">
         <h1>Admin</h1>
         <form action="" method="POST">
-            <input type="text" name ="searchByName" id="searchByName"><input type="submit" name="submit" value="search">
-            <input type="text" name ="searchByEmail" id="searchByEmail"><input type="submit" name="submit" value="search">
-            <input type="text" name ="searchByCommentId" id="searchByCommentId"><input type="submit" name="submit" value="search">
+            Name: <input type="text" name ="searchByName" id="searchByName"><input type="submit" name="submit" value="search">
+            Email: <input type="text" name ="searchByEmail" id="searchByEmail"><input type="submit" name="submit" value="search">
+            Post ID: <input type="text" name ="searchByCommentId" id="searchByCommentId"><input type="submit" name="submit" value="search">
 
         </form>
         <div class="reviews">
