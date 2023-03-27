@@ -38,15 +38,6 @@
             $resultselectUserByComment = $resultSetselectUserByCommentstmt->fetch_all(MYSQLI_ASSOC);
         }
 
-        if(isset($_POST['searchByCommentId'])){
-            $searchByCommentId = $_POST['searchByCommentId'];
-            // //Search user by comment
-            $selectUserByCommentstmt = $con->prepare("SELECT * FROM user_auth AS u JOIN comment AS c ON c.user_id = u.Id WHERE c.id = ?");
-            $selectUserByCommentstmt->bind_param("i", $searchByCommentId); 
-            $selectUserByCommentstmt->execute();
-            $resultSetselectUserByCommentstmt = $selectUserByCommentstmt->get_result(); // get the mysqli result
-            $resultselectUserByComment = $resultSetselectUserByCommentstmt->fetch_all(MYSQLI_ASSOC);
-        }
 
     }
 
@@ -110,12 +101,8 @@
                 <p>User Email : <?php echo $resultselectUserByComment[0]['Email']?></p>
                 <p>User Status : <?php echo $resultselectUserByComment[0]['status']?></p>
                 <form action="../php/updateUser.php" method ="POST">
-                    <?php
-                        foreach($resultselectUserByComment as $resultByComment){
-                            echo "<input type=\"text\" name =\"commentText\" id=\"commentText\" value=\"".$resultByComment['text']."\">";
-                            echo "<input type=\"submit\" name=\"submit\" value=\"change\">";
-                        }
-                    ?>
+                    <input type="text" name ="commentText" id="commentText" value="">
+                    <input type="submit" name="submit" value="change">
                 </form>
             </div>
         </form>

@@ -1,5 +1,7 @@
 <?php
 session_start();
+
+echo $_SESSION['postId'];
     if(isset($_POST['commentText'])){
         $commentText = $_POST['commentText'];
         //Search user by name
