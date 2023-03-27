@@ -125,12 +125,11 @@ session_start();
                         //                 <img class=\"next-icon\" src=\"../svgs/arrow-right-long.svg\">
                         //             </div>
                         //         </div>
-                        //         <div draggable=\"true\" class=\"module-settings-btn edit-ui\">
-                        //             <i class=\"fa-solid fa-ellipsis-vertical fa-lg\"></i>
-                        //             <i class=\"fa-solid fa-ellipsis-vertical fa-lg\"></i>
-                        //         </div>
-                        // ";
-                        echo "</div>";
+                        echo    "<div draggable=\"true\" class=\"module-settings-btn edit-ui\">
+                                    <i class=\"fa-solid fa-ellipsis-vertical fa-lg\"></i>
+                                    <i class=\"fa-solid fa-ellipsis-vertical fa-lg\"></i>
+                                </div>
+                            </div>";
                         $currentCount++;
                     }
                     echo "</div>";
