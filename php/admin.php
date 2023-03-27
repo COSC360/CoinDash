@@ -6,30 +6,34 @@
     if ($con->connect_error) {
         die("Connection failed: " . $con->connect_error);
     }else{
-        $searchByName = $_POST['searchByName'];
-        $searchByEmail = $_POST['searchByEmail'];
-        $searchByCommentId = $_POST['searchByCommentId'];
-        //Search user by name
-        // $selectUserByNamestmt = $con->prepare("SELECT * FROM user_auth WHERE `name` = ?");
-        // $selectUserByNamestmt->bind_param("s", $searchByName); 
-        // $selectUserByNamestmt->execute();
-        // $resultSetselectUserByNamestmt = $selectUserByNamestmt->get_result(); // get the mysqli result
-        // $resultselectUserByName = $resultSetselectUserByNamestmt->fetch_assoc();
+        if(isset($_POST['searchByName']) && $_POST['searchByEmail'] && $_POST['searchByCommentId']){
+            $searchByName = $_POST['searchByName'];
+            $searchByEmail = $_POST['searchByEmail'];
+            $searchByCommentId = $_POST['searchByCommentId'];
+            //Search user by name
+            $selectUserByNamestmt = $con->prepare("SELECT * FROM user_auth WHERE `name` = ?");
+            $selectUserByNamestmt->bind_param("s", $searchByName); 
+            $selectUserByNamestmt->execute();
+            $resultSetselectUserByNamestmt = $selectUserByNamestmt->get_result(); // get the mysqli result
+            $resultselectUserByName = $resultSetselectUserByNamestmt->fetch_assoc();
 
-        // //Search user by email
-        // $selectUserByEmailstmt = $con->prepare("SELECT * FROM user_auth WHERE `email` = ?");
-        // $selectUserByEmailstmt->bind_param("s", $searchByEmail); 
-        // $selectUserByEmailstmt->execute();
-        // $resultSetselectUserByEmailstmt = $selectUserByEmailstmt->get_result(); // get the mysqli result
-        // $resultselectUserByEmail = $resultSetselectUserByEmailstmt->fetch_assoc();
+            // //Search user by email
+            $selectUserByEmailstmt = $con->prepare("SELECT * FROM user_auth WHERE `email` = ?");
+            $selectUserByEmailstmt->bind_param("s", $searchByEmail); 
+            $selectUserByEmailstmt->execute();
+            $resultSetselectUserByEmailstmt = $selectUserByEmailstmt->get_result(); // get the mysqli result
+            $resultselectUserByEmail = $resultSetselectUserByEmailstmt->fetch_assoc();
 
-        // //Search user by comment
-        // $selectUserByCommentstmt = $con->prepare("SELECT * FROM `user_auth` AS `u` JOIN `comment` AS `c` ON `c.user_id` = `u.id` WHERE `c.id` = ?");
-        // $selectUserByCommentstmt->bind_param("i", $searchByCommentId); 
-        // $selectUserByCommentstmt->execute();
-        // $resultSetselectUserByCommentstmt = $selectUserByCommentstmt->get_result(); // get the mysqli result
-        // $resultselectUserByComment = $resultSetselectUserByCommentstmt->fetch_all(MYSQLI_ASSOC);
-
+            // //Search user by comment
+            $selectUserByCommentstmt = $con->prepare("SELECT * FROM `user_auth` AS `u` JOIN `comment` AS `c` ON `c.user_id` = `u.id` WHERE `c.id` = ?");
+            $selectUserByCommentstmt->bind_param("i", $searchByCommentId); 
+            $selectUserByCommentstmt->execute();
+            $resultSetselectUserByCommentstmt = $selectUserByCommentstmt->get_result(); // get the mysqli result
+            $resultselectUserByComment = $resultSetselectUserByCommentstmt->fetch_all(MYSQLI_ASSOC);
+        }else{
+            $error = "No data sent!";
+            echo "<script>console.log(".$error.")</script>";
+        }
         // $_SESSION['comment'] = $resultcmmt['text'];
     }
 
