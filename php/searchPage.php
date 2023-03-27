@@ -46,7 +46,7 @@ session_start();
                 $like = isset($_GET["like"]) ? $_GET["like"] : "";
                 $coins = retrieveCoinByLike($con, $like);
                 print_r($coins);
-                if (sizeof($coins) == 0){
+                if (!isset($coins)){
                     echo "<p>Oh no! Cannot find any coins!</p>";
                 }
 
