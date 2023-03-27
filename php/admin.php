@@ -103,7 +103,7 @@
                 <p>User Status : <?php echo $resultselectUserByComment[0]['status']?></p>
                 <?php
                     echo "<form action=\"../php/updateUser.php\" method =\"POST\">
-                            <input type=\"text\" name =\"commentText\" id=\"commentText\" value=".$resultselectUserByComment[0]['text'].">
+                            <input type=\"text\" name =\"commentText\" id=\"commentText\" value=\"".$resultselectUserByComment[0]['text']."\">
                             <input type=\"submit\" name=\"submit\" value=\"change\">
                         </form>";
                 ?>
