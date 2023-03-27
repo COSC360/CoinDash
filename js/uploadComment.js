@@ -25,7 +25,7 @@ commentForms.forEach(form => {
             type: "POST",
             data: {coinId: coinId, text: text},
             success: function(response) {
-                console.log("Upload Successful");
+                console.log(response);
             }
         })
     })
