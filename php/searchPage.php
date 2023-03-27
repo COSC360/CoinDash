@@ -41,7 +41,7 @@ session_start();
             <?php 
 
                 echo "<div class=\"module-gallery\">";
-
+                include "DBconnection.php";
                 include "sql-queries.php";
                 $coins = retrieveCoinByLike($con, "d");
                 print_r($coins);
