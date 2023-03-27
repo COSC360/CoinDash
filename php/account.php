@@ -19,6 +19,7 @@ if ($con->connect_error) {
 
 if($_SESSION['Id'] == null){
     header('location:signIn.php');
+    
 }
 ?>
 <!DOCTYPE html>
@@ -36,13 +37,11 @@ if($_SESSION['Id'] == null){
     <link rel="stylesheet" href="../css/module.css">
     <link rel="stylesheet" href="../css/userAuth.css">
     <link rel="stylesheet" href="../css/account.css">
-    <script src="../js/signIn.js"></script>
-    <script src="../js/signUp.js"></script>
     <script src="../js/account.js"></script>
     <script src="../js/navigation.js"></script>
 </head>
 <body>
-<?php include 'dashboard-header.php';?>
+    <?php include 'dashboard-header.php';?>
     <main>
         <div class = "user-account-container">
             <div class="user-account-info">
