@@ -1,14 +1,21 @@
 <?php
     session_start();
+    include "DBconnection.php";
 
-    // $searchId = $_POST['searchId'];
-    // $cmmtstmt = $con->prepare("SELECT * FROM `comment` WHERE  `user_id` = ?");
-    // $cmmtstmt->bind_param("i", $searchId); 
-    // $cmmtstmt->execute();
-    // $resultSetcmmt = $cmmtstmt->get_result(); // get the mysqli result
-    // $resultcmmt = $resultSetcmmt->fetch_assoc();
+    $searchId = $_POST['searchId'];
+    if ($con->connect_error) {
+        die("Connection failed: " . $con->connect_error);
+    }else{
+        $cmmtstmt = $con->prepare("SELECT * FROM `comment` WHERE  `user_id` = ?");
+        $cmmtstmt->bind_param("i", $searchId); 
+        $cmmtstmt->execute();
+        $resultSetcmmt = $cmmtstmt->get_result(); // get the mysqli result
+        $resultcmmt = $resultSetcmmt->fetch_assoc();
+        
+        print_r($resultcmmt);
+        // $_SESSION['comment'] = $resultcmmt['text'];
+    }
 
-    // $_SESSION['comment'] = $resultcmmt['text'];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -30,8 +37,6 @@
 <body>
     <?php
         include "dashboard-header.php";
-        include "DBconnection.php";
-        include "sql-queries.php";
     ?> 
 <main>    
     <article class="panel">
@@ -41,12 +46,10 @@
         </form>
         <div class="reviews">
             <h2>Comments</h2>
-            <input type="text" value = "<?php echo $_SESSION["comment"] ;?>">
+            <input type="text">
         </div>
     </article>
 </main>    
-    <script src="../js/comment.js"></script>
-    <script src="../js/updateComments.js"></script>
 </main>
 </body>
 </html>
