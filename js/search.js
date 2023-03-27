@@ -11,6 +11,6 @@ searchBtn.addEventListener("click", () => {
 
 searchModal.addEventListener("submit", (e) => {
     e.preventDefault();
-    var like = searchModal.like;
+    var like = searchModal.like.value;
     document.location.href = `searchPage.php?like=${like}`;
 })

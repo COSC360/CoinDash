@@ -1,7 +1,6 @@
 <?php
-session_set_cookie_params(0);
-session_start();
-
+    session_set_cookie_params(0);
+    session_start();
 ?>
 <header class="container">
     <div class="fill-container">
@@ -11,11 +10,15 @@ session_start();
             </p>
         </div>
         <div class="middle">
-            <form id="search-modal" class="hide">
-                <input type="text" name="like" placeholder="What are you looking for?">
-            </form>
             <nav>
-                <a id="search">Search</a>
+                <div class="relative">
+                    <a href="#" id="search">
+                        Search
+                    </a>
+                    <form id="search-modal" class="hide">
+                        <input type="text" name="like" placeholder="What are you looking for?">
+                    </form>
+                </div>
                 <a href="https://cosc360.ok.ubc.ca/suyash06/project-JasonR24/php/dashboard.php">My Dashboard</a>
                 <!-- <a href="#">Community</a>
                 <a href="#">Help</a> -->

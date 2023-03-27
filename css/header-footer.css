@@ -82,3 +82,13 @@ footer {
     width: 3em;
     height: 3em;
 }
+
+#search {
+    position: relative;
+}
+
+#search-modal {
+    position: absolute;
+    left: 0;
+    bottom: -5em;
+}
