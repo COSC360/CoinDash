@@ -13,7 +13,6 @@ window.addEventListener("load", () => {
     })
     
     var coinId = map.get("coinId");
-    console.log(coinId);
     updateData(coinId);
 })
 
