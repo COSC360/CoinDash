@@ -19,6 +19,7 @@ session_start();
     <link rel="stylesheet" href="../css/userAuth.css">
     <script src="https://kit.fontawesome.com/e6e0351429.js" crossorigin="anonymous"></script>
     <script src="../js/signIn.js"></script>
+    <script src="../js/navigation.js"></script>
 </head>
 
 <body>
@@ -72,8 +73,6 @@ session_start();
         }
     }
         
-    ?>
-    <?php
         include "dashboard-header.php";
     ?>
 <main>  
