@@ -3,6 +3,8 @@ session_start();
 
 $email= $_POST['email'];
 $password = $_POST['password'];
+
+echo isset($_POST['submit']);
 if ($con->connect_error) {
     die("Connection failed: " . $con->connect_error);
 }else{
