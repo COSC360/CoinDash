@@ -51,7 +51,6 @@
     </article>
 </main>    
     <script src="../js/comment.js"></script>
-    <script src="../js/updateComments.js"></script>
 </main>
 </body>
 </html>
