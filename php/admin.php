@@ -9,7 +9,7 @@
         if(isset($_POST['searchByName'])){
             $searchByName = $_POST['searchByName'];
             //Search user by name
-            $selectUserByNamestmt = $con->prepare("SELECT * FROM user_auth WHERE `Username` = ?");
+            $selectUserByNamestmt = $con->prepare("SELECT * FROM user_auth WHERE Username = ?");
             $selectUserByNamestmt->bind_param("s", $searchByName); 
             $selectUserByNamestmt->execute();
             $resultSetselectUserByNamestmt = $selectUserByNamestmt->get_result(); // get the mysqli result
@@ -20,7 +20,7 @@
         if(isset($_POST['searchByEmail'])){
             $searchByEmail = $_POST['searchByEmail'];
             // //Search user by email
-            $selectUserByEmailstmt = $con->prepare("SELECT * FROM user_auth WHERE `Email` = ?");
+            $selectUserByEmailstmt = $con->prepare("SELECT * FROM user_auth WHERE Email = ?");
             $selectUserByEmailstmt->bind_param("s", $searchByEmail); 
             $selectUserByEmailstmt->execute();
             $resultSetselectUserByEmailstmt = $selectUserByEmailstmt->get_result(); // get the mysqli result
@@ -31,7 +31,7 @@
         if(isset($_POST['searchByCommentId'])){
             $searchByCommentId = $_POST['searchByCommentId'];
             // //Search user by comment
-            $selectUserByCommentstmt = $con->prepare("SELECT * FROM `user_auth` AS `u` JOIN `comment` AS `c` ON `c.user_id` = `u.Id` WHERE `c.id` = ?");
+            $selectUserByCommentstmt = $con->prepare("SELECT * FROM user_auth AS u JOIN comment AS c ON c.user_id = u.Id WHERE c.id = ?");
             $selectUserByCommentstmt->bind_param("i", $searchByCommentId); 
             $selectUserByCommentstmt->execute();
             $resultSetselectUserByCommentstmt = $selectUserByCommentstmt->get_result(); // get the mysqli result
