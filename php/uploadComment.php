@@ -5,10 +5,11 @@
     include "commentSQL.php";
 
     $coinId = $_POST["coinId"];
-    $parentId = $_POST["parentId"];
     $text = $_POST["text"];
 
-    $userId = $_SESSION["Id"];
+    // TODO:
+    // $userId = $_SESSION["Id"];
+    $userId = 1;
 
-    uploadComment($con, $userId, $coinId, $text, $parentId);
+    uploadComment($con, $userId, $coinId, $text);
 ?>

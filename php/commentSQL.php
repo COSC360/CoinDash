@@ -1,6 +1,6 @@
 <?php
-function uploadComment($con, $userId, $coinId, $text, $parentId = null){
-    $commentSql = "INSERT INTO comment (coin_id, parent_comment_id, user_id, text) VALUES (?, ?, ?, ?);";
+function uploadComment($con, $userId, $coinId, $text){
+    $commentSql = "INSERT INTO comment (coin_id, user_id, text) VALUES (?, ?, ?);";
 
     $commentStmt = mysqli_stmt_init($con);
     if (!mysqli_stmt_prepare($commentStmt, $commentSql)){
@@ -8,7 +8,7 @@ function uploadComment($con, $userId, $coinId, $text, $parentId = null){
         // header("location: REPLACE LATER");
         exit();
     }
-    mysqli_stmt_bind_param($commentStmt, "iiis", $coinId, $parentId, $userId, $text);
+    mysqli_stmt_bind_param($commentStmt, "sss", $coinId, $userId, $text);
     mysqli_stmt_execute($commentStmt);
     mysqli_stmt_close($commentStmt);
 }
