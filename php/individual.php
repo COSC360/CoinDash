@@ -5,6 +5,7 @@ session_start();
 
 if($_SESSION['Id'] == null){
     echo "<script>alert('You must be a registered user to access this page!');</script>";
+    sleep(5);
     header('location: signIn.php');
 }
 ?>
