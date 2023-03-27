@@ -55,6 +55,10 @@ nav a {
     white-space: nowrap;
 }
 
+nav a:hover {
+    color: var(--Highlight);
+}
+
 .settings {
     gap: 1em;
 }
