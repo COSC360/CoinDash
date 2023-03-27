@@ -82,10 +82,10 @@
             Post ID: <input type="text" name ="searchByCommentId" id="searchByCommentId"><input type="submit" name="submit" value="search">
             <div class="reviews">
                 <h2>User Information</h2>
-                <p>User Id : <?php echo $resultselectUserByComment['Id']?></p>
-                <p>User Username : <?php echo $resultselectUserByComment['Username']?></p>
-                <p>User Email : <?php echo $resultselectUserByComment['Email']?></p>
-                <input type="text" value="<?php echo $resultselectUserByComment['text']?>">
+                <p>User Id : <?php echo $resultselectUserByComment[0]['Id']?></p>
+                <p>User Username : <?php echo $resultselectUserByComment[0]['Username']?></p>
+                <p>User Email : <?php echo $resultselectUserByComment[0]['Email']?></p>
+                <input type="text" value="<?php echo $resultselectUserByComment[0]['text']?>">
             </div>
         </form>
     </article>
