@@ -34,9 +34,20 @@
             $selectUserByCommentstmt->bind_param("i", $searchByCommentId); 
             $selectUserByCommentstmt->execute();
             $resultSetselectUserByCommentstmt = $selectUserByCommentstmt->get_result(); // get the mysqli result
-            $resultselectUserByComment = $resultSetselectUserByCommentstmt->fetch_assoc()(MYSQLI_ASSOC);
+            $resultselectUserByComment = $resultSetselectUserByCommentstmt->fetch_all(MYSQLI_ASSOC);
+        }
+
+        if(isset($_POST['searchByCommentId'])){
+            $searchByCommentId = $_POST['searchByCommentId'];
+            // //Search user by comment
+            $selectUserByCommentstmt = $con->prepare("SELECT * FROM user_auth AS u JOIN comment AS c ON c.user_id = u.Id WHERE c.id = ?");
+            $selectUserByCommentstmt->bind_param("i", $searchByCommentId); 
+            $selectUserByCommentstmt->execute();
+            $resultSetselectUserByCommentstmt = $selectUserByCommentstmt->get_result(); // get the mysqli result
+            $resultselectUserByComment = $resultSetselectUserByCommentstmt->fetch_all(MYSQLI_ASSOC);
             $_SESSION['postId'] = $resultselectUserByComment[0]['id'];
         }
+
     }
 
 ?>
@@ -80,9 +91,6 @@
                 <p>User Username : <?php echo $resultselectUserByName['Username']?></p>
                 <p>User Email : <?php echo $resultselectUserByName['Email']?></p>
                 <p>User Status : <?php echo $resultselectUserByName['status']?></p>
-                <form action="updateUser.php" method ="POST">
-                    <input type="submit" name="enable" value="enable"><input type="submit" name="disable" value="disable">
-                </form>
             </div>
 
             Search by Email: <input type="text" name ="searchByEmail" id="searchByEmail"><input type="submit" name="submit" value="search">
@@ -94,7 +102,7 @@
                 <p>User Status : <?php echo $resultselectUserByEmail['status']?></p>
             </div>
 
-            Search by Post ID: <input type="text" name ="searchByCommentId" id="searchByCommentId"><input type="submit" name="submit" value="search">
+            Search by Comment ID: <input type="text" name ="searchByCommentId" id="searchByCommentId"><input type="submit" name="submit" value="search">
             <div class="reviews">
                 <h2>User Information</h2>
                 <p>User Id : <?php echo $resultselectUserByComment[0]['Id']?></p>

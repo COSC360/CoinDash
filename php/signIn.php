@@ -48,7 +48,7 @@ session_start();
             if($result != null){
                 if($result['userType'] == 'admin'){
                     header('location:admin.php');
-
+                    
                 }elseif($result['userType'] == 'user' && $result['status'] == "enabled"){
                     header('location:account.php');
                     
