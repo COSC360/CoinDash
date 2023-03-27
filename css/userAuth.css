@@ -153,24 +153,13 @@
   position: relative;
 }
 
-/* .login-box p{
-  position: absolute;
-  margin-top: 0.5em;
-  left: 33em;
-  opacity: 0;
-  visibility: hidden;
-  color: rgb(255, 0, 0);
-  z-index: 10;
-} */
-
-
 .login-box .item-1, .item-2, .item-3{
   position: relative;
 }
 .login-box p{
   position:absolute;
   margin-top: 1em;
-  left: 32.5em;
+  left: 23.5em;
   opacity: 0;
   visibility: hidden;
   color: rgb(255, 0, 0);

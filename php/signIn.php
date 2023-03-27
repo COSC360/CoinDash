@@ -92,7 +92,7 @@ session_start();
                 <form name = "LoginForm" id ="LoginForm" action= "" onsubmit="return validateLoginForm()" method="GET" required>
                     <div class="item-1">
                         <label>Username or Email</label><br>     
-                        <p id = "usernameError">Empty/Invalid Username or Email</p>
+                        <p id = "usernameError">Empty/Invalid Username</p>
                         <input type = "text" name = "user-email" id= "user-email" placeholder="What’s Your Registered Username or Email?" onkeydown="UsernameErrorClearFunction()">
                     </div>
                     <div class="item-2">
