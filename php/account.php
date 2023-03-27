@@ -3,14 +3,18 @@ session_start();
 
 $email= $_POST['email'];
 $password = $_POST['password'];
-// if ($con->connect_error) {
-//     die("Connection failed: " . $con->connect_error);
-// }else{
-//     $stmt = $con->prepare("UPDATE user_auth SET Email = ? WHERE Id = ?");
-//     $stmt->bind_param("si", $email,$_SESSION['Id']); 
-//     $stmt->execute();
-//     // header('location:dashboard.php');
-// }
+
+echo isset($_POST['submit']);
+if ($con->connect_error) {
+    die("Connection failed: " . $con->connect_error);
+}else{
+    if(isset($_POST['submit'])){
+        $stmt = $con->prepare("UPDATE user_auth SET Email = ? WHERE Id = ?");
+        $stmt->bind_param("si", $email,$_SESSION['Id']); 
+        $stmt->execute();
+        echo "Update Executed !";
+    }
+}
 
 if($_SESSION['Id'] == null){
     header('location:signIn.php');
@@ -46,8 +50,7 @@ if($_SESSION['Id'] == null){
             <div class="user-account-box">
                 <div class="profile-box">
                     <!-- <div id="centered">Upload<br>Photo</div> -->
-                    <?php include 'display-image.php';?>
-                    <img src="" id = "pfp"> 
+                    <img src="<?php echo $_SESSION['pfp']?>" id = "pfp"> 
                     <h1>Username</p>
                     <h2><?php echo $_SESSION["user"] ;?></h2>
                 </div>
@@ -70,7 +73,7 @@ if($_SESSION['Id'] == null){
                         <input type="reset" value="Reset Form">
                     </div>
                     <div class="item-4">
-                        <input type="submit" value="Confirm Changes">
+                        <input type="submit" id = "submit" value="Confirm Changes">
                     </div>
                 </form>
             </div>

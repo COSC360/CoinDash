@@ -4,7 +4,7 @@ session_start();
 ?>
 
 
-<script>
+<!-- <script>
     const imageFile = document.getElementById('img');
 
     imageFile.addEventListener('change', () =>{
@@ -14,6 +14,7 @@ session_start();
         fr.addEventListener('load', () => {
             const url = fr.result();
             localStorage.setItem($_SESSION["Id"],url);
+            $_SESSION['pfp'] = url;
         });   
     });
-</script>
+</script> -->

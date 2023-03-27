@@ -15,7 +15,6 @@
     <link rel="stylesheet" href="../css/userAuth.css">
     <script src="https://kit.fontawesome.com/e6e0351429.js" crossorigin="anonymous"></script>
     <script src="../js/signIn.js"></script>
-    <script src="../js/signUp.js"></script>
 </head>
 
 <body>
