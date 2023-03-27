@@ -9,10 +9,12 @@
         $cmmtstmt = $con->prepare("SELECT * FROM `comment` WHERE  `user_id` = ?");
         $cmmtstmt->bind_param("i", $searchId); 
         $cmmtstmt->execute();
+        echo "Executed !";
         $resultSetcmmt = $cmmtstmt->get_result(); // get the mysqli result
-        $resultcmmt = $resultSetcmmt->fetch_assoc();
+        $resultcmmt = $resultSetcmmt->fetch_all(MYSQLI_ASSOC);
+        print_r($resultcmmt);
         foreach($resultcmmt as $usercmmt){
-            echo "<script>console.log(".$usercmmt.")</script>";
+            echo "<script>console.log(".$usercmmt['text'].")</script>";
         }
         // $_SESSION['comment'] = $resultcmmt['text'];
     }
