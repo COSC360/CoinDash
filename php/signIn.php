@@ -122,6 +122,9 @@ session_start();
 </main>
 <?php
     include "footer.php";
+    if(isset($_GET["errmsg"])){
+        echo "<script>alert('".$_GET["errmsg"]."');</script>";
+    }
 ?>
 </body>
 
