@@ -1,6 +1,7 @@
 <?php
     session_start();
     include "DBconnection.php";
+    // include "updateUser.php";
 
     if ($con->connect_error) {
         die("Connection failed: " . $con->connect_error);
@@ -109,7 +110,7 @@
                 <p>User Username : <?php echo $resultselectUserByComment[0]['Username']?></p>
                 <p>User Email : <?php echo $resultselectUserByComment[0]['Email']?></p>
                 <p>User Status : <?php echo $resultselectUserByComment[0]['status']?></p>
-                <form action="updateUser.php" method ="POST">
+                <form action="../php/updateUser.php" method ="POST">
                     <input type="text" name ="commentText" id="commentText" value="<?php echo $resultselectUserByComment[0]['text']?>">
                     <input type="submit" name="submit" value="change">
                 </form>
