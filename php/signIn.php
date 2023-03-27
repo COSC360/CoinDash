@@ -40,9 +40,7 @@ session_start();
             $password = $_GET['password'];
 
             $stmt = $con->prepare("SELECT * FROM `user_auth` WHERE  `Email` = ? && `Password` = ? || `Username` = ? && `Password` = ? ");
-            $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
-            echo $hashedPassword;
-            $stmt->bind_param("ssss", $userOremail,$hashedPassword,$userOremail,$hashedPassword); 
+            $stmt->bind_param("ssss", $userOremail,$password,$userOremail,$password); 
             $stmt->execute();
             $resultSet = $stmt->get_result(); // get the mysqli result
             $result = $resultSet->fetch_assoc();
