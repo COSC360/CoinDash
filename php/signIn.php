@@ -50,6 +50,7 @@ session_start();
 
                 }elseif($result['userType'] == 'user' && $result['status'] == "enabled"){
                     header('location:account.php');
+                    
                 }elseif($result['userType'] == 'user' && $result['status'] == "disabled"){
                     $statusMsg = "Your account has been disabled by the admin !"
                     echo "<script>window.alert(\"".$statusMsg."\")</script>";
