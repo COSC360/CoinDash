@@ -26,7 +26,7 @@ commentForms.forEach(form => {
             type: "POST",
             data: {coinId: coinId, text: text},
             success: function(response) {
-                console.log(response);
+                form.clear();
             }
         })
     })
