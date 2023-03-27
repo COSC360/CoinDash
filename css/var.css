@@ -92,3 +92,7 @@ i {
 .top-spacing {
     margin-top: 2em;
 }
+
+.relative {
+    position: relative;
+}

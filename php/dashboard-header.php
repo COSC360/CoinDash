@@ -11,7 +11,7 @@
         </div>
         <div class="middle">
             <nav>
-                <div>
+                <div class="relative">
                     <a href="#" id="search">
                         Search
                     </a>
