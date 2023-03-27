@@ -21,7 +21,7 @@
         include "DBconnection.php";
         include "sql-queries.php";
     ?>
-
+<main>
     <article class="panel">
         <div class="reviews">
             <h2>Comments</h2>
@@ -42,5 +42,6 @@
     ?>
     <script src="../js/comment.js"></script>
     <script src="../js/updateComments.js"></script>
+</main>
 </body>
 </html>
