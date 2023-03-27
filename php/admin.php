@@ -34,7 +34,7 @@
             $selectUserByCommentstmt->execute();
             $resultSetselectUserByCommentstmt = $selectUserByCommentstmt->get_result(); // get the mysqli result
             $resultselectUserByComment = $resultSetselectUserByCommentstmt->fetch_all(MYSQLI_ASSOC);
-            print_r();
+            print_r($resultselectUserByComment);
         }else{
             $error = "No data sent!";
             echo "<script>console.log(\"".$error."\")</script>";          
