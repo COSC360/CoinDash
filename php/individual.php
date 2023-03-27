@@ -28,7 +28,7 @@
     </article>
 
     <article class="panel">
-        <div class="review">
+        <div class="reviews">
             <h2>Comments</h2>
             <?php
                 include "retrieveComments.php";

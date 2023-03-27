@@ -101,6 +101,8 @@
     margin-top: 2.5em;
     border: solid 1px var(--Grey-1);
     padding: 2.5em;
+    max-height: 20em;
+    overflow-y: scroll;
 }
 
 .reviews h2 {
