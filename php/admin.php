@@ -28,11 +28,11 @@
     <script src="../js/jquery-3.1.1.min.js"></script>
 </head>
 <body>
-<!-- <?php
+    <?php
         include "dashboard-header.php";
         include "DBconnection.php";
         include "sql-queries.php";
-    ?> -->
+    ?> 
 <main>    
     <article class="panel">
         <h1>Admin</h1>
