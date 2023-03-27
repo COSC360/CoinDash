@@ -1,26 +1,20 @@
 
 var commentForms = document.querySelectorAll("form");
 
-
 commentForms.forEach(form => {
     form.addEventListener("submit", (e) => {
+        console.log("ASD");
         e.preventDefault();
 
-        var commentId = form.parentNode.id;
-        var parentId = null;
-        if (commentId.startsWith("comment")){
-            var parsedId = commentId.split("-");
-            parentId = parsedId[1];
-        }
-        var coinId = "bitcoin";
+        var coinId = $_GET["coinId"];
         var text = form["text"].value;
-        console.log("Clicked and setting AJAX");
+
         $.ajax({
-            url: "../php/comment.php",
+            url: "uploadComment.php",
             type: "POST",
             data: {coinId: coinId, parentId: parentId, text: text},
             success: function(response) {
-                console.log(response);
+                console.log("Upload Successful");
             }
         })
     })
