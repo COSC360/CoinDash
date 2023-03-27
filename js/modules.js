@@ -130,7 +130,7 @@ toggleEditBtn.addEventListener("click", (e) => {
 
 saveEditBtn.addEventListener("click", (e) => {
     e.preventDefault();
-    uploadDashboard(1);
+    uploadDashboard();
 })
 
 
