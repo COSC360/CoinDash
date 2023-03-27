@@ -3,9 +3,15 @@ import { getURLParams } from "./utils";
 var commentArea = document.getElementById("comment-area");
 
 window.addEventListener("load", () => {
-    console.log("Here");
-    var map = getURLParams();
-    console.log("Here");
+    address = window.location.search
+    // Returns a URLSearchParams object instance
+    parameterList = new URLSearchParams(address)
+    // Created a map which holds key value pairs
+    let map = new Map()
+    // Storing every key value pair in the map
+    parameterList.forEach((value, key) => {
+        map.set(key, value)
+    })
     var coinId = map.get("coinId");
     updateData(coinId);
 })
