@@ -3,6 +3,7 @@ import {buildModule} from "./parser.js";
 var fiatSelects = document.querySelectorAll(".fiat");
 var sortSelects = document.querySelectorAll(".sort");
 
+// Change product cards by fiat
 fiatSelects.forEach(fiatSelect => {
     fiatSelect.addEventListener('change', (e) => {
         var newFiat = fiatSelect.value;
@@ -14,6 +15,7 @@ fiatSelects.forEach(fiatSelect => {
     })
 });
 
+// Change product cards by sort
 sortSelects.forEach(sortSelect => {
     sortSelect.addEventListener('change', (e) => {
         var newSort = sortSelect.value;
@@ -60,7 +62,6 @@ function setModuleHTML(fiat, category, sort, target){
                     </div>
                     `;
             })
-
             target.innerHTML = newModule;
         }
     })

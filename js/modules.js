@@ -18,11 +18,11 @@ var currentModule = null;
 closeModalBtn.addEventListener("click", (e) => {
     moduleModal.classList.add("hide");
 })
-
 cancelModalBtn.addEventListener("click", (e) => {
     moduleModal.classList.add("hide");
 })
 
+// Enables drag and drop of modules
 module_settings_btns.forEach(btn => {
     // Grab connectedModule to be moved
     btn.addEventListener("dragstart", (e) => {
@@ -37,6 +37,7 @@ module_settings_btns.forEach(btn => {
     })
 })
 
+// Recreates moduleHTML given new parameters for category, fiat, and sort
 confirmModalBtn.addEventListener('click', (e) => {
     e.preventDefault();
     var categoryElement = document.querySelector("#" + currentModule.id + " .api-category");
@@ -55,6 +56,7 @@ confirmModalBtn.addEventListener('click', (e) => {
     moduleModal.classList.add("hide");
 })
 
+// Detects drag and drops and moves module nodes
 modules.forEach(module => {
     var dragCounter = 0;
     module.addEventListener("dragenter", (e) => {
