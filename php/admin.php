@@ -110,14 +110,9 @@
                 <p>User Email : <?php echo $resultselectUserByComment[0]['Email']?></p>
                 <p>User Status : <?php echo $resultselectUserByComment[0]['status']?></p>
                 <form action="../php/updateUser.php" method ="POST">
-                <input type="text" name ="searchByCommentId" id="searchByCommentId">
-                <input type="text" name ="searchByCommentId" id="searchByCommentId">
-                <input type="text" name ="searchByCommentId" id="searchByCommentId">
-                <input type="text" name ="searchByCommentId" id="searchByCommentId">
-                <input type="text" name ="searchByCommentId" id="searchByCommentId">
                     <?php
                     foreach($resultselectUserByComment as $resultByComment){
-                        echo "<input type=\"text\" name =\"commentText\" id=\"commentText\">";
+                        echo "<input type=\"text\" name =\"commentText\" id=\"commentText\" value=".$resultByComment['text'].">";
                         echo "<input type=\"submit\" name=\"submit\" value=\"change\">";
                     }
                     ?>
