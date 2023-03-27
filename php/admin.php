@@ -91,10 +91,6 @@
                 <p>User Username : <?php echo $resultselectUserByName['Username']?></p>
                 <p>User Email : <?php echo $resultselectUserByName['Email']?></p>
                 <p>User Status : <?php echo $resultselectUserByName['status']?></p>
-                <form action="../php/updateUser.php" method ="POST">
-                    <input type="submit" name="enable" value="enable">
-                    <input type="submit" name="disable" value="disable">
-                </form>
             </div>
 
             Search by Email: <input type="text" name ="searchByEmail" id="searchByEmail"><input type="submit" name="submit" value="search">
