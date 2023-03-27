@@ -70,7 +70,7 @@
     <article class="panel">
         <form action="" method="POST">
             Name: <input type="text" name ="searchByName" id="searchByName"><input type="submit" name="submit" value="search">
-            <div class="reviews">
+            <div class="reviews divider">
                 <h2>User Information</h2>
                 <p>User Id : <?php echo $resultselectUserByName['Id']?></p>
                 <p>User Username : <?php echo $resultselectUserByName['Username']?></p>
@@ -86,7 +86,7 @@
             </div>
 
             Post ID: <input type="text" name ="searchByCommentId" id="searchByCommentId"><input type="submit" name="submit" value="search">
-            <div class="reviews divider">
+            <div class="reviews">
                 <h2>User Information</h2>
                 <p>User Id : <?php echo $resultselectUserByComment[0]['Id']?></p>
                 <p>User Username : <?php echo $resultselectUserByComment[0]['Username']?></p>
