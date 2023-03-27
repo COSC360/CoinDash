@@ -44,7 +44,7 @@ session_start();
                 include "DBconnection.php";
                 include "sql-queries.php";
                 $like = isset($_GET["like"]) ? $_GET["like"] : "";
-                $coins = retrieveCoinByLike($con, "d");
+                $coins = retrieveCoinByLike($con, $like);
 
                 foreach($coins as $coin){
                     echo 
