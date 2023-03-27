@@ -42,6 +42,7 @@ session_start();
                     $fileName = basename($_FILES["img"]["name"]);
                     $fileType = pathinfo($fileName, PATHINFO_EXTENSION);
                     $userType = "user";
+                    $userStatus = "enabled";
 
                     // Allow certain file formats 
                     $allowTypes = array('jpg','png','jpeg');
@@ -76,8 +77,8 @@ session_start();
                         
                         }else{
                             // Insert image content into database   
-                            $stmt = $con->prepare("INSERT INTO `user_auth` (`Username`, `Email`, `Password`,`comingFrom`,`profilePicture`,`userType`) VALUES (?,?,?,?,?,?)");
-                            $stmt->bind_param("ssssss",$username,$email,$password,$selectedOption,$image,$userType); 
+                            $stmt = $con->prepare("INSERT INTO `user_auth` (`Username`, `Email`, `Password`,`comingFrom`,`profilePicture`,`userType`,`status`) VALUES (?,?,?,?,?,?,?)");
+                            $stmt->bind_param("sssssss",$username,$email,$password,$selectedOption,$image,$userType,$userStatus); 
                             $stmt->execute();
                             header('location: signIn.php');
                             $stmt->close();
