@@ -13,6 +13,7 @@
         $resultSetcmmt = $cmmtstmt->get_result(); // get the mysqli result
         $resultcmmt = $resultSetcmmt->fetch_assoc();
         $_SESSION['comment'] = $resultcmmt['text'];
+        echo $_SESSION['comment'];
     }
 
 ?>
@@ -45,7 +46,7 @@
         </form>
         <div class="reviews">
             <h2>Comments</h2>
-            <input type="text" value = "<?php echo $_SESSION["comment"] ;?>">
+            <input type="text">
         </div>
     </article>
 </main>    
