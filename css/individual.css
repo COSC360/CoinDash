@@ -38,13 +38,16 @@
 }
 
 .comment-input {
-    margin-bottom: 1.5em;
     width: 100%;
     height: 8em;
+    max-width: 100%;
+    resize: vertical;
 }
 
 .comment-btn {
-    margin-top: 0.75em;
+    margin-top: 0.25em;
+    margin-bottom: 1.5em;   
+    margin-left: auto;
 }
 
 .comment-form {
