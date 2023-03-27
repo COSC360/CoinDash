@@ -17,7 +17,7 @@
 
 <body>
     <?php
-        include "header.php";
+        include "dashboard-header.php";
         include "DBconnection.php";
         include "sql-queries.php";
     ?>
