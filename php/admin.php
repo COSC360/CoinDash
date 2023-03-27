@@ -1,7 +1,9 @@
 <?php
+    include "DBconnection.php";
+    include "sql-queries.php";
     session_start();
     $searchId = $_POST['searchId'];
-    
+
     if ($con->connect_error) {
         die("Connection failed: " . $con->connect_error);
     }else{
@@ -34,8 +36,6 @@
 <body>
     <?php
         include "dashboard-header.php";
-        include "DBconnection.php";
-        include "sql-queries.php";
     ?> 
 <main>    
     <article class="panel">
