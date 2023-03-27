@@ -99,6 +99,7 @@ session_start();
                                                                         $dashboardModules[$currentCount]["sort"],
                                                                         12, 1);
                                 foreach($coins as $coin){
+                                    print_r($coin);
                                     echo 
                                     "<div class=\"product-card\">
                                         <div class=\"icon-container\">
