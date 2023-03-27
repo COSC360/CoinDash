@@ -12,8 +12,8 @@
         $resultSetcmmt = $cmmtstmt->get_result(); // get the mysqli result
         $resultcmmt = $resultSetcmmt->fetch_assoc();
         
-        print_r($resultcmmt);
-        // $_SESSION['comment'] = $resultcmmt['text'];
+        print($resultcmmt['text']);
+
     }
 
 ?>
