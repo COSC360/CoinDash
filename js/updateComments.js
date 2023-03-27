@@ -14,6 +14,7 @@ window.addEventListener("load", () => {
 
 // Periodically updates the comments asynchronously
 function updateData(coinId){
+    console.log(coinId);
     $.ajax({
         url: "retrieveComments.php",
         type: "POST",
