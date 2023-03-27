@@ -19,7 +19,8 @@ commentForms.forEach(form => {
         var coinId = map.get("coinId");
 
         var text = form["text"].value;
-
+        console.log(coinId);
+        console.log(text);
         $.ajax({
             url: "uploadComment.php",
             type: "POST",

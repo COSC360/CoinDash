@@ -8,7 +8,7 @@ function uploadComment($con, $userId, $coinId, $text){
         // header("location: REPLACE LATER");
         exit();
     }
-    mysqli_stmt_bind_param($commentStmt, "iss", $coinId, $userId, $text);
+    mysqli_stmt_bind_param($commentStmt, "sss", $coinId, $userId, $text);
     mysqli_stmt_execute($commentStmt);
     mysqli_stmt_close($commentStmt);
 }
