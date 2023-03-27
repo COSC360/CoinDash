@@ -17,6 +17,7 @@ if ($con->connect_error) {
     }
 }
 
+// Bad Navigation Handling : User cannot load the accounts page if not signed in
 if($_SESSION['Id'] == null){
     header('location:signIn.php');
     

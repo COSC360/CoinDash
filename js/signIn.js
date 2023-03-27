@@ -20,7 +20,6 @@ function validateLoginForm() {
     var emailReg = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
 
     if (usernameOrEmail == "" && password =="") {
-        console.log("username/Password cannot be empty")
         usernameError.style.opacity = "1";
         usernameError.style.visibility = "visible";
         usernameError.style.transition = "visibility 0s linear 0s, opacity 300ms";
@@ -34,14 +33,14 @@ function validateLoginForm() {
         passwordError.style.opacity = "1";
         passwordError.style.visibility = "visible";
         passwordError.style.transition = "visibility 0s linear 0s, opacity 300ms";
-        window.alert("Password cannot be empty !");
+
         return false;  
     }
     if(usernameOrEmail ==""){
         usernameError.style.opacity = "1";
         usernameError.style.visibility = "visible";
         usernameError.style.transition = "visibility 0s linear 0s, opacity 300ms";
-        window.alert("Username/Email cannot be empty !");
+    
         return false;
     }
 
@@ -49,7 +48,7 @@ function validateLoginForm() {
         passwordError.style.opacity = "1";
         passwordError.style.visibility = "visible";
         passwordError.style.transition = "visibility 0s linear 0s, opacity 300ms";
-        window.alert("Password must be at least 9 characters long !");
+    
         return false;
     }
 
