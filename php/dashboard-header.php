@@ -27,11 +27,11 @@
             </nav>
         </div>
         <div class="right settings">
-            <div class="horizontal-container fit-width">
+            <!-- <div class="horizontal-container fit-width">
                 <p>English-US</p>
                 <img src="../images/canada-flag.png">
                 <img src="../svgs/arrow-down.svg">
-            </div>
+            </div> -->
             <div class="horizontal-container fit-width">
             <?php
                 if($_SESSION['user'] != null){
