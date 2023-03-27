@@ -3,7 +3,7 @@ import { getURLParams } from "./utils.js";
 var commentArea = document.getElementById("comment-area");
 
 window.addEventListener("load", () => {
-
+    console.log(coinId);
     // Grab coinId from url and update
     var map = getURLParams();
     var coinId = map.get("coinId");
