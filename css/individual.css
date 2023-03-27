@@ -47,7 +47,11 @@
 .comment-btn {
     margin-top: 0.25em;
     margin-bottom: 1.5em;   
-    margin-left: auto;
+}
+
+.btn-container {
+    display: flex;
+    justify-content: flex-end;
 }
 
 .comment-form {
