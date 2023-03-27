@@ -100,11 +100,9 @@
                 <p>User Id : <?php echo $resultselectUserByComment[0]['Id']?></p>
                 <p>User Username : <?php echo $resultselectUserByComment[0]['Username']?></p>
                 <p>User Email : <?php echo $resultselectUserByComment[0]['Email']?></p>
-                <p>User Status : <?php echo $resultselectUserByComment[0]['status']?></p>
-                <form action="../php/updateUser.php" method ="POST">
-                    <input type="text" name ="commentText" id="commentText" value="<?php echo $resultselectUserByComment[0]['text']?>">
-                    <input type="submit" name="submit" value="change">
-                </form>
+                <p>User Status : <?php echo $resultselectUserByComment[0]['status']?></p>                
+                <input type="text" name ="commentText" id="commentText" value="<?php echo $resultselectUserByComment[0]['text']?>">
+                <input type="submit" name="submit" value="change">
             </div>
         </form>
     </article>
