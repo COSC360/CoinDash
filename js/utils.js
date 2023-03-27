@@ -1,5 +1,5 @@
 function getURLParams(){
-    console.log("ASD");
+
     address = window.location.search
     // Returns a URLSearchParams object instance
     parameterList = new URLSearchParams(address)
