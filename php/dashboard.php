@@ -55,7 +55,7 @@ session_start();
 
                 // Row 1 reserved for guest dashboard
                 $userId = isset($_SESSION["Id"]) ? $_SESSION["Id"] : 0;
-                $dashboardModules = retrieveDashboard($con, $userId);
+                $dashboardModules = retrieveDashboard($con, 0);
                 $moduleCount = sizeof($dashboardModules);
                 $currentCount = 0;
                 $previousBlock = $dashboardModules[$currentCount]["block_id"];
