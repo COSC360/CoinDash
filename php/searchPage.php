@@ -37,9 +37,9 @@ session_start();
                 <h1>Search</h1>
             </div>
         </article>
-        <article id="dashboard panel">
+        <article id="dashboard">
+            <div class="panel">
             <?php 
-
                 echo "<div class=\"module-gallery\">";
                 include "DBconnection.php";
                 include "sql-queries.php";
@@ -72,6 +72,7 @@ session_start();
                 echo "</div>";
   
             ?>
+            </div>
         </article>
     </main>
     <?php
