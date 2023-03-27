@@ -5,7 +5,7 @@
     if ($con->connect_error) {
         die("Connection failed: " . $con->connect_error);
     }else{
-        echo "Works !";
+        echo $searchByName = $_POST['searchByName'];
         // $_SESSION['comment'] = $resultcmmt['text'];
         // if(isset($_POST['searchByName'])){
         //     $searchByName = $_POST['searchByName'];
