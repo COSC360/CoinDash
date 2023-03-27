@@ -3,14 +3,14 @@ session_start();
 
 $email= $_POST['email'];
 $password = $_POST['password'];
-// if ($con->connect_error) {
-//     die("Connection failed: " . $con->connect_error);
-// }else{
-//     $stmt = $con->prepare("UPDATE user_auth SET Email = ? WHERE Id = ?");
-//     $stmt->bind_param("si", $email,$_SESSION['Id']); 
-//     $stmt->execute();
-//     // header('location:dashboard.php');
-// }
+if ($con->connect_error) {
+    die("Connection failed: " . $con->connect_error);
+}else{
+    $stmt = $con->prepare("UPDATE user_auth SET Email = ? WHERE Id = ?");
+    $stmt->bind_param("si", $email,$_SESSION['Id']); 
+    $stmt->execute();
+    echo "Update Executed !";
+}
 
 if($_SESSION['Id'] == null){
     header('location:signIn.php');
