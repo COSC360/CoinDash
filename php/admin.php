@@ -14,7 +14,6 @@
             $selectUserByNamestmt->execute();
             $resultSetselectUserByNamestmt = $selectUserByNamestmt->get_result(); // get the mysqli result
             $resultselectUserByName = $resultSetselectUserByNamestmt->fetch_assoc();
-            print_r($resultselectUserByName);
         }
 
         if(isset($_POST['searchByEmail'])){
@@ -25,7 +24,7 @@
             $selectUserByEmailstmt->execute();
             $resultSetselectUserByEmailstmt = $selectUserByEmailstmt->get_result(); // get the mysqli result
             $resultselectUserByEmail = $resultSetselectUserByEmailstmt->fetch_assoc();
-            print_r($resultselectUserByEmail);
+            
         }
 
         if(isset($_POST['searchByCommentId'])){
@@ -36,7 +35,7 @@
             $selectUserByCommentstmt->execute();
             $resultSetselectUserByCommentstmt = $selectUserByCommentstmt->get_result(); // get the mysqli result
             $resultselectUserByComment = $resultSetselectUserByCommentstmt->fetch_all(MYSQLI_ASSOC);
-            print_r($resultselectUserByComment);
+           
         }
     }
 
@@ -67,13 +66,27 @@
         <h1>Admin</h1>
         <form action="" method="POST">
             Name: <input type="text" name ="searchByName" id="searchByName"><input type="submit" name="submit" value="search">
+            <div class="reviews">
+
+                <input type="text" value="">
+            </div>
             Email: <input type="text" name ="searchByEmail" id="searchByEmail"><input type="submit" name="submit" value="search">
+            <div class="reviews">
+                <h2>User Information</h2>
+                <p>User Id : </p>
+                <p>User Name</p>
+                <p>User Email</p>
+                <input type="text" value="">
+            </div>
             Post ID: <input type="text" name ="searchByCommentId" id="searchByCommentId"><input type="submit" name="submit" value="search">
+            <div class="reviews">
+                <h2>User Information</h2>
+                <p>User Id : </p>
+                <p>User Name</p>
+                <p>User Email</p>
+                <input type="text" value="">
+            </div>
         </form>
-        <div class="reviews">
-            <h2>Comments</h2>
-            <input type="text">
-        </div>
     </article>
 </main>    
 </main>
