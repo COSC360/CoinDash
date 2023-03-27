@@ -30,6 +30,14 @@
     <article class="panel">
         <div class="reviews">
             <h2>Comments</h2>
+            <form class="comment-form">
+                <p>
+                    <input type="text" name="text" class="comment-input">
+                </p>
+                <p>
+                    <button type="submit">Reply</button>
+                </p>
+            </form>
             <div id="comment-area">
             </div>
         </div>
