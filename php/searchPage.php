@@ -50,7 +50,7 @@ session_start();
                 if (!$coins){
                     echo "<p>Oh no! Cannot find any coins!</p>";
                 }
-
+                print_r($coins);
                 foreach($coins as $coin){
                     echo 
                     "<div class=\"product-card\">
