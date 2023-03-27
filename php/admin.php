@@ -26,14 +26,12 @@
         <div class="reviews">
             <h2>Comments</h2>
             <form class="comment-form">
-                <p>
+                <!-- <p>
                     <input type="text" name="text" class="comment-input">
-                </p>
-                <p>
-                    <button type="submit">Reply</button>
-                </p>
+                </p> -->
             </form>
             <div id="comment-area">
+                <p>Hello</p>
             </div>
         </div>
     </article>
