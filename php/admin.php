@@ -12,7 +12,7 @@
         echo "Executed !";
         $resultSetcmmt = $cmmtstmt->get_result(); // get the mysqli result
         $resultcmmt = $resultSetcmmt->fetch_assoc();
-        echo "Returns result !";
+        print_r($resultcmmt);
         foreach($resultcmmt as $usercmmt){
             echo "<script>console.log(".$usercmmt['text'].")</script>";
         }
