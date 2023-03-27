@@ -56,6 +56,11 @@
     <script src="https://kit.fontawesome.com/e6e0351429.js" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="../js/jquery-3.1.1.min.js"></script>
+    <style>
+        .divider{
+            margin-bottom: 2em;
+        }
+    </style>    
 </head>
 <body>
     <?php
@@ -72,16 +77,16 @@
                 <p>User Email : <?php echo $resultselectUserByName['Email']?></p>
             </div>
 
-            <span style="margin-top: 2em">Email: <input type="text" name ="searchByEmail" id="searchByEmail"><input type="submit" name="submit" value="search"></span>
-            <div class="reviews">
+            Email: <input type="text" name ="searchByEmail" id="searchByEmail"><input type="submit" name="submit" value="search">
+            <div class="reviews divider">
                 <h2>User Information</h2>
                 <p>User Id : <?php echo $resultselectUserByEmail['Id']?></p>
                 <p>User Username : <?php echo $resultselectUserByEmail['Username']?></p>
                 <p>User Email : <?php echo $resultselectUserByEmail['Email']?></p>
             </div>
 
-            <span style="margin-top: 2em">Post ID: <input type="text" name ="searchByCommentId" id="searchByCommentId"><input type="submit" name="submit" value="search"></span>
-            <div class="reviews">
+            Post ID: <input type="text" name ="searchByCommentId" id="searchByCommentId"><input type="submit" name="submit" value="search">
+            <div class="reviews divider">
                 <h2>User Information</h2>
                 <p>User Id : <?php echo $resultselectUserByComment[0]['Id']?></p>
                 <p>User Username : <?php echo $resultselectUserByComment[0]['Username']?></p>
