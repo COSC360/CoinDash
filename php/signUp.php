@@ -71,7 +71,7 @@ session_start();
                             echo "<script>window.alert(\"".$statusMsg."\")</script>";
                             
                         }
-                        if($result != null){
+                        if($result != null && $username != null && $password != null && $email != null){
                             $statusMsg = 'User already exists !';
                             echo "<script>window.alert(\"".$statusMsg."\")</script>";
 

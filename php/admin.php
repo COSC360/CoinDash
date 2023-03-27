@@ -35,9 +35,7 @@
             $selectUserByCommentstmt->bind_param("i", $searchByCommentId); 
             $selectUserByCommentstmt->execute();
             $resultSetselectUserByCommentstmt = $selectUserByCommentstmt->get_result(); // get the mysqli result
-            $resultselectUserByComment = $resultSetselectUserByCommentstmt->fetch_all(MYSQLI_ASSOC);
-            // $_SESSION["postId"] = $resultselectUserByComment[0]['id'];
-            // $_SESSION["commentText"] = $POST['comment'];
+            $resultselectUserByComment = $resultSetselectUserByCommentstmt->fetch_assoc();
         }
 
 
@@ -98,14 +96,12 @@
             Search by Comment ID: <input type="text" name ="searchByCommentId" id="searchByCommentId"><input type="submit" name="submit" value="search">
             <div class="reviews">
                 <h2>User Information</h2>
-                <p>User Id : <?php echo $resultselectUserByComment[0]['Id']?></p>
-                <p>User Username : <?php echo $resultselectUserByComment[0]['Username']?></p>
-                <p>User Email : <?php echo $resultselectUserByComment[0]['Email']?></p>
-                <p>User Status : <?php echo $resultselectUserByComment[0]['status']?></p>
-                    <form action="" method ="POST">
-                        <input type="text" name ="commentText" id="commentText" value="<?php echo $resultselectUserByComment[0]['text']?>">
-                        <input type="submit" name="submit" value="change">
-                    </form>
+                <p>User Id : <?php echo $resultselectUserByComment['Id']?></p>
+                <p>User Username : <?php echo $resultselectUserByComment['Username']?></p>
+                <p>User Email : <?php echo $resultselectUserByComment['Email']?></p>
+                <p>User Status : <?php echo $resultselectUserByComment['status']?></p>                
+                <input type="text" name ="commentText" id="commentText" value="<?php echo $resultselectUserByComment['text']?>">
+                <input type="submit" name="submit" value="change">
             </div>
         </form>
     </article>
