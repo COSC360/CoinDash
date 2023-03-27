@@ -80,9 +80,9 @@
                 <p>User Username : <?php echo $resultselectUserByName['Username']?></p>
                 <p>User Email : <?php echo $resultselectUserByName['Email']?></p>
                 <p>User Status : <?php echo $resultselectUserByName['status']?></p>
-                <form action="updateUser.php" method ="POST">
+                <!-- <form action="updateUser.php" method ="POST">
                     <input type="submit" name="enable" value="enable"><input type="submit" name="disable" value="disable">
-                </form>
+                </form> -->
             </div>
 
             Search by Email: <input type="text" name ="searchByEmail" id="searchByEmail"><input type="submit" name="submit" value="search">
@@ -101,10 +101,10 @@
                 <p>User Username : <?php echo $resultselectUserByComment[0]['Username']?></p>
                 <p>User Email : <?php echo $resultselectUserByComment[0]['Email']?></p>
                 <p>User Status : <?php echo $resultselectUserByComment[0]['status']?></p>
-                <form action="updateUser.php" method ="POST">
+                <!-- <form action="updateUser.php" method ="POST">
                     <input type="text" name ="commentText" id="commentText" value="<?php echo $resultselectUserByComment[0]['text']?>">
                     <input type="submit" name="submit" value="change">
-                </form>
+                </form> -->
             </div>
         </form>
     </article>
