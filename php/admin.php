@@ -50,7 +50,6 @@
         </div>
     </article>
 </main>    
-    <script src="../js/comment.js"></script>
 </main>
 </body>
 </html>
