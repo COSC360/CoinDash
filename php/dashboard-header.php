@@ -27,7 +27,7 @@ session_start();
             <?php
                 if($_SESSION['user'] != null){
                     echo  "<p>Hi, ".$_SESSION['user']."</p>";
-                    echo  "<img src=\"".$_SESSION['pfp']."  style=\"width:40px; height:40px;\">";
+                    echo  "<img src=".$_SESSION['pfp']." style=\"width: 40px;height:40px;\">";
                     echo  "<img src=\"../svgs/arrow-down.svg\">";
                 }else{
                     echo  "Sign In / Sign Up";       
