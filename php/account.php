@@ -80,5 +80,8 @@ if($_SESSION['Id'] == null){
             </div>
         </div>
     <main>
+    <?php
+        include "footer.php";
+    ?>
 </body>
 </html>

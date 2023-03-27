@@ -44,8 +44,7 @@
             <?php
                 if($_SESSION['user'] != null){
                     echo  "<p>Hi, ".$_SESSION['user']."</p>";
-                    echo  "<img src=".$_SESSION['pfp']." style=\"width: 40px;height:40px;\">";
-                    echo  "<img src=\"../svgs/arrow-down.svg\">";
+                    echo  "<img src=".$_SESSION['pfp']." style=\"width: 40px;height:40px;\" onclick=navigateToAccount()>";
                 }else{
                     echo  "<a href=\"#\" onclick=navigateToSignIn()>Sign In</a>/<a href=\"#\" onclick=navigateToSignUp()>Sign Up</a>";
                 }
