@@ -99,11 +99,10 @@ session_start();
                                                                         $dashboardModules[$currentCount]["sort"],
                                                                         12, 1);
                                 foreach($coins as $coin){
-                                    print_r($coin);
                                     echo 
                                     "<div class=\"product-card\">
                                         <div class=\"icon-container\">
-                                            <a class=\"icon-overlay\" onclick=navigateToIndividualPage(".$coin["id"].")>
+                                            <a class=\"icon-overlay\" onclick=navigateToIndividualPage(".$coin["Id"].")>
                                                 <img src=\"../svgs/goto.svg\">
                                             </a>
                                         </div>
