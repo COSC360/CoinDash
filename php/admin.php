@@ -2,13 +2,13 @@
     session_start();
 
     $searchId = $_POST['searchId'];
-    $stmt = $con->prepare("SELECT * FROM `comment` WHERE  `user_id` = ?");
-    $stmt->bind_param("i", $searchId); 
-    $stmt->execute();
-    $resultSet = $stmt->get_result(); // get the mysqli result
-    $result = $resultSet->fetch_assoc();
+    $cmmtstmt = $con->prepare("SELECT * FROM `comment` WHERE  `user_id` = ?");
+    $cmmtstmt->bind_param("i", $searchId); 
+    $cmmtstmt->execute();
+    $resultSetcmmt = $cmmtstmt->get_result(); // get the mysqli result
+    $resultcmmt = $resultSetcmmt->fetch_assoc();
 
-    $SESSION['comment'] = $result['text'];
+    $SESSION['comment'] = $resultcmmt['text'];
 ?>
 <!DOCTYPE html>
 <html lang="en">
