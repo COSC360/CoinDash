@@ -39,7 +39,7 @@ session_start();
             $userOremail= $_GET['user-email'];
             $password = $_GET['password'];
 
-            $stmt = $con->prepare("SELECT * FROM `user_auth` WHERE  `Email` = ? && `Password` = ? || `Username` = ? && `Password` = ? ");
+            $stmt = $con->prepare("SELECT * FROM `user_auth` WHERE  (`Email` = ? AND `Password` = ?) OR (`Username` = ? AND `Password` = ?) ");
             $stmt->bind_param("ssss", $userOremail,$password,$userOremail,$password); 
             $stmt->execute();
             $resultSet = $stmt->get_result(); // get the mysqli result
