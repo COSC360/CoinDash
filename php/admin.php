@@ -14,7 +14,6 @@
             $selectUserByNamestmt->execute();
             $resultSetselectUserByNamestmt = $selectUserByNamestmt->get_result(); // get the mysqli result
             $resultselectUserByName = $resultSetselectUserByNamestmt->fetch_assoc();
-            echo $resultselectUserByName['Username'];
         }
 
         if(isset($_POST['searchByEmail'])){
@@ -68,24 +67,25 @@
         <form action="" method="POST">
             Name: <input type="text" name ="searchByName" id="searchByName"><input type="submit" name="submit" value="search">
             <div class="reviews">
-
-                <input type="text" value="">
+                <h2>User Information</h2>
+                <p>User Id : <?php echo $resultselectUserByName['Id']?></p>
+                <p>User Username : <?php echo $resultselectUserByName['Username']?></p>
+                <p>User Email : <?php echo $resultselectUserByName['Email']?></p>
             </div>
             Email: <input type="text" name ="searchByEmail" id="searchByEmail"><input type="submit" name="submit" value="search">
             <div class="reviews">
                 <h2>User Information</h2>
-                <p>User Id : </p>
-                <p>User Name</p>
-                <p>User Email</p>
-                <input type="text" value="">
+                <p>User Id : <?php echo $resultselectUserByEmail['Id']?></p>
+                <p>User Username : <?php echo $resultselectUserByEmail['Username']?></p>
+                <p>User Email : <?php echo $resultselectUserByEmail['Email']?></p>
             </div>
             Post ID: <input type="text" name ="searchByCommentId" id="searchByCommentId"><input type="submit" name="submit" value="search">
             <div class="reviews">
                 <h2>User Information</h2>
-                <p>User Id : </p>
-                <p>User Name</p>
-                <p>User Email</p>
-                <input type="text" value="">
+                <p>User Id : <?php echo $resultselectUserByComment['Id']?></p>
+                <p>User Username : <?php echo $resultselectUserByComment['Username']?></p>
+                <p>User Email : <?php echo $resultselectUserByComment['Email']?></p>
+                <input type="text" value="<?php echo $resultselectUserByComment['text']?>">
             </div>
         </form>
     </article>
