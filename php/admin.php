@@ -16,12 +16,31 @@
     <title>Document</title>
 </head>
 <body>
+    <?php
+        include "dashboard-header.php";
+        include "DBconnection.php";
+        include "sql-queries.php";
+    ?>
+
     <article class="panel">
         <div class="reviews">
             <h2>Comments</h2>
+            <form class="comment-form">
+                <p>
+                    <input type="text" name="text" class="comment-input">
+                </p>
+                <p>
+                    <button type="submit">Reply</button>
+                </p>
+            </form>
             <div id="comment-area">
             </div>
         </div>
     </article>
+    <?php
+        include "footer.php"
+    ?>
+    <script src="../js/comment.js"></script>
+    <script src="../js/updateComments.js"></script>
 </body>
 </html>
