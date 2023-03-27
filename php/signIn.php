@@ -73,7 +73,9 @@ session_start();
     }
         
     ?>
-<?php include 'header.php';?>
+    <?php
+        include "dashboard-header.php";
+    ?>
 <main>  
     <div class="main">
         <div class = "panel auth-container">
@@ -119,7 +121,9 @@ session_start();
             </div>            
         </div>
 </main>
-
+<?php
+    include "footer.php";
+?>
 </body>
 
 </html>
