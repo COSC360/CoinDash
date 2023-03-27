@@ -102,7 +102,7 @@
                 <p>User Status : <?php echo $resultselectUserByEmail['status']?></p>
             </div>
 
-            Search by Post ID: <input type="text" name ="searchByCommentId" id="searchByCommentId"><input type="submit" name="submit" value="search">
+            Search by Comment ID: <input type="text" name ="searchByCommentId" id="searchByCommentId"><input type="submit" name="submit" value="search">
             <div class="reviews">
                 <h2>User Information</h2>
                 <p>User Id : <?php echo $resultselectUserByComment[0]['Id']?></p>
