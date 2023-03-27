@@ -20,13 +20,13 @@ function validateLoginForm() {
     var emailReg = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
 
     if (usernameOrEmail == "" && password =="") {
+        console.log("username/Password cannot be empty")
         usernameError.style.opacity = "1";
         usernameError.style.visibility = "visible";
         usernameError.style.transition = "visibility 0s linear 0s, opacity 300ms";
         passwordError.style.opacity = "1";
         passwordError.style.visibility = "visible";
         passwordError.style.transition = "visibility 0s linear 0s, opacity 300ms";
-        console.log("Username and Password cannot be empty !");
         return false;  
     }
     
