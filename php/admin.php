@@ -1,9 +1,22 @@
+<?php
+    session_start();
+
+    $searchId = $_POST['searchId'];
+    $stmt = $con->prepare("SELECT * FROM `comment` WHERE  `user_id` = ?");
+    $stmt->bind_param("i", $searchId); 
+    $stmt->execute();
+    $resultSet = $stmt->get_result(); // get the mysqli result
+    $result = $resultSet->fetch_assoc();
+
+    $SESSION['comment'] = $result['text'];
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Page</title>
     <link rel="stylesheet" href="../font/helvetica-now-display/stylesheet.css">
     <link rel="stylesheet" href="../css/var.css">
     <link rel="stylesheet" href="../css/reset.css">
@@ -13,28 +26,22 @@
     <script src="https://kit.fontawesome.com/e6e0351429.js" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="../js/jquery-3.1.1.min.js"></script>
-    <title>Document</title>
 </head>
 <body>
-<?php
+<!-- <?php
         include "dashboard-header.php";
         include "DBconnection.php";
         include "sql-queries.php";
-    ?>
+    ?> -->
 <main>    
     <article class="panel">
+        <h1>Admin</h1>
+        <form action="" method="POST">
+            <input type="text" name ="searchId" id="searchId"><input type="submit" name="submit" id ="submit" value="search">
+        </form>
         <div class="reviews">
             <h2>Comments</h2>
-            <form class="comment-form">
-                <p>
-                    <textarea name="text" class="comment-input"></textarea>
-                </p>
-                <p class="btn-container">
-                    <button type="submit" class="comment-btn">Reply</button>
-                </p>
-            </form>
-            <div id="comment-area">
-            </div>
+            <input type="text" value = "<?php echo $_SESSION["comment"] ;?>">
         </div>
     </article>
 </main>    
