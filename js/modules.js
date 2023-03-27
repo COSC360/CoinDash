@@ -116,24 +116,25 @@ modules.forEach(module => {
     })
 })
 
-if (toggleEditBtn != null){
-    toggleEditBtn.addEventListener("click", (e) => {
+toggleEditBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+    editElements.forEach(element => {
+        if (element.classList.contains("hide")){
+            element.classList.remove("hide");
+        } else {
+            element.classList.add("hide");
+        }
+
+    })
+})
+
+// For registered users
+if (saveEditBtn != null){
+    saveEditBtn.addEventListener("click", (e) => {
         e.preventDefault();
-        editElements.forEach(element => {
-            if (element.classList.contains("hide")){
-                element.classList.remove("hide");
-            } else {
-                element.classList.add("hide");
-            }
-    
-        })
+        uploadDashboard();
     })
 }
-
-saveEditBtn.addEventListener("click", (e) => {
-    e.preventDefault();
-    uploadDashboard();
-})
 
 
 var fiatSelects = document.querySelectorAll(".fiat");

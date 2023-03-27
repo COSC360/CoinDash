@@ -1,5 +1,12 @@
 
+<?php
+session_set_cookie_params(0);
+session_start();
 
+if($_SESSION['Id'] == null){
+    header('location:signIn.php');
+}
+?>
 
 <!DOCTYPE html>
 <html>
