@@ -117,7 +117,7 @@ session_start();
                 <a href = "http://cosc360.ok.ubc.ca/suyash06/cosc360-Project/dashboard.php"><img class="dashboardCard"></a> -->
                 <!-- <a href = "http://localhost/project360/dashboard.php"><img class="dashboardCard"></a>
                 <a href = "http://localhost/project360/dashboard.php"><img class="dashboardCard"></a> -->
-            </div>            
+            </div>
         </div>
 </main>
 <?php
