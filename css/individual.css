@@ -100,8 +100,8 @@
     border-radius: 10px;
     margin-top: 2.5em;
     border: solid 1px var(--Grey-1);
-    padding: 2.5em;
-    max-height: 20em;
+    padding: 1em;
+    max-height: 16em;
     overflow-y: scroll;
 }
 
