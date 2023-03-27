@@ -10,3 +10,7 @@ function navigateToSignIn(){
 function navigateToSignUp(){
     document.location.href = `signUp.php`
 }
+
+function navigateToAccount(){
+    document.location.href = `account.php`
+}
