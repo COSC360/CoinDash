@@ -31,7 +31,6 @@
                 </p> -->
             </form>
             <div id="comment-area">
-                <p>Hello</p>
             </div>
         </div>
     </article>
