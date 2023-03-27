@@ -40,13 +40,14 @@ session_start();
         <article id="dashboard">
             <div class="panel">
             <?php 
-                echo "<div class=\"module-gallery\">";
+                echo "<div class=\"module-gallery top-spacing\">";
                 include "DBconnection.php";
                 include "sql-queries.php";
                 $like = isset($_GET["like"]) ? $_GET["like"] : "";
                 $coins = retrieveCoinByLike($con, $like);
-                print_r($coins);
-                if (sizeof($coins) == 0){
+
+                // Notify user if like query returns false
+                if (!$coins){
                     echo "<p>Oh no! Cannot find any coins!</p>";
                 }
 

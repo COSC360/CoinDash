@@ -114,16 +114,6 @@ select {
     font-size: 2em;
 }
 
-/* .small .module-gallery {
-    grid-template-columns: repeat(auto-fit, minmax(12em, 1fr));
-}
-.medium .module-gallery {
-    grid-template-columns: repeat(auto-fit, minmax(18.75em, 1fr));
-}
-.large .module-gallery {
-    grid-template-columns: repeat(auto-fit, minmax(25.5em, 1fr));
-} */
-
 .product-card {
     min-width: 12em;
     max-width: 24em;
