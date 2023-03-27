@@ -9,7 +9,7 @@ if ($con->connect_error) {
     die("Connection failed: " . $con->connect_error);
 }else{
     if(isset($_POST['submit'])){
-        $stmt = $con->prepare("UPDATE user_auth SET Email = ? WHERE Id = ?");
+        $stmt = $con->prepare("UPDATE `user_auth` SET Email = ? WHERE Id = ?");
         $stmt->bind_param("si", $email,$_SESSION['Id']); 
         $stmt->execute();
         echo "Update Executed !";
