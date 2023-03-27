@@ -5,7 +5,7 @@
     if ($con->connect_error) {
         die("Connection failed: " . $con->connect_error);
     }else{
-        // $_SESSION['comment'] = $resultcmmt['text'];
+
         if(isset($_POST['searchByName'])){
             $searchByName = $_POST['searchByName'];
             //Search user by name
@@ -16,6 +16,7 @@
             $resultselectUserByName = $resultSetselectUserByNamestmt->fetch_assoc();
             print_r($resultselectUserByName);
         }
+
         if(isset($_POST['searchByEmail'])){
             $searchByEmail = $_POST['searchByEmail'];
             // //Search user by email
@@ -25,8 +26,8 @@
             $resultSetselectUserByEmailstmt = $selectUserByEmailstmt->get_result(); // get the mysqli result
             $resultselectUserByEmail = $resultSetselectUserByEmailstmt->fetch_assoc();
             print_r($resultselectUserByEmail);
-
         }
+
         if(isset($_POST['searchByCommentId'])){
             $searchByCommentId = $_POST['searchByCommentId'];
             // //Search user by comment
