@@ -19,6 +19,7 @@ session_start();
     <link rel="stylesheet" href="../css/userAuth.css">
     <script src="https://kit.fontawesome.com/e6e0351429.js" crossorigin="anonymous"></script>
     <script src="../js/signUp.js"></script>
+    <script src="../js/navigation.js"></script>
 </head>
 
 <body>
@@ -91,8 +92,7 @@ session_start();
                     $_SESSION['obj_image_session'] = file_get_contents($_FILES['img']['tmp_name']);
                
             }
-?>
-<?php include 'header.php';?>
+    include 'dashboard-header.php';?>
     <main>
         <div class = "panel auth-container">
             <div class="register-info">
@@ -159,6 +159,9 @@ session_start();
         </div>
         </div>
     </main>
+    <?php
+        include "footer.php";
+    ?>
 </body>
 
 </html>
