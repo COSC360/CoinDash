@@ -9,7 +9,6 @@
 
     foreach($comments as $comment) {
         $output .= "
-            <hr class=\"medium-spacing\">
             <div class=\"comment\" id=\"comment-1\">
                 <div class=\"main-comment\">
                     <div class=\"comment-header\">
@@ -19,6 +18,7 @@
                     <p class=\"review-content\">".$comment["text"]."</p>
                 </div>
             </div>
+            <hr class=\"medium-spacing\">
         ";
     }
 

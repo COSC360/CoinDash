@@ -32,7 +32,7 @@
             <h2>Comments</h2>
             <form class="comment-form">
                 <p>
-                    <input type="text" name="text" class="comment-input">
+                    <textarea name="text" class="comment-input"></textarea>
                 </p>
                 <p>
                     <button type="submit">Reply</button>
