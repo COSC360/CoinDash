@@ -15,7 +15,7 @@
                     <a href="#" id="search">
                         Search
                     </a>
-                    <div style="display: absolute">
+                    <div style="position: absolute; left: 0; bottom:-5em;">
                         <form id="search-modal" class="hide">
                             <input type="text" name="like" placeholder="What are you looking for?">
                         </form>
