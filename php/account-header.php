@@ -23,7 +23,7 @@ session_start();
             </div>
             <div class="horizontal-container fit-width">
                 <p>Hi, <?php echo $_SESSION['user']?></p>
-                <img src="<?php echo $_SESSION['pfp']?>">
+                <img src="<?php echo $_SESSION['pfp']?>" style="width: 40px;height:40px;">
                 <img src="../svgs/arrow-down.svg">
             </div>
         </div>
