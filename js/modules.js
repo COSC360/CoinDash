@@ -130,8 +130,3 @@ saveEditBtn.addEventListener("click", (e) => {
     e.preventDefault();
     uploadDashboard(1);
 })
-
-
-function navigateToIndividualPage(coinId){
-    document.location.href = `individual.php?coinId=${coinId}`
-}
