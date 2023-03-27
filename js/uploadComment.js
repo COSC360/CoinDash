@@ -1,4 +1,3 @@
-import { getURLParams } from "./utils.js"
 
 
 var commentForms = document.querySelectorAll("form");
