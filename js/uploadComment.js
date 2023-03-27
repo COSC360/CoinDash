@@ -6,7 +6,18 @@ commentForms.forEach(form => {
         console.log("ASD");
         e.preventDefault();
 
-        var coinId = $_GET["coinId"];
+        address = window.location.search
+        // Returns a URLSearchParams object instance
+        parameterList = new URLSearchParams(address)
+        // Created a map which holds key value pairs
+        let map = new Map()
+        // Storing every key value pair in the map
+        parameterList.forEach((value, key) => {
+            map.set(key, value)
+        })
+        
+        var coinId = map.get("coinId");
+
         var text = form["text"].value;
 
         $.ajax({
@@ -19,3 +30,4 @@ commentForms.forEach(form => {
         })
     })
 })
+
