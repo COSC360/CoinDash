@@ -72,7 +72,7 @@
                                 <input type="reset" value="Reset Form" onclick="ErrorClearFunction()">
                             </div>
                             <div class="item-4">
-                                <input type="submit" value="Login" name = "submit" id = "submit">
+                                <input type="submit" value="Login" name = "submit" id = "submit" value="submit">
                             </div>
                         </form>
                     </div>
