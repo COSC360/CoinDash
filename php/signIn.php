@@ -23,7 +23,7 @@
         include "modules.php";
         $errMsg = '';
         //Set the base path for website
-        echo isset($_GET['submit']);
+        echo "<script>console.log(\"".isset($_GET['submit'])."\")</script>";
         if(isset($_GET['submit']) && $_SERVER["REQUEST_METHOD"] == "GET"){
             if(isset($_GET['loginID']) && isset($_GET['loginPassword'])){
                 $loginID= $_GET['loginId'];
@@ -31,11 +31,11 @@
                 loginUser($con,$loginID,$loginPassword);
             }else{
                 $errMsg = 'Login data was not sent. Please try again !';
-                echo "<script>window.alert(".$errMsg.")</script>";
+                echo "<script>console.log(\"".$errMsg."\")</script>";
             }
         }else{
             $errMsg = 'Invalid Request Type !';
-            echo "<script>window.alert(".$errMsg.")</script>";
+            echo "<script>console.log(\"".$errMsg."\")</script>";
         }
     ?>
     <?php
