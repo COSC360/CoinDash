@@ -23,9 +23,9 @@
         include "modules.php";
         $errMsg = '';
         //Set the base path for website
-        echo "<script>console.log(\"".isset($_GET['submit'])."\")</script>";
-        if(isset($_GET['submit']) && $_SERVER["REQUEST_METHOD"] == "GET"){
-            echo "<script>console.log(\"".isset($_GET['submit'])."\")</script>";
+        echo "<script>console.log(\"".isset($_GET['loginSubmit'])."\")</script>";
+        if(isset($_GET['loginSubmit']) && $_SERVER["REQUEST_METHOD"] == "GET"){
+            echo "<script>console.log(\"".isset($_GET['loginSubmit'])."\")</script>";
             if(isset($_GET['loginID']) && isset($_GET['loginPassword'])){
                 $loginID= $_GET['loginId'];
                 $loginPassword = $_GET['password'];
@@ -72,7 +72,7 @@
                                 <input type="reset" value="Reset Form" onclick="ErrorClearFunction()">
                             </div>
                             <div class="item-4">
-                                <input type="submit" value="Login" name = "submit" id = "submit" value="submit">
+                                <input type="submit" value="Login" name = "loginSubmit" id = "loginSubmit" value="submit">
                             </div>
                         </form>
                     </div>
