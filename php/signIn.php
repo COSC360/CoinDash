@@ -25,6 +25,7 @@
         //Set the base path for website
         echo "<script>console.log(\"".isset($_GET['submit'])."\")</script>";
         if(isset($_GET['submit']) && $_SERVER["REQUEST_METHOD"] == "GET"){
+            echo "<script>console.log(\"".isset($_GET['submit'])."\")</script>";
             if(isset($_GET['loginID']) && isset($_GET['loginPassword'])){
                 $loginID= $_GET['loginId'];
                 $loginPassword = $_GET['password'];
