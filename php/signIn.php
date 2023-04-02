@@ -23,12 +23,13 @@
         include "modules.php";
         $errMsg = '';
         //Set the base path for website
+        echo isset($_GET['submit']);
         if(isset($_GET['submit']) && $_SERVER["REQUEST_METHOD"] == "GET"){
             if(isset($_GET['loginID']) && isset($_GET['loginPassword'])){
                 $loginID= $_GET['loginId'];
                 $loginPassword = $_GET['password'];
                 loginUser($con,$loginID,$loginPassword);
-            }else{s
+            }else{
                 $errMsg = 'Login data was not sent. Please try again !';
                 echo "<script>window.alert(".$errMsg.")</script>";
             }
