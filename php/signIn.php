@@ -23,6 +23,7 @@
         include "modules.php";
         $errMsg = '';
         //Set the base path for website
+        echo "console.log(".isset($_GET['submit']).")";
         if(isset($_GET['submit']) && $_SERVER["REQUEST_METHOD"] == "GET"){
             if(isset($_GET['loginID']) && isset($_GET['loginPassword'])){
                 $loginID= $_GET['loginId'];
