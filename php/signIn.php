@@ -1,7 +1,3 @@
-<?php
-session_set_cookie_params(0);
-session_start();
-?>
 <!DOCTYPE html>
 <html>
 
@@ -23,103 +19,72 @@ session_start();
 </head>
 
 <body>
-<?php
-    // error_reporting(E_ALL);
-    // init_set('display_errors','1');
-    // include_once('ValidationResult.class.php');
-
-
-    include 'DBconnection.php';
-    $statusMsg = '';
-
-    if ($con->connect_error) {
-        die("Connection failed: " . $con->connect_error);
-    }else{
-        if($_SERVER["REQUEST_METHOD"] == "GET"){
-            $userOremail= $_GET['user-email'];
-            $password = $_GET['password'];
-
-            $stmt = $con->prepare("SELECT * FROM `user_auth` WHERE  (`Email` = ? AND `Password` = ?) OR (`Username` = ? AND `Password` = ?) ");
-            $stmt->bind_param("ssss", $userOremail,$password,$userOremail,$password); 
-            $stmt->execute();
-            $resultSet = $stmt->get_result(); // get the mysqli result
-            $result = $resultSet->fetch_assoc();
-
-            if($result != null){
-                if($result['userType'] == 'admin'){
-                    header('location:admin.php');
-                    
-                }elseif($result['userType'] == 'user' && $result['status'] == "enabled"){
-                    header('location:account.php');
-                    
-                }elseif($result['userType'] == 'user' && $result['status'] == "disabled"){
-                    $statusMsg = "Your account has been disabled by the admin !";
-                    echo "<script>window.alert(\"".$statusMsg."\")</script>";
-                }
+    <?php
+        include "modules.php";
+        $errMsg = '';
+        //Set the base path for website
+        if(isset($_GET['submit']) && $_SERVER["REQUEST_METHOD"] == "GET"){
+            if(isset($_GET['loginID']) && isset($_GET['loginPassword'])){
+                $loginID= $_GET['loginId'];
+                $loginPassword = $_GET['password'];
+                loginUser($con,$loginID,$loginPassword);
+            }else{
+                $errMsg = 'Login data was not sent. Please try again !';
+                echo "<script>window.alert(".$errMsg.")</script>";
             }
-
-            if($result == null && $userOremail != "" && $password != ""){
-                $statusMsg = 'User does not exist !';
-                echo "<script>window.alert(\"".$statusMsg."\")</script>";
-            }
-       
-
-            $_SESSION["user"] = $result['Username'];
-            $_SESSION["email"] = $result['Email'];
-            $_SESSION["Id"] = $result['Id'];
-            $_SESSION["pfp"] = $result['profilePicture'];
         }else{
-            echo"<script>window.alert(\"Invalid Request Type\")</script>";
+            $errMsg = 'Invalid Request Type !';
+            echo "<script>window.alert(".$errMsg.")</script>";
         }
-    }
-        
-        include "dashboard-header.php";
     ?>
-<main>  
-    <div class="main">
-        <div class = "panel auth-container">
-            <div class="login-info">
-                <h1>Home/</h1>
-                <h2>Sign In</h2>
-                <p>Lorem ipsum dolor sit amet consectetur. Erat facilisi varius est cursus. Neque sagittis mi non purus semper lacus mauris magnis.</p>
-                <div class="info-footer">
-                    <p><a href="https://cosc360.ok.ubc.ca/suyash06/project-JasonR24/php/signUp.php">Don’t Have An Account?</a></p>
-                    <p>or</p>
-                    <p><a href="https://cosc360.ok.ubc.ca/suyash06/project-JasonR24/php/community.php">Explore Dashboards?</a></p>
+    <?php
+        include "dashboardHeader.php";
+    ?>
+        <main>  
+            <div class="main">
+                <div class = "panel auth-container">
+                    <div class="login-info">
+                        <h1>Home/</h1>
+                        <h2>Sign In</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur. Erat facilisi varius est cursus. Neque sagittis mi non purus semper lacus mauris magnis.</p>
+                        <div class="info-footer">
+                            <p><a onclick = "navigateToSignUp()">Don’t Have An Account?</a></p>
+                            <p>or</p>
+                            <p><a onclick = "navigateToCommunity()">Explore Dashboards?</a></p>
+                        </div>
+                    </div>  
+                    <div class="login-box">
+                        <form name = "LoginForm" id ="LoginForm" action= "" onsubmit="return validateLoginForm()" method="GET" required>
+                            <div class="item-1">
+                                <label>Username or Email</label><br>     
+                                <p id = "usernameError">Empty/Invalid Username</p>
+                                <input type = "text" name = "loginId" id= "loginId" placeholder="What’s Your Registered Username or Email?" onkeydown="UsernameErrorClearFunction()">
+                            </div>
+                            <div class="item-2">
+                                <label>Password</label><br>
+                                <p id = "passwordError">Empty/Invalid Password</p>
+                                <input type = "password" name = "password" id= "password" placeholder="What’s Your Password?" onkeydown="PasswordErrorClearFunction()">
+                                
+                            </div>
+                            <div class="item-3">
+                                <input type="reset" value="Reset Form" onclick="ErrorClearFunction()">
+                            </div>
+                            <div class="item-4">
+                                <input type="submit" value="Login" name = "submit" id = "submit">
+                            </div>
+                        </form>
+                    </div>
                 </div>
-            </div>  
-            <div class="login-box">
-                <form name = "LoginForm" id ="LoginForm" action= "" onsubmit="return validateLoginForm()" method="GET" required>
-                    <div class="item-1">
-                        <label>Username or Email</label><br>     
-                        <p id = "usernameError">Empty/Invalid Username</p>
-                        <input type = "text" name = "user-email" id= "user-email" placeholder="What’s Your Registered Username or Email?" onkeydown="UsernameErrorClearFunction()">
+                <div class = "display-card-container">
+                    <div class = "display-card-grid">
+                        <!-- <a href = "http://cosc360.ok.ubc.ca/suyash06/cosc360-Project/dashboard.php"><img class="dashboardCard"></a>
+                        <a href = "http://cosc360.ok.ubc.ca/suyash06/cosc360-Project/dashboard.php"><img class="dashboardCard"></a>
+                        <a href = "http://cosc360.ok.ubc.ca/suyash06/cosc360-Project/dashboard.php"><img class="dashboardCard"></a> -->
+                        <!-- <a href = "http://localhost/project360/dashboard.php"><img class="dashboardCard"></a>
+                        <a href = "http://localhost/project360/dashboard.php"><img class="dashboardCard"></a> -->
                     </div>
-                    <div class="item-2">
-                        <label>Password</label><br>
-                        <p id = "passwordError">Empty/Invalid Password</p>
-                        <input type = "password" name = "password" id= "password" placeholder="What’s Your Password?" onkeydown="PasswordErrorClearFunction()">
-                        
-                    </div>
-                    <div class="item-3">
-                        <input type="reset" value="Reset Form" onclick="ErrorClearFunction()">
-                    </div>
-                    <div class="item-4">
-                        <input type="submit" value="Login" id = "submit">
-                    </div>
-                </form>
-            </div>
-        </div>
-        <div class = "display-card-container">
-            <div class = "display-card-grid">
-                <!-- <a href = "http://cosc360.ok.ubc.ca/suyash06/cosc360-Project/dashboard.php"><img class="dashboardCard"></a>
-                <a href = "http://cosc360.ok.ubc.ca/suyash06/cosc360-Project/dashboard.php"><img class="dashboardCard"></a>
-                <a href = "http://cosc360.ok.ubc.ca/suyash06/cosc360-Project/dashboard.php"><img class="dashboardCard"></a> -->
-                <!-- <a href = "http://localhost/project360/dashboard.php"><img class="dashboardCard"></a>
-                <a href = "http://localhost/project360/dashboard.php"><img class="dashboardCard"></a> -->
-            </div>
-        </div>
-</main>
+                </div>
+        </main>
 <?php
     include "footer.php";
     if(isset($_GET["errmsg"])){

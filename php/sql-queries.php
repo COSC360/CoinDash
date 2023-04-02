@@ -1,6 +1,8 @@
 <?php
 session_set_cookie_params(0);
 session_start();
+
+
 function retrieveAllCoins($con){
     $sql = "SELECT * FROM coin LIMIT 12;";
 
@@ -263,6 +265,119 @@ function retrieveDashboard($con, $userId){
         // mysqli_stmt_close();
         return $rows; 
     } else {
+        // mysqli_stmt_close();
+        return false;
+    }
+}
+
+function loginUser($con,$loginID,$loginPassword){
+    $loginSQL = "SELECT * FROM `userAuth` WHERE  (`email` = ? AND `password` = ?) OR (`username` = ? AND `password` = ?)";
+
+    $loginStmt = mysqli_stmt_init($con); 
+
+    $statusMsg = '';
+
+    if (!mysqli_stmt_prepare($loginStmt, $loginSQL)){
+        // TODO:
+        // header("location: REPLACE LATER");
+        $statusMsg = '';
+        $statusMsg = "Unable to prepare the SQL statement.";
+        echo "<script>window.alert(\"".$statusMsg."\")</script>";
+        exit();
+    }
+
+    // Set parameters for prepared statement
+    mysqli_stmt_bind_param($loginStmt, "ssss", $loginID,$loginPassword,$loginID,$loginPassword);
+
+    // Execute prepared statement
+    mysqli_stmt_execute($loginStmt);
+
+    $results = mysqli_stmt_get_result($loginStmt);
+
+    if($rows = $results -> fetch_assoc()){
+        // mysqli_stmt_close();
+
+        //Creating session variables 
+        $_SESSION["username"] = $rows['username'];
+        $_SESSION["email"] = $rows['email'];
+        $_SESSION["id"] = $rows['id'];
+        $_SESSION["profilePicture"] = $rows['profilePicture'];
+
+        //Navigate to admin.php if user is of "admin" type
+        if($rows['userType'] == 'admin'){
+            header('location:admin.php');
+            
+        //Navigate to account.php if user is of "user" type and status is "enabled"
+        }elseif($rows['userType'] == 'user' && $rows['status'] == "enabled"){
+            header('location:account.php');
+
+
+        //Display an error if user is of "user" type and status is "disabled"            
+        }elseif($rows['userType'] == 'user' && $rows['status'] == "disabled"){
+            $statusMsg = "Your account has been disabled by the admin !";
+            echo "<script>window.alert(\"".$statusMsg."\")</script>";
+        }
+    }else{
+        // mysqli_stmt_close();
+        return false;
+    }
+
+}
+
+function registerUser($con,$registerUsername,$registerEmail,$registerPassword,$registerVerifyPassword,$registerSelectedOption,$registerUserType,$registerUserStatus,$registerImage){
+    $statusMsg = '';
+
+    $existingUserSQL = "SELECT * FROM `userAuth` WHERE  `email` = ? OR `username` = ?";
+
+    $existingUserStmt = mysqli_stmt_init($con);
+
+    if (!mysqli_stmt_prepare($existingUserStmt, $existingUserSQL)){
+        // TODO:
+        // header("location: REPLACE LATER");
+        $statusMsg = "Unable to prepare the SQL statement.";
+        echo "<script>window.alert(\"".$statusMsg."\")</script>";
+        exit();
+    }
+
+    // Set parameters for prepared statement
+    mysqli_stmt_bind_param($existingUserStmt, "ss", $registerEmail,$registerUsername);
+
+    // Execute prepared statement
+    mysqli_stmt_execute($existingUserStmt);
+
+    $results = mysqli_stmt_get_result($existingUserStmt);
+
+    if($rows = $results -> fetch_assoc()){
+        // mysqli_stmt_close();
+        if($registerPassword != $registerVerifyPassword){
+            $statusMsg = 'Passwords do not match !';
+            echo "<script>window.alert(\"".$statusMsg."\")</script>";
+
+        }elseif($rows != null){
+            $statusMsg = 'User already exists !';
+            echo "<script>window.alert(\"".$statusMsg."\")</script>";
+
+        }else{
+            $registerUserSQL = "INSERT INTO `userAuth` (`username`, `email`, `password`,`comingFrom`,`profilePicture`,`userType`,`status`) VALUES (?,?,?,?,?,?,?)";
+            
+            $registerUserStmt = mysqli_stmt_init($con);
+
+            if (!mysqli_stmt_prepare($registerUserStmt, $registerUserSQL)){
+                // TODO:
+                // header("location: REPLACE LATER");
+                $statusMsg = "Unable to prepare the SQL statement.";
+                echo "<script>window.alert(\"".$statusMsg."\")</script>";
+                exit();
+            }
+        
+            // Set parameters for prepared statement
+            mysqli_stmt_bind_param($registerUserStmt, "sssssss", $registerUsername,$registerEmail,$registerPassword,$registerSelectedOption,$registerUserType,$registerUserStatus,$registerImage);
+        
+            // Execute prepared statement
+            mysqli_stmt_execute($registerUserStmt);
+
+        }
+    }else{
         // mysqli_stmt_close();
         return false;
     }

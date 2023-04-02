@@ -18,7 +18,7 @@ if ($con->connect_error) {
 }
 
 // Bad Navigation Handling : User cannot load the accounts page if not signed in
-if($_SESSION['Id'] == null){
+if($_SESSION['id'] == null){
     header('location:signIn.php');
     
 }
@@ -52,7 +52,7 @@ if($_SESSION['Id'] == null){
             <div class="user-account-box">
                 <div class="profile-box">
                     <!-- <div id="centered">Upload<br>Photo</div> -->
-                    <img src="<?php echo $_SESSION['pfp']?>" id = "pfp"> 
+                    <img src="<?php echo $_SESSION['profilePicture']?>" id = "pfp"> 
                     <h1>Username</p>
                     <h2><?php echo $_SESSION["user"] ;?></h2>
                 </div>

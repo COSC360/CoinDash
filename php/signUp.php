@@ -1,7 +1,3 @@
-<?php
-session_set_cookie_params(0);
-session_start();
-?>
 <!DOCTYPE html>
 <html>
 
@@ -24,70 +20,50 @@ session_start();
 
 <body>
     <?php
-        // error_reporting(E_ALL);
-        // init_set('display_errors','1');
-        // include_once('ValidationResult.class.php');
+        include 'modules.php';
+        
+        $errMsg = '';
+        if(isset($_POST['submit']) && $_SERVER["REQUEST_METHOD"] == "POST"){
+            if(isset($_POST['username']) && isset($_POST['email']) && isset($_POST['password']) && isset($_POST['verifyPassword'])){
+                $registerUsername= $_POST['username'];
+                $registerEmail = $_POST['email'];
+                $registerPassword = $_POST['password'];
+                $registerVerifyPassword = $_POST['verifyPassword'];
+                $registerSelectedOption = $_POST['selectionMenu'];
 
-        include 'DBconnection.php';
-
-            $statusMsg = '';
-
-            if ($con->connect_error) {
-                die("Connection failed: " . $con->connect_error);
+                //Set default user type and status
+                $registerUserType = "user";
+                $registerUserStatus = "enabled";
+        
+                //Retrieve image file type
+                $fileName = basename($_FILES["img"]["name"]);
+                $fileType = pathinfo($fileName, PATHINFO_EXTENSION);
+        
+                // Allow certain file formats 
+                $allowTypes = array('jpg','png','jpeg');
+            
+        
+                if(in_array($fileType, $allowTypes)){ 
+                    $image_base64 = base64_encode(file_get_contents($_FILES['img']['tmp_name']) );
+                    $registerImage = 'data:image/'.$imageFileType.';base64,'.$image_base64;
+        
+                    registerUser($con,$registerUsername,$registerEmail,$registerPassword,$registerVerifyPassword,$registerSelectedOption,$registerUserType,$registerUserStatus,$registerImage);
+                }else{ 
+                    $errMsg = 'Sorry, only JPG, JPEG & PNG files are allowed to upload !'; 
+                    echo "<script>window.alert(\"".$errMsg."\")</script>";
+                }
             }else{
-                    $username= $_POST['username'];
-                    $email = $_POST['email'];
-                    $password = $_POST['password'];
-                    $verifyPassword = $_POST['verifyPassword'];
-                    $selectedOption = $_POST['selectionMenu'];
-                    $fileName = basename($_FILES["img"]["name"]);
-                    $fileType = pathinfo($fileName, PATHINFO_EXTENSION);
-                    $userType = "user";
-                    $userStatus = "enabled";
-
-                    // Allow certain file formats 
-                    $allowTypes = array('jpg','png','jpeg');
-                    
-                    //Check if data already exists 
-                    $stmt = $con->prepare("SELECT * FROM `user_auth` WHERE  `Email` = ? || `Username` = ?");
-                    $stmt->bind_param("ss", $email,$username); 
-                    $stmt->execute();
-                    $resultSet = $stmt->get_result(); // get the mysqli result
-                    $result = $resultSet->fetch_assoc();
-
-                    if(in_array($fileType, $allowTypes)){ 
-
-                        $image_base64 = base64_encode(file_get_contents($_FILES['img']['tmp_name']) );
-                        $image = 'data:image/'.$imageFileType.';base64,'.$image_base64;
-
-
-                        if($password != $verifyPassword){
-                            $statusMsg = 'Passwords do not match !';
-                            echo "<script>window.alert(\"".$statusMsg."\")</script>";
-                            
-                        }
-                        if($result != null && $username != null && $password != null && $email != null){
-                            $statusMsg = 'User already exists !';
-                            echo "<script>window.alert(\"".$statusMsg."\")</script>";
-
-                        
-                        }else{
-                            // Insert image content into database   
-                            $stmt = $con->prepare("INSERT INTO `user_auth` (`Username`, `Email`, `Password`,`comingFrom`,`profilePicture`,`userType`,`status`) VALUES (?,?,?,?,?,?,?)");
-                            $stmt->bind_param("sssssss",$username,$email,$password,$selectedOption,$image,$userType,$userStatus); 
-                            $stmt->execute();
-                            header('location: signIn.php');
-                            $stmt->close();
-                            $con->close();
-                        }
-                    }else{ 
-                        $statusMsg = 'Sorry, only JPG, JPEG & PNG files are allowed to upload.'; 
-                    }
-                    
-                    $_SESSION['obj_image_session'] = file_get_contents($_FILES['img']['tmp_name']);
-               
+                $errMsg = 'Register data was not sent. Please try again !';
+                echo "<script>window.alert(".$errMsg.")</script>";
             }
-    include 'dashboard-header.php';?>
+        }else{
+                $errMsg = 'Invalid Request Type !';
+                echo "<script>window.alert(".$errMsg.")</script>";
+        }   
+    ?>
+    <?php
+        include "dashboardHeader.php";
+    ?>
     <main>
         <div class = "panel auth-container">
             <div class="register-info">
@@ -95,9 +71,9 @@ session_start();
                 <h2>Sign Up</h2>
                 <p>Lorem ipsum dolor sit amet consectetur. Erat facilisi varius est cursus. Neque sagittis mi non purus semper lacus mauris magnis.</p>
                 <div class="info-footer">
-                    <p><a href="https://cosc360.ok.ubc.ca/suyash06/project-JasonR24/php/signIn.php">Already Have An Account?</a></p>
+                    <p><a  onclick = "navigateToSignIn()">Already Have An Account?</a></p>
                     <p>or</p>
-                    <p><a href="https://cosc360.ok.ubc.ca/suyash06/project-JasonR24/php/community.php">Explore Dashboards?</a></p>
+                    <p><a  onclick = "navigateToCommunity()">Explore Dashboards?</a></p>
                 </div>
             </div>  
             <div class="register-box">
@@ -107,21 +83,25 @@ session_start();
                                 <p id = "usernameError"><i class="fa-solid fa-circle-exclamation"></i></p>                   
                                 <input type = "text" name = "username"  id = "username" placeholder="What Should We Call You?"  onkeydown="UsernameErrorClearFunction()" value="">
                             </div>
+
                             <div class="item-2">
                                 <label>Email <span style="color: red;">*</span></label><br>
                                 <p id = "emailError"><i class="fa-solid fa-circle-exclamation"></i></p>
                                 <input type = "email" name = "email"  id = "email" placeholder="What's Your Email?" onkeydown="EmailErrorClearFunction()">
                             </div>
+
                             <div class="item-3">
                                 <label>Password <span style="color: red;">*</span></label><br>
                                 <p id = "passwordError"><i class="fa-solid fa-circle-exclamation"></i></p>                                   
                                 <input type = "password" name = "password"  id = "password" placeholder="What’s Your Password?" onkeydown="PasswordErrorClearFunction()">
                             </div>
+
                             <div class="item-4">
                                 <label>Verify Password <span style="color: red;">*</span></label><br>
                                 <p id = "verifyPasswordError"><i class="fa-solid fa-circle-exclamation"></i></p>
                                 <input type = "password" name = "verifyPassword"  id = "verifyPassword" placeholder="Confirm Password?" onkeydown="VerifyPasswordErrorClearFunction()">
                             </div>
+
                             <div class="item-5">
                                 <label>Coming From</label><br>
                                 <select name="selectionMenu" id="selectionMenu">
@@ -130,19 +110,19 @@ session_start();
                                     <option value="Social Media">Social Media</option>
                                 </select>
                             </div>
+
                             <div class="item-6">
                                 <label>Profile Photo <span style="color: red;">*</span></label><br>
-                                <!-- <button id="upload-file-btn" onclick= "document.getElementById('getFile').click()">Upload File <img src="svgs/arrow-right-short.svg"></button>
-                                <input type='file' id="getFile" style="display:none"> -->
                                 <p id = "imageUploadError"><i class="fa-solid fa-circle-exclamation"></i></p>
                                 <input type="file" name="img"  id="img" accept="image/*" onkeydown="ImageUploadErrorClearFunction()">
-                            </div>
-                            <?php include 'load-image.php';?>      
+                            </div>      
+
                             <div class="item-7">
                                 <input type="reset" value="Reset Form"  onclick="ErrorClearFunction()">
                             </div>
+
                             <div class = "item-8">
-                                <input type="submit" value="Get Started !">
+                                <input type="submit"  name = "submit"  id = "submit" value="Get Started !">
                             </div>                    
                 </form>
             </div>
