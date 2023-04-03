@@ -347,6 +347,8 @@ function registerUser($con,$registerUsername,$registerEmail,$registerPassword,$r
 
     $results = mysqli_stmt_get_result($existingUserStmt);
 
+    mysqli_stmt_close();
+    
     if($rows = $results -> fetch_assoc()){
         // mysqli_stmt_close();
         if($registerPassword != $registerVerifyPassword){
