@@ -28,5 +28,9 @@
             <h3>Tokyo</h3>
             <p>Tokyo is the capital of Japan.</p>
         </div>
+        <script>
+            // Get the element with id="defaultOpen" and click on it
+            document.getElementById("defaultOpen").click();
+        </script>
     </body>
 </html> 
