@@ -25,26 +25,26 @@
 
                 <div id="byUsername" class="tabcontent">
                     <form class="example" action="processUserInfo.php" method = "POST">
-                        <input type="text" placeholder="Search by username.." name="search">
+                        <input type="text" placeholder="Search by username . . ." name="search">
                         <button type="submit"><i class="fa fa-search"></i></button>
-
                     </form>
+                    <?php include 'userInfoDisplay.php';?>
                 </div>
 
                 <div id="byEmail" class="tabcontent">
                     <form class="example" action="processUserInfo.php" method = "POST">
-                        <input type="text" placeholder="Search by email.." name="search">
+                        <input type="text" placeholder="Search by email . . ." name="search">
                         <button type="submit"><i class="fa fa-search"></i></button>
-
                     </form>
+                    <?php include 'userInfoDisplay.php';?>
                 </div>
 
                 <div id="byCommentId" class="tabcontent">
                     <form class="example" action="processUserInfo.php" method = "POST">
-                        <input type="text" placeholder="Search by comment Id.." name="search">
+                        <input type="text" placeholder="Search by comment Id . . ." name="search">
                         <button type="submit"><i class="fa fa-search"></i></button>
-
                     </form>
+                    <?php include 'userInfoDisplay.php';?>
                 </div>
             </div>
             <script>

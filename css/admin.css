@@ -52,7 +52,6 @@ form.example input[type=text] {
   float: left;
   width: 80%;
   background: #f1f1f1;
-  font-weight: 500;
   margin-bottom: 1em;
 }
 
@@ -60,7 +59,7 @@ form.example button {
   float: left;
   width: 20%;
   padding: 1em;
-  background: #2196F3;
+  background: #7a7a7a;
   color: white;
   font-size: 1em;
   border: 1px solid grey;
@@ -81,4 +80,10 @@ form.example::after {
 
 form.example fieldset{
   height: 24em;
+}
+
+.userInfo{
+  margin-left: 2em;
+  display: grid;
+  grid-template-columns: auto auto;
 }
