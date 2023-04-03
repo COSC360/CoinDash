@@ -1,6 +1,6 @@
 <?php
     if($_SESSION["id"] == null){
-        header('location:signIn.php')
+        header('location:signIn.php');
     }
 ?>
 <!DOCTYPE html>
