@@ -49,6 +49,13 @@
                         <button type="submit"><i class="fa fa-search"></i></button>
                         <fieldset>
                             <legend> User Information </legend>
+                            <label>User ID</label>
+                            <label>Username</label>
+                            <label>User Password</label>
+                            <label>User Coming From</label>
+                            <label>User Registeration Timestamp</label>
+                            <label>User Type</label>
+                            <label>User Status</label>
                         </fieldset>
                     </form>
                 </div>
