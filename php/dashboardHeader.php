@@ -32,13 +32,6 @@
                 <img src="../images/canada-flag.png">
                 <img src="../svgs/arrow-down.svg">
             </div> -->
-            <?php
-                if ($_SESSION["user"] != null){
-                    echo "<div class=\"horizontal-container fit-width\">
-                            <a href=\"../php/logout.php\">Logout</a>
-                        </div>";
-                }
-            ?>
             <div class="horizontal-container fit-width">
                 
             <?php
@@ -46,7 +39,14 @@
                     echo  "<p>Hi, ".$_SESSION['user']."</p>";
                     echo  "<img src=".$_SESSION['pfp']." style=\"width: 40px;height:40px;\" onclick=navigateToAccount()>";
                 }else{
-                    echo  "<a href=\"#\" onclick=navigateToSignIn()>Sign In</a>/<a href=\"#\" onclick=navigateToSignUp()>Sign Up</a>";
+                    if ($_SESSION["username"] != null){
+                        echo "<div class=\"horizontal-container fit-width\">
+                                <a href=\"../php/logout.php\">Logout</a>
+                            </div>";
+                    }else{
+                        echo  "<a href=\"#\" onclick=navigateToSignIn()>Sign In</a>/<a href=\"#\" onclick=navigateToSignUp()>Sign Up</a>";
+                    }
+
                 }
             ?>
             </div>
