@@ -18,7 +18,6 @@
         
         <body>
             <main>
-                <h2>Admin Dashboard</h2>
                 <div class="tabswitcher">       
                     <div class="tab">
                         <button class="tablinks" onclick="openCity(event, 'username')" id="defaultOpen">By Username</button>
