@@ -374,6 +374,8 @@ function registerUser($con,$registerUsername,$registerEmail,$registerPassword,$r
         
             // Execute prepared statement
             mysqli_stmt_execute($registerUserStmt);
+            
+            header('location:signIn.php');
 
         }
     }
