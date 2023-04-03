@@ -359,7 +359,7 @@ function registerUser($con,$registerUsername,$registerEmail,$registerPassword,$r
             echo "<script>window.alert(\"".$statusMsg."\")</script>";
 
         }else{
-            echo "Bout to insert these values !"
+            echo "Bout to insert these values !";
             $registerUserSQL = "INSERT INTO `userAuth` (`username`, `email`, `password`,`comingFrom`,`profilePicture`,`userType`,`status`) VALUES (?,?,?,?,?,?,?)";
             
             $registerUserStmt = mysqli_stmt_init($con);
