@@ -7,37 +7,39 @@
     <script src="../js/admin.js"></script>
 </head>
     <body>
-        <div class="tabswitcher">
-            <div class="tab">
-                <button class="tablinks" onclick="openCity(event, 'London')" id="defaultOpen">London</button>
-                <button class="tablinks" onclick="openCity(event, 'Paris')">Paris</button>
-                <button class="tablinks" onclick="openCity(event, 'Tokyo')">Tokyo</button>
-            </div>
+        <main>
+            <div class="tabswitcher">
+                <div class="tab">
+                    <button class="tablinks" onclick="openCity(event, 'byUsername')" id="defaultOpen">By Username</button>
+                    <button class="tablinks" onclick="openCity(event, 'byEmail')">By Email ID</button>
+                    <button class="tablinks" onclick="openCity(event, 'byCommentId')">By Comment ID</button>
+                </div>
 
-            <div id="London" class="tabcontent">
-                <form class="example" action="/action_page.php">
-                    <input type="text" placeholder="Search.." name="search">
-                    <button type="submit"><i class="fa fa-search"></i></button>
-                </form>
-            </div>
+                <div id="byUsername" class="tabcontent">
+                    <form class="example" action="processUserInfo.php" method = "POST">
+                        <input type="text" placeholder="Search by username.." name="search">
+                        <button type="submit"><i class="fa fa-search"></i></button>
+                    </form>
+                </div>
 
-            <div id="Paris" class="tabcontent">
-                <form class="example" action="/action_page.php">
-                    <input type="text" placeholder="Search.." name="search">
-                    <button type="submit"><i class="fa fa-search"></i></button>
-                </form>
-            </div>
+                <div id="byEmail" class="tabcontent">
+                    <form class="example" action="processUserInfo.php" method = "POST">
+                        <input type="text" placeholder="Search by email.." name="search">
+                        <button type="submit"><i class="fa fa-search"></i></button>
+                    </form>
+                </div>
 
-            <div id="Tokyo" class="tabcontent">
-                <form class="example" action="/action_page.php">
-                    <input type="text" placeholder="Search.." name="search">
-                    <button type="submit"><i class="fa fa-search"></i></button>
-                </form>
+                <div id="byCommentId" class="tabcontent">
+                    <form class="example" action="processUserInfo.php" method = "POST">
+                        <input type="text" placeholder="Search by comment Id.." name="search">
+                        <button type="submit"><i class="fa fa-search"></i></button>
+                    </form>
+                </div>
             </div>
-        </div>
-        <script>
-            // Get the element with id="defaultOpen" and click on it
-            document.getElementById("defaultOpen").click();
-        </script>
+            <script>
+                // Get the element with id="defaultOpen" and click on it
+                document.getElementById("defaultOpen").click();
+            </script>
+        </main>    
     </body>
 </html> 
