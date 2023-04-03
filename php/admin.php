@@ -13,7 +13,7 @@
 </head>
     <body>
         <?php
-            include "dashboard-header.php";
+            include "dashboardHeader.php";
         ?>
         <main>
             <div class="tabswitcher">
