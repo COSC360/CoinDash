@@ -25,8 +25,17 @@
   row-gap: 5em;
 
 }
-.login-info{
-  max-width: 40em;
+
+@media only screen and (min-width: 700px) {
+  .login-info{
+    max-width: 40em;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .login-info{
+    max-width: 40em;
+  }
 }
 
 .login-info h1{
@@ -355,8 +364,16 @@ select{
   grid-column-start: 2;
 }
 
-.register-info{
-  max-width: 40em;
+@media only screen and (min-width: 700px) {
+  .register-info{
+    max-width: 40em;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .register-info{
+    max-width: 30em;
+  }
 }
 
 .register-info h1{
