@@ -76,3 +76,7 @@ form.example::after {
   clear: both;
   display: table;
 }
+
+form fieldset{
+  margin-top: 1em;
+}

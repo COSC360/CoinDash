@@ -28,7 +28,7 @@
                         <input type="text" placeholder="Search by username.." name="search">
                         <button type="submit"><i class="fa fa-search"></i></button>
                         <fieldset>
-                            <legend> User Info </legend>
+                            <legend> User Information </legend>
                         </fieldset>
                     </form>
                 </div>
@@ -38,7 +38,7 @@
                         <input type="text" placeholder="Search by email.." name="search">
                         <button type="submit"><i class="fa fa-search"></i></button>
                         <fieldset>
-                            <legend> User Info </legend>
+                            <legend> UserInformation </legend>
                         </fieldset>
                     </form>
                 </div>
@@ -48,7 +48,7 @@
                         <input type="text" placeholder="Search by comment Id.." name="search">
                         <button type="submit"><i class="fa fa-search"></i></button>
                         <fieldset>
-                            <legend> User Info </legend>
+                            <legend> User Information </legend>
                         </fieldset>
                     </form>
                 </div>
