@@ -20,25 +20,6 @@
 
 <body>
     <?php
-        include "modules.php";
-        $errMsg = '';
-        //Set the base path for website
-        echo "<script>console.log(\"".isset($_GET['loginID'])."\")</script>";
-        if(isset($_GET['loginSubmit']) && $_SERVER["REQUEST_METHOD"] == "GET"){
-            if(isset($_GET['loginID']) && isset($_GET['loginPassword'])){
-                $loginID= $_GET['loginId'];
-                $loginPassword = $_GET['password'];
-                loginUser($con,$loginID,$loginPassword);
-            }else{
-                $errMsg = 'Login data was not sent. Please try again !';
-                echo "<script>console.log(\"".$errMsg."\")</script>";
-            }
-        }else{
-            $errMsg = 'Invalid Request Type !';
-            echo "<script>console.log(\"".$errMsg."\")</script>";
-        }
-    ?>
-    <?php
         include "dashboardHeader.php";
     ?>
         <main>  
@@ -55,7 +36,7 @@
                         </div>
                     </div>  
                     <div class="login-box">
-                        <form name = "LoginForm" id ="LoginForm" action= "" onsubmit="return validateLoginForm()" method="GET" required>
+                        <form name = "LoginForm" id ="LoginForm" action= "processLogin.php" onsubmit="return validateLoginForm()" method="GET" required>
                             <div class="item-1">
                                 <label>Username or Email</label><br>     
                                 <p id = "usernameError">Empty/Invalid Username</p>
