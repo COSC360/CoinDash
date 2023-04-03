@@ -347,8 +347,6 @@ function registerUser($con,$registerUsername,$registerEmail,$registerPassword,$r
 
     $results = mysqli_stmt_get_result($existingUserStmt);
 
-    mysqli_stmt_close();
-    
     if($rows = $results -> fetch_assoc()){
         // mysqli_stmt_close();
         if($registerPassword != $registerVerifyPassword){
@@ -373,7 +371,7 @@ function registerUser($con,$registerUsername,$registerEmail,$registerPassword,$r
             }
         
             // Set parameters for prepared statement
-            mysqli_stmt_bind_param($registerUserStmt, "sssssss", $registerUsername,$registerEmail,$registerPassword,$registerSelectedOption,$registerUserType,$registerUserStatus,$registerImage);
+            mysqli_stmt_bind_param($registerUserStmt, "sssssss", $registerUsername,$registerEmail,$registerPassword,$registerSelectedOption,$registerImage,$registerUserType,$registerUserStatus);
         
             // Execute prepared statement
             mysqli_stmt_execute($registerUserStmt);
