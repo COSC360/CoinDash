@@ -381,13 +381,13 @@ function registerUser($con,$registerUsername,$registerEmail,$registerPassword,$r
 }
 
 function updateUser($con,$userEmail,$userPassword){
-    $updateSQL = "UPDATE `userAuth` SET `email` = ?, `password` = ? WHERE `id` = ?";
-
-    $updateStmt = mysqli_stmt_init($con); 
-
     $statusMsg = '';
 
-    if (!mysqli_stmt_prepare($updateStmt, $updateSQL)){
+    $existingUserSQL = "SELECT * FROM `userAuth` WHERE  `email` = ?";
+
+    $existingUserStmt = mysqli_stmt_init($con);
+
+    if (!mysqli_stmt_prepare($existingUserStmt, $existingUserSQL)){
         // TODO:
         // header("location: REPLACE LATER");
         $statusMsg = "Unable to prepare the SQL statement.";
@@ -395,14 +395,42 @@ function updateUser($con,$userEmail,$userPassword){
         exit();
     }
 
-
     // Set parameters for prepared statement
-    mysqli_stmt_bind_param($updateStmt, "ssi", $userEmail,$userPassword, $_SESSION['id']);
+    mysqli_stmt_bind_param($existingUserStmt, "s", $userEmail);
 
     // Execute prepared statement
-    mysqli_stmt_execute($updateStmt);
+    mysqli_stmt_execute($existingUserStmt);
 
-    header('location:account.php');
+    $results = mysqli_stmt_get_result($existingUserStmt);
+    
+    if($rows = $results -> fetch_assoc()){
+        // mysqli_stmt_close();
+        $statusMsg = 'User already exists !';
+        echo "<script>window.alert(\"".$statusMsg."\")</script>";
+    }else{
+        $updateSQL = "UPDATE `userAuth` SET `email` = ?, `password` = ? WHERE `id` = ?";
+
+        $updateStmt = mysqli_stmt_init($con); 
+    
+        $statusMsg = '';
+    
+        if (!mysqli_stmt_prepare($updateStmt, $updateSQL)){
+            // TODO:
+            // header("location: REPLACE LATER");
+            $statusMsg = "Unable to prepare the SQL statement.";
+            echo "<script>window.alert(\"".$statusMsg."\")</script>";
+            exit();
+        }
+    
+    
+        // Set parameters for prepared statement
+        mysqli_stmt_bind_param($updateStmt, "ssi", $userEmail,$userPassword, $_SESSION['id']);
+    
+        // Execute prepared statement
+        mysqli_stmt_execute($updateStmt);
+    
+        header('location:account.php');        
+    }
 }
 
 ?>
