@@ -1,27 +1,8 @@
 <?php
-session_set_cookie_params(0);
-session_start();
-
-$email= $_POST['email'];
-$password = $_POST['password'];
-
-echo isset($_POST['submit']);
-if ($con->connect_error) {
-    die("Connection failed: " . $con->connect_error);
-}else{
-    if(isset($_POST['submit'])){
-        $stmt = $con->prepare("UPDATE `user_auth` SET Email = ? WHERE Id = ?");
-        $stmt->bind_param("si", $email,$_SESSION['Id']); 
-        $stmt->execute();
-        echo "Update Executed !";
-    }
-}
-
-// Bad Navigation Handling : User cannot load the accounts page if not signed in
-if($_SESSION['id'] == null){
-    header('location:signIn.php');
-    
-}
+    // Bad Navigation Handling : User cannot load the accounts page if not signed in
+    // if($_SESSION['id'] == null){
+    //     header('location:signIn.php');
+    // }
 ?>
 <!DOCTYPE html>
 <html lang="en">
