@@ -9,9 +9,9 @@
             <p>Click on the buttons inside the tabbed menu:</p>
 
             <div class="tab">
-            <button class="tablinks" onclick="openCity(event, 'London')">Search by username</button>
-            <button class="tablinks" onclick="openCity(event, 'Paris')">Search by email id</button>
-            <button class="tablinks" onclick="openCity(event, 'Tokyo')">Search by comment id</button>
+            <button class="tablinks" onclick="openCity(event, 'London')">By Username</button>
+            <button class="tablinks" onclick="openCity(event, 'Paris')">By Email ID</button>
+            <button class="tablinks" onclick="openCity(event, 'Tokyo')">By Comment ID</button>
             </div>
 
             <div id="London" class="tabcontent">
