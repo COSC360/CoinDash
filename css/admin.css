@@ -83,7 +83,7 @@ form.example fieldset{
 }
 
 .userInfo{
-  margin-left: 2em;
   display: grid;
   grid-template-columns: auto auto;
+  gap:1em;
 }
