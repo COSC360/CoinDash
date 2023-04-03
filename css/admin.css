@@ -88,6 +88,11 @@ form.example fieldset{
   gap:1em;
 }
 
+#pfp{
+  width: 10%;
+  height: fit-content;
+}
+
 #item-1, #item-2 {
   display: flex;
   flex-direction: column;
