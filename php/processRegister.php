@@ -27,7 +27,7 @@
                     $registerImage = 'data:image/'.$imageFileType.';base64,'.$image_base64;
         
                     registerUser($con,$registerUsername,$registerEmail,$registerPassword,$registerVerifyPassword,$registerSelectedOption,$registerUserType,$registerUserStatus,$registerImage);
-                    echo "Function invoked !"
+                    echo "Function invoked !";
                 }else{ 
                     $errMsg = 'Sorry, only JPG, JPEG & PNG files are allowed to upload !'; 
                     echo "<script>window.alert(\"".$errMsg."\")</script>";
