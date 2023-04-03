@@ -1,3 +1,6 @@
+<?php
+$_SESSION["username"] = null;
+?>
 <!DOCTYPE html>
 <html>
 
