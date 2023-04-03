@@ -15,35 +15,28 @@
         <?php
             include 'dashboardHeader.php'
         ?>
-        
         <body>
             <main>
                 <div class="tabswitcher">       
                     <div class="tab">
-                        <button class="tablinks" onclick="openCity(event, 'username')" id="defaultOpen">By Username</button>
-                        <button class="tablinks" onclick="openCity(event, 'email')">By Email ID</button>
-                        <button class="tablinks" onclick="openCity(event, 'commentId')">By Comment ID</button>
+                        <button class="tablinks" onclick="openCity(event, 'London')" id="defaultOpen">London</button>
+                        <button class="tablinks" onclick="openCity(event, 'Paris')">Paris</button>
+                        <button class="tablinks" onclick="openCity(event, 'Tokyo')">Tokyo</button>
                     </div>
-                    
-                    <div id="username" class="tabcontent" >
-                        <form class="example" action="processUserInfo.php" method = "POST">
-                            <input type="text" placeholder="Search.." name="username">
-                            <button type="submit"><i class="fa fa-search"></i></button>
-                        </form>
+
+                    <div id="London" class="tabcontent">
+                        <h3>London</h3>
+                        <p>London is the capital city of England.</p>
                     </div>
-                    
-                    <div id="email" class="tabcontent">
-                        <form class="example" action="processUserInfo.php" method = "POST">
-                            <input type="text" placeholder="Search.." name="email">
-                            <button type="submit"><i class="fa fa-search"></i></button>
-                        </form>
+
+                    <div id="Paris" class="tabcontent">
+                        <h3>Paris</h3>
+                        <p>Paris is the capital of France.</p> 
                     </div>
-                    
-                    <div id="commentId" class="tabcontent">
-                        <form class="example" action="processUserInfo.php" method = "POST">
-                            <input type="text" placeholder="Search.." name="commentId">
-                            <button type="submit"><i class="fa fa-search"></i></button>
-                        </form>
+
+                    <div id="Tokyo" class="tabcontent">
+                        <h3>Tokyo</h3>
+                        <p>Tokyo is the capital of Japan.</p>
                     </div>
                 </div>
             </main>
