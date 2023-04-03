@@ -1,3 +1,5 @@
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();
 function openCity(evt, cityName) {
     var i, tabcontent, tablinks;
     tabcontent = document.getElementsByClassName("tabcontent");
