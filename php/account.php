@@ -1,9 +1,3 @@
-<?php
-    // Bad Navigation Handling : User cannot load the accounts page if not signed in
-    if($_SESSION['id'] == null){
-        header('location:signIn.php');
-    }
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
