@@ -349,6 +349,7 @@ function registerUser($con,$registerUsername,$registerEmail,$registerPassword,$r
 
     if($rows = $results -> fetch_assoc()){
         // mysqli_stmt_close();
+
         if($registerPassword != $registerVerifyPassword){
             $statusMsg = 'Passwords do not match !';
             echo "<script>window.alert(\"".$statusMsg."\")</script>";
@@ -358,6 +359,7 @@ function registerUser($con,$registerUsername,$registerEmail,$registerPassword,$r
             echo "<script>window.alert(\"".$statusMsg."\")</script>";
 
         }else{
+            echo "Bout to insert these values !"
             $registerUserSQL = "INSERT INTO `userAuth` (`username`, `email`, `password`,`comingFrom`,`profilePicture`,`userType`,`status`) VALUES (?,?,?,?,?,?,?)";
             
             $registerUserStmt = mysqli_stmt_init($con);
