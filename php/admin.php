@@ -15,36 +15,39 @@
         <?php
             include 'dashboardHeader.php'
         ?>
+        
         <body>
-            <h2>Admin Dashboard</h2>
-            <div class="tabswitcher">
-                                     
-                <div class="tab">
-                    <button class="tablinks" onclick="openCity(event, 'username')" id="defaultOpen">By Username</button>
-                    <button class="tablinks" onclick="openCity(event, 'email')">By Email ID</button>
-                    <button class="tablinks" onclick="openCity(event, 'commentId')">By Comment ID</button>
+            <main>
+                <h2>Admin Dashboard</h2>
+                <div class="tabswitcher">       
+                    <div class="tab">
+                        <button class="tablinks" onclick="openCity(event, 'username')" id="defaultOpen">By Username</button>
+                        <button class="tablinks" onclick="openCity(event, 'email')">By Email ID</button>
+                        <button class="tablinks" onclick="openCity(event, 'commentId')">By Comment ID</button>
+                    </div>
+                    
+                    <div id="username" class="tabcontent" >
+                        <form class="example" action="processUserInfo.php" method = "POST">
+                            <input type="text" placeholder="Search.." name="username">
+                            <button type="submit"><i class="fa fa-search"></i></button>
+                        </form>
+                    </div>
+                    
+                    <div id="email" class="tabcontent">
+                        <form class="example" action="processUserInfo.php" method = "POST">
+                            <input type="text" placeholder="Search.." name="email">
+                            <button type="submit"><i class="fa fa-search"></i></button>
+                        </form>
+                    </div>
+                    
+                    <div id="commentId" class="tabcontent">
+                        <form class="example" action="processUserInfo.php" method = "POST">
+                            <input type="text" placeholder="Search.." name="commentId">
+                            <button type="submit"><i class="fa fa-search"></i></button>
+                        </form>
+                    </div>
                 </div>
-                
-                <div id="username" class="tabcontent" >
-                    <form class="example" action="processUserInfo.php" method = "POST">
-                        <input type="text" placeholder="Search.." name="username">
-                        <button type="submit"><i class="fa fa-search"></i></button>
-                      </form>
-                </div>
-                
-                <div id="email" class="tabcontent">
-                    <form class="example" action="processUserInfo.php" method = "POST">
-                        <input type="text" placeholder="Search.." name="email">
-                        <button type="submit"><i class="fa fa-search"></i></button>
-                      </form>
-                </div>
-                
-                <div id="commentId" class="tabcontent">
-                    <form class="example" action="processUserInfo.php" method = "POST">
-                        <input type="text" placeholder="Search.." name="commentId">
-                        <button type="submit"><i class="fa fa-search"></i></button>
-                      </form>
-                </div>
-            </div>
+            </main>
         </body>
+        
 </html> 
