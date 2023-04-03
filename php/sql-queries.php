@@ -401,6 +401,8 @@ function updateUser($con,$userEmail,$userPassword){
 
     // Execute prepared statement
     mysqli_stmt_execute($updateStmt);
+
+    header('location:account.php');
 }
 
 ?>
