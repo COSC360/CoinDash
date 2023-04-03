@@ -27,9 +27,7 @@
                     <form class="example" action="processUserInfo.php" method = "POST">
                         <input type="text" placeholder="Search by username.." name="search">
                         <button type="submit"><i class="fa fa-search"></i></button>
-                        <fieldset>
-                            <legend> User Information </legend>
-                        </fieldset>
+
                     </form>
                 </div>
 
@@ -37,9 +35,7 @@
                     <form class="example" action="processUserInfo.php" method = "POST">
                         <input type="text" placeholder="Search by email.." name="search">
                         <button type="submit"><i class="fa fa-search"></i></button>
-                        <fieldset>
-                            <legend> UserInformation </legend>
-                        </fieldset>
+
                     </form>
                 </div>
 
@@ -47,16 +43,7 @@
                     <form class="example" action="processUserInfo.php" method = "POST">
                         <input type="text" placeholder="Search by comment Id.." name="search">
                         <button type="submit"><i class="fa fa-search"></i></button>
-                        <fieldset>
-                            <legend> User Information </legend>
-                            <label>User ID</label>
-                            <label>Username</label>
-                            <label>User Password</label>
-                            <label>User Coming From</label>
-                            <label>User Registeration Timestamp</label>
-                            <label>User Type</label>
-                            <label>User Status</label>
-                        </fieldset>
+
                     </form>
                 </div>
             </div>
