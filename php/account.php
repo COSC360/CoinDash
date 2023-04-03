@@ -37,7 +37,7 @@
                     <h1>Username</p>
                     <h2><?php echo $_SESSION["username"] ;?></h2>
                 </div>
-                <form action= "" method="POST">
+                <form action= "processUpdate.php" method="POST">
                     <div class="item-1">
                         <label>Email</label><br>    
                         <div class="input-container">
@@ -48,7 +48,7 @@
                     <div class="item-2">
                         <label>Password</label><br>
                         <div class="input-container">
-                            <input type = "password" id="password" name = "password">
+                            <input type = "password" id="password" name = "password" value = "<?php echo $_SESSION["password"] ;?>">
                             <button class="editField" onclick="editField()"><img src="../svgs/editField.svg"></button>
                         </div>
                     </div>
@@ -56,7 +56,7 @@
                         <input type="reset" value="Reset Form">
                     </div>
                     <div class="item-4">
-                        <input type="submit" id = "submit" value="Confirm Changes">
+                        <input type="submit" name= "updateSubmit" id = "updateSubmit" value="Confirm Changes">
                     </div>
                 </form>
             </div>

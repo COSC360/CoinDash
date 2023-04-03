@@ -1,11 +1,11 @@
 <?php
     include "modules.php";
     $errMsg = '';
-    if(isset($_GET['loginSubmit']) && $_SERVER["REQUEST_METHOD"] == "GET"){
-        if(isset($_GET['loginId']) && isset($_GET['password'])){
-            $loginID= $_GET['loginId'];
-            $loginPassword = $_GET['password'];
-            loginUser($con,$loginID,$loginPassword);
+    if(isset($_GET['updateSubmit']) && $_SERVER["REQUEST_METHOD"] == "POST"){
+        if(isset($_GET['email']) && isset($_GET['password'])){
+            $userEmail= $_GET['email'];
+            $userPassword = $_GET['password'];
+            updateUser($con,$userEmail,$userPassword);
         }else{
             $errMsg = 'Login data was not sent. Please try again !';
             echo "<script>console.log(\"".$errMsg."\")</script>";
@@ -14,4 +14,5 @@
         $errMsg = 'Invalid Request Type !';
         echo "<script>console.log(\"".$errMsg."\")</script>";
     }
+
 ?>

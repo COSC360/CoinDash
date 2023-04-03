@@ -1,5 +1,4 @@
 <?php
-session_set_cookie_params(0);
 session_start();
 
 
@@ -280,7 +279,6 @@ function loginUser($con,$loginID,$loginPassword){
     if (!mysqli_stmt_prepare($loginStmt, $loginSQL)){
         // TODO:
         // header("location: REPLACE LATER");
-        $statusMsg = '';
         $statusMsg = "Unable to prepare the SQL statement.";
         echo "<script>window.alert(\"".$statusMsg."\")</script>";
         exit();
@@ -300,6 +298,7 @@ function loginUser($con,$loginID,$loginPassword){
         //Creating session variables 
         $_SESSION["username"] = $rows['username'];
         $_SESSION["email"] = $rows['email'];
+        $_SESSION["password"] = $rows['password'];
         $_SESSION["id"] = $rows['id'];
         $_SESSION["profilePicture"] = $rows['profilePicture'];
 
@@ -374,11 +373,34 @@ function registerUser($con,$registerUsername,$registerEmail,$registerPassword,$r
         
             // Execute prepared statement
             mysqli_stmt_execute($registerUserStmt);
-            
+
             header('location:signIn.php');
 
         }
     }
+}
+
+function updateUser($con,$userEmail,$userPassword){
+    $updateSQL = "UPDATE `userAuth` SET `email` = ?, `password` = ? WHERE `id` = ?";
+
+    $updateStmt = mysqli_stmt_init($con); 
+
+    $statusMsg = '';
+
+    if (!mysqli_stmt_prepare($updateStmt, $updateSQL)){
+        // TODO:
+        // header("location: REPLACE LATER");
+        $statusMsg = "Unable to prepare the SQL statement.";
+        echo "<script>window.alert(\"".$statusMsg."\")</script>";
+        exit();
+    }
+
+
+    // Set parameters for prepared statement
+    mysqli_stmt_bind_param($updateStmt, "ssi", $userEmail,$userPassword, $_SESSION['id']);
+
+    // Execute prepared statement
+    mysqli_stmt_execute($updateStmt);
 }
 
 ?>
