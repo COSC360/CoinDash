@@ -87,3 +87,8 @@ form.example fieldset{
   grid-template-columns: auto auto;
   gap:1em;
 }
+
+#item-2 {
+  display: flex;
+  flex-direction: column;
+}
