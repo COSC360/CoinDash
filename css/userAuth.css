@@ -26,13 +26,13 @@
 
 }
 
-@media only screen and (min-width: 700px) {
+@media only screen and (min-width: 1600px) {
   .login-info{
     max-width: 40em;
   }
 }
 
-@media only screen and (max-width: 700px) {
+@media only screen and (max-width: 1600px) {
   .login-info{
     max-width: 40em;
   }
@@ -364,13 +364,13 @@ select{
   grid-column-start: 2;
 }
 
-@media only screen and (min-width: 700px) {
+@media only screen and (min-width: 1600px) {
   .register-info{
     max-width: 40em;
   }
 }
 
-@media only screen and (max-width: 700px) {
+@media only screen and (max-width: 1600px) {
   .register-info{
     max-width: 30em;
   }
