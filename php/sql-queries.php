@@ -381,6 +381,7 @@ function registerUser($con,$registerUsername,$registerEmail,$registerPassword,$r
 
         }
     }else{
+        echo "Statement 9";
         // mysqli_stmt_close();
         return false;
     }
