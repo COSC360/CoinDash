@@ -4,9 +4,11 @@
   width: 55vw;
 }
 .tab {
+  display: grid;
   overflow: hidden;
   border: 1px solid #ccc;
   background-color: #f1f1f1;
+  grid-template-columns: auto auto auto;
 }
 
 /* Style the buttons inside the tab */
