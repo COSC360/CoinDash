@@ -7,6 +7,9 @@
     <script src="../js/admin.js"></script>
 </head>
     <body>
+        <?php
+            include "dashboard-header.php";
+        ?>
         <main>
             <div class="tabswitcher">
                 <div class="tab">
