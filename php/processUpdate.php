@@ -6,6 +6,7 @@
             $userEmail= $_GET['email'];
             $userPassword = $_GET['password'];
             updateUser($con,$userEmail,$userPassword);
+            echo "Updated !";
         }else{
             $errMsg = 'Login data was not sent. Please try again !';
             echo "<script>console.log(\"".$errMsg."\")</script>";
