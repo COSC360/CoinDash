@@ -2,7 +2,7 @@
         include 'modules.php';
         
         $errMsg = '';
-        if(isset($_POST['submit']) && $_SERVER["REQUEST_METHOD"] == "POST"){
+        if(isset($_POST['registerSubmit']) && $_SERVER["REQUEST_METHOD"] == "POST"){
             if(isset($_POST['username']) && isset($_POST['email']) && isset($_POST['password']) && isset($_POST['verifyPassword'])){
                 $registerUsername= $_POST['username'];
                 $registerEmail = $_POST['email'];

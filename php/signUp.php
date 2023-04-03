@@ -84,7 +84,7 @@
                             </div>
 
                             <div class = "item-8">
-                                <input type="submit"  name = "submit"  id = "submit" value="Get Started !">
+                                <input type="submit"  name = "registerSubmit"  id = "registerSubmit" value="Get Started !">
                             </div>                    
                 </form>
             </div>
