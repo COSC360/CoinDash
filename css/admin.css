@@ -18,9 +18,9 @@
   border: none;
   outline: none;
   cursor: pointer;
-  padding: 14px 16px;
+  padding: 1em 1em;
   transition: 0.3s;
-  font-size: 17px;
+  font-size: 1.5em;
 }
 
 /* Change background color of buttons on hover */
@@ -37,14 +37,14 @@
 .tabcontent {
   height: 30vh;
   display: none;
-  padding: 6px 12px;
+  padding: 0.5em 1em;
   border: 1px solid #ccc;
   border-top: none;
 }
 
 form.example input[type=text] {
-  padding: 10px;
-  font-size: 17px;
+  padding: 1em;
+  font-size: 1.5em;
   border: 1px solid grey;
   float: left;
   width: 80%;
@@ -54,10 +54,10 @@ form.example input[type=text] {
 form.example button {
   float: left;
   width: 20%;
-  padding: 10px;
+  padding: 1em;
   background: #2196F3;
   color: white;
-  font-size: 17px;
+  font-size: 1.5em;
   border: 1px solid grey;
   border-left: none;
   cursor: pointer;
