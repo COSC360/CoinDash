@@ -325,7 +325,7 @@ function loginUser($con,$loginID,$loginPassword){
 }
 
 function registerUser($con,$registerUsername,$registerEmail,$registerPassword,$registerVerifyPassword,$registerSelectedOption,$registerUserType,$registerUserStatus,$registerImage){
-    echo "Statement 1";
+    
     $statusMsg = '';
 
     $existingUserSQL = "SELECT * FROM `userAuth` WHERE  `email` = ? OR `username` = ?";
@@ -347,20 +347,16 @@ function registerUser($con,$registerUsername,$registerEmail,$registerPassword,$r
     mysqli_stmt_execute($existingUserStmt);
 
     $results = mysqli_stmt_get_result($existingUserStmt);
-    echo "Statement 2";
+    
     if($rows = $results -> fetch_assoc()){
         // mysqli_stmt_close();
-        echo "Statement 3";
+        $statusMsg = 'User already exists !';
+        echo "<script>window.alert(\"".$statusMsg."\")</script>";
+    }else{
         if($registerPassword != $registerVerifyPassword){
             $statusMsg = 'Passwords do not match !';
             echo "<script>window.alert(\"".$statusMsg."\")</script>";
-
-        }elseif($rows != null){
-            $statusMsg = 'User already exists !';
-            echo "<script>window.alert(\"".$statusMsg."\")</script>";
-
         }else{
-            echo "Statement 4";
             $registerUserSQL = "INSERT INTO `userAuth` (`username`, `email`, `password`,`comingFrom`,`profilePicture`,`userType`,`status`) VALUES (?,?,?,?,?,?,?)";
             
             $registerUserStmt = mysqli_stmt_init($con);
@@ -380,10 +376,6 @@ function registerUser($con,$registerUsername,$registerEmail,$registerPassword,$r
             mysqli_stmt_execute($registerUserStmt);
 
         }
-    }else{
-        echo "Statement 9";
-        // mysqli_stmt_close();
-        return false;
     }
 }
 
