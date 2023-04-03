@@ -183,6 +183,7 @@
   }
 
 .login-box input[type=reset] {
+    width: fit-content;
     display: flex;
     border: none;
     background: none;
@@ -270,6 +271,7 @@
 }
 
 .register-box input[type=reset] {
+  width: fit-content;
   display: flex;
   border: none;
   background: none;
