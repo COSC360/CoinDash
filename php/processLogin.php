@@ -1,9 +1,6 @@
 <?php
         include "modules.php";
         $errMsg = '';
-        echo isset($_GET['password'])."<br>";
-        echo isset($_GET['loginId'])."<br>";
-        echo isset($_GET['loginSubmit']);
         if(isset($_GET['loginSubmit']) && $_SERVER["REQUEST_METHOD"] == "GET"){
             if(isset($_GET['loginId']) && isset($_GET['password'])){
                 $loginID= $_GET['loginId'];
