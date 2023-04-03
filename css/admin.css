@@ -89,7 +89,8 @@ form.example fieldset{
 }
 
 #pfp{
-  width: 10%;
+  width: 50%;
+  margin-bottom: 1em;
   height: fit-content;
 }
 
