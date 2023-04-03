@@ -51,10 +51,10 @@ if($_SESSION['id'] == null){
             </div>  
             <div class="user-account-box">
                 <div class="profile-box">
-                    <!-- <div id="centered">Upload<br>Photo</div> -->
+                    <div id="centered">Upload<br>Photo</div>
                     <img src="<?php echo $_SESSION['profilePicture']?>" id = "pfp"> 
                     <h1>Username</p>
-                    <h2><?php echo $_SESSION["user"] ;?></h2>
+                    <h2><?php echo $_SESSION["username"] ;?></h2>
                 </div>
                 <form action= "" method="POST">
                     <div class="item-1">
