@@ -17,6 +17,7 @@
         ?>
         <main>
             <div class="tabswitcher">
+                <h1> Admin Dashboard </h1>
                 <div class="tab">
                     <button class="tablinks" onclick="openCity(event, 'byUsername')" id="defaultOpen">By Username</button>
                     <button class="tablinks" onclick="openCity(event, 'byEmail')">By Email ID</button>
