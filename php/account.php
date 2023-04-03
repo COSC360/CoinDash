@@ -42,7 +42,7 @@ if($_SESSION['id'] == null){
     <script src="../js/navigation.js"></script>
 </head>
 <body>
-    <?php include 'dashboard-header.php';?>
+    <?php include 'dashboardHeader.php';?>
     <main>
         <div class = "user-account-container">
             <div class="user-account-info">
