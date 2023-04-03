@@ -52,6 +52,7 @@ form.example input[type=text] {
   float: left;
   width: 80%;
   background: #f1f1f1;
+  font-weight: 500;
 }
 
 form.example button {
