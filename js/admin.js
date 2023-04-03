@@ -13,4 +13,4 @@ function openCity(evt, cityName) {
   }
   
   // Get the element with id="defaultOpen" and click on it
-window.onload = document.getElementById("defaultOpen").click();
+document.getElementById("defaultOpen").click();
