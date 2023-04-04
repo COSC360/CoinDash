@@ -275,8 +275,6 @@ function loginUser($con,$loginID,$loginPassword){
 
     $loginStmt = mysqli_stmt_init($con); 
 
-    $statusMsg = '';
-
     if (!mysqli_stmt_prepare($loginStmt, $loginSQL)){
         
         // TODO:
@@ -382,8 +380,7 @@ function registerUser($con,$registerUsername,$registerEmail,$registerPassword,$r
     if (!mysqli_stmt_prepare($existingUserStmt, $existingUserSQL)){
         // TODO:
         // header("location: REPLACE LATER");
-        $statusMsg = "Unable to prepare the SQL statement.";
-        echo "<script>window.alert(\"".$statusMsg."\")</script>";
+        $_SESSION['statusMsg'] = "Unable to prepare the SQL statement.";
         exit();
     }
 
@@ -397,12 +394,12 @@ function registerUser($con,$registerUsername,$registerEmail,$registerPassword,$r
     
     if($rows = $results -> fetch_assoc()){
         // mysqli_stmt_close();
-        $statusMsg = 'User already exists !';
-        echo "<script>window.alert(\"".$statusMsg."\")</script>";
+        $_SESSION['statusMsg'] = 'User with that email/username already exists !';
+        
     }else{
         if($registerPassword != $registerVerifyPassword){
-            $statusMsg = 'Passwords do not match !';
-            echo "<script>window.alert(\"".$statusMsg."\")</script>";
+            $_SESSION['statusMsg'] = 'Passwords do not match !';
+        
         }else{
             $registerUserSQL = "INSERT INTO `userAuth` (`username`, `email`, `password`,`comingFrom`,`profilePicture`,`userType`,`status`) VALUES (?,?,?,?,?,?,?)";
             
@@ -411,8 +408,8 @@ function registerUser($con,$registerUsername,$registerEmail,$registerPassword,$r
             if (!mysqli_stmt_prepare($registerUserStmt, $registerUserSQL)){
                 // TODO:
                 // header("location: REPLACE LATER");
-                $statusMsg = "Unable to prepare the SQL statement.";
-                echo "<script>window.alert(\"".$statusMsg."\")</script>";
+                $_SESSION['statusMsg'] = "Unable to prepare the SQL statement.";
+                
                 exit();
             }
         

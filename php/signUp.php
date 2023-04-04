@@ -1,6 +1,11 @@
 <?php
     session_start();
-    session_destroy();
+    if(isset($_SESSION['statusMsg'])){
+        echo "<script>window.alert(\"".$_SESSION['statusMsg']."\")</script>";
+        session_destroy();
+    }else{
+        session_destroy();
+    }
 ?>
 <!DOCTYPE html>
 <html>
