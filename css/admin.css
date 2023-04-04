@@ -102,8 +102,12 @@ form.example fieldset {
   align-items: center;
 }
 
+#item-1 img{
+  
+}
+
 #item-1 button{
-  background-color: #4CAF50; /* Green */
+  background-color: #575757; /* Green */
   min-width: 8em;
   border: none;
   color: white;
@@ -112,7 +116,7 @@ form.example fieldset {
   text-decoration: none;
   display: inline-block;
   font-size: 1em;
-  margin: 0.25em;
+  margin-bottom: 0.25em;
   cursor: pointer;
   -webkit-transition-duration: 0.4s; /* Safari */
   transition-duration: 0.4s;
