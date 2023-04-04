@@ -18,7 +18,10 @@
             enableUser($con, $userID);
         }
     }elseif(isset($_POST['disableUser']) && $_SERVER["REQUEST_METHOD"] == "POST"){
-
+        if(isset($_POST['userID'])){
+            $userID = $_POST['userID'];
+            disableUser($con, $userID);
+        }
     }elseif(isset($_POST['deleteUser']) && $_SERVER["REQUEST_METHOD"] == "POST"){
 
     }elseif(isset($_POST['saveUser']) && $_SERVER["REQUEST_METHOD"] == "POST"){
