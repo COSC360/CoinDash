@@ -93,7 +93,7 @@ form.example fieldset {
 }
 
 #item-1,
-#item-2 input,label{
+#item-2{
   display: flex;
   flex-direction: column; 
 }
