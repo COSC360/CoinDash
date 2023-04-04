@@ -357,7 +357,7 @@ function adminLogin($con,$adminLoginID,$adminPassword){
         
         //Navigate to admin.php if user is of "admin" type
         if($rows['userType'] == 'admin'){
-            $_SESSION['adminLoginId'] = $rows['id'];
+            $_SESSION['id'] = $rows['id'];
             header('location:admin.php');   
         }else{
             $statusMsg = "User is not admin !";
