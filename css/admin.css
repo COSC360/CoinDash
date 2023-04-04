@@ -102,6 +102,10 @@ form.example fieldset {
   align-items: center;
 }
 
+#item-1 button{
+  margin-top: 2em;
+}
+
 #item-2 label{
   font-weight: 500;
 }
