@@ -40,20 +40,18 @@
                         </div>
                     </div>  
                     <div class="login-box">
-                        <form name = "LoginForm" id ="LoginForm" action= "processLogin.php" onsubmit="return validateLoginForm()" method="GET" required>
+                        <form name = "LoginForm" id ="LoginForm" action= "processLogin.php" onsubmit="validateLoginForm()" method="GET" required>
                             <div class="item-1">
                                 <label>Username or Email</label><br>     
-                                <p id = "usernameError">Empty/Invalid Username</p>
-                                <input type = "text" name = "loginId" id= "loginId" placeholder="What’s Your Registered Username or Email?" onkeydown="UsernameErrorClearFunction()">
+                                <input type = "text" name = "loginId" id= "loginId" placeholder="What’s Your Registered Username or Email?">
                             </div>
                             <div class="item-2">
                                 <label>Password</label><br>
-                                <p id = "passwordError">Empty/Invalid Password</p>
-                                <input type = "password" name = "password" id= "password" placeholder="What’s Your Password?" onkeydown="PasswordErrorClearFunction()">
+                                <input type = "password" name = "password" id= "password" placeholder="What’s Your Password?">
                                 
                             </div>
                             <div class="item-3">
-                                <input type="reset" value="Reset Form" onclick="ErrorClearFunction()">
+                                <input type="reset" value="Reset Form">
                             </div>
                             <div class="item-4">
                                 <input type="submit" name = "loginSubmit" id = "loginSubmit" value ="Login">
