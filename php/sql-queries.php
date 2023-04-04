@@ -580,8 +580,6 @@ function searchByCommentId($con, $searchCommentId){
 }
 
 function enableUser($con, $userID){
-    $statusMsg = '';
-
     $existingUserSQL = "SELECT * FROM `userAuth` WHERE  `id` = ?";
 
     $existingUserStmt = mysqli_stmt_init($con);
@@ -589,8 +587,8 @@ function enableUser($con, $userID){
     if (!mysqli_stmt_prepare($existingUserStmt, $existingUserSQL)){
         // TODO:
         // header("location: REPLACE LATER");
-        $statusMsg = "Unable to prepare the SQL statement.";
-        echo "<script>window.alert(\"".$statusMsg."\")</script>";
+        $_SESSION['adminStatusMsg'] = "Unable to prepare the SQL statement.";
+
         exit();
     }
 
@@ -615,8 +613,7 @@ function enableUser($con, $userID){
         if (!mysqli_stmt_prepare($updateStmt, $updateSQL)){
             // TODO:
             // header("location: REPLACE LATER");
-            $statusMsg = "Unable to prepare the SQL statement.";
-            echo "<script>window.alert(\"".$statusMsg."\")</script>";
+            $$_SESSION['adminStatusMsg'] = "Unable to prepare the SQL statement.";
             exit();
         }
 
@@ -626,8 +623,12 @@ function enableUser($con, $userID){
         // Execute prepared statement
         mysqli_stmt_execute($updateStmt);
     
-        header('location:admin.php');   
         mysqli_stmt_close($updateStmt);   
+
+        $_SESSION['adminStatusMsg'] = "Status for user with ID :".$userID." has been updated to ".$userStatus." !";
+
+        header('location:admin.php');
+
     }else{
         $statusMsg = "User does not exist !";
         echo "<script>console.log(\"".$statusMsg."\")script>";
@@ -636,8 +637,6 @@ function enableUser($con, $userID){
 }
 
 function disableUser($con, $userID){
-    $statusMsg = '';
-
     $existingUserSQL = "SELECT * FROM `userAuth` WHERE  `id` = ?";
 
     $existingUserStmt = mysqli_stmt_init($con);
@@ -645,8 +644,7 @@ function disableUser($con, $userID){
     if (!mysqli_stmt_prepare($existingUserStmt, $existingUserSQL)){
         // TODO:
         // header("location: REPLACE LATER");
-        $statusMsg = "Unable to prepare the SQL statement.";
-        echo "<script>window.alert(\"".$statusMsg."\")</script>";
+        $_SESSION['adminStatusMsg'] = "Unable to prepare the SQL statement.";
         exit();
     }
 
@@ -670,8 +668,7 @@ function disableUser($con, $userID){
         if (!mysqli_stmt_prepare($updateStmt, $updateSQL)){
             // TODO:
             // header("location: REPLACE LATER");
-            $statusMsg = "Unable to prepare the SQL statement.";
-            echo "<script>window.alert(\"".$statusMsg."\")</script>";
+            $_SESSION['adminStatusMsg'] = "Unable to prepare the SQL statement.";
             exit();
         }
 
@@ -680,18 +677,17 @@ function disableUser($con, $userID){
 
         // Execute prepared statement
         mysqli_stmt_execute($updateStmt);
-    
+
+        $_SESSION['adminStatusMsg'] = "Status for user with ID :".$userID." has been updated to ".$userStatus." !";
+
         header('location:admin.php');      
     }else{
-        $statusMsg = "User does not exist !";
-        echo "<script>console.log(\"".$statusMsg."\")script>";
+        $_SESSION['adminStatusMsg'] = "User does not exist !";
         return false;       
     }
 }
 
 function deleteUser($con, $userID){
-    $statusMsg = '';
-
     $existingUserSQL = "SELECT * FROM `userAuth` WHERE  `id` = ?";
 
     $existingUserStmt = mysqli_stmt_init($con);
@@ -699,8 +695,7 @@ function deleteUser($con, $userID){
     if (!mysqli_stmt_prepare($existingUserStmt, $existingUserSQL)){
         // TODO:
         // header("location: REPLACE LATER");
-        $statusMsg = "Unable to prepare the SQL statement.";
-        echo "<script>window.alert(\"".$statusMsg."\")</script>";
+        $_SESSION['adminStatusMsg'] = "Unable to prepare the SQL statement.";
         exit();
     }
 
@@ -722,8 +717,7 @@ function deleteUser($con, $userID){
         if (!mysqli_stmt_prepare($deleteStmt, $deleteSQL)){
             // TODO:
             // header("location: REPLACE LATER");
-            $statusMsg = "Unable to prepare the SQL statement.";
-            echo "<script>window.alert(\"".$statusMsg."\")</script>";
+            $_SESSION['adminStatusMsg'] = "Unable to prepare the SQL statement.";
             exit();
         }
 
@@ -733,10 +727,11 @@ function deleteUser($con, $userID){
         // Execute prepared statement
         mysqli_stmt_execute($deleteStmt);
     
+        $_SESSION['adminStatusMsg'] = "User with ID :".$userID." has been deleted !";
+
         header('location:admin.php');      
     }else{
-        $statusMsg = "User does not exist !";
-        echo "<script>console.log(\"".$statusMsg."\")script>";
+        $_SESSION['adminStatusMsg'] = "User does not exist !";
         return false;       
     }
 }
