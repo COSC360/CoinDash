@@ -1,3 +1,8 @@
+const infoDisplayForm = document.forms["infoDisplayForm"];
+
+for(var i = 0; i < infoDisplayForm.length; i++){
+    infoDisplayForm[i].disabled = true;
+}
 
 function openCity(evt, cityName) {
     var i, tabcontent, tablinks;
