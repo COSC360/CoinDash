@@ -33,9 +33,17 @@
 </div>
 <script>
     const infoDisplayForm = document.forms["infoDisplayForm"];
+    const editUserBtn = document.getElementById("editUserBtn");
 
     for(var i = 0; i < infoDisplayForm.length; i++){
         infoDisplayForm[i].disabled = true;
     }
+    
+    editUserBtn.onclick = function enableField(){
+        for(var i = 0; i < infoDisplayForm.length; i++){
+            infoDisplayForm[i].disabled = false;
+        }
+    }
+    
 </script>    
 
