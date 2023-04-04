@@ -689,7 +689,57 @@ function disableUser($con, $userID){
     }
 }
 
-function deleteUser(){}
+function deleteUser($con, $userID){
+    $statusMsg = '';
+
+    $existingUserSQL = "SELECT * FROM `userAuth` WHERE  `id` = ?";
+
+    $existingUserStmt = mysqli_stmt_init($con);
+
+    if (!mysqli_stmt_prepare($existingUserStmt, $existingUserSQL)){
+        // TODO:
+        // header("location: REPLACE LATER");
+        $statusMsg = "Unable to prepare the SQL statement.";
+        echo "<script>window.alert(\"".$statusMsg."\")</script>";
+        exit();
+    }
+
+    // Set parameters for prepared statement
+    mysqli_stmt_bind_param($existingUserStmt, "i", $userID);
+
+    // Execute prepared statement
+    mysqli_stmt_execute($existingUserStmt);
+
+    $results = mysqli_stmt_get_result($existingUserStmt);
+    
+    if($rows = $results -> fetch_assoc()){
+        // mysqli_stmt_close();
+        $deleteSQL = "DELETE FROM `userAuth` WHERE `id` = ?";
+
+        $deleteStmt = mysqli_stmt_init($con); 
+
+    
+        if (!mysqli_stmt_prepare($deleteStmt, $deleteSQL)){
+            // TODO:
+            // header("location: REPLACE LATER");
+            $statusMsg = "Unable to prepare the SQL statement.";
+            echo "<script>window.alert(\"".$statusMsg."\")</script>";
+            exit();
+        }
+
+        // Set parameters for prepared statement
+        mysqli_stmt_bind_param($deleteStmt, "i", $userID);
+
+        // Execute prepared statement
+        mysqli_stmt_execute($deleteStmt);
+    
+        header('location:admin.php');      
+    }else{
+        $statusMsg = "User does not exist !";
+        echo "<script>console.log(\"".$statusMsg."\")script>";
+        return false;       
+    }
+}
 
 function saveUser(){}
 ?>

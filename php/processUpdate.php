@@ -24,7 +24,10 @@
             disableUser($con, $userID);
         }
     }elseif(isset($_POST['deleteUser']) && $_SERVER["REQUEST_METHOD"] == "POST"){
-
+        if(isset($_POST['userID'])){
+            $userID = $_POST['userID'];
+            deleteUser($con, $userID);
+        }
     }elseif(isset($_POST['saveUser']) && $_SERVER["REQUEST_METHOD"] == "POST"){
 
     }else{
