@@ -319,7 +319,9 @@ function loginUser($con,$loginID,$loginPassword){
         }
     }else{
         // mysqli_stmt_close();
-        echo "failed !<br>";
+        header('location:signIn.php');
+        $statusMsg = "invalid Login Details !";
+        echo "<script>window.alert(\"".$statusMsg."\")</script>";
         return false;
     }
 
