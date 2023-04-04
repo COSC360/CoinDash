@@ -102,5 +102,9 @@ form.example fieldset {
 #item-2 {
   display: flex;
   flex-direction: column;
-  padding: 2em;
+  margin-top: 1em;  
+}
+
+#item-1 {
+  align-items: center;
 }
