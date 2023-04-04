@@ -142,6 +142,7 @@ form .editField{
 .profile-box img{
     margin-right: 1.25em;
     width: 10%;
+    border-radius: 50%;
     height: fit-content;
     float: left;
 }
