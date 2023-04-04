@@ -1,7 +1,7 @@
 <?php
     session_start();
     if($_SESSION['userType'] == "user" || $_SESSION['id'] == null){
-        header('location:adminLogin.php');
+        header('location:adminlogin.php');
     }
 ?>
 <!DOCTYPE html>
