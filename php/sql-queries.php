@@ -639,7 +639,7 @@ function enableUser($con, $userID){
     }
 }
 
-function disableUser(){
+function disableUser($con, $userID){
     $statusMsg = '';
 
     $existingUserSQL = "SELECT * FROM `userAuth` WHERE  `id` = ?";
