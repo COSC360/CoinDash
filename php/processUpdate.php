@@ -2,7 +2,6 @@
     include "modules.php";
     
     $errMsg = '';
-    echo isset($_POST['enableUser']);
 
     if(isset($_POST['updateSubmit']) && $_SERVER["REQUEST_METHOD"] == "POST"){      
         if(isset($_POST['email']) && isset($_POST['password'])){

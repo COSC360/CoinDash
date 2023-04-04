@@ -647,7 +647,7 @@ function disableUser(){
     if (!mysqli_stmt_prepare($existingUserStmt, $existingUserSQL)){
         // TODO:
         // header("location: REPLACE LATER");
-        $statusMsg = "Unable to prepare the SQL statement.";
+        $statusMsg = "Unable to prepare the DISABLE USER SQL statement.";
         echo "<script>window.alert(\"".$statusMsg."\")</script>";
         exit();
     }
