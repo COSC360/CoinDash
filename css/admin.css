@@ -50,6 +50,7 @@
 }
 
 form.example input[type=text] {
+  max-height: 2em;
   padding: 1em;
   font-size: 1em;
   border: 1px solid grey;
@@ -60,6 +61,7 @@ form.example input[type=text] {
 }
 
 form.example button {
+  max-height: 2em;
   float: left;
   width: 20%;
   padding: 1em;
