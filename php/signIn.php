@@ -2,6 +2,7 @@
     session_start();
     if(isset($_SESSION['statusMsg'])){
         echo "<script>window.alert(\"".$_SESSION['statusMsg']."\")</script>";
+        session_destroy();
     }else{
         session_destroy();
     }
