@@ -35,19 +35,13 @@
             <div class="horizontal-container fit-width">
                 
             <?php
-                if($_SESSION['id'] != null){
-                    echo  "<p>Hi, ".$_SESSION['user']."</p>";
-                    echo  "<img src=".$_SESSION['pfp']." style=\"width: 40px;height:40px;\" onclick=navigateToAccount()>";
+                if ($_SESSION["id"] != null){
+                    echo "<div class=\"horizontal-container fit-width\">
+                            <a href=\"../php/logout.php\">Logout</a>
+                        </div>";
                 }else{
-                    if ($_SESSION["username"] != null){
-                        echo "<div class=\"horizontal-container fit-width\">
-                                <a href=\"../php/logout.php\">Logout</a>
-                            </div>";
-                    }else{
-                        echo  "<a href=\"#\" onclick=navigateToSignIn()>Sign In</a>/<a href=\"#\" onclick=navigateToSignUp()>Sign Up</a>";
-                    }
-
-                }
+                    echo  "<a href=\"#\" onclick=navigateToSignIn()>Sign In</a>/<a href=\"#\" onclick=navigateToSignUp()>Sign Up</a>";
+                }            
             ?>
             </div>
         </div>
