@@ -2,6 +2,10 @@
     include "modules.php";
     
     $errMsg = '';
+    echo isset($_POST['enableUser']);
+    echo isset($_POST['disableUser']);
+    echo isset($_POST['deleteUser']);
+
     if(isset($_POST['updateSubmit']) && $_SERVER["REQUEST_METHOD"] == "POST"){      
         if(isset($_POST['email']) && isset($_POST['password'])){
             $userEmail= $_POST['email'];
