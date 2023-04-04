@@ -116,7 +116,7 @@ form.example fieldset {
   text-decoration: none;
   display: inline-block;
   font-size: 1em;
-  margin-bottom: 0.25em;
+  margin-bottom: 0.5em;
   cursor: pointer;
   -webkit-transition-duration: 0.4s; /* Safari */
   transition-duration: 0.4s;
