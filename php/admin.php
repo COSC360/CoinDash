@@ -1,6 +1,6 @@
 <?php
     session_start();
-    if($_SESSION['RSUserType'] == "user"){
+    if($_SESSION['userType'] == "user" || $_SESSION['id'] == null){
         header('location:adminLogin.php');
     }
 ?>

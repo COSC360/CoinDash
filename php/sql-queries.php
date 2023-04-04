@@ -298,6 +298,7 @@ function loginUser($con,$loginID,$loginPassword){
         // mysqli_stmt_close();
         //Creating session variables 
         $_SESSION["username"] = $rows['username'];
+        $_SESSION["userType"] = $rows['userType'];
         $_SESSION["email"] = $rows['email'];
         $_SESSION["password"] = $rows['password'];
         $_SESSION["id"] = $rows['id'];
