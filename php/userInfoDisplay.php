@@ -39,11 +39,12 @@
             </div>
         <form>    
     </div>
-    <!-- <script>
+    <script>
         const infoDisplayForm = document.forms["infoDisplayForm"];
 
-        for(int i = 0; i < infoDisplayForm.length)
-
-    </script>     -->
+        for(var i = 0; i < infoDisplayForm.length; i++){
+            infoDisplayForm[i].disabled = true;
+        }
+    </script>    
 </body>
 </html>
