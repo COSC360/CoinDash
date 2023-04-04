@@ -270,6 +270,7 @@ function retrieveDashboard($con, $userId){
 }
 
 function loginUser($con,$loginID,$loginPassword){
+    echo "LOOP 1<br>";
     $loginSQL = "SELECT * FROM `userAuth` WHERE  (`email` = ? AND `password` = ?) OR (`username` = ? AND `password` = ?)";
 
     $loginStmt = mysqli_stmt_init($con); 
@@ -277,6 +278,7 @@ function loginUser($con,$loginID,$loginPassword){
     $statusMsg = '';
 
     if (!mysqli_stmt_prepare($loginStmt, $loginSQL)){
+        echo "LOOP 2<br>";
         // TODO:
         // header("location: REPLACE LATER");
         $statusMsg = "Unable to prepare the SQL statement.";
@@ -294,7 +296,7 @@ function loginUser($con,$loginID,$loginPassword){
 
     if($rows = $results -> fetch_assoc()){
         // mysqli_stmt_close();
-
+        echo "LOOP 3<br>";
         //Creating session variables 
         $_SESSION["username"] = $rows['username'];
         $_SESSION["email"] = $rows['email'];
