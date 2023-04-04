@@ -46,8 +46,8 @@
 
                 <div id="byEmail" class="tabcontent">
                     <form class="example" action="processUserInfo.php" method = "POST">
-                        <input type="text" placeholder="Search by email . . ." name="searchEmail">
-                        <button type="submit"  name="submitEmail"><i class="fa fa-search"></i></button>
+                        <input type="text" placeholder="Search by username . . ." name="searchName">
+                        <button type="submit" name="submitName"><i class="fa fa-search"></i></button>
                     </form>
                     <?php include 'userInfoDisplay.php';?>
                 </div>
