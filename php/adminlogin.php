@@ -5,13 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/adminlogin.css">
-    <title>Document</title>
+    <title>Admin Login</title>
 </head>
 <body>
     <div class="back">
         <div class="div-center">
             <div class="content">
-                <h3>Login</h3>
+                <h3>Admin Login</h3>
                 <hr/>
                 <form>
                     <div class="form-group">
@@ -23,9 +23,6 @@
                         <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
                     </div>
                     <button type="submit" class="btn btn-primary">Login</button>
-                    <hr/>
-                    <button type="button" class="btn btn-link">Signup</button>
-                    <button type="button" class="btn btn-link">Reset Password</button>
                 </form>
             </div>
         </div>
