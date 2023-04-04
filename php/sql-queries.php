@@ -607,7 +607,8 @@ function enableUser($con, $userID){
     $results = mysqli_stmt_get_result($existingUserStmt);
     
     if($rows = $results -> fetch_assoc()){
-        // mysqli_stmt_close();
+        mysqli_stmt_close($existingUserStmt);
+
         $updateSQL = "UPDATE `userAuth` SET `status` = ? WHERE `id` = ?";
 
         $userStatus = "enabled";
@@ -629,7 +630,8 @@ function enableUser($con, $userID){
         // Execute prepared statement
         mysqli_stmt_execute($updateStmt);
     
-        header('location:admin.php');      
+        header('location:admin.php');   
+        mysqli_stmt_close($updateStmt);   
     }else{
         $statusMsg = "User does not exist !";
         echo "<script>console.log(\"".$statusMsg."\")script>";
@@ -647,7 +649,7 @@ function disableUser(){
     if (!mysqli_stmt_prepare($existingUserStmt, $existingUserSQL)){
         // TODO:
         // header("location: REPLACE LATER");
-        $statusMsg = "Unable to prepare the DISABLE USER SQL statement.";
+        $statusMsg = "Unable to prepare the SQL statement.";
         echo "<script>window.alert(\"".$statusMsg."\")</script>";
         exit();
     }
