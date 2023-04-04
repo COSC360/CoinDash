@@ -31,6 +31,6 @@
     <form>    
 </div>
 <script>
-    const forms = document.querySelectorAll('infoDisplayForm');
-    console.log(forms)
+    const infoDisplayForm = document.querySelectorAll('infoDisplayForm');
+    console.log(infoDisplayForm)
 </script>
