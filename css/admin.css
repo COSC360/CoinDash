@@ -92,12 +92,6 @@ form.example fieldset {
   gap: 1em;
 }
 
-#pfp {
-  width: 50%;
-  margin-bottom: 1em;
-  height: fit-content;
-}
-
 #item-1,
 #item-2 {
   display: flex;

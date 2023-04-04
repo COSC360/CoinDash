@@ -1,5 +1,8 @@
 <?php
     session_start();
+    if($_SESSION['RSUserType'] == "user"){
+        header('location:adminLogin.php');
+    }
 ?>
 <!DOCTYPE html>
 <html>
