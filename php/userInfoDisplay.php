@@ -40,10 +40,11 @@
     }
     
     editUserBtn.onclick = function enableField(){
+        console.log("clicked !");
         for(var i = 0; i < infoDisplayForm.length; i++){
             infoDisplayForm[i].disabled = false;
         }
     }
-    
+
 </script>    
 
