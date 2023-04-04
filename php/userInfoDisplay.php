@@ -3,7 +3,7 @@
 ?>
 <div class="userInfo">
     <div id = "item-1">
-        <img src="../images/profile-picture.png" id = "pfp">
+        <img src="<?php echo $_SESSION['RSProfilePicture']?>" id = "pfp">
         <button>Enable</button>
         <button>Disable</button>
         <button>Delete</button>

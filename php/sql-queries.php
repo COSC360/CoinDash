@@ -465,6 +465,7 @@ function searchByUsername($con, $searchName){
         $_SESSION['RSUserType'] = $rows['userType'];
         $_SESSION['RSUserStatus'] = $rows['status'];
         $_SESSION['RSRegisterTimestamp'] = $rows['registerationTimestamp'];
+        $_SESSION['RSProfilePicture'] = $rows['profilePicture'];
         header('location:admin.php');
     }else{
         return false;
