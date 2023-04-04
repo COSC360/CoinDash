@@ -1,7 +1,5 @@
 <?php
     session_start();
-    $page = $_SERVER['PHP_SELF'];
-    $sec = "0.5";
 
     if($_SESSION['userType'] == "user" || !isset($_SESSION['id'])){
         header('location:adminlogin.php');
@@ -15,7 +13,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta http-equiv="refresh" content="<?php echo $sec?>;URL='<?php echo $page?>'">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="../css/var.css">
     <link rel="stylesheet" href="../css/reset.css">
