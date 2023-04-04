@@ -281,8 +281,7 @@ function loginUser($con,$loginID,$loginPassword){
         
         // TODO:
         // header("location: REPLACE LATER");
-        $statusMsg = "Unable to prepare the SQL statement.";
-        echo "<script>window.alert(\"".$statusMsg."\")</script>";
+        $_SESSION['statusMsg'] = "Unable to prepare the SQL statement.";
         exit();
     }
 
@@ -315,15 +314,13 @@ function loginUser($con,$loginID,$loginPassword){
 
         //Display an error if user is of "user" type and status is "disabled"            
         }elseif($rows['userType'] == 'user' && $rows['status'] == "disabled"){
-            $statusMsg = "Your account has been disabled by the admin !";
+            $_SESSION['statusMsg'] = "Your account has been disabled by the admin !";
             header('location:signIn.php');
-            echo "<script>window.alert(\"".$statusMsg."\")</script>";
         }
     }else{
         // mysqli_stmt_close();
         header('location:signIn.php');
-        $statusMsg = "invalid Login Details !";
-        echo "<script>window.alert(\"".$statusMsg."\")</script>";
+        $_SESSION['statusMsg'] = "invalid Login Details !";
         return false;
     }
 
