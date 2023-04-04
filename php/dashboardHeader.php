@@ -35,7 +35,7 @@
             <div class="horizontal-container fit-width">
                 
             <?php
-                if($_SESSION['user'] != null){
+                if($_SESSION['id'] != null){
                     echo  "<p>Hi, ".$_SESSION['user']."</p>";
                     echo  "<img src=".$_SESSION['pfp']." style=\"width: 40px;height:40px;\" onclick=navigateToAccount()>";
                 }else{
