@@ -484,13 +484,11 @@ function searchByUsername($con, $searchName){
 
     $searchStmt = mysqli_stmt_init($con); 
 
-    $statusMsg = '';
     
     if (!mysqli_stmt_prepare($searchStmt, $searchSQL)){
         // TODO:
         // header("location: REPLACE LATER");
-        $statusMsg = "Unable to prepare the SQL statement.";
-        echo "<script>window.alert(\"".$statusMsg."\")</script>";
+        $_SESSION['adminStatusMsg'] = "Unable to prepare the SQL statement.";
         exit();
     }
 
@@ -514,6 +512,7 @@ function searchByUsername($con, $searchName){
         $_SESSION['RSProfilePicture'] = $rows['profilePicture'];
         header('location:admin.php');
     }else{
+        $_SESSION['adminStatusMsg'] = "User not found with the given username"; 
         return false;
     }
 }

@@ -3,6 +3,10 @@
     if($_SESSION['userType'] == "user" || !isset($_SESSION['id'])){
         header('location:adminlogin.php');
     }
+
+    if(isset($_SESSION['adminStatusMsg'])){
+        echo "<script>window.alert(\"".$_SESSION['adminStatusMsg']."\")</script>";
+    }
 ?>
 <!DOCTYPE html>
 <html>
