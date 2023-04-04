@@ -107,3 +107,7 @@ form.example fieldset {
 #item-1 {
   align-items: center;
 }
+
+#item-2 input{
+  margin-bottom: 1em;
+}
