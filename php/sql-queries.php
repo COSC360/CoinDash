@@ -394,6 +394,7 @@ function registerUser($con,$registerUsername,$registerEmail,$registerPassword,$r
     
     if($rows = $results -> fetch_assoc()){
         // mysqli_stmt_close();
+        header('location:signUp.php');
         $_SESSION['statusMsg'] = 'User with that email/username already exists !';
         
     }else{
