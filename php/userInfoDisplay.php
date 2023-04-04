@@ -32,5 +32,5 @@
 </div>
 <script>
     const infoDisplayForm = document.querySelectorAll('infoDisplayForm');
-    console.log(infoDisplayForm)
+    console.log(infoDisplayForm[0])
 </script>
