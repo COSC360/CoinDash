@@ -34,14 +34,13 @@
                     <button class="tablinks" onclick="openCity(event, 'byEmail')">By Email ID</button>
                     <button class="tablinks" onclick="openCity(event, 'byCommentId')">By Comment ID</button>
                 </div>
-
-                <div id="byUsername" class="tabcontent">
-                    <!-- <form class="example" action="processUserInfo.php" method = "POST"> -->
+                <form class="example" action="processUserInfo.php" method = "POST">
+                    <div id="byUsername" class="tabcontent">
                         <input type="text" placeholder="Search by username . . ." name="searchName">
                         <button type="submit" name="submitName"><i class="fa fa-search"></i></button>
-                    <!-- </form> -->
-                    <?php include 'userInfoDisplay.php';?>
-                </div>
+                        <?php include 'userInfoDisplay.php';?>
+                    </div>
+                </form>
 
                 <div id="byEmail" class="tabcontent">
                     <form class="example" action="processUserInfo.php" method = "POST">
