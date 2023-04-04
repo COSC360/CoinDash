@@ -10,25 +10,27 @@
         <button class = "editUserBtn">Edit</button>
     </div>
     <div id = "item-2">
+        <form>
             <label>User ID :</label>
-            <input type="text" class= "infoDisplay" value = "<?php echo $_SESSION['RSId']?>" >
+            <input type="text" value = "<?php echo $_SESSION['RSId']?>" >
             <label>Username :</label>
-            <input type="text" class= "infoDisplay" value = "<?php echo $_SESSION['RSUsername']?>" >
+            <input type="text" value = "<?php echo $_SESSION['RSUsername']?>" >
             <label>User Password :</label>
-            <input type="text" class= "infoDisplay" value = "<?php echo $_SESSION['RSPassword']?>" >
+            <input type="text" value = "<?php echo $_SESSION['RSPassword']?>" >
             <label>User Email :</label>
-            <input type="text" class= "infoDisplay" value = "<?php echo $_SESSION['RSEmail']?>" >
+            <input type="text" value = "<?php echo $_SESSION['RSEmail']?>" >
             <label>User Coming From :</label>
-            <input type="text" class= "infoDisplay" value = "<?php echo $_SESSION['RSComingFrom']?>" >
+            <input type="text" value = "<?php echo $_SESSION['RSComingFrom']?>" >
             <label>User Type :</label>
-            <input type="text" class= "infoDisplay" value = "<?php echo $_SESSION['RSUserType']?>" >
+            <input type="text" value = "<?php echo $_SESSION['RSUserType']?>" >
             <label>User Status :</label>
-            <input type="text" class= "infoDisplay" value = "<?php echo $_SESSION['RSUserStatus']?>" >
+            <input type="text" value = "<?php echo $_SESSION['RSUserStatus']?>" >
             <label>User Registeration Timestamp :</label>
-            <input type="text" class= "infoDisplay" value = "<?php echo $_SESSION['RSRegisterTimestamp']?>" >
+            <input type="text" value = "<?php echo $_SESSION['RSRegisterTimestamp']?>" >
+        <form>    
     </div>
 </div>
 <script>
-    const infoDisplay = document.querySelectorAll('infoDisplay');
-    console.log(infoDisplay);
+    const forms = document.querySelectorAll('userInfoDisplayForm');
+    const form = forms[0];
 </script>

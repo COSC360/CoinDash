@@ -93,7 +93,7 @@ form.example fieldset {
 }
 
 #item-1,
-#item-2 {
+#item-2 form{
   display: flex;
   flex-direction: column; 
 }
@@ -128,10 +128,10 @@ form.example fieldset {
 #item-1 button:hover{
   box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
 }
-#item-2 label{
+#item-2 form label{
   font-weight: 500;
 }
 
-#item-2 input{
+#item-2 form input{
   margin-bottom: 0.25em;
 }
