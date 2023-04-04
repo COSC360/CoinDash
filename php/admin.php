@@ -36,10 +36,10 @@
                 </div>
 
                 <div id="byUsername" class="tabcontent">
-                    <form class="example" action="processUserInfo.php" method = "POST">
+                    <!-- <form class="example" action="processUserInfo.php" method = "POST"> -->
                         <input type="text" placeholder="Search by username . . ." name="searchName">
                         <button type="submit" name="submitName"><i class="fa fa-search"></i></button>
-                    </form>
+                    <!-- </form> -->
                     <?php include 'userInfoDisplay.php';?>
                 </div>
 
