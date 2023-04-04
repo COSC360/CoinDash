@@ -10,7 +10,6 @@
         <button class = "editUserBtn">Edit</button>
     </div>
     <div id = "item-2">
-        <form method = "POST" id="userInfoDisplayForm">
             <label>User ID :</label>
             <input type="text" value = "<?php echo $_SESSION['RSId']?>" >
             <label>Username :</label>
@@ -27,7 +26,6 @@
             <input type="text" value = "<?php echo $_SESSION['RSUserStatus']?>" >
             <label>User Registeration Timestamp :</label>
             <input type="text" value = "<?php echo $_SESSION['RSRegisterTimestamp']?>" >
-        </form>
     </div>
 </div>
 <!-- <script>
