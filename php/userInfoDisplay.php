@@ -4,7 +4,7 @@
 
 <div class="userInfo">
     <div id = "item-1">
-        <img src="<?php echo $_SESSION['RSProfilePicture']?>" id = "pfp">
+        <img src="<?php echo $_SESSION['RSProfilePicture'];?>" id = "pfp">
         <button id = "enableUserBtn" type ="submit" form="infoDisplayForm" name="enableUser">Enable</button>
         <button id = "disableUserBtn" type ="submit" form="infoDisplayForm" name="disableUser">Disable</button>
         <button id = "deleteUserBtn" type ="submit" form="infoDisplayForm" name="deleteUser">Delete</button>
@@ -32,7 +32,7 @@
         </div>
     <form>    
 </div>
-<!-- <script>
+<script>
     const infoDisplayForm = document.forms["infoDisplayForm"];
     document.getElementById("editUserBtn").addEventListener("click", enableField);
     for(var i = 0; i < infoDisplayForm.length; i++){
@@ -45,5 +45,5 @@
         }
     }
 
-</script>     -->
+</script>    
 
