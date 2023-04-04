@@ -7,6 +7,7 @@
         <button>Enable</button>
         <button>Disable</button>
         <button>Delete</button>
+        <button>Edit</button>
     </div>
     <div id = "item-2">
         <label>User ID :</label>
