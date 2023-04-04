@@ -157,17 +157,6 @@ form .editField{
     color: #000000;
 }
 
-#centered {
-    font-weight: 800;
-    position: absolute;
-    text-align: center;
-    color: rgb(0, 0, 0);
-    visibility: hidden;
-    top: 50%;
-    left: 5%;
-    transform: translate(-50%, -50%);
-  }
-
 .profile-box img:hover{
     opacity: 30%;
 }
