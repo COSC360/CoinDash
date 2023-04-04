@@ -40,7 +40,7 @@
         <form>    
     </div>
     <script>
-        const infoDisplayForm = document.querySelectorAll('infoDisplayForm');
+        const infoDisplayForm = document.forms["infoDisplayForm"];
         console.log(infoDisplayForm)
     </script>    
 </body>
