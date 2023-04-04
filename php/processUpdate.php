@@ -6,7 +6,7 @@
         
         if(isset($_POST['email']) && isset($_POST['password'])){
             $userEmail= $_POST['email'];
-            $userPassword = $_POST['password'];
+            $userPassword = md5($_POST['password']);
             updateUser($con,$userEmail,$userPassword);
             
         }else{
