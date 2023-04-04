@@ -512,7 +512,8 @@ function searchByUsername($con, $searchName){
         $_SESSION['RSProfilePicture'] = $rows['profilePicture'];
         header('location:admin.php');
     }else{
-        $_SESSION['adminStatusMsg'] = "User not found with the given username"; 
+        $_SESSION['adminStatusMsg'] = "User not found with the given username";
+        header('location:admin.php'); 
         return false;
     }
 }
