@@ -15,6 +15,8 @@
             $errMsg = 'Login data was not sent. Please try again !';
             echo "<script>console.log(\"".$errMsg."\")</script>";
         }
+    }else{
+        echo "Failed<br>";
     }
 
     if(isset($_SERVER['submitEmail']) && $_SERVER["REQUEST_METHOD"] == "POST"){
