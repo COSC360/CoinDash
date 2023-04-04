@@ -299,7 +299,7 @@ function loginUser($con,$loginID,$loginPassword){
         //Creating session variables 
         $_SESSION["username"] = $rows['username'];
         $_SESSION["email"] = $rows['email'];
-        $_SESSION["password"] = md5($rows['password']);
+        $_SESSION["password"] = $rows['password'];
         $_SESSION["id"] = $rows['id'];
         $_SESSION["profilePicture"] = $rows['profilePicture'];
 
