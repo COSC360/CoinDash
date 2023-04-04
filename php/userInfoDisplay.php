@@ -10,7 +10,7 @@
         <button class = "editUserBtn">Edit</button>
     </div>
     <div id = "item-2">
-        <form>
+        <form id ="infoDisplayForm">
             <label>User ID :</label>
             <input type="text" value = "<?php echo $_SESSION['RSId']?>" >
             <label>Username :</label>
