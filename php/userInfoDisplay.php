@@ -33,17 +33,16 @@
 </div>
 <script>
     const infoDisplayForm = document.forms["infoDisplayForm"];
-    const editUserBtn = document.getElementById("editUserBtn");
-
+    document.getElementById("editUserBtn").addEventListener("click", enableField);
     for(var i = 0; i < infoDisplayForm.length; i++){
         infoDisplayForm[i].disabled = true;
     }
     
-    editUserBtn.onclick = function enableField(){
+    function enableField(){
         console.log("clicked !");
-        for(var i = 0; i < infoDisplayForm.length; i++){
-            infoDisplayForm[i].disabled = false;
-        }
+        // for(var i = 0; i < infoDisplayForm.length; i++){
+        //     infoDisplayForm[i].disabled = false;
+        // }
     }
 
 </script>    
