@@ -30,11 +30,11 @@
         </form>
     </div>
 </div>
-<script>
+<!-- <script>
     const forms = document.querySelectorAll('userInfoDisplayForm');
     const form = forms[0];
 
     Array.from(form.elements).forEach((input) => {
         input.disabled = true;
     });
-</script>
+</script> -->
