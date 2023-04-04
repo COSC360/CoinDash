@@ -433,4 +433,94 @@ function updateUser($con,$userEmail,$userPassword){
     }
 }
 
+function searchByUsername($con, $searchName){
+    $searchSQL = "SELECT * FROM `userAuth` WHERE  `username`= ?";
+
+    $searchStmt = mysqli_stmt_init($con); 
+
+    $statusMsg = '';
+    
+    if (!mysqli_stmt_prepare($searchStmt, $searchSQL)){
+        // TODO:
+        // header("location: REPLACE LATER");
+        $statusMsg = "Unable to prepare the SQL statement.";
+        echo "<script>window.alert(\"".$statusMsg."\")</script>";
+        exit();
+    }
+
+    // Set parameters for prepared statement
+    mysqli_stmt_bind_param($searchStmt, "s", $searchName);
+
+    // Execute prepared statement
+    mysqli_stmt_execute($searchStmt);
+
+    $results = mysqli_stmt_get_result($searchStmt);
+
+    if($rows = $results -> fetch_assoc()){
+        
+    }else{
+        return false;
+    }
+}
+
+function searchByEmail($con, $searchEmail){
+    $searchSQL = "SELECT * FROM `userAuth` WHERE  `email`= ?";
+
+    $searchStmt = mysqli_stmt_init($con); 
+
+    $statusMsg = '';
+    
+    if (!mysqli_stmt_prepare($searchStmt, $searchSQL)){
+        // TODO:
+        // header("location: REPLACE LATER");
+        $statusMsg = "Unable to prepare the SQL statement.";
+        echo "<script>window.alert(\"".$statusMsg."\")</script>";
+        exit();
+    }
+
+    // Set parameters for prepared statement
+    mysqli_stmt_bind_param($searchStmt, "s", $searchEmail);
+
+    // Execute prepared statement
+    mysqli_stmt_execute($searchStmt);
+
+    $results = mysqli_stmt_get_result($searchStmt);
+
+    if($rows = $results -> fetch_assoc()){
+        
+    }else{
+        return false;
+    }
+}
+
+function searchByCommentId($con, $searchCommentId){
+
+    $searchSQL = "SELECT * FROM `comment` WHERE  `id`= ?";
+
+    $searchStmt = mysqli_stmt_init($con); 
+
+    $statusMsg = '';
+    
+    if (!mysqli_stmt_prepare($searchStmt, $searchSQL)){
+        // TODO:
+        // header("location: REPLACE LATER");
+        $statusMsg = "Unable to prepare the SQL statement.";
+        echo "<script>window.alert(\"".$statusMsg."\")</script>";
+        exit();
+    }
+
+    // Set parameters for prepared statement
+    mysqli_stmt_bind_param($searchStmt, "i", $searchCommentId);
+
+    // Execute prepared statement
+    mysqli_stmt_execute($searchStmt);
+
+    $results = mysqli_stmt_get_result($searchStmt);
+
+    if($rows = $results -> fetch_assoc()){
+        
+    }else{
+        return false;
+    }
+}
 ?>
