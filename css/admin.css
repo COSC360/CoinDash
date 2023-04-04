@@ -104,14 +104,15 @@ form.example fieldset {
 
 #item-1 button{
   background-color: #4CAF50; /* Green */
+  min-width: 8em;
   border: none;
   color: white;
-  padding: 15px 32px;
+  padding: 0.5em 0.5em;
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
+  font-size: 1em;
+  margin: 0.25em;
   cursor: pointer;
   -webkit-transition-duration: 0.4s; /* Safari */
   transition-duration: 0.4s;
