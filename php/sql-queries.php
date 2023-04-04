@@ -278,7 +278,7 @@ function loginUser($con,$loginID,$loginPassword){
     $statusMsg = '';
 
     if (!mysqli_stmt_prepare($loginStmt, $loginSQL)){
-        echo "LOOP 2<br>";
+        
         // TODO:
         // header("location: REPLACE LATER");
         $statusMsg = "Unable to prepare the SQL statement.";
