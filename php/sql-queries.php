@@ -270,7 +270,7 @@ function retrieveDashboard($con, $userId){
 }
 
 function loginUser($con,$loginID,$loginPassword){
-    echo "LOOP 1<br>";
+    
     $loginSQL = "SELECT * FROM `userAuth` WHERE  (`email` = ? AND `password` = ?) OR (`username` = ? AND `password` = ?)";
 
     $loginStmt = mysqli_stmt_init($con); 
@@ -296,7 +296,6 @@ function loginUser($con,$loginID,$loginPassword){
 
     if($rows = $results -> fetch_assoc()){
         // mysqli_stmt_close();
-        echo "LOOP 3<br>";
         //Creating session variables 
         $_SESSION["username"] = $rows['username'];
         $_SESSION["email"] = $rows['email'];
@@ -320,6 +319,7 @@ function loginUser($con,$loginID,$loginPassword){
         }
     }else{
         // mysqli_stmt_close();
+        echo "failed !<br>";
         return false;
     }
 
