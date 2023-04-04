@@ -41,7 +41,7 @@
     </div>
     <script>
         const infoDisplayForm = document.forms["infoDisplayForm"];
-        console.log(infoDisplayForm)
+        console.log(infoDisplayForm[0])
     </script>    
 </body>
 </html>
