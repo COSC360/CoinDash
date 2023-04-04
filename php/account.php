@@ -1,6 +1,6 @@
 <?php
     session_start();
-    if($_SESSION["id"] == null){
+    if(!isset($_SESSION["id"])){
         header('location:signIn.php');
     }
 ?>
