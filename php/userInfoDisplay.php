@@ -41,12 +41,10 @@
     </div>
     <script>
         const infoDisplayForm = document.forms["infoDisplayForm"];
-
+        infoDisplayForm.forEach(disableField);
         function disableField(inputField){
             inputField.disabled = true;
         }
-
-        window.onload = infoDisplayForm.forEach(disableField);
 
     </script>    
 </body>
