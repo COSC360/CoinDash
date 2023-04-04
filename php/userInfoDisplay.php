@@ -1,3 +1,6 @@
+<?php
+    session_start();
+?>
 <div class="userInfo">
     <div id = "item-1">
         <img src="../images/profile-picture.png" id = "pfp">
@@ -7,18 +10,20 @@
     </div>
     <div id = "item-2">
         <label>User ID :</label>
-        <input>
+        <input type="text" value = "<?php echo $_SESSION['RSId']?>">
         <label>Username :</label>
-        <input>
+        <input type="text" value = "<?php echo $_SESSION['RSUsername']?>">
         <label>User Password :</label>
-        <input>
+        <input type="text" value = "<?php echo $_SESSION['RSPassword']?>">
         <label>User Email :</label>
-        <input>
+        <input type="text" value = "<?php echo $_SESSION['RSEmail']?>">
         <label>User Coming From :</label>
-        <input>
+        <input type="text" value = "<?php echo $_SESSION['RSComingFrom']?>">
         <label>User Type :</label>
-        <input>
+        <input type="text" value = "<?php echo $_SESSION['RSUserType']?>">
         <label>User Status :</label>
-        <input>
+        <input type="text" value = "<?php echo $_SESSION['RSUserStatus']?>">/
+        <label>User Registeration Timestamp :</label>
+        <input type="text" value = "<?php echo $_SESSION['RSRegisterTimestamp']?>">
     </div>
 </div>

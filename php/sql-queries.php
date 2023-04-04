@@ -457,7 +457,15 @@ function searchByUsername($con, $searchName){
     $results = mysqli_stmt_get_result($searchStmt);
 
     if($rows = $results -> fetch_assoc()){
-        
+        $_SESSION['RSId'] = $rows['id'];
+        $_SESSION['RSUsername'] = $rows['username'];
+        $_SESSION['RSEmail'] = $rows['email'];
+        $_SESSION['RSPassword'] = $rows['password'];
+        $_SESSION['RSComingFrom'] = $rows['comingFrom'];
+        $_SESSION['RSUserType'] = $rows['userType'];
+        $_SESSION['RSUserStatus'] = $rows['status'];
+        $_SESSION['RSRegisterTimestamp'] = $rows['registerationTimestamp'];
+        header('location:admin.php');
     }else{
         return false;
     }
@@ -487,7 +495,7 @@ function searchByEmail($con, $searchEmail){
     $results = mysqli_stmt_get_result($searchStmt);
 
     if($rows = $results -> fetch_assoc()){
-        
+        header('location:admin.php');
     }else{
         return false;
     }
