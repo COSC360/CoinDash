@@ -365,7 +365,7 @@ function adminLogin($con,$adminLoginID,$adminPassword){
         }
     }else{
         // mysqli_stmt_close();
-        header('location:signIn.php');
+        header('location:adminlogin.php');
         $statusMsg = "Invalid Login Details !";
         echo "<script>window.alert(\"".$statusMsg."\")</script>";
         return false;
