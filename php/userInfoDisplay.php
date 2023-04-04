@@ -21,7 +21,7 @@
         <form id ="infoDisplayForm">
             <div id = "item-2">
                 <label>User ID :</label>
-                <input type="text" value = "<?php echo $_SESSION['RSId']?>" disabled  = false>
+                <input type="text" value = "<?php echo $_SESSION['RSId']?>">
                 <label>Username :</label>
                 <input type="text" value = "<?php echo $_SESSION['RSUsername']?>" >
                 <label>User Password :</label>
@@ -41,10 +41,11 @@
     </div>
     <script>
         const infoDisplayForm = document.forms["infoDisplayForm"];
-        infoDisplayForm.forEach(disableField);
-        function disableField(inputField){
-            inputField.disabled = true;
-        }
+        infoDisplayForm[0].disabled = true;
+        // infoDisplayForm.forEach(disableField);
+        // function disableField(inputField){
+        //     inputField.disabled = true;
+        // }
 
     </script>    
 </body>
