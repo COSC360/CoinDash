@@ -90,7 +90,6 @@ form.example fieldset {
   display: grid;
   grid-template-columns: auto auto;
   gap: 1em;
-  row-gap: 2em;
 }
 
 #pfp {
@@ -103,8 +102,5 @@ form.example fieldset {
 #item-2 {
   display: flex;
   flex-direction: column;
-}
-
-#item-1 {
-  align-items: center;
+  padding: 2em;
 }
