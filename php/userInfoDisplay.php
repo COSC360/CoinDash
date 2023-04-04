@@ -21,7 +21,7 @@
         <form id ="infoDisplayForm">
             <div id = "item-2">
                 <label>User ID :</label>
-                <input type="text" value = "<?php echo $_SESSION['RSId']?>" >
+                <input type="text" value = "<?php echo $_SESSION['RSId']?>" disabled  = false>
                 <label>Username :</label>
                 <input type="text" value = "<?php echo $_SESSION['RSUsername']?>" >
                 <label>User Password :</label>
