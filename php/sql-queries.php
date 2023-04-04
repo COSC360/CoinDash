@@ -614,7 +614,6 @@ function enableUser($con, $userID){
 
         $updateStmt = mysqli_stmt_init($con); 
     
-        $statusMsg = '';
     
         if (!mysqli_stmt_prepare($updateStmt, $updateSQL)){
             // TODO:
@@ -668,8 +667,7 @@ function disableUser(){
         $userStatus = "disabled";
 
         $updateStmt = mysqli_stmt_init($con); 
-    
-        $statusMsg = '';
+
     
         if (!mysqli_stmt_prepare($updateStmt, $updateSQL)){
             // TODO:
