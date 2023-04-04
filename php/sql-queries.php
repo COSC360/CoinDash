@@ -316,6 +316,7 @@ function loginUser($con,$loginID,$loginPassword){
         //Display an error if user is of "user" type and status is "disabled"            
         }elseif($rows['userType'] == 'user' && $rows['status'] == "disabled"){
             $statusMsg = "Your account has been disabled by the admin !";
+            header('location:signIn.php');
             echo "<script>window.alert(\"".$statusMsg."\")</script>";
         }
     }else{
