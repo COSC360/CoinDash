@@ -37,8 +37,8 @@
             <?php
                 if ($_SESSION["id"] != null){
                     echo "<div class=\"horizontal-container fit-width\">
+                            <p>Hi, ".$_SESSION["username"]." | </p>
                             <a href=\"../php/logout.php\">Logout</a>
-                            <p>Hi, ".$_SESSION["username"]."</p>
                         </div>";
                 }else{
                     echo  "<a href=\"#\" onclick=navigateToSignIn()>Sign In</a>/<a href=\"#\" onclick=navigateToSignUp()>Sign Up</a>";
