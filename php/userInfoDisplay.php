@@ -32,7 +32,7 @@
         </div>
     <form>    
 </div>
-<script>
+<!-- <script>
     const infoDisplayForm = document.forms["infoDisplayForm"];
     document.getElementById("editUserBtn").addEventListener("click", enableField);
     for(var i = 0; i < infoDisplayForm.length; i++){
@@ -45,5 +45,5 @@
         }
     }
 
-</script>    
+</script>     -->
 

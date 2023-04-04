@@ -40,7 +40,7 @@
                         <input type="text" placeholder="Search by username . . ." name="searchName">
                         <button type="submit" name="submitName"><i class="fa fa-search"></i></button>
                     </form>
-                    <?php include 'userInfoDisplay.php'?>
+                    <?php include "userInfoDisplay.php"?>
                 </div>
 
                 <div id="byEmail" class="tabcontent">
