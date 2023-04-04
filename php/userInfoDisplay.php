@@ -12,7 +12,7 @@
         <button id = "saveUserBtn" type ="submit" form="infoDisplayForm" name="saveUser">Save</button>
     </div>
     <form id ="infoDisplayForm" method = "POST" action="processUpdate.php">
-        <!-- <div id = "item-2"> -->
+        <div id = "item-2">
             <label>User ID :</label>
             <input type="text" name="userID" value = "<?php echo $_SESSION['RSId']?>">
             <label>Username :</label>
@@ -29,7 +29,7 @@
             <input type="text" name="status" value = "<?php echo $_SESSION['RSUserStatus']?>" >
             <label>User Registeration Timestamp :</label>
             <input type="text" name="regTimestamp" value = "<?php echo $_SESSION['RSRegisterTimestamp']?>" >
-        <!-- </div> -->
+        </div>
     <form>    
 </div>
 <script>
