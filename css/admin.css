@@ -49,7 +49,7 @@
   border-top: none;
 }
 
-.example input[type=text] {
+form.example input[type=text] {
   padding: 1em;
   font-size: 1em;
   border: 1px solid grey;
@@ -59,7 +59,7 @@
   margin-bottom: 1em;
 }
 
-.example button {
+form.example button {
   float: left;
   width: 20%;
   padding: 1em;
@@ -72,17 +72,17 @@
   margin-bottom: 1em;
 }
 
-.example button:hover {
+form.example button:hover {
   background: #0b7dda;
 }
 
-.example::after {
+form.example::after {
   content: "";
   clear: both;
   display: table;
 }
 
-.example fieldset {
+form.example fieldset {
   height: 24em;
 }
 
