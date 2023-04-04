@@ -22,7 +22,7 @@
         <label>User Type :</label>
         <input type="text" value = "<?php echo $_SESSION['RSUserType']?>">
         <label>User Status :</label>
-        <input type="text" value = "<?php echo $_SESSION['RSUserStatus']?>">/
+        <input type="text" value = "<?php echo $_SESSION['RSUserStatus']?>">
         <label>User Registeration Timestamp :</label>
         <input type="text" value = "<?php echo $_SESSION['RSRegisterTimestamp']?>">
     </div>
