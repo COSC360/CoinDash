@@ -328,6 +328,49 @@ function loginUser($con,$loginID,$loginPassword){
 
 }
 
+function adminLogin($con,$adminLoginID,$adminPassword){
+    $adminLoginSQL = "SELECT * FROM `userAuth` WHERE  (`email` = ? AND `password` = ?) OR (`username` = ? AND `password` = ?)";
+
+    $adminLoginStmt = mysqli_stmt_init($con); 
+
+    $statusMsg = '';
+
+    if (!mysqli_stmt_prepare($adminLoginStmt, $adminLoginSQL)){
+        
+        // TODO:
+        // header("location: REPLACE LATER");
+        $statusMsg = "Unable to prepare the SQL statement.";
+        echo "<script>window.alert(\"".$statusMsg."\")</script>";
+        exit();
+    }
+
+    // Set parameters for prepared statement
+    mysqli_stmt_bind_param($adminLoginStmt, "ssss", $adminLoginID,md5($adminPassword),$adminLoginID,md5($adminPassword));
+
+    // Execute prepared statement
+    mysqli_stmt_execute($adminLoginStmt);
+
+    $results = mysqli_stmt_get_result($adminLoginStmt);
+
+    if($rows = $results -> fetch_assoc()){
+        // mysqli_stmt_close();
+
+        //Navigate to admin.php if user is of "admin" type
+        if($rows['userType'] == 'admin'){
+            header('location:admin.php');   
+        }else{
+            $statusMsg = "User is not admin !";
+            echo "<script>window.alert(\"".$statusMsg."\")</script>";
+        }
+    }else{
+        // mysqli_stmt_close();
+        header('location:signIn.php');
+        $statusMsg = "Invalid Login Details !";
+        echo "<script>window.alert(\"".$statusMsg."\")</script>";
+        return false;
+    }
+}
+
 function registerUser($con,$registerUsername,$registerEmail,$registerPassword,$registerVerifyPassword,$registerSelectedOption,$registerUserType,$registerUserStatus,$registerImage){
     
     $statusMsg = '';

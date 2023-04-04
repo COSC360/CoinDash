@@ -11,11 +11,13 @@
     <div class="form-container">
     <h1>Admin Login</h1>
         <section>
-            <input #username type="text" name="username" placeholder="Username">
-            <br />
-            <input #password type="password" name="password" placeholder="Password">
-            <br />
-            <button type="button" role="button" (click)="login($event, username, password)">Login</button>
+            <form action ="processAdminLogin.php" method = "GET">
+                <input type="text" name="adminLoginID" placeholder="Login Id">
+                <br />
+                <input type="password" name="adminPassword" placeholder="Password">
+                <br />
+                <input type="submit" name="adminLogin" value = "Login">
+            </form>
         </section>
     </div>
 </body>
