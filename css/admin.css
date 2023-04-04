@@ -108,6 +108,12 @@ form.example fieldset {
   align-items: center;
 }
 
+#item-2 label{
+  font-weight: 500;
+}
+
 #item-2 input{
   margin-bottom: 0.25em;
+  opacity: 40%;
+  cursor: not-allowed;
 }
