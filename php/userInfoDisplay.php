@@ -5,10 +5,10 @@
 <div class="userInfo">
     <div id = "item-1">
         <img src="<?php echo $_SESSION['RSProfilePicture']?>" id = "pfp">
-        <button class = "enableUserBtn">Enable</button>
-        <button class = "disableUserBtn">Disable</button>
-        <button class = "deleteUserBtn">Delete</button>
-        <button class = "editUserBtn">Edit</button>
+        <button id = "enableUserBtn">Enable</button>
+        <button id = "disableUserBtn">Disable</button>
+        <button id = "deleteUserBtn">Delete</button>
+        <button id = "editUserBtn">Edit</button>
     </div>
     <form id ="infoDisplayForm">
         <div id = "item-2">
@@ -39,10 +39,9 @@
     }
     
     function enableField(){
-        console.log("clicked !");
-        // for(var i = 0; i < infoDisplayForm.length; i++){
-        //     infoDisplayForm[i].disabled = false;
-        // }
+        for(var i = 0; i < infoDisplayForm.length; i++){
+            infoDisplayForm[i].disabled = false;
+        }
     }
 
 </script>    
