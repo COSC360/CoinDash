@@ -6,6 +6,7 @@
 
     if(isset($_SESSION['adminStatusMsg'])){
         echo "<script>window.alert(\"".$_SESSION['adminStatusMsg']."\")</script>";
+        unset($_SESSION['adminStatusMsg']);
     }
 ?>
 <!DOCTYPE html>
