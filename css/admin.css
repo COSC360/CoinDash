@@ -97,7 +97,7 @@ form.example fieldset {
   flex-direction: column; 
 }
 
-#item-2{
+#item-2 form{
   display: flex;
   flex-direction: column; 
 }
