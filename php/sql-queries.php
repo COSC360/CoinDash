@@ -287,7 +287,7 @@ function loginUser($con,$loginID,$loginPassword){
     }
 
     // Set parameters for prepared statement
-    mysqli_stmt_bind_param($loginStmt, "ssss", $loginID,$loginPassword,$loginID,$loginPassword);
+    mysqli_stmt_bind_param($loginStmt, "ssss", $loginID,md5($loginPassword),$loginID,md5($loginPassword));
 
     // Execute prepared statement
     mysqli_stmt_execute($loginStmt);

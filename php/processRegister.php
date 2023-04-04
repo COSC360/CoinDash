@@ -6,8 +6,8 @@
         if(isset($_POST['username']) && isset($_POST['email']) && isset($_POST['password']) && isset($_POST['verifyPassword'])){
             $registerUsername= $_POST['username'];
             $registerEmail = $_POST['email'];
-            $registerPassword = $_POST['password'];
-            $registerVerifyPassword = $_POST['verifyPassword'];
+            $registerPassword = md5($_POST['password']);
+            $registerVerifyPassword = md5($_POST['verifyPassword']);
             $registerSelectedOption = $_POST['selectionMenu'];
 
             //Set default user type and status
