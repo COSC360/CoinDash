@@ -46,7 +46,10 @@
                             <input type="text" placeholder="Search by username . . ." name="searchName">
                             <button type="submit" name="submitName" id="submitName"><i class="fa fa-search"></i></button>
                         </form>
-                        <?php include "userInfoDisplay.php";?>
+                        <?php
+                            $_SESSION['formID'] = "displayByName"; 
+                            include "userInfoDisplay.php";
+                        ?>
                     </div>
 
                     <div id="byEmail" class="tabcontent">
@@ -54,7 +57,10 @@
                             <input type="text" placeholder="Search by email . . ." name="searchEmail">
                             <button type="submit"  name="submitEmail" id="submitEmail"><i class="fa fa-search"></i></button>
                         </form>
-                        <?php include 'userInfoDisplay.php';?>
+                        <?php 
+                            $_SESSION['formID'] = "displayByEmail";
+                            include "userInfoDisplay.php";
+                        ?>
                     </div>
 
                     <div id="byCommentId" class="tabcontent">
@@ -62,7 +68,10 @@
                             <input type="text" placeholder="Search by comment Id . . ." name="searchCommentId">
                             <button type="submit"  name="submitCommentId" id="submitCommentId"><i class="fa fa-search"></i></button>
                         </form>
-                        <?php include 'userInfoDisplay.php';?>
+                        <?php 
+                            $_SESSION['formID'] = "displayByCommentId";
+                            include "userInfoDisplay.php";
+                        ?>
                     </div>
                 </div>
                 <div class = "commentData">

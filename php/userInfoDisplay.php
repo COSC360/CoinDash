@@ -13,7 +13,7 @@
             <button id = "saveUserBtn" type ="submit" form="infoDisplayForm" name="saveUser">Save</button>
         </div>
     </div>
-    <form name = "infoDisplayForm" id ="infoDisplayForm" method = "POST" action="processUpdate.php">
+    <form name = "<?php echo $_SESSION['formID']?>" id ="<?php echo $_SESSION['formID']?>" method = "POST" action="processUpdate.php">
         <div id = "item-2">
             <label>User ID :</label>
             <input type="text" name="userID" value = "<?php echo $_SESSION['RSId']?>">
