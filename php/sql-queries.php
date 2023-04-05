@@ -512,6 +512,7 @@ function searchByUsername($con, $searchName){
         $_SESSION['RSUserStatus'] = $rows['status'];
         $_SESSION['RSRegisterTimestamp'] = $rows['registerationTimestamp'];
         $_SESSION['RSProfilePicture'] = $rows['profilePicture'];
+        $_SESSION['defaultTabID'] = "defaultUsername";
         header('location:admin.php');
     }else{
         $_SESSION['adminStatusMsg'] = "User not found with the given username";
@@ -552,6 +553,7 @@ function searchByEmail($con, $searchEmail){
         $_SESSION['RSUserStatus'] = $rows['status'];
         $_SESSION['RSRegisterTimestamp'] = $rows['registerationTimestamp'];
         $_SESSION['RSProfilePicture'] = $rows['profilePicture'];
+        $_SESSION['defaultTabID'] = "defaultEmail";
         header('location:admin.php');
     }else{
         $_SESSION['adminStatusMsg'] = "User not found with the given email";

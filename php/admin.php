@@ -8,6 +8,10 @@
         echo "<script>window.alert(\"".$_SESSION['adminStatusMsg']."\")</script>";
         unset($_SESSION['adminStatusMsg']);
     }
+
+    if(!isset($_SESSION['defaultTabID'])){
+        $_SESSION['defaultTabID'] = "defaultUsername";
+    }
 ?>
 <!DOCTYPE html>
 <html>
@@ -30,15 +34,15 @@
         <main>
             <div class="tabswitcher">
                 <div class="tab">
-                    <button class="tablinks" onclick="openCity(event, 'byUsername')">By Username</button>
-                    <button class="tablinks" onclick="openCity(event, 'byEmail')">By Email ID</button>
-                    <button class="tablinks" onclick="openCity(event, 'byCommentId')">By Comment ID</button>
+                    <button class="tablinks" onclick="openCity(event, 'byUsername')" id ="defaultUsername">By Username</button>
+                    <button class="tablinks" onclick="openCity(event, 'byEmail')" id ="defaultEmail">By Email ID</button>
+                    <button class="tablinks" onclick="openCity(event, 'byCommentId')" id ="defaultCommentId">By Comment ID</button>
                 </div>
 
                 <div id="byUsername" class="tabcontent">
                     <form class="example" action="processUserInfo.php" method = "POST">
                         <input type="text" placeholder="Search by username . . ." name="searchName">
-                        <button type="submit" name="submitName"><i class="fa fa-search"></i></button>
+                        <button type="submit" name="submitName" id="submitName"><i class="fa fa-search"></i></button>
                     </form>
                     <?php include "userInfoDisplay.php";?>
                 </div>
@@ -46,7 +50,7 @@
                 <div id="byEmail" class="tabcontent">
                     <form class="example" action="processUserInfo.php" method = "POST">
                         <input type="text" placeholder="Search by email . . ." name="searchEmail">
-                        <button type="submit"  name="submitEmail"><i class="fa fa-search"></i></button>
+                        <button type="submit"  name="submitEmail" id="submitEmail"><i class="fa fa-search"></i></button>
                     </form>
                     <?php include 'userInfoDisplay.php';?>
                 </div>
@@ -54,15 +58,13 @@
                 <div id="byCommentId" class="tabcontent">
                     <form class="example" action="processUserInfo.php" method = "POST">
                         <input type="text" placeholder="Search by comment Id . . ." name="searchCommentId">
-                        <button type="submit"  name="submitCommentId"><i class="fa fa-search"></i></button>
+                        <button type="submit"  name="submitCommentId" id="submitCommentId"><i class="fa fa-search"></i></button>
                     </form>
                     <?php include 'userInfoDisplay.php';?>
                 </div>
             </div>
             <script>
-                // Get the element with id="defaultOpen" and click on it
-                const buttons = document.querySelectorAll('button');
-                console.log(buttons);
+                document.getElementById("<?php echo $_SESSION['defaultTabID']?>").click();
             </script>
         </main>    
     </body>
