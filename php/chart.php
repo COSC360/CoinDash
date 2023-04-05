@@ -3,9 +3,6 @@
   include 'modules.php';
 
   retrieveChartData($con);
-
-  //$_SESSION['dataArray']
-  //$_SESSION['countDataArray']
 ?>
 <!DOCTYPE html>
 <html>
@@ -25,7 +22,7 @@ echo
   foreach($_SESSION['dataArray'] as $row){
       echo "xValues.push(\"".$row."\");";
   }
-  foreach($_SESSION['dataArray'] as $row){
+  foreach($_SESSION['countDataArray'] as $row){
       echo "yValues.push(\"".$row."\");";
   }
 echo 
