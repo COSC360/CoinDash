@@ -5,22 +5,22 @@
 }
 
 @media only screen and (min-width: 1600px) {
-  main{
-    min-height: 83vh;
+  body{
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     overflow: hidden;
   }
 }
 
-@media only screen and (max-width: 1600px) {
+/* @media only screen and (max-width: 1600px) {
   main{
     min-height: 78vh;
     display: flex;
     flex-direction: column;
     overflow: hidden;
   }
-}
+} */
 .auth-container{
   display: flex;
   flex-wrap: wrap;
