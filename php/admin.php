@@ -66,7 +66,7 @@
             <script>
                 const infoDisplayForm = document.querySelectorAll("infoDisplayForm");
 
-                console.log(infoDisplayForm[0]);
+                console.log(infoDisplayForm);
                 // document.getElementById("editUserBtn").addEventListener("click", enableField);
                 // const enableUserBtn = document.getElementById("enableUserBtn");
                 // const disableUserBtn = document.getElementById("disableUserBtn");
