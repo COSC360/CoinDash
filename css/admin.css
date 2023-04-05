@@ -184,5 +184,5 @@ canvas{
 .adminTopNav{
   display: flex;
   flex-direction: row;
-  column-gap: 2em;
+  column-gap: 3em;
 }
