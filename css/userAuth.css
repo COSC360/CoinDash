@@ -4,13 +4,23 @@
   }
 }
 
-main{
-  min-height: 83vh;
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
+@media only screen and (min-width: 1600px) {
+  main{
+    min-height: 83vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
 }
 
+@media only screen and (max-width: 1600px) {
+  main{
+    min-height: 78vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+}
 .auth-container{
   display: flex;
   flex-wrap: wrap;
