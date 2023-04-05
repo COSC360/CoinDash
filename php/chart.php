@@ -18,14 +18,14 @@
   var xValues = [];
   <?php
     foreach($_SESSION['countDataArray'] as $row){
-      echo "xValues.push(".$row.")";
+      echo "<script> xValues.push(\"".$row."\") </script>";
     }
   ?>
   var yValues = [];
 
   <?php
     foreach($_SESSION['countDataArray'] as $row){
-      echo "yValues.push(".$row.")";
+      echo "<script> yValues.push(\"".$row."\") <script>";
     }
   ?>
   console.log(yValues);
