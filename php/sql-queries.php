@@ -824,13 +824,13 @@ function saveUser($con, $userID, $username, $password, $email, $comingFrom, $use
     }
 }
 
-function retrieveChartData($con){
+function retrieveRegSourceChartData($con){
     $chartDataSQL = "SELECT comingFrom, COUNT(id) AS userCount FROM `userAuth` GROUP BY comingFrom";
 
     $chartDataStmt = mysqli_stmt_init($con); 
 
-    $dataArray = array();
-    $countDataArray = array();
+    $regSourceDataArray = array();
+    $regSourceCountDataArray = array();
 
     if (!mysqli_stmt_prepare($chartDataStmt, $chartDataSQL)){
         // TODO:
@@ -845,14 +845,52 @@ function retrieveChartData($con){
     $results = mysqli_stmt_get_result($chartDataStmt);
 
     if($rows = $results -> fetch_all(MYSQLI_ASSOC)){
+        mysqli_stmt_close($chartDataStmt);
+        
         foreach($rows as $row){
-            array_push($dataArray, $row['comingFrom']);
-            array_push($countDataArray, $row['userCount']);
+            array_push($regSourceDataArray, $row['comingFrom']);
+            array_push($regSourceCountDataArray, $row['userCount']);
         }
 
-        $_SESSION['dataArray'] = $dataArray;
-        $_SESSION['countDataArray'] = $countDataArray;
+        $_SESSION['regSourceDataArray'] = $regSourceDataArray;
+        $_SESSION['regSourceCountDataArray'] = $regSourceCountDataArray;
     }else{
+        mysqli_stmt_close($chartDataStmt);
+        return false;
+    }  
+}
+
+function retrieveCommentCountChartData($con){
+    $chartDataSQL = "SELECT u.username, c.user_id, COUNT(c.id) AS commentCount FROM `userAuth` AS u JOIN `comment` AS c ON u.id = c.user_id GROUP BY c.user_id";
+
+    $chartDataStmt = mysqli_stmt_init($con); 
+
+    $commentDataArray = array();
+    $commentCountDataArray = array();
+
+    if (!mysqli_stmt_prepare($chartDataStmt, $chartDataSQL)){
+        // TODO:
+        // header("location: REPLACE LATER");
+        $_SESSION['statusMsg'] = "Unable to prepare the SQL statement.";
+        exit();
+    }
+
+    // Execute prepared statement
+    mysqli_stmt_execute($chartDataStmt);
+
+    $results = mysqli_stmt_get_result($chartDataStmt);
+
+    if($rows = $results -> fetch_all(MYSQLI_ASSOC)){
+        mysqli_stmt_close($chartDataStmt);
+        foreach($rows as $row){
+            array_push($commentDataArray, $row['u.username']);
+            array_push($commentCountDataArray, $row['commentCount']);
+        }
+
+        $_SESSION['commentDataArray'] = $commentDataArray;
+        $_SESSION['commentCountDataArray'] = $commentCountDataArray;
+    }else{
+        mysqli_stmt_close($chartDataStmt);
         return false;
     }  
 }

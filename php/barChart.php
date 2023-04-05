@@ -2,26 +2,26 @@
   session_start();
   include 'modules.php';
 
-  retrieveRegSourceChartData($con);
+  retrieveCommentCountChartData($con);
 ?>  
-  <canvas id="doughnut"></canvas>
+  <canvas id="bar"></canvas>
   <?php
   echo
   "<script>
 
     var xValues = [];
     var yValues = [];";
-    foreach($_SESSION['regSourceDataArray'] as $row){
+    foreach($_SESSION['commentDataArray'] as $row){
         echo "xValues.push(\"".$row."\");";
     }
-    foreach($_SESSION['regSourceCountDataArray'] as $row){
+    foreach($_SESSION['commentCountDataArray'] as $row){
         echo "yValues.push(\"".$row."\");";
     }
   echo 
     "var barColors = [\"#00aba9\", \"#2b5797\",\"#b91d47\", \"#1e7145\",\"#e8c3b9\",\"#063970\",\"#48249c\"];
 
-    new Chart(\"doughnut\", {
-      type: \"doughnut\",
+    new Chart(\"bar\", {
+      type: \"bar\",
       data: {
         labels: xValues,
         datasets: [{
@@ -33,7 +33,7 @@
         legend: {display: false},
         title: {
           display: true,
-          text: \"User Registeration Source\"
+          text: \"User Comment Activity\"
         }
       }
     });
