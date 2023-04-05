@@ -92,7 +92,7 @@
                 }
                 
                     function enableField(){
-                        console.log(displayByName[0].disabled);
+                        console.log(document.getElementById("editUserBtn").disabled);
                         for(var i = 0; i < displayByName.length; i++){
                             displayByName[i].disabled = true;
                             displayByEmail[i].disabled = true;
