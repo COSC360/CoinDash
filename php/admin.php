@@ -69,9 +69,11 @@
                 </div>
             </div>
             <script>
-                // const infoDisplayForm = document.forms;
+                const infoDisplayForm = document.forms;
                 
-                // for(var i = 2; i <= 6; i = i + 2){
+                for(var i = 2; i <= 6; i = i + 2){
+                    console.log(infoDisplayForm[i][0]);
+                }
                 //     document.getElementById(infoDisplayForm[i][0].getAttribute("id")).addEventListener("click", enableField);
 
                 //     for(var j = 0; j < infoDisplayForm[i].length; j++){
