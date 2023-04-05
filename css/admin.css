@@ -106,6 +106,10 @@ form.example fieldset {
   align-items: center;
 }
 
+#item-2{
+  overflow-y: scroll;
+}
+
 #item-1 img{
   margin-bottom: 0.5em;
   width: 100%;
