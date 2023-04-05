@@ -56,7 +56,7 @@
         }]
       },
       options: {
-        legend: {responsive: true, display: true, position: 'right', align: 'center'},
+        legend: {display: true, position: 'right', align: 'center'},
         title: {
           display: true,
           text: \"User Registeration Source\"
@@ -70,11 +70,15 @@
         labels: xCommentValues,
         datasets: [{
           backgroundColor: chartColors,
+          borderColor: \"rgba(255,99,132,1)\",
+          borderWidth: 2,
+          hoverBackgroundColor: \"rgba(255,99,132,0.4)\",
+          hoverBorderColor: \"rgba(255,99,132,1)\",
           data: yCommentValues
         }]
       },
       options: {
-        legend: {responsive: true, display: true, position: 'right', align: 'center'},
+        legend: {display: true, position: 'right', align: 'center'},
         title: {
           display: true,
           text: \"User Comment Activity\"
@@ -92,7 +96,7 @@
         }]
       },
       options: {
-        legend: {responsive: true, display: true, position: 'right', align: 'center'},
+        legend: {display: true, position: 'right', align: 'center'},
         title: {
           display: true,
           text: \"User Status Data\"
