@@ -4,8 +4,8 @@
 
   retrieveChartData($con);
 
-  echo $_SESSION['dataArray'];
-  echo $_SESSION['countDataArray'];
+  print_r($_SESSION['dataArray']);
+  print_r($_SESSION['countDataArray']);
 ?>
 <!-- <!DOCTYPE html>
 <html>
