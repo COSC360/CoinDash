@@ -65,11 +65,10 @@
             </div>
             <script>
                 const infoDisplayForm = document.forms;
-                console.log(infoDisplayForm[0]);
-                console.log(infoDisplayForm[1]);
-                console.log(infoDisplayForm[2]);
-                console.log(infoDisplayForm[3]);
-                console.log(infoDisplayForm[4]);
+                console.log(infoDisplayForm[2][0]);
+                console.log(infoDisplayForm[2][1]);
+                console.log(infoDisplayForm[2][2]);
+                console.log(infoDisplayForm[2][3]);
                 // for(var i = 2; i <= 6; i = i + 2){
                 //     document.getElementById("editUserBtn").addEventListener("click", enableField);
                 //     const enableUserBtn = document.getElementById("enableUserBtn");
