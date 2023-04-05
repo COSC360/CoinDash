@@ -101,6 +101,12 @@
           display: true,
           text: \"User Status Data\"
         }
+        plugins: {
+          subtitle: {
+              display: true,
+              text: 'Custom Chart Subtitle'
+          }
+        } 
       }
     });
   </script>";
