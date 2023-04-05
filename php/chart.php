@@ -5,7 +5,6 @@
   retrieveChartData($con);
 ?>  
   <canvas id="doughnut"></canvas>
-  <canvas id="bar"></canvas>
   <?php
   echo
   "<script>
@@ -23,24 +22,6 @@
 
     new Chart(\"doughnut\", {
       type: \"doughnut\",
-      data: {
-        labels: xValues,
-        datasets: [{
-          backgroundColor: barColors,
-          data: yValues
-        }]
-      },
-      options: {
-        legend: {display: false},
-        title: {
-          display: true,
-          text: \"User Registeration Source\"
-        }
-      }
-    });
-
-    new Chart(\"bar\", {
-      type: \"bar\",
       data: {
         labels: xValues,
         datasets: [{

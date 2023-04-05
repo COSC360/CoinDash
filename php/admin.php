@@ -66,7 +66,12 @@
                     </div>
                 </div>
                 <div class = "statistic">
-                    <?php include 'chart.php';?>
+                    <div>
+                        <?php include 'chart.php';?>
+                    </div>
+                    <div>
+                        <?php include 'chart.php';?>
+                    </div>
                 </div>
             </div>
             <script>
