@@ -74,12 +74,12 @@
                 for(var i = 1; i < 6; i = i + 2){
                     document.getElementById(infoDisplayForm[i][0].getAttribute("id")).addEventListener("click", enableField);
 
-                    for(var j = 0; j < infoDisplayForm[i].length; j++){
+                    for(var j = 1; j < infoDisplayForm[i].length; j++){
                         infoDisplayForm[i][j].disabled = true;
                     }
                     
                     function enableField(){
-                        for(var j = 0; j < infoDisplayForm[i].length; j++){
+                        for(var j = 1; j < infoDisplayForm[i].length; j++){
                             infoDisplayForm[i][j].disabled = false;
                         }
                         document.getElementById(infoDisplayForm[i][0].getAttribute("id")).setAttribute("style", "background-color: #2fc363;");
