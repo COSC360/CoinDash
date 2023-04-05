@@ -155,3 +155,8 @@ form.example fieldset {
   flex-direction: column;
   margin-top: 2em;
 }
+
+canvas{
+  position: fixed;
+  left: 50em ;
+}
