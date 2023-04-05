@@ -883,7 +883,7 @@ function retrieveCommentCountChartData($con){
     if($rows = $results -> fetch_all(MYSQLI_ASSOC)){
         mysqli_stmt_close($chartDataStmt);
         foreach($rows as $row){
-            array_push($commentDataArray, $row['u.username']);
+            array_push($commentDataArray, $row['username']);
             array_push($commentCountDataArray, $row['commentCount']);
         }
 
