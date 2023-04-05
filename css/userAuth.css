@@ -4,20 +4,6 @@
   }
 }
 
-/* .auth-container{
-  width: calc(100vw - 4em);
-  height: fit-content;
-  position: relative;
-  top: 0;
-  left: 0;
-  z-index: 10;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  font-size: 1em;
-  padding: 2em;
-  background-color: var(--White-1);
-} */
 .auth-container{
   display: flex;
   flex-wrap: wrap;

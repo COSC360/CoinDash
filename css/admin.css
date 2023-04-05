@@ -159,3 +159,10 @@ canvas{
   width:100%;
   max-width:300px;
 }
+
+.adjust-container{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  row-gap: 5em;
+}
