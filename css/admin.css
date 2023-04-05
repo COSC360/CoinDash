@@ -180,3 +180,9 @@ canvas{
   justify-content: space-between;
   row-gap: 5em;
 }
+
+.adminTopNav{
+  display: flex;
+  flex-direction: row;
+  column-gap: 2em;
+}

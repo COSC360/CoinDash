@@ -1,5 +1,4 @@
 <?php
-    session_set_cookie_params(0);
     session_start();
 ?>
 <header class="container">
@@ -15,12 +14,15 @@
                     <?php
                         if(isset($_SESSION['id']) && $_SESSION['userType'] == "admin"){
                             echo
-                            "<a href=\"https://cosc360.ok.ubc.ca/suyash06/project-JasonR24/php/admin.php\" id=\"stats\">
-                                Stats
-                            </a>
-                            <a href=\"https://cosc360.ok.ubc.ca/suyash06/project-JasonR24/php/admin.php\">
-                                Dashboard
-                            </a>";
+                            "
+                            <div class = \"adminTopNav\">
+                                <a href=\"https://cosc360.ok.ubc.ca/suyash06/project-JasonR24/php/admin.php\" id=\"stats\">
+                                    Analytics
+                                </a>
+                                <a href=\"https://cosc360.ok.ubc.ca/suyash06/project-JasonR24/php/admin.php\">
+                                    Dashboard
+                                </a>
+                            </div>";
                         }else{
                             echo
                             "<a href=\"#\" id=\"search\">
