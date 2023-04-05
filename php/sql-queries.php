@@ -845,8 +845,8 @@ function retrieveChartData($con){
     $results = mysqli_stmt_get_result($chartDataStmt);
 
     if($rows = $results -> fetch_all(MYSQLI_ASSOC)){
+        echo print_r($rows);
         foreach($rows['comingFrom'] as $row){
-            echo $row;
             array_push($dataArray, $row);
         }
         foreach($rows['userCount'] as $row){
