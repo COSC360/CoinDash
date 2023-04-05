@@ -74,7 +74,11 @@
                                 <select name="selectionMenu" id="selectionMenu">
                                     <option value="Google"  selected="selected">Google</option>
                                     <option value="Friend">Friend</option>
-                                    <option value="Social Media">Social Media</option>
+                                    <option value="Yahoo">Yahoo</option>
+                                    <option value="Twitter">Twitter</option>
+                                    <option value="Instagram">Instagram</option>
+                                    <option value="Online Adverstisement">Online Adverstisement</option>
+                                    <option value="Crypto Exchange">Crypto Exchange</option>
                                 </select>
                             </div>
 
