@@ -29,7 +29,10 @@ echo
       echo "yValues.push(\"".$row."\")";
   }
 echo 
-  "var barColors = [\"red\", \"green\",\"blue\"];
+  "
+  console.log(xValues);
+  console.log(yValues);
+  var barColors = [\"red\", \"green\",\"blue\"];
 
   new Chart(\"myChart\", {
     type: \"bar\",
