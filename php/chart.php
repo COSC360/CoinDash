@@ -21,7 +21,7 @@
 <script>
   <?php
     foreach($_SESSION['countDataArray'] as $row){
-      echo "console.log(".$row.")";
+      echo "<script>console.log(".$row.")</script>";
     }
   ?>
   var xValues = ["", "France", "Spain", "USA", "Argentina"];
