@@ -806,7 +806,7 @@ function saveUser($con, $userID, $username, $password, $email, $comingFrom, $use
         }
 
         // Set parameters for prepared statement
-        mysqli_stmt_bind_param($updateStmt, "si", $username, $password, $email, $comingFrom, $userType, $status, $regTimestamp, $userID);
+        mysqli_stmt_bind_param($updateStmt, "sssssssi", $username, $password, $email, $comingFrom, $userType, $status, $regTimestamp, $userID);
 
         // Execute prepared statement
         mysqli_stmt_execute($updateStmt);
