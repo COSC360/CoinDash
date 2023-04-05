@@ -101,10 +101,6 @@
           display: true,
           text: \"User Status Data\"
         }        
-        subtitle: {
-            display: true,
-            text: \"Custom Chart Subtitle\"
-        }
       }
     });
   </script>";
