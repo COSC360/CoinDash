@@ -296,7 +296,7 @@ function loginUser($con,$loginID,$loginPassword){
         $_SESSION["username"] = $rows['username'];
         $_SESSION["userType"] = $rows['userType'];
         $_SESSION["email"] = $rows['email'];
-        $_SESSION["password"] = $rows['password'];
+        $_SESSION["password"] = $loginPassword;
         $_SESSION["id"] = $rows['id'];
         $_SESSION["profilePicture"] = $rows['profilePicture'];
 
@@ -469,7 +469,7 @@ function updateUser($con,$userEmail,$userPassword){
     
     
         // Set parameters for prepared statement
-        mysqli_stmt_bind_param($updateStmt, "ssi", $userEmail,$userPassword, $_SESSION['id']);
+        mysqli_stmt_bind_param($updateStmt, "ssi", $userEmail,md5($userPassword), $_SESSION['id']);
     
         // Execute prepared statement
         mysqli_stmt_execute($updateStmt);
