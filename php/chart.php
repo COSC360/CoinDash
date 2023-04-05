@@ -5,6 +5,7 @@
   retrieveChartData($con);
 ?>  
   <canvas id="myChart"></canvas>
+  <canvas id="myChart"></canvas>
   <?php
   echo
   "<script>
