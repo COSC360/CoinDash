@@ -166,6 +166,11 @@ form.example fieldset {
   display: grid;
   grid-template-columns: 30vw 30vw;
   grid-template-rows: auto auto;
+  margin-left: 5em;
+  margin-right: 5em;
+  margin-bottom: 5em;
+  background: #202020;
+  border-radius: 2em;
 }
 
 canvas{
