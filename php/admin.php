@@ -70,7 +70,6 @@
                         <?php include 'chart.php';?>
                     </div>
                     <div>
-                        <?php include 'chart.php';?>
                     </div>
                 </div>
             </div>
