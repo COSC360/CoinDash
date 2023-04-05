@@ -505,7 +505,7 @@ function searchByUsername($con, $searchName){
         $_SESSION['RSId'] = $rows['id'];
         $_SESSION['RSUsername'] = $rows['username'];
         $_SESSION['RSEmail'] = $rows['email'];
-        $_SESSION['RSPassword'] = $rows['password'];
+        // $_SESSION['RSPassword'] = $rows['password'];
         $_SESSION['RSComingFrom'] = $rows['comingFrom'];
         $_SESSION['RSUserType'] = $rows['userType'];
         $_SESSION['RSUserStatus'] = $rows['status'];
@@ -546,7 +546,7 @@ function searchByEmail($con, $searchEmail){
         $_SESSION['RSId'] = $rows['id'];
         $_SESSION['RSUsername'] = $rows['username'];
         $_SESSION['RSEmail'] = $rows['email'];
-        $_SESSION['RSPassword'] = $rows['password'];
+        // $_SESSION['RSPassword'] = $rows['password'];
         $_SESSION['RSComingFrom'] = $rows['comingFrom'];
         $_SESSION['RSUserType'] = $rows['userType'];
         $_SESSION['RSUserStatus'] = $rows['status'];
@@ -591,7 +591,7 @@ function searchByCommentId($con, $searchCommentId){
         $_SESSION['RSId'] = $rows['id'];
         $_SESSION['RSUsername'] = $rows['username'];
         $_SESSION['RSEmail'] = $rows['email'];
-        $_SESSION['RSPassword'] = $rows['password'];
+        // $_SESSION['RSPassword'] = $rows['password'];
         $_SESSION['RSComingFrom'] = $rows['comingFrom'];
         $_SESSION['RSUserType'] = $rows['userType'];
         $_SESSION['RSUserStatus'] = $rows['status'];
@@ -767,7 +767,7 @@ function deleteUser($con, $userID){
     }
 }
 
-function saveUser($con, $userID, $username, $password, $email, $comingFrom, $userType, $status, $regTimestamp){
+function saveUser($con, $userID, $username, $password, $email, $comingFrom, $userType, $status){
 
 }
 ?>

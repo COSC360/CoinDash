@@ -2,7 +2,7 @@
     include "modules.php";
     
     $errMsg = '';
-    echo "On PHP Page<br>";
+
     if(isset($_POST['submitName']) && $_SERVER["REQUEST_METHOD"] == "POST"){
         if(isset($_POST['searchName'])){
             $searchName = $_POST['searchName'];

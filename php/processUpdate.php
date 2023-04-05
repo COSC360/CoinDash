@@ -29,7 +29,15 @@
             deleteUser($con, $userID);
         }
     }elseif(isset($_POST['saveUser']) && $_SERVER["REQUEST_METHOD"] == "POST"){
-
+        if(isset($_POST['userID']) && isset($_POST['username']) && isset($_POST['userpassword']) && isset($_POST['email']) && isset($_POST['comingFrom']) && isset($_POST['userType']) && isset($_POST['status']) && isset($_POST['regTimestamp'])){
+            $userID
+            $username
+            $password
+            $email
+            $comingFrom
+            $userType
+            $status
+        }
     }else{
         $errMsg = 'Invalid Request Type !';
         echo "<script>console.log(\"".$errMsg."\")</script>";
