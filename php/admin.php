@@ -65,28 +65,32 @@
             </div>
             <script>
                 const infoDisplayForm = document.forms;
+                console.log(infoDisplayForm[0]);
+                console.log(infoDisplayForm[1]);
+                console.log(infoDisplayForm[2]);
+                console.log(infoDisplayForm[3]);
+                console.log(infoDisplayForm[4]);
+                // for(var i = 2; i <= 6; i = i + 2){
+                //     document.getElementById("editUserBtn").addEventListener("click", enableField);
+                //     const enableUserBtn = document.getElementById("enableUserBtn");
+                //     const disableUserBtn = document.getElementById("disableUserBtn");
+                //     const deleteUserBtn = document.getElementById("deleteUserBtn");
+                //     const saveUserBtn = document.getElementById("saveUserBtn");
 
-                for(var i = 2; i <= 6; i = i + 2){
-                    document.getElementById("editUserBtn").addEventListener("click", enableField);
-                    const enableUserBtn = document.getElementById("enableUserBtn");
-                    const disableUserBtn = document.getElementById("disableUserBtn");
-                    const deleteUserBtn = document.getElementById("deleteUserBtn");
-                    const saveUserBtn = document.getElementById("saveUserBtn");
-
-                    for(var j = 0; j < infoDisplayForm[i].length; j++){
-                        infoDisplayForm[i][j].disabled = true;
-                    }
+                //     for(var j = 0; j < infoDisplayForm[i].length; j++){
+                //         infoDisplayForm[i][j].disabled = true;
+                //     }
                     
-                    function enableField(){
-                        for(var j = 0; j < infoDisplayForm.length; j++){
-                            infoDisplayForm[i][j].disabled = false;
-                        }
-                        enableUserBtn.setAttribute("style", "background-color: #2fc363;");
-                        disableUserBtn.setAttribute("style", "background-color: #2fc363;");
-                        deleteUserBtn.setAttribute("style", "background-color: #2fc363;");
-                        saveUserBtn.setAttribute("style", "background-color: #2fc363;");
-                    }
-                }
+                //     function enableField(){
+                //         for(var j = 0; j < infoDisplayForm.length; j++){
+                //             infoDisplayForm[i][j].disabled = false;
+                //         }
+                //         enableUserBtn.setAttribute("style", "background-color: #2fc363;");
+                //         disableUserBtn.setAttribute("style", "background-color: #2fc363;");
+                //         deleteUserBtn.setAttribute("style", "background-color: #2fc363;");
+                //         saveUserBtn.setAttribute("style", "background-color: #2fc363;");
+                //     }
+                // }
 
                 document.getElementById("<?php echo $_SESSION['defaultTabID']?>").click();
             </script>
