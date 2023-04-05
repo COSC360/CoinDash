@@ -845,7 +845,7 @@ function retrieveChartData($con){
     $results = mysqli_stmt_get_result($chartDataStmt);
 
     if($rows = $results -> fetch_assoc()){
-        print_r($rows);
+        print_r($rows['comingFrom']);
         // foreach($rows['comingFrom'] as $row){
         //     array_push($dataArray, $row);
         // }
