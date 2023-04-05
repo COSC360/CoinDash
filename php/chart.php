@@ -3,10 +3,6 @@
   include 'modules.php';
 
   retrieveChartData($con);
-
-  // print_r($_SESSION['dataArray']);
-
-  // print_r($_SESSION['countDataArray']);
 ?>
 <!DOCTYPE html>
 <html>
@@ -19,14 +15,21 @@
 <canvas id="myChart" style="width:100%;max-width:600px"></canvas>
 
 <script>
+  var xValues = [];
   <?php
     foreach($_SESSION['countDataArray'] as $row){
-      echo "<script>console.log(".$row.")</script>";
+      echo "xValues.push(".$row.")";
     }
   ?>
-  var xValues = ["", "France", "Spain", "USA", "Argentina"];
-  var yValues = [55, 49, 44, 24, 15];
-  var barColors = ["red", "green","blue","orange","brown"];
+  var yValues = [];
+
+  <?php
+    foreach($_SESSION['countDataArray'] as $row){
+      echo "yValues.push(".$row.")";
+    }
+  ?>
+
+  var barColors = ["red", "green","blue"];
 
   new Chart("myChart", {
     type: "bar",
