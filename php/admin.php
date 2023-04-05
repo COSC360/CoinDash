@@ -67,10 +67,7 @@
                 </div>
                 <div class = "statistic">
                     <div>
-                        <?php include 'doughnutChart.php';?>
-                    </div>
-                    <div>
-                        <?php include 'barChart.php';?>
+                        <?php include 'chart.php';?>
                     </div>
                 </div>
             </div>
