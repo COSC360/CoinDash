@@ -49,6 +49,9 @@
             infoDisplayForm[i].disabled = false;
         }
         enableUserBtn.setAttribute("style", "background-color: #2fc363;");
+        disableUserBtn.setAttribute("style", "background-color: #2fc363;");
+        deleteUserBtn.setAttribute("style", "background-color: #2fc363;");
+        saveUserBtn.setAttribute("style", "background-color: #2fc363;");
     }
 
 
