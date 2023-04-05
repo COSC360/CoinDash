@@ -163,11 +163,13 @@ form.example fieldset {
 
 .canvasData{
   display: grid;
+  margin-top: auto;
   grid-template-columns: auto auto;
   grid-template-rows: auto auto;
 }
 
 canvas{
+  margin-top: auto;
   width:100%;
   max-width: 20vw;
 }
