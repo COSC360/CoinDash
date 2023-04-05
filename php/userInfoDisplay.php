@@ -33,13 +33,6 @@
     </form>    
 </div>
 <script>
-    const infoDisplayForm = document.forms["infoDisplayForm"];
-    document.getElementById("editUserBtn").addEventListener("click", enableField);
-    const enableUserBtn = document.getElementById("enableUserBtn");
-    const disableUserBtn = document.getElementById("disableUserBtn");
-    const deleteUserBtn = document.getElementById("deleteUserBtn");
-    const saveUserBtn = document.getElementById("saveUserBtn");
-
     for(var i = 0; i < infoDisplayForm.length; i++){
         infoDisplayForm[i].disabled = true;
     }
