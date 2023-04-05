@@ -163,8 +163,8 @@ form.example fieldset {
 
 .canvasData{
   display: flex;
-  flex-direction: row;
-  /* row-gap: 2em; */
+  flex-direction: column;
+  row-gap: 2em;
   height: fit-content;
 }
 
