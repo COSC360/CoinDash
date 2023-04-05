@@ -78,8 +78,12 @@
                 </div>
             </div>
             <script>
-                const infoDisplayForm = document.forms;
-                console.log(infoDisplayForm);
+                const displayByName = document.forms['displayByName'];
+                const displayByEmail = document.forms['displayByEmail'];
+                const displayByCommentId = document.forms['displayByCommentId'];
+                console.log(displayByName[0]);
+                console.log(displayByEmail[0]);
+                console.log(displayByCommentId[0]);
                 //     document.getElementById(infoDisplayForm[i][0].getAttribute("id")).addEventListener("click", enableField);
 
                 //     for(var j = 0; j < infoDisplayForm[i].length; j++){
