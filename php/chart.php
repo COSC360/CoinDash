@@ -3,8 +3,6 @@
   include 'modules.php';
 
   retrieveChartData($con);
-
-  var_dump($_SESSION['dataArray']);
 ?>
 <!-- <!DOCTYPE html>
 <html>

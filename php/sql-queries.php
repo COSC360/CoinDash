@@ -853,7 +853,9 @@ function retrieveChartData($con){
         }
         $_SESSION['dataArray'] = $dataArray;
         $_SESSION['countDataArray'] =  $countDataArray;
-        
+        print_r($dataArray);
+        print_r($countDataArray);
+
     }else{
         return false;
     }  
