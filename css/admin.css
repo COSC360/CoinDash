@@ -169,10 +169,11 @@ form.example fieldset {
 
 canvas{
   width:100%;
-  max-width:600px;
+  max-width: 20vw;
 }
 
 canvas #doughnut{
+  margin-top: auto;
   grid-column-start: 0;
   grid-row-start: 0;
 }
