@@ -64,26 +64,26 @@
                 </div>
             </div>
             <script>
-                const infoDisplayForm = document.forms;
+                // const infoDisplayForm = document.forms;
                 
-                for(var i = 2; i <= 6; i = i + 2){
-                    document.getElementById(infoDisplayForm[i][0].getAttribute("id")).addEventListener("click", enableField);
+                // for(var i = 2; i <= 6; i = i + 2){
+                //     document.getElementById(infoDisplayForm[i][0].getAttribute("id")).addEventListener("click", enableField);
 
-                    for(var j = 0; j < infoDisplayForm[i].length; j++){
-                        infoDisplayForm[i][j].disabled = true;
-                    }
+                //     for(var j = 0; j < infoDisplayForm[i].length; j++){
+                //         infoDisplayForm[i][j].disabled = true;
+                //     }
                     
-                    function enableField(){
-                        for(var j = 0; j < infoDisplayForm[i].length; j++){
-                            infoDisplayForm[i][j].disabled = false;
-                        }
-                        document.getElementById(infoDisplayForm[i][0].getAttribute("id")).setAttribute("style", "background-color: #2fc363;");
-                        document.getElementById(infoDisplayForm[i][1].getAttribute("id")).setAttribute("style", "background-color: #2fc363;");
-                        document.getElementById(infoDisplayForm[i][2].getAttribute("id")).setAttribute("style", "background-color: #2fc363;");
-                        document.getElementById(infoDisplayForm[i][3].getAttribute("id")).setAttribute("style", "background-color: #2fc363;");
-                    }
-                }
-                console.log(document.getElementById(infoDisplayForm[i][0].getAttribute("id")).disaled);
+                //     function enableField(){
+                //         for(var j = 0; j < infoDisplayForm[i].length; j++){
+                //             infoDisplayForm[i][j].disabled = false;
+                //         }
+                //         document.getElementById(infoDisplayForm[i][0].getAttribute("id")).setAttribute("style", "background-color: #2fc363;");
+                //         document.getElementById(infoDisplayForm[i][1].getAttribute("id")).setAttribute("style", "background-color: #2fc363;");
+                //         document.getElementById(infoDisplayForm[i][2].getAttribute("id")).setAttribute("style", "background-color: #2fc363;");
+                //         document.getElementById(infoDisplayForm[i][3].getAttribute("id")).setAttribute("style", "background-color: #2fc363;");
+                //     }
+                // }
+                // console.log(document.getElementById(infoDisplayForm[i][0].getAttribute("id")).disaled);
                 document.getElementById("<?php echo $_SESSION['defaultTabID']?>").click();
             </script>
         </main>    
