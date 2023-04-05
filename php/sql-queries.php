@@ -894,5 +894,41 @@ function retrieveCommentCountChartData($con){
         return false;
     }  
 }
+
+function retrieveUserStatusChartData($con){
+    $chartDataSQL = "SELECT `status`, COUNT(id) AS userCount FROM `userAuth` GROUP BY `status`";
+
+    $chartDataStmt = mysqli_stmt_init($con); 
+
+    $statusDataArray = array();
+    $statusCountDataArray = array();
+
+    if (!mysqli_stmt_prepare($chartDataStmt, $chartDataSQL)){
+        // TODO:
+        // header("location: REPLACE LATER");
+        $_SESSION['statusMsg'] = "Unable to prepare the SQL statement.";
+        exit();
+    }
+
+    // Execute prepared statement
+    mysqli_stmt_execute($chartDataStmt);
+
+    $results = mysqli_stmt_get_result($chartDataStmt);
+
+    if($rows = $results -> fetch_all(MYSQLI_ASSOC)){
+        mysqli_stmt_close($chartDataStmt);
+        
+        foreach($rows as $row){
+            array_push($statusDataArray, $row['status']);
+            array_push($statusCountDataArray, $row['userCount']);
+        }
+
+        $_SESSION['statusDataArray'] = $statusDataArray;
+        $_SESSION['statusCountDataArray'] = $statusCountDataArray;
+    }else{
+        mysqli_stmt_close($chartDataStmt);
+        return false;
+    }      
+}
 ?>
 

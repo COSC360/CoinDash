@@ -74,12 +74,12 @@
                     </div>
                 </div>
         </main>
-<?php
-    include "footer.php";
-    if(isset($_GET["errmsg"])){
-        echo "<script>alert('".$_GET["errmsg"]."');</script>";
-    }
-?>
+    <?php
+        include "footer.php";
+        if(isset($_GET["errmsg"])){
+            echo "<script>alert('".$_GET["errmsg"]."');</script>";
+        }
+    ?>
 </body>
 
 </html>
