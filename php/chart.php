@@ -39,7 +39,7 @@
       }
     });
 
-    new Chart(\"doughnut\", {
+    new Chart(\"bar\", {
       type: \"bar\",
       data: {
         labels: xValues,
