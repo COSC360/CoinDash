@@ -28,7 +28,7 @@
     "
     console.log(xValues);
     console.log(yValues);
-    var barColors = [\"red\", \"green\",\"blue\"];
+    var barColors = [\"#00aba9\", \"#2b5797\",\"#b91d47\"];
 
     new Chart(\"myChart\", {
       type: \"doughnut\",
