@@ -56,7 +56,7 @@
         }]
       },
       options: {
-        legend: {display: true},
+        legend: {display: true, position: right},
         title: {
           display: true,
           text: \"User Registeration Source\"
@@ -74,7 +74,7 @@
         }]
       },
       options: {
-        legend: {display: false},
+        legend: {display: true, position: right},
         title: {
           display: true,
           text: \"User Comment Activity\"
@@ -92,7 +92,7 @@
         }]
       },
       options: {
-        legend: {display: true},
+        legend: {display: true, position: right},
         title: {
           display: true,
           text: \"User Status Data\"
