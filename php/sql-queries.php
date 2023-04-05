@@ -845,18 +845,13 @@ function retrieveChartData($con){
     $results = mysqli_stmt_get_result($chartDataStmt);
 
     if($rows = $results -> fetch_all(MYSQLI_ASSOC)){
-        print_r($rows);
-        foreach($rows['comingFrom'] as $row){
-            print($row);
-            // array_push($dataArray, $row);
+        foreach($rows as $row){
+            array_push($dataArray, $row['comingFrom']);
+            array_push($countDataArray, $row['userCount']);
         }
-        foreach($rows['userCount'] as $row){
-            print($row);
-            // array_push($countDataArray, $row);
-        }
-        // $_SESSION['dataArray'] = $dataArray;
-        // $_SESSION['countDataArray'] =  $countDataArray;
 
+        $_SESSION['dataArray'] = $dataArray;
+        $_SESSION['countDataArray'] = $countDataArray;
     }else{
         return false;
     }  

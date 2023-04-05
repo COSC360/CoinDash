@@ -3,6 +3,9 @@
   include 'modules.php';
 
   retrieveChartData($con);
+
+  echo $_SESSION['dataArray'];
+  echo $_SESSION['countDataArray'];
 ?>
 <!-- <!DOCTYPE html>
 <html>
