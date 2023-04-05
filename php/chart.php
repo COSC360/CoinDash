@@ -13,36 +13,39 @@
 <body>
 
 <canvas id="myChart" style="width:100%;max-width:600px"></canvas>
-<?php
+  <?php
+    foreach($_SESSION['dataArray'] as $row){
+      echo 
+      "var xValues = [];
+      <script> xValues.push(\"".$row."\") </script>";
+    }
+
     foreach($_SESSION['countDataArray'] as $row){
-      echo "<script>console.log(\"".$row."\") </script>";
+      echo 
+      "var yValues = [];
+      <script> xValues.push(\"".$row."\") </script>";
     }
-  ?>
-<script>
 
-  var xValues = [];
-  var yValues = [];
+    echo 
+    "var barColors = [\"red\", \"green\",\"blue\"];
 
-  console.log(yValues);
-  var barColors = ["red", "green","blue"];
-
-  new Chart("myChart", {
-    type: "bar",
-    data: {
-      labels: xValues,
-      datasets: [{
-        backgroundColor: barColors,
-        data: yValues
-      }]
-    },
-    options: {
-      legend: {display: false},
-      title: {
-        display: true,
-        text: "World Wine Production 2018"
+    new Chart(\"myChart\", {
+      type: \"bar\",
+      data: {
+        labels: xValues,
+        datasets: [{
+          backgroundColor: barColors,
+          data: yValues
+        }]
+      },
+      options: {
+        legend: {display: false},
+        title: {
+          display: true,
+          text: \"World Wine Production 2018\"
+        }
       }
-    }
-  });
-</script>
+    });";
+  ?>
 
 </body>
