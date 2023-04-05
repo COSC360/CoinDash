@@ -67,8 +67,6 @@
                 </div>
                 <div>
                     <?php include 'chart.php';?>
-                    <?php include 'chart.php';?>
-                    <?php include 'chart.php';?>
                 </div>
             </div>
             <script>
