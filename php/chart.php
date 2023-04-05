@@ -8,7 +8,7 @@
   echo
   "
   <canvas id=\"doughnut\"></canvas>
-  
+  <canvas id=\"bar\"></canvas>
   <script>
 
     var xRegSourceValues = [];
@@ -40,35 +40,35 @@
       }
     });";
 
-    echo 
-    "
-    var xCommentValues = [];
-    var yCommentValues = [];";
-    foreach($_SESSION['commentDataArray'] as $row){
-      echo "xCommentValues.push(\"".$row."\");";
-    }
-    foreach($_SESSION['commentCountDataArray'] as $row){
-        echo "yCommentValues.push(\"".$row."\");";
-    }
-    echo
-    "var barColors = [\"#00aba9\", \"#2b5797\",\"#b91d47\", \"#1e7145\",\"#e8c3b9\",\"#063970\",\"#48249c\"];
+    // echo 
+    // "
+    // var xCommentValues = [];
+    // var yCommentValues = [];";
+    // foreach($_SESSION['commentDataArray'] as $row){
+    //   echo "xCommentValues.push(\"".$row."\");";
+    // }
+    // foreach($_SESSION['commentCountDataArray'] as $row){
+    //     echo "yCommentValues.push(\"".$row."\");";
+    // }
+    // echo
+    // "var barColors = [\"#00aba9\", \"#2b5797\",\"#b91d47\", \"#1e7145\",\"#e8c3b9\",\"#063970\",\"#48249c\"];
 
-    new Chart(\"bar\", {
-      type: \"bar\",
-      data: {
-        labels: xCommentValues,
-        datasets: [{
-          backgroundColor: barColors,
-          data: yCommentValues
-        }]
-      },
-      options: {
-        legend: {display: false},
-        title: {
-          display: true,
-          text: \"User Comment Activity\"
-        }
-      }
-    });
+    // new Chart(\"bar\", {
+    //   type: \"bar\",
+    //   data: {
+    //     labels: xCommentValues,
+    //     datasets: [{
+    //       backgroundColor: barColors,
+    //       data: yCommentValues
+    //     }]
+    //   },
+    //   options: {
+    //     legend: {display: false},
+    //     title: {
+    //       display: true,
+    //       text: \"User Comment Activity\"
+    //     }
+    //   }
+    // });
   </script>";
   ?>
