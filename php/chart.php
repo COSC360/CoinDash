@@ -56,7 +56,7 @@
         }]
       },
       options: {
-        legend: {display: false},
+        legend: {display: true},
         title: {
           display: true,
           text: \"User Registeration Source\"
@@ -92,7 +92,7 @@
         }]
       },
       options: {
-        legend: {display: false},
+        legend: {display: true},
         title: {
           display: true,
           text: \"User Status Data\"
