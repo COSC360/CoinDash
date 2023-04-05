@@ -28,7 +28,7 @@
       echo "yValues.push(".$row.")";
     }
   ?>
-
+  console.log(yValues);
   var barColors = ["red", "green","blue"];
 
   new Chart("myChart", {
