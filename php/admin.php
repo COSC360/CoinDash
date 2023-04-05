@@ -81,7 +81,7 @@
                 const displayByName = document.forms['displayByName'];
                 const displayByEmail = document.forms['displayByEmail'];
                 const displayByCommentId = document.forms['displayByCommentId'];
-                console.log(displayByName[0]);
+                console.log(document.getElementById("enableUserBtn"));
                 // document.getElementById("enableUserBtn").addEventListener("click", enableField);
 
                 for(var i = 0; i < displayByName.length; i++){
