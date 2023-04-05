@@ -70,6 +70,7 @@
                         <?php include 'doughnutChart.php';?>
                     </div>
                     <div>
+                        <?php include 'barChart.php';?>
                     </div>
                 </div>
             </div>
