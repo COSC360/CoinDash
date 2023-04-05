@@ -157,6 +157,6 @@ form.example fieldset {
 }
 
 canvas{
-  position: fixed;
-  left: 50em ;
+  position: absolute;
+
 }
