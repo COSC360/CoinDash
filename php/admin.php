@@ -65,10 +65,7 @@
                         <?php include 'userInfoDisplay.php';?>
                     </div>
                 </div>
-                <div class = "statistic">
-                    <div>
-                        <?php include 'chart.php';?>
-                    </div>
+                <div class = "commentData">
                 </div>
             </div>
             <script>

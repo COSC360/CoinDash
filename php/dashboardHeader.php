@@ -16,7 +16,7 @@
                             echo
                             "
                             <div class = \"adminTopNav\">
-                                <a href=\"https://cosc360.ok.ubc.ca/suyash06/project-JasonR24/php/admin.php\" id=\"stats\">
+                                <a href=\"https://cosc360.ok.ubc.ca/suyash06/project-JasonR24/php/adminAnalytics.php\" id=\"stats\">
                                     Analytics
                                 </a>
                                 <a href=\"https://cosc360.ok.ubc.ca/suyash06/project-JasonR24/php/admin.php\">
