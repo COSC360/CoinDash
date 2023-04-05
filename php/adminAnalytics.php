@@ -17,12 +17,14 @@
     <title>Admin Analytics</title>
 </head>
 <body>
-    <?php
-        include "dashboardHeader.php";
-    ?>
-    <?php 
-        include 'chart.php';
-    ?>    
+    <main>
+        <?php
+            include "dashboardHeader.php";
+        ?>
+        <?php 
+            include 'chart.php';
+        ?>    
+    </main>
 </body>
 </html>
                  
