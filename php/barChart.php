@@ -9,8 +9,8 @@
   echo
   "<script>
 
-    var xValues = [\"hi\"];
-    var yValues = [\"1\"];";
+    var xValues = [\""hi"\"];
+    var yValues = [\""1"\"];";
     // foreach($_SESSION['commentDataArray'] as $row){
     //     echo "xValues.push(\"".$row."\");";
     // }
