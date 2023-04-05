@@ -174,5 +174,7 @@ canvas{
 }
 
 .statistic{
+  display: flex;
+  flex-direction: column;
   height: fit-content;
 }
