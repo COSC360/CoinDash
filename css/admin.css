@@ -151,5 +151,7 @@ form.example fieldset {
 }
 
 .btnGroup{
+  display: flex;
+  flex-direction: column;
   margin-top: 2em;
 }
