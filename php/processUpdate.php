@@ -29,14 +29,16 @@
             deleteUser($con, $userID);
         }
     }elseif(isset($_POST['saveUser']) && $_SERVER["REQUEST_METHOD"] == "POST"){
-        if(isset($_POST['userID']) && isset($_POST['username']) && isset($_POST['userpassword']) && isset($_POST['email']) && isset($_POST['comingFrom']) && isset($_POST['userType']) && isset($_POST['status']) && isset($_POST['regTimestamp'])){
-            $userID
-            $username
-            $password
-            $email
-            $comingFrom
-            $userType
-            $status
+        if(isset($_POST['userID']) && isset($_POST['username']) && isset($_POST['password']) && isset($_POST['email']) && isset($_POST['comingFrom']) && isset($_POST['userType']) && isset($_POST['status']) && isset($_POST['regTimestamp'])){
+            $userID = $_POST['userID'];
+            $username = $_POST['username'];
+            $password = $_POST['password'];
+            $email = $_POST['email'];
+            $comingFrom = $_POST['comingFrom'];
+            $userType = $_POST['userType'];
+            $status = $_POST['status'];
+            $regTimestamp = $_POST['regTimestamp'];
+            saveUser($con, $userID, $username, $password, $email, $comingFrom, $userType, $status,$regTimestamp);
         }
     }else{
         $errMsg = 'Invalid Request Type !';

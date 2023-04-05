@@ -620,7 +620,7 @@ function enableUser($con, $userID){
     }
 
     // Set parameters for prepared statement
-    mysqli_stmt_bind_param($existingUserStmt, "s", $userID);
+    mysqli_stmt_bind_param($existingUserStmt, "i", $userID);
 
     // Execute prepared statement
     mysqli_stmt_execute($existingUserStmt);
@@ -676,7 +676,7 @@ function disableUser($con, $userID){
     }
 
     // Set parameters for prepared statement
-    mysqli_stmt_bind_param($existingUserStmt, "s", $userID);
+    mysqli_stmt_bind_param($existingUserStmt, "i", $userID);
 
     // Execute prepared statement
     mysqli_stmt_execute($existingUserStmt);
@@ -767,7 +767,60 @@ function deleteUser($con, $userID){
     }
 }
 
-function saveUser($con, $userID, $username, $password, $email, $comingFrom, $userType, $status){
+function saveUser($con, $userID, $username, $password, $email, $comingFrom, $userType, $status, $regTimestamp){
+    $existingUserSQL = "SELECT * FROM `userAuth` WHERE  `id` = ?";
 
+    $existingUserStmt = mysqli_stmt_init($con);
+
+    if (!mysqli_stmt_prepare($existingUserStmt, $existingUserSQL)){
+        // TODO:
+        // header("location: REPLACE LATER");
+        $_SESSION['adminStatusMsg'] = "Unable to prepare the SQL statement.";
+
+        exit();
+    }
+
+    // Set parameters for prepared statement
+    mysqli_stmt_bind_param($existingUserStmt, "i", $userID);
+
+    // Execute prepared statement
+    mysqli_stmt_execute($existingUserStmt);
+
+    $results = mysqli_stmt_get_result($existingUserStmt);
+    
+    if($rows = $results -> fetch_assoc()){
+        mysqli_stmt_close($existingUserStmt);
+
+        $updateSQL = "UPDATE `userAuth` SET `username` = ?, `password` = ?, `email` = ?, `comingFrom` = ?, `userType` = ?, `status` = ?, `registerationTimestamp` = ? WHERE `id` = ?";
+
+        $userStatus = "enabled";
+
+        $updateStmt = mysqli_stmt_init($con); 
+    
+    
+        if (!mysqli_stmt_prepare($updateStmt, $updateSQL)){
+            // TODO:
+            // header("location: REPLACE LATER");
+            $$_SESSION['adminStatusMsg'] = "Unable to prepare the SQL statement.";
+            exit();
+        }
+
+        // Set parameters for prepared statement
+        mysqli_stmt_bind_param($updateStmt, "si", $username, $password, $email, $comingFrom, $userType, $status, $regTimestamp, $userID);
+
+        // Execute prepared statement
+        mysqli_stmt_execute($updateStmt);
+    
+        mysqli_stmt_close($updateStmt);   
+
+        $_SESSION['adminStatusMsg'] = "New details for user with ID : ".$userID." have been updated !";
+
+        header('location:admin.php');
+
+    }else{
+        $statusMsg = "User does not exist !";
+        echo "<script>console.log(\"".$statusMsg."\")script>";
+        return false;       
+    }
 }
 ?>
