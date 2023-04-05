@@ -66,7 +66,12 @@
             <script>
                 const infoDisplayForm = document.forms;
 
-                console.log(infoDisplayForm);
+                const searchByNameForm = infoDisplayForm[2];
+                const searchByEmailForm = infoDisplayForm[4];
+                const searchByCommentIdForm = infoDisplayForm[6];
+                
+                console.log(searchByNameForm[0]);
+                console.log(infoDisplayForm[2][0]);
                 // document.getElementById("editUserBtn").addEventListener("click", enableField);
                 // const enableUserBtn = document.getElementById("enableUserBtn");
                 // const disableUserBtn = document.getElementById("disableUserBtn");
