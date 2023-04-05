@@ -81,12 +81,10 @@
                 const displayByName = document.forms['displayByName'];
                 const displayByEmail = document.forms['displayByEmail'];
                 const displayByCommentId = document.forms['displayByCommentId'];
-    
-                console.log(displayByName[0].getAttribute("id"));
-                console.log(displayByEmail[0].getAttribute("id"));
-                console.log(displayByCommentId[0].getAttribute("id"));
 
-                document.getElementById(displayByName).addEventListener("click", enableField);
+                document.getElementById(displayByName[0].getAttribute("id")).addEventListener("click", enableField);
+                // document.getElementById(displayByEmail[0].getAttribute("id")).addEventListener("click", enableField);
+                // document.getElementById(displayByCommentId[0].getAttribute("id")).addEventListener("click", enableField);
 
                 for(var i = 0; i < displayByName.length; i++){
                     displayByName[i].disabled = true;
@@ -94,13 +92,13 @@
                     displayByCommentId[i].disabled = true;
                 }
                 
-                // function enableField(){
-                //     for(var i = 0; i < displayByName.length; i++){
-                //         displayByName[i].disabled = true;
-                //         // displayByEmail[i].disabled = true;
-                //         // displayByCommentId[i].disabled = true;
-                //     }
-                // }
+                    function enableField(){
+                        for(var i = 0; i < displayByName.length; i++){
+                            displayByName[i].disabled = true;
+                            // displayByEmail[i].disabled = true;
+                            // displayByCommentId[i].disabled = true;
+                        }
+                    }
                 // document.getElementById("enableUserBtn").setAttribute("style", "background-color: #2fc363;");
                 // document.getElementById("enableUserBtn").setAttribute("style", "background-color: #2fc363;");
                 // document.getElementById("enableUserBtn").setAttribute("style", "background-color: #2fc363;");
