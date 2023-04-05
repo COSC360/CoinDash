@@ -5,11 +5,13 @@
 <div class="userInfo">
     <div id = "item-1">
         <img src="<?php echo $_SESSION['RSProfilePicture'];?>" id = "pfp">
-        <button id = "enableUserBtn" type ="submit" form="infoDisplayForm" name="enableUser">Enable</button>
-        <button id = "disableUserBtn" type ="submit" form="infoDisplayForm" name="disableUser">Disable</button>
-        <button id = "deleteUserBtn" type ="submit" form="infoDisplayForm" name="deleteUser">Delete</button>
-        <button id = "editUserBtn">Edit</button>
-        <button id = "saveUserBtn" type ="submit" form="infoDisplayForm" name="saveUser">Save</button>
+        <div class="btnGroup">
+            <button id = "enableUserBtn" type ="submit" form="infoDisplayForm" name="enableUser">Enable</button>
+            <button id = "disableUserBtn" type ="submit" form="infoDisplayForm" name="disableUser">Disable</button>
+            <button id = "deleteUserBtn" type ="submit" form="infoDisplayForm" name="deleteUser">Delete</button>
+            <button id = "editUserBtn">Edit</button>
+            <button id = "saveUserBtn" type ="submit" form="infoDisplayForm" name="saveUser">Save</button>
+        </div>
     </div>
     <form name = "infoDisplayForm" id ="infoDisplayForm" method = "POST" action="processUpdate.php">
         <div id = "item-2">
