@@ -40,7 +40,7 @@
 
 /* Style the tab content */
 .tabcontent {
-  height: calc(100vh - 17em);;
+  height: calc(100vh - 10em);;
   display: none;
   padding: 0.5em 1em;
   border: 1px solid #ccc;
