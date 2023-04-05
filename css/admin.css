@@ -131,11 +131,13 @@ form.example fieldset {
   box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
 }
 #item-2 label{
+  color: #646464;
   margin: 0.15em;
   font-weight: 500;
 }
 
 #item-2 input{
+  
   margin-bottom: 0.25em;
   padding: 0.5em;
   font-weight: 500;
