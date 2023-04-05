@@ -315,9 +315,9 @@ function loginUser($con,$loginID,$loginPassword){
             header('location:signIn.php');
         }
     }else{
-        // mysqli_stmt_close();
+        mysqli_stmt_close($loginStmt);
         header('location:signIn.php');
-        // $_SESSION['statusMsg'] = "Invalid login details !";
+        $_SESSION['statusMsg'] = "Invalid login details !";
         return false;
     }
 
@@ -754,6 +754,6 @@ function deleteUser($con, $userID){
 }
 
 function saveUser($con, $userID, $username, $password, $email, $comingFrom, $userType, $status, $regTimestamp){
-    
+
 }
 ?>
