@@ -82,9 +82,7 @@
                 const displayByEmail = document.forms['displayByEmail'];
                 const displayByCommentId = document.forms['displayByCommentId'];
  
-                document.getElementById(displayByName[0].getAttribute("id")).addEventListener("click", enableField);
-                document.getElementById(displayByEmail[0].getAttribute("id")).addEventListener("click", enableField);
-                document.getElementById(displayByCommentId[0].getAttribute("id")).addEventListener("click", enableField);
+                document.getElementById("enableUserBtn").addEventListener("click", enableField);
 
                     for(var i = 0; i < displayByName.length; i++){
                         displayByName[i].disabled = true;
@@ -103,8 +101,7 @@
                 //         document.getElementById(infoDisplayForm[i][1].getAttribute("id")).setAttribute("style", "background-color: #2fc363;");
                 //         document.getElementById(infoDisplayForm[i][2].getAttribute("id")).setAttribute("style", "background-color: #2fc363;");
                 //         document.getElementById(infoDisplayForm[i][3].getAttribute("id")).setAttribute("style", "background-color: #2fc363;");
-                //     }
-                // }
+
                 document.getElementById("<?php echo $_SESSION['defaultTabID']?>").click();
             </script>
         </main>    
