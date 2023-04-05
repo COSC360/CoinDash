@@ -17,6 +17,9 @@
     <title>Admin Analytics</title>
 </head>
 <body>
+    <?php
+        include "dashboardHeader.php";
+    ?>
     <?php 
         include 'chart.php';
     ?>    
