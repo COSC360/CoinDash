@@ -106,7 +106,7 @@
               display: true,
               text: 'Custom Chart Subtitle'
           }
-        } 
+        }
       }
     });
   </script>";
