@@ -71,7 +71,7 @@ if ($con->connect_error) {
 
                         $selectStmt = $con->prepare("SELECT `name` FROM category");
                         $selectStmt->execute();
-                        $SelectResultSet = $selectStmt->get_result(); // get the mysqli result
+                        $SelectResultSet = $selectStmt->get_result(); 
                         $selectRS = $SelectResultSet->fetch_all(MYSQLI_ASSOC);
                         if($selectRS != null){
                             $newSelectRS = array();
