@@ -33,7 +33,7 @@
             include "dashboardHeader.php";
         ?>
         <main>
-            <div class="panel">
+            <div class="panel auth-container">
                 <div class="tabswitcher">
                     <div class="tab">
                         <button class="tablinks" onclick="openCity(event, 'byUsername')" id ="defaultUsername">By Username</button>
