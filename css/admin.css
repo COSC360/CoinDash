@@ -173,12 +173,12 @@ canvas{
 }
 
 canvas #doughnut{
-  margin-top: auto;
   grid-column-start: 0;
   grid-row-start: 0;
 }
 
 canvas #bar{
+  margin-top: auto;
   grid-column-start: 1;
   grid-row-start: 0;
 }
