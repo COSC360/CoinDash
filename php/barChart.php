@@ -9,14 +9,14 @@
   echo
   "<script>
 
-    var xValues = [];
-    var yValues = [];";
-    foreach($_SESSION['commentDataArray'] as $row){
-        echo "xValues.push(\"".$row."\");";
-    }
-    foreach($_SESSION['commentCountDataArray'] as $row){
-        echo "yValues.push(\"".$row."\");";
-    }
+    var xValues = [\"hi\"];
+    var yValues = [\"1\"];";
+    // foreach($_SESSION['commentDataArray'] as $row){
+    //     echo "xValues.push(\"".$row."\");";
+    // }
+    // foreach($_SESSION['commentCountDataArray'] as $row){
+    //     echo "yValues.push(\"".$row."\");";
+    // }
   echo 
     "var barColors = [\"#00aba9\", \"#2b5797\",\"#b91d47\", \"#1e7145\",\"#e8c3b9\",\"#063970\",\"#48249c\"];
 
