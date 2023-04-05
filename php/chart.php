@@ -4,8 +4,6 @@
 
   retrieveChartData($con);
 ?>  
-
-<div>
   <canvas id="myChart"></canvas>
   <?php
   echo
@@ -44,4 +42,3 @@
     });
   </script>";
   ?>
-</div>
