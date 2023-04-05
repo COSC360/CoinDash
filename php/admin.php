@@ -92,11 +92,10 @@
                 }
                 
                     function enableField(){
-                        console.log(document.getElementById("editUserBtn").disabled);
                         for(var i = 0; i < displayByName.length; i++){
-                            displayByName[i].disabled = true;
-                            displayByEmail[i].disabled = true;
-                            displayByCommentId[i].disabled = true;
+                            displayByName[i].disabled = false;
+                            displayByEmail[i].disabled = false;
+                            displayByCommentId[i].disabled = false;
                         }
                     }
                 // document.getElementById("enableUserBtn").setAttribute("style", "background-color: #2fc363;");
