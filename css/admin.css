@@ -107,7 +107,7 @@ form.example fieldset {
 }
 
 #item-2{
-  overflow-y: auto;
+  overflow-y: scroll;
 }
 
 #item-1 img{
