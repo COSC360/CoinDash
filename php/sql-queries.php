@@ -276,7 +276,6 @@ function loginUser($con,$loginID,$loginPassword){
     $loginStmt = mysqli_stmt_init($con); 
 
     if (!mysqli_stmt_prepare($loginStmt, $loginSQL)){
-        
         // TODO:
         // header("location: REPLACE LATER");
         $_SESSION['statusMsg'] = "Unable to prepare the SQL statement.";
@@ -292,7 +291,7 @@ function loginUser($con,$loginID,$loginPassword){
     $results = mysqli_stmt_get_result($loginStmt);
 
     if($rows = $results -> fetch_assoc()){
-        // mysqli_stmt_close();
+        mysqli_stmt_close($loginStmt);
         //Creating session variables 
         $_SESSION["username"] = $rows['username'];
         $_SESSION["userType"] = $rows['userType'];
@@ -307,7 +306,7 @@ function loginUser($con,$loginID,$loginPassword){
             
         //Navigate to account.php if user is of "user" type and status is "enabled"
         }elseif($rows['userType'] == 'user' && $rows['status'] == "enabled"){
-            header('location:account.php');
+            header('location: account.php');
 
 
         //Display an error if user is of "user" type and status is "disabled"            
@@ -318,7 +317,7 @@ function loginUser($con,$loginID,$loginPassword){
     }else{
         // mysqli_stmt_close();
         header('location:signIn.php');
-        $_SESSION['statusMsg'] = "invalid Login Details !";
+        // $_SESSION['statusMsg'] = "Invalid login details !";
         return false;
     }
 
