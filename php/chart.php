@@ -6,9 +6,6 @@
 
   // print_r($_SESSION['dataArray']);
 
-  foreach($_SESSION['countDataArray'] as $row){
-    echo $row[0];
-  }
   // print_r($_SESSION['countDataArray']);
 ?>
 <!DOCTYPE html>
@@ -22,6 +19,11 @@
 <canvas id="myChart" style="width:100%;max-width:600px"></canvas>
 
 <script>
+  <?php
+    foreach($_SESSION['countDataArray'] as $row){
+      echo "console.log(".$row.")";
+    }
+  ?>
   var xValues = ["", "France", "Spain", "USA", "Argentina"];
   var yValues = [55, 49, 44, 24, 15];
   var barColors = ["red", "green","blue","orange","brown"];
