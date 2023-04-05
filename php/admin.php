@@ -68,10 +68,10 @@
 
                 for(var i = 2; i <= 6; i = i + 2){
                     document.getElementById("editUserBtn").addEventListener("click", enableField);
-                    const enableUserBtn = infoDisplayForm[i][0];
-                    const disableUserBtn = infoDisplayForm[i][1];
-                    const deleteUserBtn = infoDisplayForm[i][2];
-                    const saveUserBtn = infoDisplayForm[i][3];
+                    const enableUserBtn = document.getElementById(infoDisplayForm[i][0].getAttribute("id"));
+                    const disableUserBtn = document.getElementById(infoDisplayForm[i][1].getAttribute("id"));
+                    const deleteUserBtn = document.getElementById(infoDisplayForm[i][2].getAttribute("id"));
+                    const saveUserBtn = document.getElementById(infoDisplayForm[i][3].getAttribute("id"));
 
                     for(var j = 0; j < infoDisplayForm[i].length; j++){
                         infoDisplayForm[i][j].disabled = true;
