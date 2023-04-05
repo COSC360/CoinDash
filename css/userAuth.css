@@ -8,10 +8,10 @@ main{
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  overflow: hidden;
 }
 
 .auth-container{
-  overflow: hidden;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
