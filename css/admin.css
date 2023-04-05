@@ -42,7 +42,7 @@
 /* Style the tab content */
 .tabcontent {
   height: 65vh;
-  display: none;
+  display: block;
   padding: 0.5em 1em;
   border: 1px solid #ccc;
   background-color: rgb(255, 255, 255);
