@@ -18,7 +18,7 @@
             <label>Username :</label>
             <input type="text" name="username" value = "<?php echo $_SESSION['RSUsername']?>">
             <label>User Password :</label>
-            <input type="text" name="password" value = "<?php echo md5($_SESSION['RSPassword'])?>">
+            <input type="text" name="password" value = "<?php echo $_SESSION['RSPassword']?>">
             <label>User Email :</label>
             <input type="text" name="email" value = "<?php echo $_SESSION['RSEmail']?>">
             <label>User Coming From :</label>
