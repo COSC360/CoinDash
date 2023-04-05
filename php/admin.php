@@ -70,8 +70,10 @@
             </div>
             <script>
                 const infoDisplayForm = document.forms;
-                console.log(infoDisplayForm);                
-                // for(var i = 2; i <= 6; i = i + 2){
+                               
+                for(var i = 1; i < 6; i = i + 2){
+                        console.log(infoDisplayForm[i])
+                }
                 //     document.getElementById(infoDisplayForm[i][0].getAttribute("id")).addEventListener("click", enableField);
 
                 //     for(var j = 0; j < infoDisplayForm[i].length; j++){
