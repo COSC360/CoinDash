@@ -501,6 +501,8 @@ function searchByUsername($con, $searchName){
     $results = mysqli_stmt_get_result($searchStmt);
 
     if($rows = $results -> fetch_assoc()){
+        mysqli_stmt_close($searchStmt);
+
         $_SESSION['RSId'] = $rows['id'];
         $_SESSION['RSUsername'] = $rows['username'];
         $_SESSION['RSEmail'] = $rows['email'];
@@ -522,14 +524,11 @@ function searchByEmail($con, $searchEmail){
     $searchSQL = "SELECT * FROM `userAuth` WHERE  `email`= ?";
 
     $searchStmt = mysqli_stmt_init($con); 
-
-    $statusMsg = '';
     
     if (!mysqli_stmt_prepare($searchStmt, $searchSQL)){
         // TODO:
         // header("location: REPLACE LATER");
-        $statusMsg = "Unable to prepare the SQL statement.";
-        echo "<script>window.alert(\"".$statusMsg."\")</script>";
+        $_SESSION['adminStatusMsg'] = "Unable to prepare the SQL statement.";
         exit();
     }
 
@@ -542,8 +541,21 @@ function searchByEmail($con, $searchEmail){
     $results = mysqli_stmt_get_result($searchStmt);
 
     if($rows = $results -> fetch_assoc()){
+        mysqli_stmt_close($searchStmt);
+
+        $_SESSION['RSId'] = $rows['id'];
+        $_SESSION['RSUsername'] = $rows['username'];
+        $_SESSION['RSEmail'] = $rows['email'];
+        $_SESSION['RSPassword'] = $rows['password'];
+        $_SESSION['RSComingFrom'] = $rows['comingFrom'];
+        $_SESSION['RSUserType'] = $rows['userType'];
+        $_SESSION['RSUserStatus'] = $rows['status'];
+        $_SESSION['RSRegisterTimestamp'] = $rows['registerationTimestamp'];
+        $_SESSION['RSProfilePicture'] = $rows['profilePicture'];
         header('location:admin.php');
     }else{
+        $_SESSION['adminStatusMsg'] = "User not found with the given email";
+        header('location:admin.php'); 
         return false;
     }
 }
@@ -657,7 +669,7 @@ function disableUser($con, $userID){
     $results = mysqli_stmt_get_result($existingUserStmt);
     
     if($rows = $results -> fetch_assoc()){
-        // mysqli_stmt_close();
+        mysqli_stmt_close($existingUserStmt);
         $updateSQL = "UPDATE `userAuth` SET `status` = ? WHERE `id` = ?";
 
         $userStatus = "disabled";
@@ -677,6 +689,8 @@ function disableUser($con, $userID){
 
         // Execute prepared statement
         mysqli_stmt_execute($updateStmt);
+
+        mysqli_stmt_close($updateStmt);
 
         $_SESSION['adminStatusMsg'] = "Status for user with ID :".$userID." has been updated to ".$userStatus." !";
 
@@ -708,7 +722,7 @@ function deleteUser($con, $userID){
     $results = mysqli_stmt_get_result($existingUserStmt);
     
     if($rows = $results -> fetch_assoc()){
-        // mysqli_stmt_close();
+        mysqli_stmt_close($existingUserStmt);
         $deleteSQL = "DELETE FROM `userAuth` WHERE `id` = ?";
 
         $deleteStmt = mysqli_stmt_init($con); 
@@ -726,6 +740,8 @@ function deleteUser($con, $userID){
 
         // Execute prepared statement
         mysqli_stmt_execute($deleteStmt);
+
+        mysqli_stmt_close($deleteStmt);
     
         $_SESSION['adminStatusMsg'] = "User with ID :".$userID." has been deleted !";
 
