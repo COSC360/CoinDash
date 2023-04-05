@@ -172,3 +172,7 @@ canvas{
   justify-content: space-between;
   row-gap: 5em;
 }
+
+.statistic{
+  height: fit-content;
+}

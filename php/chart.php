@@ -4,7 +4,8 @@
 
   retrieveChartData($con);
 ?>  
-  <canvas id="myChart"></canvas>
+  <canvas id="doughnut"></canvas>
+  <canvas id="bar"></canvas>
   <?php
   echo
   "<script>
@@ -20,8 +21,26 @@
   echo 
     "var barColors = [\"#00aba9\", \"#2b5797\",\"#b91d47\"];
 
-    new Chart(\"myChart\", {
+    new Chart(\"doughnut\", {
       type: \"doughnut\",
+      data: {
+        labels: xValues,
+        datasets: [{
+          backgroundColor: barColors,
+          data: yValues
+        }]
+      },
+      options: {
+        legend: {display: false},
+        title: {
+          display: true,
+          text: \"User Registeration Source\"
+        }
+      }
+    });
+
+    new Chart(\"doughnut\", {
+      type: \"bar\",
       data: {
         labels: xValues,
         datasets: [{
