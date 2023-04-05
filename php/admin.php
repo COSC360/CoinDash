@@ -74,7 +74,7 @@
                     }
                     
                     function enableField(){
-                        for(var j = 0; j < infoDisplayForm.length; j++){
+                        for(var j = 0; j < infoDisplayForm[i].length; j++){
                             infoDisplayForm[i][j].disabled = false;
                         }
                         document.getElementById(infoDisplayForm[i][0].getAttribute("id")).setAttribute("style", "background-color: #2fc363;");
