@@ -59,10 +59,10 @@
                     <?php include 'userInfoDisplay.php';?>
                 </div>
             </div>
-            <script>
+            <!-- <script>
                 // Get the element with id="defaultOpen" and click on it
                 document.getElementById("defaultOpen").click();
-            </script>
+            </script> -->
         </main>    
     </body>
 </html> 
