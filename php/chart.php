@@ -8,8 +8,7 @@
   echo
   "
   <canvas id=\"doughnut\"></canvas>
-  <canvas id=\"bar\"></canvas>
-
+  
   <script>
 
     var xRegSourceValues = [];
