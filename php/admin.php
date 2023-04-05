@@ -81,27 +81,27 @@
                 const displayByName = document.forms['displayByName'];
                 const displayByEmail = document.forms['displayByEmail'];
                 const displayByCommentId = document.forms['displayByCommentId'];
+                console.log(document.querySelectorAll("editUserBtn"));
+                // document.getElementById("editUserBtn").addEventListener("click", enableField);
 
-                document.getElementById("editUserBtn").addEventListener("click", enableField);
 
-
-                for(var i = 0; i < displayByName.length; i++){
-                    displayByName[i].disabled = true;
-                    displayByEmail[i].disabled = true;
-                    displayByCommentId[i].disabled = true;
-                }
+                // for(var i = 0; i < displayByName.length; i++){
+                //     displayByName[i].disabled = true;
+                //     displayByEmail[i].disabled = true;
+                //     displayByCommentId[i].disabled = true;
+                // }
                 
-                    function enableField(){
-                        for(var i = 0; i < displayByName.length; i++){
-                            displayByName[i].disabled = false;
-                            displayByEmail[i].disabled = false;
-                            displayByCommentId[i].disabled = false;
-                        }
-                        document.getElementById("enableUserBtn").setAttribute("style", "background-color: #2fc363;");
-                        document.getElementById("disableUserBtn").setAttribute("style", "background-color: #2fc363;");
-                        document.getElementById("deleteUserBtn").setAttribute("style", "background-color: #2fc363;");
-                        document.getElementById("saveUserBtn").setAttribute("style", "background-color: #2fc363;");
-                    }
+                //     function enableField(){
+                //         for(var i = 0; i < displayByName.length; i++){
+                //             displayByName[i].disabled = false;
+                //             displayByEmail[i].disabled = false;
+                //             displayByCommentId[i].disabled = false;
+                //         }
+
+                //         //     document.getElementById(displayByName[i].getAttribute()).setAttribute("style", "background-color: #2fc363;");
+                //         //     document.getElementById(displayByEmail[i]).setAttribute("style", "background-color: #2fc363;");
+                //         //     document.getElementById(displayByCommentId[i]).setAttribute("style", "background-color: #2fc363;");
+                //     }
 
 
                 document.getElementById("<?php echo $_SESSION['defaultTabID']?>").click();
