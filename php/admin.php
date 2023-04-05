@@ -65,7 +65,9 @@
                         <?php include 'userInfoDisplay.php';?>
                     </div>
                 </div>
-                <?php include 'chart.php';?>
+                <div>
+                    <?php include 'chart.php';?>
+                </div>
             </div>
             <script>
                 // const infoDisplayForm = document.forms;
