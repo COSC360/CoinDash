@@ -23,10 +23,10 @@ echo
   var xValues = [];
   var yValues = [];";
   foreach($_SESSION['dataArray'] as $row){
-      echo "xValues.push(\"".$row."\")";
+      echo "xValues.push(\"".$row."\");";
   }
   foreach($_SESSION['dataArray'] as $row){
-      echo "yValues.push(\"".$row."\")";
+      echo "yValues.push(\"".$row."\");";
   }
 echo 
   "
