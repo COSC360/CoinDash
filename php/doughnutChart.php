@@ -18,7 +18,7 @@
         echo "yValues.push(\"".$row."\");";
     }
   echo 
-    "var barColors = [\"#00aba9\", \"#2b5797\",\"#b91d47\"];
+    "var barColors = [\"#00aba9\", \"#2b5797\",\"#b91d47\", \"#1e7145\",\"#e8c3b9\"];
 
     new Chart(\"doughnut\", {
       type: \"doughnut\",
