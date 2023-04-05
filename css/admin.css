@@ -157,9 +157,9 @@ form.example fieldset {
 }
 
 canvas{
-  position: absolute;
+  position: relative;
   width:100%;
   max-width:300px;
-  left: 52em;
-  top: 5em;
+  left: 63em;
+  top: -44.5em;
 }
