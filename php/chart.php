@@ -7,7 +7,7 @@
   // print_r($_SESSION['dataArray']);
 
   foreach($_SESSION['countDataArray'] as $row){
-    print($row[0]);
+    echo $row
   }
   // print_r($_SESSION['countDataArray']);
 ?>
