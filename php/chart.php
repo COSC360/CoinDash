@@ -3,14 +3,10 @@
   include 'modules.php';
 
   retrieveChartData($con);
-?>
-<!DOCTYPE html>
-<html>
-<head>
-  <link rel="stylesheet" href="../css/admin.css">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
-</head>
-<body>
+?>  
+<link rel="stylesheet" href="../css/admin.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+<div>
   <canvas id="myChart"></canvas>
   <?php
   echo
@@ -49,4 +45,4 @@
     });
   </script>";
   ?>
-</body>
+</div>
