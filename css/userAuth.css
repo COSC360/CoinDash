@@ -5,8 +5,7 @@
 }
 
 main{
-  margin-top: 6.5em;
-  min-height: 80vh;
+  min-height: 70vh;
   display: flex;
   flex-direction: column;
 }
