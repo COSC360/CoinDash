@@ -98,10 +98,10 @@
                             displayByCommentId[i].disabled = false;
                         }
                     }
-                // document.getElementById("enableUserBtn").setAttribute("style", "background-color: #2fc363;");
-                // document.getElementById("enableUserBtn").setAttribute("style", "background-color: #2fc363;");
-                // document.getElementById("enableUserBtn").setAttribute("style", "background-color: #2fc363;");
-                // document.getElementById("enableUserBtn").setAttribute("style", "background-color: #2fc363;");
+                document.getElementById("enableUserBtn").setAttribute("style", "background-color: #2fc363;");
+                document.getElementById("disableUserBtn").setAttribute("style", "background-color: #2fc363;");
+                document.getElementById("deleteUserBtn").setAttribute("style", "background-color: #2fc363;");
+                document.getElementById("saveUserBtn").setAttribute("style", "background-color: #2fc363;");
 
                 document.getElementById("<?php echo $_SESSION['defaultTabID']?>").click();
             </script>
