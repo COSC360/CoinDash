@@ -1,4 +1,13 @@
-<!DOCTYPE html>
+<?php
+  session_start();
+  include 'DBConnection.php';
+
+  retrieveChartData($con);
+
+  echo $_SESSION['dataArray'];
+  echo $_SESSION['countDataArray'];
+?>
+<!-- <!DOCTYPE html>
 <html>
 <head>
   <link rel="stylesheet" href="../css/admin.css">
@@ -9,7 +18,7 @@
 <canvas id="myChart" style="width:100%;max-width:600px"></canvas>
 
 <script>
-  var xValues = ["Italy", "France", "Spain", "USA", "Argentina"];
+  var xValues = ["", "France", "Spain", "USA", "Argentina"];
   var yValues = [55, 49, 44, 24, 15];
   var barColors = ["red", "green","blue","orange","brown"];
 
@@ -32,4 +41,4 @@
   });
 </script>
 
-</body>
+</body> -->

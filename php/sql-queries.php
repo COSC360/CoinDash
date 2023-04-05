@@ -823,4 +823,40 @@ function saveUser($con, $userID, $username, $password, $email, $comingFrom, $use
         return false;       
     }
 }
+
+function retrieveChartData($con){
+    $chartDataSQL = "SELECT comingFrom, COUNT(id) AS userCount FROM `userAuth` GROUP BY comingFrom";
+
+    $chartDataStmt = mysqli_stmt_init($con); 
+
+    $dataArray = array();
+    $countDataArray = array();
+
+    if (!mysqli_stmt_prepare($chartDataStmt, $chartDataSQL)){
+        // TODO:
+        // header("location: REPLACE LATER");
+        $_SESSION['statusMsg'] = "Unable to prepare the SQL statement.";
+        exit();
+    }
+
+    // Execute prepared statement
+    mysqli_stmt_execute($chartDataStmt);
+
+    $results = mysqli_stmt_get_result($chartDataStmt);
+
+    if($rows = $results -> fetch_all(MYSQLI_ASSOC)){
+        foreach($rows['comingFrom'] as $row){
+            array_push($dataArray, $row);
+        }
+        foreach($rows['userCount'] as $row){
+            array_push($countDataArray, $row);
+        }
+        $_SESSION['dataArray'] = $dataArray;
+        $_SESSION['countDataArray'] =  $countDataArray;
+        
+    }else{
+        return false;
+    }  
+}
 ?>
+
