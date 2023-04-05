@@ -183,6 +183,11 @@ canvas #bar{
   grid-row-start: 0;
 }
 
+canvas #pie{
+  grid-column-start: 0;
+  grid-row-start: 1;
+}
+
 .adjust-container{
   display: flex;
   flex-wrap: wrap;
