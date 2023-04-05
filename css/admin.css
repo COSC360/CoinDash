@@ -107,7 +107,7 @@ form.example fieldset {
 }
 
 #item-2{
-  overflow-y: scroll;
+  overflow-y: auto;
 }
 
 #item-1 img{
@@ -147,6 +147,7 @@ form.example fieldset {
   margin-bottom: 0.25em;
   padding: 0.5em;
   font-weight: 500;
+  margin-right: 1em;
 }
 
 .fa-search{
