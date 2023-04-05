@@ -161,21 +161,22 @@ form.example fieldset {
   margin-top: 2em;
 }
 
+.canvasData{
+  display: flex;
+  flex-direction: column;
+  row-gap: 2em;
+  height: fit-content;
+}
+
 canvas{
   width:100%;
   max-width:300px;
 }
+
 
 .adjust-container{
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   row-gap: 5em;
-}
-
-.statistic{
-  display: flex;
-  flex-direction: column;
-  row-gap: 1em;
-  height: fit-content;
 }

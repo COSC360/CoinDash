@@ -5,8 +5,11 @@
   retrieveRegSourceChartData($con);
   retrieveCommentCountChartData($con);  
 ?>  
-  <canvas id="doughnut"></canvas>
-  <canvas id="bar"></canvas>
+  <div class ="canvasData">
+    <canvas id="doughnut"></canvas>
+    <canvas id="bar"></canvas>
+  </div>
+
   <?php
   echo
   "<script>
