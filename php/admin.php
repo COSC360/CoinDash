@@ -82,9 +82,7 @@
                 const displayByEmail = document.forms['displayByEmail'];
                 const displayByCommentId = document.forms['displayByCommentId'];
 
-                console.log(displayByName[3].getAttribute("id"));
-
-                // document.getElementById(displayByName[3].getAttribute("id")).addEventListener("click", enableField);
+                document.getElementById(displayByName[2].getAttribute("id")).addEventListener("click", enableField);
 
 
                 for(var i = 0; i < displayByName.length; i++){
