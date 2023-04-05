@@ -32,7 +32,7 @@
             </div>  
             <div class="user-account-box">
                 <div class="profile-box">
-                    <button><img src="<?php echo $_SESSION['profilePicture']?>" id = "pfp"></button>
+                    <img src="<?php echo $_SESSION['profilePicture']?>" id = "pfp">
                     <h1>Username</p>
                     <h2><?php echo $_SESSION["username"] ;?></h2>
                 </div>

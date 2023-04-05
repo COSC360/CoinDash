@@ -147,14 +147,6 @@ form .editField{
     float: left;
 }
 
-.profile-box button{
-    margin-right: 1.25em;
-    width: 10%;
-    border-radius: 50%;
-    height: fit-content;
-    float: left;
-}
-
 .profile-box h1{
     font-size: 1em;
     color: #646464;
