@@ -5,7 +5,7 @@
 }
 
 main{
-  min-height: 75vh;
+  min-height: 78vh;
   display: flex;
   flex-direction: column;
   overflow: hidden;
