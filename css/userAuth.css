@@ -4,6 +4,13 @@
   }
 }
 
+main{
+  margin-top: 6.5em;
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+}
+
 .auth-container{
   display: flex;
   flex-wrap: wrap;
