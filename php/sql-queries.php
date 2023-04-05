@@ -846,6 +846,7 @@ function retrieveChartData($con){
 
     if($rows = $results -> fetch_all(MYSQLI_ASSOC)){
         foreach($rows['comingFrom'] as $row){
+            echo $row;
             array_push($dataArray, $row);
         }
         foreach($rows['userCount'] as $row){
@@ -853,9 +854,6 @@ function retrieveChartData($con){
         }
         $_SESSION['dataArray'] = $dataArray;
         $_SESSION['countDataArray'] =  $countDataArray;
-
-        array_push($dataArray, "hi");
-        print_r($dataArray);
 
     }else{
         return false;
