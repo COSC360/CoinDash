@@ -18,10 +18,10 @@
     var yValues = [];
     var xCommentValues = [];
     var yCommentValues = [];";
-    foreach($_SESSION['dataArray'] as $row){
+    foreach($_SESSION['regSourceDataArray'] as $row){
         echo "xValues.push(\"".$row."\");";
     }
-    foreach($_SESSION['countDataArray'] as $row){
+    foreach($_SESSION['regSourceCountDataArray'] as $row){
         echo "yValues.push(\"".$row."\");";
     }
     foreach($_SESSION['commentDataArray'] as $row){
