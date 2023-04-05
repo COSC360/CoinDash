@@ -3,6 +3,9 @@
   include 'modules.php';
 
   retrieveChartData($con);
+
+  //$_SESSION['dataArray']
+  //$_SESSION['countDataArray']
 ?>
 <!DOCTYPE html>
 <html>
@@ -13,39 +16,39 @@
 <body>
 
 <canvas id="myChart" style="width:100%;max-width:600px"></canvas>
-  <?php
-    foreach($_SESSION['dataArray'] as $row){
-      echo 
-      "var xValues = [];
-      <script> xValues.push(\"".$row."\") </script>";
-    }
+<?php
+echo
+"<script>
 
-    foreach($_SESSION['countDataArray'] as $row){
-      echo 
-      "var yValues = [];
-      <script> xValues.push(\"".$row."\") </script>";
-    }
+  var xValues = [];
+  var yValues = [];";
+  foreach($_SESSION['dataArray'] as $row){
+      echo "xValues.push(\"".$row."\")";
+  }
+  foreach($_SESSION['dataArray'] as $row){
+      echo "yValues.push(\"".$row."\")";
+  }
+echo 
+  "var barColors = [\"red\", \"green\",\"blue\"];
 
-    echo 
-    "var barColors = [\"red\", \"green\",\"blue\"];
-
-    new Chart(\"myChart\", {
-      type: \"bar\",
-      data: {
-        labels: xValues,
-        datasets: [{
-          backgroundColor: barColors,
-          data: yValues
-        }]
-      },
-      options: {
-        legend: {display: false},
-        title: {
-          display: true,
-          text: \"World Wine Production 2018\"
-        }
+  new Chart(\"myChart\", {
+    type: \"bar\",
+    data: {
+      labels: xValues,
+      datasets: [{
+        backgroundColor: barColors,
+        data: yValues
+      }]
+    },
+    options: {
+      legend: {display: false},
+      title: {
+        display: true,
+        text: \"World Wine Production 2018\"
       }
-    });";
-  ?>
+    }
+  });
+</script>";
+?>
 
 </body>
