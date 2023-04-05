@@ -168,7 +168,7 @@ form.example fieldset {
 }
 
 canvas{
-  margin-top: auto;
+  margin: auto auto 0 auto;
   width:100%;
   max-width: 20vw;
 }
