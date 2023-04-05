@@ -469,7 +469,7 @@ function updateUser($con,$userEmail,$userPassword){
     
     
         // Set parameters for prepared statement
-        mysqli_stmt_bind_param($updateStmt, "ssi", $userEmail,md5($userPassword), $_SESSION['id']);
+        mysqli_stmt_bind_param($updateStmt, "ssi", $userEmail,$userPassword, $_SESSION['id']);
     
         // Execute prepared statement
         mysqli_stmt_execute($updateStmt);
