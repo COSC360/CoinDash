@@ -426,8 +426,6 @@ function registerUser($con,$registerUsername,$registerEmail,$registerPassword,$r
 }
 
 function updateUser($con,$userEmail,$userPassword){
-    $statusMsg = '';
-
     $existingUserSQL = "SELECT * FROM `userAuth` WHERE  `email` = ?";
 
     $existingUserStmt = mysqli_stmt_init($con);
@@ -450,20 +448,17 @@ function updateUser($con,$userEmail,$userPassword){
     
     if($rows = $results -> fetch_assoc()){
         // mysqli_stmt_close();
-        $statusMsg = 'User already exists !';
-        echo "<script>window.alert(\"".$statusMsg."\")</script>";
+        $_SESSION['statusMsg'] = 'User with that email already exists !';
+        header('location:account.php');
     }else{
         $updateSQL = "UPDATE `userAuth` SET `email` = ?, `password` = ? WHERE `id` = ?";
 
         $updateStmt = mysqli_stmt_init($con); 
     
-        $statusMsg = '';
-    
         if (!mysqli_stmt_prepare($updateStmt, $updateSQL)){
             // TODO:
             // header("location: REPLACE LATER");
-            $statusMsg = "Unable to prepare the SQL statement.";
-            echo "<script>window.alert(\"".$statusMsg."\")</script>";
+            $_SESSION['statusMsg'] = "Unable to prepare the SQL statement.";
             exit();
         }
     

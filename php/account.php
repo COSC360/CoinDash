@@ -3,6 +3,11 @@
     if(!isset($_SESSION["id"])){
         header('location:signIn.php');
     }
+
+    if(isset($_SESSION['statusMsg'])){
+        echo "<script>window.alert(\"".$_SESSION['statusMsg']."\")</script>";
+        unset($_SESSION['statusMsg']);
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
