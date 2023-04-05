@@ -12,18 +12,29 @@
         <div class="middle">
             <nav>
                 <div class="relative-container">
-                    <a href="#" id="search">
-                        Search
-                    </a>
-                    <div style="position: absolute; left: 0; bottom:-2em;">
-                        <form id="search-modal" class="hide">
-                            <input type="text" name="like" placeholder="What are you looking for?">
-                        </form>
-                    </div>
-                </div>
-                <a href="https://cosc360.ok.ubc.ca/suyash06/project-JasonR24/php/dashboard.php">My Dashboard</a>
-                <!-- <a href="#">Community</a>
-                <a href="#">Help</a> -->
+                    <?php
+                        if(isset($_SESSION['id']) && $_SESSION['userType'] == "admin"){
+                            echo
+                            "<a href=\"https://cosc360.ok.ubc.ca/suyash06/project-JasonR24/php/admin.php\" id=\"stats\">
+                                Stats
+                            </a>
+                            <a href=\"https://cosc360.ok.ubc.ca/suyash06/project-JasonR24/php/admin.php\">
+                                Dashboard
+                            </a>";
+                        }else{
+                            echo
+                            "<a href=\"#\" id=\"search\">
+                                Search
+                            </a>
+                            <div style=\"position: absolute; left: 0; bottom:-2em;\">
+                                <form id=\"search-modal\" class=\"hide\">
+                                    <input type=\"text\" name=\"like\" placeholder=\"What are you looking for?\">
+                                </form>
+                            </div>
+                            </div>
+                            <a href=\"https://cosc360.ok.ubc.ca/suyash06/project-JasonR24/php/dashboard.php\">My Dashboard</a>";
+                        }
+                    ?>
             </nav>
         </div>
         <div class="right settings">
@@ -35,11 +46,12 @@
             <div class="horizontal-container fit-width">
                 
             <?php
-                if ($_SESSION["id"] != null){
-                    echo "<div class=\"horizontal-container fit-width\">
-                            <p>Hi, ".$_SESSION["username"]." | </p>
-                            <a href=\"../php/logout.php\">Logout</a>
-                        </div>";
+                if (isset($_SESSION["id"])){
+                    echo 
+                    "<div class=\"horizontal-container fit-width\">
+                    <p>Hi, ".$_SESSION["username"]." | </p>
+                    <a href=\"../php/logout.php\">Logout</a>
+                    </div>";                
                 }else{
                     echo  "<a href=\"#\" onclick=navigateToSignIn()>Sign In</a>/<a href=\"#\" onclick=navigateToSignUp()>Sign Up</a>";
                 }            
