@@ -1,9 +1,11 @@
 <?php
   session_start();
-  include 'DBConnection.php';
+  include 'modules.php';
 
   retrieveChartData($con);
 
+  echo $_SESSION['dataArray'];
+  echo $_SESSION['countDataArray'];
 ?>
 <!-- <!DOCTYPE html>
 <html>
