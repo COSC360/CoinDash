@@ -13,21 +13,16 @@
 <body>
 
 <canvas id="myChart" style="width:100%;max-width:600px"></canvas>
-
-<script>
-  var xValues = [];
-  <?php
+<?php
     foreach($_SESSION['countDataArray'] as $row){
-      echo "<script> xValues.push(\"".$row."\") </script>";
+      echo "<script>console.log(\"".$row."\") </script>";
     }
   ?>
+<script>
+
+  var xValues = [];
   var yValues = [];
 
-  <?php
-    foreach($_SESSION['countDataArray'] as $row){
-      echo "<script> yValues.push(\"".$row."\") <script>";
-    }
-  ?>
   console.log(yValues);
   var barColors = ["red", "green","blue"];
 
