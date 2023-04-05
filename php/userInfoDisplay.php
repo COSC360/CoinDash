@@ -6,11 +6,11 @@
     <div id = "item-1">
         <img src="<?php echo $_SESSION['RSProfilePicture'];?>" id = "pfp">
         <div class="btnGroup">
-            <button id = "enableUserBtn" type ="submit" form="infoDisplayForm" name="enableUser">Enable</button>
-            <button id = "disableUserBtn" type ="submit" form="infoDisplayForm" name="disableUser">Disable</button>
-            <button id = "deleteUserBtn" type ="submit" form="infoDisplayForm" name="deleteUser">Delete</button>
+            <button id = "enableUserBtn" type ="submit" form="<?php echo $_SESSION['formID'];?>" name="enableUser">Enable</button>
+            <button id = "disableUserBtn" type ="submit" form="<?php echo $_SESSION['formID'];?>" name="disableUser">Disable</button>
+            <button id = "deleteUserBtn" type ="submit" form="<?php echo $_SESSION['formID'];?>" name="deleteUser">Delete</button>
             <button id = "editUserBtn">Edit</button>
-            <button id = "saveUserBtn" type ="submit" form="infoDisplayForm" name="saveUser">Save</button>
+            <button id = "saveUserBtn" type ="submit" form="<?php echo $_SESSION['formID'];?>" name="saveUser">Save</button>
         </div>
     </div>
     <form name = "<?php echo $_SESSION['formID'];?>" id ="<?php echo $_SESSION['formID'];?>" method = "POST" action="processUpdate.php">
