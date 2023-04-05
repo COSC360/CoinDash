@@ -637,7 +637,7 @@ function enableUser($con, $userID){
     
         mysqli_stmt_close($updateStmt);   
 
-        $_SESSION['adminStatusMsg'] = "Status for user with ID :".$userID." has been updated to ".$userStatus." !";
+        $_SESSION['adminStatusMsg'] = "Status for user with ID : ".$userID." has been updated to ".$userStatus." !";
 
         header('location:admin.php');
 
@@ -692,7 +692,7 @@ function disableUser($con, $userID){
 
         mysqli_stmt_close($updateStmt);
 
-        $_SESSION['adminStatusMsg'] = "Status for user with ID :".$userID." has been updated to ".$userStatus." !";
+        $_SESSION['adminStatusMsg'] = "Status for user with ID : ".$userID." has been updated to ".$userStatus." !";
 
         header('location:admin.php');      
     }else{
@@ -743,7 +743,7 @@ function deleteUser($con, $userID){
 
         mysqli_stmt_close($deleteStmt);
     
-        $_SESSION['adminStatusMsg'] = "User with ID :".$userID." has been deleted !";
+        $_SESSION['adminStatusMsg'] = "User with ID : ".$userID." has been deleted !";
 
         header('location:admin.php');      
     }else{
@@ -752,5 +752,5 @@ function deleteUser($con, $userID){
     }
 }
 
-function saveUser(){}
+function saveUser($con, $userID, $username, $password, $email, $comingFrom, $userType, $status, $regTimestamp){}
 ?>
