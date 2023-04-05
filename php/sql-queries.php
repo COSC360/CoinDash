@@ -563,7 +563,7 @@ function searchByEmail($con, $searchEmail){
 
 function searchByCommentId($con, $searchCommentId){
 
-    $searchSQL = "SELECT * FROM userAuth u JOIN comment c ON c.user_id = u.id WHERE id = ?";
+    $searchSQL = "SELECT * FROM userAuth u JOIN comment c ON c.user_id = u.id WHERE c.id = ?";
 
     $searchStmt = mysqli_stmt_init($con); 
 
