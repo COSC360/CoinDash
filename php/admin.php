@@ -81,7 +81,7 @@
                 const displayByName = document.forms['displayByName'];
                 const displayByEmail = document.forms['displayByEmail'];
                 const displayByCommentId = document.forms['displayByCommentId'];
-                console.log(document.querySelectorAll("editUserBtn"));
+                console.log(document.querySelectorAll('[id=editUserBtn]'););
                 // document.getElementById("editUserBtn").addEventListener("click", enableField);
 
 
