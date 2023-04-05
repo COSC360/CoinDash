@@ -82,9 +82,10 @@
                 const displayByEmail = document.forms['displayByEmail'];
                 const displayByCommentId = document.forms['displayByCommentId'];
 
-                document.getElementById(displayByName[3].getAttribute("id")).addEventListener("click", enableField);
-                // document.getElementById(displayByEmail[0].getAttribute("id")).addEventListener("click", enableField);
-                // document.getElementById(displayByCommentId[0].getAttribute("id")).addEventListener("click", enableField);
+                console.log(displayByName[3].getAttribute("id"));
+
+                // document.getElementById(displayByName[3].getAttribute("id")).addEventListener("click", enableField);
+
 
                 for(var i = 0; i < displayByName.length; i++){
                     displayByName[i].disabled = true;
