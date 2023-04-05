@@ -31,7 +31,7 @@
     var barColors = [\"red\", \"green\",\"blue\"];
 
     new Chart(\"myChart\", {
-      type: \"pie\",
+      type: \"doughnut\",
       data: {
         labels: xValues,
         datasets: [{
