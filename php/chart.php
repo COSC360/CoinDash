@@ -6,7 +6,7 @@
   retrieveCommentCountChartData($con);  
 ?>  
   <div class ="canvasData">
-    <!-- <canvas id="doughnut"></canvas> -->
+    <canvas id="doughnut"></canvas>
     <canvas id="bar"></canvas>
   </div>
 
