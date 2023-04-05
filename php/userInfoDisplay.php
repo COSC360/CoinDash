@@ -48,7 +48,7 @@
         for(var i = 0; i < infoDisplayForm.length; i++){
             infoDisplayForm[i].disabled = false;
         }
-        enableUserBtn.setAttribute(background-color, red);
+        enableUserBtn.setAttribute("style", "background-color: #2fc363;");
     }
 
 
