@@ -86,14 +86,15 @@
                 // document.getElementById(displayByEmail[0].getAttribute("id")).addEventListener("click", enableField);
                 // document.getElementById(displayByCommentId[0].getAttribute("id")).addEventListener("click", enableField);
 
-                for(var i = 0; i < displayByName.length; i++){
+                for(var i = 1; i < displayByName.length; i++){
                     displayByName[i].disabled = true;
                     displayByEmail[i].disabled = true;
                     displayByCommentId[i].disabled = true;
                 }
                 
                     function enableField(){
-                        console.log("Hi")
+                        console.log(displayByName[0].disabled);
+                        console.log("Hi");
                         // for(var i = 0; i < displayByName.length; i++){
                         //     displayByName[i].disabled = true;
                         //     // displayByEmail[i].disabled = true;
