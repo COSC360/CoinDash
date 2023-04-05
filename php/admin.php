@@ -31,8 +31,8 @@
             <div class="tabswitcher">
                 <div class="tab">
                     <button class="tablinks" onclick="openCity(event, 'byUsername')" id="defaultOpen">By Username</button>
-                    <button class="tablinks" onclick="openCity(event, 'byEmail')">By Email ID</button>
-                    <button class="tablinks" onclick="openCity(event, 'byCommentId')">By Comment ID</button>
+                    <button class="tablinks" onclick="openCity(event, 'byEmail')" id="defaultOpen">By Email ID</button>
+                    <button class="tablinks" onclick="openCity(event, 'byCommentId')" id="defaultOpen">By Comment ID</button>
                 </div>
 
                 <div id="byUsername" class="tabcontent">
@@ -59,10 +59,10 @@
                     <?php include 'userInfoDisplay.php';?>
                 </div>
             </div>
-            <!-- <script>
+            <script>
                 // Get the element with id="defaultOpen" and click on it
                 document.getElementById("defaultOpen").click();
-            </script> -->
+            </script>
         </main>    
     </body>
 </html> 
