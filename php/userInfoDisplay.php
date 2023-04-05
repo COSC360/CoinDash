@@ -45,7 +45,7 @@
     }
     
     function enableField(){
-        for(var i = 0; i < infoDisplayForm.length - 1; i++){
+        for(var i = 0; i < infoDisplayForm.length - 2; i++){
             infoDisplayForm[i].disabled = false;
         }
         enableUserBtn.setAttribute("style", "background-color: #2fc363;");
