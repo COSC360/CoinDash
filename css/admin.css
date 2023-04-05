@@ -50,6 +50,8 @@
 }
 
 form.example input[type=text] {
+  color: black;
+  font-weight: 500;
   max-height: 2em;
   padding: 1em;
   font-size: 1em;

@@ -753,5 +753,7 @@ function deleteUser($con, $userID){
     }
 }
 
-function saveUser($con, $userID, $username, $password, $email, $comingFrom, $userType, $status, $regTimestamp){}
+function saveUser($con, $userID, $username, $password, $email, $comingFrom, $userType, $status, $regTimestamp){
+    
+}
 ?>
