@@ -563,7 +563,7 @@ function searchByEmail($con, $searchEmail){
 
 function searchByCommentId($con, $searchCommentId){
 
-    $searchSQL = "SELECT * FROM `comment` WHERE  `id`= ?";
+    $searchSQL = "SELECT * FROM userAuth u JOIN comment c ON c.user_id = u.id WHERE id = ?";
 
     $searchStmt = mysqli_stmt_init($con); 
 
@@ -586,8 +586,22 @@ function searchByCommentId($con, $searchCommentId){
     $results = mysqli_stmt_get_result($searchStmt);
 
     if($rows = $results -> fetch_assoc()){
-        
+        mysqli_stmt_close($searchStmt);
+
+        $_SESSION['RSId'] = $rows['id'];
+        $_SESSION['RSUsername'] = $rows['username'];
+        $_SESSION['RSEmail'] = $rows['email'];
+        $_SESSION['RSPassword'] = $rows['password'];
+        $_SESSION['RSComingFrom'] = $rows['comingFrom'];
+        $_SESSION['RSUserType'] = $rows['userType'];
+        $_SESSION['RSUserStatus'] = $rows['status'];
+        $_SESSION['RSRegisterTimestamp'] = $rows['registerationTimestamp'];
+        $_SESSION['RSProfilePicture'] = $rows['profilePicture'];
+        $_SESSION['defaultTabID'] = "defaultCommentId";
+        header('location:admin.php');       
     }else{
+        $_SESSION['adminStatusMsg'] = "Coin with the given ID does not exist";
+        header('location:admin.php'); 
         return false;
     }
 }
