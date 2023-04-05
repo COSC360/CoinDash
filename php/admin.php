@@ -93,11 +93,12 @@
                 }
                 
                     function enableField(){
-                        for(var i = 0; i < displayByName.length; i++){
-                            displayByName[i].disabled = true;
-                            // displayByEmail[i].disabled = true;
-                            // displayByCommentId[i].disabled = true;
-                        }
+                        console.log("Hi")
+                        // for(var i = 0; i < displayByName.length; i++){
+                        //     displayByName[i].disabled = true;
+                        //     // displayByEmail[i].disabled = true;
+                        //     // displayByCommentId[i].disabled = true;
+                        // }
                     }
                 // document.getElementById("enableUserBtn").setAttribute("style", "background-color: #2fc363;");
                 // document.getElementById("enableUserBtn").setAttribute("style", "background-color: #2fc363;");
