@@ -10,10 +10,6 @@
     <canvas id="doughnut"></canvas>
     <canvas id="bar"></canvas>
     <canvas id="pie"></canvas>
-    <canvas id="bar"></canvas>
-    <canvas id="doughnut"></canvas>
-    <canvas id="pie"></canvas>
-
   </div>
 
   <?php
