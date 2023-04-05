@@ -3,11 +3,11 @@
   include 'modules.php';
 
   retrieveCommentCountChartData($con);
-?>  
-  <canvas id="bar"></canvas>
-  <?php
+  
   echo
-  "<script>
+  "
+  <canvas id=\"bar\"></canvas>
+  <script>
 
     var xValues = [\"hi\"];
     var yValues = [\"1\"];";

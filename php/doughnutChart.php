@@ -3,11 +3,11 @@
   include 'modules.php';
 
   retrieveRegSourceChartData($con);
-?>  
-  <canvas id="doughnut"></canvas>
-  <?php
+
   echo
-  "<script>
+  "
+  <canvas id=\"doughnut\"></canvas>
+  <script>
 
     var xValues = [];
     var yValues = [];";
