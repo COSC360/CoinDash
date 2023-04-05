@@ -82,11 +82,11 @@
                 const displayByEmail = document.forms['displayByEmail'];
                 const displayByCommentId = document.forms['displayByCommentId'];
 
-                document.getElementById(displayByName[0].getAttribute("id")).addEventListener("click", enableField);
+                document.getElementById(displayByName[3].getAttribute("id")).addEventListener("click", enableField);
                 // document.getElementById(displayByEmail[0].getAttribute("id")).addEventListener("click", enableField);
                 // document.getElementById(displayByCommentId[0].getAttribute("id")).addEventListener("click", enableField);
 
-                for(var i = 1; i < displayByName.length; i++){
+                for(var i = 0; i < displayByName.length; i++){
                     displayByName[i].disabled = true;
                     displayByEmail[i].disabled = true;
                     displayByCommentId[i].disabled = true;
@@ -94,12 +94,11 @@
                 
                     function enableField(){
                         console.log(displayByName[0].disabled);
-                        console.log("Hi");
-                        // for(var i = 0; i < displayByName.length; i++){
-                        //     displayByName[i].disabled = true;
-                        //     // displayByEmail[i].disabled = true;
-                        //     // displayByCommentId[i].disabled = true;
-                        // }
+                        for(var i = 0; i < displayByName.length; i++){
+                            displayByName[i].disabled = true;
+                            displayByEmail[i].disabled = true;
+                            displayByCommentId[i].disabled = true;
+                        }
                     }
                 // document.getElementById("enableUserBtn").setAttribute("style", "background-color: #2fc363;");
                 // document.getElementById("enableUserBtn").setAttribute("style", "background-color: #2fc363;");
