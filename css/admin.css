@@ -41,7 +41,7 @@
 
 /* Style the tab content */
 .tabcontent {
-  height: 65vh;
+  height: 71vh;
   display: none;
   padding: 0.5em 1em;
   border: 1px solid #ccc;
@@ -136,6 +136,7 @@ form.example fieldset {
 
 #item-2 input{
   margin-bottom: 0.25em;
+  padding: 0.25em;
   font-weight: 500;
 }
 
