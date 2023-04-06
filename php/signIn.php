@@ -65,11 +65,6 @@
                         </form>
                     </div>
                 </div>
-                <div class = "display-card-container">
-                    <img class = "display-card">
-                    <img class = "display-card">
-                    <img class = "display-card">
-                </div>
         </main>
     <?php
         include "footer.php";
