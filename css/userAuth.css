@@ -92,6 +92,12 @@
   column-gap: 4em;
 }
 
+.display-card{
+  width: 100px;
+  height: 100px;
+  background-image: url('../card.png');
+}
+
 /* * {
   scrollbar-width: auto;
   scrollbar-color: #000000 #ffffff;

@@ -66,9 +66,9 @@
                     </div>
                 </div>
                 <div class = "display-card-container">
-                    <img src="../card.png">
-                    <img src="../card.png">
-                    <img src="../card.png">
+                    <img class = "display-card">
+                    <img class = "display-card">
+                    <img class = "display-card">
                 </div>
         </main>
     <?php
