@@ -32,11 +32,12 @@ footer .fill-container {
 }
 .left{
     justify-content: flex-start;
-    gap: 0.5em;
+    gap: 0em;
 }
 
 .left h4{
-    border-radius: 1em;
+    border-top-right-radius: 1em;
+    border-bottom-right-radius: 1em;
     padding: 0.5em;
     color: aliceblue;
     background: rgb(45,45,45);
