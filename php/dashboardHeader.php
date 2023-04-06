@@ -12,7 +12,16 @@
         <div class="middle">
             <nav>
                 <?php
-                    if(isset($_SESSION['id']) && $_SESSION['userType'] == "admin"){
+                    if(isset($_SESSION['id']) && $_SESSION['userType'] == "admin" && $_SESSION['currentPage'] == "admin.php"){
+                        echo
+                        "  
+                        <a href=\"https://cosc360.ok.ubc.ca/suyash06/project-JasonR24/php/adminAnalytics.php\" id=\"stats\">
+                            Analytics
+                        </a>
+                        <a href=\"https://cosc360.ok.ubc.ca/suyash06/project-JasonR24/php/admin.php\">
+                            Portal
+                        </a>";
+                    }elseif(isset($_SESSION['id']) && $_SESSION['userType'] == "admin" && $_SESSION['currentPage'] == "account.php"){
                         echo
                         "
                         <div class=\"relative-container\">
