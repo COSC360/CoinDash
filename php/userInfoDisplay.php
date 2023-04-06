@@ -24,7 +24,7 @@
             <label>User Email :</label>
             <input type="text" name="email" value = "<?php echo $_SESSION['RSEmail']?>">
             <label>User Coming From :</label>
-            <select>
+            <select name="comingFrom">
                 <option value="<?php echo $_SESSION['RSComingFrom']?>" selected="selected"><?php echo $_SESSION['RSComingFrom']?></option>
                 <option value="Google">Google</option>
                 <option value="Friend">Friend</option>
