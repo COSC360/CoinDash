@@ -9,6 +9,7 @@
             </p>
             <p class="logo">
                 <img src="../images/sitelogo.png">
+                <p></p>
             </p>
         </div>
         <div class="middle">
