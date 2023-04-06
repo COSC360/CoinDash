@@ -47,26 +47,22 @@
             <div class="register-box">
                 <form name = "RegisterForm" id="RegisterForm" enctype="multipart/form-data" action= "processRegister.php" onsubmit="validateRegisterForm()" method="POST" required>
                     <div class="item-1">
-                        <label>Username <span style="color: red;">*</span></label><br>
-                        <p id = "usernameError"><i class="fa-solid fa-circle-exclamation"></i></p>                   
+                        <label>Username <span style="color: red;">*</span></label><br>                            
                         <input type = "text" name = "username"  id = "username" placeholder="What Should We Call You?"  onkeydown="UsernameErrorClearFunction()" value="">
                     </div>
 
                     <div class="item-2">
-                        <label>Email <span style="color: red;">*</span></label><br>
-                        <p id = "emailError"><i class="fa-solid fa-circle-exclamation"></i></p>
+                        <label>Email <span style="color: red;">*</span></label><br>                       
                         <input type = "email" name = "email"  id = "email" placeholder="What's Your Email?">
                     </div>
 
                     <div class="item-3">
-                        <label>Password <span style="color: red;">*</span></label><br>
-                        <p id = "passwordError"><i class="fa-solid fa-circle-exclamation"></i></p>                                   
+                        <label>Password <span style="color: red;">*</span></label><br>                                                        
                         <input type = "password" name = "password"  id = "password" placeholder="What’s Your Password?">
                     </div>
 
                     <div class="item-4">
                         <label>Verify Password <span style="color: red;">*</span></label><br>
-                        <p id = "verifyPasswordError"><i class="fa-solid fa-circle-exclamation"></i></p>
                         <input type = "password" name = "verifyPassword"  id = "verifyPassword" placeholder="Confirm Password?">
                     </div>
 
