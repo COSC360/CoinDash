@@ -82,9 +82,9 @@
                 const displayByEmail = document.forms['displayByEmail'];
                 const displayByCommentId = document.forms['displayByCommentId'];
 
-                document.getElementById(document.querySelectorAll('[id=editUserBtn]')[0].getAttribute("id")).addEventListener("click", cosole.log("btn1"));
-                document.getElementById(document.querySelectorAll('[id=editUserBtn]')[1].getAttribute("id")).addEventListener("click", cosole.log("btn2"));
-                document.getElementById(document.querySelectorAll('[id=editUserBtn]')[2].getAttribute("id")).addEventListener("click", cosole.log("btn3"));
+                document.getElementById(document.querySelectorAll('[id=editUserBtn]')[0].getAttribute("id")).addEventListener("click", console.log("btn1"));
+                document.getElementById(document.querySelectorAll('[id=editUserBtn]')[1].getAttribute("id")).addEventListener("click", console.log("btn2"));
+                document.getElementById(document.querySelectorAll('[id=editUserBtn]')[2].getAttribute("id")).addEventListener("click", console.log("btn3"));
 
 
                 for(var i = 0; i < displayByName.length; i++){
