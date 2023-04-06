@@ -1,7 +1,7 @@
 var loginId = document.getElementById("loginId"); //Login Id (Username or Email)
 var password = document.getElementById("password"); // Login Password
 var loginBtn = document.getElementById("loginSubmit"); // Login button
-var loginForm = document.forms[1].length; // Login Form
+var loginForm = document.forms[0].length; // Login Form
 
 
 // <i class="fa-sharp fa-solid fa-circle-check" style="color: #11e43b;"></i>
