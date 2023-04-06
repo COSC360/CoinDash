@@ -64,6 +64,7 @@
                                 <input type="submit" name = "loginSubmit" id = "loginSubmit" value ="Login">
                             </div>
                         </form>
+                        <script src="../js/signIn.js"></script>
                     </div>
                 </div>
         </main>
