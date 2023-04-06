@@ -327,7 +327,6 @@ select{
 .showError{
   opacity: 0;
   visibility: hidden;
-  
 }
 
 .hideError{
