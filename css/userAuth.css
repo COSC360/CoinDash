@@ -107,21 +107,6 @@
 .login-box .item-1, .item-2, .item-3{
   position: relative;
 }
-.login-box p{
-  position:absolute;
-  margin-top: 1em;
-  left: 23.5em;
-  opacity: 0;
-  visibility: hidden;
-  color: rgb(255, 0, 0);
-  z-index: 10;
-}
-
-
-.login-box i{
-  color: rgb(255, 0, 0);
-}
-
 
 .login-box input {
     margin-top: 1em;
