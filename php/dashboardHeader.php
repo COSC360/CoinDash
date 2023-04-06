@@ -19,7 +19,7 @@
                             Analytics
                         </a>
                         <a href=\"https://cosc360.ok.ubc.ca/suyash06/project-JasonR24/php/admin.php\">
-                            Dashboard
+                            Portal
                         </a>";
                     }elseif(isset($_SESSION['id']) && $_SESSION['userType'] == "user"){
                         echo
