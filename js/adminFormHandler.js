@@ -1,6 +1,7 @@
 const displayByName = document.forms['displayByName'];
 const displayByEmail = document.forms['displayByEmail'];
 const displayByCommentId = document.forms['displayByCommentId'];
+const c = [document.querySelectorAll('[id=enableUserBtn]'), document.querySelectorAll('[id=disableUserBtn]'),document.querySelectorAll('[id=deleteUserBtn]'),document.querySelectorAll('[id=saveUserBtn]')];
 
 document.querySelectorAll('[id=editUserBtn]')[0].addEventListener("click", byUsernameEnableField);
 document.querySelectorAll('[id=editUserBtn]')[1].addEventListener("click", byEmailEnableField);
@@ -16,10 +17,15 @@ function byUsernameEnableField(){
     for(var i = 0; i < displayByName.length; i++){
         displayByName[i].disabled = false;
     }
-    document.querySelectorAll('[id=enableUserBtn]')[0].setAttribute("style", "background-color: #2fc363;");
-    document.querySelectorAll('[id=disableUserBtn]')[0].setAttribute("style", "background-color: #2fc363;");
-    document.querySelectorAll('[id=deleteUserBtn]')[0].setAttribute("style", "background-color: #2fc363;");
-    document.querySelectorAll('[id=saveUserBtn]')[0].setAttribute("style", "background-color: #2fc363;");
+    elementArray.forEach(addEnable);
+
+    function addEnable(btn){
+        btn[0].setAttribute("style", "background-color: #2fc363;");
+    }
+    // document.querySelectorAll('[id=enableUserBtn]')[0].setAttribute("style", "background-color: #2fc363;");
+    // document.querySelectorAll('[id=disableUserBtn]')[0].setAttribute("style", "background-color: #2fc363;");
+    // document.querySelectorAll('[id=deleteUserBtn]')[0].setAttribute("style", "background-color: #2fc363;");
+    // document.querySelectorAll('[id=saveUserBtn]')[0].setAttribute("style", "background-color: #2fc363;");
 }
 function byEmailEnableField(){                 
     for(var i = 0; i < displayByEmail.length; i++){
