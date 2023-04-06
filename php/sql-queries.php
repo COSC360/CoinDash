@@ -328,14 +328,11 @@ function adminLogin($con,$adminLoginID,$adminPassword){
 
     $adminLoginStmt = mysqli_stmt_init($con); 
 
-    $statusMsg = '';
-
     if (!mysqli_stmt_prepare($adminLoginStmt, $adminLoginSQL)){
         
         // TODO:
         // header("location: REPLACE LATER");
-        $statusMsg = "Unable to prepare the SQL statement.";
-        echo "<script>window.alert(\"".$statusMsg."\")</script>";
+        $_SESSION['adminStatusMsg'] = "Unable to prepare the SQL statement.";
         exit();
     }
 
@@ -357,14 +354,13 @@ function adminLogin($con,$adminLoginID,$adminPassword){
             $_SESSION['userType'] = $rows['userType'];
             header('location:admin.php');   
         }else{
-            $statusMsg = "User is not admin !";
-            echo "<script>window.alert(\"".$statusMsg."\")</script>";
+            $_SESSION['adminStatusMsg'] = "User is not admin !";
+            header('location:adminlogin.php');
         }
     }else{
         // mysqli_stmt_close();
         header('location:adminlogin.php');
-        $statusMsg = "Invalid Login Details !";
-        echo "<script>window.alert(\"".$statusMsg."\")</script>";
+        $_SESSION['adminStatusMsg'] = "Invalid Login Details !";
         return false;
     }
 }
