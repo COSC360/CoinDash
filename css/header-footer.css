@@ -102,7 +102,7 @@ footer {
 
 #usernameDashboard{
     border-radius: 0.5em;
-    color: rgb(17, 17, 17);
+    color: rgb(255, 255, 255);
     padding: 0.35em;
     background: rgb(45,45,45);
     background: linear-gradient(90deg, rgb(26 94 217) 0%, rgb(23 99 195) 32%, rgba(0,212,255,1) 100%);;
@@ -111,7 +111,7 @@ footer {
 #usernameDashboard:hover{
     opacity: 30%;
     border-radius: 0.5em;
-    color: rgb(17, 17, 17);
+    color: rgb(255, 255, 255);
     padding: 0.35em;
     background: rgb(45,45,45);
     background: linear-gradient(90deg, rgb(26 94 217) 0%, rgb(23 99 195) 32%, rgba(0,212,255,1) 100%);;
