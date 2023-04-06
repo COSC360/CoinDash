@@ -93,8 +93,8 @@
 }
 
 .display-card{
-  width: 40em;
-  height: 20em;
+  width: 20em;
+  height: 10em;
   background-image: url(../card.png);
   background-repeat: no-repeat;
   background-size: cover;
