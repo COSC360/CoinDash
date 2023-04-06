@@ -4,9 +4,9 @@
 <header class="container">
     <div class="fill-container">
         <div class="left">
-            <p class="logo" style = "display: flex; align-items: center; flex-direction: row; column-gap: 1em;">
-                <img src="../images/sitelogo.png" style = "position:relative; height:40px; width: 40px; margin-left: 0.75em;">
-                <p>CoinDash</p>
+            <p class="logo">
+                <img src="../images/sitelogo.png">
+                <p>Coindash</p>
             </p>
         </div>
         <div class="middle">
@@ -26,14 +26,16 @@
                             </div>";
                         }else{
                             echo
-                            "<a href=\"#\" id=\"search\">
-                                Search
-                            </a>
-                            <div style=\"position: absolute; left: 0; bottom:-2em;\">
-                                <form id=\"search-modal\" class=\"hide\">
-                                    <input type=\"text\" name=\"like\" placeholder=\"What are you looking for?\">
-                                </form>
-                            </div>
+                            "
+                            <div class=\"relative-container\">
+                                <a href=\"#\" id=\"search\">
+                                    Search
+                                </a>
+                                <div style=\"position: absolute; left: 0; bottom:-2em;\">
+                                    <form id=\"search-modal\" class=\"hide\">
+                                        <input type=\"text\" name=\"like\" placeholder=\"What are you looking for?\">
+                                    </form>
+                                </div>
                             </div>
                             <a href=\"https://cosc360.ok.ubc.ca/suyash06/project-JasonR24/php/dashboard.php\">My Dashboard</a>";
                         }
