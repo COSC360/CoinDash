@@ -86,25 +86,28 @@
                 document.querySelectorAll('[id=editUserBtn]')[1].addEventListener("click", byEmailEnableField);
                 document.querySelectorAll('[id=editUserBtn]')[2].addEventListener("click", byCommentIdEnableField);
 
-
-                for(var i = 0; i < displayByName.length; i++){
-                    displayByName[i].disabled = true;
-                    displayByEmail[i].disabled = true;
-                    displayByCommentId[i].disabled = true;
-                }
+                console.log(document.querySelectorAll('[id=enableUserBtn]'));
+                console.log(document.querySelectorAll('[id=disableUserBtn]'));
+                console.log(document.querySelectorAll('[id=deleteUserBtn]'));
+                console.log(document.querySelectorAll('[id=saveUserBtn]'));
+                // for(var i = 0; i < displayByName.length; i++){
+                //     displayByName[i].disabled = true;
+                //     displayByEmail[i].disabled = true;
+                //     displayByCommentId[i].disabled = true;
+                // }
                 
-                function byUsernameEnableField(){               
-                    for(var i = 0; i < displayByName.length; i++){
-                        displayByName[i].disabled = false;
-                    }
+                // function byUsernameEnableField(){               
+                //     for(var i = 0; i < displayByName.length; i++){
+                //         displayByName[i].disabled = false;
+                //     }
 
-                    for(var i = 0; i < 4; i++){
-                        displayByName[i].setAttribute("style", "background-color: #2fc363;");
-                        displayByName[i].setAttribute("style", "background-color: #2fc363;");
-                        displayByName[i].setAttribute("style", "background-color: #2fc363;");
-                        displayByName[i].setAttribute("style", "background-color: #2fc363;");
-                    }
-                }
+                //     for(var i = 0; i < 4; i++){
+                //         document.getElementById(displayByName[i].getAttribute("id")).setAttribute("style", "background-color: #2fc363;");
+                //         document.getElementById(displayByName[i].getAttribute("id")).setAttribute("style", "background-color: #2fc363;");
+                //         document.getElementById(displayByName[i].getAttribute("id")).setAttribute("style", "background-color: #2fc363;");
+                //         document.getElementById(displayByName[i].getAttribute("id")).setAttribute("style", "background-color: #2fc363;");
+                //     }
+                // }
                 // function byEmailEnableField(){                 
                 //     for(var i = 0; i < displayByEmail.length; i++){
                 //         displayByEmail[i].disabled = false;
