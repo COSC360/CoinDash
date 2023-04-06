@@ -760,6 +760,8 @@ function deleteUser($con, $userID){
 }
 
 function saveUser($con, $userID, $username, $password, $email, $comingFrom, $userType, $status, $regTimestamp){
+    echo "loop 3";
+
     $existingUserSQL = "SELECT * FROM `userAuth` WHERE  `id` = ?";
 
     $existingUserStmt = mysqli_stmt_init($con);
@@ -781,6 +783,8 @@ function saveUser($con, $userID, $username, $password, $email, $comingFrom, $use
     $results = mysqli_stmt_get_result($existingUserStmt);
     
     if($rows = $results -> fetch_assoc()){
+        echo "loop 5";
+
         mysqli_stmt_close($existingUserStmt);
 
         $updateSQL = "UPDATE `userAuth` SET `username` = ?, `password` = ?, `email` = ?, `comingFrom` = ?, `userType` = ?, `status` = ?, `registerationTimestamp` = ? WHERE `id` = ?";
@@ -810,6 +814,7 @@ function saveUser($con, $userID, $username, $password, $email, $comingFrom, $use
         header('location:admin.php');
 
     }else{
+        echo "loop 6";
         $statusMsg = "User does not exist !";
         echo "<script>console.log(\"".$statusMsg."\")script>";
         return false;       
