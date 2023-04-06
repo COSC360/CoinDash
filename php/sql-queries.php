@@ -580,7 +580,7 @@ function searchByCommentId($con, $searchCommentId){
     if($rows = $results -> fetch_assoc()){
         mysqli_stmt_close($searchStmt);
 
-        $_SESSION['RSId'] = $rows['id'];
+        $_SESSION['RSId'] = $rows['user_id'];
         $_SESSION['RSUsername'] = $rows['username'];
         $_SESSION['RSEmail'] = $rows['email'];
         $_SESSION['RSPassword'] = $rows['password'];
