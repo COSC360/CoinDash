@@ -35,14 +35,6 @@ footer .fill-container {
     gap: 0.5em;
 }
 
-.left h4:hover{
-    border-radius: 0.5em;
-    padding: 0.5em;
-    color: aliceblue;
-    background: rgb(45,45,45);
-    background: linear-gradient(90deg, rgb(33, 54, 173) 0%, rgb(26, 104, 194) 35%, rgba(0,212,255,1) 100%);
-}
-
 .middle {
     justify-content: center;
 }
