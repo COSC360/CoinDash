@@ -81,7 +81,6 @@
 
                     <div class="item-6">
                         <label>Profile Photo <span style="color: red;">*</span></label><br>
-                        <p id = "imageUploadError"><i class="fa-solid fa-circle-exclamation"></i></p>
                         <input type="file" name="img"  id="img" accept="image/*">
                     </div>      
 
