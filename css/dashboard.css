@@ -52,3 +52,9 @@
     width: 40px; 
     margin-left: 0.75em;
 }
+
+.topNav{
+    display: flex;
+    flex-direction: row;
+    column-gap: 3em;
+}
