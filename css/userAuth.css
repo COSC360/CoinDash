@@ -1,4 +1,3 @@
-
 @keyframes rainbow-animation {
   to {
       background-position: 4500vh;
@@ -82,24 +81,6 @@
   width: fit-content;
   display: grid;
   white-space:nowrap;
-}
-
-
-.display-card-container{
-  width: calc(100vw - 4em);
-  height: fit-content;  
-  display: flex;
-  flex-direction: row;
-  column-gap: 3em;
-}
-
-.display-card{
-  width: 20em;
-  height: 15em;
-  background-image: url(../card.png);
-  background-repeat: no-repeat;
-  background-size: cover;
-  border-radius: 1em;
 }
 
 
