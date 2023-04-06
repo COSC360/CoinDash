@@ -82,7 +82,9 @@
                 const displayByEmail = document.forms['displayByEmail'];
                 const displayByCommentId = document.forms['displayByCommentId'];
 
-                document.getElementById(document.querySelectorAll('[id=editUserBtn]')[0].getAttribute("id")).addEventListener("click", enableField);
+                document.getElementById(document.querySelectorAll('[id=editUserBtn]')[0].getAttribute("id")).addEventListener("click", byUsernameEnableField);
+                document.getElementById(document.querySelectorAll('[id=editUserBtn]')[1].getAttribute("id")).addEventListener("click", byEmailEnableField);
+                document.getElementById(document.querySelectorAll('[id=editUserBtn]')[2].getAttribute("id")).addEventListener("click", byCommentIdEnableField);
 
 
                 for(var i = 0; i < displayByName.length; i++){
@@ -91,16 +93,42 @@
                     displayByCommentId[i].disabled = true;
                 }
                 
-                function enableField(){
+                function byUsernameEnableField(){
                     for(var i = 0; i < displayByName.length; i++){
-                        displayByEmail[i].disabled = false;
+                        displayByName[i].disabled = false;
+                    }
+
+                    for(var i = 0; i < 4; i++){
+                        document.getElementById(displayByName[i].getAttribute("id")).setAttribute("style", "background-color: #2fc363;");
+                        document.getElementById(displayByName[i].getAttribute("id")).setAttribute("style", "background-color: #2fc363;");
+                        document.getElementById(displayByName[i].getAttribute("id")).setAttribute("style", "background-color: #2fc363;");
+                        document.getElementById(displayByName[i].getAttribute("id")).setAttribute("style", "background-color: #2fc363;");
                     }
                 }
-                //         //     document.getElementById(displayByName[i].getAttribute()).setAttribute("style", "background-color: #2fc363;");
-                //         //     document.getElementById(displayByEmail[i]).setAttribute("style", "background-color: #2fc363;");
-                //         //     document.getElementById(displayByCommentId[i]).setAttribute("style", "background-color: #2fc363;");
-                //     }
+                function byEmailEnableField(){
+                    for(var i = 0; i < displayByEmail.length; i++){
+                        displayByEmail[i].disabled = false;
+                    }
 
+                    for(var i = 0; i < 4; i++){
+                        document.getElementById(displayByName[i].getAttribute("id")).setAttribute("style", "background-color: #2fc363;");
+                        document.getElementById(displayByName[i].getAttribute("id")).setAttribute("style", "background-color: #2fc363;");
+                        document.getElementById(displayByName[i].getAttribute("id")).setAttribute("style", "background-color: #2fc363;");
+                        document.getElementById(displayByName[i].getAttribute("id")).setAttribute("style", "background-color: #2fc363;");
+                    }
+                }
+                function byCommentIdEnableField(){
+                    for(var i = 0; i < displayByCommentId.length; i++){
+                        displayByCommentId[i].disabled = false;
+                    }
+
+                    for(var i = 0; i < 4; i++){
+                        document.getElementById(displayByName[i].getAttribute("id")).setAttribute("style", "background-color: #2fc363;");
+                        document.getElementById(displayByName[i].getAttribute("id")).setAttribute("style", "background-color: #2fc363;");
+                        document.getElementById(displayByName[i].getAttribute("id")).setAttribute("style", "background-color: #2fc363;");
+                        document.getElementById(displayByName[i].getAttribute("id")).setAttribute("style", "background-color: #2fc363;");
+                    }
+                }
 
                 document.getElementById("<?php echo $_SESSION['defaultTabID']?>").click();
             </script>
