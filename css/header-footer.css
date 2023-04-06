@@ -30,10 +30,7 @@ footer .fill-container {
     flex: 1 1 0;
     gap: 2em;
 }
-.left {
-    justify-self: flex-start;
-    gap: 0.5em;
-}
+
 .middle {
     justify-content: center;
 }
