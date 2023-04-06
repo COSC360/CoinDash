@@ -35,6 +35,12 @@ footer .fill-container {
     gap: 0.5em;
 }
 
+.logo h4{
+    border-radius: 1em;
+    background: rgb(45,45,45);
+    background: linear-gradient(90deg, rgba(45,45,45,1) 0%, rgba(47,47,186,1) 35%, rgba(0,212,255,1) 100%);
+}
+
 .middle {
     justify-content: center;
 }
