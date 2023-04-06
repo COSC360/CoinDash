@@ -812,7 +812,6 @@ function saveUser($con, $userID, $username, $password, $email, $comingFrom, $use
     }
 }
 
-
 function retrieveRegSourceChartData($con){
     $chartDataSQL = "SELECT comingFrom, COUNT(id) AS userCount FROM `userAuth` WHERE userType = 'user' GROUP BY comingFrom";
 

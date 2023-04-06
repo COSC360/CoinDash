@@ -23,7 +23,7 @@ session_start();
 
 <body>
     <?php
-        include "dashboard-header.php";
+        include "dashboardHeader.php";
     ?>
     <main>
         <article class="panel page-title">
