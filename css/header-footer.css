@@ -36,8 +36,7 @@ footer .fill-container {
 }
 
 .left h4{
-    border-top-right-radius: 1em;
-    border-bottom-right-radius: 1em;
+    border-radius: 0.5em;
     padding: 0.5em;
     color: aliceblue;
     background: rgb(45,45,45);
@@ -107,9 +106,4 @@ footer {
     position: absolute;
     left: 0;
     bottom: -0.5em;
-}
-
-.logo img{
-    border-top-right-radius: 1em;
-    border-bottom-right-radius: 1em;
 }
