@@ -1,3 +1,8 @@
+body{
+  background-image: url('../images/web-background.jpg');
+  background-repeat: no-repeat;
+}
+
 @keyframes rainbow-animation {
   to {
       background-position: 4500vh;
