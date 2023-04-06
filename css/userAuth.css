@@ -86,16 +86,19 @@
 
 .display-card-container{
   width: calc(100vw - 4em);
-  height: fit-content;
+  height: fit-content;  
   display: flex;
   flex-direction: row;
-  column-gap: 4em;
+  column-gap: 3em;
 }
 
 .display-card{
-  width: 100px;
-  height: 100px;
-  background-image: url('../card.png');
+  width: 40em;
+  height: 20em;
+  background-image: url(../card.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 1em;
 }
 
 /* * {
