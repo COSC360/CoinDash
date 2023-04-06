@@ -25,6 +25,10 @@ footer .fill-container {
     font-size: 1em;
 }
 
+.left {
+    gap: 0.5em;
+}
+
 .left, .middle, .right {
     display: flex;
     flex: 1 1 0;
