@@ -6,10 +6,7 @@
         <div class="left">
             <p class="logo">
                 <img src="../images/sitelogo.png">
-            </p>
-            <p class="logo">
-                <img src="../images/sitelogo.png">
-                <p></p>
+                <h4>CoinDash</h4>
             </p>
         </div>
         <div class="middle">
