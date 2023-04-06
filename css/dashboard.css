@@ -38,3 +38,9 @@
     color: var(--Black-1);
     font-weight: 800;
 }
+
+.logo{
+    display: flex;
+    flex-direction: row;
+    column-gap: 2em;
+}
