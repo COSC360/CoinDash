@@ -100,7 +100,7 @@ footer {
     bottom: -0.5em;
 }
 
-span #username{
+#usernameDashboard{
     border-radius: 0.5em;
     color: rgb(17, 17, 17);
     padding: 0.35em;
@@ -108,7 +108,7 @@ span #username{
     background: linear-gradient(90deg, rgb(26 94 217) 0%, rgb(23 99 195) 32%, rgba(0,212,255,1) 100%);;
 }
 
-span #username:hover{
+#usernameDashboard:hover{
     opacity: 30%;
     border-radius: 0.5em;
     color: rgb(17, 17, 17);
