@@ -242,19 +242,7 @@
 .register-box .item-1, .item-2, .item-3{
   position: relative;
 }
-.register-box p{
-  position:absolute;
-  margin-top: 1em;
-  right: 0.25em;
-  opacity: 0;
-  visibility: hidden;
-  color: rgb(255, 0, 0);
-  z-index: 10;
-}
 
-.register-box i{
-  color: rgb(255, 0, 0);
-}
 
 .register-box form{
   display: grid;
@@ -309,9 +297,6 @@ select{
   font-weight: 800;
   font-size: 4em;
   color: #050505;
-  /* background: -webkit-linear-gradient(#039dda,#025fac,#0019f7);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent; */
   background-image: 
   linear-gradient(to right, rgb(0, 195, 255),rgb(0, 140, 255),rgb(0, 110, 255),rgb(0, 119, 255),rgb(0, 204, 255),rgb(0, 162, 255)); 
   -webkit-background-clip: text;
@@ -337,4 +322,14 @@ select{
   font-size: 1em;
   font-weight: 500;
   color: #050505;
+}
+
+.showError{
+  opacity: 0;
+  visibility: hidden;
+  
+}
+
+.hideError{
+
 }
