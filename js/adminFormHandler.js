@@ -7,10 +7,10 @@ document.querySelectorAll('[id=editUserBtn]')[1].addEventListener("click", byEma
 document.querySelectorAll('[id=editUserBtn]')[2].addEventListener("click", byCommentIdEnableField);
 
 function enableBtn(i){
-    document.querySelectorAll('[id=enableUserBtn]')[i].classList.add("addEnableBtnColor");
-    document.querySelectorAll('[id=disableUserBtn]')[i].classList.add("addEnableBtnColor");
-    document.querySelectorAll('[id=deleteUserBtn]')[i].classList.add("addEnableBtnColor");
-    document.querySelectorAll('[id=saveUserBtn]')[i].classList.add("addEnableBtnColor");          
+    document.querySelectorAll('[id=enableUserBtn]')[i].setAttribute("style", "background-color: #2fc363;");
+    document.querySelectorAll('[id=disableUserBtn]')[i].setAttribute("style", "background-color: #2fc363;");
+    document.querySelectorAll('[id=deleteUserBtn]')[i].setAttribute("style", "background-color: #2fc363;");
+    document.querySelectorAll('[id=saveUserBtn]')[i].setAttribute("style", "background-color: #2fc363;");          
 }
 
 for(var i = 0; i < displayByName.length; i++){

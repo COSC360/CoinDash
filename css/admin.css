@@ -117,8 +117,9 @@ form.example fieldset {
   border-radius: 50%;
 }
 
+
 #item-1 button{
-  background-color: #575757; /* Green */
+  background-color: #575757; 
   min-width: 8em;
   border: none;
   color: white;
@@ -205,8 +206,4 @@ canvas #pie{
   display: flex;
   flex-direction: row;
   column-gap: 3em;
-}
-
-.addEnableBtnColor{
-  background-color: #2fc363;
 }
