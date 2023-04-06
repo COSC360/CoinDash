@@ -12,7 +12,7 @@ const passwordRegex = "^[a-zA-Z]\w{8,16}$ "; //Simple password expression. The p
 const emailRegex = "^(.+)@([^\.].*)\.([a-z]{2,})$"; //Email validation based on current standard naming rules
 var errMsg = "";
 
-console.log(loginForm);
+console.log(loginForm[1]);
 
 // loginForm.addEventListener('submit', (event) => {
 //     alert('submitting');
