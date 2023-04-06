@@ -82,9 +82,9 @@
                 const displayByEmail = document.forms['displayByEmail'];
                 const displayByCommentId = document.forms['displayByCommentId'];
 
-                document.querySelectorAll('[id=editUserBtn]')[0].addEventListener("click", byUsernameEnableField);
-                document.querySelectorAll('[id=editUserBtn]')[1].addEventListener("click", byEmailEnableField);
-                document.querySelectorAll('[id=editUserBtn]')[2].addEventListener("click", byCommentIdEnableField);
+                // document.querySelectorAll('[id=editUserBtn]')[0].addEventListener("click", byUsernameEnableField);
+                // document.querySelectorAll('[id=editUserBtn]')[1].addEventListener("click", byEmailEnableField);
+                // document.querySelectorAll('[id=editUserBtn]')[2].addEventListener("click", byCommentIdEnableField);
 
                 console.log(document.querySelectorAll('[id=enableUserBtn]'));
                 console.log(document.querySelectorAll('[id=disableUserBtn]'));
