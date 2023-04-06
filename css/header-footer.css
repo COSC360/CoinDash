@@ -105,5 +105,5 @@ footer {
     color: rgb(17, 17, 17);
     padding: 0.5em;
     background: rgb(45,45,45);
-    background: linear-gradient(90deg, rgba(26,167,181,1) 0%, rgba(44,44,237,1) 32%, rgba(0,212,255,1) 100%);
+    background: linear-gradient(90deg, rgb(26 94 217) 0%, rgb(23 99 195) 32%, rgba(0,212,255,1) 100%);;
 }
