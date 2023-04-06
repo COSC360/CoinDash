@@ -46,7 +46,7 @@
                         </div>
                     </div>  
                     <div class="login-box">
-                        <form name = "LoginForm" action= "processLogin.php" method="GET">
+                        <form name = "LoginForm" id ="LoginForm" action= "processLogin.php" method="GET" required>
                             <div class="item-1">
                                 <label>Username or Email</label><br>     
                                 <input type = "text" name = "loginId" id= "loginId" placeholder="What’s Your Registered Username or Email?">
