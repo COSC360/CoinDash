@@ -14,13 +14,19 @@
                 <?php
                     if(isset($_SESSION['id']) && $_SESSION['userType'] == "admin"){
                         echo
-                        "  
-                        <a href=\"https://cosc360.ok.ubc.ca/suyash06/project-JasonR24/php/adminAnalytics.php\" id=\"stats\">
-                            Analytics
-                        </a>
-                        <a href=\"https://cosc360.ok.ubc.ca/suyash06/project-JasonR24/php/admin.php\">
-                            Portal
-                        </a>";
+                        "
+                        <div class=\"relative-container\">
+                            <a href=\"#\" id=\"search\">
+                                Search
+                            </a>
+                            <div style=\"position: absolute; left: 0; bottom:-2em;\">
+                                <form id=\"search-modal\" class=\"hide\">
+                                    <input type=\"text\" name=\"like\" placeholder=\"What are you looking for?\">
+                                </form>
+                            </div>
+                        </div>
+                        <a href=\"https://cosc360.ok.ubc.ca/suyash06/project-JasonR24/php/dashboard.php\">Dashboard</a>  
+                        <a href=\"https://cosc360.ok.ubc.ca/suyash06/project-JasonR24/php/admin.php\">Admin Portal</a>";
                     }elseif(isset($_SESSION['id']) && $_SESSION['userType'] == "user"){
                         echo
                         "
@@ -34,7 +40,7 @@
                                 </form>
                             </div>
                         </div>
-                        <a href=\"https://cosc360.ok.ubc.ca/suyash06/project-JasonR24/php/dashboard.php\">My Dashboard</a>";
+                        <a href=\"https://cosc360.ok.ubc.ca/suyash06/project-JasonR24/php/dashboard.php\">Dashboard</a>";   
                     }else{
                         echo
                         "
