@@ -99,36 +99,36 @@
                     }
 
                     for(var i = 0; i < 4; i++){
-                        document.getElementById(displayByName[i].getAttribute("id")).setAttribute("style", "background-color: #2fc363;");
-                        document.getElementById(displayByName[i].getAttribute("id")).setAttribute("style", "background-color: #2fc363;");
-                        document.getElementById(displayByName[i].getAttribute("id")).setAttribute("style", "background-color: #2fc363;");
-                        document.getElementById(displayByName[i].getAttribute("id")).setAttribute("style", "background-color: #2fc363;");
+                        displayByName[i].setAttribute("style", "background-color: #2fc363;");
+                        displayByName[i].setAttribute("style", "background-color: #2fc363;");
+                        displayByName[i].setAttribute("style", "background-color: #2fc363;");
+                        displayByName[i].setAttribute("style", "background-color: #2fc363;");
                     }
                 }
-                function byEmailEnableField(){                 
-                    for(var i = 0; i < displayByEmail.length; i++){
-                        displayByEmail[i].disabled = false;
-                    }
+                // function byEmailEnableField(){                 
+                //     for(var i = 0; i < displayByEmail.length; i++){
+                //         displayByEmail[i].disabled = false;
+                //     }
 
-                    for(var i = 0; i < 4; i++){
-                        document.getElementById(displayByEmail[i].getAttribute("id")).setAttribute("style", "background-color: #2fc363;");
-                        document.getElementById(displayByEmail[i].getAttribute("id")).setAttribute("style", "background-color: #2fc363;");
-                        document.getElementById(displayByEmail[i].getAttribute("id")).setAttribute("style", "background-color: #2fc363;");
-                        document.getElementById(displayByEmail[i].getAttribute("id")).setAttribute("style", "background-color: #2fc363;");
-                    }
-                }
-                function byCommentIdEnableField(){                 
-                    for(var i = 0; i < displayByCommentId.length; i++){
-                        displayByCommentId[i].disabled = false;
-                    }
+                //     for(var i = 0; i < 4; i++){
+                //         document.getElementById(displayByEmail[i].getAttribute("id")).setAttribute("style", "background-color: #2fc363;");
+                //         document.getElementById(displayByEmail[i].getAttribute("id")).setAttribute("style", "background-color: #2fc363;");
+                //         document.getElementById(displayByEmail[i].getAttribute("id")).setAttribute("style", "background-color: #2fc363;");
+                //         document.getElementById(displayByEmail[i].getAttribute("id")).setAttribute("style", "background-color: #2fc363;");
+                //     }
+                // }
+                // function byCommentIdEnableField(){                 
+                //     for(var i = 0; i < displayByCommentId.length; i++){
+                //         displayByCommentId[i].disabled = false;
+                //     }
 
-                    for(var i = 0; i < 4; i++){
-                        document.getElementById(displayByCommentId[i].getAttribute("id")).setAttribute("style", "background-color: #2fc363;");
-                        document.getElementById(displayByCommentId[i].getAttribute("id")).setAttribute("style", "background-color: #2fc363;");
-                        document.getElementById(displayByCommentId[i].getAttribute("id")).setAttribute("style", "background-color: #2fc363;");
-                        document.getElementById(displayByCommentId[i].getAttribute("id")).setAttribute("style", "background-color: #2fc363;");
-                    }
-                }
+                //     for(var i = 0; i < 4; i++){
+                //         document.getElementById(displayByCommentId[i].getAttribute("id")).setAttribute("style", "background-color: #2fc363;");
+                //         document.getElementById(displayByCommentId[i].getAttribute("id")).setAttribute("style", "background-color: #2fc363;");
+                //         document.getElementById(displayByCommentId[i].getAttribute("id")).setAttribute("style", "background-color: #2fc363;");
+                //         document.getElementById(displayByCommentId[i].getAttribute("id")).setAttribute("style", "background-color: #2fc363;");
+                //     }
+                // }
 
                 document.getElementById("<?php echo $_SESSION['defaultTabID']?>").click();
             </script>
