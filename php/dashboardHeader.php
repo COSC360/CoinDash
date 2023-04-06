@@ -4,8 +4,8 @@
 <header class="container">
     <div class="fill-container">
         <div class="left">
-            <p class="logo">
-                <img src="../images/sitelogo.png">
+            <p class="logo" style = "display: flex; align-items: center; flex-direction: row; column-gap: 1em;">
+                <img src="../images/sitelogo.png" style = "position:relative; height:40px; width: 40px; margin-left: 0.75em;">
                 <p>CoinDash</p>
             </p>
         </div>
