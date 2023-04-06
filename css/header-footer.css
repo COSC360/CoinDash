@@ -100,7 +100,7 @@ footer {
     bottom: -0.5em;
 }
 
-#username:hover{
+#username{
     border-radius: 0.5em;
     padding: 0.5em;
     background: rgb(45,45,45);
