@@ -66,13 +66,9 @@
                     </div>
                 </div>
                 <div class = "display-card-container">
-                    <div class = "display-card-grid">
-                        <!-- <a href = "http://cosc360.ok.ubc.ca/suyash06/cosc360-Project/dashboard.php"><img class="dashboardCard"></a>
-                        <a href = "http://cosc360.ok.ubc.ca/suyash06/cosc360-Project/dashboard.php"><img class="dashboardCard"></a>
-                        <a href = "http://cosc360.ok.ubc.ca/suyash06/cosc360-Project/dashboard.php"><img class="dashboardCard"></a> -->
-                        <!-- <a href = "http://localhost/project360/dashboard.php"><img class="dashboardCard"></a>
-                        <a href = "http://localhost/project360/dashboard.php"><img class="dashboardCard"></a> -->
-                    </div>
+                    <img src="../card.png">
+                    <img src="../card.png">
+                    <img src="../card.png">
                 </div>
         </main>
     <?php

@@ -87,59 +87,30 @@
 .display-card-container{
   width: calc(100vw - 4em);
   height: fit-content;
-  position: relative;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 2em;
-}
-/* .login-display-card-container{
-  position: relative;
-  width: calc(100vw - 4em);
-  height: fit-content;
-  white-space:nowrap;
-  overflow-x:auto;
-  padding-top: 6.2em;
-  padding-left: 4em;
+  flex-direction: row;
+  column-gap: 4em;
 }
 
-.register-display-card-container{
-  position: relative;
-  width: calc(100vw - 4em);
-  height: fit-content;
-  display: grid;
-  grid-template-columns: auto auto auto;
-  column-gap: 50px;
-  padding: 2em;
-  padding-bottom: 0; */
-/* } */
-
-.display-card-grid{
-  display: grid;
-  grid-template-columns: auto auto auto auto;
+/* * {
+  scrollbar-width: auto;
+  scrollbar-color: #000000 #ffffff;
 }
 
 
+*::-webkit-scrollbar {
+  width: 17px;
+}
 
-  * {
-    scrollbar-width: auto;
-    scrollbar-color: #000000 #ffffff;
-  }
+*::-webkit-scrollbar-track {
+  background: #ffffff;
+}
 
-  /* Chrome, Edge, and Safari */
-  *::-webkit-scrollbar {
-    width: 17px;
-  }
-
-  *::-webkit-scrollbar-track {
-    background: #ffffff;
-  }
-
-  *::-webkit-scrollbar-thumb {
-    background-color: #000000;
-    border-radius: 19px;
-    border: 2px solid #ffffff;
-  }
+*::-webkit-scrollbar-thumb {
+  background-color: #000000;
+  border-radius: 19px;
+  border: 2px solid #ffffff;
+} */
 
 .login-box form{
   position: relative;

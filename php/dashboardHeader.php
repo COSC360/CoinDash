@@ -5,7 +5,7 @@
     <div class="fill-container">
         <div class="left">
             <p class="logo">
-                <img src="../images/sitelogo.png"><p>Hi</p>
+                <img src="../images/sitelogo.png">
             </p>
         </div>
         <div class="middle">
