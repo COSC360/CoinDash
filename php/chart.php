@@ -16,7 +16,7 @@
   echo
   "<script>
     Chart.defaults.global.defaultFontColor = \"#fff\";
-    Chart.defaults.font.size = 16;
+    Chart.defaults.font.size = 10;
 
     var xValues = [];
     var yValues = [];
