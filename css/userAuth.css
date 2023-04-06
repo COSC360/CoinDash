@@ -101,25 +101,6 @@
   border-radius: 1em;
 }
 
-/* * {
-  scrollbar-width: auto;
-  scrollbar-color: #000000 #ffffff;
-}
-
-
-*::-webkit-scrollbar {
-  width: 17px;
-}
-
-*::-webkit-scrollbar-track {
-  background: #ffffff;
-}
-
-*::-webkit-scrollbar-thumb {
-  background-color: #000000;
-  border-radius: 19px;
-  border: 2px solid #ffffff;
-} */
 
 .login-box form{
   position: relative;

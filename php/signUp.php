@@ -46,64 +46,58 @@
             </div>  
             <div class="register-box">
                 <form name = "RegisterForm" id="RegisterForm" enctype="multipart/form-data" action= "processRegister.php" onsubmit="validateRegisterForm()" method="POST" required>
-                            <div class="item-1">
-                                <label>Username <span style="color: red;">*</span></label><br>
-                                <p id = "usernameError"><i class="fa-solid fa-circle-exclamation"></i></p>                   
-                                <input type = "text" name = "username"  id = "username" placeholder="What Should We Call You?"  onkeydown="UsernameErrorClearFunction()" value="">
-                            </div>
+                    <div class="item-1">
+                        <label>Username <span style="color: red;">*</span></label><br>
+                        <p id = "usernameError"><i class="fa-solid fa-circle-exclamation"></i></p>                   
+                        <input type = "text" name = "username"  id = "username" placeholder="What Should We Call You?"  onkeydown="UsernameErrorClearFunction()" value="">
+                    </div>
 
-                            <div class="item-2">
-                                <label>Email <span style="color: red;">*</span></label><br>
-                                <p id = "emailError"><i class="fa-solid fa-circle-exclamation"></i></p>
-                                <input type = "email" name = "email"  id = "email" placeholder="What's Your Email?">
-                            </div>
+                    <div class="item-2">
+                        <label>Email <span style="color: red;">*</span></label><br>
+                        <p id = "emailError"><i class="fa-solid fa-circle-exclamation"></i></p>
+                        <input type = "email" name = "email"  id = "email" placeholder="What's Your Email?">
+                    </div>
 
-                            <div class="item-3">
-                                <label>Password <span style="color: red;">*</span></label><br>
-                                <p id = "passwordError"><i class="fa-solid fa-circle-exclamation"></i></p>                                   
-                                <input type = "password" name = "password"  id = "password" placeholder="What’s Your Password?">
-                            </div>
+                    <div class="item-3">
+                        <label>Password <span style="color: red;">*</span></label><br>
+                        <p id = "passwordError"><i class="fa-solid fa-circle-exclamation"></i></p>                                   
+                        <input type = "password" name = "password"  id = "password" placeholder="What’s Your Password?">
+                    </div>
 
-                            <div class="item-4">
-                                <label>Verify Password <span style="color: red;">*</span></label><br>
-                                <p id = "verifyPasswordError"><i class="fa-solid fa-circle-exclamation"></i></p>
-                                <input type = "password" name = "verifyPassword"  id = "verifyPassword" placeholder="Confirm Password?">
-                            </div>
+                    <div class="item-4">
+                        <label>Verify Password <span style="color: red;">*</span></label><br>
+                        <p id = "verifyPasswordError"><i class="fa-solid fa-circle-exclamation"></i></p>
+                        <input type = "password" name = "verifyPassword"  id = "verifyPassword" placeholder="Confirm Password?">
+                    </div>
 
-                            <div class="item-5">
-                                <label>Coming From</label><br>
-                                <select name="selectionMenu" id="selectionMenu">
-                                    <option value="Google"  selected="selected">Google</option>
-                                    <option value="Friend">Friend</option>
-                                    <option value="Yahoo">Yahoo</option>
-                                    <option value="Twitter">Twitter</option>
-                                    <option value="Instagram">Instagram</option>
-                                    <option value="Online Adverstisement">Online Adverstisement</option>
-                                    <option value="Crypto Exchange">Crypto Exchange</option>
-                                </select>
-                            </div>
+                    <div class="item-5">
+                        <label>Coming From</label><br>
+                        <select name="selectionMenu" id="selectionMenu">
+                            <option value="Google"  selected="selected">Google</option>
+                            <option value="Friend">Friend</option>
+                            <option value="Yahoo">Yahoo</option>
+                            <option value="Twitter">Twitter</option>
+                            <option value="Instagram">Instagram</option>
+                            <option value="Online Adverstisement">Online Adverstisement</option>
+                            <option value="Crypto Exchange">Crypto Exchange</option>
+                        </select>
+                    </div>
 
-                            <div class="item-6">
-                                <label>Profile Photo <span style="color: red;">*</span></label><br>
-                                <p id = "imageUploadError"><i class="fa-solid fa-circle-exclamation"></i></p>
-                                <input type="file" name="img"  id="img" accept="image/*">
-                            </div>      
+                    <div class="item-6">
+                        <label>Profile Photo <span style="color: red;">*</span></label><br>
+                        <p id = "imageUploadError"><i class="fa-solid fa-circle-exclamation"></i></p>
+                        <input type="file" name="img"  id="img" accept="image/*">
+                    </div>      
 
-                            <div class="item-7">
-                                <input type="reset" value="Reset Form">
-                            </div>
+                    <div class="item-7">
+                        <input type="reset" value="Reset Form">
+                    </div>
 
-                            <div class = "item-8">
-                                <input type="submit"  name = "registerSubmit"  id = "registerSubmit" value="Get Started !">
-                            </div>                    
+                    <div class = "item-8">
+                        <input type="submit"  name = "registerSubmit"  id = "registerSubmit" value="Get Started !">
+                    </div>                    
                 </form>
             </div>
-        </div>
-        <div class = "register-display-card-container">  
-            <!-- <a href = "http://cosc360.ok.ubc.ca/suyash06/cosc360-Project/dashboard.php"><img class="dashboardCard"></a>
-            <a href = "http://cosc360.ok.ubc.ca/suyash06/cosc360-Project/dashboard.php"><img class="dashboardCard"></a>
-            <a href = "http://cosc360.ok.ubc.ca/suyash06/cosc360-Project/dashboard.php"><img class="dashboardCard"></a> -->
-        </div>
         </div>
     </main>
     <?php
