@@ -50,11 +50,12 @@
                             <div class="item-1">
                                 <label>Username or Email</label><br>     
                                 <input type = "text" name = "loginId" id= "loginId" placeholder="What’s Your Registered Username or Email?">
+                                <p>Username of Email Cannot be empty</p>
                             </div>
                             <div class="item-2">
                                 <label>Password</label><br>
                                 <input type = "password" name = "password" id= "password" placeholder="What’s Your Password?">
-                                
+                                <p>Password Cannot be empty</p>
                             </div>
                             <div class="item-3">
                                 <input type="reset" value="Reset Form">
