@@ -2,7 +2,7 @@
     include "modules.php";
     
     $errMsg = '';
-
+    echo "php page";
     if(isset($_POST['updateSubmit']) && $_SERVER["REQUEST_METHOD"] == "POST"){      
         if(isset($_POST['email']) && isset($_POST['password'])){
             $userEmail= $_POST['email'];
@@ -29,7 +29,9 @@
             deleteUser($con, $userID);
         }
     }elseif(isset($_POST['saveUser']) && $_SERVER["REQUEST_METHOD"] == "POST"){
+        echo "loop 1";
         if(isset($_POST['userID']) && isset($_POST['username']) && isset($_POST['password']) && isset($_POST['email']) && isset($_POST['userType']) && isset($_POST['status']) && isset($_POST['regTimestamp'])){
+            echo "loop 2";
             $userID = $_POST['userID'];
             $username = $_POST['username'];
             $password = $_POST['password'];
