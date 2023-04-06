@@ -12,6 +12,7 @@ const emailRegex = "^(.+)@([^\.].*)\.([a-z]{2,})$"; //Email validation based on 
 var errMsg = "";
 
 console.log(loginForm);
+console.log(document.getElementById("LoginForm"));
 console.log(loginForm[1]);
 window.onload = console.log(loginForm[1]);
 window.onload = console.log(document.forms[1]);
