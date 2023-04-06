@@ -111,10 +111,10 @@
                     }
 
                     for(var i = 0; i < 4; i++){
-                        document.getElementById(displayByName[i].getAttribute("id")).setAttribute("style", "background-color: #2fc363;");
-                        document.getElementById(displayByName[i].getAttribute("id")).setAttribute("style", "background-color: #2fc363;");
-                        document.getElementById(displayByName[i].getAttribute("id")).setAttribute("style", "background-color: #2fc363;");
-                        document.getElementById(displayByName[i].getAttribute("id")).setAttribute("style", "background-color: #2fc363;");
+                        document.getElementById(displayByEmail[i].getAttribute("id")).setAttribute("style", "background-color: #2fc363;");
+                        document.getElementById(displayByEmail[i].getAttribute("id")).setAttribute("style", "background-color: #2fc363;");
+                        document.getElementById(displayByEmail[i].getAttribute("id")).setAttribute("style", "background-color: #2fc363;");
+                        document.getElementById(displayByEmail[i].getAttribute("id")).setAttribute("style", "background-color: #2fc363;");
                     }
                 }
                 function byCommentIdEnableField(){
@@ -123,10 +123,10 @@
                     }
 
                     for(var i = 0; i < 4; i++){
-                        document.getElementById(displayByName[i].getAttribute("id")).setAttribute("style", "background-color: #2fc363;");
-                        document.getElementById(displayByName[i].getAttribute("id")).setAttribute("style", "background-color: #2fc363;");
-                        document.getElementById(displayByName[i].getAttribute("id")).setAttribute("style", "background-color: #2fc363;");
-                        document.getElementById(displayByName[i].getAttribute("id")).setAttribute("style", "background-color: #2fc363;");
+                        document.getElementById(displayByCommentId[i].getAttribute("id")).setAttribute("style", "background-color: #2fc363;");
+                        document.getElementById(displayByCommentId[i].getAttribute("id")).setAttribute("style", "background-color: #2fc363;");
+                        document.getElementById(displayByCommentId[i].getAttribute("id")).setAttribute("style", "background-color: #2fc363;");
+                        document.getElementById(displayByCommentId[i].getAttribute("id")).setAttribute("style", "background-color: #2fc363;");
                     }
                 }
 
