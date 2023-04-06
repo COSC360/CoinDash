@@ -45,7 +45,7 @@
                     if (isset($_SESSION["id"])){
                         echo 
                         "<div class=\"horizontal-container fit-width\">
-                        <p>Hi, ".$_SESSION["username"]." | </p>
+                        <p id=\"username\">Hi, ".$_SESSION["username"]." | </p>
                         <a href=\"../php/logout.php\">Logout</a>
                         </div>";                
                     }else{
