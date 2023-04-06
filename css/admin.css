@@ -206,3 +206,7 @@ canvas #pie{
   row-gap: 5em;
 }
 
+.fa-search {
+  position: relative;
+  top: -0.6em;
+}
