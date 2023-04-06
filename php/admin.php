@@ -27,7 +27,7 @@
     <link rel="icon" href="../images/sitelogo.png" type="image/icon type">
     <script src="../js/admin.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
-    <title>Admin</title>
+    <title>CoinDash | Admin</title>
 </head>
     <body>
         <?php
