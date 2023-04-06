@@ -32,7 +32,7 @@ footer .fill-container {
 }
 .left{
     justify-content: flex-start;
-    gap: 0em;
+    gap: 0.5em;
 }
 
 .left h4{
