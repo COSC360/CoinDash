@@ -7,6 +7,9 @@
             <p class="logo">
                 <img src="../images/sitelogo.png">
             </p>
+            <p class="logo">
+                <img src="../images/sitelogo.png">
+            </p>
         </div>
         <div class="middle">
             <nav>
