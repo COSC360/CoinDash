@@ -41,24 +41,18 @@
             </nav>
         </div>
         <div class="right settings">
-            <!-- <div class="horizontal-container fit-width">
-                <p>English-US</p>
-                <img src="../images/canada-flag.png">
-                <img src="../svgs/arrow-down.svg">
-            </div> -->
             <div class="horizontal-container fit-width">
-                
-            <?php
-                if (isset($_SESSION["id"])){
-                    echo 
-                    "<div class=\"horizontal-container fit-width\">
-                    <p>Hi, ".$_SESSION["username"]." | </p>
-                    <a href=\"../php/logout.php\">Logout</a>
-                    </div>";                
-                }else{
-                    echo  "<a href=\"#\" onclick=navigateToSignIn()>Sign In</a>/<a href=\"#\" onclick=navigateToSignUp()>Sign Up</a>";
-                }            
-            ?>
+                <?php
+                    if (isset($_SESSION["id"])){
+                        echo 
+                        "<div class=\"horizontal-container fit-width\">
+                        <p>Hi, ".$_SESSION["username"]." | </p>
+                        <a href=\"../php/logout.php\">Logout</a>
+                        </div>";                
+                    }else{
+                        echo  "<a href=\"#\" onclick=navigateToSignIn()>Sign In</a>/<a href=\"#\" onclick=navigateToSignUp()>Sign Up</a>";
+                    }            
+                ?>
             </div>
         </div>
     </div>
