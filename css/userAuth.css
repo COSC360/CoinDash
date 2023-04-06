@@ -45,9 +45,6 @@
 .login-info h2{
     font-weight: 800;
     font-size: 4em;
-    /* background: -webkit-linear-gradient(#039dda,#025fac,#0019f7);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent; */
     background-image: 
     linear-gradient(to right, rgb(0, 195, 255),rgb(0, 140, 255),rgb(0, 110, 255),rgb(0, 119, 255),rgb(0, 204, 255),rgb(0, 162, 255)); 
     -webkit-background-clip: text;
@@ -157,7 +154,7 @@
 
   a:link, a:active, a:visited{
     text-decoration: none;
-    color: #005e9c;
+    color: #050505;
   }
 
   a:hover{
