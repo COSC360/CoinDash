@@ -40,7 +40,7 @@ footer .fill-container {
     padding: 0.5em;
     color: aliceblue;
     background: rgb(45,45,45);
-    background: linear-gradient(90deg, rgb(63, 63, 63) 0%, rgb(48, 48, 153) 35%, rgba(0,212,255,1) 100%);
+    background: linear-gradient(90deg, rgb(33, 54, 173) 0%, rgb(26, 104, 194) 35%, rgba(0,212,255,1) 100%);
 }
 
 .middle {
