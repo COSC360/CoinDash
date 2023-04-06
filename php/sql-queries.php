@@ -816,7 +816,7 @@ function saveUser($con, $userID, $username, $password, $email, $comingFrom, $use
 }
 
 function retrieveRegSourceChartData($con){
-    $chartDataSQL = "SELECT comingFrom, COUNT(id) AS userCount FROM `userAuth` GROUP BY comingFrom";
+    $chartDataSQL = "SELECT comingFrom, COUNT(id) AS userCount FROM `userAuth` WHERE userType = 'user' GROUP BY comingFrom";
 
     $chartDataStmt = mysqli_stmt_init($con); 
 
