@@ -5,7 +5,7 @@
     <div class="fill-container">
         <div class="left">
             <p class="logo">
-                <img src="../images/sitelogo.png" style = "position:relative; height:40px; width: 40px; margin-left: 0.75em;">
+                <img src="../images/sitelogo.png">
                 <p>CoinDash</p>
             </p>
         </div>
