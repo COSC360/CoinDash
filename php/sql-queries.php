@@ -302,7 +302,7 @@ function loginUser($con,$loginID,$loginPassword){
 
         //Navigate to admin.php if user is of "admin" type
         if($rows['userType'] == 'admin'){
-            header('location:admin.php');
+            header('location:account.php');
             
         //Navigate to account.php if user is of "user" type and status is "enabled"
         }elseif($rows['userType'] == 'user' && $rows['status'] == "enabled"){
