@@ -13,6 +13,8 @@
   border: 1px solid #ccc;
   background-color: #f1f1f1;
   grid-template-columns: auto auto auto;
+  border-top-right-radius: 1em;
+  border-top-left-radius: 1em;
 }
 
 /* Style the buttons inside the tab */
@@ -46,6 +48,8 @@
   border: 1px solid #ccc;
   background-color: rgb(255, 255, 255);
   border-top: none;
+  border-bottom-right-radius: 1em;
+  border-bottom-left-radius: 1em;
 }
 
 form.example input[type=text] {
