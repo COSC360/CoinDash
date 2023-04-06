@@ -81,7 +81,7 @@ form.example button {
 }
 
 form.example button:hover {
-  background: #0773cc;
+  opacity: 50%;
 }
 
 form.example::after {
