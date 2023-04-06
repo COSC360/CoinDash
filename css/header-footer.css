@@ -103,7 +103,7 @@ footer {
 #username{
     border-radius: 0.5em;
     color: rgb(17, 17, 17);
-    padding: 0.5em;
+    padding: 0.35em;
     background: rgb(45,45,45);
     background: linear-gradient(90deg, rgb(26 94 217) 0%, rgb(23 99 195) 32%, rgba(0,212,255,1) 100%);;
 }
