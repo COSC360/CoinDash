@@ -20,6 +20,9 @@
                         </a>
                         <a href=\"https://cosc360.ok.ubc.ca/suyash06/project-JasonR24/php/admin.php\">
                             Portal
+                        </a>
+                        <a href=\"https://cosc360.ok.ubc.ca/suyash06/project-JasonR24/php/account.php\">
+                            My Account
                         </a>";
                     }elseif(isset($_SESSION['id']) && $_SESSION['userType'] == "admin" && $_SESSION['currentPage'] == "account.php"){
                         echo
