@@ -100,7 +100,7 @@ footer {
     bottom: -0.5em;
 }
 
-#username{
+span #username{
     border-radius: 0.5em;
     color: rgb(17, 17, 17);
     padding: 0.35em;
