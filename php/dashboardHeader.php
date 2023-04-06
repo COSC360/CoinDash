@@ -5,10 +5,7 @@
     <div class="fill-container">
         <div class="left">
             <p class="logo">
-                <div>
-                    <img src="../images/sitelogo.png">
-                    <p>Coindash</p>
-                <div>
+                <img src="../images/sitelogo.png">
             </p>
         </div>
         <div class="middle">

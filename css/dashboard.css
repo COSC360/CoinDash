@@ -39,7 +39,7 @@
     font-weight: 800;
 }
 
-.logo div{
+.logo{
     display: flex; 
     align-items: center; 
     flex-direction: row; 
