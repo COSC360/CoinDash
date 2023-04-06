@@ -107,13 +107,16 @@
 
 .login-box input {
     margin-top: 1em;
-    margin-bottom: 1em;
     border: none;
     width: 170%;
     font-size: 1em;
     border-bottom: 2px solid rgb(0, 0, 0);
     cursor: pointer;
   }
+
+.errorText{
+  margin-bottom: 1em;  
+}  
 
 .login-box input[type=reset] {
     width: fit-content;
