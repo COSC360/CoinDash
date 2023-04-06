@@ -142,7 +142,7 @@ form.example fieldset {
   font-weight: 500;
 }
 
-#item-2 input{
+#item-2 input,select{
   color: black;
   margin-bottom: 0.25em;
   padding: 0.5em;
