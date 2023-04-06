@@ -206,3 +206,7 @@ canvas #pie{
   flex-direction: row;
   column-gap: 3em;
 }
+
+.addEnableBtnColor{
+  background-color: #2fc363;
+}
