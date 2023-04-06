@@ -108,3 +108,8 @@ footer {
     left: 0;
     bottom: -0.5em;
 }
+
+.logo img{
+    border-top-right-radius: 1em;
+    border-bottom-right-radius: 1em;
+}
