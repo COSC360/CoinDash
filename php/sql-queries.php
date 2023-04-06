@@ -360,7 +360,7 @@ function adminLogin($con,$adminLoginID,$adminPassword){
     }else{
         // mysqli_stmt_close();
         header('location:adminlogin.php');
-        $_SESSION['adminStatusMsg'] = "Invalid Login Details !";
+        $_SESSION['adminStatusMsg'] = "User does not exist !";
         return false;
     }
 }
