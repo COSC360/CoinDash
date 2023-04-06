@@ -39,5 +39,3 @@ function byCommentIdEnableField(){
     document.querySelectorAll('[id=deleteUserBtn]')[2].setAttribute("style", "background-color: #2fc363;");
     document.querySelectorAll('[id=saveUserBtn]')[2].setAttribute("style", "background-color: #2fc363;");
 }
-
-document.getElementById("<?php echo $_SESSION['defaultTabID']?>").click();

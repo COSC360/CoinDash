@@ -77,9 +77,10 @@
                 <div class = "commentData">
                 </div>
             </div>
-            <script src="../js/testAdmin.js"></script>
-            <!-- <script>
-            </script> -->
+            <script src="../js/testAdmin.js">
+                document.getElementById("<?php echo $_SESSION['defaultTabID']?>").click();
+            </script>
+
         </main>    
     </body>
 </html> 
