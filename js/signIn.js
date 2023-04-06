@@ -14,6 +14,7 @@ var errMsg = "";
 console.log(loginForm);
 console.log(loginForm[1]);
 window.onload = console.log(loginForm[1]);
+window.onload = console.log(document.forms[1]);
 
 // loginForm.addEventListener('submit', (event) => {
 //     alert('submitting');
