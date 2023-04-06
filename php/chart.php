@@ -15,7 +15,7 @@
   <?php
   echo
   "<script>
-
+    Chart.defaults.global.defaultFontColor = \"#fff\";
     var xValues = [];
     var yValues = [];
     var xCommentValues = [];
