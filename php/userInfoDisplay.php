@@ -24,7 +24,16 @@
             <label>User Email :</label>
             <input type="text" name="email" value = "<?php echo $_SESSION['RSEmail']?>">
             <label>User Coming From :</label>
-            <input type="text" name="comingFrom" value = "<?php echo $_SESSION['RSComingFrom']?>">
+            <select>
+                <option value="<?php echo $_SESSION['RSComingFrom']?>" selected="selected"><?php echo $_SESSION['RSComingFrom']?></option>
+                <option value="Google">Google</option>
+                <option value="Friend">Friend</option>
+                <option value="Yahoo">Yahoo</option>
+                <option value="Twitter">Twitter</option>
+                <option value="Instagram">Instagram</option>
+                <option value="Online Adverstisement">Online Adverstisement</option>
+                <option value="Crypto Exchange">Crypto Exchange</option>
+            </select>
             <label>User Type :</label>
             <input type="text" name="userType" value = "<?php echo $_SESSION['RSUserType']?>">
             <label>User Status :</label>
