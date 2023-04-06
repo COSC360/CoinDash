@@ -14,7 +14,6 @@
 <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CoinDash</title>
     <link rel="stylesheet" href="../font/helvetica-now-display/stylesheet.css">
     <link rel="stylesheet" href="../css/var.css">
     <link rel="stylesheet" href="../css/reset.css">
@@ -26,6 +25,7 @@
     <script src="https://kit.fontawesome.com/e6e0351429.js" crossorigin="anonymous"></script>
     <script src="../js/signIn.js"></script>
     <script src="../js/navigation.js"></script>
+    <title>CoinDash</title>
 </head>
 
 <body>
@@ -64,7 +64,6 @@
                                 <input type="submit" name = "loginSubmit" id = "loginSubmit" value ="Login">
                             </div>
                         </form>
-                        <script src="../js/signIn.js"></script>
                     </div>
                 </div>
         </main>

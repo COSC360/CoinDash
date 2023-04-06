@@ -8,10 +8,10 @@ searchBtn.addEventListener("click", () => {
     } else {
         searchModal.classList.add("hide");
     }
-})
+});
 
 searchModal.addEventListener("submit", (e) => {
     e.preventDefault();
     var like = searchModal.like.value;
     document.location.href = `searchPage.php?like=${like}`;
-})
+});
