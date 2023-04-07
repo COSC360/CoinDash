@@ -1,7 +1,8 @@
 <?php
     include "DBconnection.php";
     include "sql-queries.php";
-    $coinId = $_POST["coinId"];
+    // $coinId = $_POST["coinId"];
+    $coinId = "axie-infinity";
     $comments = retrievePostComment($con, $coinId);
     print_r($comments);
     $output = "";
