@@ -41,15 +41,25 @@ registerForm.addEventListener("submit",function(e){
         showError(2, "Password cannot be empty");
         showError(3, "Password cannot be empty");
         showError(4, "Need to upload image");
-    }else if(username == '')
+    }
+    
+    if(username == '')
     {
         error = true;
         showError(0, "Username cannot be empty");
-    }else if(email == '')
+    }
+    
+    if(email == '')
     {
         error = true;
         showError(1, "Email cannot be empty");
-    }else if(password == '')
+    }else if(emailDomains.includes(email) && !emailRegex.test(email))
+    {
+        error = true;
+        showError(1, "Email is invalid");
+    }
+    
+    if(password == '')
     {
         error = true;
         showError(2, "Password cannot be empty");
@@ -70,11 +80,8 @@ registerForm.addEventListener("submit",function(e){
     {
         error = true;
         showError(2, "Password is invalid. It must be between 8-16 characters");
-    }else if(emailDomains.includes(email) && !emailRegex.test(email))
-    {
-        error = true;
-        showError(1, "Email is invalid");
     }
+    
 
     if (error = true){
         e.preventDefault();
