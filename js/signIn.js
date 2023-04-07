@@ -44,6 +44,7 @@ loginForm.addEventListener("submit",function(e){
         error = true;
         console.log(errorTextElement);
         console.log(errorTextElement[1]);
+        console.log(errorTextElement[1].innerText);
         showError(errorTextElement[1], "Password cannot be empty");
     }else if(!passwordRegex.test(password))
     {
