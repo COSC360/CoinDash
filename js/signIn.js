@@ -22,7 +22,6 @@ function hideError(inputField){
 
 loginForm.addEventListener("submit",function(e){
     var err = false;
-    console.log(err);
 
     if(loginId == '' && password == '')
     {
@@ -46,7 +45,6 @@ loginForm.addEventListener("submit",function(e){
         e.preventDefault();
     }
 
-    console.log(err);
 });
  
 
