@@ -41,13 +41,13 @@ loginForm.addEventListener("submit",function(e){
 
     console.log(err);
     
-    if (err = true){
-        e.preventDefault();
-        console.log("Form did not pass !");
-    }else{
-        e.preventDefault();
-        console.log("Form passed !");   
-    }
+        if (err = true){
+            e.preventDefault();
+            console.log("Form did not pass !");
+        }else{
+            e.preventDefault();
+            console.log("Form passed !");   
+        }
 
 });
  
