@@ -243,6 +243,7 @@ function deleteDashboard($con, $userId){
 }
 
 function retrieveDashboard($con, $userId){
+    echo "<script>console.log('Hello')</script>";
     $moduleSql = "SELECT id, block_id, category, fiat, sort FROM module WHERE user_id = ?;";
 
     $moduleStmt = mysqli_stmt_init($con);
