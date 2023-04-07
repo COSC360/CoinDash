@@ -12,8 +12,7 @@ const emailRegex = "^(.+)@([^\.].*)\.([a-z]{2,})$"; //Email validation based on 
 var errMsg = "";
 var errState = true;
 
-
-loginForm.onsubmit() = function(e){
+loginForm.addEventListener("submit",function(e){
     for(var i = 0; i < 2; i++){
         if(loginForm[i].value != null){
             errState = false;
@@ -25,7 +24,7 @@ loginForm.onsubmit() = function(e){
         console.log("Fields cannot be empty !");
         e.preventDefault();
     }
-}
+});
  
 
 function showError(){
