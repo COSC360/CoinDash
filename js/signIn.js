@@ -37,6 +37,8 @@ loginForm.addEventListener("submit",function(e){
     {
         error = true;
         showError(errorText[1], "Password cannot be empty");
+    }else{
+        error = false;
     }
 
     console.log(error);
