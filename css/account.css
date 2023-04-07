@@ -151,3 +151,17 @@ column-gap: 1.5em
 .profile-box img:hover{
     opacity: 30%;
 }
+
+.commentHistory{
+    min-width: 10%; 
+    background-color: #bdd4e7;
+    background-image: linear-gradient(315deg, #bdd4e7 0%, #8693ab 74%);    
+    height: 14em;
+    margin: 0em 2em;
+    overflow-y: auto;
+}
+
+.commentHistory h1{
+    padding: 1em;
+    font-size: 1.5em;
+}

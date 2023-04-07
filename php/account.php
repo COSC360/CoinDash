@@ -67,6 +67,9 @@
                 </form>
             </div>
         </div>
+        <div class = "commentHistory">
+            <h1>Comment History</h1>
+        </div>
     </main>
     <?php
         include "footer.php";
