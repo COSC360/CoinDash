@@ -123,6 +123,8 @@ addModuleBtn.addEventListener("click", (e) => {
     var dashboardDom = document.getElementById("dashboard");
     var newBlock = generateDefaultBlock();
     dashboardDom.innerHTML += newBlock;
+    var newModuleGallery = document.querySelector("#module-1000 .module-gallery");
+    setModuleHTML(defaultFiat, defaultCategory, defaultSort, newModuleGallery);
 })
 
 toggleEditBtn.addEventListener("click", (e) => {
@@ -250,7 +252,5 @@ function generateDefaultBlock(){
         </div>
     `
 
-    var newModuleGallery = document.querySelector("#module-1000 .module-gallery");
-    setModuleHTML(defaultFiat, defaultCategory, defaultSort, newModuleGallery);
     return newBlock;
 }
