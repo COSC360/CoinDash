@@ -11,6 +11,10 @@ const emailRegex = /^(.+)@([^\.].*)\.([a-z]{2,})$/; //Email validation based on 
 const emailDomains = ["gmail","outlook","yahoo"];
 
 function showError(i,errMsg){
+    console.log("nodelist: " + errorTextElement);
+    console.log("item: " + errorTextElement[1]);
+    console.log("innerText: " + errorTextElement[1].innerText);
+    console.log("innerHTML: " + errorTextElement[1].innerHTML);
     errorTextElement[i].innerText = errMsg;
     errorTextElement[i].classList.add("showError");
     errorLogoElement[i].classList.add("showError");
