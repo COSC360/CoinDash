@@ -14,8 +14,8 @@ function showError(i,errMsg){
     errorTextElement[i].classList.add("showError");
     errorLogoElement[i].classList.add("showError");
 }
-function hideError(){
-    errorTextElement[1].classList.add("hideError");
+function hideError(i){
+    errorTextElement[i].classList.add("hideError");
 }
 
 loginForm.addEventListener("submit",function(e){
@@ -57,5 +57,5 @@ loginForm.addEventListener("submit",function(e){
 
 });
  
-
-loginForm.addEventListener("keydown", hideError);
+// loginForm.addEventListener("keydown", hideError(0));
+// loginForm.addEventListener("keydown", hideError(1));

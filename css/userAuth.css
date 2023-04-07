@@ -347,6 +347,5 @@ select{
 }
 
 .hideError{
-  opacity: 0;
   visibility: hidden;
 }
