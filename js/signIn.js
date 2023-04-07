@@ -66,6 +66,3 @@ loginForm.addEventListener("submit",function(e){
 });
  
 loginForm.addEventListener("reset", hideError);
-
-// loginForm.addEventListener("keydown", hideError(1));
-// loginForm.addEventListener("keydown", hideError(0));

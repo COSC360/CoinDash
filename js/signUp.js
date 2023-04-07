@@ -98,6 +98,3 @@ registerForm.addEventListener("submit",function(e){
 });
 
 registerForm.addEventListener("reset", hideError);
-
-// loginForm.addEventListener("keydown", hideError(1));
-// loginForm.addEventListener("keydown", hideError(0));
