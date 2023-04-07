@@ -30,7 +30,14 @@
                         </div>
                         <p class=\"review-content\">".$commentData["text"]."</p>
                     </div>
-                    <p class=\"reply-btn\">Reply</p>
+                    <p class=\"reply-btn\">Reply</p> | 
+                    <p class=\"delete-btn\">Delete</p>
+                    <form class=\"reply-form\">
+                        <input type=\"textarea\" name=\"text\">
+                        <p class=\"btn-container\">
+                            <button type=\"submit\" class=\"comment-btn\">Reply</button>
+                        </p>
+                    </form>
                 </div>
             </div>
         ";
