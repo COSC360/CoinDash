@@ -38,9 +38,9 @@
                 <h2>Sign Up</h2>
                 <p>Lorem ipsum dolor sit amet consectetur. Erat facilisi varius est cursus. Neque sagittis mi non purus semper lacus mauris magnis.</p>
                 <div class="info-footer">
-                    <p><a  onclick = "navigateToSignIn()">Already Have An Account?</a></p>
+                    <p><a href="signIn.php">Already Have An Account?</a></p>
                     <p>or</p>
-                    <p><a  onclick = "navigateToCommunity()">Explore Dashboards?</a></p>
+                    <p><a href="dashboard.php">Login as Guest</a></p>
                 </div>
             </div>  
             <div class="register-box">
