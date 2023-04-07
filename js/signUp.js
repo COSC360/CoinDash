@@ -1,7 +1,7 @@
-const loginForm = document.forms['loginForm']; // Login Form
+const registerForm = document.forms['registerForm']; // Login Form
 const requiredInput = document.querySelectorAll(".required");
-let errorTextElement = document.querySelectorAll(".errorTextLogin");
-let errorLogoElement = document.querySelectorAll(".errorLogoLogin");
+let errorTextElement = document.querySelectorAll(".errorTextRegister");
+let errorLogoElement = document.querySelectorAll(".errorLogoRegister");
 
 // <i class="fa-sharp fa-solid fa-circle-check" style="color: #11e43b;"></i>
 
@@ -23,39 +23,70 @@ function showError(i,errMsg){
 
 // }
 
-loginForm.addEventListener("submit",function(e){
+registerForm.addEventListener("submit",function(e){
     e.preventDefault();
 
-    const loginId = requiredInput[0].value;
-    const password = requiredInput[1].value;
+    const username = requiredInput[0].value;
+    const email = requiredInput[1].value;
+    const password = requiredInput[2].value;
+    const verifyPassword = requiredInput[3].value;
+    const img = requiredInput[4].value;
 
     var error = false;
-    if(loginId == '' && password == '')
+    if(username == '' && email == '' && password == '' && verifyPassword == '' && img == '')
     {
         error = true;
-        showError(0, "Login ID cannot be empty");
-        showError(1, "Password cannot be empty");
+        showError(0, "Username cannot be empty");
+        showError(1, "Email cannot be empty");
+        showError(2, "Password cannot be empty");
+        showError(3, "Password cannot be empty");
+        showError(4, "Need to upload image");
     }
     
-    if(loginId == '')
+    if(username == '')
     {
         error = true;
-        showError(0, "Login ID cannot be empty");
+        showError(0, "Username cannot be empty");
+    }
+    
+    if(email == '')
+    {
+        error = true;
+        showError(1, "Email cannot be empty");
     }
     
     if(password == '')
     {
         error = true;
-        showError(1, "Password cannot be empty");
+        showError(2, "Password cannot be empty");
     }
-    
+
+    if(verifyPassword == '')
+    {
+        error = true;
+        showError(3, "Re-enter your password");
+    }
+
+    if(img == '')
+    {
+        error = true;
+        showError(4, "Need to upload image");
+    }
+
+    if(password != verifyPassword)
+    {
+        error = true;
+        showError(2, "Passwords do not match");
+        showError(3, "Passwords do not match");
+    }
+
     if(!passwordRegex.test(password))
     {
         error = true;
         showError(1, "Password is invalid. It must be between 8-16 characters");
     }
     
-    if(emailDomains.includes(loginId) && !emailRegex.test(loginId))
+    if(emailDomains.includes(email) && !emailRegex.test(email))
     {
         error = true;
         showError(0, "Email is invalid");

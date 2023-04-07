@@ -44,32 +44,32 @@
                 </div>
             </div>  
             <div class="register-box">
-                <form name = "RegisterForm" id="RegisterForm" enctype="multipart/form-data" action= "processRegister.php" onsubmit="validateRegisterForm()" method="POST" required>
+                <form name = "registerForm" id="registerForm" enctype="multipart/form-data" action= "processRegister.php" onsubmit="validateRegisterForm()" method="POST" class = "required" >
                     <div class="item-1">
                         <label>Username <span style="color: red;">*</span></label><br>
                         <i class="fa-sharp fa-solid fa-circle-xmark fa-bounce errorLogoRegister"></i>                            
-                        <input type = "text" name = "username"  id = "username" placeholder="What Should We Call You?"  onkeydown="UsernameErrorClearFunction()" value="">
+                        <input type = "text" name = "username"  id = "username" placeholder="What Should We Call You?"  onkeydown="UsernameErrorClearFunction()"  class = "required">
                         <p class="errorTextRegister"></p>
                     </div>
 
                     <div class="item-2">
                         <label>Email <span style="color: red;">*</span></label><br>
                         <i class="fa-sharp fa-solid fa-circle-xmark fa-bounce errorLogoRegister"></i>                       
-                        <input type = "email" name = "email"  id = "email" placeholder="What's Your Email?">
+                        <input type = "email" name = "email"  id = "email" placeholder="What's Your Email?" class = "required">
                         <p class="errorTextRegister"></p>
                     </div>
 
                     <div class="item-3">
                         <label>Password <span style="color: red;">*</span></label><br>
                         <i class="fa-sharp fa-solid fa-circle-xmark fa-bounce errorLogoRegister"></i>                                                        
-                        <input type = "password" name = "password"  id = "password" placeholder="What’s Your Password?">
+                        <input type = "password" name = "password"  id = "password" placeholder="What’s Your Password?" class = "required">
                         <p class="errorTextRegister"></p>
                     </div>
 
                     <div class="item-4">
                         <label>Verify Password <span style="color: red;">*</span></label><br>
                         <i class="fa-sharp fa-solid fa-circle-xmark fa-bounce errorLogoRegister"></i>
-                        <input type = "password" name = "verifyPassword"  id = "verifyPassword" placeholder="Confirm Password?">
+                        <input type = "password" name = "verifyPassword"  id = "verifyPassword" placeholder="Confirm Password?" class = "required">
                         <p class="errorTextRegister"></p>
                     </div>
 
@@ -88,7 +88,7 @@
 
                     <div class="item-6">
                         <label>Profile Photo <span style="color: red;">*</span></label><br>
-                        <i class="fa-sharp fa-solid fa-circle-xmark fa-bounce errorLogoRegister"></i>
+                        <i class="fa-sharp fa-solid fa-circle-xmark fa-bounce errorLogoRegister" class = "required"></i>
                         <input type="file" name="img"  id="img" accept="image/*">
                         <p class="errorTextRegister"></p>
                     </div>      
