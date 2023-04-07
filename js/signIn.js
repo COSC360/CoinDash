@@ -30,9 +30,7 @@ loginForm.addEventListener("submit",function(e){
         showError(errorText[0], "Login ID cannot be empty");
         showError(errorText[1], "Password cannot be empty");
     }
-    else
 
-    
     if(loginId == '')
     {
         err |= true;
@@ -45,7 +43,6 @@ loginForm.addEventListener("submit",function(e){
         err |= true;
         showError(errorText[1], "Password cannot be empty");
     }
-
 
     if (err == true)
     {
