@@ -36,7 +36,7 @@
             <div class="register-info">
                 <h1>Home/</h1>
                 <h2>Sign Up</h2>
-                <p>CoinDash is a modularized cryptocurrency price tracking website with <br>real-time prices, customizable alerts, and a user-friendly interface that provides tools and information for both experienced traders and newcomers.</p>
+                <p>CoinDash is a modularized cryptocurrency price tracking website with real-time prices, customizable alerts, and a user-friendly interface that provides tools and information for both experienced traders and newcomers.</p>
                 <div class="info-footer">
                     <p><a href="signIn.php">Already Have An Account?</a></p>
                     <p>or</p>
