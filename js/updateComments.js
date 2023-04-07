@@ -78,7 +78,8 @@ function addFormEventListeners(){
             })
 
             form.parentElement.classList.add("collapsed");
-            openedForms--;
+            openedForms = 0;
+            updateData(coinId);
         })
     })
 }
