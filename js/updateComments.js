@@ -56,7 +56,8 @@ function addFormEventListeners(){
     var replyForms = document.querySelectorAll(".reply-form");
 
     replyForms.forEach(form => {
-        form.addEventListener("submit", () => {
+        form.addEventListener("submit", (e) => {
+            e.preventDefault();
             var commentId = form.dataset.commentId;
             console.log(form.dataset);
         })
