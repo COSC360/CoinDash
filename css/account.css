@@ -175,4 +175,10 @@ column-gap: 1.5em
     color: white;
     display: flex;
     flex-direction: column;
+    row-gap: 1em;
+    min-height: 37vh;
+}
+
+.commentHistoryArea p{
+    margin: 1.5em;
 }
