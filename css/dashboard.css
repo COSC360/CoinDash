@@ -46,11 +46,12 @@
 
 #add-module-btn{
     width: 100%;
-    max-width: 20em;
+    max-width: 16em;
     margin: 0;
-    padding: 2em;
+    padding: 1em;
 
-    font-size: 1.5em;
+    font-size: 1.2em;
+    border-radius: 10px;
 
     background-color: var(--Black-1);
     color: var(--White-1);
