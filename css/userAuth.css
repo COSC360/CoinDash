@@ -328,8 +328,7 @@ select{
 }
 
 .showError{
-  opacity: 1;
-  visibility: visible;
+  color: red;
 }
 
 .hideError{
