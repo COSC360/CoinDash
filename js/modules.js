@@ -122,12 +122,10 @@ toggleEditBtn.addEventListener("click", (e) => {
     editElements.forEach(element => {
         if (element.classList.contains("hide")){
             element.classList.remove("hide");
-            editBtnImage.src = "../svgs/view.svg";
-            console.log(editBtnImage);
-            console.log("Hello");
+            editBtnImage.src = "../svgs/edit-white.svg";
         } else {
             element.classList.add("hide");
-            editBtnImage.src = "../svgs/edit.svg";
+            editBtnImage.src = "../svgs/view.svg";
         }
 
     })

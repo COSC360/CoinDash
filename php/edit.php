@@ -9,5 +9,5 @@
     }
 ?>
 <div id="view-edit-btn" class="icon-overlay" href="#">
-    <img src="../svgs/view.svg">
+    <img src="../svgs/edit-white.svg">
 </div>
