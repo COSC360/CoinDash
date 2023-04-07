@@ -32,12 +32,17 @@ loginForm.addEventListener("submit",function(e){
         error = true;
         showError(0, "Login ID cannot be empty");
         showError(1, "Password cannot be empty");
+    }else{
+        requiredInput[0].addEventListener("keydown", hideError(0));
+        requiredInput[1].addEventListener("keydown", hideError(1));
     }
     
     if(loginId == '')
     {
         error = true;
         showError(0, "Login ID cannot be empty");
+    }else{
+        requiredInput[0].addEventListener("keydown", hideError(0));
     }
     
     if(password == '')
@@ -48,12 +53,16 @@ loginForm.addEventListener("submit",function(e){
     {
         error = true;
         showError(1, "Password is invalid. It must be between 8-16 characters");
+    }else{
+        requiredInput[1].addEventListener("keydown", hideError(1));        
     }
     
     if(emailDomains.includes(loginId) && !emailRegex.test(loginId))
     {
         error = true;
         showError(0, "Email is invalid");
+    }else{
+        requiredInput[0].addEventListener("keydown", hideError(0));
     }
 
     if (error == true){
@@ -62,3 +71,5 @@ loginForm.addEventListener("submit",function(e){
 
 });
  
+// requiredInput[0].addEventListener("keydown", hideError(0));
+// requiredInput[1].addEventListener("keydown", hideError(1));
