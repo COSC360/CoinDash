@@ -21,7 +21,7 @@ loginForm.addEventListener("submit", function(e) {
 function validateLoginForm(e){
     for(var i = 0; i < 2; i++){
         if(loginForm[i].value != null){
-            e.submit();
+            e.submit;
         }else{
             console.log("Cannot be empty !");
         }
