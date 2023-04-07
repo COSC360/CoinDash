@@ -10,23 +10,23 @@ var loginForm = document.forms['loginForm']; // Login Form
 const passwordRegex = "^[a-zA-Z]\w{8,16}$ "; //Simple password expression. The password must be at least 8 characters but no more than 16 characters long
 const emailRegex = "^(.+)@([^\.].*)\.([a-z]{2,})$"; //Email validation based on current standard naming rules
 var errMsg = "";
+var errState = true;
 
 
-loginForm.addEventListener("submit", function(e) {
-    e.preventDefault();
-    validateLoginForm(e);
-});
-
-
-function validateLoginForm(e){
+loginForm.onsubmit() = function(e){
     for(var i = 0; i < 2; i++){
         if(loginForm[i].value != null){
-            e.submit;
+            errState = false;
         }else{
-            console.log("Cannot be empty !");
+            errState = true;
         }
     }
+    if(errState = true){
+        console.log("Fields cannot be empty !");
+        e.preventDefault();
+    }
 }
+ 
 
 function showError(){
 
