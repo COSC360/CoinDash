@@ -1,7 +1,7 @@
 <?php
     session_start();
     if(isset($_SESSION['statusMsg'])){
-        echo "<script>window.alert(\"".$_SESSION['statusMsg']."\")</script>";
+        include 'alert.php';
         session_destroy();
     }else{
         session_destroy();
@@ -21,6 +21,7 @@
     <link rel="stylesheet" href="../css/header-footer.css">
     <link rel="stylesheet" href="../css/module.css">
     <link rel="stylesheet" href="../css/userAuth.css">
+    <link rel="stylesheet" href="../css/alert.css">
     <link rel="icon" href="../images/sitelogo.png" type="image/icon type">
     <script src="https://kit.fontawesome.com/e6e0351429.js" crossorigin="anonymous"></script>
     <script src="../js/navigation.js"></script>
@@ -37,7 +38,7 @@
                     <div class="login-info">
                         <h1>Home/</h1>
                         <h2>Sign In</h2>
-                        <p>Lorem ipsum dolor sit amet consectetur. Erat facilisi varius est cursus. Neque sagittis mi non purus semper lacus mauris magnis.</p>
+                        <p>CoinDash is a modularized cryptocurrency price tracking website with real-time prices, customizable alerts, and a user-friendly interface that provides tools and information for both experienced traders and newcomers.</p>
                         <div class="info-footer">
                             <p><a href="signUp.php">Don’t Have An Account?</a></p>
                             <p>or</p>
@@ -45,7 +46,7 @@
                         </div>
                     </div>  
                     <div class="login-box">
-                        <form name = "loginForm" id ="loginForm" action= "processLogin.php" method="GET" required>
+                        <form name = "loginForm" id ="loginForm" action= "processLogin.php" method="POST">
                             <div class="item-1">
                                 <label>Username or Email</label><br>
                                 <i class="fa-sharp fa-solid fa-circle-xmark fa-bounce errorLogoLogin"></i>     
@@ -59,7 +60,7 @@
                                 <p class="errorTextLogin"></p>
                             </div>
                             <div class="item-3">
-                                <input type="reset" value="Reset Form" />
+                                <input type="reset" value="Reset Form" id="loginReset" />
                             </div>
                             <div class="item-4">
                                 <input type="submit" name = "loginSubmit" id = "loginSubmit" value ="Login" />
@@ -70,8 +71,8 @@
         </main>
     <?php
         include "footer.php";
-        if(isset($_GET["errmsg"])){
-            echo "<script>alert('".$_GET["errmsg"]."');</script>";
+        if(isset($_POST["errmsg"])){
+            echo "<script>alert('".$_POST["errmsg"]."');</script>";
         }
     ?>
     <script src="../js/signIn.js"></script>

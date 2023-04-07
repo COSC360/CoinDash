@@ -15,13 +15,13 @@ function showError(i,errMsg){
     errorLogoElement[i].classList.add("showError");
 }
 function hideError(i){
-    console.log("Error hidden !");
     if(errorTextElement[i].classList.contains("showError")){
         errorTextElement[i].classList.remove("showError");
         errorLogoElement[i].classList.remove("showError");
         errorTextElement[i].innerText = "";
     }
 }
+
 loginForm.addEventListener("submit",function(e){
     const loginId = requiredInput[0].value;
     const password = requiredInput[1].value;
@@ -61,4 +61,9 @@ loginForm.addEventListener("submit",function(e){
     }
 
 });
- 
+
+loginForm.addEventListener("reset",function(e){
+    for(var i = 0; i < requiredInput.length; i++){
+        hideError(i);
+    }
+});

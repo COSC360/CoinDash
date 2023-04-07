@@ -9,7 +9,7 @@
     }
 
     if(isset($_SESSION['statusMsg'])){
-        echo "<script>window.alert(\"".$_SESSION['statusMsg']."\")</script>";
+        include 'alert.php';
         unset($_SESSION['statusMsg']);
     }
 ?>
@@ -28,7 +28,7 @@
     <link rel="stylesheet" href="../css/module.css">
     <link rel="stylesheet" href="../css/userAuth.css">
     <link rel="stylesheet" href="../css/account.css">
-    <script src="../js/account.js"></script>
+    <link rel="stylesheet" href="../css/alert.css">
     <script src="../js/navigation.js"></script>
 </head>
 <body>
@@ -37,7 +37,7 @@
         <div class = "user-account-container">
             <div class="user-account-info">
                 <h2>Account Settings</h2>
-                <p>Lorem ipsum dolor sit amet consectetur. Erat facilisi varius est cursus. Neque sagittis mi non purus semper lacus mauris magnis.</p>
+                <p></p>
             </div>  
             <div class="user-account-box">
                 <div class="profile-box">
@@ -50,14 +50,12 @@
                         <label>Email</label><br>    
                         <div class="input-container">
                             <input type = "text" id="email" name = "email" value = "<?php echo $_SESSION["email"] ;?>">
-                            <button class="editField" onclick="editField()"><img src="../svgs/editField.svg"></button>
                         </div> 
                     </div>
                     <div class="item-2">
                         <label>Password</label><br>
                         <div class="input-container">
                             <input type = "text" id="password" name = "password" value = "<?php echo $_SESSION["password"] ;?>">
-                            <button class="editField" onclick="editField()"><img src="../svgs/editField.svg"></button>
                         </div>
                     </div>
                     <div class="item-3">
@@ -69,7 +67,10 @@
                 </form>
             </div>
         </div>
-    <main>
+        <div class = "commentHistory">
+            <h1>Comment History</h1>
+        </div>
+    </main>
     <?php
         include "footer.php";
     ?>

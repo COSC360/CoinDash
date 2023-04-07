@@ -1,7 +1,7 @@
 <?php
     session_start();
     if(isset($_SESSION['statusMsg'])){
-        echo "<script>window.alert(\"".$_SESSION['statusMsg']."\")</script>";
+        include 'alert.php';
         session_destroy();
     }else{
         session_destroy();
@@ -22,6 +22,7 @@
     <link rel="stylesheet" href="../css/header-footer.css">
     <link rel="stylesheet" href="../css/module.css">
     <link rel="stylesheet" href="../css/userAuth.css">
+    <link rel="stylesheet" href="../css/alert.css">
     <link rel="icon" href="../images/sitelogo.png" type="image/icon type">
     <script src="https://kit.fontawesome.com/e6e0351429.js" crossorigin="anonymous"></script>
     <script src="../js/navigation.js"></script>
@@ -36,7 +37,7 @@
             <div class="register-info">
                 <h1>Home/</h1>
                 <h2>Sign Up</h2>
-                <p>Lorem ipsum dolor sit amet consectetur. Erat facilisi varius est cursus. Neque sagittis mi non purus semper lacus mauris magnis.</p>
+                <p>CoinDash is a modularized cryptocurrency price tracking website with real-time prices, customizable alerts, and a user-friendly interface that provides tools and information for both experienced traders and newcomers.</p>
                 <div class="info-footer">
                     <p><a href="signIn.php">Already Have An Account?</a></p>
                     <p>or</p>
@@ -55,21 +56,21 @@
                     <div class="item-2">
                         <label>Email <span style="color: red;">*</span></label><br>
                         <i class="fa-sharp fa-solid fa-circle-xmark fa-bounce errorLogoRegister"></i>                       
-                        <input type = "email" name = "email"  id = "email" placeholder="What's Your Email?" class = "required">
+                        <input type = "email" name = "email"  id = "email" placeholder="What's Your Email?" class = "required" onkeydown = "hideError(1)">
                         <p class="errorTextRegister"></p>
                     </div>
 
                     <div class="item-3">
                         <label>Password <span style="color: red;">*</span></label><br>
                         <i class="fa-sharp fa-solid fa-circle-xmark fa-bounce errorLogoRegister"></i>                                                        
-                        <input type = "password" name = "password"  id = "password" placeholder="What’s Your Password?" class = "required" onkeydown = "hideError(1)">
+                        <input type = "password" name = "password"  id = "password" placeholder="What’s Your Password?" class = "required" onkeydown = "hideError(2)">
                         <p class="errorTextRegister"></p>
                     </div>
 
                     <div class="item-4">
                         <label>Verify Password <span style="color: red;">*</span></label><br>
                         <i class="fa-sharp fa-solid fa-circle-xmark fa-bounce errorLogoRegister"></i>
-                        <input type = "password" name = "verifyPassword"  id = "verifyPassword" placeholder="Confirm Password?" class = "required" onkeydown = "hideError(2)">
+                        <input type = "password" name = "verifyPassword"  id = "verifyPassword" placeholder="Confirm Password?" class = "required" onkeydown = "hideError(3)">
                         <p class="errorTextRegister"></p>
                     </div>
 
@@ -89,16 +90,16 @@
                     <div class="item-6">
                         <label>Profile Photo <span style="color: red;">*</span></label><br>
                         <i class="fa-sharp fa-solid fa-circle-xmark fa-bounce errorLogoRegister"></i>
-                        <input type="file" name="img"  id="img" accept="image/*" class = "required" onkeydown = "hideError(3)">
+                        <input type="file" name="img"  id="img" accept="image/*" class = "required"  onchange = "hideError(4)">
                         <p class="errorTextRegister"></p>
                     </div>      
 
                     <div class="item-7">
-                        <input type="reset" value="Reset Form">
+                        <input type="reset" value="Reset Form"  id="registerReset" >
                     </div>
 
                     <div class = "item-8">
-                        <input type="submit"  name = "registerSubmit"  id = "registerSubmit" value="Get Started !" onkeydown = "hideError(4)">
+                        <input type="submit"  name = "registerSubmit"  id = "registerSubmit" value="Get Started !">
                     </div>                    
                 </form>
             </div>

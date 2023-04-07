@@ -14,7 +14,7 @@ function showError(i,errMsg){
     errorTextElement[i].classList.add("showError");
     errorLogoElement[i].classList.add("showError");
 }
-function hideError(){
+function hideError(i){
     if(errorTextElement[i].classList.contains("showError")){
         errorTextElement[i].classList.remove("showError");
         errorLogoElement[i].classList.remove("showError");
@@ -96,3 +96,8 @@ registerForm.addEventListener("submit",function(e){
 });
 
 
+registerForm.addEventListener("reset",function(e){
+    for(var i = 0; i < requiredInput.length; i++){
+        hideError(i);
+    }
+});
