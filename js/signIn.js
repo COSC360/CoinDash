@@ -58,4 +58,4 @@ loginForm.addEventListener("submit",function(e){
 });
  
 
-loginForm.addEventListener("keydown", hideError);
+loginForm.addEventListener("change", hideError);
