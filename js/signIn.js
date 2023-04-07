@@ -58,7 +58,9 @@ loginForm.addEventListener("submit",function(e){
         showError(0, "Email is invalid");
     }
 
+
     if (error = true){
+        console.log("Form did not submit !");
         e.preventDefault();
     }
 
