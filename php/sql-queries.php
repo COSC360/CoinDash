@@ -262,6 +262,7 @@ function retrieveDashboard($con, $userId){
         return $rows; 
     } else {
         // mysqli_stmt_close();
+        echo "<script>console.log('Hello')</script>";
         return false;
     }
 }
