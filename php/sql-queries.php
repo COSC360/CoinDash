@@ -264,14 +264,14 @@ function retrieveDashboard($con, $userId){
     }
 }
 
-function uploadComment($con, $userId, $coinId, $text, $parentId){
+function uploadComment($con, $userId, $coinId, $text){
     $commentSql = "INSERT INTO comment (coin_id, user_id, text, parentId) VALUES (?, ?, ?, ?);";
-    
+    $parentId = null;
     $commentStmt = mysqli_stmt_init($con);
     if (!mysqli_stmt_prepare($commentStmt, $commentSql)){
         return false;
     }
-    echo $parentId;
+
     mysqli_stmt_bind_param($commentStmt, "sssi", $coinId, $userId, $text, $parentId);
     mysqli_stmt_execute($commentStmt);
     mysqli_stmt_close($commentStmt);
