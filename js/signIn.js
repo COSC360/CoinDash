@@ -54,6 +54,8 @@ loginForm.addEventListener("submit",function(e){
 
     if (error == true){
         e.preventDefault();
+    }else{
+        e.preventDefault();
     }
 
 });
