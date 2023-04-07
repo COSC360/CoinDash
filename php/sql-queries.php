@@ -271,7 +271,7 @@ function uploadComment($con, $userId, $coinId, $text, $parentId){
     if (!mysqli_stmt_prepare($commentStmt, $commentSql)){
         return false;
     }
-    
+    echo $parentId;
     mysqli_stmt_bind_param($commentStmt, "sssi", $coinId, $userId, $text, $parentId);
     mysqli_stmt_execute($commentStmt);
     mysqli_stmt_close($commentStmt);
