@@ -20,7 +20,7 @@ function updateData(coinId){
         data: {coinId: coinId},
         success: function(response) {
             commentArea.innerHTML = response;
-            setTimeout(updateData(coinId), 1000)
+            setTimeout(updateData(coinId), 3000)
         }
     })
 }
