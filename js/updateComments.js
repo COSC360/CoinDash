@@ -18,18 +18,16 @@ function updateData(coinId){
         type: "POST",
         async: true,
         data: {coinId: coinId},
-        success: function(response) {
-            setCommentArea(response);
+        success: (response) => {
+            commentArea.innerHTML = response;
+            addReplyEventListeners();
             console.log("Hello");
-            setTimeout(updateData(coinId), 10000)
+            // setTimeout(updateData(coinId), 10000);
         }
     })
 }
 
-function setCommentArea(commentsHTML){
-    commentArea.innerHTML = commentsHTML;
-    addReplyEventListeners();
-}
+
 
 function addReplyEventListeners(){
     var replyBtns = document.querySelectorAll(".reply-btn");
