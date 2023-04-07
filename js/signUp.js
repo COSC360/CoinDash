@@ -64,8 +64,14 @@ registerForm.addEventListener("submit",function(e){
         error = true;
         showError(2, "Password cannot be empty");
     }
-    
+
     if(verifyPassword == '')
+    {
+        error = true;
+        showError(3, "Password cannot be empty");
+    }
+    
+    if(password != '' && verifyPassword == '')
     {
         error = true;
         showError(3, "Re-enter your password");
