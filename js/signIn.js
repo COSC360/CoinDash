@@ -40,6 +40,13 @@ loginForm.addEventListener("submit",function(e){
     }
 
     console.log(err);
+    
+    if (err == false){
+        e.preventDefault();
+    }else{
+        e.preventDefault();
+        console.log("Form passed !");   
+    }
 
 });
  
