@@ -63,7 +63,5 @@ loginForm.addEventListener("submit",function(e){
 
 });
  
-requiredInput[0].addEventListener("change", hideError(0));
-requiredInput[1].addEventListener("change", hideError(1));
-
-window.onunload= hideError;
+requiredInput[0].addEventListener("focusin", hideError(0));
+requiredInput[1].addEventListener("focusin", hideError(1));
