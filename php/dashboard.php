@@ -100,7 +100,7 @@ session_start();
                                             <a href=\"individual.php?coinId=".$coin["Id"]."\" class=\"icon-overlay\">
                                                 <img src=\"../svgs/goto.svg\">
                                             </a>
-                                            <div class=\"container\">
+                                            <div class=\"fire-overlay\">
                                                 <div class=\"corpus diamond\">
                                                     <div class=\"diamond diamond-inner diamond-right\"></div>
                                                     <div class=\"diamond diamond-inner diamond-left\"></div>
