@@ -41,39 +41,27 @@ registerForm.addEventListener("submit",function(e){
         showError(2, "Password cannot be empty");
         showError(3, "Password cannot be empty");
         showError(4, "Need to upload image");
-    }
-    
-    if(username == '')
+    }else if(username == '')
     {
         error = true;
         showError(0, "Username cannot be empty");
-    }
-    
-    if(email == '')
+    }else if(email == '')
     {
         error = true;
         showError(1, "Email cannot be empty");
-    }
-    
-    if(password == '')
+    }else if(password == '')
     {
         error = true;
         showError(2, "Password cannot be empty");
-    }
-
-    if(verifyPassword == '')
+    }else if(verifyPassword == '')
     {
         error = true;
         showError(3, "Re-enter your password");
-    }
-
-    if(img == '')
+    }else if(img == '')
     {
         error = true;
         showError(4, "Need to upload image");
-    }
-
-    if(password != verifyPassword)
+    }else if(password != verifyPassword)
     {
         error = true;
         showError(2, "Passwords do not match");
