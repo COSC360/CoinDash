@@ -28,7 +28,6 @@
     <link rel="stylesheet" href="../css/module.css">
     <link rel="stylesheet" href="../css/userAuth.css">
     <link rel="stylesheet" href="../css/account.css">
-    <script src="../js/account.js"></script>
     <script src="../js/navigation.js"></script>
 </head>
 <body>
