@@ -9,7 +9,7 @@ var passwordErrorText = document.getElementsByClassName('errorText')[1].innerTex
 
 var loginBtn = document.getElementById("loginSubmit"); // Login button
 
-
+var errState = false;
 
 // <i class="fa-sharp fa-solid fa-circle-check" style="color: #11e43b;"></i>
 // <i class="fa-sharp fa-solid fa-circle-xmark" style="color: #ff0000;"></i>
@@ -19,8 +19,6 @@ const emailRegex = "^(.+)@([^\.].*)\.([a-z]{2,})$"; //Email validation based on 
 
 
 loginForm.addEventListener("submit",function(e){
-    let errState = false;
-
     if(loginId == null && password == null){
         loginIdErrorText = "Login Id cannot be empty";
         passwordErrorText = "Password cannot be empty";
@@ -45,11 +43,11 @@ loginForm.addEventListener("submit",function(e){
     }
 });
  
-function displayError(errState){
-    if(errState == true){
+function displayError(err){
+    if(err == true){
         showError();
     }
-    if(errState == false){
+    if(err== false){
         hideError();
     }
 }
