@@ -14,6 +14,7 @@ session_start();
     <link rel="stylesheet" href="../css/dashboard.css">
     <link rel="stylesheet" href="../css/header-footer.css">
     <link rel="stylesheet" href="../css/module.css">
+    <link rel="stylesheet" href="../css/fire.css">
     <script src="https://kit.fontawesome.com/e6e0351429.js" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="../js/jquery-3.1.1.min.js"></script>
@@ -99,6 +100,12 @@ session_start();
                                             <a href=\"individual.php?coinId=".$coin["Id"]."\" class=\"icon-overlay\">
                                                 <img src=\"../svgs/goto.svg\">
                                             </a>
+                                            <div class=\"container\">
+                                                <div class=\"corpus diamond\">
+                                                    <div class=\"diamond diamond-inner diamond-right\"></div>
+                                                    <div class=\"diamond diamond-inner diamond-left\"></div>
+                                                </div>
+                                            </div>
                                         </div>
                                             <div class=\"product-image-mask\">
                                             <div class=\"product-image\" style=\"background-image: url(".$coin["img_url"].");\"></div>
