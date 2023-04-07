@@ -56,3 +56,7 @@
     background-color: var(--Black-1);
     color: var(--White-1);
 }
+
+.ui-draggable-handle{
+    background-color: red;
+}
