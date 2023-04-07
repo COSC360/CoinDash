@@ -30,22 +30,30 @@ loginForm.addEventListener("submit",function(e){
         error = true;
         showError(0, "Login ID cannot be empty");
         showError(1, "Password cannot be empty");
-    }else if(loginId == '')
+    }
+    
+    if(loginId == '')
     {
         error = true;
         showError(0, "Login ID cannot be empty");
-    }else if(password == '')
+    }
+    
+    if(password == '')
     {
         error = true;
         console.log(errorTextElement);
         console.log(errorTextElement[1]);
         console.log(errorTextElement[1].innerText);
         showError(1, "Password cannot be empty");
-    }else if(!passwordRegex.test(password))
+    }
+    
+    if(!passwordRegex.test(password))
     {
         error = true;
         showError(1, "Password is invalid. It must be between 8-16 characters");
-    }else if(emailDomains.includes(loginId) && !emailRegex.test(loginId))
+    }
+    
+    if(emailDomains.includes(loginId) && !emailRegex.test(loginId))
     {
         error = true;
         showError(0, "Email is invalid");
