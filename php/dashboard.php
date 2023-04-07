@@ -36,8 +36,8 @@ session_start();
             ?>
             <div class="title">
                 <?php
-                    if($_SESSION['user'] != null){
-                        echo "<h1>".$_SESSION['user']."'s Dashboard</h1>";
+                    if(isset($_SESSION['id'])){
+                        echo "<h1>".$_SESSION['username']."'s Dashboard</h1>";
                     }else{
                         echo "<h1>Guest's Dashboard</h1>";
                     }
