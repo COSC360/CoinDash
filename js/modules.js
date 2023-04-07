@@ -122,8 +122,9 @@ addModuleBtn.addEventListener("click", (e) => {
     var dashboardDom = addModuleBtn.parentNode.parentNode;
     
     var newBlock = document.createTextNode(generateDefaultBlock());
-
-    dashboardDom.appendChild(newBlock);
+    console.log(dashboardDom);
+    // dashboardDom.appendChild(newBlock);
+    dashboardDom.innerHTML += newBlock;
     // Generate Full Block HTML
     // Add block HTML as last child
 })
