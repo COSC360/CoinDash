@@ -63,7 +63,4 @@ loginForm.addEventListener("submit",function(e){
 
 });
  
-for(var i = 0; i < requiredInput.length; i++){
-    resetBtn.onclick = hideError(i);
-}
 
