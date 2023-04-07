@@ -13,13 +13,13 @@ window.addEventListener("load", () => {
 
 // Periodically updates the comments asynchronously
 function updateData(coinId){
+    console.log("hello");
     $.ajax({
         url: "retrieveComments.php",
         type: "POST",
         async: true,
         data: {coinId: coinId},
         success: function(response) {
-            console.log("hello");
             commentArea.innerHTML = response;
             setTimeout(updateData(coinId), 1000)
         }
