@@ -25,7 +25,7 @@ function updateData(){
                 commentArea.innerHTML = response;
                 addReplyEventListeners();
                 addFormEventListeners();
-                setTimeout(function(){updateData()}, 10000);
+                setTimeout(function(){updateData()}, 1000);
             }
         }
     })
@@ -71,7 +71,7 @@ function addFormEventListeners(){
                 url: "uploadComment.php",
                 type: "POST",
                 data: {coinId: coinId, text: text, parentId: commentId},
-                success: function(response) {
+                success: function() {
                     form.reset();
                 }
             })
