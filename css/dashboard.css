@@ -52,3 +52,7 @@
     width: 40px; 
     margin-left: 0.75em;
 }
+
+#breadcrumbCurrent{
+    color: #007eff;
+}
