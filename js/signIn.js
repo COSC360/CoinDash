@@ -22,7 +22,7 @@ loginForm.addEventListener("submit",function(e){
     var loginId = requiredInput[0].value;
     var password = requiredInput[1].value;
     var err = false;
-
+    console.log(err);
 
     if(loginId == "" && password == "")
     {
