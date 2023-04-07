@@ -62,6 +62,3 @@ loginForm.addEventListener("submit",function(e){
 
 });
  
-
-window.onload = loginForm.addEventListener("reset", hideError(0));
-window.onload = loginForm.addEventListener("reset", hideError(1));
