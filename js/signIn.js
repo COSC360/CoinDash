@@ -1,7 +1,7 @@
 const loginForm = document.forms['loginForm']; // Login Form
 const requiredInput = document.querySelectorAll(".required");
-let errorTextElement = document.querySelectorAll(".errorText");
-let errorLogoElement = document.querySelectorAll(".errorLogo");
+let errorTextElement = document.querySelectorAll(".errorTextLogin");
+let errorLogoElement = document.querySelectorAll(".errorLogoLogin");
 
 // <i class="fa-sharp fa-solid fa-circle-check" style="color: #11e43b;"></i>
 
