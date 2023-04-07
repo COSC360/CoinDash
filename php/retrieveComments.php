@@ -33,7 +33,7 @@
         ";
 
         $replies = retrieveCommentReplies($con, $commentData["id"]);
-
+        echo "<script>console.log('Hello')</script>";
         if ($replies){
             foreach($replies as $reply) {
                 $output .= getCommentHTML($con, $reply);
