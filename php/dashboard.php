@@ -100,15 +100,15 @@ session_start();
                                             <a href=\"individual.php?coinId=".$coin["Id"]."\" class=\"icon-overlay\">
                                                 <img src=\"../svgs/goto.svg\">
                                             </a>
-                                            <div class=\"fire-overlay\">
-                                                <div class=\"corpus diamond\">
-                                                    <div class=\"diamond diamond-inner diamond-right\"></div>
-                                                    <div class=\"diamond diamond-inner diamond-left\"></div>
-                                                </div>
+                                        </div>
+                                        <div class=\"fire-overlay\">
+                                            <div class=\"corpus diamond\">
+                                                <div class=\"diamond diamond-inner diamond-right\"></div>
+                                                <div class=\"diamond diamond-inner diamond-left\"></div>
                                             </div>
                                         </div>
-                                            <div class=\"product-image-mask\">
-                                            <div class=\"product-image\" style=\"background-image: url(".$coin["img_url"].");\"></div>
+                                        <div class=\"product-image-mask\">
+                                        <div class=\"product-image\" style=\"background-image: url(".$coin["img_url"].");\"></div>
                                         </div><div class=\"product-info-container\">
                                             <h3>".$coin["name"]."</h3>
                                             <strong class=\"product-price\">".number_format($coin[$dashboardModules[$currentCount]["fiat"]], 3, '.', '')." ".strtoupper($dashboardModules[$currentCount]["fiat"])." ".number_format($coin["price_change_24h"], 2, '.', '')."%</strong>
