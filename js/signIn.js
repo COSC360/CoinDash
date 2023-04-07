@@ -26,7 +26,6 @@ loginForm.addEventListener("submit",function(e){
 
     var error = false;
 
-    console.log(error);
 
     if(loginId == '' && password == '')
     {
@@ -50,6 +49,8 @@ loginForm.addEventListener("submit",function(e){
         error = true;
         showError(errorTextElement[1], "Email is invalid");
     }
+
+    console.log(error);
 
     if (error == true){
         e.preventDefault();
