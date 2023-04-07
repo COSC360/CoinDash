@@ -19,6 +19,7 @@ function updateData(coinId){
         async: true,
         data: {coinId: coinId},
         success: function(response) {
+            console.log("hello");
             commentArea.innerHTML = response;
             setTimeout(updateData(coinId), 1000)
         }
