@@ -3,9 +3,10 @@
     include "sql-queries.php";
     $coinId = $_POST["coinId"];
     $comments = retrievePostComment($con, $coinId);
-    echo $coinId;
+
     $output = "";
     foreach($comments as $comment) {
+        echo $comment;
         $output .= getCommentHTML($con, $comment);
     }
 
@@ -34,7 +35,7 @@
         echo "<script>console.log('Hello')</script>";
         if ($replies){
             foreach($replies as $reply) {
-                $output .= getCommentHTML($con, $reply);
+                $commentHTML .= getCommentHTML($con, $reply);
             }
         }
 
