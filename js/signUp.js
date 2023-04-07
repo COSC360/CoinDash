@@ -63,15 +63,7 @@ registerForm.addEventListener("submit",function(e){
     {
         error = true;
         showError(2, "Password cannot be empty");
-    }
-
-    if(verifyPassword == '')
-    {
-        error = true;
-        showError(3, "Password cannot be empty");
-    }
-    
-    if(password != '' && verifyPassword == '')
+    }else if(password != '' && verifyPassword == '')
     {
         error = true;
         showError(3, "Re-enter your password");
@@ -85,6 +77,13 @@ registerForm.addEventListener("submit",function(e){
         showError(2, "Passwords do not match");
         showError(3, "Passwords do not match");
     }
+
+    // if(verifyPassword == '')
+    // {
+    //     error = true;
+    //     showError(3, "Password cannot be empty");
+    // }
+    
     
     if(img == '')
     {
