@@ -327,7 +327,7 @@ select{
   color: #050505;
 }
 
-.errorLogo{
+.errorLogoLogin{
   visibility: hidden;
   position: absolute;
   color: #ff0000;
@@ -336,7 +336,21 @@ select{
   z-index: 10;
 }
 
-.errorText{
+.errorTextLogin{
+  visibility: hidden;
+}
+
+
+.errorLogoRegister{
+  visibility: hidden;
+  position: absolute;
+  color: #ff0000;
+  top: 2em;
+  left: 19em;
+  z-index: 10;
+}
+
+.errorTextRegister{
   visibility: hidden;
 }
 
