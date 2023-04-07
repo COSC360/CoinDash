@@ -887,7 +887,7 @@ function retrieveUserStatusChartData($con){
 }
 
 function uploadActivity($con, $userId, $activity){
-    echo "<script>console.log('Here')</script>";
+    echo "<script>console.log('Here2')</script>";
     $activitySql = "INSERT INTO userActivity (userId, activity) VALUES (?, ?)";
 
     $activityStmt = mysqli_stmt_init($con);
