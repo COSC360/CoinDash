@@ -139,7 +139,9 @@ session_start();
                     echo "</div>";
                 }
             ?>
-            <button id="add-module-btn">Add Module</button>
+            <div class="panel">
+                <button id="add-module-btn">Add Module</button>
+            </div>
         </article>
     </main>
     <?php
