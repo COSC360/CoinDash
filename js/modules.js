@@ -124,8 +124,9 @@ addModuleBtn.addEventListener("click", (e) => {
     var dashboardDom = document.getElementById("dashboard");
     var newBlock = generateDefaultBlock();
     dashboardDom.innerHTML += newBlock;
-    var newModuleGallery = document.querySelector("#module-1000 .module-gallery");
+    var newModuleGallery = document.querySelector(`#module-${index} .module-gallery`);
     setModuleHTML("usd", "Ethereum Ecosystem", "views DESC", newModuleGallery);
+    index++;
 })
 
 toggleEditBtn.addEventListener("click", (e) => {
@@ -252,7 +253,6 @@ function generateDefaultBlock(){
             </div>
         </div>
     `
-    index++;
     return newBlock;
 }
 
