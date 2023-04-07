@@ -48,19 +48,19 @@
                         <form name = "loginForm" id ="loginForm" action= "processLogin.php" method="GET" required>
                             <div class="item-1">
                                 <label>Username or Email</label><br>     
-                                <input type = "text" name = "loginId" id= "loginId" placeholder="What’s Your Registered Username or Email?" class="required">
+                                <input type = "text" name = "loginId" id= "loginId" placeholder="What’s Your Registered Username or Email?" class="required" />
                                 <p class="errorText"></p>
                             </div>
                             <div class="item-2">
                                 <label>Password</label><br>
-                                <input type = "password" name = "password" id= "password" placeholder="What’s Your Password?" class="required">
+                                <input type = "password" name = "password" id= "password" placeholder="What’s Your Password?" class="required" />
                                 <p class="errorText"></p>
                             </div>
                             <div class="item-3">
-                                <input type="reset" value="Reset Form">
+                                <input type="reset" value="Reset Form" />
                             </div>
                             <div class="item-4">
-                                <input type="submit" name = "loginSubmit" id = "loginSubmit" value ="Login">
+                                <input type="submit" name = "loginSubmit" id = "loginSubmit" value ="Login" />
                             </div>
                         </form>
                     </div>
