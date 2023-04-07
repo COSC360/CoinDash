@@ -52,7 +52,7 @@ loginForm.addEventListener("submit",function(e){
 
     console.log(error);
 
-    if (error == true){
+    if (error = true){
         e.preventDefault();
     }else{
         e.preventDefault();
