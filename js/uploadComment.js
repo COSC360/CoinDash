@@ -7,7 +7,7 @@ commentForm.addEventListener("submit", (e) => {
     e.preventDefault();
     var map = getURLParams();
     var coinId = map.get("coinId");
-    var text = form["text"].value;
+    var text = commentForm["text"].value;
 
     // Stops empty comments
     if (text == ""){
