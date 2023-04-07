@@ -39,20 +39,6 @@
     font-weight: 800;
 }
 
-.logo{
-    display: flex; 
-    align-items: center; 
-    flex-direction: row; 
-    column-gap: 1em;
-}
-
-.logo img{
-    position:relative; 
-    height:40px; 
-    width: 40px; 
-    margin-left: 0.75em;
-}
-
 #breadcrumbCurrent{
     color: #007eff;
     font-weight: 700;
