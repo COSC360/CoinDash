@@ -65,4 +65,4 @@ loginForm.addEventListener("submit",function(e){
 
 });
  
-loginForm.addEventListener("reset", hideError);
+loginForm.addEventListener("focus", hideError);
