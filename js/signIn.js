@@ -1,7 +1,5 @@
 var loginForm = document.forms['loginForm']; // Login Form
 
-var loginId = loginForm[0].value; //Login Id (Username or Email)
-var password = loginForm[1].value; // Login Password
 
 var loginIdErrorText = document.getElementsByClassName('errorText')[0].innerText;
 var passwordErrorText = document.getElementsByClassName('errorText')[1].innerText;
@@ -19,6 +17,9 @@ const emailRegex = "^(.+)@([^\.].*)\.([a-z]{2,})$"; //Email validation based on 
 
 
 loginForm.addEventListener("submit",function(e){
+    let loginId = loginForm[0].value; //Login Id (Username or Email)
+    let password = loginForm[1].value; // Login Password
+    
     if(loginId == '' && password == ''){
         loginIdErrorText = "Login Id cannot be empty";
         passwordErrorText = "Password cannot be empty";
