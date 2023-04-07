@@ -1,7 +1,7 @@
 import { getURLParams } from "./utils.js"
 
 
-var commentForms = document.querySelectorAll("form");
+var commentForms = document.getElementById("comment-form");
 
 commentForms.forEach(form => {
     form.addEventListener("submit", (e) => {

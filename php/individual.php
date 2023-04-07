@@ -47,7 +47,7 @@ $coinId = $_GET["coinId"];
     <article class="panel">
         <div class="reviews">
             <h2>Comments</h2>
-            <form class="comment-form">
+            <form class="comment-form" id="comment-form">
                 <p>
                     <textarea name="text" class="comment-input"></textarea>
                 </p>

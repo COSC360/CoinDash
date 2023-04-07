@@ -56,9 +56,29 @@ function addFormEventListeners(){
     var replyForms = document.querySelectorAll(".reply-form");
 
     replyForms.forEach(form => {
-        form.addEventListener("submit", () => {
-            var commentId = form.dataset.commentId;
-            console.log(form.dataset);
+        form.addEventListener("submit", (e) => {
+            e.preventDefault();
+            var commentId = form.dataset.commentid;
+            var text = form["text"].value;
+            console.log(commentId);
+            console.log(text);
+            // Stops empty comments
+            if (text == ""){
+                return;
+            }
+    
+            // Asynch request to upload comment
+            $.ajax({
+                url: "uploadComment.php",
+                type: "POST",
+                data: {coinId: coinId, text: text, parentId: commentId},
+                success: function(response) {
+                    form.reset();
+                }
+            })
+
+            form.classList.add("collapsed");
+            openedForms--;
         })
     })
 }
