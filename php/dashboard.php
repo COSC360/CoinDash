@@ -61,8 +61,6 @@ session_start();
                 $previousBlock = $dashboardModules[$currentCount]["block_id"];
                 
                 while ($currentCount < $moduleCount){
-                    echo "<script>console.log('".$currentCount."')</script>";
-                    echo "<script>console.log('".$moduleCount."')</script>";
                     echo "<div class=\"block panel\">";
                     while ($currentCount < $moduleCount){
                         if ($previousBlock != $dashboardModules[$currentCount]["block_id"]){
@@ -139,10 +137,10 @@ session_start();
                     echo "</div>";
                 }
             ?>
-            <div class="panel">
-                <button id="add-module-btn">Add Module</button>
-            </div>
         </article>
+        <div class="panel">
+            <button id="add-module-btn">Add Module</button>
+        </div>
     </main>
     <?php
         include "edit.php";

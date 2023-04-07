@@ -266,7 +266,7 @@ function retrieveDashboard($con, $userId){
 
 function uploadComment($con, $userId, $coinId, $text){
     $commentSql = "INSERT INTO comment (coin_id, user_id, text) VALUES (?, ?, ?);";
-
+    
     $commentStmt = mysqli_stmt_init($con);
     if (!mysqli_stmt_prepare($commentStmt, $commentSql)){
         return false;

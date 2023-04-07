@@ -4,6 +4,7 @@ import { buildModule } from "./parser.js";
 var module_settings_btns = document.querySelectorAll(".module-settings-btn");
 var modules = document.querySelectorAll(".module");
 var editElements = document.querySelectorAll(".edit-ui");
+var addModuleBtn = document.getElementById("add-module-btn");
 var toggleEditBtn = document.getElementById("view-edit-btn");
 var editBtnImage = document.querySelector("#view-edit-btn img");
 var saveEditBtn = document.getElementById("save-edit-btn");
@@ -117,6 +118,16 @@ modules.forEach(module => {
     })
 })
 
+addModuleBtn.addEventListener("click", (e) => {
+    dashboardDom = addModuleBtn.parentNode;
+    
+    var newBlock = generateDefaultBlock();
+
+    dashboardDom.appendChild(newBlock);
+    // Generate Full Block HTML
+    // Add block HTML as last child
+})
+
 toggleEditBtn.addEventListener("click", (e) => {
     e.preventDefault();
     editElements.forEach(element => {
@@ -206,4 +217,38 @@ function setModuleHTML(fiat, category, sort, target){
             target.innerHTML = newModule;
         }
     })
+}
+
+function generateDefaultBlock(){
+    var fiat = "usd";
+    var category = "Ethereum Ecosystem";
+    var sort = "views DESC";
+
+    var newBlock = `
+        <div class="block panel">
+            <div class="module small" id="module-".$dashboardModules[$currentCount]["id"].""> 
+            <div class="module-header">
+                <div class="api-details">
+                    <div class="api-category">".$dashboardModules[$currentCount]["category"]."</div>
+                </div>
+                <div class="dropdowns">
+                    <select class="dropdown fiat">";
+
+                    </select>
+                    <select class="dropdown sort">";
+                        
+                    </select>
+                </div>
+            </div>
+            <div class="module-gallery">";
+            </div>
+            <div draggable=\"true\" class=\"module-settings-btn edit-ui\">
+                    <i class=\"fa-solid fa-ellipsis-vertical fa-lg\"></i>
+                    <i class=\"fa-solid fa-ellipsis-vertical fa-lg\"></i>
+                </div>
+            </div>
+        </div>
+    `
+
+    return newBlock;
 }
