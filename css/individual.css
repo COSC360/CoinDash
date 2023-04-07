@@ -109,11 +109,11 @@
 }
 
 .reviews {
-    border-radius: 10px;
+    border-radius: 10px 0px 0px 10px;
     margin-top: 2.5em;
     border: solid 1px var(--Grey-1);
     padding: 1em;
-    max-height: 24em;
+    max-height: 40em;
     overflow-y: scroll;
 }
 

@@ -778,7 +778,7 @@ function saveUser($con, $userID, $username, $password, $email, $comingFrom, $use
 
     }else{
         $_SESSION['statusMsg'] = "User does not exist !";
-        return false;       
+        return false;
     }
 }
 
