@@ -121,7 +121,7 @@ modules.forEach(module => {
 addModuleBtn.addEventListener("click", (e) => {
     var dashboardDom = addModuleBtn.parentNode.parentNode;
     
-    var newBlock = generateDefaultBlock();
+    var newBlock = document.createTextNode(generateDefaultBlock());
 
     dashboardDom.appendChild(newBlock);
     // Generate Full Block HTML
