@@ -1,6 +1,10 @@
 var loginForm = document.forms['loginForm']; // Login Form
+
 var loginId = loginForm[0].value; //Login Id (Username or Email)
 var password = loginForm[1].value; // Login Password
+
+var errorText = document.querySelectorAll('errorText');
+
 var loginBtn = document.getElementById("loginSubmit"); // Login button
 
 
@@ -13,6 +17,7 @@ const emailRegex = "^(.+)@([^\.].*)\.([a-z]{2,})$"; //Email validation based on 
 var errMsg = "";
 
 console.log(loginForm);
+console.log(errorText);
 // loginForm.addEventListener("submit",function(e){
 //     if(loginId == null && password == null){
 //         displayError(false);
