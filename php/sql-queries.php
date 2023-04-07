@@ -35,10 +35,10 @@ function updateCoinViews($con, $coinId){
     if (!mysqli_stmt_prepare($updateStmt, $updateSql)){
         return false;
     }
-
+    echo "<script>console.log('".$coinId."')</script>";
     // Set parameters for prepared statement
     mysqli_stmt_bind_param($updateStmt, "s", $coinId);
-
+    echo "<script>console.log('".$coinId."')</script>";
     // Execute prepared statement
     if (mysqli_stmt_execute($updateStmt)){
         return true;
