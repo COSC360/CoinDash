@@ -63,14 +63,12 @@ registerForm.addEventListener("submit",function(e){
     {
         error = true;
         showError(2, "Password cannot be empty");
-    }else if(verifyPassword == '')
+    }
+    
+    if(verifyPassword == '')
     {
         error = true;
         showError(3, "Re-enter your password");
-    }else if(img == '')
-    {
-        error = true;
-        showError(4, "Need to upload image");
     }else if(password != verifyPassword)
     {
         error = true;
@@ -80,6 +78,12 @@ registerForm.addEventListener("submit",function(e){
     {
         error = true;
         showError(2, "Password is invalid. It must be between 8-16 characters");
+    }
+    
+    if(img == '')
+    {
+        error = true;
+        showError(4, "Need to upload image");
     }
     
 
