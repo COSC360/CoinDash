@@ -234,12 +234,12 @@ function generateDefaultBlock(){
                 <div class="dropdowns">
                     <select class="dropdown fiat">" `
                         for (let i = 0; i < fiats.length; i++){
-                            newBlock += `<option value=${fiats[i]} ${fiats[i] == defaultFiat ? "selected" : ""}> ${fiatLabels[i]} </option>`
+                            newBlock += `<option value="${fiats[i]}" ${fiats[i] == defaultFiat ? "selected" : ""}> ${fiatLabels[i]} </option>`
                         }
     newBlock +=     `</select>
                     <select class="dropdown sort">"`
                         for (let i = 0; i < sortValues.length; i++){
-                            newBlock += `<option value=${sortValues[i]} ${sortValues[i] == defaultSort ? "selected" : ""}> ${sortLabels[i]} </option>`
+                            newBlock += `<option value="${sortValues[i]}" ${sortValues[i] == defaultSort ? "selected" : ""}> ${sortLabels[i]} </option>`
                         }
     newBlock +=     `</select>
                 </div>
