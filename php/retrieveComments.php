@@ -3,10 +3,9 @@
     include "sql-queries.php";
     $coinId = $_POST["coinId"];
     $comments = retrievePostComment($con, $coinId);
-
+    print_r($comments);
     $output = "";
     foreach($comments as $comment) {
-        echo $comment;
         $output .= getCommentHTML($con, $comment);
     }
 
