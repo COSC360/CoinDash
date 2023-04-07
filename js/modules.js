@@ -220,7 +220,9 @@ function setModuleHTML(fiat, category, sort, target){
                         <div class="icon-container">
                             <a href="individual.php?coinId=${coin.Id}" class="icon-overlay">
                                 <img src="../svgs/goto.svg">
-                            </a>`
+                            </a>
+                        </div>`
+ 
                 if (coinIndex <= 5){
                     newModule += `
                         <div class=\"fire-overlay\">
@@ -232,7 +234,6 @@ function setModuleHTML(fiat, category, sort, target){
                         `
                 }
                 newModule += `
-                        </div>
                             <div class="product-image-mask">
                             <div class="product-image" style="background-image: url(${coin.img_url});"></div>
                         </div><div class="product-info-container">
