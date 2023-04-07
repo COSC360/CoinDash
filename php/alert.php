@@ -20,7 +20,7 @@
 <body>
  
 <div id="dialog" title="Basic dialog">
-  <p><?php $_SESSION['statusMsg']?></p>
+  <p><?php echo $_SESSION['statusMsg']?></p>
 </div>
  
  
