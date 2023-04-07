@@ -49,13 +49,13 @@
                             <div class="item-1">
                                 <label>Username or Email</label><br>
                                 <i class="fa-sharp fa-solid fa-circle-xmark fa-bounce errorLogoLogin"></i>     
-                                <input type = "text" name = "loginId" id= "loginId" placeholder="What’s Your Registered Username or Email?" class="required" onkeydown = "hideError(0)" />
+                                <input type = "text" name = "loginId" id= "loginId" placeholder="What’s Your Registered Username or Email?" class="required"/>
                                 <p class="errorTextLogin"></p>
                             </div>
                             <div class="item-2">
                                 <label>Password</label><br>
                                 <i class="fa-sharp fa-solid fa-circle-xmark fa-bounce errorLogoLogin"></i>
-                                <input type = "password" name = "password" id= "password" placeholder="What’s Your Password?" class="required" onkeydown = "hideError(1)"/>
+                                <input type = "password" name = "password" id= "password" placeholder="What’s Your Password?" class="required"/>
                                 <p class="errorTextLogin"></p>
                             </div>
                             <div class="item-3">
