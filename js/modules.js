@@ -5,6 +5,7 @@ var module_settings_btns = document.querySelectorAll(".module-settings-btn");
 var modules = document.querySelectorAll(".module");
 var editElements = document.querySelectorAll(".edit-ui");
 var toggleEditBtn = document.getElementById("view-edit-btn");
+var editBtnImage = document.querySelector("#view-edit-btn img");
 var saveEditBtn = document.getElementById("save-edit-btn");
 
 var moduleModal = document.getElementById("module-modal");
@@ -121,6 +122,7 @@ toggleEditBtn.addEventListener("click", (e) => {
     editElements.forEach(element => {
         if (element.classList.contains("hide")){
             element.classList.remove("hide");
+            console.log(editBtnImage);
         } else {
             element.classList.add("hide");
         }
