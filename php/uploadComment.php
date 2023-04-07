@@ -5,7 +5,7 @@
 
     $coinId = $_POST["coinId"];
     $text = $_POST["text"];
-    echo $text;
+    echo "Hello";
     $parentId = isset($_POST["parentId"]) ? $_POST["parentId"] : null;
 
     $userId = $_SESSION["id"];
