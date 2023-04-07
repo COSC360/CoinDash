@@ -169,6 +169,8 @@ column-gap: 1.5em
     flex-direction: column;
     row-gap: 1em;
     min-height: 37vh;
+    border-radius: 1em;
+    overflow-y: auto;
 }
 
 .main-comment{
