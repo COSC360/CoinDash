@@ -222,10 +222,10 @@ function generateDefaultBlock(){
 
     var newBlock = `
         <div class="block panel">
-            <div class="module small" id="module-".$dashboardModules[$currentCount]["id"].""> 
+            <div class="module small" id="module-${1000}"> 
             <div class="module-header">
                 <div class="api-details">
-                    <div class="api-category">".$dashboardModules[$currentCount]["category"]."</div>
+                    <div class="api-category">${defaultCategory}</div>
                 </div>
                 <div class="dropdowns">
                     <select class="dropdown fiat">" `
