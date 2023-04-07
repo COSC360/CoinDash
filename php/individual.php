@@ -29,7 +29,7 @@ if(!isset($_GET["coinId"])){
 
 <body>
     <?php
-        include "dashboard-header.php";
+        include "dashboardHeader.php";
         include "DBconnection.php";
         include "sql-queries.php";
     ?>
