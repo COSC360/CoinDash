@@ -56,8 +56,7 @@ session_start();
         <article id="dashboard">
             <?php 
                 $dashboardModules = retrieveDashboard($con, $userId);
-                print_r($dashboardModules);
-                $moduleCount = sizeof($dashboardModules);
+                $moduleCount = $dashboardModules == false ? 0 : sizeof($dashboardModules);
                 $currentCount = 0;
                 $previousBlock = $dashboardModules[$currentCount]["block_id"];
                 

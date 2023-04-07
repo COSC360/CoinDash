@@ -243,7 +243,6 @@ function deleteDashboard($con, $userId){
 }
 
 function retrieveDashboard($con, $userId){
-    echo "<script>console.log('Hello')</script>";
     $moduleSql = "SELECT id, block_id, category, fiat, sort FROM module WHERE user_id = ?;";
 
     $moduleStmt = mysqli_stmt_init($con);
@@ -258,11 +257,9 @@ function retrieveDashboard($con, $userId){
 
     if ($rows = $result -> fetch_all(MYSQLI_ASSOC)){
         // mysqli_stmt_close();
-        print_r($rows);
         return $rows; 
     } else {
         // mysqli_stmt_close();
-        echo "<script>console.log('Hello')</script>";
         return false;
     }
 }
