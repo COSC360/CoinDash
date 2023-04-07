@@ -332,6 +332,14 @@ select{
   color: red;
 }
 
+.fa-circle-xmark{
+  position: absolute;
+  color: #ff0000;
+  top: 2.5em;
+  left: 33em;
+}
+
+
 .hideError{
   opacity: 0;
   visibility: hidden;
