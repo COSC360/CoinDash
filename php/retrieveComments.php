@@ -1,14 +1,31 @@
 <?php
     include "DBconnection.php";
     include "sql-queries.php";
-    // $coinId = $_POST["coinId"];
-    $coinId = "axie-infinity";
+
+    $coinId = $_POST["coinId"];
+    echo $coinId;
     $comments = retrievePostComment($con, $coinId);
-    print_r($comments);
+
     $output = "";
+
     foreach($comments as $comment) {
-        $output .= getCommentHTML($con, $comment);
+        $output .= "
+            <hr class=\"medium-spacing\">
+            <div class=\"comment\" id=\"comment-1\">
+                <div class=\"main-comment\">
+                    <div class=\"comment-header\">
+                        <img src=\"../images/profile-picture.png\" class=\"profile-picture\">
+                        <h4 class=\"user-name\">".$comment["Username"]."</h4>
+                    </div>
+                    <p class=\"review-content\">".$comment["text"]."</p>
+                </div>
+            </div>
+        ";
     }
+
+    // foreach($comments as $comment) {
+    //     $output .= getCommentHTML($con, $comment);
+    // }
 
     if ($output === ""){
         echo "<p> No comments yet!</p>";

@@ -56,9 +56,6 @@ $coinId = $_GET["coinId"];
                 </p>
             </form>
             <div id="comment-area">
-                <?php
-                    include "retrieveComments.php";
-                ?>
             </div>
         </div>
     </article>
@@ -66,7 +63,7 @@ $coinId = $_GET["coinId"];
         include "footer.php"
     ?>
     <script type="module" src="../js/uploadComment.js"></script>
-    <!-- <script type="module" src="../js/updateComments.js"></script> -->
+    <script type="module" src="../js/updateComments.js"></script>
 </body>
 
 </html>
