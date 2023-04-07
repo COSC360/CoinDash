@@ -34,7 +34,6 @@
         ";
 
         $replies = retrieveCommentReplies($con, $commentData["id"]);
-        echo "<script>console.log('Hello')</script>";
         if ($replies){
             foreach($replies as $reply) {
                 $commentHTML .= getCommentHTML($con, $reply, $level + 1);
