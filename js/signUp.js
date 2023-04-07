@@ -78,7 +78,7 @@ registerForm.addEventListener("submit",function(e){
         showError(3, "Passwords do not match");
     }
 
-    if(verifyPassword == '')
+    if(password == '' && verifyPassword == '')
     {
         error = true;
         showError(3, "Password cannot be empty");
