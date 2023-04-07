@@ -28,8 +28,9 @@ function updateData(coinId){
 
 function addReplyEventListeners(){
     var replyBtns = document.querySelectorAll(".reply-btn");
-
+    
     replyBtns.forEach(btn => {
+        console.log("Hi");
         btn.addEventListener("click", () => {
             console.log("clicked")
         })
