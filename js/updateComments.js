@@ -25,7 +25,7 @@ function updateData(){
                 commentArea.innerHTML = response;
                 addReplyEventListeners();
                 addFormEventListeners();
-                setTimeout(function(){updateData()}, 10000);
+                setTimeout(function(){updateData()}, 1000);
             }
         }
     })
@@ -39,14 +39,15 @@ function addReplyEventListeners(){
         var comment = btn.parentElement;
         btn.addEventListener("click", () => {
             if (comment.classList.contains("collapsed")){
+                replyBtns.forEach(btn => {
+                    btn.parentElement.classList.add("collapsed");
+                })
                 comment.classList.remove("collapsed");
-                openedForms++;
+                openedForms = 1;
             } else {
                 comment.classList.add("collapsed");
-                openedForms--;
-                if (openedForms === 0){
-                    updateData(coinId);
-                }
+                openedForms = 0;
+                updateData(coinId);
             }
         })
     })
@@ -71,13 +72,14 @@ function addFormEventListeners(){
                 url: "uploadComment.php",
                 type: "POST",
                 data: {coinId: coinId, text: text, parentId: commentId},
-                success: function(response) {
+                success: function() {
                     form.reset();
                 }
             })
 
             form.parentElement.classList.add("collapsed");
-            openedForms--;
+            openedForms = 0;
+            updateData(coinId);
         })
     })
 }
