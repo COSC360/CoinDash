@@ -41,7 +41,7 @@ loginForm.addEventListener("submit",function(e){
 
     console.log(err);
     
-    if (err = true)
+    if (err == true)
     {
         e.preventDefault();
     }else{
