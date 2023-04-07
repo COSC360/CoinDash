@@ -250,7 +250,7 @@ function generateDefaultBlock(){
         </div>
     `
 
-    var newModuleGallery = document.querySelector("#" + 1000 + " .module-gallery");
+    var newModuleGallery = document.querySelector("#module-1000 .module-gallery");
     setModuleHTML(defaultFiat, defaultCategory, defaultSort, newModuleGallery);
     return newBlock;
 }
