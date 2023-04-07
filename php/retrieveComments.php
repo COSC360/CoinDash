@@ -28,7 +28,7 @@
                         <img src=\"../images/profile-picture.png\" class=\"profile-picture\">
                         <h4 class=\"user-name\">".$commentData["Username"]."</h4>
                     </div>
-                    <p class=\"review-content\">".$commentData["text"]."</p>
+                    <p class=\"review-content\">".$commentData["id"]."</p>
                 </div>
             </div>
         ";
@@ -37,7 +37,6 @@
         if ($replies){
             foreach($replies as $reply) {
                 $commentHTML .= getCommentHTML($con, $reply, $level + 1);
-                echo "<script>console.log('Hello')</script>";
             }
         }
 
