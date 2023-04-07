@@ -14,7 +14,8 @@ function showError(i,errMsg){
     errorTextElement[i].classList.add("showError");
     errorLogoElement[i].classList.add("showError");
 }
-function hideError(){
+function hideError(i){
+
     if(errorTextElement[i].classList.contains("showError")){
         errorTextElement[i].classList.remove("showError");
         errorLogoElement[i].classList.remove("showError");
