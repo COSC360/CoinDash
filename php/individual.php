@@ -6,6 +6,7 @@ session_start();
 if(!isset($_GET["coinId"])){
     header("location: searchPage.php");
 }
+$coinId = $_GET["coinId"];
 
 ?>
 
@@ -35,6 +36,7 @@ if(!isset($_GET["coinId"])){
 
         $userId = isset($_SESSION["id"]) ? $_SESSION["id"] : 0;
         uploadActivity($con, $userId, "viewCoin");
+        updateCoinViews($con, $coinId);
     ?>
     <article class="panel full-card">
         <?php

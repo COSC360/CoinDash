@@ -26,6 +26,26 @@ function retrieveAllCoins($con){
 
 }
 
+function updateCoinViews($con, $coinId){
+    $updateSql = "UPDATE coin SET views = views + 1 WHERE coinId = ?";
+
+    $updateStmt = mysqli_stmt_init($con); 
+    
+    if (!mysqli_stmt_prepare($updateStmt, $updateSql)){
+        return false;
+    }
+
+    // Set parameters for prepared statement
+    mysqli_stmt_bind_param($updateStmt, "s", $coinId);
+
+    // Execute prepared statement
+    if (mysqli_stmt_execute($updateStmt)){
+        return true;
+    } else {
+        return false;
+    }
+}
+
 function retrieveCoinsByCategory($con, $fiat, $category, $sort, $perPage, $page){
     $validSortValues = array("price_change_24h DESC", "price_change_24h", "price_change_7d DESC", "price_change_7d", "price_change_14d DESC", "price_change_14d",
                     "price_change_30d DESC", "price_change_30d", "price_change_60d DESC", "price_change_60d",
@@ -306,7 +326,7 @@ function loginUser($con,$loginID,$loginPassword){
         $_SESSION["password"] = $loginPassword;
         $_SESSION["id"] = $rows['id'];
         $_SESSION["profilePicture"] = $rows['profilePicture'];
-
+        
         uploadActivity($con, $rows['id'], "loggedIn");
 
         //Navigate to admin.php if user is of "admin" type
