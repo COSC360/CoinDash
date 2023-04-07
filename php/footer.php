@@ -9,8 +9,8 @@
             </nav>  
         </div>
         <div class="right">
-            <p href="#">© COSC 360 Group, Inc</p>
-            <p href="#" onclick=topFunction()>Back To Top</p>
+            <a href="#">© COSC 360 Group, Inc</a>
+            <a href="#" onclick=topFunction()>Back To Top</a>
         </div>
     </div>
 </footer>
