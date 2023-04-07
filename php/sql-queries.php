@@ -378,6 +378,7 @@ function registerUser($con,$registerUsername,$registerEmail,$registerPassword,$r
 
     if (!mysqli_stmt_prepare($existingUserStmt, $existingUserSQL)){
         $_SESSION['statusMsg'] = "Unable to prepare the SQL statement.";
+        header('location:signUp.php');
         return false;
     }
 
@@ -391,12 +392,13 @@ function registerUser($con,$registerUsername,$registerEmail,$registerPassword,$r
     
     if($rows = $results -> fetch_assoc()){
         // mysqli_stmt_close();
-        header('location:signUp.php');
         $_SESSION['statusMsg'] = 'User with that email/username already exists !';
+        header('location:signUp.php');
         
     }else{
         if($registerPassword != $registerVerifyPassword){
             $_SESSION['statusMsg'] = 'Passwords do not match !';
+            header('location:signUp.php');
         
         }else{
             $registerUserSQL = "INSERT INTO `userAuth` (`username`, `email`, `password`,`comingFrom`,`profilePicture`,`userType`,`status`) VALUES (?,?,?,?,?,?,?)";
@@ -405,6 +407,7 @@ function registerUser($con,$registerUsername,$registerEmail,$registerPassword,$r
 
             if (!mysqli_stmt_prepare($registerUserStmt, $registerUserSQL)){
                 $_SESSION['statusMsg'] = "Unable to prepare the SQL statement.";
+                header('location:signUp.php');
                 return false;
             }
         
