@@ -7,10 +7,10 @@ document.querySelectorAll('[id=editUserBtn]')[1].addEventListener("click", byEma
 document.querySelectorAll('[id=editUserBtn]')[2].addEventListener("click", byCommentIdEnableField);
 
 function enableBtn(i){
-    document.querySelectorAll('[id=enableUserBtn]')[i].setAttribute("style", "background-color: #2fc363;");
-    document.querySelectorAll('[id=disableUserBtn]')[i].setAttribute("style", "background-color: #2fc363;");
-    document.querySelectorAll('[id=deleteUserBtn]')[i].setAttribute("style", "background-color: #2fc363;");
-    document.querySelectorAll('[id=saveUserBtn]')[i].setAttribute("style", "background-color: #2fc363;");          
+    document.querySelectorAll('[id=enableUserBtn]')[i].setAttribute("style", "background: linear-gradient(151deg, rgb(42 98 201) 0%, rgb(23 108 195) 32%, rgba(0,212,255,1) 100%);");
+    document.querySelectorAll('[id=disableUserBtn]')[i].setAttribute("style", "background: linear-gradient(151deg, rgb(42 98 201) 0%, rgb(23 108 195) 32%, rgba(0,212,255,1) 100%);");
+    document.querySelectorAll('[id=deleteUserBtn]')[i].setAttribute("style", "background: linear-gradient(151deg, rgb(42 98 201) 0%, rgb(23 108 195) 32%, rgba(0,212,255,1) 100%);");
+    document.querySelectorAll('[id=saveUserBtn]')[i].setAttribute("style", "background: linear-gradient(151deg, rgb(42 98 201) 0%, rgb(23 108 195) 32%, rgba(0,212,255,1) 100%);");      
 }
 
 for(var i = 0; i < displayByName.length; i++){
