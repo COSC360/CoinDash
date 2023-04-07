@@ -60,13 +60,12 @@ function addFormEventListeners(){
             e.preventDefault();
             var commentId = form.dataset.commentid;
             var text = form["text"].value;
-            console.log(commentId);
-            console.log(text);
+
             // Stops empty comments
             if (text == ""){
                 return;
             }
-    
+            
             // Asynch request to upload comment
             $.ajax({
                 url: "uploadComment.php",
