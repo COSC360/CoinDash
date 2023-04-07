@@ -27,17 +27,7 @@ cancelModalBtn.addEventListener("click", (e) => {
 
 // Enables drag and drop of modules
 module_settings_btns.forEach(btn => {
-    // Grab connectedModule to be moved
-    btn.addEventListener("dragstart", (e) => {
-        e.dataTransfer.setData("draggedModule", btn.parentNode.id); 
-        e.dataTransfer.setDragImage(btn.parentNode, 0, 0);
-    })
-
-    btn.addEventListener("click", (e) => {
-        btn.parentNode.appendChild(moduleModal);
-        moduleModal.classList.remove("hide");
-        currentModule = btn.parentNode;
-    })
+    addSettingsListener(btn);
 })
 
 // Recreates moduleHTML given new parameters for category, fiat, and sort
@@ -131,10 +121,12 @@ addModuleBtn.addEventListener("click", (e) => {
     var newModuleGallery = document.querySelector(`#module-${index} .module-gallery`);
     var fiatDropdown = document.querySelector(`#module-${index} .fiat`);
     var sortDropdown = document.querySelector(`#module-${index} .sort`);
+    var settingsBtn = document.querySelector(`#module-${index} .module-settings-btn`);
 
     setModuleHTML("usd", "Ethereum Ecosystem", "views DESC", newModuleGallery);
     addFiatDropdownListener(fiatDropdown);
     addSortDropdownListener(sortDropdown);
+    addSettingsListener(settingsBtn);
 
     index++;
 })
@@ -193,6 +185,20 @@ function addSortDropdownListener(dropdown){
         var moduleGallery = document.querySelector("#" + module.id + " .module-gallery");
 
         setModuleHTML(moduleObj.fiat, moduleObj.category, newSort, moduleGallery);
+    })
+}
+
+function addSettingsListener(settings){
+    // Grab connectedModule to be moved
+    settings.addEventListener("dragstart", (e) => {
+        e.dataTransfer.setData("draggedModule", settings.parentNode.id); 
+        e.dataTransfer.setDragImage(settings.parentNode, 0, 0);
+    })
+
+    settings.addEventListener("click", (e) => {
+        settings.parentNode.appendChild(moduleModal);
+        moduleModal.classList.remove("hide");
+        currentModule = settings.parentNode;
     })
 }
 
