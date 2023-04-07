@@ -156,27 +156,35 @@ var sortSelects = document.querySelectorAll(".sort");
 
 // Change product cards by fiat
 fiatSelects.forEach(fiatSelect => {
-    fiatSelect.addEventListener('change', (e) => {
-        var newFiat = fiatSelect.value;
-        var module = fiatSelect.parentNode.parentNode.parentNode;
+    addFiatDropdownListener(fiatSelect);
+});
+
+// Change product cards by sort
+sortSelects.forEach(sortSelect => {
+    addSortDropdownListener(sortSelect);
+})
+
+function addFiatDropdownListener(dropdown){
+    dropdown.addEventListener('change', (e) => {
+        var newFiat = dropdown.value;
+        var module = dropdown.parentNode.parentNode.parentNode;
         var moduleObj = buildModule(module);
         var moduleGallery = document.querySelector("#" + module.id + " .module-gallery");
 
         setModuleHTML(newFiat, moduleObj.category, moduleObj.sort, moduleGallery);
     })
-});
+}
 
-// Change product cards by sort
-sortSelects.forEach(sortSelect => {
-    sortSelect.addEventListener('change', (e) => {
-        var newSort = sortSelect.value;
-        var module = sortSelect.parentNode.parentNode.parentNode;
+function addSortDropdownListener(dropdown){
+    dropdown.addEventListener('change', (e) => {
+        var newSort = dropdown.value;
+        var module = dropdown.parentNode.parentNode.parentNode;
         var moduleObj = buildModule(module);
         var moduleGallery = document.querySelector("#" + module.id + " .module-gallery");
 
         setModuleHTML(moduleObj.fiat, moduleObj.category, newSort, moduleGallery);
     })
-})
+}
 
 // Generates module HTML based on fiat, category, sort. Places HTML at target location
 function setModuleHTML(fiat, category, sort, target){
