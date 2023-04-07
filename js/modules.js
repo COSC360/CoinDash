@@ -232,12 +232,12 @@ function generateDefaultBlock(){
                         for (let i = 0; i < fiats.length; i++){
                             newBlock += `<option value=${fiats[i]} ${fiats[i] == defaultFiat ? "selected" : ""}> ${fiatLabels[i]} </option>`
                         }
-                    `</select>
+    newBlock +=     `</select>
                     <select class="dropdown sort">"`
                         for (let i = 0; i < sortValues.length; i++){
                             newBlock += `<option value=${sortValues[i]} ${sortValues[i] == defaultSort ? "selected" : ""}> ${sortLabels[i]} </option>`
                         }
-                    `</select>
+    newBlock +=     `</select>
                 </div>
             </div>
             <div class="module-gallery">";
