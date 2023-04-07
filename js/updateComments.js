@@ -24,12 +24,12 @@ function updateData(){
             if (openedForms === 0){
                 commentArea.innerHTML = response;
                 addReplyEventListeners();
+                addFormEventListeners();
                 setTimeout(function(){updateData()}, 10000);
             }
         }
     })
 }
-
 
 
 function addReplyEventListeners(){
@@ -48,6 +48,17 @@ function addReplyEventListeners(){
                     updateData(coinId);
                 }
             }
+        })
+    })
+}
+
+function addFormEventListeners(){
+    var replyForms = document.querySelectorAll(".reply-form");
+
+    replyForms.forEach(form => {
+        form.addEventListener("submit", () => {
+            var commentId = form.dataset.commentId;
+            console.log(form.dataset);
         })
     })
 }
