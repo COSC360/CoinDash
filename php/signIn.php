@@ -3,7 +3,6 @@
     if(isset($_SESSION['statusMsg'])){
         // echo "<script>window.alert(\"".$_SESSION['statusMsg']."\")</script>";
         include 'alert.php';
-        session_destroy();
     }else{
         session_destroy();
     }
