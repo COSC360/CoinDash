@@ -20,6 +20,7 @@ function hideError(){
         if(errorTextElement[i].classList.contains("showError")){
             errorTextElement[i].classList.remove("showError");
             errorLogoElement[i].classList.remove("showError");
+            errorTextElement[i].innerText = "";
         }
     }
 }
