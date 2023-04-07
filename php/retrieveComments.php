@@ -5,7 +5,6 @@
     $coinId = $_POST["coinId"];
 
     $comments = retrievePostComment($con, $coinId);
-    print_r($comments);
     $output = "";
 
     foreach($comments as $comment) {
@@ -21,7 +20,7 @@
 
     function getCommentHTML($con, $commentData, $level){
         $commentHTML = "
-            <div style=\"margin-left:".($level * 2)."em;\"> 
+            <div style=\"margin-left:".($level)."em;\"> 
                 <hr class=\"medium-spacing\">
                 <div class=\"comment\" id=\"comment-1\">
                     <div class=\"main-comment\">
