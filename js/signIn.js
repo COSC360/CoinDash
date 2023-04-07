@@ -23,10 +23,10 @@ function hideError(inputField){
 loginForm.addEventListener("submit",function(e){
     e.preventDefault();
 
-    const loginId = requiredInput[0];
-    const password = requiredInput[1];
-    console.log(loginId.value);
-    console.log(password.value);
+    const loginId = requiredInput[0].value;
+    const password = requiredInput[1].value;
+    console.log(loginId);
+    console.log(password);
 
     var error = false;
     if(loginId.value == '' && password.value == '')
