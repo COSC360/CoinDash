@@ -9,6 +9,7 @@ var addModuleBtn = document.getElementById("add-module-btn");
 var toggleEditBtn = document.getElementById("view-edit-btn");
 var editBtnImage = document.querySelector("#view-edit-btn img");
 var saveEditBtn = document.getElementById("save-edit-btn");
+var index = 0;
 
 var moduleModal = document.getElementById("module-modal");
 var moduleForm = document.getElementById("module-form");
@@ -224,7 +225,7 @@ function generateDefaultBlock(){
 
     var newBlock = `
         <div class="block panel">
-            <div class="module small" id="module-${1000}"> 
+            <div class="module small" id="module-${index}"> 
             <div class="module-header">
                 <div class="api-details">
                     <div class="api-category">${defaultCategory}</div>
@@ -251,6 +252,9 @@ function generateDefaultBlock(){
             </div>
         </div>
     `
-
+    index++;
     return newBlock;
 }
+
+// Convert dashboard generation to PHP
+// Retrieve new Module ID from Max(Id) of modules relation
