@@ -18,10 +18,9 @@ function updateData(coinId){
         type: "POST",
         async: true,
         data: {coinId: coinId},
-        success: function(response) {
+        success: (response) => {
             commentArea.innerHTML = response;
             addReplyEventListeners();
-            console.log("working");
             setTimeout(updateData(coinId), 10000)
         }
     })
