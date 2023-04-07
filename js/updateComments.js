@@ -32,8 +32,13 @@ function addReplyEventListeners(){
     var replyBtns = document.querySelectorAll(".reply-btn");
 
     replyBtns.forEach(btn => {
+        var comment = btn.parentElement;
         btn.addEventListener("click", () => {
-            console.log("clicked")
+            if (comment.classList.contains("collapsed")){
+                comment.classList.remove("collapsed");
+            } else {
+                comment.classList.add("collapsed");
+            }
         })
     })
 }
