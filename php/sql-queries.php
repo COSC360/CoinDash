@@ -320,7 +320,7 @@ function retrieveUserComment($con, $userId){
 }
 
 function retrieveCommentReplies($con, $parentId){
-    $commentSql = "SELECT c.id, coin_id, text, parentId, username, timestamp FROM comment c JOIN userAuth u ON c.user_id = u.id WHERE parentId = ?";
+    $commentSql = "SELECT c.id, coin_id, text, parentId, username, timestamp FROM comment c JOIN userAuth u ON c.user_id = u.id WHERE parentId = ? ORDER BY timestamp DESC";
     $commentStmt = mysqli_stmt_init($con);
     if (!mysqli_stmt_prepare($commentStmt, $commentSql)){
         return false;
