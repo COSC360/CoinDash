@@ -17,7 +17,6 @@
         echo $output;
     }
 
-
     function getCommentHTML($con, $commentData, $level){
         $commentHTML = "
             <div style=\"margin-left:".($level)."em;\" class=\"comment-container\"> 
