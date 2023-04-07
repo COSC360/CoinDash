@@ -25,8 +25,8 @@ loginForm.addEventListener("submit",function(e){
 
     let loginId = requiredInput[0];
     let password = requiredInput[1];
-    console.log(loginId);
-    console.log(password);
+    console.log(loginId.value);
+    console.log(password.value);
 
     var error = false;
     if(loginId.value == '' && password.value == '')
