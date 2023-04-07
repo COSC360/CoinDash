@@ -15,12 +15,10 @@ function showError(i,errMsg){
     errorLogoElement[i].classList.add("showError");
 }
 function hideError(){
-    for(var i = 0; i < errorTextElement.length; i++){
-        if(errorTextElement[i].classList.contains("showError")){
-            errorTextElement[i].classList.remove("showError");
-            errorLogoElement[i].classList.remove("showError");
-            errorTextElement[i].innerText = "";
-        }
+    if(errorTextElement[i].classList.contains("showError")){
+        errorTextElement[i].classList.remove("showError");
+        errorLogoElement[i].classList.remove("showError");
+        errorTextElement[i].innerText = "";
     }
 }
 
@@ -97,4 +95,9 @@ registerForm.addEventListener("submit",function(e){
 
 });
 
-registerForm.addEventListener("reset", hideError);
+registerForm.addEventListener("reset", hideError(0));
+registerForm.addEventListener("reset", hideError(1));
+registerForm.addEventListener("reset", hideError(2));
+registerForm.addEventListener("reset", hideError(3));
+registerForm.addEventListener("reset", hideError(4));
+

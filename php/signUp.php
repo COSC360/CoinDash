@@ -48,7 +48,7 @@
                     <div class="item-1">
                         <label>Username <span style="color: red;">*</span></label><br>
                         <i class="fa-sharp fa-solid fa-circle-xmark fa-bounce errorLogoRegister"></i>                            
-                        <input type = "text" name = "username"  id = "username" placeholder="What Should We Call You?"  class = "required">
+                        <input type = "text" name = "username"  id = "username" placeholder="What Should We Call You?"  class = "required" onkeydown = "hideError(0)">
                         <p class="errorTextRegister"></p>
                     </div>
 
@@ -62,14 +62,14 @@
                     <div class="item-3">
                         <label>Password <span style="color: red;">*</span></label><br>
                         <i class="fa-sharp fa-solid fa-circle-xmark fa-bounce errorLogoRegister"></i>                                                        
-                        <input type = "password" name = "password"  id = "password" placeholder="What’s Your Password?" class = "required">
+                        <input type = "password" name = "password"  id = "password" placeholder="What’s Your Password?" class = "required" onkeydown = "hideError(1)">
                         <p class="errorTextRegister"></p>
                     </div>
 
                     <div class="item-4">
                         <label>Verify Password <span style="color: red;">*</span></label><br>
                         <i class="fa-sharp fa-solid fa-circle-xmark fa-bounce errorLogoRegister"></i>
-                        <input type = "password" name = "verifyPassword"  id = "verifyPassword" placeholder="Confirm Password?" class = "required">
+                        <input type = "password" name = "verifyPassword"  id = "verifyPassword" placeholder="Confirm Password?" class = "required" onkeydown = "hideError(2)">
                         <p class="errorTextRegister"></p>
                     </div>
 
@@ -89,7 +89,7 @@
                     <div class="item-6">
                         <label>Profile Photo <span style="color: red;">*</span></label><br>
                         <i class="fa-sharp fa-solid fa-circle-xmark fa-bounce errorLogoRegister"></i>
-                        <input type="file" name="img"  id="img" accept="image/*" class = "required">
+                        <input type="file" name="img"  id="img" accept="image/*" class = "required" onkeydown = "hideError(3)">
                         <p class="errorTextRegister"></p>
                     </div>      
 
@@ -98,7 +98,7 @@
                     </div>
 
                     <div class = "item-8">
-                        <input type="submit"  name = "registerSubmit"  id = "registerSubmit" value="Get Started !">
+                        <input type="submit"  name = "registerSubmit"  id = "registerSubmit" value="Get Started !" onkeydown = "hideError(4)">
                     </div>                    
                 </form>
             </div>
