@@ -35,7 +35,7 @@
 </head>
     <body>
         <?php
-            include "dashboardHeader.php";
+            include "adminPortalHeader.php";
         ?>
         <main>
             <div class="panel adjust-container">
