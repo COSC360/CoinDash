@@ -38,6 +38,8 @@ loginForm.addEventListener("submit",function(e){
     }else if(password == '')
     {
         error = true;
+        console.log(errorTextElement);
+        console.log(errorTextElement[1]);
         showError(errorTextElement[1], "Password cannot be empty");
     }else if(!passwordRegex.test(password))
     {
