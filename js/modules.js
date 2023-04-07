@@ -119,9 +119,7 @@ modules.forEach(module => {
 })
 
 addModuleBtn.addEventListener("click", (e) => {
-    console.log(addModuleBtn);
-    console.log(addModuleBtn.parentNode);
-    dashboardDom = addModuleBtn.parentNode.parentNode;
+    var dashboardDom = addModuleBtn.parentNode.parentNode;
     
     var newBlock = generateDefaultBlock();
 
