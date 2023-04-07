@@ -97,6 +97,14 @@ registerForm.addEventListener("submit",function(e){
     }
 
 });
- 
+loginForm.addEventListener("reset", function(e){
+    for(var i = 0; i < errorTextElement.length; i++){
+        if(errorTextElement[i].classList.contains("showError")){
+            errorTextElement[i].classList.remove("showError");
+            errorLogoElement[i].classList.remove("showError");
+        }
+    }
+});
+
 // loginForm.addEventListener("keydown", hideError(1));
 // loginForm.addEventListener("keydown", hideError(0));
