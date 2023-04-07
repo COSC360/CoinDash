@@ -332,7 +332,7 @@ function adminLogin($con,$adminLoginID,$adminPassword){
         
         // TODO:
         // header("location: REPLACE LATER");
-        $_SESSION['adminStatusMsg'] = "Unable to prepare the SQL statement.";
+        $_SESSION['statusMsg'] = "Unable to prepare the SQL statement.";
         exit();
     }
 
@@ -354,13 +354,13 @@ function adminLogin($con,$adminLoginID,$adminPassword){
             $_SESSION['userType'] = $rows['userType'];
             header('location:admin.php');   
         }else{
-            $_SESSION['adminStatusMsg'] = "User is not admin !";
+            $_SESSION['statusMsg'] = "User is not admin !";
             header('location:adminlogin.php');
         }
     }else{
         // mysqli_stmt_close();
         header('location:adminlogin.php');
-        $_SESSION['adminStatusMsg'] = "User does not exist !";
+        $_SESSION['statusMsg'] = "User does not exist !";
         return false;
     }
 }
@@ -479,7 +479,7 @@ function searchByUsername($con, $searchName){
     if (!mysqli_stmt_prepare($searchStmt, $searchSQL)){
         // TODO:
         // header("location: REPLACE LATER");
-        $_SESSION['adminStatusMsg'] = "Unable to prepare the SQL statement.";
+        $_SESSION['statusMsg'] = "Unable to prepare the SQL statement.";
         exit();
     }
 
@@ -506,7 +506,7 @@ function searchByUsername($con, $searchName){
         $_SESSION['defaultTabID'] = "defaultUsername";
         header('location:admin.php');
     }else{
-        $_SESSION['adminStatusMsg'] = "User not found with the given username";
+        $_SESSION['statusMsg'] = "User not found with the given username";
         header('location:admin.php'); 
         return false;
     }
@@ -520,7 +520,7 @@ function searchByEmail($con, $searchEmail){
     if (!mysqli_stmt_prepare($searchStmt, $searchSQL)){
         // TODO:
         // header("location: REPLACE LATER");
-        $_SESSION['adminStatusMsg'] = "Unable to prepare the SQL statement.";
+        $_SESSION['statusMsg'] = "Unable to prepare the SQL statement.";
         exit();
     }
 
@@ -547,7 +547,7 @@ function searchByEmail($con, $searchEmail){
         $_SESSION['defaultTabID'] = "defaultEmail";
         header('location:admin.php');
     }else{
-        $_SESSION['adminStatusMsg'] = "User not found with the given email";
+        $_SESSION['statusMsg'] = "User not found with the given email";
         header('location:admin.php'); 
         return false;
     }
@@ -562,7 +562,7 @@ function searchByCommentId($con, $searchCommentId){
     if (!mysqli_stmt_prepare($searchStmt, $searchSQL)){
         // TODO:
         // header("location: REPLACE LATER");
-        $_SESSION['adminStatusMsg'] = "Unable to prepare the SQL statement.";
+        $_SESSION['statusMsg'] = "Unable to prepare the SQL statement.";
         exit();
     }
 
@@ -589,7 +589,7 @@ function searchByCommentId($con, $searchCommentId){
         $_SESSION['defaultTabID'] = "defaultCommentId";
         header('location:admin.php');       
     }else{
-        $_SESSION['adminStatusMsg'] = "Coin with the given ID does not exist";
+        $_SESSION['statusMsg'] = "Coin with the given ID does not exist";
         header('location:admin.php'); 
         return false;
     }
@@ -603,7 +603,7 @@ function enableUser($con, $userID){
     if (!mysqli_stmt_prepare($existingUserStmt, $existingUserSQL)){
         // TODO:
         // header("location: REPLACE LATER");
-        $_SESSION['adminStatusMsg'] = "Unable to prepare the SQL statement.";
+        $_SESSION['statusMsg'] = "Unable to prepare the SQL statement.";
 
         exit();
     }
@@ -629,7 +629,7 @@ function enableUser($con, $userID){
         if (!mysqli_stmt_prepare($updateStmt, $updateSQL)){
             // TODO:
             // header("location: REPLACE LATER");
-            $$_SESSION['adminStatusMsg'] = "Unable to prepare the SQL statement.";
+            $$_SESSION['statusMsg'] = "Unable to prepare the SQL statement.";
             exit();
         }
 
@@ -641,7 +641,7 @@ function enableUser($con, $userID){
     
         mysqli_stmt_close($updateStmt);   
 
-        $_SESSION['adminStatusMsg'] = "Status for user with ID : ".$userID." has been updated to ".$userStatus." !";
+        $_SESSION['statusMsg'] = "Status for user with ID : ".$userID." has been updated to ".$userStatus." !";
 
         header('location:admin.php');
 
@@ -660,7 +660,7 @@ function disableUser($con, $userID){
     if (!mysqli_stmt_prepare($existingUserStmt, $existingUserSQL)){
         // TODO:
         // header("location: REPLACE LATER");
-        $_SESSION['adminStatusMsg'] = "Unable to prepare the SQL statement.";
+        $_SESSION['statusMsg'] = "Unable to prepare the SQL statement.";
         exit();
     }
 
@@ -684,7 +684,7 @@ function disableUser($con, $userID){
         if (!mysqli_stmt_prepare($updateStmt, $updateSQL)){
             // TODO:
             // header("location: REPLACE LATER");
-            $_SESSION['adminStatusMsg'] = "Unable to prepare the SQL statement.";
+            $_SESSION['statusMsg'] = "Unable to prepare the SQL statement.";
             exit();
         }
 
@@ -696,11 +696,11 @@ function disableUser($con, $userID){
 
         mysqli_stmt_close($updateStmt);
 
-        $_SESSION['adminStatusMsg'] = "Status for user with ID : ".$userID." has been updated to ".$userStatus." !";
+        $_SESSION['statusMsg'] = "Status for user with ID : ".$userID." has been updated to ".$userStatus." !";
 
         header('location:admin.php');      
     }else{
-        $_SESSION['adminStatusMsg'] = "User does not exist !";
+        $_SESSION['statusMsg'] = "User does not exist !";
         return false;       
     }
 }
@@ -713,7 +713,7 @@ function deleteUser($con, $userID){
     if (!mysqli_stmt_prepare($existingUserStmt, $existingUserSQL)){
         // TODO:
         // header("location: REPLACE LATER");
-        $_SESSION['adminStatusMsg'] = "Unable to prepare the SQL statement.";
+        $_SESSION['statusMsg'] = "Unable to prepare the SQL statement.";
         exit();
     }
 
@@ -735,7 +735,7 @@ function deleteUser($con, $userID){
         if (!mysqli_stmt_prepare($deleteStmt, $deleteSQL)){
             // TODO:
             // header("location: REPLACE LATER");
-            $_SESSION['adminStatusMsg'] = "Unable to prepare the SQL statement.";
+            $_SESSION['statusMsg'] = "Unable to prepare the SQL statement.";
             exit();
         }
 
@@ -747,11 +747,11 @@ function deleteUser($con, $userID){
 
         mysqli_stmt_close($deleteStmt);
     
-        $_SESSION['adminStatusMsg'] = "User with ID : ".$userID." has been deleted !";
+        $_SESSION['statusMsg'] = "User with ID : ".$userID." has been deleted !";
 
         header('location:admin.php');      
     }else{
-        $_SESSION['adminStatusMsg'] = "User does not exist !";
+        $_SESSION['statusMsg'] = "User does not exist !";
         return false;       
     }
 }
@@ -764,7 +764,7 @@ function saveUser($con, $userID, $username, $password, $email, $comingFrom, $use
     if (!mysqli_stmt_prepare($existingUserStmt, $existingUserSQL)){
         // TODO:
         // header("location: REPLACE LATER");
-        $_SESSION['adminStatusMsg'] = "Unable to prepare the SQL statement.";
+        $_SESSION['statusMsg'] = "Unable to prepare the SQL statement.";
 
         exit();
     }
@@ -790,7 +790,7 @@ function saveUser($con, $userID, $username, $password, $email, $comingFrom, $use
         if (!mysqli_stmt_prepare($updateStmt, $updateSQL)){
             // TODO:
             // header("location: REPLACE LATER");
-            $_SESSION['adminStatusMsg'] = "Unable to prepare the SQL statement.";
+            $_SESSION['statusMsg'] = "Unable to prepare the SQL statement.";
             exit();
         }
 
@@ -802,12 +802,12 @@ function saveUser($con, $userID, $username, $password, $email, $comingFrom, $use
     
         mysqli_stmt_close($updateStmt);   
 
-        $_SESSION['adminStatusMsg'] = "New details for user with ID : ".$userID." have been updated !";
+        $_SESSION['statusMsg'] = "New details for user with ID : ".$userID." have been updated !";
 
         header('location:admin.php');
 
     }else{
-        $_SESSION['adminStatusMsg'] = "User does not exist !";
+        $_SESSION['statusMsg'] = "User does not exist !";
         return false;       
     }
 }
