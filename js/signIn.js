@@ -29,16 +29,16 @@ loginForm.addEventListener("submit",function(e){
     console.log(password);
 
     var error = false;
-    if(loginId.value == '' && password.value == '')
+    if(loginId == '' && password == '')
     {
         error = true;
         showError(0, "Login ID cannot be empty");
         showError(1, "Password cannot be empty");
-    }else if(loginId.value == '')
+    }else if(loginId == '')
     {
         error = true;
         showError(errorTextElement[0], "Login ID cannot be empty");
-    }else if(password.value == '')
+    }else if(password == '')
     {
         error = true;
         showError(errorTextElement[1], "Password cannot be empty");
@@ -46,7 +46,7 @@ loginForm.addEventListener("submit",function(e){
     {
         error = true;
         showError(errorTextElement[1], "Password is invalid. It must be between 8-16 characters");
-    }else if(emailDomains.includes(loginId.value) && !emailRegex.test(loginId.value))
+    }else if(emailDomains.includes(loginId) && !emailRegex.test(loginId))
     {
         error = true;
         showError(errorTextElement[1], "Email is invalid");
