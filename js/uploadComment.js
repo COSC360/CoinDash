@@ -20,7 +20,7 @@ commentForm.addEventListener("submit", (e) => {
         type: "POST",
         data: {coinId: coinId, text: text},
         success: function(response) {
-            form.reset();
+            commentForm.reset();
         }
     })
 })
