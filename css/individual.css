@@ -66,12 +66,14 @@
     color: var(--Highlight);
     font-size: 0.8em;
     margin-top: 0.5em;
+    cursor: pointer;
 }
 
 .delete-btn {
     color: red;
     font-size: 0.8em;
     margin-top: 0.5em;
+    cursor: pointer;
 }
 
 .full-card .product-card {

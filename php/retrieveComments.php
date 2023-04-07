@@ -29,8 +29,8 @@
                         </div>
                         <p class=\"review-content\">".$commentData["text"]."</p>
                     </div>
-                    <a href=\"#\" class=\"reply-btn\">Reply</a> | 
-                    <a href=\"#\" class=\"delete-btn\">Delete</a>
+                    <p class=\"reply-btn\">Reply</p> | 
+                    <p class=\"delete-btn\">Delete</p>
                 </div>
             </div>
         ";
