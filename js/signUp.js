@@ -71,13 +71,13 @@ registerForm.addEventListener("submit",function(e){
     if(!passwordRegex.test(password))
     {
         error = true;
-        showError(1, "Password is invalid. It must be between 8-16 characters");
+        showError(2, "Password is invalid. It must be between 8-16 characters");
     }
     
     if(emailDomains.includes(email) && !emailRegex.test(email))
     {
         error = true;
-        showError(0, "Email is invalid");
+        showError(1, "Email is invalid");
     }
 
     if (error = true){
