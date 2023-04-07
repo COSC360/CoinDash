@@ -9,12 +9,12 @@ const passwordRegex = /^[a-zA-Z]\w{8,16}$/; //Simple password expression. The pa
 const emailRegex = /^(.+)@([^\.].*)\.([a-z]{2,})$/; //Email validation based on current standard naming rules
 const emailDomains = ["gmail","outlook","yahoo"];
 
-function showError(i,errMsg){
+window.onload = function showError(i,errMsg){
     errorTextElement[i].innerText = errMsg;
     errorTextElement[i].classList.add("showError");
     errorLogoElement[i].classList.add("showError");
 }
-window.load = function hideError(i){
+window.onload = function hideError(i){
     if(errorTextElement[i].classList.contains("showError")){
         errorTextElement[i].classList.remove("showError");
         errorLogoElement[i].classList.remove("showError");
