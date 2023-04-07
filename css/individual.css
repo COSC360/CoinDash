@@ -62,6 +62,12 @@
     flex-grow: calc(100%-2em);
 }
 
+.reply-btn {
+    color: var(--Highlight);
+    font-size: 0.8em;
+    margin-top: 0.5em;
+}
+
 .full-card .product-card {
     border: none;
     display: flex;
