@@ -20,7 +20,7 @@ loginForm.addEventListener("submit",function(e){
     let loginId = requiredInput[0].value;
     let password = requiredInput[1].value;
 
-    var err = false;
+    let err = false;
 
     if(loginId == '' && password == '')
     {
@@ -42,7 +42,7 @@ loginForm.addEventListener("submit",function(e){
         e.preventDefault();
     }else{
         e.preventDefault();
-        console.log("Form passed !");
+        console.log("Form passed !");   
     }
 
 });
