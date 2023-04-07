@@ -15,6 +15,7 @@ function showError(i,errMsg){
     errorLogoElement[i].classList.add("showError");
 }
 function hideError(i){
+    console.log("Hidden !");
     if(errorTextElement[i].classList.contains("showError")){
         errorTextElement[i].classList.remove("showError");
         errorLogoElement[i].classList.remove("showError");
