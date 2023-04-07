@@ -23,6 +23,15 @@ session_start();
 <body>
     <?php
         include "dashboardHeader.php";
+        include "modules.php";
+        include "utils.php";
+        include "moduleModal.php";
+
+        // Row 0 reserved for guest dashboard
+        $userId = isset($_SESSION["id"]) ? $_SESSION["id"] : 0;
+
+        uploadActivity($con, $userId, "viewDashboard");
+        echo "<script>console.log('Here')</script>";
     ?>
     <main>
         <article class="panel page-title">
@@ -48,16 +57,6 @@ session_start();
         </article>
         <article id="dashboard">
             <?php 
-                include "modules.php";
-                include "utils.php";
-                include "moduleModal.php";
-
-                // Row 1 reserved for guest dashboard
-                $userId = isset($_SESSION["id"]) ? $_SESSION["id"] : 0;
-
-                uploadActivity($con, $userId, "viewDashboard");
-                echo "<script>console.log('Here')</script>";
-
                 $dashboardModules = retrieveDashboard($con, $userId);
                 $moduleCount = sizeof($dashboardModules);
                 $currentCount = 0;
