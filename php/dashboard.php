@@ -57,6 +57,7 @@ session_start();
                 $userId = isset($_SESSION["id"]) ? $_SESSION["id"] : 0;
 
                 uploadActivity($con, $userId, "viewDashboard");
+                echo "<script>console.log('Here')</script>";
 
                 $dashboardModules = retrieveDashboard($con, $userId);
                 $moduleCount = sizeof($dashboardModules);
