@@ -22,7 +22,7 @@ function validateLoginForm(e){
         if(loginForm[i].value != null){
             e.submit();
         }else{
-            window.alert("Password and Username field cannot be empty !");
+            console.log("Cannot be empty : )")
         }
     }
 }
