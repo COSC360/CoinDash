@@ -22,7 +22,7 @@ function updateData(coinId){
             commentArea.innerHTML = response;
             addReplyEventListeners();
             console.log("Hello");
-            // setTimeout(updateData(coinId), 10000);
+            setTimeout(function(){updateData(coinId)}, 10000);
         }
     })
 }
