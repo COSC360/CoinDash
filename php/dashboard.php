@@ -28,16 +28,16 @@ session_start();
     <main>
         <article class="panel page-title">
             <?php
-                if($_SESSION['user'] != null){
-                    echo "<h2>Home / ".$_SESSION['user']." /</h2>";
+                if(isset($_SESSION['id'])){
+                    echo "<h2>Home / ".$_SESSION['username']."</h2>";
                 }else{
                     echo "<h2>Home / Guest</h2>";
                 }
             ?>
             <div class="title">
                 <?php
-                    if($_SESSION['user'] != null){
-                        echo "<h1>".$_SESSION['user']."'s Dashboard</h1>";
+                    if(isset($_SESSION['id'])){
+                        echo "<h1>".$_SESSION['username']."'s Dashboard</h1>";
                     }else{
                         echo "<h1>Guest's Dashboard</h1>";
                     }

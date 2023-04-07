@@ -24,7 +24,6 @@
     <link rel="stylesheet" href="../css/userAuth.css">
     <link rel="icon" href="../images/sitelogo.png" type="image/icon type">
     <script src="https://kit.fontawesome.com/e6e0351429.js" crossorigin="anonymous"></script>
-    <script src="../js/signUp.js"></script>
     <script src="../js/navigation.js"></script>
 </head>
 
@@ -98,6 +97,7 @@
     <?php
         include "footer.php";
     ?>
+    <script src="../js/signUp.js"></script>
 </body>
 
 </html>

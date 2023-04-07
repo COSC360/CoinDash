@@ -23,7 +23,6 @@
     <link rel="stylesheet" href="../css/userAuth.css">
     <link rel="icon" href="../images/sitelogo.png" type="image/icon type">
     <script src="https://kit.fontawesome.com/e6e0351429.js" crossorigin="anonymous"></script>
-    <script src="../js/signIn.js"></script>
     <script src="../js/navigation.js"></script>
     <title>CoinDash</title>
 </head>
@@ -50,12 +49,12 @@
                             <div class="item-1">
                                 <label>Username or Email</label><br>     
                                 <input type = "text" name = "loginId" id= "loginId" placeholder="What’s Your Registered Username or Email?">
-                                <p class="errorText">Username of Email Cannot be empty</p>
+                                <p class="errorText"></p>
                             </div>
                             <div class="item-2">
                                 <label>Password</label><br>
                                 <input type = "password" name = "password" id= "password" placeholder="What’s Your Password?">
-                                <p class="errorText">Password Cannot be empty</p>
+                                <p class="errorText"></p>
                             </div>
                             <div class="item-3">
                                 <input type="reset" value="Reset Form">
@@ -73,6 +72,7 @@
             echo "<script>alert('".$_GET["errmsg"]."');</script>";
         }
     ?>
+    <script src="../js/signIn.js"></script>
 </body>
 
 </html>

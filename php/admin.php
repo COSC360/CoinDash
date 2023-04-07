@@ -8,9 +8,9 @@
         header('location:adminlogin.php');
     }
 
-    if(isset($_SESSION['adminStatusMsg'])){
-        echo "<script>window.alert(\"".$_SESSION['adminStatusMsg']."\")</script>";
-        unset($_SESSION['adminStatusMsg']);
+    if(isset($_SESSION['statusMsg'])){
+        echo "<script>window.alert(\"".$_SESSION['statusMsg']."\")</script>";
+        unset($_SESSION['statusMsg']);
     }
 
     if(!isset($_SESSION['defaultTabID'])){
