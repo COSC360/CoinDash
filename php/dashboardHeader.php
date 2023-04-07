@@ -15,13 +15,13 @@
                     if(isset($_SESSION['id']) && $_SESSION['userType'] == "admin" && $_SESSION['currentPage'] == "admin.php"){
                         echo
                         "  
-                        <a href=\"https://cosc360.ok.ubc.ca/suyash06/project-JasonR24/php/adminAnalytics.php\" id=\"stats\">
+                        <a href=\"adminAnalytics.php\" id=\"stats\">
                             Analytics
                         </a>
-                        <a href=\"https://cosc360.ok.ubc.ca/suyash06/project-JasonR24/php/admin.php\">
+                        <a href=\"admin.php\">
                             Portal
                         </a>
-                        <a href=\"https://cosc360.ok.ubc.ca/suyash06/project-JasonR24/php/account.php\">
+                        <a href=\"account.php\">
                             My Account
                         </a>";
                     }elseif(isset($_SESSION['id']) && $_SESSION['userType'] == "admin" && $_SESSION['currentPage'] == "account.php"){
@@ -37,8 +37,8 @@
                                 </form>
                             </div>
                         </div>
-                        <a href=\"https://cosc360.ok.ubc.ca/suyash06/project-JasonR24/php/dashboard.php\">Dashboard</a>  
-                        <a href=\"https://cosc360.ok.ubc.ca/suyash06/project-JasonR24/php/admin.php\">Admin Portal</a>";
+                        <a href=\"dashboard.php\">Dashboard</a>  
+                        <a href=\"admin.php\">Admin Portal</a>";
                     }elseif(isset($_SESSION['id']) && $_SESSION['userType'] == "user"){
                         echo
                         "
@@ -52,7 +52,7 @@
                                 </form>
                             </div>
                         </div>
-                        <a href=\"https://cosc360.ok.ubc.ca/suyash06/project-JasonR24/php/dashboard.php\">Dashboard</a>";   
+                        <a href=\"dashboard.php\">Dashboard</a>";   
                     }else{
                         echo
                         "
@@ -66,7 +66,7 @@
                                 </form>
                             </div>
                         </div>
-                        <a href=\"https://cosc360.ok.ubc.ca/suyash06/project-JasonR24/php/dashboard.php\">Dashboard</a>";                        
+                        <a href=\"dashboard.php\">Dashboard</a>";                        
                     }
                 ?>
             </nav>

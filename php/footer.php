@@ -5,7 +5,7 @@
         </div>
         <div class="middle">
             <nav>
-                <a href="https://cosc360.ok.ubc.ca/suyash06/project-JasonR24/php/dashboard.php">My Dashboard</a>
+                <a href="dashboard.php">My Dashboard</a>
             </nav>  
         </div>
         <div class="right">
