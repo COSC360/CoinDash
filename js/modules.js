@@ -121,11 +121,21 @@ modules.forEach(module => {
 })
 
 addModuleBtn.addEventListener("click", (e) => {
+
+    // Create raw block template and add to page
     var dashboardDom = document.getElementById("dashboard");
     var newBlock = generateDefaultBlock();
     dashboardDom.innerHTML += newBlock;
+
+    // Retrieve components
     var newModuleGallery = document.querySelector(`#module-${index} .module-gallery`);
+    var fiatDropdown = document.querySelector(`#module-${index} .fiat`);
+    var sortDropdown = document.querySelector(`#module-${index} .sort`);
+
     setModuleHTML("usd", "Ethereum Ecosystem", "views DESC", newModuleGallery);
+    addFiatDropdownListener(fiatDropdown);
+    addSortDropdownListener(sortDropdown);
+
     index++;
 })
 
