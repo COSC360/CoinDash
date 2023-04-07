@@ -37,6 +37,7 @@
         if ($replies){
             foreach($replies as $reply) {
                 $commentHTML .= getCommentHTML($con, $reply, $level + 1);
+                echo "<script>console.log('Hello')</script>";
             }
         }
 
