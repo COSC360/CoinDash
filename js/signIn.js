@@ -1,13 +1,5 @@
 var loginForm = document.forms['loginForm']; // Login Form
-
-
-var loginIdErrorText = document.getElementsByClassName('errorText')[0].innerText;
-var passwordErrorText = document.getElementsByClassName('errorText')[1].innerText;
-
-
 var loginBtn = document.getElementById("loginSubmit"); // Login button
-
-var errState = false;
 
 // <i class="fa-sharp fa-solid fa-circle-check" style="color: #11e43b;"></i>
 // <i class="fa-sharp fa-solid fa-circle-xmark" style="color: #ff0000;"></i>
@@ -16,50 +8,40 @@ const passwordRegex = "^[a-zA-Z]\w{8,16}$ "; //Simple password expression. The p
 const emailRegex = "^(.+)@([^\.].*)\.([a-z]{2,})$"; //Email validation based on current standard naming rules
 
 
+function showError(inputField){
+
+}
+
+function hideError(inputField){
+
+}
+
+
 loginForm.addEventListener("submit",function(e){
-    let loginId = loginForm[0].value; //Login Id (Username or Email)
-    let password = loginForm[1].value; // Login Password
-    
-    if(loginId == '' && password == ''){
-        loginIdErrorText = "Login Id cannot be empty";
-        passwordErrorText = "Password cannot be empty";
-        errState = true;
+    var requiredInput = document.querySelectorAll(".required");
+    var errorText = document.querySelectorAll(".errorText");
+
+    var loginId = requiredInput[0].textContent;
+    var password = requiredInput[1].textContent;
+    var err = false;
+
+    if(loginId == '' && password == '')
+    {
+        err == true;
+        showError(errorText[0]);
+        showError(errorText[1]);
+    }
+    else
+    {
+        // onkeydown clear error
     }
 
-    if(loginId == ''){
-        loginIdErrorText = "Login Id cannot be empty";
-        errState = true;
-    }
-
-    if(password == ''){
-        passwordErrorText = "Password cannot be empty";
-        errState = true;
-    }
-
-    if(errState == true){
-        displayError(true);
+    if (err == true)
+    {
         e.preventDefault();
-    }else{
-        displayError(false);
     }
 });
  
-function displayError(err){
-    if(err == true){
-        showError();
-    }
-    if(err== false){
-        hideError();
-    }
-}
-
-function showError(){
-    console.log("Error is shown !");
-}
-
-function hideError(){
-    console.log("Error is not shown !");
-}
 
 // function validEntry(){
 
