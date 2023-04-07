@@ -3,7 +3,7 @@ var requiredInput = document.querySelectorAll(".required");
 var loginId = requiredInput[0].value;
 var password = requiredInput[1].value;
 var errorText = document.querySelectorAll(".errorText");
-
+console.log(loginId);
 
 // <i class="fa-sharp fa-solid fa-circle-check" style="color: #11e43b;"></i>
 // <i class="fa-sharp fa-solid fa-circle-xmark" style="color: #ff0000;"></i>
@@ -21,10 +21,12 @@ function hideError(inputField){
 
 
 loginForm.addEventListener("submit",function(e){
+    console.log(loginId);
     var err = false;
 
     if(loginId == '' && password == '')
     {
+        console.log(loginId);
         err = true;
         console.log("1");
         showError(errorText[0], "Login ID cannot be empty");
