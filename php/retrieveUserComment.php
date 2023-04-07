@@ -24,13 +24,7 @@
 
     function getCommentHTML($con, $commentData, $level){
         $commentHTML = "
-            <div style=\"margin-left:".($level * 2)."em;\" class=\"comment-container\"> 
-                <div class=\"comment\" id=\"comment-1\">
-                    <div class=\"main-comment\">
-                        <p class=\"review-content\">".$commentData["text"]."</p>
-                    </div>
-                </div>
-            </div>
+            <p class=\"review-content\">".$commentData["text"]."</p>
         ";
         return $commentHTML;
     }
