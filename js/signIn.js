@@ -23,7 +23,7 @@ function hideError(i){
     }
 }
 
-loginForm.addEventListener("submit",function(e){
+window.onload = loginForm.addEventListener("submit",function(e){
     const loginId = requiredInput[0].value;
     const password = requiredInput[1].value;
 
