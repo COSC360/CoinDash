@@ -27,6 +27,7 @@ function retrieveAllCoins($con){
 }
 
 function updateCoinViews($con, $coinId){
+    echo "<script>console.log('".$coinId."')</script>";
     $updateSql = "UPDATE coin SET views = views + 1 WHERE Id = ?";
 
     $updateStmt = mysqli_stmt_init($con); 
