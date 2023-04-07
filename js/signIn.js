@@ -33,7 +33,7 @@ loginForm.addEventListener("submit",function(e){
     }else if(loginId == '')
     {
         error = true;
-        showError(errorTextElement[0], "Login ID cannot be empty");
+        showError(0, "Login ID cannot be empty");
     }else if(password == '')
     {
         error = true;
@@ -44,11 +44,11 @@ loginForm.addEventListener("submit",function(e){
     }else if(!passwordRegex.test(password))
     {
         error = true;
-        showError(errorTextElement[1], "Password is invalid. It must be between 8-16 characters");
+        showError(1, "Password is invalid. It must be between 8-16 characters");
     }else if(emailDomains.includes(loginId) && !emailRegex.test(loginId))
     {
         error = true;
-        showError(errorTextElement[0], "Email is invalid");
+        showError(0, "Email is invalid");
     }
 
     if (error = true){
