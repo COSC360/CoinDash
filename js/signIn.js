@@ -37,7 +37,7 @@ loginForm.addEventListener("submit",function(e){
         // onkeydown clear error
     }
 
-    if (err == true)
+    if (err = true)
     {
         e.preventDefault();
     }
