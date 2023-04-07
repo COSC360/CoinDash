@@ -29,7 +29,7 @@ session_start();
         <article class="panel page-title">
             <?php
                 if(isset($_SESSION['id'])){
-                    echo "<h2>Home / ".$_SESSION['username']." /</h2>";
+                    echo "<h2>Home / ".$_SESSION['username']."</h2>";
                 }else{
                     echo "<h2>Home / Guest</h2>";
                 }
