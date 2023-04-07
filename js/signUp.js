@@ -95,9 +95,4 @@ registerForm.addEventListener("submit",function(e){
 
 });
 
-registerForm.addEventListener("reset", hideError(0));
-registerForm.addEventListener("reset", hideError(1));
-registerForm.addEventListener("reset", hideError(2));
-registerForm.addEventListener("reset", hideError(3));
-registerForm.addEventListener("reset", hideError(4));
 

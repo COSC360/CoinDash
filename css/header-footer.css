@@ -55,6 +55,9 @@ footer .fill-container {
     width: 40px; 
     margin-left: 0.75em;
 }
+.left h4{
+    margin: auto 0;
+}
 
 nav {
     display: flex;
