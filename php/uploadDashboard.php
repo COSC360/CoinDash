@@ -3,10 +3,10 @@ session_start();
 include "DBconnection.php";
 include "sql-queries.php";
 
-echo "<script>console.log('Check')</script>";
 $userId = $_SESSION["Id"];
 $dashboardJSON = $_POST["dashboardJSON"];
-echo "<script>console.log('Check')</script>";
+echo $userId;
+echo $dashboardJSON;
 uploadDashboard($con, $userId, $dashboardJSON);
     
 ?>
