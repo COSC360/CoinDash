@@ -22,6 +22,8 @@ loginForm.addEventListener("submit",function(e){
 
     var err = false;
 
+    console.log(err);
+
     if(loginId == '' && password == '')
     {
         err = true;
@@ -37,6 +39,8 @@ loginForm.addEventListener("submit",function(e){
         showError(errorText[1], "Password cannot be empty");
     }
 
+    console.log(err);
+    
     if (err = true)
     {
         e.preventDefault();
