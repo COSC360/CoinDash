@@ -35,7 +35,7 @@
 <body>
     <?php include 'dashboardHeader.php';?>
     <main>
-        <div class = "user-account-container">
+        <div class = "panel user-account-container">
             <div class="user-account-info">
                 <h2>Account Settings</h2>
                 <p></p>
