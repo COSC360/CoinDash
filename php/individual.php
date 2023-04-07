@@ -3,7 +3,7 @@
 session_set_cookie_params(0);
 session_start();
 
-if($_SESSION['Id'] == null){
+if($_SESSION['id'] == null){
     header('location: signIn.php?errmsg=You must be registered to view that page!');
 }
 ?>
