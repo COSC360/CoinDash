@@ -11,7 +11,7 @@
   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
   <link rel="icon" href="../images/sitelogo.png" type="image/icon type">
-  <title>CoinDash</title>
+  <title>CoinDash | Error</title>
   <script>
   $( function() {
     $( "#dialog" ).dialog();
