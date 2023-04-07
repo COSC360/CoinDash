@@ -19,18 +19,18 @@ const emailRegex = "^(.+)@([^\.].*)\.([a-z]{2,})$"; //Email validation based on 
 
 
 loginForm.addEventListener("submit",function(e){
-    if(loginId == null && password == null){
+    if(loginId == '' && password == ''){
         loginIdErrorText = "Login Id cannot be empty";
         passwordErrorText = "Password cannot be empty";
         errState = true;
     }
 
-    if(loginId == null){
+    if(loginId == ''){
         loginIdErrorText = "Login Id cannot be empty";
         errState = true;
     }
 
-    if(password == null){
+    if(password == ''){
         passwordErrorText = "Password cannot be empty";
         errState = true;
     }
