@@ -78,7 +78,7 @@ registerForm.addEventListener("submit",function(e){
     }else if(!passwordRegex.test(password))
     {
         error = true;
-        showError(2, "Password is invalid. It must be between \n8-16 characters");
+        showError(2, "Password is invalid. It must be between 8-16\ncharacters");
     }else if(password != verifyPassword)
     {
         error = true;
