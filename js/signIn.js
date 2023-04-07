@@ -23,7 +23,7 @@ function validateLoginForm(e){
         if(loginForm[i].value != null){
             e.submit();
         }else{
-            console.log("Cannot be empty : )")
+            console.log("Cannot be empty !")
         }
     }
 }
