@@ -21,14 +21,16 @@
 
     function getCommentHTML($con, $commentData, $level){
         $commentHTML = "
-            <hr class=\"medium-spacing\">
-            <div class=\"comment\" id=\"comment-1\" style=\"margin-left:".($level * 2)."em;\">
-                <div class=\"main-comment\">
-                    <div class=\"comment-header\">
-                        <img src=\"../images/profile-picture.png\" class=\"profile-picture\">
-                        <h4 class=\"user-name\">".$commentData["Username"]."</h4>
+            <div style=\"margin-left:".($level * 2)."em;\"> 
+                <hr class=\"medium-spacing\">
+                <div class=\"comment\" id=\"comment-1\">
+                    <div class=\"main-comment\">
+                        <div class=\"comment-header\">
+                            <img src=\"../images/profile-picture.png\" class=\"profile-picture\">
+                            <h4 class=\"user-name\">".$commentData["username"]."</h4>
+                        </div>
+                        <p class=\"review-content\">".$commentData["text"]."</p>
                     </div>
-                    <p class=\"review-content\">".$commentData["id"]."</p>
                 </div>
             </div>
         ";
