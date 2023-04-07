@@ -7,7 +7,7 @@
     $coinId = $_POST["coinId"];
     $text = $_POST["text"];
 
-    $userId = $_SESSION["Id"];
+    $userId = $_SESSION["id"];
 
     uploadComment($con, $userId, $coinId, $text);
 ?>

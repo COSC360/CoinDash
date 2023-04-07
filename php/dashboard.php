@@ -30,6 +30,7 @@ session_start();
         // Row 0 reserved for guest dashboard
         $userId = isset($_SESSION["id"]) ? $_SESSION["id"] : 0;
         uploadActivity($con, $userId, "viewDashboard");
+        echo "<script>console.log('Hi')</script>";
     ?>
     <main>
         <article class="panel page-title">
