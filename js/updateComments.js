@@ -18,12 +18,17 @@ function updateData(coinId){
         type: "POST",
         async: true,
         data: {coinId: coinId},
-        success: (response) => {
-            commentArea.innerHTML = response;
-            addReplyEventListeners();
+        success: function(response) {
+            setCommentArea(response);
+            console.log("Hello");
             setTimeout(updateData(coinId), 10000)
         }
     })
+}
+
+function setCommentArea(commentsHTML){
+    commentArea.innerHTML = commentsHTML;
+    addReplyEventListeners();
 }
 
 function addReplyEventListeners(){
