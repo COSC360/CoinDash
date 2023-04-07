@@ -29,6 +29,7 @@
                         </div>
                         <p class=\"review-content\">".$commentData["text"]."</p>
                     </div>
+                    <p class=\"reply-btn\">Reply</p>
                 </div>
             </div>
         ";
