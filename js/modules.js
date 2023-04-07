@@ -240,7 +240,7 @@ function generateDefaultBlock(){
     newBlock +=     `</select>
                 </div>
             </div>
-            <div class="module-gallery">";
+            <div class="module-gallery">
             </div>
             <div draggable=\"true\" class=\"module-settings-btn edit-ui\">
                     <i class=\"fa-solid fa-ellipsis-vertical fa-lg\"></i>
@@ -250,5 +250,7 @@ function generateDefaultBlock(){
         </div>
     `
 
+    var newModuleGallery = document.querySelector("#" + 1000 + " .module-gallery");
+    setModuleHTML(defaultFiat, defaultCategory, defaultSort, newModuleGallery);
     return newBlock;
 }
