@@ -1,7 +1,7 @@
 <?php
     include "DBconnection.php";
     include "sql-queries.php";
-    echo "<script>console.log('Hello')</script>";
+    echo "<script>console.log('aasdasd')</script>";
     $coinId = $_POST["coinId"];
     $comments = retrievePostComment($con, $coinId);
 
