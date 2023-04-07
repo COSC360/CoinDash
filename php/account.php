@@ -69,7 +69,7 @@
                 </form>
             </div>
         </div>
-    <main>
+    </main>
     <?php
         include "footer.php";
     ?>
