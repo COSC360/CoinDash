@@ -4,23 +4,18 @@ var errorTextElement = document.querySelectorAll(".errorText");
 var errorLogoElement = document.querySelectorAll(".errorLogo");
 
 // <i class="fa-sharp fa-solid fa-circle-check" style="color: #11e43b;"></i>
-// 
 
 const passwordRegex = /^[a-zA-Z]\w{8,16}$/; //Simple password expression. The password must be at least 8 characters but no more than 16 characters long
 const emailRegex = /^(.+)@([^\.].*)\.([a-z]{2,})$/; //Email validation based on current standard naming rules
 const emailDomains = ["gmail","outlook","yahoo"];
 
 function showError(i,errMsg){
-    console.log("nodelist: " + errorTextElement);
-    console.log("item: " + errorTextElement[1]);
-    console.log("innerText: " + errorTextElement[1].innerText);
-    console.log("innerHTML: " + errorTextElement[1].innerHTML);
     errorTextElement[i].innerText = errMsg;
     errorTextElement[i].classList.add("showError");
     errorLogoElement[i].classList.add("showError");
 }
-function hideError(inputField){
-
+function hideError(){
+    console.log("Error hidden !");
 }
 
 loginForm.addEventListener("submit",function(e){
@@ -58,12 +53,9 @@ loginForm.addEventListener("submit",function(e){
 
     if (error = true){
         e.preventDefault();
-    }else{
-        e.preventDefault();
     }
 
 });
  
-// function validEntry(){
 
-// }
+loginForm.addEventListener("keydown", hideError);
