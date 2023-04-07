@@ -32,9 +32,7 @@
                     <p class=\"reply-btn\">Reply</p> | 
                     <p class=\"delete-btn\">Delete</p>
                     <form>
-                        <fieldset>
-                            <input type=\"textarea\">
-                        </fieldset>
+                        <input type=\"textarea\">
                     </form>
                 </div>
             </div>
