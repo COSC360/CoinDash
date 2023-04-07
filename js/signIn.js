@@ -62,5 +62,6 @@ loginForm.addEventListener("submit",function(e){
 
 });
 
- 
-
+loginForm.addEventListener("reset",function(e){
+    console.log("hi");
+});
