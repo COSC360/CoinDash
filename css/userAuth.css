@@ -345,7 +345,3 @@ select{
   margin-top: 0.25em;
   color: red;
 }
-
-.hideError{
-  visibility: hidden;
-}
