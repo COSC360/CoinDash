@@ -46,7 +46,7 @@
                         </div>
                     </div>  
                     <div class="login-box">
-                        <form name = "loginForm" id ="loginForm" action= "processLogin.php" method="GET" required>
+                        <form name = "loginForm" id ="loginForm" action= "processLogin.php" method="POST" required>
                             <div class="item-1">
                                 <label>Username or Email</label><br>
                                 <i class="fa-sharp fa-solid fa-circle-xmark fa-bounce errorLogoLogin"></i>     

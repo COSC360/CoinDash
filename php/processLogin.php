@@ -2,10 +2,10 @@
     include "modules.php";
     $errMsg = '';
     
-    if(isset($_GET['loginSubmit']) && $_SERVER["REQUEST_METHOD"] == "GET"){
-        if(isset($_GET['loginId']) && isset($_GET['password'])){
-            $loginID= $_GET['loginId'];
-            $loginPassword = $_GET['password'];
+    if(isset($_POST['loginSubmit']) && $_SERVER["REQUEST_METHOD"] == "POST"){
+        if(isset($_POST['loginId']) && isset($_POST['password'])){
+            $loginID= $_POST['loginId'];
+            $loginPassword = $_POST['password'];
             loginUser($con,$loginID,$loginPassword);
         }else{
             $errMsg = 'Login data was not sent. Please try again !';
