@@ -40,7 +40,8 @@
                                 </form>
                             </div>
                         </div>
-                        <a href=\"dashboard.php\">Dashboard</a>";   
+                        <a href=\"dashboard.php\">Dashboard</a>
+                        <a href=\"dashboard.php\">My Account</a>";";   
                     }else{
                         echo
                         "
