@@ -23,8 +23,8 @@ function hideError(inputField){
 loginForm.addEventListener("submit",function(e){
     e.preventDefault();
 
-    let loginId = requiredInput[0];
-    let password = requiredInput[1];
+    const loginId = requiredInput[0];
+    const password = requiredInput[1];
     console.log(loginId.value);
     console.log(password.value);
 
