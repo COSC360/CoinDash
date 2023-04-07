@@ -1,20 +1,15 @@
 <?php
 // Database configuration  
-$dbHost     = "cosc360.ok.ubc.ca";  
-$dbUsername = "83864363";  
-$dbPassword = "83864363";  
-$dbName     = "db_83864363";
-// require_once realpath(__DIR__."/vendor/autoload.php"); 
+// $dbHost     = "cosc360.ok.ubc.ca";  
+// $dbUsername = "83864363";  
+// $dbPassword = "83864363";  
+// $dbName     = "db_83864363";
 
-// use Dotenv\Dotenv;
+require __DIR__ . '/../vendor/autoload.php';
 
-// $dotenv = Dotenv::createImmutable(__DIR__);
-// $dotenv->load();
+Dotenv\Dotenv::createUnsafeImmutable(__DIR__ . '/../')->load();
 
-// $dbHost     = getenv("DB_HOST");  
-// $dbUsername = getenv("DB_USERNAME");  
-// $dbPassword = getenv("DB_PASSWORD"); 
-// $dbName     = getenv("DB_NAME");
+echo getenv('83864363');
 
 echo $dbHost;
 // Create database connection  
