@@ -298,7 +298,7 @@ function retrievePostComment($con, $coinId){
 }
 
 function retrieveCommentReplies($con, $parentId){
-    $commentSql = "SELECT * FROM comment c JOIN user_auth u ON c.user_id = u.id WHERE parentId = ?";
+    $commentSql = "SELECT * FROM comment c JOIN userAuth u ON c.user_id = u.id WHERE parentId = ?";
     $commentStmt = mysqli_stmt_init($con);
     if (!mysqli_stmt_prepare($commentStmt, $commentSql)){
         return false;

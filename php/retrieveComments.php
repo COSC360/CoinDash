@@ -28,7 +28,7 @@
                         <img src=\"../images/profile-picture.png\" class=\"profile-picture\">
                         <h4 class=\"user-name\">".$commentData["Username"]."</h4>
                     </div>
-                    <p class=\"review-content\">".$commentData["text"]."</p>
+                    <p class=\"review-content\">".$commentData["id"]."</p>
                 </div>
             </div>
         ";
