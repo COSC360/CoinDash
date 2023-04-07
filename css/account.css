@@ -169,6 +169,10 @@ column-gap: 1.5em
 }
 
 .commentHistoryArea{
-    margin: 0 2em;
+    margin: 1em 2em 0em 0em;
     background-color: rgb(59, 59, 59);
+    padding: 0.5em;
+    color: white;
+    display: flex;
+    flex-direction: column;
 }
