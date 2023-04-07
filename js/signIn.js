@@ -16,7 +16,6 @@ function showError(i,errMsg){
     errorLogoElement[i].classList.add("showError");
 }
 function hideError(i){
-    console.log("hidden");
     if(errorTextElement[i].classList.contains("showError")){
         errorTextElement[i].classList.remove("showError");
         errorLogoElement[i].classList.remove("showError");
@@ -62,5 +61,7 @@ loginForm.addEventListener("submit",function(e){
     }
 
 });
+
+loginForm.addEventListener("reset", console.log("clicked reset !"));
  
 
