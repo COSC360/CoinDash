@@ -20,8 +20,18 @@ function updateData(coinId){
         data: {coinId: coinId},
         success: function(response) {
             commentArea.innerHTML = response;
+            addReplyEventListeners();
             setTimeout(updateData(coinId), 10000)
         }
     })
 }
 
+function addReplyEventListeners(){
+    var replyBtns = document.querySelectorAll(".reply-btn");
+
+    replyBtns.forEach(btn => {
+        btn.addEventListener("click", () => {
+            console.log("clicked")
+        })
+    })
+}
