@@ -15,7 +15,7 @@ function showError(i,errMsg){
     errorLogoElement[i].classList.add("showError");
 }
 function hideError(){
-    console.log("Error hidden !");
+    errorTextElement[i].classList.add("hideError");
 }
 
 loginForm.addEventListener("submit",function(e){
