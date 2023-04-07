@@ -44,7 +44,7 @@
                 </div>
             </div>  
             <div class="register-box">
-                <form name = "registerForm" id="registerForm" enctype="multipart/form-data" action= "processRegister.php" onsubmit="validateRegisterForm()" method="POST" class = "required" >
+                <form name = "registerForm" id="registerForm" enctype="multipart/form-data" action= "processRegister.php" onsubmit="validateRegisterForm()" method="POST">
                     <div class="item-1">
                         <label>Username <span style="color: red;">*</span></label><br>
                         <i class="fa-sharp fa-solid fa-circle-xmark fa-bounce errorLogoRegister"></i>                            
