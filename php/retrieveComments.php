@@ -5,7 +5,7 @@
     $coinId = $_POST["coinId"];
 
     $comments = retrievePostComment($con, $coinId);
-
+    print_r($comments);
     $output = "";
 
     foreach($comments as $comment) {
