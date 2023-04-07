@@ -327,12 +327,6 @@ select{
   color: #050505;
 }
 
-.showError{
-  visibility: visible;
-  margin-top: 0.25em;
-  color: red;
-}
-
 .fa-circle-xmark{
   visibility: hidden;
   position: absolute;
@@ -344,6 +338,12 @@ select{
 
 .errorText{
   visibility: hidden;
+}
+
+.showError{
+  visibility: visible;
+  margin-top: 0.25em;
+  color: red;
 }
 
 .hideError{
