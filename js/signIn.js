@@ -26,23 +26,22 @@ loginForm.addEventListener("submit",function(e){
 
     if(loginId == '' && password == '')
     {
-        err |= true;
-        console.log("1");
+        err = true;
         showError(errorText[0], "Login ID cannot be empty");
         showError(errorText[1], "Password cannot be empty");
     }else if(loginId == '')
     {
         console.log("2");
-        err |= true;
+        err = true;
         showError(errorText[0], "Login ID cannot be empty");
     }else if(password == '')
     {
         console.log("3");
-        err |= true;
+        err = true;
         showError(errorText[1], "Password cannot be empty");
     }
 
-    if (err == true)
+    if (err = true)
     {
         e.preventDefault();
     }
