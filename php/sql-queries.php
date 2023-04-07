@@ -277,18 +277,17 @@ function uploadComment($con, $userId, $coinId, $text){
 }
 
 function retrievePostComment($con, $coinId){
-    echo "<script>console.log('console.log')</script>";
-    $commentSql = "SELECT * FROM comment c JOIN user_auth u ON c.user_id = u.id WHERE coin_id = ?";
+    $commentSql = "SELECT * FROM comment c JOIN userAuth u ON c.user_id = u.id WHERE coin_id = ?";
     $commentStmt = mysqli_stmt_init($con);
     if (!mysqli_stmt_prepare($commentStmt, $commentSql)){
         return false;
     }
-    echo "<script>console.log('console.log')</script>";
+
     mysqli_stmt_bind_param($commentStmt, "s", $coinId);
     mysqli_stmt_execute($commentStmt);
 
     $result = mysqli_stmt_get_result($commentStmt);
-    echo "<script>console.log('console.log')</script>";
+
     if ($rows = $result -> fetch_all(MYSQLI_ASSOC)){
         // mysqli_stmt_close();
         return $rows; 
