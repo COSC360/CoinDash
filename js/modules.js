@@ -119,7 +119,7 @@ modules.forEach(module => {
 })
 
 addModuleBtn.addEventListener("click", (e) => {
-    var dashboardDom = addModuleBtn.parentNode.parentNode;
+    var dashboardDom = addModuleBtn.parentNode;
     
     var newBlock = generateDefaultBlock();
     console.log(dashboardDom);
@@ -139,7 +139,6 @@ toggleEditBtn.addEventListener("click", (e) => {
             element.classList.add("hide");
             editBtnImage.src = "../svgs/view.svg";
         }
-
     })
 })
 
