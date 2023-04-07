@@ -36,15 +36,13 @@ loginForm.addEventListener("submit",function(e){
         passwordErrorText = "Password cannot be empty";
         errState = true;
     }
-    
-    if(errState = true){
+
+    if(errState == true){
         displayError(true);
         e.preventDefault();
     }else{
         displayError(false);
     }
-
-    console.log(errState);
 });
  
 function displayError(errState){
