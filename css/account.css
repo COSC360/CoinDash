@@ -179,6 +179,6 @@ column-gap: 1.5em
     min-height: 37vh;
 }
 
-.commentHistoryArea p{
+.main-comment{
     margin: 1.5em;
 }
