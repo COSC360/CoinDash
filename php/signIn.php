@@ -54,7 +54,7 @@
                             </div>
                             <div class="item-2">
                                 <label>Password</label><br>
-                                <i class="fa-sharp fa-solid fa-circle-xmark"></i>
+                                <i class="fa-sharp fa-solid fa-circle-xmark errorLogo"></i>
                                 <input type = "password" name = "password" id= "password" placeholder="What’s Your Password?" class="required" />
                                 <p class="errorText"></p>
                             </div>
