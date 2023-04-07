@@ -123,6 +123,7 @@ toggleEditBtn.addEventListener("click", (e) => {
         if (element.classList.contains("hide")){
             element.classList.remove("hide");
             console.log(editBtnImage);
+            console.log("Hello");
         } else {
             element.classList.add("hide");
         }
