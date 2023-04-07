@@ -124,7 +124,7 @@ addModuleBtn.addEventListener("click", (e) => {
     var newBlock = generateDefaultBlock();
     dashboardDom.innerHTML += newBlock;
     var newModuleGallery = document.querySelector("#module-1000 .module-gallery");
-    setModuleHTML(defaultFiat, defaultCategory, defaultSort, newModuleGallery);
+    setModuleHTML("usd", "Ethereum Ecosystem", "views DESC", newModuleGallery);
 })
 
 toggleEditBtn.addEventListener("click", (e) => {
