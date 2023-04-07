@@ -298,6 +298,27 @@ function retrievePostComment($con, $coinId){
     }
 }
 
+function retrieveUserComment($con, $userId){
+    $userCommentSql = "SELECT c.id, coin_id, `text`, parentId, username, u.id, `timestamp` FROM comment c JOIN userAuth u ON c.user_id = u.id WHERE u.id = ?";
+    $userCommentStmt = mysqli_stmt_init($con);
+    if (!mysqli_stmt_prepare($userCommentStmt, $userCommentSql)){
+        return false;
+    }
+
+    mysqli_stmt_bind_param($userCommentStmt, "i", $userId);
+    mysqli_stmt_execute($userCommentStmt);
+
+    $result = mysqli_stmt_get_result($userCommentStmt);
+
+    if ($rows = $result -> fetch_all(MYSQLI_ASSOC)){
+        mysqli_stmt_close($userCommentStmt);
+        return $rows; 
+    } else {
+        mysqli_stmt_close($userCommentStmt);
+        return false;
+    }
+}
+
 function retrieveCommentReplies($con, $parentId){
     $commentSql = "SELECT c.id, coin_id, text, parentId, username FROM comment c JOIN userAuth u ON c.user_id = u.id WHERE parentId = ?";
     $commentStmt = mysqli_stmt_init($con);

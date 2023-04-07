@@ -1,22 +1,24 @@
 <?php
-    include "DBconnection.php";
-    include "sql-queries.php";
+    session_start();
 
-    $coinId = $_POST["coinId"];
+    if(isset($_SESSION["id"])){
+        $userId = $_SESSION["id"];
 
-    $comments = retrievePostComment($con, $coinId);
-    
-    $output = "";
+        $userComments = retrieveUserComment($con, $userId);
 
-    foreach($comments as $comment) {
-        $output .= getCommentHTML($con, $comment, 0);
+        $output = "";
+
+        foreach($userComments as $userComment) {
+            $output .= getCommentHTML($con, $userComment, 0);
+        }
+
+        if ($output === ""){
+            echo "<p> No comments yet!</p>";
+        } else {
+            echo $output;
+        }
     }
 
-    if ($output === ""){
-        echo "<p> No comments yet!</p>";
-    } else {
-        echo $output;
-    }
 
     function getCommentHTML($con, $commentData, $level){
         $commentHTML = "
@@ -34,14 +36,7 @@
                 </div>
             </div>
         ";
-
-        $replies = retrieveCommentReplies($con, $commentData["id"]);
-        if ($replies){
-            foreach($replies as $reply) {
-                $commentHTML .= getCommentHTML($con, $reply, $level + 1);
-            }
-        }
-
         return $commentHTML;
     }
+
 ?>
