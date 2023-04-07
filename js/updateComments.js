@@ -58,8 +58,23 @@ function addFormEventListeners(){
     replyForms.forEach(form => {
         form.addEventListener("submit", (e) => {
             e.preventDefault();
-            var commentId = form.dataset.commentId;
-            console.log(form.dataset);
+            var commentId = form.dataset.commentid;
+            var text = form["text"].value;
+    
+            // Stops empty comments
+            if (text == ""){
+                return;
+            }
+    
+            // Asynch request to upload comment
+            $.ajax({
+                url: "uploadComment.php",
+                type: "POST",
+                data: {coinId: coinId, text: text, parentId: commentId},
+                success: function(response) {
+                    form.reset();
+                }
+            })
         })
     })
 }

@@ -33,7 +33,7 @@
                     </div>
                     <p class=\"reply-btn\">Reply</p> | 
                     <p class=\"delete-btn\">Delete</p>
-                    <form class=\"reply-form\" data-commentId=\"".$commentData["id"]."\">
+                    <form class=\"reply-form\" data-commentid=\"".$commentData["id"]."\">
                         <textarea name=\"text\"></textarea>
                         <p class=\"btn-container\">
                             <button type=\"submit\" class=\"comment-btn\">Reply</button>
