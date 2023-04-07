@@ -22,8 +22,7 @@ function hideError(i){
         errorTextElement[i].innerText = "";
     }
 }
-
-window.onload = loginForm.addEventListener("submit",function(e){
+loginForm.addEventListener("submit",function(e){
     const loginId = requiredInput[0].value;
     const password = requiredInput[1].value;
 
@@ -63,5 +62,3 @@ window.onload = loginForm.addEventListener("submit",function(e){
 
 });
  
-requiredInput[0].addEventListener("focusin", hideError(0));
-requiredInput[1].addEventListener("focusin", hideError(1));
