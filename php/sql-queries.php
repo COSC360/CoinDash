@@ -257,6 +257,7 @@ function retrieveDashboard($con, $userId){
 
     if ($rows = $result -> fetch_all(MYSQLI_ASSOC)){
         // mysqli_stmt_close();
+        print_r($rows);
         return $rows; 
     } else {
         // mysqli_stmt_close();
