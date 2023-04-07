@@ -19,7 +19,7 @@
 
     function getCommentHTML($con, $commentData, $level){
         $commentHTML = "
-            <div style=\"margin-left:".($level)."em;\" class=\"comment-container\"> 
+            <div style=\"margin-left:".($level * 2)."em;\" class=\"comment-container\"> 
                 <hr class=\"medium-spacing\">
                 <div class=\"comment\" id=\"comment-1\">
                     <div class=\"main-comment\">
