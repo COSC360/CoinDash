@@ -153,7 +153,6 @@ column-gap: 1.5em
 
 .commentHistory{
     min-width: 10%; 
-    background-color: #2e2c2c;;
     border-radius: 0.5em;    
     height: 45vh;
     margin: 0em 2em;
@@ -161,11 +160,15 @@ column-gap: 1.5em
 }
 
 .commentHistory h1{
-    padding: 1em;
+    padding: 0.25em 1em 0.25em 1em;
     font-size: 1.5em;
-    color: aliceblue;
+    color: white;
+    background-color: #363636;
+    width: fit-content;
+    border-radius: 0.25em;
 }
 
 .commentHistoryArea{
     margin: 0 2em;
+    background-color: rgb(59, 59, 59);
 }
