@@ -36,7 +36,7 @@
         <div class = "user-account-container">
             <div class="user-account-info">
                 <h2>Account Settings</h2>
-                <p>Lorem ipsum dolor sit amet consectetur. Erat facilisi varius est cursus. Neque sagittis mi non purus semper lacus mauris magnis.</p>
+                <p>CoinDash is a cryptocurrency price tracking website that allows users to monitor the real-time prices of various cryptocurrencies. With its user-friendly interface and customizable alerts, CoinDash offers a convenient way for crypto enthusiasts and investors to stay up-to-date with the latest market trends</p>
             </div>  
             <div class="user-account-box">
                 <div class="profile-box">
