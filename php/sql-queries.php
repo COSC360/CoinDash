@@ -299,7 +299,7 @@ function retrievePostComment($con, $coinId){
 }
 
 function retrieveUserComment($con, $userId){
-    $userCommentSql = "SELECT c.id, coin_id, `text`, parentId, username, u.id, `timestamp` FROM comment c JOIN userAuth u ON c.user_id = u.id WHERE u.id = ?";
+    $userCommentSql = "SELECT c.id AS `commentId`, coin_id, `text`, parentId, u.id AS `userId`, `timestamp` FROM comment c JOIN userAuth u ON c.user_id = u.id WHERE u.id = ?";
     $userCommentStmt = mysqli_stmt_init($con);
     if (!mysqli_stmt_prepare($userCommentStmt, $userCommentSql)){
         return false;
