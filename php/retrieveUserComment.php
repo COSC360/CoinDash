@@ -29,12 +29,10 @@
                 <div class=\"comment\" id=\"comment-1\">
                     <div class=\"main-comment\">
                         <div class=\"comment-header\">
-                            <img src=\"../images/profile-picture.png\" class=\"profile-picture\">
                             <h4 class=\"user-name\">".$commentData["username"]."</h4>
                         </div>
                         <p class=\"review-content\">".$commentData["text"]."</p>
                     </div>
-                    <p class=\"reply-btn\">Reply</p>
                 </div>
             </div>
         ";
