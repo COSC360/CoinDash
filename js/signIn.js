@@ -15,8 +15,11 @@ function showError(i,errMsg){
     errorLogoElement[i].classList.add("showError");
 }
 function hideError(i){
-    errorTextElement[i].classList.remove("showError");
-    errorLogoElement[i].classList.remove("showError");
+    if(errorTextElement[i].classList.contains("showError") && errorLogoElement[i].classList.contains("showError")){
+        errorTextElement[i].classList.remove("showError");
+        errorLogoElement[i].classList.remove("showError");
+    }
+
 }
 
 loginForm.addEventListener("submit",function(e){
@@ -31,36 +34,30 @@ loginForm.addEventListener("submit",function(e){
         error = true;
         showError(0, "Login ID cannot be empty");
         showError(1, "Password cannot be empty");
-        requiredInput[0].addEventListener("keydown", hideError(0));
-        requiredInput[1].addEventListener("keydown", hideError(1));
     }
     
     if(loginId == '')
     {
         error = true;
         showError(0, "Login ID cannot be empty");
-        loginForm.addEventListener("keydown", hideError(0));
     }
     
     if(password == '')
     {
         error = true;
         showError(1, "Password cannot be empty");
-        loginForm.addEventListener("keydown", hideError(1));
     }
     
     if(!passwordRegex.test(password))
     {
         error = true;
         showError(1, "Password is invalid. It must be between 8-16 characters");
-        loginForm.addEventListener("keydown", hideError(1));
     }
     
     if(emailDomains.includes(loginId) && !emailRegex.test(loginId))
     {
         error = true;
         showError(0, "Email is invalid");
-        loginForm.addEventListener("keydown", hideError(0));
     }
 
     if (error = true){
@@ -69,3 +66,5 @@ loginForm.addEventListener("submit",function(e){
 
 });
  
+loginForm.addEventListener("keydown", hideError(1));
+loginForm.addEventListener("keydown", hideError(0));
