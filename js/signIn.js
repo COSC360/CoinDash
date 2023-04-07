@@ -23,7 +23,7 @@ function hideError(inputField){
 loginForm.addEventListener("submit",function(e){
     var err = false;
 
-    if(loginId = '' && password == '')
+    if(loginId == '' && password == '')
     {
         err = true;
         showError(errorText[0], "Login ID cannot be empty");
