@@ -1,7 +1,6 @@
 var loginForm = document.forms['loginForm']; // Login Form
-var requiredInput = document.querySelectorAll(".required");
-var loginId = requiredInput[0].value;
-var password = requiredInput[1].value;
+var loginId = loginForm[0].value;
+var password = loginForm[1].value;
 var errorText = document.querySelectorAll(".errorText");
 
 
@@ -45,7 +44,7 @@ loginForm.addEventListener("submit",function(e){
         e.preventDefault();
     }else{
         e.preventDefault();
-        console.log("Form passed !")
+        console.log("Form passed !");
     }
 
 });
