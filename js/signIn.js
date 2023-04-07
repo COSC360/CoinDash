@@ -26,6 +26,7 @@ loginForm.addEventListener("submit",function(e){
     if(loginId == '' && password == '')
     {
         err = true;
+        console.log("1");
         showError(errorText[0], "Login ID cannot be empty");
         showError(errorText[1], "Password cannot be empty");
     }else if(loginId == '')
