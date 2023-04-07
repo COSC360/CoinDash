@@ -917,6 +917,7 @@ function retrieveCommentCountChartData($con){
     }  
 }
 
+
 function retrieveUserStatusChartData($con){
     $chartDataSQL = "SELECT `status`, COUNT(id) AS userCount FROM `userAuth` GROUP BY `status`";
 
@@ -950,6 +951,50 @@ function retrieveUserStatusChartData($con){
         return false;
     }      
 }
+
+function retrieveUserActivityChartData($con){
+    $chartDataSQL = "SELECT userId, activity, COUNT(userid) AS userCount FROM `userActivity` GROUP BY userId, activity";
+
+    $chartDataStmt = mysqli_stmt_init($con); 
+
+    $activityUserArray = array();
+    $activityTypeDataArray = array();
+    $activityCountDataArray = array();
+
+    if (!mysqli_stmt_prepare($chartDataStmt, $chartDataSQL)){
+        $_SESSION['statusMsg'] = "Unable to prepare the SQL statement.";
+        return false;
+    }
+
+    // Execute prepared statement
+    mysqli_stmt_execute($chartDataStmt);
+
+    $results = mysqli_stmt_get_result($chartDataStmt);
+
+    if($rows = $results -> fetch_all(MYSQLI_ASSOC)){
+        mysqli_stmt_close($chartDataStmt);
+        
+        foreach($rows as $row){
+            if($row['userId'] == "0"){
+                array_push($activityUserArray , "Unregistered User");
+                array_push($activityTypeDataArray , $row['activity']);
+                array_push($activityCountDataArray, $row['userCount']);
+            }else{
+                array_push($activityUserArray , "Registered User");
+                array_push($activityTypeDataArray , $row['activity']);
+                array_push($activityCountDataArray, $row['userCount']);
+            }
+        }
+
+        $_SESSION['activityUserArray'] = $activityUserArray;
+        $_SESSION['activityTypeDataArray'] = $activityTypeDataArray;
+        $_SESSION['activityCountDataArray'] = $activityCountDataArray;
+    }else{
+        mysqli_stmt_close($chartDataStmt);
+        return false;
+    }      
+}
+
 
 function uploadActivity($con, $userId, $activity){
     $activitySql = "INSERT INTO userActivity (userId, activity) VALUES (?, ?)";

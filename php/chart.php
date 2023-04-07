@@ -5,11 +5,13 @@
   retrieveRegSourceChartData($con);
   retrieveCommentCountChartData($con);
   retrieveUserStatusChartData($con);  
+  retrieveUserActivityChartData($con);
 ?>  
   <div class ="canvasData">
     <canvas id="doughnut"></canvas>
     <canvas id="bar"></canvas>
     <canvas id="pie"></canvas>
+    <canvas id="pie-2"></canvas>
   </div>
 
   <?php
@@ -19,10 +21,17 @@
 
     var xValues = [];
     var yValues = [];
+
     var xCommentValues = [];
     var yCommentValues = [];
+
     var xStatusValues = [];
-    var yStatusValues = [];";
+    var yStatusValues = [];
+
+    var userTypeValues = [];
+    var activityTypeValues = [];
+    var activityCountValues = [];
+    ";
     foreach($_SESSION['regSourceDataArray'] as $row){
         echo "xValues.push(\"".$row."\");";
     }
@@ -42,6 +51,18 @@
     }
     foreach($_SESSION['statusCountDataArray'] as $row){
         echo "yStatusValues.push(\"".$row."\");";
+    }
+
+    foreach($_SESSION['activityUserArray'] as $row){
+      echo "userTypeValues.push(\"".$row."\");";
+    }
+
+    foreach($_SESSION['activityTypeDataArray'] as $row){
+      echo "activityTypeValues.push(\"".$row."\");";
+    }
+
+    foreach($_SESSION['activityCountDataArray'] as $row){
+    echo "activityCountValues.push(\"".$row."\");";
     }
   echo 
     "
@@ -101,6 +122,24 @@
         title: {
           display: true,
           text: \"User Status Data\"
+        }        
+      }
+    });
+
+    new Chart(\"pie-2\", {
+      type: \"pie\",
+      data: {
+        labels: userTypeValues,
+        datasets: [{
+          backgroundColor: chartColors,
+          data: activityCountValues
+        }]
+      },
+      options: {
+        legend: {display: true, position: 'right', align: 'center'},
+        title: {
+          display: true,
+          text: \"User Activity Data\"
         }        
       }
     });
