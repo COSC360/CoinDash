@@ -48,7 +48,7 @@
                         <form name = "loginForm" id ="loginForm" action= "processLogin.php" method="GET" required>
                             <div class="item-1">
                                 <label>Username or Email</label><br>
-                                <i class="fa-sharp fa-solid fa-circle-xmark"></i>     
+                                <i class="fa-sharp fa-solid fa-circle-xmark errorLogo"></i>     
                                 <input type = "text" name = "loginId" id= "loginId" placeholder="What’s Your Registered Username or Email?" class="required" />
                                 <p class="errorText"></p>
                             </div>

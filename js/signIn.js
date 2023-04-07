@@ -13,6 +13,7 @@ const emailDomains = ["gmail","outlook","yahoo"];
 function showError(i,errMsg){
     errorTextElement[i].innerText = errMsg;
     errorTextElement[i].classList.add("showError");
+    errorLogoElement[i].classList.add("showError");
 }
 
 function hideError(inputField){
