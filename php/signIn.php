@@ -46,7 +46,7 @@
                         </div>
                     </div>  
                     <div class="login-box">
-                        <form name = "loginForm" id ="loginForm" action= "processLogin.php" method="POST" required>
+                        <form name = "loginForm" id ="loginForm" action= "processLogin.php" method="POST">
                             <div class="item-1">
                                 <label>Username or Email</label><br>
                                 <i class="fa-sharp fa-solid fa-circle-xmark fa-bounce errorLogoLogin"></i>     
@@ -71,8 +71,8 @@
         </main>
     <?php
         include "footer.php";
-        if(isset($_GET["errmsg"])){
-            echo "<script>alert('".$_GET["errmsg"]."');</script>";
+        if(isset($_POST["errmsg"])){
+            echo "<script>alert('".$_POST["errmsg"]."');</script>";
         }
     ?>
     <script src="../js/signIn.js"></script>
