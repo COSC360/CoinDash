@@ -65,6 +65,7 @@
 .reply-form {
     width: 100%;
     margin-top: 0.5em;
+    display: block;
 }
 
 .reply-form textarea {
@@ -80,6 +81,10 @@
     cursor: pointer;
     display: inline-block;
 }
+
+.collapsed form {
+    display: none;
+} 
 
 .delete-btn {
     color: red;
