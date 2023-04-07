@@ -1,5 +1,7 @@
 <?php
     session_start();
+    include 'DBconnection.php';
+    include 'modules.php';
 
     if(isset($_SESSION["id"])){
         $userId = $_SESSION["id"];
