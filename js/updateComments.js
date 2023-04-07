@@ -39,14 +39,15 @@ function addReplyEventListeners(){
         var comment = btn.parentElement;
         btn.addEventListener("click", () => {
             if (comment.classList.contains("collapsed")){
+                replyBtns.forEach(btn => {
+                    btn.parentElement.classList.add("collapsed");
+                })
                 comment.classList.remove("collapsed");
-                openedForms++;
+                openedForms = 1;
             } else {
                 comment.classList.add("collapsed");
-                openedForms--;
-                if (openedForms === 0){
-                    updateData(coinId);
-                }
+                openedForms = 0;
+                updateData(coinId);
             }
         })
     })
