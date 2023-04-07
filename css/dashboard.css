@@ -40,6 +40,16 @@
 }
 
 #breadcrumbCurrent{
-    color: #007eff;
+    /* color: #007eff; */
     font-weight: 700;
+}
+
+#add-module-btn{
+    width: 100%;
+    max-width: 10em;
+    margin: 0;
+    padding: 0.5em auto;
+
+    background-color: var(--Black-1);
+    color: var(--White-1);
 }
