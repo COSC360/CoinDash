@@ -151,6 +151,7 @@ function uploadDashboard($con, $userId, $dashboardJSON){
     $moduleSql = "INSERT INTO module (block_id, dashboard_id, user_id, category, fiat, sort) VALUES (?, ?, ?, ?, ?, ?);";
 
     try {
+        uploadActivity($con, $userId, "editDashboard");
         $dashboardObject = json_decode($dashboardJSON);
         $blocks = $dashboardObject -> blocks;
 
@@ -305,6 +306,8 @@ function loginUser($con,$loginID,$loginPassword){
         $_SESSION["password"] = $loginPassword;
         $_SESSION["id"] = $rows['id'];
         $_SESSION["profilePicture"] = $rows['profilePicture'];
+
+        uploadActivity($con, $rows['id'], "loggedIn");
 
         //Navigate to admin.php if user is of "admin" type
         if($rows['userType'] == 'admin'){
@@ -887,7 +890,6 @@ function retrieveUserStatusChartData($con){
 }
 
 function uploadActivity($con, $userId, $activity){
-    echo "<script>console.log('Here2')</script>";
     $activitySql = "INSERT INTO userActivity (userId, activity) VALUES (?, ?)";
 
     $activityStmt = mysqli_stmt_init($con);

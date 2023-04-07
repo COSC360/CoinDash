@@ -32,6 +32,9 @@ if(!isset($_GET["coinId"])){
         include "dashboardHeader.php";
         include "DBconnection.php";
         include "sql-queries.php";
+
+        $userId = isset($_SESSION["id"]) ? $_SESSION["id"] : 0;
+        uploadActivity($con, $userId, "viewCoin");
     ?>
     <article class="panel full-card">
         <?php
