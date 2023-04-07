@@ -278,7 +278,7 @@ function uploadComment($con, $userId, $coinId, $text, $parentId){
 }
 
 function retrievePostComment($con, $coinId){
-    $commentSql = "SELECT c.id, coin_id, text, parentId, username, timestamp FROM comment c JOIN userAuth u ON c.user_id = u.id WHERE coin_id = ? AND parentId IS NULL ORDER BY timestamp DESC";
+    $commentSql = "SELECT c.id, coin_id, text, parentId, username, timestamp FROM comment c JOIN userAuth u ON c.user_id = u.id WHERE coin_id = ? AND parentId IS NULL ORDER BY timestamp";
     $commentStmt = mysqli_stmt_init($con);
     if (!mysqli_stmt_prepare($commentStmt, $commentSql)){
         return false;
@@ -299,7 +299,7 @@ function retrievePostComment($con, $coinId){
 }
 
 function retrieveUserComment($con, $userId){
-    $userCommentSql = "SELECT c.id AS `commentId`, coin_id, `text`, parentId, u.id AS `userId`, `timestamp` FROM comment c JOIN userAuth u ON c.user_id = u.id WHERE u.id = ? ORDER BY timestamp DESC";
+    $userCommentSql = "SELECT c.id AS `commentId`, coin_id, `text`, parentId, u.id AS `userId`, `timestamp` FROM comment c JOIN userAuth u ON c.user_id = u.id WHERE u.id = ? ORDER BY timestamp";
     $userCommentStmt = mysqli_stmt_init($con);
     if (!mysqli_stmt_prepare($userCommentStmt, $userCommentSql)){
         return false;
