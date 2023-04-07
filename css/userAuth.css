@@ -346,8 +346,7 @@ select{
   visibility: hidden;
   position: absolute;
   color: #ff0000;
-  top: 2em;
-  left: 19em;
+  right: 0.5em;
   z-index: 10;
 }
 
