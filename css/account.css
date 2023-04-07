@@ -155,7 +155,8 @@ column-gap: 1.5em
 .commentHistory{
     min-width: 10%; 
     background-color: #bdd4e7;
-    background-image: linear-gradient(315deg, #bdd4e7 0%, #8693ab 74%);    
+    background-image: linear-gradient(315deg, #bdd4e7 0%, #8693ab 74%);
+    border-radius: 0.5em;    
     height: 14em;
     margin: 0em 2em;
     overflow-y: auto;
