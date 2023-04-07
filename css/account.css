@@ -151,12 +151,6 @@ column-gap: 1.5em
     opacity: 30%;
 }
 
-.commentHistory{
-    min-width: 10%; 
-    border-radius: 0.5em;    
-    height: 45vh;
-    margin: 0em 2em;
-}
 
 .commentHistoryTitle{
     padding: 0.25em 1em 0.25em 1em;
