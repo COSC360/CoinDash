@@ -1,5 +1,6 @@
 import { uploadDashboard } from "./uploadDashboard.js";
 import { buildModule } from "./parser.js";
+import { fiatLabels, fiats, sortLabels, sortValues } from "./utils.js";
 
 var module_settings_btns = document.querySelectorAll(".module-settings-btn");
 var modules = document.querySelectorAll(".module");
@@ -120,13 +121,8 @@ modules.forEach(module => {
 
 addModuleBtn.addEventListener("click", (e) => {
     var dashboardDom = document.getElementById("dashboard");
-    
     var newBlock = generateDefaultBlock();
-    console.log(dashboardDom);
-    // dashboardDom.appendChild(newBlock);
     dashboardDom.innerHTML += newBlock;
-    // Generate Full Block HTML
-    // Add block HTML as last child
 })
 
 toggleEditBtn.addEventListener("click", (e) => {
@@ -220,9 +216,9 @@ function setModuleHTML(fiat, category, sort, target){
 }
 
 function generateDefaultBlock(){
-    var fiat = "usd";
-    var category = "Ethereum Ecosystem";
-    var sort = "views DESC";
+    var defaultFiat = "usd";
+    var defaultCategory = "Ethereum Ecosystem";
+    var defaultSort = "views DESC";
 
     var newBlock = `
         <div class="block panel">
@@ -232,12 +228,16 @@ function generateDefaultBlock(){
                     <div class="api-category">".$dashboardModules[$currentCount]["category"]."</div>
                 </div>
                 <div class="dropdowns">
-                    <select class="dropdown fiat">";
-
-                    </select>
-                    <select class="dropdown sort">";
-                        
-                    </select>
+                    <select class="dropdown fiat">" `
+                        for (let i = 0; i < fiats.length; i++){
+                            newBlock += `<option value=${fiats[i]} ${fiats[i] == defaultFiat ? "selected" : ""}> ${fiatLabels[i]} </option>`
+                        }
+                    `</select>
+                    <select class="dropdown sort">"`
+                        for (let i = 0; i < sortValues.length; i++){
+                            newBlock += `<option value=${sortValues[i]} ${sortValues[i] == defaultSort ? "selected" : ""}> ${sortLabels[i]} </option>`
+                        }
+                    `</select>
                 </div>
             </div>
             <div class="module-gallery">";
