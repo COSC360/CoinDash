@@ -25,24 +25,18 @@ loginForm.addEventListener("submit",function(e){
         loginIdErrorText = "Login Id cannot be empty";
         passwordErrorText = "Password cannot be empty";
         errState = true;
-    }else{
-        errState = false;
     }
 
     if(loginId == null){
         loginIdErrorText = "Login Id cannot be empty";
         errState = true;
-    }else{
-        errState = false;
     }
 
     if(password == null){
         passwordErrorText = "Password cannot be empty";
         errState = true;
-    }else{
-        errState = false;
     }
-
+    
     if(errState = true){
         displayError(true);
         e.preventDefault();
