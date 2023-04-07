@@ -60,7 +60,6 @@ loginForm.addEventListener("submit",function(e){
 
     console.log(error);
     if (error == true){
-        console.log("Form did not submit !");
         e.preventDefault();
     }
 

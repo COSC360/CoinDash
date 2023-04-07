@@ -91,7 +91,7 @@ registerForm.addEventListener("submit",function(e){
     }
     
 
-    if (error = true){
+    if (error == true){
         e.preventDefault();
     }
 
