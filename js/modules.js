@@ -212,14 +212,26 @@ function setModuleHTML(fiat, category, sort, target){
         success: function(response) {
             var coinData = JSON.parse(response);
             let newModule = "";
-            
+            var coinIndex = 0;
             coinData.forEach((coin) => {
+                coinIndex ++;
                 newModule += `
                     <div class="product-card">
                         <div class="icon-container">
                             <a href="individual.php?coinId=${coin.Id}" class="icon-overlay">
                                 <img src="../svgs/goto.svg">
-                            </a>
+                            </a>`
+                if (coinIndex <= 5){
+                    newModule += `
+                        <div class=\"fire-overlay\">
+                            <div class=\"corpus diamond\">
+                                <div class=\"diamond diamond-inner diamond-right\"></div>
+                                <div class=\"diamond diamond-inner diamond-left\"></div>
+                            </div>
+                        </div>
+                        `
+                }
+                newModule += `
                         </div>
                             <div class="product-image-mask">
                             <div class="product-image" style="background-image: url(${coin.img_url});"></div>
