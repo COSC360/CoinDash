@@ -1,14 +1,13 @@
 <?php
     include "DBconnection.php";
     include "sql-queries.php";
-
+    echo "<script>console.log('Hello')</script>";
     $coinId = $_POST["coinId"];
     $comments = retrievePostComment($con, $coinId);
 
     $output = "";
-
+    echo "<script>console.log('Hello')</script>";
     foreach($comments as $comment) {
-        echo "<script>console.log('Hello')</script>";
         $output .= getCommentHTML($con, $comment);
     }
 
