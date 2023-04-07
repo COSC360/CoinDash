@@ -669,7 +669,7 @@ function disableUser($con, $userID){
 
         // Set parameters for prepared statement
         mysqli_stmt_bind_param($updateStmt, "si", $userStatus, $userID);
-
+        
         // Execute prepared statement
         mysqli_stmt_execute($updateStmt);
 
@@ -882,5 +882,23 @@ function retrieveUserStatusChartData($con){
         return false;
     }      
 }
+
+function uploadActivity($con, $userId, $activity){
+    $activitySql = "INSERT INTO userActivity (userId, activity) VALUES (?, ?)";
+
+    $activityStmt = mysqli_stmt_init($con);
+
+    if (!mysqli_stmt_prepare($activityStmt, $activitySql)){
+        return false;
+    }
+
+    mysqli_stmt_bind_param($activityStmt, "is", $userId, $activity);
+    if (mysqli_stmt_execute($activityStmt)){
+        return true;
+    } else {
+        return false;
+    }
+}
+
 ?>
 

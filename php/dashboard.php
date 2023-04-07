@@ -54,7 +54,10 @@ session_start();
                 include "moduleModal.php";
 
                 // Row 1 reserved for guest dashboard
-                $userId = isset($_SESSION["Id"]) ? $_SESSION["Id"] : 0;
+                $userId = isset($_SESSION["id"]) ? $_SESSION["id"] : 0;
+
+                uploadActivity($con, $userId, "viewDashboard");
+
                 $dashboardModules = retrieveDashboard($con, $userId);
                 $moduleCount = sizeof($dashboardModules);
                 $currentCount = 0;
