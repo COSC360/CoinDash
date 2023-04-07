@@ -59,7 +59,7 @@
                                 <p class="errorTextLogin"></p>
                             </div>
                             <div class="item-3">
-                                <input type="reset" value="Reset Form" />
+                                <input type="reset" value="Reset Form" id="loginReset" />
                             </div>
                             <div class="item-4">
                                 <input type="submit" name = "loginSubmit" id = "loginSubmit" value ="Login" />

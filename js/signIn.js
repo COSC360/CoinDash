@@ -1,5 +1,6 @@
 const loginForm = document.forms['loginForm']; // Login Form
 const requiredInput = document.querySelectorAll(".required");
+const resetBtn = document.getElementById("loginReset");
 let errorTextElement = document.querySelectorAll(".errorTextLogin");
 let errorLogoElement = document.querySelectorAll(".errorLogoLogin");
 
@@ -63,6 +64,6 @@ loginForm.addEventListener("submit",function(e){
 });
  
 for(var i = 0; i < requiredInput.length; i++){
-    requiredInput[i].addEventListener("reset",hideError(i));
+    resetBtn.addEventListener("click",hideError(i));
 }
 

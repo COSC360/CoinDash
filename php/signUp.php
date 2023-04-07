@@ -94,7 +94,7 @@
                     </div>      
 
                     <div class="item-7">
-                        <input type="reset" value="Reset Form">
+                        <input type="reset" value="Reset Form"  id="registerReset" >
                     </div>
 
                     <div class = "item-8">
