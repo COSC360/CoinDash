@@ -11,7 +11,7 @@
 
     $coinId = "axie-infinity";
     $text = "NEW COOOMENT";
-    $parentId = null;
+    $parentId = 27;
 
     $userId = 5;
     uploadComment($con, $userId, $coinId, $text, $parentId);
