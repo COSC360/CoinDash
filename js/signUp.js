@@ -15,7 +15,6 @@ function showError(i,errMsg){
     errorLogoElement[i].classList.add("showError");
 }
 function hideError(){
-    console.log("Form reset !");
     for(var i = 0; i < errorTextElement.length; i++){
         if(errorTextElement[i].classList.contains("showError")){
             errorTextElement[i].classList.remove("showError");
