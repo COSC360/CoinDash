@@ -49,9 +49,7 @@ loginForm.addEventListener("submit",function(e){
     {
         error = true;
         showError(1, "Password cannot be empty");
-    }
-    
-    if(!passwordRegex.test(password))
+    }else if(!passwordRegex.test(password))
     {
         error = true;
         showError(1, "Password is invalid. It must be between 8-16 characters");
