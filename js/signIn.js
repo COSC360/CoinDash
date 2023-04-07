@@ -57,12 +57,11 @@ loginForm.addEventListener("submit",function(e){
         showError(0, "Email is invalid");
     }
 
-    console.log(error);
     if (error == true){
         e.preventDefault();
     }
 
 });
  
-requiredInput[0].addEventListener("keydown", hideError(0));
-requiredInput[1].addEventListener("keydown", hideError(1));
+requiredInput[0].addEventListener("change", hideError(0));
+requiredInput[1].addEventListener("change", hideError(1));
