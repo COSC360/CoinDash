@@ -41,7 +41,7 @@
                             </div>
                         </div>
                         <a href=\"dashboard.php\">Dashboard</a>
-                        <a href=\"dashboard.php\">My Account</a>";";   
+                        <a href=\"account.php\">My Account</a>";   
                     }else{
                         echo
                         "
