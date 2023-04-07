@@ -40,13 +40,13 @@ function addReplyEventListeners(){
         btn.addEventListener("click", () => {
             if (comment.classList.contains("collapsed")){
                 comment.classList.remove("collapsed");
+                openedForms++;
+            } else {
+                comment.classList.add("collapsed");
                 openedForms--;
                 if (openedForms === 0){
                     updateData(coinId);
                 }
-            } else {
-                comment.classList.add("collapsed");
-                openedForms++;
             }
         })
     })
