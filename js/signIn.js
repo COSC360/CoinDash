@@ -57,8 +57,6 @@ loginForm.addEventListener("submit",function(e){
 
 });
  
-
-window.onload() = showError;
 // function validEntry(){
 
 // }
