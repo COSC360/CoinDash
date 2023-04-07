@@ -96,7 +96,7 @@ session_start();
                                     echo 
                                     "<div class=\"product-card\">
                                         <div class=\"icon-container\">
-                                            <a class=\"icon-overlay\" onclick=navigateToIndividualPage(\"".$coin["Id"]."\")>
+                                            <a href=\"individual.php?coinId=".$coin["Id"]."\" class=\"icon-overlay\">
                                                 <img src=\"../svgs/goto.svg\">
                                             </a>
                                         </div>

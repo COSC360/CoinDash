@@ -8,9 +8,7 @@ function retrieveAllCoins($con){
     $stmt = mysqli_stmt_init($con);
 
     if (!mysqli_stmt_prepare($stmt, $sql)){
-        // TODO:
-        // header("location: REPLACE LATER");
-        exit();
+        return false;
     }
     
     // Execute prepared statement
@@ -34,9 +32,7 @@ function retrieveCoinsByCategory($con, $fiat, $category, $sort, $perPage, $page)
                     "price_change_200d DESC", "price_change_200d", "price_change_1yr DESC", "price_change_1yr");
 
     if (!in_array($sort, $validSortValues)){
-        // TODO:
-        // header("location: REPLACE LATER");
-        exit();
+        return false;
     }
 
     $sql = "SELECT * FROM coin WHERE id IN (SELECT coin FROM coinCategory WHERE category = ?) ORDER BY ".$sort." LIMIT ? OFFSET ?;";
@@ -46,9 +42,7 @@ function retrieveCoinsByCategory($con, $fiat, $category, $sort, $perPage, $page)
     $stmt = mysqli_stmt_init($con);
     
     if (!mysqli_stmt_prepare($stmt, $sql)){
-        // TODO:
-        // header("location: REPLACE LATER");
-        exit();
+        return false;
     }
     
     $offset = ($page - 1) * $perPage;
@@ -75,9 +69,7 @@ function retrieveCoinById($con, $coinId){
     $stmt = mysqli_stmt_init($con);
     
     if (!mysqli_stmt_prepare($stmt, $sql)){
-        // TODO:
-        // header("location: REPLACE LATER");
-        exit();
+        return false;
     }
 
     // Set parameters for prepared statement
@@ -105,9 +97,7 @@ function retrieveCoinByLike($con, $like){
     $stmt = mysqli_stmt_init($con);
     
     if (!mysqli_stmt_prepare($stmt, $sql)){
-        // TODO:
-        // header("location: REPLACE LATER");
-        exit();
+        return false;
     }
     
     $likePattern = "%".$like."%";
@@ -136,10 +126,7 @@ function retrievePossibleCategories($con){
     $stmt = mysqli_stmt_init($con);
 
     if (!mysqli_stmt_prepare($stmt, $sql)){
-        // TODO:
-        echo "<script>console.log('hasdasdi')</script>";
-        // header("location: REPLACE LATER");
-        exit();
+        return false;
     }
 
     // Execute prepared statement
@@ -169,9 +156,7 @@ function uploadDashboard($con, $userId, $dashboardJSON){
 
         $dashboardStmt = mysqli_stmt_init($con);
         if (!mysqli_stmt_prepare($dashboardStmt, $dashboardSql)){
-            // TODO:
-            // header("location: REPLACE LATER");
-            exit();
+            return false;
         }
 
         mysqli_stmt_bind_param($dashboardStmt, "i", $userId);
@@ -185,9 +170,7 @@ function uploadDashboard($con, $userId, $dashboardJSON){
             $modules = $block -> modules;
             $blockStmt = mysqli_stmt_init($con);
             if (!mysqli_stmt_prepare($blockStmt, $blockSql)){
-                // TODO:
-                // header("location: REPLACE LATER");
-                exit();
+                return false;
             }
 
             mysqli_stmt_bind_param($blockStmt, "ii", $dashboardId, $userId);
@@ -204,9 +187,7 @@ function uploadDashboard($con, $userId, $dashboardJSON){
 
                 $moduleStmt = mysqli_stmt_init($con);
                 if (!mysqli_stmt_prepare($moduleStmt, $moduleSql)){
-                    // TODO:
-                    // header("location: REPLACE LATER");
-                    exit();
+                    return false;
                 }
                 mysqli_stmt_bind_param($moduleStmt, "iiisss", $blockId, $dashboardId, $userId, $category, $fiat, $sort);
                 mysqli_stmt_execute($moduleStmt); 
@@ -214,9 +195,7 @@ function uploadDashboard($con, $userId, $dashboardJSON){
             }
         }
     } catch (Exception $e){
-        // TODO:
-        echo "Failed";
-        echo $e;
+        return false;
     }
 }
 
@@ -230,9 +209,7 @@ function deleteDashboard($con, $userId){
     $moduleStmt = mysqli_stmt_init($con);
 
     if (!mysqli_stmt_prepare($dashboardStmt, $dashboardSql) || !mysqli_stmt_prepare($blockStmt, $blockSql) || !mysqli_stmt_prepare($moduleStmt, $moduleSql)){
-        // TODO:
-        // header("location: REPLACE LATER");
-        exit();
+        return false;
     }
 
     // Set parameters for prepared statement
@@ -250,15 +227,46 @@ function retrieveDashboard($con, $userId){
 
     $moduleStmt = mysqli_stmt_init($con);
     if (!mysqli_stmt_prepare($moduleStmt, $moduleSql)){
-        // TODO:
-        // header("location: REPLACE LATER");
-        exit();
+        return false;
     }
 
     mysqli_stmt_bind_param($moduleStmt, "i", $userId);
     mysqli_stmt_execute($moduleStmt);
 
     $result = mysqli_stmt_get_result($moduleStmt);
+
+    if ($rows = $result -> fetch_all(MYSQLI_ASSOC)){
+        // mysqli_stmt_close();
+        return $rows; 
+    } else {
+        // mysqli_stmt_close();
+        return false;
+    }
+}
+
+function uploadComment($con, $userId, $coinId, $text){
+    $commentSql = "INSERT INTO comment (coin_id, user_id, text) VALUES (?, ?, ?);";
+
+    $commentStmt = mysqli_stmt_init($con);
+    if (!mysqli_stmt_prepare($commentStmt, $commentSql)){
+        return false;
+    }
+    mysqli_stmt_bind_param($commentStmt, "sss", $coinId, $userId, $text);
+    mysqli_stmt_execute($commentStmt);
+    mysqli_stmt_close($commentStmt);
+}
+
+function retrieveComment($con, $coinId){
+    $commentSql = "SELECT * FROM comment c JOIN user_auth u ON c.user_id = u.id WHERE coin_id = ?";
+    $commentStmt = mysqli_stmt_init($con);
+    if (!mysqli_stmt_prepare($commentStmt, $commentSql)){
+        return false;
+    }
+    
+    mysqli_stmt_bind_param($commentStmt, "s", $coinId);
+    mysqli_stmt_execute($commentStmt);
+
+    $result = mysqli_stmt_get_result($commentStmt);
 
     if ($rows = $result -> fetch_all(MYSQLI_ASSOC)){
         // mysqli_stmt_close();
@@ -276,14 +284,12 @@ function loginUser($con,$loginID,$loginPassword){
     $loginStmt = mysqli_stmt_init($con); 
 
     if (!mysqli_stmt_prepare($loginStmt, $loginSQL)){
-        // TODO:
-        // header("location: REPLACE LATER");
         $_SESSION['statusMsg'] = "Unable to prepare the SQL statement.";
-        exit();
+        return false;
     }
 
     // Set parameters for prepared statement
-    mysqli_stmt_bind_param($loginStmt, "ssss", $loginID,md5($loginPassword),$loginID,md5($loginPassword));
+    mysqli_stmt_bind_param($loginStmt, "ssss", $loginID, md5($loginPassword),$loginID, md5($loginPassword));
 
     // Execute prepared statement
     mysqli_stmt_execute($loginStmt);
@@ -323,21 +329,18 @@ function loginUser($con,$loginID,$loginPassword){
 
 }
 
-function adminLogin($con,$adminLoginID,$adminPassword){
+function adminLogin($con,$adminLoginID, $adminPassword){
     $adminLoginSQL = "SELECT * FROM `userAuth` WHERE  (`email` = ? AND `password` = ?) OR (`username` = ? AND `password` = ?)";
 
     $adminLoginStmt = mysqli_stmt_init($con); 
 
     if (!mysqli_stmt_prepare($adminLoginStmt, $adminLoginSQL)){
-        
-        // TODO:
-        // header("location: REPLACE LATER");
         $_SESSION['adminStatusMsg'] = "Unable to prepare the SQL statement.";
-        exit();
+        return false;
     }
 
     // Set parameters for prepared statement
-    mysqli_stmt_bind_param($adminLoginStmt, "ssss", $adminLoginID,md5($adminPassword),$adminLoginID,md5($adminPassword));
+    mysqli_stmt_bind_param($adminLoginStmt, "ssss", $adminLoginID, md5($adminPassword),$adminLoginID, md5($adminPassword));
 
     // Execute prepared statement
     mysqli_stmt_execute($adminLoginStmt);
@@ -374,10 +377,8 @@ function registerUser($con,$registerUsername,$registerEmail,$registerPassword,$r
     $existingUserStmt = mysqli_stmt_init($con);
 
     if (!mysqli_stmt_prepare($existingUserStmt, $existingUserSQL)){
-        // TODO:
-        // header("location: REPLACE LATER");
         $_SESSION['statusMsg'] = "Unable to prepare the SQL statement.";
-        exit();
+        return false;
     }
 
     // Set parameters for prepared statement
@@ -403,11 +404,8 @@ function registerUser($con,$registerUsername,$registerEmail,$registerPassword,$r
             $registerUserStmt = mysqli_stmt_init($con);
 
             if (!mysqli_stmt_prepare($registerUserStmt, $registerUserSQL)){
-                // TODO:
-                // header("location: REPLACE LATER");
                 $_SESSION['statusMsg'] = "Unable to prepare the SQL statement.";
-                
-                exit();
+                return false;
             }
         
             // Set parameters for prepared statement
@@ -428,11 +426,9 @@ function updateUser($con,$userEmail,$userPassword){
     $existingUserStmt = mysqli_stmt_init($con);
 
     if (!mysqli_stmt_prepare($existingUserStmt, $existingUserSQL)){
-        // TODO:
-        // header("location: REPLACE LATER");
         $statusMsg = "Unable to prepare the SQL statement.";
         echo "<script>window.alert(\"".$statusMsg."\")</script>";
-        exit();
+        return false;
     }
 
     // Set parameters for prepared statement
@@ -453,10 +449,8 @@ function updateUser($con,$userEmail,$userPassword){
         $updateStmt = mysqli_stmt_init($con); 
     
         if (!mysqli_stmt_prepare($updateStmt, $updateSQL)){
-            // TODO:
-            // header("location: REPLACE LATER");
             $_SESSION['statusMsg'] = "Unable to prepare the SQL statement.";
-            exit();
+            return false;
         }
     
     
@@ -477,10 +471,8 @@ function searchByUsername($con, $searchName){
 
     
     if (!mysqli_stmt_prepare($searchStmt, $searchSQL)){
-        // TODO:
-        // header("location: REPLACE LATER");
         $_SESSION['adminStatusMsg'] = "Unable to prepare the SQL statement.";
-        exit();
+        return false;
     }
 
     // Set parameters for prepared statement
@@ -518,10 +510,8 @@ function searchByEmail($con, $searchEmail){
     $searchStmt = mysqli_stmt_init($con); 
     
     if (!mysqli_stmt_prepare($searchStmt, $searchSQL)){
-        // TODO:
-        // header("location: REPLACE LATER");
         $_SESSION['adminStatusMsg'] = "Unable to prepare the SQL statement.";
-        exit();
+        return false;
     }
 
     // Set parameters for prepared statement
@@ -560,10 +550,8 @@ function searchByCommentId($con, $searchCommentId){
 
     
     if (!mysqli_stmt_prepare($searchStmt, $searchSQL)){
-        // TODO:
-        // header("location: REPLACE LATER");
         $_SESSION['adminStatusMsg'] = "Unable to prepare the SQL statement.";
-        exit();
+        return false;
     }
 
     // Set parameters for prepared statement
@@ -601,11 +589,8 @@ function enableUser($con, $userID){
     $existingUserStmt = mysqli_stmt_init($con);
 
     if (!mysqli_stmt_prepare($existingUserStmt, $existingUserSQL)){
-        // TODO:
-        // header("location: REPLACE LATER");
         $_SESSION['adminStatusMsg'] = "Unable to prepare the SQL statement.";
-
-        exit();
+        return false;
     }
 
     // Set parameters for prepared statement
@@ -627,10 +612,8 @@ function enableUser($con, $userID){
     
     
         if (!mysqli_stmt_prepare($updateStmt, $updateSQL)){
-            // TODO:
-            // header("location: REPLACE LATER");
-            $$_SESSION['adminStatusMsg'] = "Unable to prepare the SQL statement.";
-            exit();
+            $_SESSION['adminStatusMsg'] = "Unable to prepare the SQL statement.";
+            return false;
         }
 
         // Set parameters for prepared statement
@@ -658,10 +641,8 @@ function disableUser($con, $userID){
     $existingUserStmt = mysqli_stmt_init($con);
 
     if (!mysqli_stmt_prepare($existingUserStmt, $existingUserSQL)){
-        // TODO:
-        // header("location: REPLACE LATER");
         $_SESSION['adminStatusMsg'] = "Unable to prepare the SQL statement.";
-        exit();
+        return false;
     }
 
     // Set parameters for prepared statement
@@ -682,10 +663,8 @@ function disableUser($con, $userID){
 
     
         if (!mysqli_stmt_prepare($updateStmt, $updateSQL)){
-            // TODO:
-            // header("location: REPLACE LATER");
             $_SESSION['adminStatusMsg'] = "Unable to prepare the SQL statement.";
-            exit();
+            return false;
         }
 
         // Set parameters for prepared statement
@@ -711,10 +690,8 @@ function deleteUser($con, $userID){
     $existingUserStmt = mysqli_stmt_init($con);
 
     if (!mysqli_stmt_prepare($existingUserStmt, $existingUserSQL)){
-        // TODO:
-        // header("location: REPLACE LATER");
         $_SESSION['adminStatusMsg'] = "Unable to prepare the SQL statement.";
-        exit();
+        return false;
     }
 
     // Set parameters for prepared statement
@@ -733,10 +710,8 @@ function deleteUser($con, $userID){
 
     
         if (!mysqli_stmt_prepare($deleteStmt, $deleteSQL)){
-            // TODO:
-            // header("location: REPLACE LATER");
             $_SESSION['adminStatusMsg'] = "Unable to prepare the SQL statement.";
-            exit();
+            return false;
         }
 
         // Set parameters for prepared statement
@@ -762,11 +737,8 @@ function saveUser($con, $userID, $username, $password, $email, $comingFrom, $use
     $existingUserStmt = mysqli_stmt_init($con);
 
     if (!mysqli_stmt_prepare($existingUserStmt, $existingUserSQL)){
-        // TODO:
-        // header("location: REPLACE LATER");
         $_SESSION['adminStatusMsg'] = "Unable to prepare the SQL statement.";
-
-        exit();
+        return false;
     }
 
     // Set parameters for prepared statement
@@ -788,10 +760,8 @@ function saveUser($con, $userID, $username, $password, $email, $comingFrom, $use
     
     
         if (!mysqli_stmt_prepare($updateStmt, $updateSQL)){
-            // TODO:
-            // header("location: REPLACE LATER");
             $_SESSION['adminStatusMsg'] = "Unable to prepare the SQL statement.";
-            exit();
+            return false;
         }
 
         // Set parameters for prepared statement
@@ -821,10 +791,8 @@ function retrieveRegSourceChartData($con){
     $regSourceCountDataArray = array();
 
     if (!mysqli_stmt_prepare($chartDataStmt, $chartDataSQL)){
-        // TODO:
-        // header("location: REPLACE LATER");
         $_SESSION['statusMsg'] = "Unable to prepare the SQL statement.";
-        exit();
+        return false;
     }
 
     // Execute prepared statement
@@ -857,10 +825,8 @@ function retrieveCommentCountChartData($con){
     $commentCountDataArray = array();
 
     if (!mysqli_stmt_prepare($chartDataStmt, $chartDataSQL)){
-        // TODO:
-        // header("location: REPLACE LATER");
         $_SESSION['statusMsg'] = "Unable to prepare the SQL statement.";
-        exit();
+        return false;
     }
 
     // Execute prepared statement
@@ -892,10 +858,8 @@ function retrieveUserStatusChartData($con){
     $statusCountDataArray = array();
 
     if (!mysqli_stmt_prepare($chartDataStmt, $chartDataSQL)){
-        // TODO:
-        // header("location: REPLACE LATER");
         $_SESSION['statusMsg'] = "Unable to prepare the SQL statement.";
-        exit();
+        return false;
     }
 
     // Execute prepared statement

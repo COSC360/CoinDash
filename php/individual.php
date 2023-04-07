@@ -3,9 +3,10 @@
 session_set_cookie_params(0);
 session_start();
 
-if($_SESSION['id'] == null){
-    header('location: signIn.php?errmsg=You must be registered to view that page!');
+if(!isset($_GET["coinId"])){
+    header("location: searchPage.php");
 }
+
 ?>
 
 <!DOCTYPE html>
