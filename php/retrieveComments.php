@@ -9,7 +9,7 @@
     $output = "";
 
     foreach($comments as $comment) {
-        $output .= getCommentHTML($con, $comment);
+        $output .= getCommentHTML($con, $comment, 0);
     }
 
     if ($output === ""){
@@ -19,10 +19,10 @@
     }
 
 
-    function getCommentHTML($con, $commentData){
+    function getCommentHTML($con, $commentData, $level){
         $commentHTML = "
             <hr class=\"medium-spacing\">
-            <div class=\"comment\" id=\"comment-1\">
+            <div class=\"comment\" id=\"comment-1\" style=\"margin-left:".($level * 2)."em;\">
                 <div class=\"main-comment\">
                     <div class=\"comment-header\">
                         <img src=\"../images/profile-picture.png\" class=\"profile-picture\">
@@ -37,7 +37,7 @@
         echo "<script>console.log('Hello')</script>";
         if ($replies){
             foreach($replies as $reply) {
-                $commentHTML .= getCommentHTML($con, $reply);
+                $commentHTML .= getCommentHTML($con, $reply, $level + 1);
             }
         }
 
