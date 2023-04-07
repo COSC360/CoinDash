@@ -26,8 +26,6 @@ function hideError(){
 }
 
 registerForm.addEventListener("submit",function(e){
-    e.preventDefault();
-
     const username = requiredInput[0].value;
     const email = requiredInput[1].value;
     const password = requiredInput[2].value;

@@ -26,8 +26,6 @@ function hideError(){
 }
 
 loginForm.addEventListener("submit",function(e){
-    e.preventDefault();
-
     const loginId = requiredInput[0].value;
     const password = requiredInput[1].value;
 
