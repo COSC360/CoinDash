@@ -8,6 +8,7 @@
     $output = "";
 
     foreach($comments as $comment) {
+        echo "<script>console.log('Hello')</script>";
         $output .= getCommentHTML($con, $comment);
     }
 
