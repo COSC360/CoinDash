@@ -1,5 +1,8 @@
 var loginForm = document.forms['loginForm']; // Login Form
 var loginBtn = document.getElementById("loginSubmit"); // Login button
+var requiredInput = document.querySelectorAll(".required");
+var errorText = document.querySelectorAll(".errorText");
+var err = false;
 
 // <i class="fa-sharp fa-solid fa-circle-check" style="color: #11e43b;"></i>
 // <i class="fa-sharp fa-solid fa-circle-xmark" style="color: #ff0000;"></i>
@@ -17,10 +20,6 @@ function hideError(inputField){
 
 
 loginForm.addEventListener("submit",function(e){
-    var requiredInput = document.querySelectorAll(".required");
-    var errorText = document.querySelectorAll(".errorText");
-    var err = false;
-
     var loginId = requiredInput[0].textContent;
     var password = requiredInput[1].textContent;
 
