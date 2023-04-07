@@ -49,6 +49,8 @@ loginForm.addEventListener("submit",function(e){
     }else{
         displayError(false);
     }
+
+    console.log(errState);
 });
  
 function displayError(errState){
