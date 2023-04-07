@@ -31,8 +31,8 @@ loginForm.addEventListener("submit",function(e){
         error = true;
         showError(0, "Login ID cannot be empty");
         showError(1, "Password cannot be empty");
-        loginForm.addEventListener("keydown", hideError(0));
-        loginForm.addEventListener("keydown", hideError(1));
+        requiredInput[0].addEventListener("keydown", hideError(0));
+        requiredInput[1].addEventListener("keydown", hideError(1));
     }
     
     if(loginId == '')
