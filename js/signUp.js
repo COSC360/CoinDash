@@ -69,15 +69,15 @@ registerForm.addEventListener("submit",function(e){
     {
         error = true;
         showError(3, "Re-enter your password");
+    }else if(!passwordRegex.test(password))
+    {
+        error = true;
+        showError(2, "Password is invalid. It must be between 8-16 characters");
     }else if(password != verifyPassword)
     {
         error = true;
         showError(2, "Passwords do not match");
         showError(3, "Passwords do not match");
-    }else if(!passwordRegex.test(password))
-    {
-        error = true;
-        showError(2, "Password is invalid. It must be between 8-16 characters");
     }
     
     if(img == '')
