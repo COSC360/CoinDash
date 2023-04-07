@@ -37,7 +37,7 @@
                                 </form>
                             </div>
                         </div>
-                        <a href=\"dashboard.php\">Dashboard</a>  
+                        <a href=\"dashboard.php\">Dashboard</a> 
                         <a href=\"admin.php\">Admin Portal</a>";
                     }elseif(isset($_SESSION['id']) && $_SESSION['userType'] == "user"){
                         echo
