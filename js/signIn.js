@@ -20,34 +20,34 @@ loginForm.addEventListener("submit",function(e){
     let loginId = requiredInput[0].value;
     let password = requiredInput[1].value;
 
-    var err = false;
+    var error = false;
 
-    console.log(err);
+    console.log(error);
 
     if(loginId == '' && password == '')
     {
-        err = true;
+        error = true;
         showError(errorText[0], "Login ID cannot be empty");
         showError(errorText[1], "Password cannot be empty");
     }else if(loginId == '')
     {
-        err = true;
+        error = true;
         showError(errorText[0], "Login ID cannot be empty");
     }else if(password == '')
     {
-        err = true;
+        error = true;
         showError(errorText[1], "Password cannot be empty");
     }
 
-    console.log(err);
+    console.log(error);
     
-        if (err = true){
-            e.preventDefault();
-            console.log("Form did not pass !");
-        }else{
-            e.preventDefault();
-            console.log("Form passed !");   
-        }
+    if (error = true){
+        e.preventDefault();
+        console.log("Form did not pass !");
+    }else{
+        e.preventDefault();
+        console.log("Form passed !");   
+    }
 
 });
  
