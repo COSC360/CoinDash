@@ -22,6 +22,7 @@
     <link rel="stylesheet" href="../css/header-footer.css">
     <link rel="stylesheet" href="../css/module.css">
     <link rel="stylesheet" href="../css/userAuth.css">
+    <link rel="stylesheet" href="../css/alert.css">
     <link rel="icon" href="../images/sitelogo.png" type="image/icon type">
     <script src="https://kit.fontawesome.com/e6e0351429.js" crossorigin="anonymous"></script>
     <script src="../js/navigation.js"></script>

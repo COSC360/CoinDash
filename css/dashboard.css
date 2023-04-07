@@ -56,13 +56,3 @@
     background-color: var(--Black-1);
     color: var(--White-1);
 }
-
-.ui-draggable-handle{
-    color: white;
-    background-color: #990000;
-    background-image: linear-gradient(147deg, #990000 0%, #ff0000 74%);
-}
-
-.ui-widget-content{
-    background: #dfdfdf;
-}
