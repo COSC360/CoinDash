@@ -96,3 +96,8 @@ registerForm.addEventListener("submit",function(e){
 });
 
 
+registerForm.addEventListener("reset",function(e){
+    for(var i = 0; i < requiredInput.length; i++){
+        hideError(i);
+    }
+});

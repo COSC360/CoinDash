@@ -63,5 +63,7 @@ loginForm.addEventListener("submit",function(e){
 });
 
 loginForm.addEventListener("reset",function(e){
-    console.log("hi");
+    for(var i = 0; i < requiredInput.length; i++){
+        hideError(i);
+    }
 });
