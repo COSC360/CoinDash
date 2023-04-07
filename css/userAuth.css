@@ -328,6 +328,7 @@ select{
 }
 
 .showError{
+  margin-top: 0.25em;
   color: red;
 }
 
