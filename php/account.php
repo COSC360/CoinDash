@@ -68,8 +68,8 @@
                 </form>
             </div>
         </div>
+        <h1 class="commentHistoryTitle">Comment History</h1>
         <div class = "commentHistory">
-            <h1>Comment History</h1>
             <div class = "commentHistoryArea">
                 <?php include 'retrieveUserComment.php'?>
             </div>

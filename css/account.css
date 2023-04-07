@@ -159,7 +159,7 @@ column-gap: 1.5em
     overflow-y: auto;
 }
 
-.commentHistory h1{
+.commentHistoryTitle{
     padding: 0.25em 1em 0.25em 1em;
     font-size: 1.5em;
     color: white;
@@ -171,7 +171,6 @@ column-gap: 1.5em
 .commentHistoryArea{
     margin: 1em 2em 0em 0em;
     background-color: rgb(59, 59, 59);
-    padding: 0.5em;
     color: white;
     display: flex;
     flex-direction: column;
@@ -180,5 +179,9 @@ column-gap: 1.5em
 }
 
 .main-comment{
-    margin: 1.5em;
+    margin: 1em 3em 0em 2em;
+    background: #545454;
+    color: #f3f3f3;
+    padding: 1em;
+    border-radius: 1em;
 }
