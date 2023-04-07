@@ -10,13 +10,13 @@ const passwordRegex = /^[a-zA-Z]\w{8,16}$/; //Simple password expression. The pa
 const emailRegex = /^(.+)@([^\.].*)\.([a-z]{2,})$/; //Email validation based on current standard naming rules
 const emailDomains = ["gmail","outlook","yahoo"];
 
-function showError(i,errMsg){
+window.onload() = function showError(i,errMsg){
     errorTextElement[i].innerText = errMsg;
     errorTextElement[i].classList.add("showError");
     errorLogoElement[i].classList.add("showError");
 }
 
-function hideError(inputField){
+window.onload() = function hideError(inputField){
 
 }
 
@@ -25,8 +25,6 @@ loginForm.addEventListener("submit",function(e){
 
     const loginId = requiredInput[0].value;
     const password = requiredInput[1].value;
-    console.log(loginId);
-    console.log(password);
 
     var error = false;
     if(loginId == '' && password == '')
@@ -49,7 +47,7 @@ loginForm.addEventListener("submit",function(e){
     }else if(emailDomains.includes(loginId) && !emailRegex.test(loginId))
     {
         error = true;
-        showError(errorTextElement[1], "Email is invalid");
+        showError(errorTextElement[0], "Email is invalid");
     }
 
     if (error = true){
