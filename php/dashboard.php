@@ -59,8 +59,9 @@ session_start();
                 $moduleCount = sizeof($dashboardModules);
                 $currentCount = 0;
                 $previousBlock = $dashboardModules[$currentCount]["block_id"];
-                echo "<script>console.log('Hello')</script>";
+                
                 while ($currentCount < $moduleCount){
+                    echo "<script>console.log('".$currentCount."')</script>";
                     echo "<div class=\"block panel\">";
                     while ($currentCount < $moduleCount){
                         if ($previousBlock != $dashboardModules[$currentCount]["block_id"]){
