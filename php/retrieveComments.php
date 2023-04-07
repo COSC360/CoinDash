@@ -1,12 +1,10 @@
 <?php
-    echo "<script>console.log('aasdasd')</script>";
     include "DBconnection.php";
     include "sql-queries.php";
     $coinId = $_POST["coinId"];
     $comments = retrievePostComment($con, $coinId);
-
+    echo $coinId;
     $output = "";
-    echo "<script>console.log('Hello')</script>";
     foreach($comments as $comment) {
         $output .= getCommentHTML($con, $comment);
     }
