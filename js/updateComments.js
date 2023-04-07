@@ -21,7 +21,8 @@ function updateData(coinId){
         success: function(response) {
             commentArea.innerHTML = response;
             addReplyEventListeners();
-            setTimeout(updateData(coinId), 10000000)
+            console.log("working");
+            setTimeout(updateData(coinId), 10000)
         }
     })
 }
