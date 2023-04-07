@@ -37,7 +37,7 @@
                     <div class="login-info">
                         <h1>Home/</h1>
                         <h2>Sign In</h2>
-                        <p>CoinDash is a cryptocurrency price tracking website that allows users to monitor the real-time prices of various cryptocurrencies. With its user-friendly interface and customizable alerts, CoinDash offers a convenient way for crypto enthusiasts and investors to stay up-to-date with the latest market trends</p>
+                        <p>CoinDash is a modularized cryptocurrency price tracking website with real-time prices, customizable alerts, and a user-friendly interface that provides tools and information for both experienced traders and newcomers.</p>
                         <div class="info-footer">
                             <p><a href="signUp.php">Don’t Have An Account?</a></p>
                             <p>or</p>
