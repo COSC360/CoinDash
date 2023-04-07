@@ -72,7 +72,6 @@ function addFormEventListeners(){
                 type: "POST",
                 data: {coinId: coinId, text: text, parentId: commentId},
                 success: function(response) {
-                    console.log(response)
                     form.reset();
                 }
             })
