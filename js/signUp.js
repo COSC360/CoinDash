@@ -78,11 +78,11 @@ registerForm.addEventListener("submit",function(e){
         showError(3, "Passwords do not match");
     }
 
-    // if(verifyPassword == '')
-    // {
-    //     error = true;
-    //     showError(3, "Password cannot be empty");
-    // }
+    if(verifyPassword == '')
+    {
+        error = true;
+        showError(3, "Password cannot be empty");
+    }
     
     
     if(img == '')
