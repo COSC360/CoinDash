@@ -162,19 +162,19 @@ column-gap: 1.5em
 }
 
 .commentHistoryArea{
-    margin: 1em 2em 0em 0em;
+    margin: 1em 0em 0em 0em;
+    padding: 1em;
     background-color: rgb(59, 59, 59);
     color: white;
     display: flex;
     flex-direction: column;
     row-gap: 1em;
-    min-height: 37vh;
+    max-height: 37vh;
     border-radius: 1em;
     overflow-y: auto;
 }
 
 .main-comment{
-    margin: 1em 3em 0em 2em;
     background: #545454;
     color: #f3f3f3;
     padding: 1em;
