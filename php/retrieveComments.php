@@ -4,7 +4,7 @@
     // $coinId = $_POST["coinId"];
     $coinId = "axie-infinity";
     $comments = retrievePostComment($con, $coinId);
-    print_r($comments);
+    echo "<script>console.log('console.log')</script>";
     $output = "";
     foreach($comments as $comment) {
         $output .= getCommentHTML($con, $comment);
