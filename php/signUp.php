@@ -88,8 +88,8 @@
 
                     <div class="item-6">
                         <label>Profile Photo <span style="color: red;">*</span></label><br>
-                        <i class="fa-sharp fa-solid fa-circle-xmark fa-bounce errorLogoRegister" class = "required"></i>
-                        <input type="file" name="img"  id="img" accept="image/*">
+                        <i class="fa-sharp fa-solid fa-circle-xmark fa-bounce errorLogoRegister"></i>
+                        <input type="file" name="img"  id="img" accept="image/*" class = "required">
                         <p class="errorTextRegister"></p>
                     </div>      
 
