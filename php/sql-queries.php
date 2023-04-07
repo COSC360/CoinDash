@@ -27,7 +27,6 @@ function retrieveAllCoins($con){
 }
 
 function updateCoinViews($con, $coinId){
-    echo "<script>console.log('".$coinId."')</script>";
     $updateSql = "UPDATE coin SET views = views + 1 WHERE Id = ?";
 
     $updateStmt = mysqli_stmt_init($con); 
@@ -35,12 +34,11 @@ function updateCoinViews($con, $coinId){
     if (!mysqli_stmt_prepare($updateStmt, $updateSql)){
         return false;
     }
-    echo "<script>console.log('".$coinId."')</script>";
     // Set parameters for prepared statement
     mysqli_stmt_bind_param($updateStmt, "s", $coinId);
-    echo "<script>console.log('".$coinId."')</script>";
     // Execute prepared statement
     if (mysqli_stmt_execute($updateStmt)){
+        echo "<script>console.log('".$coinId."')</script>";
         return true;
     } else {
         return false;
