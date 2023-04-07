@@ -9,7 +9,7 @@
     }
 
     if(isset($_SESSION['statusMsg'])){
-        echo "<script>window.alert(\"".$_SESSION['statusMsg']."\")</script>";
+        include 'alert.php';
         unset($_SESSION['statusMsg']);
     }
 
