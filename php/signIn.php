@@ -23,7 +23,6 @@
     <link rel="stylesheet" href="../css/userAuth.css">
     <link rel="icon" href="../images/sitelogo.png" type="image/icon type">
     <script src="https://kit.fontawesome.com/e6e0351429.js" crossorigin="anonymous"></script>
-    <script src="../js/signIn.js"></script>
     <script src="../js/navigation.js"></script>
     <title>CoinDash</title>
 </head>
@@ -75,7 +74,7 @@
             echo "<script>alert('".$_GET["errmsg"]."');</script>";
         }
     ?>
-
+    <script src="../js/signIn.js"></script>
 </body>
 
 </html>
