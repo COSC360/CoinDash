@@ -1,6 +1,7 @@
 var loginForm = document.forms['loginForm']; // Login Form
-var loginId = loginForm[0].value;
-var password = loginForm[1].value;
+var requiredInput = document.querySelectorAll(".required");
+var loginId = requiredInput[0].textContent;
+var password = requiredInput[1].textContent;
 var errorText = document.querySelectorAll(".errorText");
 
 
