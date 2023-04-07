@@ -76,7 +76,7 @@ function addFormEventListeners(){
                 }
             })
 
-            form.classList.add("collapsed");
+            form.parentElement.classList.add("collapsed");
             openedForms--;
         })
     })
