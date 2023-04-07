@@ -277,7 +277,7 @@ function uploadComment($con, $userId, $coinId, $text){
 }
 
 function retrievePostComment($con, $coinId){
-    $commentSql = "SELECT * FROM comment c JOIN userAuth u ON c.user_id = u.id WHERE coin_id = ? AND parentId IS NULL";
+    $commentSql = "SELECT c.id, coin_id, text, parentId, username FROM comment c JOIN userAuth u ON c.user_id = u.id WHERE coin_id = ? AND parentId IS NULL";
     $commentStmt = mysqli_stmt_init($con);
     if (!mysqli_stmt_prepare($commentStmt, $commentSql)){
         return false;
@@ -298,7 +298,7 @@ function retrievePostComment($con, $coinId){
 }
 
 function retrieveCommentReplies($con, $parentId){
-    $commentSql = "SELECT * FROM comment c JOIN userAuth u ON c.user_id = u.id WHERE parentId = ?";
+    $commentSql = "SELECT c.id, coin_id, text, parentId, username FROM comment c JOIN userAuth u ON c.user_id = u.id WHERE parentId = ?";
     $commentStmt = mysqli_stmt_init($con);
     if (!mysqli_stmt_prepare($commentStmt, $commentSql)){
         return false;
