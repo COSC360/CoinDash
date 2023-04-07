@@ -139,6 +139,7 @@ session_start();
                     echo "</div>";
                 }
             ?>
+            <button id="add-module-btn">Add Module</button>
         </article>
     </main>
     <?php
