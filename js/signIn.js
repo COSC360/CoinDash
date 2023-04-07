@@ -15,12 +15,10 @@ function showError(i,errMsg){
     errorLogoElement[i].classList.add("showError");
 }
 function hideError(){
-    for(var i = 0; i < errorTextElement.length; i++){
-        if(errorTextElement[i].classList.contains("showError")){
-            errorTextElement[i].classList.remove("showError");
-            errorLogoElement[i].classList.remove("showError");
-            errorTextElement[i].innerText = "";
-        }
+    if(errorTextElement[i].classList.contains("showError")){
+        errorTextElement[i].classList.remove("showError");
+        errorLogoElement[i].classList.remove("showError");
+        errorTextElement[i].innerText = "";
     }
 }
 
@@ -65,4 +63,5 @@ loginForm.addEventListener("submit",function(e){
 
 });
  
-loginForm.addEventListener("keydown", hideError);
+requiredInput[0].addEventListener("keydown", hideError(0));
+requiredInput[1].addEventListener("keydown", hideError(1));
