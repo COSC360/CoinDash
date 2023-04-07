@@ -81,7 +81,7 @@
                         <a href=\"../php/logout.php\">Logout</a>
                         </div>";                
                     }else{
-                        echo  "<a href=\"#\" onclick=navigateToSignIn()>Sign In</a>/<a href=\"#\" onclick=navigateToSignUp()>Sign Up</a>";
+                        echo  "<a href=\"signIn.php\">Sign In</a>/<a href=\"signUp.php\">Sign Up</a>";
                     }            
                 ?>
             </div>
