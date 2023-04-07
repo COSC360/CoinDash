@@ -9,6 +9,7 @@ session_start();
     <meta charset="utf-8" />
     <title>Main Dashboard</title>
     <link rel="stylesheet" href="../font/helvetica-now-display/stylesheet.css">
+    <link rel="stylesheet" href="../css/fire.css">
     <link rel="stylesheet" href="../css/var.css">
     <link rel="stylesheet" href="../css/reset.css">
     <link rel="stylesheet" href="../css/dashboard.css">
@@ -30,7 +31,6 @@ session_start();
         // Row 0 reserved for guest dashboard
         $userId = isset($_SESSION["id"]) ? $_SESSION["id"] : 0;
         uploadActivity($con, $userId, "viewDashboard");
-        echo "<script>console.log('Hi')</script>";
     ?>
     <main>
         <article class="panel page-title">
@@ -100,6 +100,12 @@ session_start();
                                             <a href=\"individual.php?coinId=".$coin["Id"]."\" class=\"icon-overlay\">
                                                 <img src=\"../svgs/goto.svg\">
                                             </a>
+                                            <div class=\"container\">
+                                                <div class=\"corpus diamond\">
+                                                    <div class=\"diamond diamond-inner diamond-right\"></div>
+                                                    <div class=\"diamond diamond-inner diamond-left\"></div>
+                                                </div>
+                                            </div>
                                         </div>
                                             <div class=\"product-image-mask\">
                                             <div class=\"product-image\" style=\"background-image: url(".$coin["img_url"].");\"></div>
