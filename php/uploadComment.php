@@ -3,12 +3,16 @@
     include "DBconnection.php";
     include "sql-queries.php";
 
-    $coinId = $_POST["coinId"];
-    $text = $_POST["text"];
-    echo "Hello";
-    $parentId = isset($_POST["parentId"]) ? $_POST["parentId"] : null;
+    // $coinId = $_POST["coinId"];
+    // $text = $_POST["text"];
+    // $parentId = isset($_POST["parentId"]) ? $_POST["parentId"] : null;
 
-    $userId = $_SESSION["id"];
-    echo $parentId;
+    // $userId = $_SESSION["id"];
+
+    $coinId = "axie-infinity";
+    $text = "NEW COOOMENT";
+    $parentId = null;
+
+    $userId = 5;
     uploadComment($con, $userId, $coinId, $text, $parentId);
 ?>
