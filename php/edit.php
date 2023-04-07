@@ -1,6 +1,6 @@
 
 <?php
-    if($_SESSION['Id'] != null){
+    if($_SESSION['id'] != null){
         echo "
         <div id=\"save-edit-btn\" class=\"icon-overlay edit-ui\" href=\"#\">
             <img src=\"../svgs/save.svg\">
