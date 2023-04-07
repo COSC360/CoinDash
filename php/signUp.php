@@ -44,11 +44,11 @@
                 </div>
             </div>  
             <div class="register-box">
-                <form name = "registerForm" id="registerForm" enctype="multipart/form-data" action= "processRegister.php" onsubmit="validateRegisterForm()" method="POST">
+                <form name = "registerForm" id="registerForm" enctype="multipart/form-data" action= "processRegister.php" method="POST">
                     <div class="item-1">
                         <label>Username <span style="color: red;">*</span></label><br>
                         <i class="fa-sharp fa-solid fa-circle-xmark fa-bounce errorLogoRegister"></i>                            
-                        <input type = "text" name = "username"  id = "username" placeholder="What Should We Call You?"  onkeydown="UsernameErrorClearFunction()"  class = "required">
+                        <input type = "text" name = "username"  id = "username" placeholder="What Should We Call You?"  class = "required">
                         <p class="errorTextRegister"></p>
                     </div>
 
