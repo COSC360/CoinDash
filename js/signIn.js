@@ -31,6 +31,7 @@ loginForm.addEventListener("submit",function(e){
         err == true;
         showError(errorText[0], "Login ID cannot be empty");
         showError(errorText[1], "Password cannot be empty");
+        e.preventDefault();
     }
     else
     {
