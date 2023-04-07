@@ -20,27 +20,19 @@ loginForm.addEventListener("submit",function(e){
     let loginId = requiredInput[0].value;
     let password = requiredInput[1].value;
 
-    console.log(loginId);
-    console.log(requiredInput[0].value);
-
-
     var err = false;
 
     if(loginId == '' && password == '')
     {
-        console.log(loginId);
         err = true;
-        console.log("1");
         showError(errorText[0], "Login ID cannot be empty");
         showError(errorText[1], "Password cannot be empty");
     }else if(loginId == '')
     {
-        console.log("2");
         err = true;
         showError(errorText[0], "Login ID cannot be empty");
     }else if(password == '')
     {
-        console.log("3");
         err = true;
         showError(errorText[1], "Password cannot be empty");
     }
