@@ -12,19 +12,7 @@
         <div class="middle">
             <nav>
                 <?php
-                    if(isset($_SESSION['id']) && $_SESSION['userType'] == "admin" && $_SESSION['currentPage'] == "admin.php"){
-                        echo
-                        "  
-                        <a href=\"adminAnalytics.php\" id=\"stats\">
-                            Analytics
-                        </a>
-                        <a href=\"admin.php\">
-                            Portal
-                        </a>
-                        <a href=\"account.php\">
-                            My Account
-                        </a>";
-                    }elseif(isset($_SESSION['id']) && $_SESSION['userType'] == "admin" && $_SESSION['currentPage'] == "account.php"){
+                    if(isset($_SESSION['id']) && $_SESSION['userType'] == "admin" && $_SESSION['currentPage'] == "account.php"){
                         echo
                         "
                         <div class=\"relative-container\">
