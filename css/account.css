@@ -88,7 +88,7 @@ form .editField{
     right: 2em;
     border: none;
     background: none;
-    background-image: url("/svgs/editField.svg");
+    background-image: url("../svgs/editField.svg");
     z-index: 10;
 }
 
