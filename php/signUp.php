@@ -98,7 +98,7 @@
                     </div>
 
                     <div class = "item-8">
-                        <input type="submit"  name = "registerSubmit"  id = "registerSubmit" value="Get Started !" onkeydown = "hideError(4)">
+                        <input type="submit"  name = "registerSubmit"  id = "registerSubmit" value="Get Started !" onchange = "hideError(4)">
                     </div>                    
                 </form>
             </div>
