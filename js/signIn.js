@@ -14,14 +14,14 @@ function showError(i,errMsg){
     errorTextElement[i].classList.add("showError");
     errorLogoElement[i].classList.add("showError");
 }
-function hideError(i){
-    console.log("Error Hidden!");
-    if(errorTextElement[i].classList.contains("showError") && errorLogoElement[i].classList.contains("showError")){
-        errorTextElement[i].classList.remove("showError");
-        errorLogoElement[i].classList.remove("showError");
-    }
+// function hideError(i){
+//     console.log("Error Hidden!");
+//     if(errorTextElement[i].classList.contains("showError") && errorLogoElement[i].classList.contains("showError")){
+//         errorTextElement[i].classList.remove("showError");
+//         errorLogoElement[i].classList.remove("showError");
+//     }
 
-}
+// }
 
 loginForm.addEventListener("submit",function(e){
     e.preventDefault();
@@ -67,5 +67,5 @@ loginForm.addEventListener("submit",function(e){
 
 });
  
-loginForm.addEventListener("keydown", hideError(1));
-loginForm.addEventListener("keydown", hideError(0));
+// loginForm.addEventListener("keydown", hideError(1));
+// loginForm.addEventListener("keydown", hideError(0));

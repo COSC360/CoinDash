@@ -46,23 +46,31 @@
             <div class="register-box">
                 <form name = "RegisterForm" id="RegisterForm" enctype="multipart/form-data" action= "processRegister.php" onsubmit="validateRegisterForm()" method="POST" required>
                     <div class="item-1">
-                        <label>Username <span style="color: red;">*</span></label><br>                            
+                        <label>Username <span style="color: red;">*</span></label><br>
+                        <i class="fa-sharp fa-solid fa-circle-xmark fa-bounce errorLogoRegister"></i>                            
                         <input type = "text" name = "username"  id = "username" placeholder="What Should We Call You?"  onkeydown="UsernameErrorClearFunction()" value="">
+                        <p class="errorTextRegister"></p>
                     </div>
 
                     <div class="item-2">
-                        <label>Email <span style="color: red;">*</span></label><br>                       
+                        <label>Email <span style="color: red;">*</span></label><br>
+                        <i class="fa-sharp fa-solid fa-circle-xmark fa-bounce errorLogoRegister"></i>                       
                         <input type = "email" name = "email"  id = "email" placeholder="What's Your Email?">
+                        <p class="errorTextRegister"></p>
                     </div>
 
                     <div class="item-3">
-                        <label>Password <span style="color: red;">*</span></label><br>                                                        
+                        <label>Password <span style="color: red;">*</span></label><br>
+                        <i class="fa-sharp fa-solid fa-circle-xmark fa-bounce errorLogoRegister"></i>                                                        
                         <input type = "password" name = "password"  id = "password" placeholder="What’s Your Password?">
+                        <p class="errorTextRegister"></p>
                     </div>
 
                     <div class="item-4">
                         <label>Verify Password <span style="color: red;">*</span></label><br>
+                        <i class="fa-sharp fa-solid fa-circle-xmark fa-bounce errorLogoRegister"></i>
                         <input type = "password" name = "verifyPassword"  id = "verifyPassword" placeholder="Confirm Password?">
+                        <p class="errorTextRegister"></p>
                     </div>
 
                     <div class="item-5">
@@ -80,7 +88,9 @@
 
                     <div class="item-6">
                         <label>Profile Photo <span style="color: red;">*</span></label><br>
+                        <i class="fa-sharp fa-solid fa-circle-xmark fa-bounce errorLogoRegister"></i>
                         <input type="file" name="img"  id="img" accept="image/*">
+                        <p class="errorTextRegister"></p>
                     </div>      
 
                     <div class="item-7">
