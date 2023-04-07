@@ -26,12 +26,13 @@
                         <div class=\"comment-header\">
                             <img src=\"../images/profile-picture.png\" class=\"profile-picture\">
                             <h4 class=\"user-name\">".$commentData["username"]."</h4>
+                            <h5 class=\"user-name\">".$commentData["timestamp"]."</h5>
                         </div>
                         <p class=\"review-content\">".$commentData["text"]."</p>
                     </div>
                     <p class=\"reply-btn\">Reply</p> | 
                     <p class=\"delete-btn\">Delete</p>
-                    <form class=\"reply-form\">
+                    <form class=\"reply-form\" data-commentId=\"".$commentData["id"]."\">
                         <input type=\"textarea\" name=\"text\">
                         <p class=\"btn-container\">
                             <button type=\"submit\" class=\"comment-btn\">Reply</button>
