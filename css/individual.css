@@ -67,6 +67,7 @@
     font-size: 0.8em;
     margin-top: 0.5em;
     cursor: pointer;
+    display: inline-block;
 }
 
 .delete-btn {
@@ -74,6 +75,7 @@
     font-size: 0.8em;
     margin-top: 0.5em;
     cursor: pointer;
+    display: inline-block;
 }
 
 .full-card .product-card {
