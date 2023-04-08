@@ -129,7 +129,7 @@
     new Chart(\"pie-2\", {
       type: \"pie\",
       data: {
-        labels: userTypeValues,
+        labels: activityTypeValues,
         datasets: [{
           backgroundColor: chartColors,
           data: activityCountValues
