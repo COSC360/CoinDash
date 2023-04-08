@@ -114,7 +114,6 @@ function addModuleEventListeners(){
     })
 }
 
-
 addModuleBtn.addEventListener("click", (e) => {
 
     // Create raw block template and add to page
@@ -167,7 +166,7 @@ function addFiatDropdownListeners(){
 }
 
 function addSortDropdownListeners(){
-    var sortSelects = document.querySelectorAll(".fiat");
+    var sortSelects = document.querySelectorAll(".sort");
     sortSelects.forEach(dropdown => {
         dropdown.addEventListener('change', (e) => {
             var newSort = dropdown.value;
