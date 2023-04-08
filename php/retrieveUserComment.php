@@ -42,7 +42,7 @@
                     <p class=\"commentId\">comment id · ".$commentData["commentId"]."</p>
                     <p class=\"coinId\">coin name · ".$commentData["coin_id"]."</p>
                     <p class=\"timestamp\">timestamp · ".$commentData["timestamp"]."</p>
-                    <pclass=\"reply\">REPLY COMMENT</p>
+                    <p class=\"reply\">REPLY COMMENT</p>
                 </div>
             </div>
         ";           
