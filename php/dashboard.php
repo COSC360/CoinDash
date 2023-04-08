@@ -1,7 +1,7 @@
 <?php
 session_start();
-$previousPage = substr($_SERVER["HTTP_REFERER"],strrpos($_SERVER["HTTP_REFERER"],"/")+1);
-$currentPage = substr($_SERVER["SCRIPT_NAME"],strrpos($_SERVER["SCRIPT_NAME"],"/")+1);
+$previousPage = substr(substr($_SERVER["HTTP_REFERER"],strrpos($_SERVER["HTTP_REFERER"],"/")+1),0,-4);
+$currentPage = substr(substr($_SERVER["SCRIPT_NAME"],strrpos($_SERVER["SCRIPT_NAME"],"/")+1),0,-4);
 
 echo $previousPage;
 echo $currentPage;
