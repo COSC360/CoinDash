@@ -89,6 +89,9 @@
   row-gap: 1em;
 }  
 
+.item-1, .item-2{
+  grid-column: span 2;
+}
 .login-box form .item-1,.item-2,.item-3{
   grid-column-start: 1;
 }
@@ -109,7 +112,7 @@
 .login-box input {
     margin-top: 1em;
     border: none;
-    width: 170%;
+    width: 100%;
     font-size: 1em;
     border-bottom: 2px solid rgb(0, 0, 0);
     cursor: pointer;
@@ -313,6 +316,7 @@ select{
 .register-info .info-footer{
   display: flex;
   column-gap: 3em;
+  flex-wrap: wrap;
 }
 
 .register-info .info-footer p{
