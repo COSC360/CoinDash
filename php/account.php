@@ -2,8 +2,8 @@
     session_start();
 
     $rootPage = "Home";
-    $previousPage = substr(substr($_SERVER["HTTP_REFERER"],strrpos($_SERVER["HTTP_REFERER"],"/")+1),0,-4);
-    $currentPage = substr(substr($_SERVER["SCRIPT_NAME"],strrpos($_SERVER["SCRIPT_NAME"],"/")+1),0,-4);
+    $previousPage = ucfirst(substr(substr($_SERVER["HTTP_REFERER"],strrpos($_SERVER["HTTP_REFERER"],"/")+1),0,-4));
+    $currentPage = ucfirst(substr(substr($_SERVER["SCRIPT_NAME"],strrpos($_SERVER["SCRIPT_NAME"],"/")+1),0,-4));
       
     $_SESSION['currentPage'] = $currentPages;
 
