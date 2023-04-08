@@ -1,8 +1,11 @@
 <?php
     session_start();
 
-    $curPageName = substr($_SERVER["SCRIPT_NAME"],strrpos($_SERVER["SCRIPT_NAME"],"/")+1);  
-    $_SESSION['currentPage'] = $curPageName;
+    $rootPage = "Home";
+    $previousPage = substr(substr($_SERVER["HTTP_REFERER"],strrpos($_SERVER["HTTP_REFERER"],"/")+1),0,-4);
+    $currentPage = substr(substr($_SERVER["SCRIPT_NAME"],strrpos($_SERVER["SCRIPT_NAME"],"/")+1),0,-4);
+      
+    $_SESSION['currentPage'] = $currentPages;
 
     if(!isset($_SESSION["id"])){
         header('location:signIn.php');
