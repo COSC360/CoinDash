@@ -56,7 +56,7 @@
                             <input type = "text" id="password" name = "password" value = "<?php echo $_SESSION["password"] ;?>">
                         </div>
                     </div>
-                    <div class = "formData"> 
+                    <div class = "formSubmit"> 
                         <input type="reset" value="Reset Form">
                         <input type="submit" name= "updateSubmit" id = "updateSubmit" value="Confirm Changes">
                     </div>
