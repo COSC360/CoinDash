@@ -916,6 +916,7 @@ function retrieveCommentCountChartData($con){
     }  
 }
 
+
 function retrieveUserStatusChartData($con){
     $chartDataSQL = "SELECT `status`, COUNT(id) AS userCount FROM `userAuth` GROUP BY `status`";
 
@@ -949,6 +950,75 @@ function retrieveUserStatusChartData($con){
         return false;
     }      
 }
+
+function retrieveRegisteredUserActivityChartData($con){
+    $chartDataSQL = "SELECT activity, COUNT(userid) AS userCount FROM `userActivity` WHERE userId != 0 GROUP BY activity";
+
+    $chartDataStmt = mysqli_stmt_init($con); 
+
+    $registeredUserDataArray = array();
+    $registeredUserCountDataArray = array();
+
+    if (!mysqli_stmt_prepare($chartDataStmt, $chartDataSQL)){
+        $_SESSION['statusMsg'] = "Unable to prepare the SQL statement.";
+        return false;
+    }
+
+    // Execute prepared statement
+    mysqli_stmt_execute($chartDataStmt);
+
+    $results = mysqli_stmt_get_result($chartDataStmt);
+
+    if($rows = $results -> fetch_all(MYSQLI_ASSOC)){
+        mysqli_stmt_close($chartDataStmt);
+
+        foreach($rows as $row){
+            array_push($registeredUserDataArray, $row['activity']);
+            array_push($registeredUserCountDataArray, $row['userCount']);
+        }
+
+        $_SESSION['registeredUserDataArray'] = $registeredUserDataArray;
+        $_SESSION['registeredUserCountDataArray'] = $registeredUserCountDataArray;
+    }else{
+        mysqli_stmt_close($chartDataStmt);
+        return false;
+    }      
+}
+
+function retrieveUnregisteredUserActivityChartData($con){
+    $chartDataSQL = "SELECT activity, COUNT(userid) AS userCount FROM `userActivity` WHERE userId = 0 GROUP BY activity";
+
+    $chartDataStmt = mysqli_stmt_init($con); 
+
+    $unregisteredUserDataArray = array();
+    $unregisteredUserCountDataArray = array();
+
+    if (!mysqli_stmt_prepare($chartDataStmt, $chartDataSQL)){
+        $_SESSION['statusMsg'] = "Unable to prepare the SQL statement.";
+        return false;
+    }
+
+    // Execute prepared statement
+    mysqli_stmt_execute($chartDataStmt);
+
+    $results = mysqli_stmt_get_result($chartDataStmt);
+
+    if($rows = $results -> fetch_all(MYSQLI_ASSOC)){
+        mysqli_stmt_close($chartDataStmt);
+        
+        foreach($rows as $row){
+            array_push($unregisteredUserDataArray , $row['activity']);
+            array_push($unregisteredUserCountDataArray, $row['userCount']);
+        }
+
+        $_SESSION['unregisteredUserDataArray'] = $unregisteredUserDataArray;
+        $_SESSION['unregisteredUserCountDataArray'] = $unregisteredUserCountDataArray;
+    }else{
+        mysqli_stmt_close($chartDataStmt);
+        return false;
+    }     
+}
+
 
 function uploadActivity($con, $userId, $activity){
     $activitySql = "INSERT INTO userActivity (userId, activity) VALUES (?, ?)";

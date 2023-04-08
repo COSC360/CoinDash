@@ -5,11 +5,15 @@
   retrieveRegSourceChartData($con);
   retrieveCommentCountChartData($con);
   retrieveUserStatusChartData($con);  
+  retrieveRegisteredUserActivityChartData($con);
+  retrieveUnregisteredUserActivityChartData($con);
 ?>  
   <div class ="canvasData">
     <canvas id="doughnut"></canvas>
     <canvas id="bar"></canvas>
     <canvas id="pie"></canvas>
+    <canvas id="line-1"></canvas>
+    <canvas id="line-2"></canvas>
   </div>
 
   <?php
@@ -19,10 +23,19 @@
 
     var xValues = [];
     var yValues = [];
+
     var xCommentValues = [];
     var yCommentValues = [];
+
     var xStatusValues = [];
-    var yStatusValues = [];";
+    var yStatusValues = [];
+
+    var registeredUserActivityTypeValues = [];
+    var registeredUserActivityCountValues = [];
+
+    var unregisteredUserActivityTypeValues = [];
+    var unregisteredUserActivityCountValues = [];
+    ";
     foreach($_SESSION['regSourceDataArray'] as $row){
         echo "xValues.push(\"".$row."\");";
     }
@@ -42,6 +55,22 @@
     }
     foreach($_SESSION['statusCountDataArray'] as $row){
         echo "yStatusValues.push(\"".$row."\");";
+    }
+
+    foreach($_SESSION['registeredUserDataArray'] as $row){
+      echo "registeredUserActivityTypeValues.push(\"".$row."\");";
+    }
+
+    foreach($_SESSION['registeredUserCountDataArray'] as $row){
+    echo "registeredUserActivityCountValues.push(\"".$row."\");";
+    }
+
+    foreach($_SESSION['unregisteredUserDataArray'] as $row){
+      echo "unregisteredUserActivityTypeValues.push(\"".$row."\");";
+    }
+
+    foreach($_SESSION['unregisteredUserCountDataArray'] as $row){
+    echo "unregisteredUserActivityCountValues.push(\"".$row."\");";
     }
   echo 
     "
@@ -102,6 +131,42 @@
           display: true,
           text: \"User Status Data\"
         }        
+      }
+    });
+
+    new Chart(\"line-1\", {
+      type: \"pie\",
+      data: {
+        labels: registeredUserActivityTypeValues,
+        datasets: [{
+          backgroundColor:chartColors,
+          data: registeredUserActivityCountValues
+        }]
+      },
+      options:{
+        legend: {display: true, position: 'right', align: 'center'},
+        title: {
+          display: true,
+          text: \"Registered User Activity Data\"
+        } 
+      }
+    });
+
+    new Chart(\"line-2\", {
+      type: \"pie\",
+      data: {
+        labels: unregisteredUserActivityTypeValues,
+        datasets: [{
+          backgroundColor: chartColors ,
+          data: unregisteredUserActivityCountValues
+        }]
+      },
+      options:{
+        legend: {display: true, position: 'right', align: 'center'},
+        title: {
+          display: true,
+          text: \"Unregistered User Activity Data\"
+        } 
       }
     });
   </script>";
