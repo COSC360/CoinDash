@@ -18,11 +18,7 @@ header .fill-container, footer .fill-container {
 }
 
 header .fill-container {
-    font-size: 1.1em;
     width: 100%;
-}
-footer .fill-container {
-    font-size: 1em;
 }
 
 .left, .middle, .right {
@@ -135,13 +131,19 @@ footer {
 }
 
 @media only screen and (min-width: 0px)  {
-    .footer {
+    footer .fill-container {
+        font-size: 0.8em;
+    }
+    header .fill-container {
         font-size: 0.8em;
     }
 }
 
 @media only screen and (min-width: 720px)  {
-    .footer {
+    footer .fill-container {
         font-size: 1em;
+    }
+    header .fill-container {
+        font-size: 1.1em;
     }
 }
