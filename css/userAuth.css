@@ -171,7 +171,7 @@
 
   .box-footer{
     display: grid;
-    grid-template-columns: 20em 20em;
+    grid-template-columns: 1fr 1fr;
   }
 
   .box-footer input[type = reset]{
@@ -273,10 +273,6 @@ select{
   width: 90%;
   display: flex;
   justify-content: space-between;
-}
-
-.register-box form .item-1,.item-3,.item-5, .item-7{
-  grid-column-start: 1;
 }
 
 .register-box form .item-2,.item-4,.item-6, .item-8{
