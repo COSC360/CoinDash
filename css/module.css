@@ -80,7 +80,6 @@ select {
 }
 
 .dropdown {
-    max-width: 50%;
     width: 0;
     font-size: 1.1em;
     flex-grow: 1;
