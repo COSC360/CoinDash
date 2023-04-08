@@ -1,6 +1,8 @@
 <?php
     session_start();
 
+    include 'breadcrump.php';
+
     $curPageName = substr($_SERVER["SCRIPT_NAME"],strrpos($_SERVER["SCRIPT_NAME"],"/")+1);  
     $_SESSION['currentPage'] = $curPageName;
 
