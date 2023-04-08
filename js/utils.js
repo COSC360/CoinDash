@@ -25,12 +25,4 @@ var sortValues = ["views DESC", "views", "price_change_24h DESC", "price_change_
                 "price_change_30d DESC", "price_change_30d", "price_change_60d DESC", "price_change_60d",
                 "price_change_200d DESC", "price_change_200d", "price_change_1yr DESC", "price_change_1yr"]; 
 
-function getPriceColorClass(price){
-    if (price > 0){
-        return "green";
-    } else {
-        return "red";
-    }
-}
-
 export { getURLParams, fiatLabels, fiats, sortLabels, sortValues, getPriceColorClass};
