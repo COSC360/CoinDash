@@ -27,7 +27,7 @@
             $commentHTML = "
             <div class = \"main-comment\">
                 <div class =\"comment-main-info\">
-                    <img class = \"coinImg\" src=".$commentData["img_url"].">
+                <a href=individual.php?coinId=".$commentData["coin_id"]."><img class = \"coinImg\" src=".$commentData["img_url"]."></a>
                     <p class=\"commentText\">".$commentData["text"]."</p>
                 </div>
                 <div class =\"comment-misc-info\">
