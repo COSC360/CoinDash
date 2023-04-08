@@ -58,7 +58,7 @@ function addDeleteEventListeners(){
     var deleteBtns = document.querySelectorAll(".delete-btn");
 
     deleteBtns.forEach(btn => {
-        var commentId = deleteBtns.parentElement.dataset.commentid;
+        var commentId = btn.parentElement.dataset.commentid;
         btn.addEventListener("click", () => {
             $.ajax({
                 url: "deleteComment.php",
