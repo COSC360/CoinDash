@@ -41,9 +41,9 @@ $currentPage = ucfirst(substr(substr($_SERVER["SCRIPT_NAME"],strrpos($_SERVER["S
         <article class="panel page-title">
             <?php
                 if(isset($_SESSION['id']) && isset($previousPage)){
-                    echo "<h2>".$rootPage." / <span id=\"breadcrumbCurrent\">".$_SESSION['username']."/".$currentPage."<span></h2>";
+                    echo "<h2>".$rootPage." / <span id=\"breadcrumbCurrent\">".$_SESSION['username']."/ ".$currentPage."<span></h2>";
                 }else{
-                    echo "<h2>".$rootPage." / Guest</h2>"."/".$currentPage;
+                    echo "<h2>".$rootPage." / Guest</h2>"."/ ".$currentPage;
                 }
             ?>
             <div class="title">
