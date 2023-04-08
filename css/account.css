@@ -81,15 +81,6 @@ column-gap: 1.5em
     flex-direction: row;
 } */
 
-.user-account-box form{
-    display: flex;
-    flex-direction: row;
-}
-
-.user-account-box form .formData{
-    display: flex;
-    flex-direction: column;
-} 
 
 .user-account-box input {
     margin-top: 1em;
@@ -139,7 +130,7 @@ column-gap: 1.5em
 
 .profile-box img{
     margin-right: 1.25em;
-    width: 10%;
+    width: 30%;
     border-radius: 50%;
     height: fit-content;
     float: left;
