@@ -177,8 +177,12 @@
     padding: 0.75em 3em;
     font-size: 1.2em;
     border-radius: 10px;
-    color: var(--Black-1);
+    width: fit-content;
     margin-bottom: 2em;
+}
+
+.comment-indicator a {
+    color: var(--Black-1);
 }
 
 
