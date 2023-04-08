@@ -206,8 +206,13 @@ canvas #line-1{
 }
 
 canvas #line-2{
-  grid-column-start: 0;
-  grid-row-start: 2;
+  grid-column-start: 1;
+  grid-row-start: 1;
+}
+
+canvas #pie-2{
+  grid-column-start: 2;
+  grid-row-start: 1;
 }
 
 
