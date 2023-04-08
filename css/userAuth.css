@@ -85,7 +85,7 @@
   position: relative;
   display: grid;
   width: 100%;
-  grid-template-columns: 20em;
+  grid-template-columns: 1fr;
   row-gap: 1em;
 }  
 
@@ -171,7 +171,7 @@
 
   .box-footer{
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 20em 20em;
   }
 
   .box-footer input[type = reset]{
