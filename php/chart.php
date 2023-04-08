@@ -135,7 +135,7 @@
     });
 
     new Chart(\"line-1\", {
-      type: \"line\",
+      type: \"pie\",
       data: {
         labels: registeredUserActivityTypeValues,
         datasets: [{
@@ -154,7 +154,7 @@
     });
 
     new Chart(\"line-2\", {
-      type: \"line\",
+      type: \"pie\",
       data: {
         labels: unregisteredUserActivityTypeValues,
         datasets: [{
