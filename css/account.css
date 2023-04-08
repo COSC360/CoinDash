@@ -154,11 +154,11 @@ column-gap: 1.5em
 
 .commentHistoryTitle{
     padding: 0.25em 1em 0.25em 1em;
-    font-size: 1.5em;
+    font-size: 1.25em;
     color: white;
-    background-color: #363636;
+    background: black;
     width: fit-content;
-    border-radius: 0.25em;
+    border-radius: 0.25em
 }
 
 .commentHistoryArea{
@@ -207,19 +207,19 @@ column-gap: 1.5em
 
 /* Scrollbar Styling */
 
-::-webkit-scrollbar-track
+.commentHistoryArea::-webkit-scrollbar-track
 {
 	border: 1px solid black;
 	background-color: #F5F5F5;
 }
 
-::-webkit-scrollbar
+.commentHistoryArea::-webkit-scrollbar
 {
 	width: 10px;
 	background-color: #F5F5F5;
 }
 
-::-webkit-scrollbar-thumb
+.commentHistoryArea::-webkit-scrollbar-thumb
 {
 	background-color: #000000;	
 }
