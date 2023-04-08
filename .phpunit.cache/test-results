@@ -1,1 +1,1 @@
-{"version":1,"defects":{"SqlTest::testCoinsByLike":5},"times":{"SqlTest::testCoinsByLike":0.007}}
+{"version":1,"defects":{"SqlTest::testCoinsByLike":8},"times":{"SqlTest::testCoinsByLike":21.052}}
