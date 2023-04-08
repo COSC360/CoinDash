@@ -2,8 +2,6 @@ import { uploadDashboard } from "./uploadDashboard.js";
 import { buildModule } from "./parser.js";
 import { fiatLabels, fiats, sortLabels, sortValues} from "./utils.js";
 
-var module_settings_btns = document.querySelectorAll(".module-settings-btn");
-var modules = document.querySelectorAll(".module");
 var editElements = document.querySelectorAll(".edit-ui");
 var addModuleBtn = document.getElementById("add-module-btn");
 var toggleEditBtn = document.getElementById("view-edit-btn");
@@ -25,11 +23,6 @@ cancelModalBtn.addEventListener("click", (e) => {
     moduleModal.classList.add("hide");
 })
 
-// Enables drag and drop of modules
-module_settings_btns.forEach(btn => {
-    addSettingsListener(btn);
-})
-
 // Recreates moduleHTML given new parameters for category, fiat, and sort
 confirmModalBtn.addEventListener('click', (e) => {
     e.preventDefault();
@@ -49,88 +42,91 @@ confirmModalBtn.addEventListener('click', (e) => {
     moduleModal.classList.add("hide");
 })
 
-// Detects drag and drops and moves module nodes
-modules.forEach(module => {
-    var dragCounter = 0;
-    module.addEventListener("dragenter", (e) => {
-        e.stopPropagation();
-        e.preventDefault();
-        var moduleDroppedOnBounds = module.getBoundingClientRect();
+function initListeners(){
+    addFiatDropdownListeners();
+    addSortDropdownListeners();
+    addSettingsListeners();
+    addModuleEventListeners();
+}
+initListeners();
 
-        var rightDist = moduleDroppedOnBounds.right - e.clientX;
-        var leftDist = e.clientX - moduleDroppedOnBounds.left;
+function addModuleEventListeners(){
+    var modules = document.querySelectorAll(".module");
+    // Detects drag and drops and moves module nodes
+    modules.forEach(module => {
+        var dragCounter = 0;
+        module.addEventListener("dragenter", (e) => {
+            e.stopPropagation();
+            e.preventDefault();
+            var moduleDroppedOnBounds = module.getBoundingClientRect();
 
-        // Determine which side to to highlight based on proximity to left/right
-        if (leftDist < rightDist){
+            var rightDist = moduleDroppedOnBounds.right - e.clientX;
+            var leftDist = e.clientX - moduleDroppedOnBounds.left;
+
+            // Determine which side to to highlight based on proximity to left/right
+            if (leftDist < rightDist){
+                module.classList.remove("right-border-highlight");
+                module.classList.add("left-border-highlight");
+            } else {
+                module.classList.remove("left-border-highlight");
+                module.classList.add("right-border-highlight");
+            }
+            dragCounter++;
+        })
+
+        module.addEventListener("dragleave", (e) => {
+            e.stopPropagation();
+            e.preventDefault();
+            dragCounter--;
+            if (dragCounter === 0){
+                module.classList.remove("right-border-highlight");
+                module.classList.remove("left-border-highlight");
+            }
+        })
+
+        module.addEventListener("drop", (e) => {
+            e.preventDefault();
+            dragCounter = 0;
+            var moduleToBeDroppedId = e.dataTransfer.getData("draggedModule");
+            var moduleToBeDropped = document.getElementById(moduleToBeDroppedId)
+            var moduleContainer = module.parentNode; 
+
+            // Retrieves placement of module placed relative to its parent container
+            var index = Array.prototype.indexOf.call(moduleContainer.children, module);
+
+            var moduleDroppedOnBounds = module.getBoundingClientRect();
+            var leftDist = e.clientX - moduleDroppedOnBounds.left;
+            var rightDist = moduleDroppedOnBounds.right - e.clientX;
+
+            // Determine which side to place module based on proximity to left/right
             module.classList.remove("right-border-highlight");
-            module.classList.add("left-border-highlight");
-        } else {
             module.classList.remove("left-border-highlight");
-            module.classList.add("right-border-highlight");
-        }
-        dragCounter++;
+            if (leftDist < rightDist){
+                moduleContainer.insertBefore(moduleToBeDropped, moduleContainer.children[index]);
+            } else {
+                moduleContainer.insertBefore(moduleToBeDropped, moduleContainer.children[index].nextSibling);
+            }
+        })
+
+        module.addEventListener("dragover", (e) => {
+            e.preventDefault();
+        })
     })
+}
 
-    module.addEventListener("dragleave", (e) => {
-        e.stopPropagation();
-        e.preventDefault();
-        dragCounter--;
-        if (dragCounter === 0){
-            module.classList.remove("right-border-highlight");
-            module.classList.remove("left-border-highlight");
-        }
-    })
-
-    module.addEventListener("drop", (e) => {
-        e.preventDefault();
-        dragCounter = 0;
-        var moduleToBeDroppedId = e.dataTransfer.getData("draggedModule");
-        var moduleToBeDropped = document.getElementById(moduleToBeDroppedId)
-        var moduleContainer = module.parentNode; 
-
-        // Retrieves placement of module placed relative to its parent container
-        var index = Array.prototype.indexOf.call(moduleContainer.children, module);
-
-        var moduleDroppedOnBounds = module.getBoundingClientRect();
-        var leftDist = e.clientX - moduleDroppedOnBounds.left;
-        var rightDist = moduleDroppedOnBounds.right - e.clientX;
-
-        // Determine which side to place module based on proximity to left/right
-        module.classList.remove("right-border-highlight");
-        module.classList.remove("left-border-highlight");
-        if (leftDist < rightDist){
-            moduleContainer.insertBefore(moduleToBeDropped, moduleContainer.children[index]);
-        } else {
-            moduleContainer.insertBefore(moduleToBeDropped, moduleContainer.children[index].nextSibling);
-        }
-    })
-
-    module.addEventListener("dragover", (e) => {
-        e.preventDefault();
-    })
-})
 
 addModuleBtn.addEventListener("click", (e) => {
 
     // Create raw block template and add to page
     var dashboardDom = document.getElementById("dashboard");
     var newBlock = generateDefaultBlock();
-
-    var newElem = document.createElement("div");
-    newElem.appendChild(newBlock);
-    dashboardDom.appendChild(newElem)
-    // dashboardDom.innerHTML += newBlock;
+    dashboardDom.innerHTML += newBlock;
 
     // Retrieve components
     var newModuleGallery = document.querySelector(`#module-${index} .module-gallery`);
-    var fiatDropdown = document.querySelector(`#module-${index} .fiat`);
-    var sortDropdown = document.querySelector(`#module-${index} .sort`);
-    var settingsBtn = document.querySelector(`#module-${index} .module-settings-btn`);
 
     setModuleHTML("usd", "Ethereum Ecosystem", "views DESC", newModuleGallery);
-    addFiatDropdownListener(fiatDropdown);
-    addSortDropdownListener(sortDropdown);
-    addSettingsListener(settingsBtn);
+    initListeners();
 
     index++;
 })
@@ -156,53 +152,49 @@ if (saveEditBtn != null){
     })
 }
 
-
-var fiatSelects = document.querySelectorAll(".fiat");
-var sortSelects = document.querySelectorAll(".sort");
-
-// Change product cards by fiat
-fiatSelects.forEach(fiatSelect => {
-    addFiatDropdownListener(fiatSelect);
-});
-
-// Change product cards by sort
-sortSelects.forEach(sortSelect => {
-    addSortDropdownListener(sortSelect);
-})
-
-function addFiatDropdownListener(dropdown){
-    dropdown.addEventListener('change', (e) => {
-        var newFiat = dropdown.value;
-        var module = dropdown.parentNode.parentNode.parentNode;
-        var moduleObj = buildModule(module);
-        var moduleGallery = document.querySelector("#" + module.id + " .module-gallery");
-
-        setModuleHTML(newFiat, moduleObj.category, moduleObj.sort, moduleGallery);
+function addFiatDropdownListeners(){
+    var fiatSelects = document.querySelectorAll(".fiat");
+    fiatSelects.forEach(dropdown => {
+        dropdown.addEventListener('change', (e) => {
+            var newFiat = dropdown.value;
+            var module = dropdown.parentNode.parentNode.parentNode;
+            var moduleObj = buildModule(module);
+            var moduleGallery = document.querySelector("#" + module.id + " .module-gallery");
+    
+            setModuleHTML(newFiat, moduleObj.category, moduleObj.sort, moduleGallery);
+        })
     })
 }
 
-function addSortDropdownListener(dropdown){
-    dropdown.addEventListener('change', (e) => {
-        var newSort = dropdown.value;
-        var module = dropdown.parentNode.parentNode.parentNode;
-        var moduleObj = buildModule(module);
-        var moduleGallery = document.querySelector("#" + module.id + " .module-gallery");
-
-        setModuleHTML(moduleObj.fiat, moduleObj.category, newSort, moduleGallery);
+function addSortDropdownListeners(){
+    var sortSelects = document.querySelectorAll(".fiat");
+    sortSelects.forEach(dropdown => {
+        dropdown.addEventListener('change', (e) => {
+            var newSort = dropdown.value;
+            var module = dropdown.parentNode.parentNode.parentNode;
+            var moduleObj = buildModule(module);
+            var moduleGallery = document.querySelector("#" + module.id + " .module-gallery");
+    
+            setModuleHTML(moduleObj.fiat, moduleObj.category, newSort, moduleGallery);
+        })
     })
 }
 
-function addSettingsListener(settings){
-    // Grab connectedModule to be moved
-    settings.addEventListener("dragstart", (e) => {
-        e.dataTransfer.setData("draggedModule", settings.parentNode.id); 
-        e.dataTransfer.setDragImage(settings.parentNode, 0, 0);
-    })
+function addSettingsListeners(){
+    var module_settings_btns = document.querySelectorAll(".module-settings-btn");
 
-    settings.addEventListener("click", (e) => {
-        settings.parentNode.appendChild(moduleModal);
-        moduleModal.classList.remove("hide");
-        currentModule = settings.parentNode;
+    module_settings_btns.forEach(settings => {
+        // Grab connectedModule to be moved
+        settings.addEventListener("dragstart", (e) => {
+            e.dataTransfer.setData("draggedModule", settings.parentNode.id); 
+            e.dataTransfer.setDragImage(settings.parentNode, 0, 0);
+        })
+
+        settings.addEventListener("click", (e) => {
+            settings.parentNode.appendChild(moduleModal);
+            moduleModal.classList.remove("hide");
+            currentModule = settings.parentNode;
+        })
     })
 }
 
