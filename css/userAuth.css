@@ -18,10 +18,11 @@
   }
 } 
 .auth-container{
+
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  row-gap: 5em;
+  gap: 5em;
 }
 
 @media only screen and (min-width: 1600px) {
@@ -217,10 +218,9 @@
 
 .register-box input[type=submit] {
   border-radius: 0.5em;
-  padding-top: 0.5em;
-  padding-bottom: 0.5em;
+  width: fit-content;
+  padding: 0.75em 2em;
   color: white;
-  width: 40%;
   background: black;
   cursor: pointer;
 }
@@ -248,7 +248,7 @@
 
 .register-box form{
   display: grid;
-  grid-template-columns: 20em 20em;
+  grid-template-columns: 1fr 1fr;
   column-gap: 3em;
   row-gap: 1em;
 }
@@ -279,15 +279,9 @@ select{
   grid-column-start: 2;
 }
 
-@media only screen and (min-width: 1600px) {
-  .register-info{
-    max-width: 40em;
-  }
-}
-
 @media only screen and (max-width: 1600px) {
   .register-info{
-    max-width: 30em;
+    max-width: 90vw;
   }
 }
 
@@ -316,8 +310,8 @@ select{
 }
 
 .register-info .info-footer{
-  display: grid;
-  grid-template-columns: 14em 3em 10em;
+  display: flex;
+  column-gap: 3em;
 }
 
 .register-info .info-footer p{
