@@ -115,7 +115,11 @@ addModuleBtn.addEventListener("click", (e) => {
     // Create raw block template and add to page
     var dashboardDom = document.getElementById("dashboard");
     var newBlock = generateDefaultBlock();
-    dashboardDom.innerHTML += newBlock;
+
+    var newElem = document.createElement("div");
+    newElem.appendChild(newBlock);
+    dashboardDom.appendChild(newElem)
+    // dashboardDom.innerHTML += newBlock;
 
     // Retrieve components
     var newModuleGallery = document.querySelector(`#module-${index} .module-gallery`);
