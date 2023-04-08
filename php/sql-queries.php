@@ -298,7 +298,7 @@ function retrievePostComment($con, $coinId){
 }
 
 function retrieveUserComment($con, $userId){
-    $userCommentSql = "SELECT c.id AS `commentId`, coin_id, `text`, parentId, u.id AS `userId`, `timestamp`, x.img_url FROM comment c JOIN userAuth u ON c.user_id = u.id JOIN coin x ON x.Id = c.coin_id WHERE u.id = 5 ORDER BY timestamp DESC";
+    $userCommentSql = "SELECT c.id AS `commentId`, coin_id, `text`, parentId, u.id AS `userId`, `timestamp`, x.img_url FROM comment c JOIN userAuth u ON c.user_id = u.id JOIN coin x ON x.Id = c.coin_id WHERE u.id = ? ORDER BY timestamp DESC";
     $userCommentStmt = mysqli_stmt_init($con);
     if (!mysqli_stmt_prepare($userCommentStmt, $userCommentSql)){
         return false;
