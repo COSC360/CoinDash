@@ -149,7 +149,7 @@
     });
 
     new Chart(\"line-1\", {
-      type: \"doughnut\",
+      type: \"pie\",
       data: {
         labels: registeredUserActivityTypeValues,
         datasets: [{
@@ -167,7 +167,7 @@
     });
 
     new Chart(\"line-2\", {
-      type: \"scatter\",
+      type: \"pie\",
       data: {
         labels: unregisteredUserActivityTypeValues,
         datasets: [{
