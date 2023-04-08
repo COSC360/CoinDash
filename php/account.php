@@ -38,7 +38,6 @@
         <div class = "panel user-account-container">
             <div class="user-account-info">
                 <h2>Account Settings</h2>
-                <p></p>
             </div>  
             <div class="user-account-box">
                 <div class="profile-box">
@@ -52,19 +51,18 @@
                         <input type = "text" id="email" name = "email" value = "<?php echo $_SESSION["email"] ;?>">
                         <label>Password</label><br>
                         <input type = "text" id="password" name = "password" value = "<?php echo $_SESSION["password"] ;?>">
-                    <div>
+                    </div>
                     <div class = "formData"> 
                         <input type="reset" value="Reset Form">
                         <input type="submit" name= "updateSubmit" id = "updateSubmit" value="Confirm Changes">
-                    <div>
+                    </div>
                 </form>
             </div>
-        </div>
-
-        <div class = "panel">
-            <h1 class="commentHistoryTitle">Comment History</h1>
-            <div class = "commentHistoryArea">
-                <?php include 'retrieveUserComment.php'?>
+            <div class = "panel">
+                <h1 class="commentHistoryTitle">Comment History</h1>
+                <div class = "commentHistoryArea">
+                    <?php include 'retrieveUserComment.php'?>
+                </div>
             </div>
         </div>
     </main>
