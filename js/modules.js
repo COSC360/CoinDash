@@ -238,7 +238,7 @@ function setModuleHTML(fiat, category, sort, target){
                             <div class="product-image" style="background-image: url(${coin.img_url});"></div>
                         </div><div class="product-info-container">
                             <h3>${coin.name}</h3>
-                            <strong class="product-price ${coin[fiat] > 0 ? "green" : "red" }">${coin[fiat].toFixed(3)}${fiat.toUpperCase()} ${coin.price_change_24h.toFixed(2)}%</strong>
+                            <strong class="product-price ${coin.price_change_24h > 0 ? "green" : "red" }">${coin[fiat].toFixed(3)}${fiat.toUpperCase()} ${coin.price_change_24h.toFixed(2)}%</strong>
                             <div class="price-trend-container">
                                 <p>7D: ${coin.price_change_7d.toFixed(2)}%</p>
                                 <p>14D: ${coin.price_change_14d.toFixed(2)}%</p>
