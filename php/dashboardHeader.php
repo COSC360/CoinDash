@@ -66,7 +66,7 @@
                     if (isset($_SESSION["id"])){
                         echo 
                         "<div class=\"container fit-width\">
-                        <p>Hi&nbsp;&nbsp;".$_SESSION["username"]." !&nbsp;&nbsp;|&nbsp;&nbsp;</p>
+                        <p>Hi&nbsp;&nbsp;".$_SESSION["username"]."&nbsp;&nbsp;|&nbsp;&nbsp;</p>
                         <a href=\"../php/logout.php\">Logout</a>
                         </div>";                
                     }else{
