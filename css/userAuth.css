@@ -86,7 +86,7 @@
   margin-top: 1.5em;
 }  
 
-.item-1, .item-2{
+#loginForm .item-1, .item-2{
   grid-column: span 2;
 }
 
@@ -192,10 +192,6 @@
     display: grid;
     white-space:nowrap;
     
-}
-
-.register-box .item-1 {
-    grid-column: span 1;
 }
 
 .register-box input {
