@@ -61,7 +61,7 @@ $coinId = $_GET["coinId"];
                     ";
                 } else {
                     echo "
-                        <p><a href=\"signIn.php\" class=\"comment-indicator\">Login to Comment</a></p>
+                        <p class=\"comment-indicator\"><a href=\"signIn.php\">Login to Comment</a></p>
                     ";
                 }
             ?>
