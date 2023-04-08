@@ -5,7 +5,7 @@
     include "sql-queries.php";
 
     $coinId = $_POST["coinId"];
-    $userType = isset($_SESSION["userType"]) ?? 'regular';
+    $userType = isset($_SESSION["userType"]) ? $_SESSION["userType"] : 'regular';
 
     $comments = retrievePostComment($con, $coinId);
     
