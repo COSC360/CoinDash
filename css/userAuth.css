@@ -251,6 +251,7 @@
   grid-template-columns: 1fr 1fr;
   column-gap: 3em;
   row-gap: 1em;
+  margin-top: 1.5em;
 }
 
 .item-8 input{ 
@@ -281,7 +282,7 @@ select{
 
 @media only screen and (max-width: 1600px) {
   .register-info{
-    max-width: 90vw;
+    max-width: min(90vw, 30em);
   }
 }
 
