@@ -194,4 +194,5 @@ column-gap: 1.5em
     flex-direction:row;
     column-gap: 1em;
     font-size: 1em;
+    margin-top: 1em;
 }
