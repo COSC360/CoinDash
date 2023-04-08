@@ -58,17 +58,15 @@ $coinId = $_GET["coinId"];
                                 <button type=\"submit\" class=\"comment-btn\">Comment</button>
                             </p>
                         </form>
-                        <div id=\"comment-area\">
-                        </div>
                     ";
                 } else {
                     echo "
-                        <div class=\"comment-mask\">
-                            <a href=\"signIn.php\">Login to View Comments</a>
-                        </div>
+                        <a href=\"signIn.php\">Login to View Comments</a>
                     ";
                 }
             ?>
+            <div id="comment-area">
+            </div>
         </div>
     </article>
     <?php
