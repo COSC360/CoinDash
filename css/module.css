@@ -69,6 +69,7 @@
 }
 
 .dropdowns {
+    max-width: calc(100%-1.5em);
     display: flex;
     gap: 1.25em;
     grid-column: span 3;
@@ -80,6 +81,7 @@ select {
 }
 
 .dropdown {
+    max-width: 50%;
     width: 0;
     font-size: 1.1em;
     flex-grow: 1;
