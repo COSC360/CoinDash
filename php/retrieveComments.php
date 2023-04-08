@@ -5,7 +5,7 @@
     include "sql-queries.php";
 
     $coinId = $_POST["coinId"];
-    $userType = isset($_SESSION["userType"]) ? $_SESSION["userType"] : 'regular';
+    $userType = isset($_SESSION["userType"]) ? $_SESSION["userType"] : 'guest';
 
     $comments = retrievePostComment($con, $coinId);
     
@@ -33,13 +33,14 @@
                             <h4 class=\"user-name\">".$commentData["timestamp"]."</h4>
                         </div>
                         <p class=\"review-content\">".$commentData["text"]."</p>
-                    </div>
-                    <p class=\"reply-btn\">Reply</p> ";
-                    
+                    </div>";
+                    if ($userType == "user"){
+                        $commentHTML .= "<p class=\"reply-btn\">Reply</p> ";
+                    }
                     if ($userType == "admin"){
+                        $commentHTML .= "<p class=\"reply-btn\">Reply</p> ";
                         $commentHTML .= " | <p class=\"delete-btn\">Delete</p>";
                     }
-
         $commentHTML .="<form class=\"reply-form\">
                         <textarea name=\"text\"></textarea>
                         <p class=\"btn-container\">
