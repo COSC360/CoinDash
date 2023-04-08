@@ -1,10 +1,10 @@
 <?php
 session_start();
-$previousPage = substr(substr($_SERVER["HTTP_REFERER"],strrpos($_SERVER["HTTP_REFERER"],"/")+1),0,-4);
-$currentPage = substr(substr($_SERVER["SCRIPT_NAME"],strrpos($_SERVER["SCRIPT_NAME"],"/")+1),0,-4);
 
-echo $previousPage;
-echo $currentPage;
+$rootPage = "Home";
+$previousPage = ucfirst(substr(substr($_SERVER["HTTP_REFERER"],strrpos($_SERVER["HTTP_REFERER"],"/")+1),0,-4));
+$currentPage = ucfirst(substr(substr($_SERVER["SCRIPT_NAME"],strrpos($_SERVER["SCRIPT_NAME"],"/")+1),0,-4));
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -40,10 +40,10 @@ echo $currentPage;
     <main>
         <article class="panel page-title">
             <?php
-                if(isset($_SESSION['id'])){
-                    echo "<h2>Home / <span id=\"breadcrumbCurrent\">".$_SESSION['username']."<span></h2>";
+                if(isset($_SESSION['id']) && isset($previousPage)){
+                    echo "<h2>".$rootPage." / <span id=\"breadcrumbCurrent\">".$_SESSION['username']."/ ".$currentPage."<span></h2>";
                 }else{
-                    echo "<h2>Home / Guest</h2>";
+                    echo "<h2>".$rootPage." / Guest</h2>"."/ ".$currentPage;
                 }
             ?>
             <div class="title">
