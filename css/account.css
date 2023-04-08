@@ -199,7 +199,8 @@ column-gap: 1.5em
 
 .reply{
     padding: 0.25em;
-    border-radius: 0.5em;
+    border-radius: 0.25em;
     background-color: #99ffdd;
     color: black;
+    font-size: 0.75em;
 }
