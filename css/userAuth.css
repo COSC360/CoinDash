@@ -25,12 +25,9 @@
   gap: 5em;
 }
 
-@media only screen and (min-width: 1600px) {
-  .login-info{
-    max-width: min(90vw, 30em);
-  }
+.login-info{
+  max-width: min(90vw, 30em);
 }
-
 
 .login-info h1{
     font-size: 1.25em;
