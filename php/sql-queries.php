@@ -129,7 +129,6 @@ function retrieveCoinByLike($con, $like){
     $results = mysqli_stmt_get_result($stmt);
 
     if ($rows = $results -> fetch_all(MYSQLI_ASSOC)){
-        
         // mysqli_stmt_close();
         return $rows;
     } else {
