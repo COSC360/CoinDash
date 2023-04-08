@@ -104,6 +104,14 @@ i {
     position: absolute;
 }
 
+.green {
+    color: var(--Green);
+}
+
+.red {
+    color: var(--Red);
+}
+
 @media only screen and (min-width: 0px)  {
     .panel {
         padding: 0 2.5em;
