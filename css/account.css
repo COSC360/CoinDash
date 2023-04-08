@@ -181,12 +181,14 @@ column-gap: 1.5em
     border-radius: 1em;
 }
 
-.main-comment-area{
-    overflow-y: auto;
-}
-
 .commentText{
     font-size: 1.25em;
+}
+
+.comment-main-info{
+    display: flex;
+    align-items: center;
+    row-gap: 1em;    
 }
 
 .comment-misc-info{
