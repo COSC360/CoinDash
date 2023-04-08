@@ -194,6 +194,10 @@
     
 }
 
+.register-box .item-1 {
+    grid-column: span 1;
+}
+
 .register-box input {
   margin-top: 1em;
   border: none;
