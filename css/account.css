@@ -76,10 +76,10 @@ column-gap: 1.5em
     flex-direction: column;
 }
 
-/* .profile-box{
+.formData{
     display: flex;
     flex-direction: row;
-} */
+}
 
 
 .user-account-box input {
