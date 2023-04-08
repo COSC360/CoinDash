@@ -20,12 +20,12 @@
                 <strong class=\"product-price\">".number_format($coin["jpy"], 4, '.', '')." JPY</strong>
             </div>
             <div class=\"price-trend-container\">
-                <p>7D: ".number_format($coin["price_change_7d"], 2, '.', '')."%</p>
-                <p>14D: ".number_format($coin["price_change_14d"], 2, '.', '')."%</p>
-                <p>30D: ".number_format($coin["price_change_30d"], 2, '.', '')."%</p>
-                <p>60D: ".number_format($coin["price_change_60d"], 2, '.', '')."%</p>
-                <p>200D: ".number_format($coin["price_change_200d"], 2, '.', '')."%</p>
-                <p>1Y: ".number_format($coin["price_change_1yr"], 2, '.', '')."%</p>
+                <p class=\"".getPriceColorClass($coin["price_change_7d"])."\">7D: ".number_format($coin["price_change_7d"], 2, '.', '')."%</p>
+                <p class=\"".getPriceColorClass($coin["price_change_14d"])."\">14D: ".number_format($coin["price_change_14d"], 2, '.', '')."%</p>
+                <p class=\"".getPriceColorClass($coin["price_change_30d"])."\">30D: ".number_format($coin["price_change_30d"], 2, '.', '')."%</p>
+                <p class=\"".getPriceColorClass($coin["price_change_60d"])."\">60D: ".number_format($coin["price_change_60d"], 2, '.', '')."%</p>
+                <p class=\"".getPriceColorClass($coin["price_change_200d"])."\">200D: ".number_format($coin["price_change_200d"], 2, '.', '')."%</p>
+                <p class=\"".getPriceColorClass($coin["price_change_1yr"])."\">1Y: ".number_format($coin["price_change_1yr"], 2, '.', '')."%</p>
             </div>
         </div>
     </div>";
