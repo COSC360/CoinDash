@@ -2,7 +2,7 @@
     session_start();
     include 'DBconnection.php';
     include 'modules.php';
-    echo $_SESSION["id"];
+    
     if(isset($_SESSION["id"])){
         $userId = $_SESSION["id"];
 
