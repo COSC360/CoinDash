@@ -133,3 +133,15 @@ footer {
     background: rgb(45,45,45);
     background: linear-gradient(90deg, rgb(26 94 217) 0%, rgb(23 99 195) 32%, rgba(0,212,255,1) 100%);
 }
+
+@media only screen and (min-width: 0px)  {
+    .footer {
+        font-size: 0.8em;
+    }
+}
+
+@media only screen and (min-width: 720px)  {
+    .footer {
+        font-size: 1em;
+    }
+}
