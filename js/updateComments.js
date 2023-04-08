@@ -25,6 +25,7 @@ function updateData(){
                 commentArea.innerHTML = response;
                 addReplyEventListeners();
                 addFormEventListeners();
+                addDeleteEventListeners();
                 setTimeout(function(){updateData()}, 1000);
             }
         }
@@ -53,13 +54,28 @@ function addReplyEventListeners(){
     })
 }
 
+function addDeleteEventListeners(){
+    var deleteBtns = document.querySelectorAll(".delete-btn");
+
+    deleteBtns.forEach(btn => {
+        var commentId = deleteBtns.parentElement.dataset.commentid;
+        btn.addEventListener("click", () => {
+            $.ajax({
+                url: "deleteComment.php",
+                type: "POST",
+                data: {commentId: commentId},
+            })
+        })
+    })
+}
+
 function addFormEventListeners(){
     var replyForms = document.querySelectorAll(".reply-form");
 
     replyForms.forEach(form => {
         form.addEventListener("submit", (e) => {
             e.preventDefault();
-            var commentId = form.dataset.commentid;
+            var commentId = form.parentElement.dataset.commentid;
             var text = form["text"].value;
 
             // Stops empty comments

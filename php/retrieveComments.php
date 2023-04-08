@@ -22,7 +22,7 @@
         $commentHTML = "
             <div style=\"margin-left:".($level * 2)."em;\" class=\"comment-container\"> 
                 <hr class=\"medium-spacing\">
-                <div class=\"comment collapsed\" id=\"comment-1\">
+                <div class=\"comment collapsed\" data-commentid=\"".$commentData["id"]."\">
                     <div class=\"main-comment\">
                         <div class=\"comment-header\">
                             <img src=\"../images/profile-picture.png\" class=\"profile-picture\">
@@ -33,7 +33,7 @@
                     </div>
                     <p class=\"reply-btn\">Reply</p> | 
                     <p class=\"delete-btn\">Delete</p>
-                    <form class=\"reply-form\" data-commentid=\"".$commentData["id"]."\">
+                    <form class=\"reply-form\">
                         <textarea name=\"text\"></textarea>
                         <p class=\"btn-container\">
                             <button type=\"submit\" class=\"comment-btn\">Reply</button>
