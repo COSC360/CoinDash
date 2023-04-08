@@ -171,3 +171,10 @@
     font-size: 1.6em;
     margin-bottom: 0.8em;
 }
+
+.comment-indicator {
+    background-color: var(--Red);
+    padding: 0.75em 3em;
+    font-size: 1.2em;
+    border-radius: 10px;
+}
