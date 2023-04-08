@@ -147,7 +147,7 @@
         legend: {display: true, position: 'right', align: 'center'},
         title: {
           display: true,
-          text: \"Registered User Status Data\"
+          text: \"Registered User Activity Data\"
         } 
       }
     });
@@ -165,7 +165,7 @@
         legend: {display: true, position: 'right', align: 'center'},
         title: {
           display: true,
-          text: \"Unregistered User Status Data\"
+          text: \"Unregistered User Activity Data\"
         } 
       }
     });
