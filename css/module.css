@@ -41,7 +41,7 @@
 .module-header{
     display: grid;
     gap: 1.25em;
-    grid-template-columns: repeat(auto-fit, minmax(12em, 1fr));
+    /* grid-template-columns: repeat(auto-fit, minmax(12em, 1fr)); */
     border-bottom: 1px solid var(--White-3);
     padding-bottom: 1em;
     margin-bottom: 1em;
@@ -69,7 +69,6 @@
 }
 
 .dropdowns {
-    max-width: calc(100%-1.5em);
     display: flex;
     gap: 1.25em;
     grid-column: span 3;
