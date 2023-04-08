@@ -74,6 +74,7 @@ column-gap: 1.5em
 .user-account-box{
     display: flex;
     flex-direction: column;
+    min-width: 40vw;
 }
 
 .user-account-box form{
@@ -136,7 +137,7 @@ column-gap: 1.5em
 
 .profile-box img{
     margin-right: 1.25em;
-    width: 30%;
+    width: 20%;
     border-radius: 50%;
     height: fit-content;
     float: left;
