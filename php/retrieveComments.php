@@ -1,4 +1,6 @@
 <?php
+    session_start();
+
     include "DBconnection.php";
     include "sql-queries.php";
 
