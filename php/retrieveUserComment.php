@@ -23,7 +23,7 @@
 
 
     function getCommentHTML($con, $commentData, $level){
-        if($commentData["parentId"] != null){
+        if($commentData["parentId"] == null){
             $commentHTML = "
             <div class = \"main-comment\">
                 <p class=\"commentText\">".$commentData["text"]."</p>
