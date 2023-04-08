@@ -60,11 +60,13 @@ function addDeleteEventListeners(){
     deleteBtns.forEach(btn => {
         var commentId = btn.parentElement.dataset.commentid;
         btn.addEventListener("click", () => {
-            $.ajax({
-                url: "deleteComment.php",
-                type: "POST",
-                data: {commentId: commentId},
-            })
+            if (confirm("Are you sure you want to delete this user post?")){
+                $.ajax({
+                    url: "deleteComment.php",
+                    type: "POST",
+                    data: {commentId: commentId},
+                })
+            }
         })
     })
 }
