@@ -1,6 +1,6 @@
 import { uploadDashboard } from "./uploadDashboard.js";
 import { buildModule } from "./parser.js";
-import { fiatLabels, fiats, sortLabels, sortValues } from "./utils.js";
+import { fiatLabels, fiats, sortLabels, sortValues, getPriceColorClass} from "./utils.js";
 
 var module_settings_btns = document.querySelectorAll(".module-settings-btn");
 var modules = document.querySelectorAll(".module");
@@ -238,7 +238,7 @@ function setModuleHTML(fiat, category, sort, target){
                             <div class="product-image" style="background-image: url(${coin.img_url});"></div>
                         </div><div class="product-info-container">
                             <h3>${coin.name}</h3>
-                            <strong class="product-price">${coin[fiat].toFixed(3)}${fiat.toUpperCase()} ${coin.price_change_24h.toFixed(2)}%</strong>
+                            <strong class="product-price ${getPriceColorClass(coin[fiat])}">${coin[fiat].toFixed(3)}${fiat.toUpperCase()} ${coin.price_change_24h.toFixed(2)}%</strong>
                             <div class="price-trend-container">
                                 <p>7D: ${coin.price_change_7d.toFixed(2)}%</p>
                                 <p>14D: ${coin.price_change_14d.toFixed(2)}%</p>
