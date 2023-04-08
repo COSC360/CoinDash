@@ -76,6 +76,11 @@ column-gap: 1.5em
     flex-direction: column;
 }
 
+.user-account-box form{
+    display: flex;
+    flex-direction: column;
+}
+
 .formData{
     display: flex;
     flex-direction: row;
