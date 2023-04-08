@@ -37,12 +37,11 @@
         }else{
             $commentHTML = "
             <div class = \"main-comment\">
-                <p class=\"commentText\">".$commentData["text"]."</p>
+                <p class=\"commentText\">".$commentData["text"]."</p><span class=\"reply\">REPLY COMMENT</span>
                 <div class =\"comment-misc-info\">
                     <p class=\"commentId\">comment id · ".$commentData["commentId"]."</p>
                     <p class=\"coinId\">coin name · ".$commentData["coin_id"]."</p>
                     <p class=\"timestamp\">timestamp · ".$commentData["timestamp"]."</p>
-                    <p class=\"reply\">REPLY COMMENT</p>
                 </div>
             </div>
         ";           
