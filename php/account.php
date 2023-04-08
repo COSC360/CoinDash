@@ -2,8 +2,8 @@
     session_start();
 
     $rootPage = "Home";
-    $previousPage = substr(substr($_SERVER["HTTP_REFERER"],strrpos($_SERVER["HTTP_REFERER"],"/")+1),0,-4);
-    $currentPage = substr(substr($_SERVER["SCRIPT_NAME"],strrpos($_SERVER["SCRIPT_NAME"],"/")+1),0,-4);
+    $previousPage = ucfirst(substr(substr($_SERVER["HTTP_REFERER"],strrpos($_SERVER["HTTP_REFERER"],"/")+1),0,-4));
+    $currentPage = ucfirst(substr(substr($_SERVER["SCRIPT_NAME"],strrpos($_SERVER["SCRIPT_NAME"],"/")+1),0,-4));
       
     $_SESSION['currentPage'] = $currentPages;
 
@@ -39,6 +39,13 @@
 <body>
     <?php include 'dashboardHeader.php';?>
     <main>
+        <?php
+            if(isset($_SESSION['id']) && isset($previousPage)){
+                echo "<h2>".$rootPage." / <span id=\"breadcrumbCurrent\">".$_SESSION['username']."/ ".$currentPage."<span></h2>";
+            }else{
+                echo "<h2>".$rootPage." / Guest</h2>"."/ ".$currentPage;
+            }
+        ?>
         <div class = "panel user-account-container">
             <div class="user-account-info">
                 <h2>Account Settings</h2>
