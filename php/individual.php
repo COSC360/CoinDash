@@ -47,16 +47,28 @@ $coinId = $_GET["coinId"];
     <article class="panel">
         <div class="reviews">
             <h2>Comments</h2>
-            <form class="comment-form" id="comment-form">
-                <p>
-                    <textarea name="text" class="comment-input"></textarea>
-                </p>
-                <p class="btn-container">
-                    <button type="submit" class="comment-btn">Comment</button>
-                </p>
-            </form>
-            <div id="comment-area">
-            </div>
+            <?php
+                if (isset($_SESSION["id"])){
+                    echo "
+                        <form class=\"comment-form\" id=\"comment-form\">
+                            <p>
+                                <textarea name=\"text\" class=\"comment-input\"></textarea>
+                            </p>
+                            <p class=\"btn-container\">
+                                <button type=\"submit\" class=\"comment-btn\">Comment</button>
+                            </p>
+                        </form>
+                        <div id=\"comment-area\">
+                        </div>
+                    ";
+                } else {
+                    echo "
+                        <div class=\"comment-mask\">
+                            <a href=\"signIn.php\">Login</a>
+                        </div>
+                    ";
+                }
+            ?>
         </div>
     </article>
     <?php
