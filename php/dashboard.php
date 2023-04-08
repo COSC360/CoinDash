@@ -1,8 +1,10 @@
 <?php
-session_set_cookie_params(0);
 session_start();
+$previousPage = substr($_SERVER["HTTP_REFERER"],strrpos($_SERVER["HTTP_REFERER"],"/")+1);
+$currentPage = substr($_SERVER["SCRIPT_NAME"],strrpos($_SERVER["SCRIPT_NAME"],"/")+1);
 
-echo $_SERVER['HTTP_REFERER'];
+echo $previousPage;
+echo $currentPage
 ?>
 <!DOCTYPE html>
 <html>

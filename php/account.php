@@ -13,7 +13,6 @@
         unset($_SESSION['statusMsg']);
     }
 
-    echo $_SERVER['HTTP_REFERER'];
 ?>
 <!DOCTYPE html>
 <html lang="en">
