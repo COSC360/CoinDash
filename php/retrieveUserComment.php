@@ -23,21 +23,27 @@
 
 
     function getCommentHTML($con, $commentData, $level){
-        if($commentData["parentId"] != null){
+        if($commentData["parentId"] == null){
             $commentHTML = "
             <div class = \"main-comment\">
-                <p class=\"commentText\">".$commentData["text"]."</p>
+                <div class =\"comment-main-info\">
+                <a href=individual.php?coinId=".$commentData["coin_id"]."><img class = \"coinImg\" src=".$commentData["img_url"]."></a>
+                    <p class=\"commentText\">".$commentData["text"]."</p>
+                </div>
                 <div class =\"comment-misc-info\">
-                    <p class=\"commentId\">comment id · ".$commentData["commentId"]."</p>
-                    <p class=\"coinId\">coin name · ".$commentData["coin_id"]."</p>
-                    <p class=\"timestamp\">timestamp · ".$commentData["timestamp"]."</p>
+                    <p class=\"commentId\">COMMENT ID · ".$commentData["commentId"]."</p>
+                    <p class=\"coinId\">COIN NAME · ".$commentData["coin_id"]."</p>
+                    <p class=\"timestamp\">TIMESTAMP · ".$commentData["timestamp"]."</p>
                 </div>
             </div>
         ";
         }else{
             $commentHTML = "
             <div class = \"main-comment\">
-                <p class=\"commentText\">".$commentData["text"]."</p>
+                <div class =\"comment-main-info\">
+                    <a href=individual.php?coinId=".$commentData["coin_id"]."><img class = \"coinImg\" src=".$commentData["img_url"]."></a>
+                    <p class=\"commentText\">".$commentData["text"]."</p>
+                </div>
                 <div class =\"comment-misc-info\">
                     <p class=\"commentId\">comment id · ".$commentData["commentId"]."</p>
                     <p class=\"coinId\">coin name · ".$commentData["coin_id"]."</p>

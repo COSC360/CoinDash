@@ -154,11 +154,11 @@ column-gap: 1.5em
 
 .commentHistoryTitle{
     padding: 0.25em 1em 0.25em 1em;
-    font-size: 1.5em;
+    font-size: 1.25em;
     color: white;
-    background-color: #363636;
+    background: black;
     width: fit-content;
-    border-radius: 0.25em;
+    border-radius: 0.25em
 }
 
 .commentHistoryArea{
@@ -181,12 +181,14 @@ column-gap: 1.5em
     border-radius: 1em;
 }
 
-.main-comment-area{
-    overflow-y: auto;
-}
-
 .commentText{
     font-size: 1.25em;
+}
+
+.comment-main-info{
+    display: flex;
+    align-items: center;
+    column-gap: 1em;    
 }
 
 .comment-misc-info{
@@ -203,4 +205,29 @@ column-gap: 1.5em
     background-color: #99ffdd;
     color: black;
     font-size: 0.75em;
+}
+
+.coinImg{
+    float: left;
+    height: 2em;
+    width: 2em;
+}
+
+/* Scrollbar Styling */
+
+.commentHistoryArea::-webkit-scrollbar-track
+{
+	border: 1px solid black;
+	background-color: #F5F5F5;
+}
+
+.commentHistoryArea::-webkit-scrollbar
+{
+	width: 10px;
+	background-color: #F5F5F5;
+}
+
+.commentHistoryArea::-webkit-scrollbar-thumb
+{
+	background-color: #000000;	
 }
