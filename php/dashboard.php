@@ -121,12 +121,12 @@ session_start();
                                             <h3>".$coin["name"]."</h3>
                                             <strong class=\"product-price ".getPriceColorClass($coin["price_change_24h"])."\" >".number_format($coin[$dashboardModules[$currentCount]["fiat"]], 3, '.', '')." ".strtoupper($dashboardModules[$currentCount]["fiat"])." ".number_format($coin["price_change_24h"], 2, '.', '')."%</strong>
                                             <div class=\"price-trend-container\">
-                                                <p class=\"".getPriceColorClass($coin["price_change_7d"])."\">7D: ".number_format($coin["price_change_7d"], 2, '.', '')."%</p>
-                                                <p class=\"".getPriceColorClass($coin["price_change_14d"])."\">14D: ".number_format($coin["price_change_14d"], 2, '.', '')."%</p>
-                                                <p class=\"".getPriceColorClass($coin["price_change_30d"])."\">30D: ".number_format($coin["price_change_30d"], 2, '.', '')."%</p>
-                                                <p class=\"".getPriceColorClass($coin["price_change_60d"])."\">60D: ".number_format($coin["price_change_60d"], 2, '.', '')."%</p>
-                                                <p class=\"".getPriceColorClass($coin["price_change_200d"])."\">200D: ".number_format($coin["price_change_200d"], 2, '.', '')."%</p>
-                                                <p class=\"".getPriceColorClass($coin["price_change_1yr"])."\">1Y: ".number_format($coin["price_change_1yr"], 2, '.', '')."%</p>
+                                                <p>7D: ".number_format($coin["price_change_7d"], 2, '.', '')."%</p>
+                                                <p>14D: ".number_format($coin["price_change_14d"], 2, '.', '')."%</p>
+                                                <p>30D: ".number_format($coin["price_change_30d"], 2, '.', '')."%</p>
+                                                <p>60D: ".number_format($coin["price_change_60d"], 2, '.', '')."%</p>
+                                                <p>200D: ".number_format($coin["price_change_200d"], 2, '.', '')."%</p>
+                                                <p>1Y: ".number_format($coin["price_change_1yr"], 2, '.', '')."%</p>
                                             </div>
                                         </div>
                                     </div>";
