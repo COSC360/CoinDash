@@ -276,6 +276,19 @@ function uploadComment($con, $userId, $coinId, $text, $parentId){
     mysqli_stmt_close($commentStmt);
 }
 
+function deleteComment($con, $commentId){
+    $commentSql = "DELETE FROM comment WHERE id = ?;";
+
+    $commentStmt = mysqli_stmt_init($con);
+    if (!mysqli_stmt_prepare($commentStmt, $commentSql)){
+        return false;
+    }
+
+    mysqli_stmt_bind_param($commentStmt, "i", $commentId);
+    mysqli_stmt_execute($commentStmt);
+    mysqli_stmt_close($commentStmt);
+}
+
 function retrievePostComment($con, $coinId){
     $commentSql = "SELECT c.id, coin_id, text, parentId, username, timestamp FROM comment c JOIN userAuth u ON c.user_id = u.id WHERE coin_id = ? AND parentId IS NULL ORDER BY timestamp DESC";
     $commentStmt = mysqli_stmt_init($con);
