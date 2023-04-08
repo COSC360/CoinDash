@@ -37,7 +37,7 @@
                     <p class=\"reply-btn\">Reply</p> | ";
                     
                     if ($userType == "admin"){
-                        $commentHTML .= "<p class=\"delete-btn\">Delete".$userType."</p>";
+                        $commentHTML .= "<p class=\"delete-btn\">Delete</p>";
                     }
 
         $commentHTML .="<form class=\"reply-form\">
