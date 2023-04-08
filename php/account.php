@@ -1,6 +1,8 @@
 <?php
     session_start();
 
+    include 'breadcrump.php';
+
     $curPageName = substr($_SERVER["SCRIPT_NAME"],strrpos($_SERVER["SCRIPT_NAME"],"/")+1);  
     $_SESSION['currentPage'] = $curPageName;
 
@@ -45,22 +47,24 @@
                     <h1>Username</p>
                     <h2><?php echo $_SESSION["username"] ;?></h2>
                 </div>
-                <form action= "processUpdate.php" method="POST"> 
-                    <div class = "formData">
-                        <div>                
-                            <label>Email</label><br>    
-                            <input type = "text" id="email" name = "email" value = "<?php echo $_SESSION["email"] ;?>"><br>
+                <div>
+                    <form action= "processUpdate.php" method="POST"> 
+                        <div class = "formData">
+                            <div>                
+                                <label>Email</label><br>    
+                                <input type = "text" id="email" name = "email" value = "<?php echo $_SESSION["email"] ;?>"><br>
+                            </div>
+                            <div>
+                                <label>Password</label><br>
+                                <input type = "text" id="password" name = "password" value = "<?php echo $_SESSION["password"] ;?>">
+                            </div>
                         </div>
-                        <div>
-                            <label>Password</label><br>
-                            <input type = "text" id="password" name = "password" value = "<?php echo $_SESSION["password"] ;?>">
+                        <div class = "formSubmit"> 
+                            <input type="reset" value="Reset Form">
+                            <input type="submit" name= "updateSubmit" id = "updateSubmit" value="Confirm Changes">
                         </div>
-                    </div>
-                    <div class = "formSubmit"> 
-                        <input type="reset" value="Reset Form">
-                        <input type="submit" name= "updateSubmit" id = "updateSubmit" value="Confirm Changes">
-                    </div>
-                </form>
+                    </form>
+                </div>
             </div>
         </div>
         <div class = "panel">
