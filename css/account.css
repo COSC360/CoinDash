@@ -184,3 +184,15 @@ column-gap: 1.5em
 .main-comment-area{
     overflow-y: auto;
 }
+
+.commentText{
+    font-size: 1.25em;
+}
+
+.comment-misc-info{
+    display: flex;
+    flex-direction:row;
+    column-gap: 1em;
+    font-size: 1em;
+    margin-top: 1em;
+}

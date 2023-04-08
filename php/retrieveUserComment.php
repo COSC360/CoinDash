@@ -25,10 +25,12 @@
     function getCommentHTML($con, $commentData, $level){
         $commentHTML = "
             <div class = \"main-comment\">
-                <p class=\"review-content\">".$commentData["commentId"]."</p>
-                <p class=\"review-content\">".$commentData["coin_id"]."</p>
-                <p class=\"review-content\">".$commentData["timestamp"]."</p>
-                <p class=\"review-content\">".$commentData["text"]."</p>
+                <p class=\"commentText\">".$commentData["text"]."</p>
+                <div class =\"comment-misc-info\">
+                    <p class=\"commentId\">comment id · ".$commentData["commentId"]."</p>
+                    <p class=\"coinId\">coin name · ".$commentData["coin_id"]."</p>
+                    <p class=\"timestamp\">timestamp · ".$commentData["timestamp"]."</p>
+                </div>
             </div>
         ";
         return $commentHTML;
