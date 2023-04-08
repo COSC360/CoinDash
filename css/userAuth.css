@@ -27,15 +27,10 @@
 
 @media only screen and (min-width: 1600px) {
   .login-info{
-    max-width: 40em;
+    max-width: min(90vw, 30em);
   }
 }
 
-@media only screen and (max-width: 1600px) {
-  .login-info{
-    max-width: 40em;
-  }
-}
 
 .login-info h1{
     font-size: 1.25em;
@@ -62,8 +57,8 @@
 }
 
 .login-info .info-footer{
-  display: grid;
-  grid-template-columns: 14em 3em 10em;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .login-info .info-footer p{
@@ -87,6 +82,7 @@
   width: 100%;
   grid-template-columns: 1fr 1fr;
   row-gap: 1em;
+  margin-top: 1.5em;
 }  
 
 .item-1, .item-2{
