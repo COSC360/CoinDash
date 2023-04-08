@@ -5,7 +5,8 @@
   retrieveRegSourceChartData($con);
   retrieveCommentCountChartData($con);
   retrieveUserStatusChartData($con);  
-  retrieveUserActivityChartData($con);
+  retrieveRegisteredUserActivityChartData($con);
+  retrieveUnregisteredUserActivityChartData($con);
 ?>  
   <div class ="canvasData">
     <canvas id="doughnut"></canvas>
@@ -28,9 +29,11 @@
     var xStatusValues = [];
     var yStatusValues = [];
 
-    var userTypeValues = [];
-    var activityTypeValues = [];
-    var activityCountValues = [];
+    var registeredUserActivityTypeValues = [];
+    var registeredUserActivityCountValues = [];
+
+    var unregisteredUserActivityTypeValues = [];
+    var unregisteredUserActivityCountValues = [];
     ";
     foreach($_SESSION['regSourceDataArray'] as $row){
         echo "xValues.push(\"".$row."\");";
@@ -53,16 +56,20 @@
         echo "yStatusValues.push(\"".$row."\");";
     }
 
-    foreach($_SESSION['activityUserArray'] as $row){
-      echo "userTypeValues.push(\"".$row."\");";
+    foreach($_SESSION['registeredUserDataArray'] as $row){
+      echo "registeredUserActivityTypeValues.push(\"".$row."\");";
     }
 
-    foreach($_SESSION['activityTypeDataArray'] as $row){
-      echo "activityTypeValues.push(\"".$row."\");";
+    foreach($_SESSION['registeredUserCountDataArray'] as $row){
+    echo "registeredUserActivityCountValues.push(\"".$row."\");";
     }
 
-    foreach($_SESSION['activityCountDataArray'] as $row){
-    echo "activityCountValues.push(\"".$row."\");";
+    foreach($_SESSION['unregisteredUserDataArray'] as $row){
+      echo "unregisteredUserActivityTypeValues.push(\"".$row."\");";
+    }
+
+    foreach($_SESSION['unregisteredUserCountDataArray'] as $row){
+    echo "unregisteredUserActivityCountValues.push(\"".$row."\");";
     }
   echo 
     "
@@ -126,21 +133,41 @@
       }
     });
 
-    new Chart(\"pie-2\", {
-      type: \"pie\",
+    new Chart(\"line-1\", {
+      type: \"line\",
       data: {
-        labels: activityTypeValues,
+        labels: registeredUserActivityTypeValues,
         datasets: [{
-          backgroundColor: chartColors,
-          data: activityCountValues
+          backgroundColor:\"rgba(0,0,255,1.0)\",
+          borderColor: \"rgba(0,0,255,0.1)\",
+          data: registeredUserActivityCountValues
         }]
       },
-      options: {
+      options:{
         legend: {display: true, position: 'right', align: 'center'},
         title: {
           display: true,
-          text: \"User Activity Data\"
-        }        
+          text: \"Registered User Status Data\"
+        } 
+      }
+    });
+
+    new Chart(\"line-2\", {
+      type: \"line\",
+      data: {
+        labels: unregisteredUserActivityTypeValues,
+        datasets: [{
+          backgroundColor:\"rgba(0,0,255,1.0)\",
+          borderColor: \"rgba(0,0,255,0.1)\",
+          data: unregisteredUserActivityCountValues
+        }]
+      },
+      options:{
+        legend: {display: true, position: 'right', align: 'center'},
+        title: {
+          display: true,
+          text: \"Unregistered User Status Data\"
+        } 
       }
     });
   </script>";

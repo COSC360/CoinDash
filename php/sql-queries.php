@@ -952,14 +952,47 @@ function retrieveUserStatusChartData($con){
     }      
 }
 
-function retrieveUserActivityChartData($con){
-    $chartDataSQL = "SELECT userId, activity, COUNT(userid) AS userCount FROM `userActivity` GROUP BY userId, activity";
+function retrieveRegisteredUserActivityChartData($con){
+    $chartDataSQL = "SELECT activity, COUNT(userid) AS userCount FROM `userActivity` WHERE userId != 0 GROUP BY activity";
 
     $chartDataStmt = mysqli_stmt_init($con); 
 
-    $activityUserArray = array();
-    $activityTypeDataArray = array();
-    $activityCountDataArray = array();
+    $registeredUserDataArray = array();
+    $registeredUserCountDataArray = array();
+
+    if (!mysqli_stmt_prepare($chartDataStmt, $chartDataSQL)){
+        $_SESSION['statusMsg'] = "Unable to prepare the SQL statement.";
+        return false;
+    }
+
+    // Execute prepared statement
+    mysqli_stmt_execute($chartDataStmt);
+
+    $results = mysqli_stmt_get_result($chartDataStmt);
+
+    if($rows = $results -> fetch_all(MYSQLI_ASSOC)){
+        mysqli_stmt_close($chartDataStmt);
+
+        foreach($rows as $row){
+            array_push($registeredUserDataArray, $row['activity']);
+            array_push($registeredUserCountDataArray, $row['userCount']);
+        }
+
+        $_SESSION['registeredUserDataArray'] = $registeredUserDataArray;
+        $_SESSION['registeredUserCountDataArray'] = $registeredUserCountDataArray;
+    }else{
+        mysqli_stmt_close($chartDataStmt);
+        return false;
+    }      
+}
+
+function retrieveUnregisteredUserActivityChartData($con){
+    $chartDataSQL = "SELECT activity, COUNT(userid) AS userCount FROM `userActivity` WHERE userId = 0 GROUP BY activity";
+
+    $chartDataStmt = mysqli_stmt_init($con); 
+
+    $unregisteredUserDataArray = array();
+    $unregisteredUserCountDataArray = array();
 
     if (!mysqli_stmt_prepare($chartDataStmt, $chartDataSQL)){
         $_SESSION['statusMsg'] = "Unable to prepare the SQL statement.";
@@ -975,24 +1008,16 @@ function retrieveUserActivityChartData($con){
         mysqli_stmt_close($chartDataStmt);
         
         foreach($rows as $row){
-            if($row['userId'] == "0"){
-                array_push($activityUserArray , "Unregistered User");
-                array_push($activityTypeDataArray , $row['activity']);
-                array_push($activityCountDataArray, $row['userCount']);
-            }else{
-                array_push($activityUserArray , "Registered User");
-                array_push($activityTypeDataArray , $row['activity']);
-                array_push($activityCountDataArray, $row['userCount']);
-            }
+            array_push($unregisteredUserDataArray , $row['activity']);
+            array_push($unregisteredUserCountDataArray, $row['userCount']);
         }
 
-        $_SESSION['activityUserArray'] = $activityUserArray;
-        $_SESSION['activityTypeDataArray'] = $activityTypeDataArray;
-        $_SESSION['activityCountDataArray'] = $activityCountDataArray;
+        $_SESSION['unregisteredUserDataArray'] = $unregisteredUserDataArray;
+        $_SESSION['unregisteredUserCountDataArray'] = $unregisteredUserCountDataArray;
     }else{
         mysqli_stmt_close($chartDataStmt);
         return false;
-    }      
+    }     
 }
 
 
