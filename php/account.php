@@ -46,11 +46,15 @@
                     <h2><?php echo $_SESSION["username"] ;?></h2>
                 </div>
                 <form action= "processUpdate.php" method="POST"> 
-                    <div class = "formData">                
-                        <label>Email</label><br>    
-                        <input type = "text" id="email" name = "email" value = "<?php echo $_SESSION["email"] ;?>">
-                        <label>Password</label><br>
-                        <input type = "text" id="password" name = "password" value = "<?php echo $_SESSION["password"] ;?>">
+                    <div class = "formData">
+                        <div>                
+                            <label>Email</label><br>    
+                            <input type = "text" id="email" name = "email" value = "<?php echo $_SESSION["email"] ;?>"><br>
+                        </div>
+                        <div>
+                            <label>Password</label><br>
+                            <input type = "text" id="password" name = "password" value = "<?php echo $_SESSION["password"] ;?>">
+                        </div>
                     </div>
                     <div class = "formData"> 
                         <input type="reset" value="Reset Form">
