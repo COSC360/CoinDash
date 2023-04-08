@@ -1,9 +1,7 @@
 <?php
     session_start();
 
-    // $rootPage = "Home";
-    // $previousPage = "";
-    // $currentPage = substr($_SERVER["SCRIPT_NAME"],strrpos($_SERVER["SCRIPT_NAME"],"/")+1);
+    $rootPage = "Home";
 
-    // $_SESSION['breadcrumURL'] = $rootPage."/".$previousPage."/".$currentPage;
+    $_SESSION['breadcrumURL'] = $rootPage."/".$previousPage."/".$currentPage;
 ?>

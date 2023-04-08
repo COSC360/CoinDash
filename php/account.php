@@ -12,6 +12,7 @@
         include 'alert.php';
         unset($_SESSION['statusMsg']);
     }
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
