@@ -164,6 +164,7 @@
     justify-content: center;
     top: 0;
     left: 0;
+    padding-left: 1em;
 }
 
 .reviews h2 {
