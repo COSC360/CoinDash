@@ -4,6 +4,7 @@
     position: relative;
     display: flex;
     flex: 1 1 0;
+    flex-wrap: wrap;
 }
 
 .horizontal-block {
@@ -20,6 +21,7 @@
     padding: 0 0.625em;
     flex: 1 1 0;
     position: relative;
+    min-width: 20em;
 }
 
 .module-settings-btn {
