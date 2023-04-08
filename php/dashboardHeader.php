@@ -46,7 +46,7 @@
             </nav>
         </div>
         <div class="right settings">
-            <div class="horizontal-container fit-width">
+            <div class="fit-width">
                 <?php
                     if (isset($_SESSION["id"])){
                         echo 
