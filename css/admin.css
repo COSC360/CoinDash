@@ -200,10 +200,16 @@ canvas #pie{
   grid-row-start: 0;
 }
 
-canvas #pie-2{
+canvas #line-1{
   grid-column-start: 0;
   grid-row-start: 1;
 }
+
+canvas #line-2{
+  grid-column-start: 0;
+  grid-row-start: 2;
+}
+
 
 .adjust-container{
   display: flex;

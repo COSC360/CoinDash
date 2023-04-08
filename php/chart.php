@@ -12,6 +12,7 @@
     <canvas id="doughnut"></canvas>
     <canvas id="bar"></canvas>
     <canvas id="pie"></canvas>
+    <canvas id="line-1"></canvas>
     <canvas id="pie-2"></canvas>
   </div>
 
