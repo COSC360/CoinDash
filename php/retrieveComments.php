@@ -34,10 +34,10 @@
                         </div>
                         <p class=\"review-content\">".$commentData["text"]."</p>
                     </div>
-                    <p class=\"reply-btn\">Reply</p> | ";
+                    <p class=\"reply-btn\">Reply</p> ";
                     
                     if ($userType == "admin"){
-                        $commentHTML .= "<p class=\"delete-btn\">Delete</p>";
+                        $commentHTML .= " | <p class=\"delete-btn\">Delete</p>";
                     }
 
         $commentHTML .="<form class=\"reply-form\">
