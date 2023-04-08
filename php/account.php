@@ -39,6 +39,13 @@
 <body>
     <?php include 'dashboardHeader.php';?>
     <main>
+        <?php
+            if(isset($_SESSION['id']) && isset($previousPage)){
+                echo "<h2>".$rootPage." / <span id=\"breadcrumbCurrent\">".$_SESSION['username']."/ ".$currentPage."<span></h2>";
+            }else{
+                echo "<h2>".$rootPage." / Guest</h2>"."/ ".$currentPage;
+            }
+        ?>
         <div class = "panel user-account-container">
             <div class="user-account-info">
                 <h2>Account Settings</h2>
