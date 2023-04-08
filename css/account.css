@@ -2,7 +2,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    row-gap: 5em;
+    gap: 5em;
   }
 
 .user-account-info{
@@ -25,6 +25,20 @@
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;  
       animation: rainbow-animation 80s linear infinite;
+  }
+
+  .formData div {
+    flex-grow: 1;
+  }
+
+  .formData div input {
+    width: 100%;
+  }
+
+
+
+  .formData {
+    flex-grow: 1;
   }
   
   
@@ -50,6 +64,7 @@
 
 
 .user-account-box{
+    flex-grow: 1;
     height: fit-content;
     width: fit-content;
     display: grid;
@@ -89,6 +104,7 @@ column-gap: 1.5em
 }
 
 .formSubmit{
+    column-gap: 4em;
     display: flex;
     flex-direction: row;  
     justify-content: space-between; 
