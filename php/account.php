@@ -62,13 +62,13 @@
                     </div>
                 </form>
             </div>
-            <div class = "panel">
+        </div>
+        <div class = "panel">
                 <h1 class="commentHistoryTitle">Comment History</h1>
                 <div class = "commentHistoryArea">
                     <?php include 'retrieveUserComment.php'?>
                 </div>
             </div>
-        </div>
     </main>
     <?php
         include "footer.php";
