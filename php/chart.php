@@ -149,7 +149,7 @@
     });
 
     new Chart(\"line-1\", {
-      type: \"line\",
+      type: \"doughnut\",
       data: {
         labels: registeredUserActivityTypeValues,
         datasets: [{
@@ -167,7 +167,7 @@
     });
 
     new Chart(\"line-2\", {
-      type: \"line\",
+      type: \"scatter\",
       data: {
         labels: unregisteredUserActivityTypeValues,
         datasets: [{
