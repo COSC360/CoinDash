@@ -7,6 +7,7 @@
   retrieveUserStatusChartData($con);  
   retrieveRegisteredUserActivityChartData($con);
   retrieveUnregisteredUserActivityChartData($con);
+  retrieveRegisteredUserLoginActivityChartData($con);
 ?>  
   <div class ="canvasData">
     <canvas id="doughnut"></canvas>
@@ -35,6 +36,9 @@
 
     var unregisteredUserActivityTypeValues = [];
     var unregisteredUserActivityCountValues = [];
+
+    var  = [];
+    var  = [];
     ";
     foreach($_SESSION['regSourceDataArray'] as $row){
         echo "xValues.push(\"".$row."\");";
