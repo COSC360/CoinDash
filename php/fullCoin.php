@@ -11,13 +11,13 @@
             <div class=\"product-image\" style=\"background-image: url(".$coin["img_url"].");\"></div>
         </div>
         <div class=\"product-info-container\">
-            <h3>".$coin["name"]." ".number_format($coin["price_change_24h"], 2, '.', '')."%</h3>
+            <h3>".$coin["name"]." <span class=\"".getPriceColorClass($coin["price_change_24h"])."\">".number_format($coin["price_change_24h"], 2, '.', '')."%</span></h3>
             <div class=\"current-price-container\">
-                <strong class=\"product-price ".getPriceColorClass($coin["price_change_24h"])."\">".number_format($coin["usd"], 4, '.', '')." USD</strong>
-                <strong class=\"product-price ".getPriceColorClass($coin["price_change_24h"])."\">".number_format($coin["cad"], 4, '.', '')." CAD</strong>
-                <strong class=\"product-price ".getPriceColorClass($coin["price_change_24h"])."\">".number_format($coin["eur"], 4, '.', '')." EUR</strong>
-                <strong class=\"product-price ".getPriceColorClass($coin["price_change_24h"])."\">".number_format($coin["php"], 4, '.', '')." PHP</strong>
-                <strong class=\"product-price ".getPriceColorClass($coin["price_change_24h"])."\">".number_format($coin["jpy"], 4, '.', '')." JPY</strong>
+                <strong class=\"product-price\">".number_format($coin["usd"], 4, '.', '')." USD</strong>
+                <strong class=\"product-price\">".number_format($coin["cad"], 4, '.', '')." CAD</strong>
+                <strong class=\"product-price\">".number_format($coin["eur"], 4, '.', '')." EUR</strong>
+                <strong class=\"product-price\">".number_format($coin["php"], 4, '.', '')." PHP</strong>
+                <strong class=\"product-price\">".number_format($coin["jpy"], 4, '.', '')." JPY</strong>
             </div>
             <div class=\"price-trend-container\">
                 <p>7D: ".number_format($coin["price_change_7d"], 2, '.', '')."%</p>
