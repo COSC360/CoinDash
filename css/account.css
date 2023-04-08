@@ -79,17 +79,17 @@ column-gap: 1.5em
 /* .profile-box{
     display: flex;
     flex-direction: row;
-}
+} */
 
 .user-account-box form{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
 }
 
 .user-account-box form .formData{
     display: flex;
     flex-direction: column;
-} */
+} 
 
 .user-account-box input {
     margin-top: 1em;
