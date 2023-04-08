@@ -2,7 +2,7 @@
     session_start();
     include 'DBconnection.php';
     include 'modules.php';
-    
+
     if(isset($_SESSION["id"])){
         $userId = $_SESSION["id"];
 
@@ -31,9 +31,9 @@
                     <p class=\"commentText\">".$commentData["text"]."</p>
                 </div>
                 <div class =\"comment-misc-info\">
-                    <p class=\"commentId\">comment id · ".$commentData["commentId"]."</p>
-                    <p class=\"coinId\">coin name · ".$commentData["coin_id"]."</p>
-                    <p class=\"timestamp\">timestamp · ".$commentData["timestamp"]."</p>
+                    <p class=\"commentId\">COMMENT ID · ".$commentData["commentId"]."</p>
+                    <p class=\"coinId\">COIN NAME · ".$commentData["coin_id"]."</p>
+                    <p class=\"timestamp\">TIMESTAMP · ".$commentData["timestamp"]."</p>
                 </div>
             </div>
         ";
