@@ -1,11 +1,8 @@
 <?php
     session_start();
 
-    $rootPage = "Home";
-    $previousPage = ucfirst(substr(substr($_SERVER["HTTP_REFERER"],strrpos($_SERVER["HTTP_REFERER"],"/")+1),0,-4));
-    $currentPage = ucfirst(substr(substr($_SERVER["SCRIPT_NAME"],strrpos($_SERVER["SCRIPT_NAME"],"/")+1),0,-4));
-      
-    $_SESSION['currentPage'] = $currentPages;
+    $curPageName = substr($_SERVER["SCRIPT_NAME"],strrpos($_SERVER["SCRIPT_NAME"],"/")+1);  
+    $_SESSION['currentPage'] = $curPageName;
 
     if(!isset($_SESSION["id"])){
         header('location:signIn.php');
@@ -15,7 +12,6 @@
         include 'alert.php';
         unset($_SESSION['statusMsg']);
     }
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -39,13 +35,6 @@
 <body>
     <?php include 'dashboardHeader.php';?>
     <main>
-        <?php
-            if(isset($_SESSION['id']) && isset($previousPage)){
-                echo "<h2>".$rootPage." / <span id=\"breadcrumbCurrent\">".$_SESSION['username']."/ ".$currentPage."<span></h2>";
-            }else{
-                echo "<h2>".$rootPage." / Guest</h2>"."/ ".$currentPage;
-            }
-        ?>
         <div class = "panel user-account-container">
             <div class="user-account-info">
                 <h2>Account Settings</h2>
@@ -57,22 +46,22 @@
                     <h2><?php echo $_SESSION["username"] ;?></h2>
                 </div>
                 <div>
-                    <form action= "processUpdate.php" method="POST"> 
-                        <div class = "formData">
-                            <div>                
-                                <label>Email</label><br>    
-                                <input type = "text" id="email" name = "email" value = "<?php echo $_SESSION["email"] ;?>"><br>
-                            </div>
-                            <div>
-                                <label>Password</label><br>
-                                <input type = "text" id="password" name = "password" value = "<?php echo $_SESSION["password"] ;?>">
-                            </div>
+                <form action= "processUpdate.php" method="POST"> 
+                    <div class = "formData">
+                        <div>                
+                            <label>Email</label><br>    
+                            <input type = "text" id="email" name = "email" value = "<?php echo $_SESSION["email"] ;?>"><br>
                         </div>
-                        <div class = "formSubmit"> 
-                            <input type="reset" value="Reset Form">
-                            <input type="submit" name= "updateSubmit" id = "updateSubmit" value="Confirm Changes">
+                        <div>
+                            <label>Password</label><br>
+                            <input type = "text" id="password" name = "password" value = "<?php echo $_SESSION["password"] ;?>">
                         </div>
-                    </form>
+                    </div>
+                    <div class = "formSubmit"> 
+                        <input type="reset" value="Reset Form">
+                        <input type="submit" name= "updateSubmit" id = "updateSubmit" value="Confirm Changes">
+                    </div>
+                </form>
                 </div>
             </div>
         </div>
