@@ -270,10 +270,8 @@ select{
   grid-column-start: 2;
 }
 
-@media only screen and (max-width: 1600px) {
-  .register-info{
-    max-width: min(90vw, 30em);
-  }
+.register-info{
+  max-width: min(90vw, 30em);
 }
 
 .register-info h1{
