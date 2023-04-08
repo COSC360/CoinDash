@@ -23,7 +23,8 @@
 
 
     function getCommentHTML($con, $commentData, $level){
-        $commentHTML = "
+        if($commentData["parentId"] != null){
+            $commentHTML = "
             <div class = \"main-comment\">
                 <p class=\"commentText\">".$commentData["text"]."</p>
                 <div class =\"comment-misc-info\">
@@ -33,6 +34,21 @@
                 </div>
             </div>
         ";
+        }else{
+            $commentHTML = "
+            <div class = \"main-comment\">
+                <p class=\"commentText\">".$commentData["text"]."</p>
+                <div class =\"comment-misc-info\">
+                    <p class=\"commentId\">comment id · ".$commentData["commentId"]."</p>
+                    <p class=\"coinId\">coin name · ".$commentData["coin_id"]."</p>
+                    <p class=\"timestamp\">timestamp · ".$commentData["timestamp"]."</p>
+                    <p class=\"reply\">REPLY COMMENT</p>
+                </div>
+            </div>
+        ";           
+        }
+
+        
         return $commentHTML;
     }
 
