@@ -20,7 +20,7 @@
 <body>
     <main>
         <?php
-            include "dashboardHeader.php";
+            include "adminPortalHeader.php";
         ?>
         <?php 
             include 'chart.php';
