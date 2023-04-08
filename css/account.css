@@ -85,15 +85,20 @@ column-gap: 1.5em
 .formData{
     display: flex;
     flex-direction: row;
-    column-gap: 2em;
+    column-gap: 4em;
 }
 
+.formSubmit{
+    display: flex;
+    flex-direction: row;  
+    justify-content: space-between; 
+}
 
 .user-account-box input {
     margin-top: 1em;
     margin-bottom: 1em;
     border: none;
-    width: 100%;
+    width: 15em;
     font-size: 1em;
     border-bottom: 2px solid rgb(0, 0, 0);
 }
