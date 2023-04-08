@@ -158,7 +158,8 @@
     position: absolute;
     width: 100%;
     height: 100%;
-    background-color: aqua;
+    -webkit-filter: blur(30px); /* Safari 6.0 - 9.0 */
+    filter: blur(30px);
     display: flex;
     align-items: center;
     justify-content: center;

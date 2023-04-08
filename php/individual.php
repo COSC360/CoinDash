@@ -64,7 +64,7 @@ $coinId = $_GET["coinId"];
                 } else {
                     echo "
                         <div class=\"comment-mask\">
-                            <a href=\"signIn.php\">Login</a>
+                            <a href=\"signIn.php\">Login to View Comments</a>
                         </div>
                     ";
                 }
