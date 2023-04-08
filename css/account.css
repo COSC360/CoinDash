@@ -206,8 +206,9 @@ column-gap: 1.5em
 }
 
 .coinImg{
-    height: 20px;
-    width: 20px;
+    float: left;
+    height: 2em;
+    width: 2em;
 }
 
 /* Scrollbar Styling */
