@@ -26,6 +26,7 @@
         if($commentData["parentId"] == null){
             $commentHTML = "
             <div class = \"main-comment\">
+                <img class = \"coinImg\" src=".$commentData["img_url"].">
                 <p class=\"commentText\">".$commentData["text"]."</p>
                 <div class =\"comment-misc-info\">
                     <p class=\"commentId\">comment id · ".$commentData["commentId"]."</p>
@@ -37,6 +38,7 @@
         }else{
             $commentHTML = "
             <div class = \"main-comment\">
+                <img class = \"coinImg\" src=".$commentData["img_url"].">
                 <p class=\"commentText\">".$commentData["text"]."</p>
                 <div class =\"comment-misc-info\">
                     <p class=\"commentId\">comment id · ".$commentData["commentId"]."</p>

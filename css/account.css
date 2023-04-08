@@ -205,6 +205,11 @@ column-gap: 1.5em
     font-size: 0.75em;
 }
 
+.coinImg{
+    height: 20px;
+    width: 20px;
+}
+
 /* Scrollbar Styling */
 
 .commentHistoryArea::-webkit-scrollbar-track
