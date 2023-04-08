@@ -12,7 +12,22 @@
         <div class="middle">
             <nav>
                 <?php
-                    if(isset($_SESSION['id']) && $_SESSION['userType'] == "user"){
+                    if(isset($_SESSION['id']) && $_SESSION['userType'] == "admin"){
+                        echo
+                        "
+                        <div class=\"relative-container\">
+                            <a href=\"#\" id=\"search\">
+                                Search
+                            </a>
+                            <div style=\"position: absolute; left: 0; bottom:-2em;\">
+                                <form id=\"search-modal\" class=\"hide\">
+                                    <input type=\"text\" name=\"like\" placeholder=\"What are you looking for?\">
+                                </form>
+                            </div>
+                        </div>
+                        <a href=\"dashboard.php\">Dashboard</a>
+                        <a href=\"admin.php\">Admin Portal</a>";  
+                    }elseif(isset($_SESSION['id']) && $_SESSION['userType'] == "user"){
                         echo
                         "
                         <div class=\"relative-container\">
