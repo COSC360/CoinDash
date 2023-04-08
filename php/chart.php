@@ -139,8 +139,7 @@
       data: {
         labels: registeredUserActivityTypeValues,
         datasets: [{
-          backgroundColor:\"rgba(0,0,255,1.0)\",
-          borderColor: \"rgba(0,0,255,0.1)\",
+          backgroundColor:chartColors,
           data: registeredUserActivityCountValues
         }]
       },
@@ -158,8 +157,7 @@
       data: {
         labels: unregisteredUserActivityTypeValues,
         datasets: [{
-          backgroundColor:\"rgba(0,0,255,1.0)\",
-          borderColor: \"rgba(0,0,255,0.1)\",
+          backgroundColor: chartColors ,
           data: unregisteredUserActivityCountValues
         }]
       },
