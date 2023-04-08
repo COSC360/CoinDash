@@ -56,25 +56,40 @@
     white-space:nowrap;
   }
   
-.user-account-box form{
+/* .user-account-box form{
 display: grid;
 width: fit-content;
 grid-template-columns: 30em 30em;
 column-gap: 1.5em
-}  
+}   */
 
-.user-account-box form .item-1,.item-3{
+/* .user-account-box form .item-1,.item-3{
     grid-column-start: 1;
 }
 
 .user-account-box form .item-2, .item-4{
     grid-column-start: 2;
+} */
+
+.user-account-box{
+    display: flex;
+    flex-direction: column;
 }
 
-.input-container{
+/* .profile-box{
     display: flex;
-    align-items: center;
+    flex-direction: row;
 }
+
+.user-account-box form{
+    display: flex;
+    flex-direction: column;
+}
+
+.user-account-box form .formData{
+    display: flex;
+    flex-direction: column;
+} */
 
 .user-account-box input {
     margin-top: 1em;
