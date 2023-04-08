@@ -190,16 +190,17 @@ function addSortDropdownListener(dropdown){
 
 function addSettingsListener(settings){
     // Grab connectedModule to be moved
-    settings.addEventListener("dragstart", (e) => {
-        e.dataTransfer.setData("draggedModule", settings.parentNode.id); 
-        e.dataTransfer.setDragImage(settings.parentNode, 0, 0);
-    })
+    console.log(settings);
+    // settings.addEventListener("dragstart", (e) => {
+    //     e.dataTransfer.setData("draggedModule", settings.parentNode.id); 
+    //     e.dataTransfer.setDragImage(settings.parentNode, 0, 0);
+    // })
 
-    settings.addEventListener("click", (e) => {
-        settings.parentNode.appendChild(moduleModal);
-        moduleModal.classList.remove("hide");
-        currentModule = settings.parentNode;
-    })
+    // settings.addEventListener("click", (e) => {
+    //     settings.parentNode.appendChild(moduleModal);
+    //     moduleModal.classList.remove("hide");
+    //     currentModule = settings.parentNode;
+    // })
 }
 
 // Generates module HTML based on fiat, category, sort. Places HTML at target location
