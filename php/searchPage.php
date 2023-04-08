@@ -42,6 +42,7 @@ session_start();
                 $like = isset($_GET["like"]) ? $_GET["like"] : "";
                 $coins = retrieveCoinByLike($con, $like);
                 print_r($coins);
+                echo "Hello";
 
                 // Notify user if like query returns false
                 if (!$coins){
