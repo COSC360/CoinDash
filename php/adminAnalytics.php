@@ -1,5 +1,14 @@
 <?php
     session_start();
+
+    if($_SESSION['userType'] == "user" || !isset($_SESSION['id'])){
+        header('location:adminlogin.php');
+    }
+
+    if(isset($_SESSION['statusMsg'])){
+        include 'alert.php';
+        unset($_SESSION['statusMsg']);
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -20,7 +29,7 @@
 <body>
     <main>
         <?php
-            include "dashboardHeader.php";
+            include "adminPortalHeader.php";
         ?>
         <?php 
             include 'chart.php';

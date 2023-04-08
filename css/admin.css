@@ -3,10 +3,6 @@
 }
 
 /* Style the tab */
-.tabswitcher {
-  width: 50vw;
-}
-
 .tab {
   display: grid;
   overflow: hidden;
@@ -206,16 +202,13 @@ canvas #line-1{
 }
 
 canvas #line-2{
-  grid-column-start: 0;
-  grid-row-start: 2;
+  grid-column-start: 1;
+  grid-row-start: 1;
 }
 
-
-.adjust-container{
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  row-gap: 5em;
+canvas #pie-2{
+  grid-column-start: 2;
+  grid-row-start: 1;
 }
 
 .fa-search {

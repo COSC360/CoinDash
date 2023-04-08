@@ -39,7 +39,7 @@
             include "adminPortalHeader.php";
         ?>
         <main>
-            <div class="panel adjust-container">
+            <div class="panel">
                 <div class="tabswitcher">
                     <div class="tab">
                         <button class="tablinks" onclick="openCity(event, 'byUsername')" id ="defaultUsername">By Username</button>

@@ -15,6 +15,7 @@
     <canvas id="pie"></canvas>
     <canvas id="line-1"></canvas>
     <canvas id="line-2"></canvas>
+    <canvas id="pie-2"></canvas>
   </div>
 
   <?php
@@ -37,8 +38,8 @@
     var unregisteredUserActivityTypeValues = [];
     var unregisteredUserActivityCountValues = [];
 
-    var  = [];
-    var  = [];
+    var loginActivityDataValues = [];
+    var loginActivityCountDataValues = [];
     ";
     foreach($_SESSION['regSourceDataArray'] as $row){
         echo "xValues.push(\"".$row."\");";
@@ -76,6 +77,15 @@
     foreach($_SESSION['unregisteredUserCountDataArray'] as $row){
     echo "unregisteredUserActivityCountValues.push(\"".$row."\");";
     }
+
+    foreach($_SESSION['loginActivityDataArray'] as $row){
+      echo "loginActivityDataValues.push(\"".$row."\");";
+    }
+
+    foreach($_SESSION['loginActivityCountDataArray'] as $row){
+      echo "loginActivityCountDataValues.push(\"".$row."\");";
+    }
+
   echo 
     "
     var chartColors = [\"#00aba9\", \"#2b5797\",\"#b91d47\",\"#e8c3b9\",\"#1e7145\",\"#993366\",\"#009999\"];
@@ -173,5 +183,24 @@
         } 
       }
     });
+
+    new Chart(\"pie-2\", {
+      type: \"pie\",
+      data: {
+        labels: loginActivityDataValues,
+        datasets: [{
+          backgroundColor: chartColors,
+          data: loginActivityCountDataValues
+        }]
+      },
+      options: {
+        legend: {display: true, position: 'right', align: 'center'},
+        title: {
+          display: true,
+          text: \"Login Activity Data\"
+        }        
+      }
+    });
+
   </script>";
   ?>
