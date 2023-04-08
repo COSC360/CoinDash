@@ -1020,6 +1020,40 @@ function retrieveUnregisteredUserActivityChartData($con){
     }     
 }
 
+function retrieveRegisteredUserLoginActivityChartData($con){
+    $chartDataSQL = "SELECT DATE(timestamp) AS `loginDate`, COUNT(userid) AS userCount FROM `userActivity` WHERE userId != 0 && activity = \"loggedIn\"";
+
+    $chartDataStmt = mysqli_stmt_init($con); 
+
+    $loginActivityDataArray = array();
+    $loginActivityCountDataArray = array();
+
+    if (!mysqli_stmt_prepare($chartDataStmt, $chartDataSQL)){
+        $_SESSION['statusMsg'] = "Unable to prepare the SQL statement.";
+        return false;
+    }
+
+    // Execute prepared statement
+    mysqli_stmt_execute($chartDataStmt);
+
+    $results = mysqli_stmt_get_result($chartDataStmt);
+
+    if($rows = $results -> fetch_all(MYSQLI_ASSOC)){
+        mysqli_stmt_close($chartDataStmt);
+        
+        foreach($rows as $row){
+            array_push($loginActivityDataArray , $row['loginDate']);
+            array_push($loginActivityCountDataArray, $row['userCount']);
+        }
+
+        $_SESSION['loginActivityDataArray'] = $loginActivityDataArray;
+        $_SESSION['loginActivityCountDataArray'] = $loginActivityCountDataArray;
+    }else{
+        mysqli_stmt_close($chartDataStmt);
+        return false;
+    }     
+}
+
 
 function uploadActivity($con, $userId, $activity){
     $activitySql = "INSERT INTO userActivity (userId, activity) VALUES (?, ?)";
