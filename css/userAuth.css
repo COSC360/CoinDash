@@ -27,15 +27,10 @@
 
 @media only screen and (min-width: 1600px) {
   .login-info{
-    max-width: 40em;
+    max-width: min(90vw, 30em);
   }
 }
 
-@media only screen and (max-width: 1600px) {
-  .login-info{
-    max-width: 40em;
-  }
-}
 
 .login-info h1{
     font-size: 1.25em;
@@ -62,8 +57,8 @@
 }
 
 .login-info .info-footer{
-  display: grid;
-  grid-template-columns: 14em 3em 10em;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .login-info .info-footer p{
@@ -85,12 +80,13 @@
   position: relative;
   display: grid;
   width: 100%;
-  grid-template-columns: 20em;
+  grid-template-columns: 1fr 1fr;
   row-gap: 1em;
+  margin-top: 1.5em;
 }  
 
-.login-box form .item-1,.item-2,.item-3{
-  grid-column-start: 1;
+.item-1, .item-2{
+  grid-column: span 2;
 }
 
 .login-box form .item-4{
@@ -109,7 +105,7 @@
 .login-box input {
     margin-top: 1em;
     border: none;
-    width: 170%;
+    width: 100%;
     font-size: 1em;
     border-bottom: 2px solid rgb(0, 0, 0);
     cursor: pointer;
@@ -272,10 +268,6 @@ select{
   justify-content: space-between;
 }
 
-.register-box form .item-1,.item-3,.item-5, .item-7{
-  grid-column-start: 1;
-}
-
 .register-box form .item-2,.item-4,.item-6, .item-8{
   grid-column-start: 2;
 }
@@ -313,6 +305,7 @@ select{
 .register-info .info-footer{
   display: flex;
   column-gap: 3em;
+  flex-wrap: wrap;
 }
 
 .register-info .info-footer p{
