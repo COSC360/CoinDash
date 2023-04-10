@@ -1,7 +1,6 @@
 [![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-24ddc0f5d75046c5622901739e7c5dd533143b0c8e959d652212380cedb1ea36.svg)](https://classroom.github.com/a/enf2qyfT)
 # Project Description
-&nbsp;&nbsp;&nbsp;&nbsp;This project aims to create a highly customizable platform that allows users to keep track of their e-commerce activities. The platform will be designed to provide users with a comprehensive user-friendly view of their online activities, including the real-time prices and trends of products. The platform will accomplish this by extracting data through e-commerce APIs such as Amazon, BestBuy, Walmart, SaveOnFoods, and providing users with various options for highly-customizable modularized representations of that data. Authenticated users can customize their individual accounts by creating, modifying, and deleting modules. The modules are consistent with the updates made by the users. This platform will be a valuable tool for individuals and businesses by providing them with the information they need to make informed decisions and achieve their financial goals.
-
+&nbsp;&nbsp;&nbsp;&nbsp;This project aims to create a modularized cryptocurrency price tracking website with real-time prices, customizable alerts, and a user-friendly interface that provides tools and information for both experienced traders and newcomers.
 
 # Project Requirements
 #### Authentication
