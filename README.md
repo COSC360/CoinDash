@@ -36,8 +36,7 @@
 
 
 # Team Members
-- Jason Ramos - 52627569
-- Suyash Aminbhavi - 83864363
+
 
 
 
